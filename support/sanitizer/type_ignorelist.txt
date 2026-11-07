@@ -1,0 +1,19 @@
+# Type sanitizer ignore list.
+#
+# The Clang 21 type sanitizer reports a type-aliasing violation on every read of
+# an element of a `std::array` of static storage duration, with libc++ and
+# libstdc++ alike, scalar elements included, where a C array or an automatic
+# `std::array` reports none: a false positive. The library reads its patterns
+# and its precomputed operation tables, `std::array` constants, at run time,
+# and its sources are not instrumented. Nor is the nanobench third party.
+#
+# Minimal reproducer, reporting each read:
+#
+#   inline constexpr std::array<std::size_t, 3> table{0, 1, 2};
+#   int main() { std::size_t sum{0}; for (auto e : table) sum += e; }
+[type]
+src:*/include/fcarouge/sparse_linear_algebra.hpp
+src:*/include/fcarouge/sparse_linear_algebra/*
+src:*/amalgamate/fcarouge/sparse_linear_algebra.h
+src:*/nanobench.cpp
+src:*/nanobench.h

@@ -69,6 +69,11 @@ struct element<sparse::matrix<Type, Pattern>> {
 //! @brief The element type of a sparse matrix.
 template <typename Matrix> using element_t = element<Matrix>::type;
 
+//! @brief Whether a pattern stores every position: a pattern without a
+//! structural zero.
+template <auto Pattern>
+inline constexpr bool is_dense{Pattern.count == Pattern.rows * Pattern.columns};
+
 //! @brief A growing list of positions, of a known maximum size, from which the
 //! pattern of an operation's result is sized.
 template <std::size_t Capacity> struct position_list {
