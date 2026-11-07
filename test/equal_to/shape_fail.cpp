@@ -42,8 +42,10 @@ namespace {
   const sparse::matrix<double, sparse::diagonal<3>> rhs{1., 1., 1.};
 
   // Intended:
-  // assert((lhs == lhs));
-  assert((lhs == rhs));
+  // const bool equal{lhs == lhs};
+  const bool equal{lhs == rhs};
+
+  assert(equal);
 
   return 0;
 }()};

@@ -31,6 +31,8 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "fcarouge/sparse_linear_algebra.hpp"
 
+#include <bit>
+#include <cstdint>
 #include <limits>
 
 namespace fcarouge::test {
@@ -49,11 +51,16 @@ static_assert(sla::square_root(0.25F) == 0.5F);
 static_assert(sla::square_root(std::numeric_limits<double>::infinity()) ==
               std::numeric_limits<double>::infinity());
 
-// A not-a-number value is neither less than, nor greater than or equal to,
-// any value.
-inline constexpr double not_a_number_root{
-    sla::square_root(std::numeric_limits<double>::quiet_NaN())};
+// A not-a-number value is recognized by its encoding, all exponent bits set
+// and a non-zero significand, rather than by comparisons: MSVC does not
+// evaluate a comparison with a not-a-number value correctly in a constant
+// expression.
+inline constexpr std::uint64_t exponent{0x7FF0'0000'0000'0000};
+inline constexpr std::uint64_t significand{0x000F'FFFF'FFFF'FFFF};
+inline constexpr std::uint64_t not_a_number_root{std::bit_cast<std::uint64_t>(
+    sla::square_root(std::numeric_limits<double>::quiet_NaN()))};
 
-static_assert(not(not_a_number_root < 0.) and not(not_a_number_root >= 0.));
+static_assert((not_a_number_root & exponent) == exponent);
+static_assert((not_a_number_root & significand) != 0);
 } // namespace
 } // namespace fcarouge::test
