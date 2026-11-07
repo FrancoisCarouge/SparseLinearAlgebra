@@ -1,0 +1,7 @@
+<map id="fcarouge::sparse::pattern::lower_bound" name="fcarouge::sparse::pattern::lower_bound">
+<area shape="rect" id="Node000001" title="The index of the first stored position not before the given one." alt="" coords="426,5,588,46"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1sparse_1_1pattern.xhtml#a7ff181b7cbc3e9282eb49d04e5442089" title="The index of the stored element at the given row and column, or absent for a structural zero." alt="" coords="216,5,378,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="411,28,379,28,379,23,411,23"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1sparse_1_1pattern.xhtml#a8b1bf39b65494984c57787f8b6172f35" title="Whether the given row and column is a stored element." alt="" coords="5,5,168,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="200,28,168,28,168,23,200,23"/>
+</map>

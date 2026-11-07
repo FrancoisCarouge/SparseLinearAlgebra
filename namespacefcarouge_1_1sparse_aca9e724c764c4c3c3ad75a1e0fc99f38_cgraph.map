@@ -1,0 +1,5 @@
+<map id="fcarouge::sparse::make_matrix" name="fcarouge::sparse::make_matrix">
+<area shape="rect" id="Node000001" title="A matrix from a value at every position, in row&#45;major order." alt="" coords="5,5,160,46"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5417703fdc9f6ae8f26e5393672fb4ed" title="Write the given value of a linear position into its stored element, if the position is stored." alt="" coords="208,5,398,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,192,23,192,28,160,28"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="/github/workspace/test/amalgamate/sparse_linear_algebra.cpp" name="/github/workspace/test/amalgamate/sparse_linear_algebra.cpp">
+<area shape="rect" id="Node000001" title="Verifies the single&#45;header amalgamation is a functional drop&#45;in replacement for the multi&#45;file header..." alt="" coords="235,5,413,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,109,163,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,64,133,106,131,101,248,59"/>
+<area shape="rect" id="Node000003" href="$realtime_8hpp.xhtml" title="Opt&#45;out of the real&#45;time verification." alt="" coords="187,109,333,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,63,280,98,276,95,302,60"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="357,109,422,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="346,60,373,95,369,98,342,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="446,109,504,135"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="373,59,442,99,439,103,370,64"/>
+</map>

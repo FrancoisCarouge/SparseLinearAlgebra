@@ -1,0 +1,36 @@
+<map id="/github/workspace/include/fcarouge/sparse_linear_algebra/matrix.hpp" name="/github/workspace/include/fcarouge/sparse_linear_algebra/matrix.hpp">
+<area shape="rect" id="Node000001" title="The compile&#45;time sparsity pattern matrix." alt="" coords="356,5,529,61"/>
+<area shape="rect" id="Node000002" href="$utility_8hpp.xhtml" title="The internal implementation details: the pattern computations the operations derive their results and..." alt="" coords="228,198,402,238"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,64,363,84,340,110,324,146,318,183,313,182,319,145,335,108,359,81,387,59"/>
+<area shape="rect" id="Node000004" href="$sparse__linear__algebra__forward_8hpp.xhtml" title="Authoritative forward declaration header." alt="" coords="93,375,246,416"/>
+<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="372,64,324,87,274,117,227,154,188,199,169,238,162,281,161,323,165,359,160,360,156,323,156,281,164,237,183,196,223,150,271,113,322,82,369,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="396,464,460,489"/>
+<area shape="poly" id="edge23_Node000001_Node000005" title=" " alt="" coords="530,40,615,56,659,70,701,88,738,111,768,140,787,175,795,216,795,308,792,333,785,356,773,376,758,393,719,422,672,444,620,459,567,469,476,477,475,472,566,463,618,454,670,439,717,418,755,390,769,373,780,353,787,332,789,308,789,217,782,177,763,143,735,116,698,93,657,75,613,62,529,45"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="15,464,97,489"/>
+<area shape="poly" id="edge24_Node000001_Node000006" title=" " alt="" coords="356,36,248,45,190,56,134,73,84,96,44,127,29,146,18,167,10,190,8,217,8,308,12,347,21,386,46,449,41,451,16,387,7,348,3,308,3,217,5,189,13,165,25,143,40,123,81,91,132,68,189,51,247,40,356,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="505,382,554,408"/>
+<area shape="poly" id="edge21_Node000001_Node000007" title=" " alt="" coords="509,59,547,80,584,107,633,149,668,185,695,227,719,285,725,307,724,318,718,328,704,345,687,359,648,378,607,390,570,395,569,390,606,384,646,373,684,354,700,341,714,326,719,316,719,308,713,287,690,229,664,188,629,153,581,111,545,85,506,64"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="630,294,704,320"/>
+<area shape="poly" id="edge22_Node000001_Node000009" title=" " alt="" coords="489,59,520,81,550,107,586,150,617,197,658,278,654,281,612,200,582,153,546,111,517,86,486,64"/>
+<area shape="rect" id="Node000010" href="$pattern__algebra_8hpp.xhtml" title="The pattern algebra: the compile&#45;time computations the operations derive the patterns of their result..." alt="" coords="349,109,536,150"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="445,62,445,94,440,94,440,62"/>
+<area shape="rect" id="Node000003" href="$pattern_8hpp.xhtml" title="The sparsity patterns: the positions of the stored elements of a matrix, their construction,..." alt="" coords="352,286,504,327"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="342,237,392,275,389,279,339,241"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="294,241,247,288,192,363,188,360,243,285,290,237"/>
+<area shape="poly" id="edge12_Node000002_Node000005" title=" " alt="" coords="311,239,304,275,299,320,303,369,309,393,320,414,332,430,347,442,383,460,380,465,344,447,328,433,315,417,304,394,298,370,294,320,299,274,306,238"/>
+<area shape="poly" id="edge14_Node000002_Node000006" title=" " alt="" coords="267,241,222,263,172,293,124,331,84,376,67,413,60,449,55,448,62,411,79,374,120,327,169,289,219,259,264,237"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="403,225,434,233,465,245,494,262,518,285,529,304,535,326,536,367,531,367,530,326,524,306,514,288,491,266,463,250,432,238,401,230"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="330,382,382,408"/>
+<area shape="poly" id="edge13_Node000002_Node000008" title=" " alt="" coords="322,238,343,326,352,367,347,368,337,328,317,239"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="396,236,615,290,614,295,394,242"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="370,330,243,372,242,367,368,325"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="431,327,431,448,425,448,425,327"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="453,325,506,371,502,375,449,330"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="414,329,378,372,374,369,410,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="235,414,382,458,380,463,233,419"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="143,418,87,457,84,452,140,414"/>
+<area shape="poly" id="edge16_Node000010_Node000002" title=" " alt="" coords="415,152,358,191,355,187,412,148"/>
+<area shape="poly" id="edge17_Node000010_Node000003" title=" " alt="" coords="444,150,434,271,428,271,438,150"/>
+<area shape="poly" id="edge18_Node000010_Node000004" title=" " alt="" coords="349,139,314,147,279,159,246,176,218,199,193,237,179,280,172,323,170,360,165,360,167,322,174,278,188,234,214,196,243,172,277,154,313,142,348,134"/>
+<area shape="poly" id="edge19_Node000010_Node000005" title=" " alt="" coords="466,148,511,197,536,229,559,265,576,303,586,342,584,380,569,417,550,438,526,453,476,471,474,466,524,448,547,434,564,414,579,379,580,342,571,305,554,268,532,233,507,201,462,152"/>
+</map>

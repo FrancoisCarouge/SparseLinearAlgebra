@@ -1,0 +1,5 @@
+<map id="fcarouge::sparse::pattern::index_of" name="fcarouge::sparse::pattern::index_of">
+<area shape="rect" id="Node000001" title="The index of the stored element at the given row and column, or absent for a structural zero." alt="" coords="216,5,378,46"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1sparse_1_1pattern.xhtml#a8b1bf39b65494984c57787f8b6172f35" title="Whether the given row and column is a stored element." alt="" coords="5,5,168,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,28,168,28,168,23,200,23"/>
+</map>
