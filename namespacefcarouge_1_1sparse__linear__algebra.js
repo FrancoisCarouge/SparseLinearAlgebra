@@ -15,6 +15,7 @@ var namespacefcarouge_1_1sparse__linear__algebra =
       [ "are_given_at", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a137571ba014ed44375cf20ee15dd244c", null ],
       [ "dot_terms", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88c2d25e777e6730b2b1b20c342c2584", null ],
       [ "every", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5aa93548197b24d28510de50033fbf86", null ],
+      [ "is_dense", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a57f3af2e66fea7ebfc78fe3d8796c85f", null ],
       [ "is_given_at", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a6cae54fb768e9abd8aff90adc39bcc3c", null ],
       [ "is_given_at< Value, Matrix, Position, false >", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af4e79a3d05a73750b6fb8736b967ef15", null ],
       [ "is_matrix", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6", null ],

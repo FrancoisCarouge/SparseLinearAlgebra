@@ -162,7 +162,9 @@ var namespacefcarouge_1_1test =
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02sparse__linear__algebra_8cpp_03.xhtml#a3ff73ed86cee52d9b7b5b77a80656583", null ]
     ] ],
     [ "anonymous_namespace{square_root.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml", [
-      [ "not_a_number_root", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#aeb2e591f0ae8839930e1e4280dccccf2", null ]
+      [ "exponent", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae", null ],
+      [ "not_a_number_root", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a9bb5e0a740ee88ebdc63e0be5186753e", null ],
+      [ "significand", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a80a21f55015ff52f94e56f92c676b201", null ]
     ] ],
     [ "anonymous_namespace{structural_zero_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02structural__zero__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02structural__zero__fail_8cpp_03.xhtml#abbe2b23e93621ee4312197b1a7ed4dc7", null ]

@@ -9,5 +9,6 @@ var searchData=
   ['enforcement_6',['Enforcement',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#enforcement',1,'']]],
   ['equal_5fto_2ecpp_7',['equal_to.cpp',['../equal__to_8cpp.xhtml',1,'']]],
   ['every_8',['every',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5aa93548197b24d28510de50033fbf86',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['expressions_9',['Freestanding, real-time, and constant expressions',['..//github/workspace/AGENTS.md#freestanding-real-time-and-constant-expressions',1,'']]]
+  ['exponent_9',['exponent',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae',1,'fcarouge::test::anonymous_namespace{square_root.cpp}']]],
+  ['expressions_10',['Freestanding, real-time, and constant expressions',['..//github/workspace/AGENTS.md#freestanding-real-time-and-constant-expressions',1,'']]]
 ];

@@ -27,5 +27,6 @@ var searchData=
   ['tt_20make_5fmatrix_20tt_24',['&lt;tt&gt;make_matrix&lt;/tt&gt;',['../index.xhtml#make_matrix',1,'']]],
   ['tt_20support_20support_20cmake_20tt_25',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
   ['type_5ffail_2ecpp_26',['type_fail.cpp',['../constructor_2type__fail_8cpp.xhtml',1,'(Global Namespace)'],['../make__matrix_2type__fail_8cpp.xhtml',1,'(Global Namespace)']]],
-  ['typedlinearalgebra_20and_20kalman_27',['Relation to TypedLinearAlgebra and Kalman',['..//github/workspace/AGENTS.md#relation-to-typedlinearalgebra-and-kalman',1,'']]]
+  ['type_5fignorelist_2etxt_27',['type_ignorelist.txt',['../type__ignorelist_8txt.xhtml',1,'']]],
+  ['typedlinearalgebra_20and_20kalman_28',['Relation to TypedLinearAlgebra and Kalman',['..//github/workspace/AGENTS.md#relation-to-typedlinearalgebra-and-kalman',1,'']]]
 ];

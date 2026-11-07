@@ -139,9 +139,9 @@ requires <a class="el" href="namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d7
 <tr class="memitem:abe43d2b991e04e7671d8d79b08f5bb5a" id="r_abe43d2b991e04e7671d8d79b08f5bb5a"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe43d2b991e04e7671d8d79b08f5bb5a">operator[]</a> (std::size_t row, std::size_t column) const -&gt; Type</td></tr>
 <tr class="memdesc:abe43d2b991e04e7671d8d79b08f5bb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the element at the given position, by value.  <br /></td></tr>
 <tr class="separator:abe43d2b991e04e7671d8d79b08f5bb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14e3659a924c4a7067f60b1144dc4e2" id="r_aa14e3659a924c4a7067f60b1144dc4e2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa14e3659a924c4a7067f60b1144dc4e2">operator[]</a> (std::size_t row, std::size_t column) -&gt; Type &amp;requires(Pattern.count==Pattern.rows *Pattern.columns)</td></tr>
-<tr class="memdesc:aa14e3659a924c4a7067f60b1144dc4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The element at the given position, of a pattern without a structural zero: every position is addressable, as in any dense storage.  <br /></td></tr>
-<tr class="separator:aa14e3659a924c4a7067f60b1144dc4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d4bbd2aa4d32fca591e5096821a6c4" id="r_ac8d4bbd2aa4d32fca591e5096821a6c4"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8d4bbd2aa4d32fca591e5096821a6c4">operator[]</a> (std::size_t row, std::size_t column) -&gt; Type &amp;</td></tr>
+<tr class="memdesc:ac8d4bbd2aa4d32fca591e5096821a6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The element at the given position, of a pattern without a structural zero: every position is addressable, as in any dense storage.  <br /></td></tr>
+<tr class="separator:ac8d4bbd2aa4d32fca591e5096821a6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a020d357466bf1563d39b3ccb717694" id="r_a8a020d357466bf1563d39b3ccb717694"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
 requires (Pattern.stores(Row, Column))</td></tr>
 <tr class="memitem:a8a020d357466bf1563d39b3ccb717694"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a020d357466bf1563d39b3ccb717694">operator[]</a> (std::integral_constant&lt; std::size_t, Row &gt;, std::integral_constant&lt; std::size_t, Column &gt;) -&gt; Type &amp;</td></tr>
@@ -303,10 +303,10 @@ requires <a class="el" href="namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d7
 <div class="line"><span class="lineno">   97</span>      }</div>
 <div class="line"><span class="lineno">   98</span>    }</div>
 <div class="line"><span class="lineno">   99</span>  }</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_ab78ed1654f8b785d7aeb30758dec99e5"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5">fcarouge::sparse_linear_algebra::internal::projection</a></div><div class="ttdeci">constexpr auto projection</div><div class="ttdoc">For each position of To, its stored element index in From, or absent.</div><div class="ttdef"><b>Definition</b> <a href="utility_8hpp_source.xhtml#l00171">utility.hpp:171</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_ab78ed1654f8b785d7aeb30758dec99e5"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5">fcarouge::sparse_linear_algebra::internal::projection</a></div><div class="ttdeci">constexpr auto projection</div><div class="ttdoc">For each position of To, its stored element index in From, or absent.</div><div class="ttdef"><b>Definition</b> <a href="utility_8hpp_source.xhtml#l00176">utility.hpp:176</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a60901167b3058282c44c4fe6d9c27da0"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">fcarouge::sparse::absent</a></div><div class="ttdeci">constexpr std::size_t absent</div><div class="ttdoc">The index of a position a pattern does not store.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00070">pattern.hpp:70</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00070">fcarouge::sparse::absent</a>, <a class="el" href="utility_8hpp_source.xhtml#l00171">fcarouge::sparse_linear_algebra::internal::projection</a>, and <a class="el" href="matrix_8hpp_source.xhtml#l00067">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::values</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00070">fcarouge::sparse::absent</a>, <a class="el" href="utility_8hpp_source.xhtml#l00176">fcarouge::sparse_linear_algebra::internal::projection</a>, and <a class="el" href="matrix_8hpp_source.xhtml#l00067">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::values</a>.</p>
 
 </div>
 </div>
@@ -484,8 +484,8 @@ requires (Pattern.stores(Row, Column))</div>
 
 </div>
 </div>
-<a id="aa14e3659a924c4a7067f60b1144dc4e2" name="aa14e3659a924c4a7067f60b1144dc4e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa14e3659a924c4a7067f60b1144dc4e2">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/3]</span></h2>
+<a id="ac8d4bbd2aa4d32fca591e5096821a6c4" name="ac8d4bbd2aa4d32fca591e5096821a6c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d4bbd2aa4d32fca591e5096821a6c4">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,8 +504,7 @@ template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;) -&gt; Type &amp;
-    requires(Pattern.count == Pattern.rows * Pattern.columns)
-  </td>
+    </td>
         </tr>
       </table>
   </td>

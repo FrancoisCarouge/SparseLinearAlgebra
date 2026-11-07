@@ -108,12 +108,16 @@ $(function(){initNavTree('namespacefcarouge_1_1test_1_1anonymous__namespace_02sq
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aeb2e591f0ae8839930e1e4280dccccf2" id="r_aeb2e591f0ae8839930e1e4280dccccf2"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb2e591f0ae8839930e1e4280dccccf2">not_a_number_root</a></td></tr>
-<tr class="separator:aeb2e591f0ae8839930e1e4280dccccf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473c45984fc30195a87dfbff700c63ae" id="r_a473c45984fc30195a87dfbff700c63ae"><td class="memItemLeft" align="right" valign="top">constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a473c45984fc30195a87dfbff700c63ae">exponent</a> {0x7FF0'0000'0000'0000}</td></tr>
+<tr class="separator:a473c45984fc30195a87dfbff700c63ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a21f55015ff52f94e56f92c676b201" id="r_a80a21f55015ff52f94e56f92c676b201"><td class="memItemLeft" align="right" valign="top">constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80a21f55015ff52f94e56f92c676b201">significand</a> {0x000F'FFFF'FFFF'FFFF}</td></tr>
+<tr class="separator:a80a21f55015ff52f94e56f92c676b201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb5e0a740ee88ebdc63e0be5186753e" id="r_a9bb5e0a740ee88ebdc63e0be5186753e"><td class="memItemLeft" align="right" valign="top">constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb5e0a740ee88ebdc63e0be5186753e">not_a_number_root</a></td></tr>
+<tr class="separator:a9bb5e0a740ee88ebdc63e0be5186753e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="aeb2e591f0ae8839930e1e4280dccccf2" name="aeb2e591f0ae8839930e1e4280dccccf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb2e591f0ae8839930e1e4280dccccf2">&#9670;&#160;</a></span>not_a_number_root</h2>
+<a id="a473c45984fc30195a87dfbff700c63ae" name="a473c45984fc30195a87dfbff700c63ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473c45984fc30195a87dfbff700c63ae">&#9670;&#160;</a></span>exponent</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,7 +126,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double fcarouge::test::anonymous_namespace{square_root.cpp}::not_a_number_root</td>
+          <td class="memname">std::uint64_t fcarouge::test::anonymous_namespace{square_root.cpp}::exponent {0x7FF0'0000'0000'0000}</td>
         </tr>
       </table>
   </td>
@@ -131,14 +135,64 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sla::square_root(std::numeric_limits&lt;double&gt;::quiet_NaN())}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000099">Test</a></b></dt><dd>Verifies the compile-time square root reaches the exact root of a perfect square, and the identity on zero and one. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000099">Test</a></b></dt><dd>Verifies the compile-time square root reaches the exact root of a perfect square, and the identity on zero and one. </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000100">Test</a></b></dt><dd>Verifies the compile-time square root of an infinite or a not-a-number value, as <code>std::sqrt</code>'s. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="square__root_8cpp_source.xhtml#l00054">54</a> of file <a class="el" href="square__root_8cpp_source.xhtml">square_root.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                                         {</div>
-<div class="line"><span class="lineno">   55</span>    sla::square_root(std::numeric_limits&lt;double&gt;::quiet_NaN())};</div>
+<p class="definition">Definition at line <a class="el" href="square__root_8cpp_source.xhtml#l00058">58</a> of file <a class="el" href="square__root_8cpp_source.xhtml">square_root.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{0x7FF0&#39;0000&#39;0000&#39;0000};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9bb5e0a740ee88ebdc63e0be5186753e" name="a9bb5e0a740ee88ebdc63e0be5186753e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb5e0a740ee88ebdc63e0be5186753e">&#9670;&#160;</a></span>not_a_number_root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint64_t fcarouge::test::anonymous_namespace{square_root.cpp}::not_a_number_root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{std::bit_cast&lt;std::uint64_t&gt;(</div>
+<div class="line">    sla::square_root(std::numeric_limits&lt;double&gt;::quiet_NaN()))}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="square__root_8cpp_source.xhtml#l00060">60</a> of file <a class="el" href="square__root_8cpp_source.xhtml">square_root.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>                                              {std::bit_cast&lt;std::uint64_t&gt;(</div>
+<div class="line"><span class="lineno">   61</span>    sla::square_root(std::numeric_limits&lt;double&gt;::quiet_NaN()))};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a80a21f55015ff52f94e56f92c676b201" name="a80a21f55015ff52f94e56f92c676b201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a21f55015ff52f94e56f92c676b201">&#9670;&#160;</a></span>significand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint64_t fcarouge::test::anonymous_namespace{square_root.cpp}::significand {0x000F'FFFF'FFFF'FFFF}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="square__root_8cpp_source.xhtml#l00059">59</a> of file <a class="el" href="square__root_8cpp_source.xhtml">square_root.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{0x000F&#39;FFFF&#39;FFFF&#39;FFFF};</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -128,6 +128,7 @@ var NAVTREEINDEX0 =
 "dir_72a26bf6ebae4768851e30ada741b0a4.xhtml":[15,0,6,11],
 "dir_742eb60c7d235e2106c51bc16f54c33f.xhtml":[15,0,5,2,0],
 "dir_74a3c9427e9a4782c7a8462862ac57cd.xhtml":[15,0,6,10],
+"dir_74d81da13f3523ee7cedfb7be44770f5.xhtml":[15,0,5,3],
 "dir_754050894e9c52d6e85ebe2d666052cc.xhtml":[15,0,6,8],
 "dir_77010ae1c659866f3d80deb588daf66a.xhtml":[15,0,5,2],
 "dir_79b3ea79c2d06708fb3e12dc2feb89a0.xhtml":[15,0,6,12,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "index.xhtml#projects":[0,2,5],
 "index.xhtml#reference":[0,1],
 "index.xhtml#resources":[0,2,6],
-"index.xhtml#roadmap--vision":[0,2,2],
-"index.xhtml#samples":[0,1,3]
+"index.xhtml#roadmap--vision":[0,2,2]
 };
