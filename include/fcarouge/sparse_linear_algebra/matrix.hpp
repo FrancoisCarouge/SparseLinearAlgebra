@@ -122,7 +122,7 @@ template <typename Type, sparsity_pattern auto Pattern> struct matrix {
   //! @complexity Constant.
   [[nodiscard]] constexpr auto operator[](std::size_t row, std::size_t column)
       -> Type &
-    requires(Pattern.count == Pattern.rows * Pattern.columns)
+    requires sla::is_dense<Pattern>
   {
     return values[(row * Pattern.columns) + column];
   }
