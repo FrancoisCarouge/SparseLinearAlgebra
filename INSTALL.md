@@ -1,0 +1,66 @@
+# Installation
+
+Requires CMake ≥ 4.3 and a C++26 compiler: GCC 14+, Clang 20+ (libstdc++ 14+ or libc++), MSVC `/std:c++latest` (Visual Studio 2026), or Apple Clang (Xcode 26).
+
+Download and install the [latest release package](https://github.com/FrancoisCarouge/SparseLinearAlgebra/releases). Alternatively, you may install and use the library in your projects by cloning the repository, configuring, and installing the project:
+
+```shell
+git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+cmake -S "SparseLinearAlgebra" -B "build"
+cmake --build "build" --parallel
+sudo cmake --install "build"
+```
+
+The standard shared CMake configuration file provides the library target to use in your own target:
+
+```cmake
+find_package(fcarouge-sparse-linear-algebra)
+target_link_libraries(your_target PRIVATE fcarouge-sparse-linear-algebra::slinalg)
+```
+
+Alternatively, fetch the library directly from your project's CMake configuration:
+
+```cmake
+include(FetchContent)
+
+FetchContent_Declare(
+  fcarouge-sparse-linear-algebra
+  GIT_REPOSITORY "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+  FIND_PACKAGE_ARGS NAMES fcarouge-sparse-linear-algebra)
+FetchContent_MakeAvailable(fcarouge-sparse-linear-algebra)
+
+target_link_libraries(your_target PRIVATE fcarouge-sparse-linear-algebra::slinalg)
+```
+
+# Development Build & Run
+
+## Tests
+
+Build and run the tests:
+
+```shell
+git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+cmake -S "SparseLinearAlgebra" -B "build"
+cmake --build "build" --config "Debug" --parallel
+ctest --test-dir "build" --build-config "Debug" --output-on-failure --parallel
+```
+
+## Installation Packages
+
+### Linux
+
+```shell
+git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+cmake -S "SparseLinearAlgebra" -B "build"
+cmake --build "build" --target "package" --parallel
+cmake --build "build" --target "package_source" --parallel
+```
+
+### Windows
+
+```shell
+git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+cmake -S "SparseLinearAlgebra" -B "build"
+cmake --build "build" --target "package" --parallel --config "Release"
+cmake --build "build" --target "package_source" --parallel --config "Release"
+```

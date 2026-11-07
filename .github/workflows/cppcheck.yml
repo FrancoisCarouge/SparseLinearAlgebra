@@ -1,0 +1,65 @@
+name: 'CppCheck'
+
+on:
+  push:
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
+  schedule:
+  - cron: '0 0 * * */5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+      with:
+        egress-policy: audit
+    - name: Checkout
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: Install
+      run: |
+        ( cd /tmp
+          git clone --depth 1 'https://github.com/danmar/cppcheck.git'
+          cmake -S 'cppcheck' -B 'cppcheck/build'
+          cmake --build 'cppcheck/build' --parallel 4
+          sudo cmake --install 'cppcheck/build' )
+    - name: 'Configure'
+      run: cmake -S . -B 'build' -D BUILD_TESTING=OFF
+    - name: 'Build: Amalgamate'
+      run: cmake --build 'build' --target amalgamate
+    # cppcheck cannot evaluate the `__has_feature` compiler built-in. The
+    # library's raw loops are deliberate: it stays freestanding, without the
+    # algorithms library. The converting constructor is implicit by design.
+    - name: Verify
+      run: |
+        cppcheck \
+          --check-level=exhaustive \
+          --enable=all \
+          --error-exitcode=1 \
+          --suppress=functionStatic:build/amalgamate/fcarouge/sparse_linear_algebra.h \
+          --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/format.tpp \
+          --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/matrix.hpp \
+          --suppress=missingIncludeSystem \
+          --suppress=noExplicitConstructor:build/amalgamate/fcarouge/sparse_linear_algebra.h \
+          --suppress=noExplicitConstructor:include/fcarouge/sparse_linear_algebra/matrix.hpp \
+          --suppress=unhandledChar \
+          --suppress=unmatchedSuppression \
+          --suppress=unusedFunction \
+          --suppress=useStlAlgorithm:build/amalgamate/fcarouge/sparse_linear_algebra.h \
+          --suppress='useStlAlgorithm:include/fcarouge/sparse_linear_algebra/algorithm/*' \
+          --suppress=useStlAlgorithm:test/operation_count/operation_count.cpp \
+          --verbose \
+          -i build \
+          -I build/amalgamate/fcarouge \
+          -I include \
+          -I support/main \
+          -U__has_feature \
+          .

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "Sparse Linear Algebra"
+abstract: >-
+  A C++ library that provides compile-time sparsity pattern linear algebra.
+authors:
+  - given-names: François
+    family-names: Carouge
+    email: francois.carouge@gmail.com
+contact:
+  - email: francois.carouge@gmail.com
+    given-names: François
+    family-names: Carouge
+type: software
+license: Unlicense
+repository-code: "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
+url: "https://francoiscarouge.github.io/SparseLinearAlgebra/"
+version: 0.1.0
+keywords:
+  - c++
+  - sparse
+  - linear
+  - algebra
+  - library

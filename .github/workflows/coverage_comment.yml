@@ -1,0 +1,40 @@
+name: 'Coverage: Comment'
+
+on:
+  workflow_run:
+    workflows: ['Coverage']
+    types:
+      - completed
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      pull-requests: write
+    steps:
+      - name: 'Coverage: Artifacts'
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: coverage-artifact
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+      - name: 'Read Artifact Data'
+        id: read-data
+        run: |
+          PR_NUMBER=$(cat pull_request_id.txt)
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          {
+            echo "pr_number=$PR_NUMBER"
+            echo "coverage<<$EOF"
+            cat coverage.txt
+            echo "$EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: 'Coverage: Comment'
+        if: steps.read-data.outputs.pr_number != ''
+        uses: mshick/add-pr-comment@ec328af66588ab8f77cdeb2c264f14aba45bbf59 # v3.12.0
+        with:
+          issue: ${{ steps.read-data.outputs.pr_number }}
+          message: ${{ steps.read-data.outputs.coverage }}
+          preformatted: true
+          refresh-message-position: true

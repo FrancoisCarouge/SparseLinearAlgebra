@@ -1,0 +1,61 @@
+name: 'Pipeline'
+
+on:
+  push:
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
+  schedule:
+  - cron: '0 0 * * */5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - { os: 'ubuntu-26.04', cxx: 'clang++-20', cc: 'clang-20', generator: 'Ninja', cpack_generator: 'DEB', build_dir: 'build' }
+        - { os: 'ubuntu-26.04', cxx: 'clang++-21', cc: 'clang-21', generator: 'Ninja', cpack_generator: 'DEB', build_dir: 'build' }
+        - { os: 'ubuntu-26.04', cxx: 'g++-14', cc: 'gcc-14', generator: 'Unix Makefiles', cpack_generator: 'DEB', build_dir: 'build' }
+        - { os: 'ubuntu-26.04', cxx: 'g++-15', cc: 'gcc-15', generator: 'Unix Makefiles', cpack_generator: 'DEB', build_dir: 'build' }
+        - { os: 'windows-2025', cxx: 'cl', cc: 'cl', generator: 'Visual Studio 18 2026', cpack_generator: 'WIX', config: 'Debug', build_dir: 'D:\b' }
+        - { os: 'windows-2025', cxx: 'cl', cc: 'cl', generator: 'Visual Studio 18 2026', cpack_generator: 'WIX', config: 'Release', build_dir: 'D:\b' }
+        - { os: 'macos-26', cxx: 'clang++', cc: 'clang', generator: 'Ninja', cpack_generator: 'productbuild', build_dir: 'build' }
+    name: '${{ matrix.os }} / ${{ matrix.cxx }} / ${{ matrix.generator }} / ${{ matrix.config }}'
+    runs-on: '${{ matrix.os }}'
+    permissions:
+      contents: read
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+      with:
+        egress-policy: audit
+    - name: 'Checkout'
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: 'Install: Latest CMake'
+      uses: lukka/get-cmake@f86dd60acae0d132056913e248bdabf0e0580b7a # v4.4.5
+    - name: 'Install: libc++'
+      if: ${{ startsWith(matrix.cxx, 'clang++') && runner.os == 'Linux' }}
+      run: |
+        version="${{ matrix.cxx }}"
+        version="${version##*-}"
+        sudo apt update
+        sudo apt install -y "libc++-${version}-dev" "libc++abi-${version}-dev"
+    - name: 'Configure'
+      env:
+        CXX: '${{ matrix.cxx }}'
+        CC: '${{ matrix.cc }}'
+      run: cmake -S . -B '${{ matrix.build_dir }}' -G '${{ matrix.generator }}'
+    - name: 'Build'
+      run: cmake --build '${{ matrix.build_dir }}' --config '${{ matrix.config }}' --verbose --parallel 4
+    - name: 'Test'
+      run: ctest --test-dir '${{ matrix.build_dir }}' --build-config '${{ matrix.config }}' --timeout 60 --verbose --parallel 4
+    - name: 'Install'
+      run: cmake --install '${{ matrix.build_dir }}' --config '${{ matrix.config }}' --prefix 'install' --verbose
+    - name: 'Package'
+      working-directory: '${{ matrix.build_dir }}'
+      run: cpack -G '${{ matrix.cpack_generator }}' --verbose

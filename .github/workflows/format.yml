@@ -1,0 +1,38 @@
+name: 'Format'
+
+on:
+  push:
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
+  schedule:
+  - cron: '0 0 * * */5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+      with:
+        egress-policy: audit
+    - name: 'Checkout'
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: 'Install'
+      run: pipx install cmakefmt
+    - name: 'Test'
+      run: |
+        find . \( \
+          -iname '*.hpp' \
+          -o -iname '*.cpp' \
+          -o -iname '*.tpp' \) \
+          -print0 \
+          | xargs -0 \
+          clang-format-22 --Werror --dry-run --verbose -style=file
+        cmakefmt --check --report-format github .

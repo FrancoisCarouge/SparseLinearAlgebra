@@ -1,0 +1,54 @@
+name: 'ClangTidy'
+
+on:
+  push:
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
+  schedule:
+  - cron: '0 0 * * */5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  "Shard":
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [ 0, 1, 2, 3, 4, 5 ]
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+      with:
+        egress-policy: audit
+    - name: Checkout
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: 'Install: Latest CMake'
+      uses: lukka/get-cmake@f86dd60acae0d132056913e248bdabf0e0580b7a # v4.4.5
+    - name: 'Install: libc++'
+      run: |
+        sudo apt update
+        sudo apt install -y "libc++-20-dev" "libc++abi-20-dev"
+    - name: 'Configure'
+      env:
+        CXX: 'clang++-20'
+        CC: 'clang-20'
+      run: cmake -S . -B 'build' -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    - name: 'Build: Amalgamate'
+      run: cmake --build 'build' --target amalgamate
+    - name: Verify
+      run: |
+        FILES=$(find . \
+          -type f \( \
+            -path './benchmark/*.cpp' -o \
+            -path './sample/*.cpp' -o \
+            -path './support/*.cpp' -o \
+            -path './test/*.cpp' \) \
+            ! -name '*_fail.cpp' | sort)
+        mapfile -t SHARD_FILES < <(echo "$FILES" | awk "NR % ${{ strategy.job-total }} == ${{ strategy.job-index }}")
+        run-clang-tidy -j 4 -p 'build' "${SHARD_FILES[@]}"
