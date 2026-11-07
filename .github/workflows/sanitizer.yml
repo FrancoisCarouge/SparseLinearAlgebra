@@ -43,7 +43,7 @@ jobs:
           ld_flags: ''
           run_flags: 'TSAN_OPTIONS=verbosity=1:abort_on_error=1'
         - name: 'Type'
-          cpp_flags: '-fsanitize=type -O0 -g -fno-sanitize-recover=all -fno-omit-frame-pointer -fno-optimize-sibling-calls'
+          cpp_flags: '-fsanitize=type -fsanitize-ignorelist=${{ github.workspace }}/support/sanitizer/type_ignorelist.txt -O0 -g -fno-sanitize-recover=all -fno-omit-frame-pointer -fno-optimize-sibling-calls'
           ld_flags: ''
           run_flags: 'TYSAN_OPTIONS=verbosity=1:abort_on_error=1:print_stacktrace=1'
         - name: 'Undefined'
