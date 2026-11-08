@@ -83,7 +83,14 @@ namespace {
   const auto integers{make_matrix<sparse_matrix<int, first_row>>(
       1, 2, structural_zero, structural_zero)};
 
+  const auto integer_column{make_matrix<sparse_matrix<int, first_column>>(
+      3, structural_zero, 4, structural_zero)};
+  const auto integer_difference{integers - integer_column};
+
   assert(((integers - integers).at<0, 1>() == 0));
+  assert((integer_difference.at<0, 0>() == -2));
+  assert((integer_difference.at<0, 1>() == 2));
+  assert((integer_difference.at<1, 0>() == -4));
 
   return 0;
 }()};

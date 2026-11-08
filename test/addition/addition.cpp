@@ -107,7 +107,14 @@ namespace {
   const auto integers{make_matrix<sparse_matrix<int, first_row>>(
       1, 2, structural_zero, structural_zero)};
 
+  const auto integer_column{make_matrix<sparse_matrix<int, first_column>>(
+      3, structural_zero, 4, structural_zero)};
+  const auto integer_sum{integers + integer_column};
+
   assert(((integers + integers).at<0, 1>() == 4));
+  assert((integer_sum.at<0, 0>() == 4));
+  assert((integer_sum.at<0, 1>() == 2));
+  assert((integer_sum.at<1, 0>() == 4));
 
   return 0;
 }()};

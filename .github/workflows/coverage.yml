@@ -66,3 +66,13 @@ jobs:
         path: |
           pull_request_id.txt
           coverage.txt
+    - name: 'Coverage: Check'
+      run: |
+        cat coverage.txt
+        for metric in lines functions; do
+          read -r hit total < <(sed -nE "s/^${metric}\.+: .*\(([0-9]+) of ([0-9]+) ${metric}\)$/\1 \2/p" coverage.txt)
+          if [[ -z "${total}" || "${total}" -eq 0 || "${hit}" -ne "${total}" ]]; then
+            echo "::error::The ${metric} coverage is not 100%: ${hit:-0} of ${total:-0} ${metric}."
+            exit 1
+          fi
+        done
