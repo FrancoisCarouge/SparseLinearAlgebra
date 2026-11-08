@@ -47,16 +47,16 @@ namespace {
 //! entry point: it opts out of the real-time verification for its lifetime.
 const not_realtime opt_out;
 
-template <auto Size> auto csv() -> std::string {
-  return std::format(
-      "{{{{#result}}}}| {{{{title}}}} | {:5d}x{:<5d} | "
-      "{{{{median(elapsed)}}}} | "
-      "{{{{medianAbsolutePercentError(elapsed)}}}} |{{{{/result}}}}\n",
-      Size, Size);
-}
+//! @brief Nanoseconds in a second, nanobench measuring elapsed time in seconds.
+constexpr double nanoseconds_per_second{1e9};
+
+//! @brief Percent in a ratio, nanobench reporting its median absolute
+//! percentage error as a ratio.
+constexpr double percent_per_ratio{100.};
 
 //! @brief Square matrix-matrix product of the given pattern, of random stored
-//! elements.
+//! elements, appended as a Markdown table row of its median elapsed time in
+//! nanoseconds and its median absolute percentage error in percent.
 template <auto Size, auto Pattern> void bench(const char *title) {
   sparse::matrix<double, Pattern> lhs;
   sparse::matrix<double, Pattern> rhs;
@@ -69,15 +69,21 @@ template <auto Size, auto Pattern> void bench(const char *title) {
     rhs.values[i] = distribution(generator);
   }
 
+  ankerl::nanobench::Bench runner;
+  runner.output(nullptr).title(title).run([&lhs, &rhs]() -> void {
+    const auto product{lhs * rhs};
+    ankerl::nanobench::doNotOptimizeAway(product);
+  });
+
+  const auto &result{runner.results().front()};
   std::ofstream results{"results.txt", std::ios::app};
-  ankerl::nanobench::Bench{}
-      .output(nullptr)
-      .title(title)
-      .run([&lhs, &rhs]() -> void {
-        const auto product{lhs * rhs};
-        ankerl::nanobench::doNotOptimizeAway(product);
-      })
-      .render(csv<Size>().c_str(), results);
+  results << std::format(
+      "| {} | {}x{} | {:.2f} | {:.2f} |\n", title, Size, Size,
+      result.median(ankerl::nanobench::Result::Measure::elapsed) *
+          nanoseconds_per_second,
+      result.medianAbsolutePercentError(
+          ankerl::nanobench::Result::Measure::elapsed) *
+          percent_per_ratio);
 }
 } // namespace
 } // namespace fcarouge::benchmark

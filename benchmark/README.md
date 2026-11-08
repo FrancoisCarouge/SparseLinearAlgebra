@@ -20,17 +20,17 @@ The square matrix-matrix product of a dense, a tridiagonal, and a diagonal patte
 
 Clang 21.1.8, libc++, x86-64.
 
-| Title | Size | Median Elapsed Time (s) | Median Absolute Error (%) |
+| Title | Size | Median Elapsed Time (ns) | Median Absolute Percentage Error (%) |
 | --- | --- | --- | --- |
-| dense |     2x2     | 8.84068119194387e-10 | 0.0796378221605947 |
-| tridiagonal |     2x2     | 8.37212e-10 | 0.0463061723057106 |
-| diagonal |     2x2     | 1.96428904515864e-10 | 0.0137714697195507 |
-| dense |     4x4     | 3.90028651014723e-08 | 0.0569639195063688 |
-| tridiagonal |     4x4     | 1.61721394451299e-08 | 0.021749930594574 |
-| diagonal |     4x4     | 3.38985522296087e-10 | 0.0618330477142346 |
-| dense |     8x8     | 2.37689876425856e-07 | 0.0273598610942169 |
-| tridiagonal |     8x8     | 3.95618884991693e-08 | 0.0291214483268116 |
-| diagonal |     8x8     | 6.02481303955703e-10 | 0.0265591817204245 |
-| dense |    16x16    | 2.06106387665198e-06 | 0.0421850606649183 |
-| tridiagonal |    16x16    | 7.28395095367847e-08 | 0.0265965628835399 |
-| diagonal |    16x16    | 1.20535200077102e-09 | 0.0243913759322464 |
+| dense | 2x2 | 0.88 | 7.96 |
+| tridiagonal | 2x2 | 0.84 | 4.63 |
+| diagonal | 2x2 | 0.20 | 1.38 |
+| dense | 4x4 | 39.00 | 5.70 |
+| tridiagonal | 4x4 | 16.17 | 2.17 |
+| diagonal | 4x4 | 0.34 | 6.18 |
+| dense | 8x8 | 237.69 | 2.74 |
+| tridiagonal | 8x8 | 39.56 | 2.91 |
+| diagonal | 8x8 | 0.60 | 2.66 |
+| dense | 16x16 | 2061.06 | 4.22 |
+| tridiagonal | 16x16 | 72.84 | 2.66 |
+| diagonal | 16x16 | 1.21 | 2.44 |
