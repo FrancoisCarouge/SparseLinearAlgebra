@@ -46,7 +46,7 @@ namespace {
 
   using sparse::diagonal;
   using sparse::make_pattern;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
   using sparse::tridiagonal;
 
   constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};

@@ -35,7 +35,7 @@ namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
 using sparse::make_pattern;
-using sparse::literals::operator""_o;
+using literals::operator""_o;
 using sparse::tridiagonal;
 
 using diagonal_matrix = sparse_matrix<double, diagonal<3>>;

@@ -55,7 +55,7 @@ namespace {
   using sparse::dense;
   using sparse::diagonal;
   using sparse::upper_triangular;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
 
   using transition = sparse_matrix<double, upper_triangular<2>>;
   using noise = sparse_matrix<double, diagonal<2>>;

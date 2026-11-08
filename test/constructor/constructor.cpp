@@ -44,7 +44,7 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
   using sparse::tridiagonal;
 
   using diagonal_matrix = sparse_matrix<double, diagonal<2>>;

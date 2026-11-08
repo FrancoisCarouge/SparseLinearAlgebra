@@ -72,7 +72,7 @@ static_assert(
 
 //! @test Verifies the construction from every row is explicit, of exactly the
 //! element type at a stored element, and of `0_o` at a structural zero.
-using sparse::literals::operator""_o;
+using literals::operator""_o;
 
 template <typename Matrix>
 concept from_rows = requires { Matrix{{4., 0_o}, {0_o, 1.}}; };

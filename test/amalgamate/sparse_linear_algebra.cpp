@@ -44,7 +44,7 @@ namespace {
 [[maybe_unused]] const auto test{[] -> int {
   const not_realtime opt_out;
 
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
 
   using band_matrix = sparse_matrix<int, sparse::tridiagonal<3>>;
 
