@@ -107,8 +107,8 @@ namespace {
   const auto integers{
       make_matrix<sparse_matrix<int, first_row>>(1, 2, 0_o, 0_o)};
 
-  const auto integer_column{make_matrix<sparse_matrix<int, first_column>>(
-      3, structural_zero, 4, structural_zero)};
+  const auto integer_column{
+      make_matrix<sparse_matrix<int, first_column>>(3, 0_o, 4, 0_o)};
   const auto integer_sum{integers + integer_column};
 
   assert(((integers + integers).at<0, 1>() == 4));
