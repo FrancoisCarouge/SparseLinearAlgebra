@@ -105,7 +105,7 @@ $(function(){initNavTree('index.xhtml',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__2github_2workspace_2_r_e_a_d_m_e"></a></p>
 <p>Most matrices of estimation, control, and simulation problems are mostly zeros, and their structure is known before the program runs: a diagonal noise, a triangular transition, a banded stencil. Ordinary dense linear algebra stores and multiplies those zeros anyway, and ordinary sparse linear algebra discovers them at run time, with memory allocations and indirections. This library is a C++ compile-time sparsity pattern linear algebra: the positions of the stored elements are part of the matrix type. Every other element is a structural zero, occupying no memory and costing no operation. Each operation computes the pattern of its result, and the exact arithmetic terms it needs, at compile time. There is no memory allocation, no exception, no input-output, and every operation is <code>constexpr</code>, freestanding, and real-time.</p>
-<div class="fragment"><div class="line"><span class="keyword">using </span>band = matrix&lt;double, tridiagonal&lt;3&gt;&gt;;</div>
+<div class="fragment"><div class="line"><span class="keyword">using </span>band = sparse_matrix&lt;double, tridiagonal&lt;3&gt;&gt;;</div>
 <div class="line"> </div>
 <div class="line">band value{1., 2., 3., 4., 5., 6., 7.}; <span class="comment">// Stores 7 of the 9 elements.</span></div>
 <div class="line"> </div>
@@ -139,7 +139,7 @@ Include</h2>
 </div><!-- fragment --><p>The library is header-only and has no dependency. A single-header amalgamation, <code>sparse_linear_algebra.h</code>, is also <a href="https://francoiscarouge.github.io/SparseLinearAlgebra/amalgamate/fcarouge/sparse_linear_algebra.h">published</a>.</p>
 <h2><a class="anchor" id="namespace"></a>
 Namespace</h2>
-<p>The public API lives in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
+<p>The <code>sparse_matrix</code> class and its operations live in the <code>fcarouge</code> namespace, as TypedLinearAlgebra's <code>typed_matrix</code> and Kalman's <code>kalman</code> do. The patterns, their algebra, and <code>make_matrix</code> live in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
 <h2><a class="anchor" id="samples"></a>
 Samples</h2>
 <table class="markdownTable">
@@ -150,17 +150,18 @@ Samples</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Heat diffusion stencil   </td><td class="markdownTableBodyNone"><a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/heat_diffusion.cpp">Usage example: <code>sample/heat_diffusion.cpp</code></a>.   </td></tr>
 </table>
-<h2><a class="anchor" id="class-matrix"></a>
-Class Matrix</h2>
+<h2><a class="anchor" id="class-sparse-matrix"></a>
+Class Sparse Matrix</h2>
 <p>Compile-time sparsity pattern matrix. Stores the elements of the pattern in place, in row-major order. Every other element is a structural zero: it reads as a zero, and a write to it does not compile.</p>
-<p>Also documented in the <a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/include/fcarouge/sparse_linear_algebra/matrix.hpp">fcarouge/sparse_linear_algebra/matrix.hpp</a> header.</p>
+<p>Also documented in the <a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/include/fcarouge/sparse_linear_algebra.hpp">fcarouge/sparse_linear_algebra.hpp</a> header.</p>
 <h3><a class="anchor" id="declaration"></a>
 Declaration</h3>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a> {</div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, sparsity_pattern auto Pattern&gt;</div>
-<div class="line"><span class="keyword">struct </span>matrix;</div>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge.xhtml">fcarouge</a> {</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, auto Pattern&gt;</div>
+<div class="line">  <span class="keyword">requires</span> sparse::sparsity_pattern&lt;<span class="keyword">decltype</span>(Pattern)&gt;</div>
+<div class="line"><span class="keyword">class</span> sparse_matrix;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a></div><div class="ttdoc">Sparse linear algebra public namespace.</div></div>
+<div class="ttc" id="anamespacefcarouge_xhtml"><div class="ttname"><a href="namespacefcarouge.xhtml">fcarouge</a></div><div class="ttdoc">Francois Carouge's projects namespace.</div><div class="ttdef"><b>Definition</b> <a href="product_8cpp_source.xhtml#l00044">product.cpp:44</a></div></div>
 </div><!-- fragment --><h3><a class="anchor" id="template-parameters"></a>
 Template Parameters</h3>
 <table class="markdownTable">
@@ -216,6 +217,7 @@ Declaration</h3>
 <div class="line"><span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> Rows, std::<span class="keywordtype">size_t</span> Columns, std::<span class="keywordtype">size_t</span> Count&gt;</div>
 <div class="line"><span class="keyword">struct </span>pattern;</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a></div><div class="ttdoc">Sparse linear algebra public namespace.</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a60901167b3058282c44c4fe6d9c27da0"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">fcarouge::sparse::absent</a></div><div class="ttdeci">constexpr std::size_t absent</div><div class="ttdoc">The index of a position a pattern does not store.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00070">pattern.hpp:70</a></div></div>
 </div><!-- fragment --><h3><a class="anchor" id="template-parameters-1"></a>
 Template Parameters</h3>
@@ -327,10 +329,10 @@ Element Construction</h2>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Matrix, <span class="keyword">typename</span>... Values&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a>(<span class="keyword">const</span> Values &amp;...values) -&gt; Matrix;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a621a2be8b93faa9da83e90819bfa8da6"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6">fcarouge::sparse::structural_zero</a></div><div class="ttdeci">constexpr structural_zero_t structural_zero</div><div class="ttdoc">The value of a structural zero in make_matrix.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00056">make_matrix.hpp:56</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_aca9e724c764c4c3c3ad75a1e0fc99f38"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00134">make_matrix.hpp:134</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a621a2be8b93faa9da83e90819bfa8da6"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6">fcarouge::sparse::structural_zero</a></div><div class="ttdeci">constexpr structural_zero_t structural_zero</div><div class="ttdoc">The value of a structural zero in make_matrix.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00055">make_matrix.hpp:55</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_aca9e724c764c4c3c3ad75a1e0fc99f38"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00133">make_matrix.hpp:133</a></div></div>
 </div><!-- fragment --><p>Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless <code>Matrix</code> is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is <code>structural_zero</code>: a <code>0.</code> at a structural zero does not compile, nor does <code>structural_zero</code> at a stored element.</p>
-<div class="fragment"><div class="line"><span class="keyword">using </span>lower = matrix&lt;double, lower_triangular&lt;2&gt;&gt;;</div>
+<div class="fragment"><div class="line"><span class="keyword">using </span>lower = sparse_matrix&lt;double, lower_triangular&lt;2&gt;&gt;;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">const</span> lower value{make_matrix&lt;lower&gt;(1., structural_zero,</div>
 <div class="line">                                     2., 3.)};</div>
@@ -364,7 +366,7 @@ Element Access</h2>
 <p>The rejections of the writes and of the constructions are compile errors, which a <code>requires</code> expression detects. To ask whether a position can be written, use <code>decltype(value)::structure.stores(i, j)</code>.</p>
 <h2><a class="anchor" id="operations"></a>
 Operations</h2>
-<p>The operations below are supported, each as a function or an operator of the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace, found by argument-dependent lookup. <code>K</code> is the count of stored elements, <code>R</code> and <code>C</code> the counts of rows and columns, and <code>T</code> the <a class="el" href="#pattern-algebra">`product_term_count`</a>. Each result pattern is computed at compile time. The algorithms mirror the names of the C++26 standard linear algebra library, <code>std::linalg</code>, and return their results by value.</p>
+<p>The operations below are supported, each as a function or an operator of the <code>fcarouge</code> namespace, found by argument-dependent lookup on <code>sparse_matrix</code>. <code>K</code> is the count of stored elements, <code>R</code> and <code>C</code> the counts of rows and columns, and <code>T</code> the <a class="el" href="#pattern-algebra">`product_term_count`</a>. Each result pattern is computed at compile time. The algorithms mirror the names of the C++26 standard linear algebra library, <code>std::linalg</code>, and return their results by value.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Operation   </th><th class="markdownTableHeadNone">Result Pattern   </th><th class="markdownTableHeadNone">Run-Time Complexity    </th></tr>
@@ -411,7 +413,7 @@ Concepts</h2>
 <h2><a class="anchor" id="format"></a>
 Format</h2>
 <p>A matrix formats every element, structural zeros included, so the format does not depend on the pattern: a singleton as its element, a row vector as a list of elements, a column vector or a matrix as a list of rows. Hosted implementation only.</p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> matrix&lt;double, diagonal&lt;2&gt;&gt; value{1., 2.5};</div>
+<div class="fragment"><div class="line"><span class="keyword">const</span> sparse_matrix&lt;double, diagonal&lt;2&gt;&gt; value{1., 2.5};</div>
 <div class="line"> </div>
 <div class="line">std::println(<span class="stringliteral">&quot;{}&quot;</span>, value); <span class="comment">// [[1, 0], [0, 2.5]]</span></div>
 </div><!-- fragment --><h1><a class="anchor" id="more"></a>

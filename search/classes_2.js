@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_0',['matrix',['../structfcarouge_1_1sparse_1_1matrix.xhtml',1,'fcarouge::sparse']]]
+  ['not_5frealtime_0',['not_realtime',['../classfcarouge_1_1not__realtime.xhtml',1,'fcarouge']]]
 ];

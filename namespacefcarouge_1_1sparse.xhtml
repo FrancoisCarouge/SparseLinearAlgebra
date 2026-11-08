@@ -112,9 +112,6 @@ $(function(){initNavTree('namespacefcarouge_1_1sparse.xhtml',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time sparsity pattern matrix.  <a href="structfcarouge_1_1sparse_1_1matrix.xhtml#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">pattern</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the stored elements of a matrix.  <a href="structfcarouge_1_1sparse_1_1pattern.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,54 +127,6 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">sparsity_pattern</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept of a compile-time sparsity pattern. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Algorithms</div></td></tr>
-<tr class="memitem:abd5578a9956e4bd8a23d2add88621c3a" id="r_abd5578a9956e4bd8a23d2add88621c3a"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires ((Lhs.rows == 1 || Lhs.columns == 1) &amp;&amp; (Rhs.rows == 1 || Rhs.columns == 1) &amp;&amp; Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)</td></tr>
-<tr class="memitem:abd5578a9956e4bd8a23d2add88621c3a"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abd5578a9956e4bd8a23d2add88621c3a">dot</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;rhs) -&gt; Type</td></tr>
-<tr class="separator:abd5578a9956e4bd8a23d2add88621c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a590e4616de9cb63d7571d36d1676ead1" id="r_a590e4616de9cb63d7571d36d1676ead1"><td class="memTemplParams" colspan="2">template&lt;std::floating_point Type, sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a590e4616de9cb63d7571d36d1676ead1"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a590e4616de9cb63d7571d36d1676ead1">matrix_frob_norm</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;value) -&gt; Type</td></tr>
-<tr class="separator:a590e4616de9cb63d7571d36d1676ead1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a3ad9a347aa36ab370251c18d004fcf" id="r_a1a3ad9a347aa36ab370251c18d004fcf"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a1a3ad9a347aa36ab370251c18d004fcf"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1a3ad9a347aa36ab370251c18d004fcf">matrix_inf_norm</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;value) -&gt; Type</td></tr>
-<tr class="separator:a1a3ad9a347aa36ab370251c18d004fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a611d3ebdf1fd6d59356eea014676deb7" id="r_a611d3ebdf1fd6d59356eea014676deb7"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a611d3ebdf1fd6d59356eea014676deb7"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a611d3ebdf1fd6d59356eea014676deb7">matrix_one_norm</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;value) -&gt; Type</td></tr>
-<tr class="separator:a611d3ebdf1fd6d59356eea014676deb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77515763a766c9f5e3f118eb4fec1e28" id="r_a77515763a766c9f5e3f118eb4fec1e28"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</td></tr>
-<tr class="memitem:a77515763a766c9f5e3f118eb4fec1e28"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a77515763a766c9f5e3f118eb4fec1e28">operator==</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;rhs) -&gt; bool</td></tr>
-<tr class="separator:a77515763a766c9f5e3f118eb4fec1e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9294f2b4fcf5d2e9c6b0fac99d316b79" id="r_a9294f2b4fcf5d2e9c6b0fac99d316b79"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</td></tr>
-<tr class="memitem:a9294f2b4fcf5d2e9c6b0fac99d316b79"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9294f2b4fcf5d2e9c6b0fac99d316b79">operator+</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#ab8975278c1d8ae0036b49bea78bbe8b5">pattern_union</a>&lt; Lhs, Rhs &gt; &gt;</td></tr>
-<tr class="separator:a9294f2b4fcf5d2e9c6b0fac99d316b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b18d5f8c3bd1077b90b8f7974a139d4" id="r_a5b18d5f8c3bd1077b90b8f7974a139d4"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</td></tr>
-<tr class="memitem:a5b18d5f8c3bd1077b90b8f7974a139d4"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5b18d5f8c3bd1077b90b8f7974a139d4">operator-</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#ab8975278c1d8ae0036b49bea78bbe8b5">pattern_union</a>&lt; Lhs, Rhs &gt; &gt;</td></tr>
-<tr class="separator:a5b18d5f8c3bd1077b90b8f7974a139d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71738e612b009cd42e42f9e742842a70" id="r_a71738e612b009cd42e42f9e742842a70"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a71738e612b009cd42e42f9e742842a70"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a71738e612b009cd42e42f9e742842a70">operator-</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;value) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td></tr>
-<tr class="separator:a71738e612b009cd42e42f9e742842a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f37fa8b5a517f3e4037abbe0d4978e0" id="r_a5f37fa8b5a517f3e4037abbe0d4978e0"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.columns == Rhs.rows)</td></tr>
-<tr class="memitem:a5f37fa8b5a517f3e4037abbe0d4978e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5f37fa8b5a517f3e4037abbe0d4978e0">operator*</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#a22a974884952de8722771dca7f79a808">pattern_product</a>&lt; Lhs, Rhs &gt; &gt;</td></tr>
-<tr class="separator:a5f37fa8b5a517f3e4037abbe0d4978e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e3c006924d89fb20a75ad14be112998" id="r_a7e3c006924d89fb20a75ad14be112998"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a7e3c006924d89fb20a75ad14be112998"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7e3c006924d89fb20a75ad14be112998">operator*</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;lhs, const std::type_identity_t&lt; Type &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td></tr>
-<tr class="separator:a7e3c006924d89fb20a75ad14be112998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77565ab33231d3cd9debab4ad799a429" id="r_a77565ab33231d3cd9debab4ad799a429"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a77565ab33231d3cd9debab4ad799a429"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a77565ab33231d3cd9debab4ad799a429">operator*</a> (const std::type_identity_t&lt; Type &gt; &amp;lhs, const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td></tr>
-<tr class="separator:a77565ab33231d3cd9debab4ad799a429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9f3e8a7cbe744a0ded34000879d6e0" id="r_adb9f3e8a7cbe744a0ded34000879d6e0"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:adb9f3e8a7cbe744a0ded34000879d6e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adb9f3e8a7cbe744a0ded34000879d6e0">operator/</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;lhs, const std::type_identity_t&lt; Type &gt; &amp;rhs) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td></tr>
-<tr class="separator:adb9f3e8a7cbe744a0ded34000879d6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04db85bba84473309e67095247ae3574" id="r_a04db85bba84473309e67095247ae3574"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparsity_pattern auto Pattern&gt; </td></tr>
-<tr class="memitem:a04db85bba84473309e67095247ae3574"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a04db85bba84473309e67095247ae3574">transposed</a> (const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;value) -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#a1de7628cd60f9cbae47157d68cae07ee">pattern_transpose</a>&lt; Pattern &gt; &gt;</td></tr>
-<tr class="separator:a04db85bba84473309e67095247ae3574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -268,40 +217,8 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sparse linear algebra public namespace. </p>
-<p>The patterns, the matrix, and their operations, apart from the other projects' definitions of the <code>fcarouge</code> namespace. </p>
+<p>The patterns, their algebra, and the construction of a matrix from them, apart from the other projects' definitions of the <code>fcarouge</code> namespace. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="abd5578a9956e4bd8a23d2add88621c3a" name="abd5578a9956e4bd8a23d2add88621c3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd5578a9956e4bd8a23d2add88621c3a">&#9670;&#160;</a></span>dot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires ((Lhs.rows == 1 || Lhs.columns == 1) &amp;&amp; (Rhs.rows == 1 || Rhs.columns == 1) &amp;&amp; Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::dot </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="abdcb349d2e4548a4a74e51f6b0a40360" name="abdcb349d2e4548a4a74e51f6b0a40360"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdcb349d2e4548a4a74e51f6b0a40360">&#9670;&#160;</a></span>generate()</h2>
 
@@ -343,7 +260,7 @@ template&lt;std::size_t Rows, std::size_t Columns, auto Predicate&gt; </div>
 <div class="line"><span class="lineno">  237</span>    std::size_t result{0};</div>
 <div class="line"><span class="lineno">  238</span> </div>
 <div class="line"><span class="lineno">  239</span>    <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Rows; ++row) {</div>
-<div class="line"><span class="lineno">  240</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a>) {</div>
+<div class="line"><span class="lineno">  240</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>) {</div>
 <div class="line"><span class="lineno">  241</span>        result += Predicate(row, column) ? std::size_t{1} : std::size_t{0};</div>
 <div class="line"><span class="lineno">  242</span>      }</div>
 <div class="line"><span class="lineno">  243</span>    }</div>
@@ -353,10 +270,10 @@ template&lt;std::size_t Rows, std::size_t Columns, auto Predicate&gt; </div>
 <div class="line"><span class="lineno">  247</span> </div>
 <div class="line"><span class="lineno">  248</span>  pattern&lt;Rows, Columns, count&gt; result;</div>
 <div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">for</span> (std::size_t row{0}, index{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a75bf59f75511a66714579992abaeb4b9">row</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a75bf59f75511a66714579992abaeb4b9">row</a>) {</div>
-<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a>) {</div>
+<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">for</span> (std::size_t row{0}, index{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">row</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">row</a>) {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>) {</div>
 <div class="line"><span class="lineno">  252</span>      <span class="keywordflow">if</span> (Predicate(row, column)) {</div>
-<div class="line"><span class="lineno">  253</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a75bf59f75511a66714579992abaeb4b9">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a>};</div>
+<div class="line"><span class="lineno">  253</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>};</div>
 <div class="line"><span class="lineno">  254</span>        ++index;</div>
 <div class="line"><span class="lineno">  255</span>      }</div>
 <div class="line"><span class="lineno">  256</span>    }</div>
@@ -364,8 +281,8 @@ template&lt;std::size_t Rows, std::size_t Columns, auto Predicate&gt; </div>
 <div class="line"><span class="lineno">  258</span> </div>
 <div class="line"><span class="lineno">  259</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">  260</span>}</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a75bf59f75511a66714579992abaeb4b9"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a75bf59f75511a66714579992abaeb4b9">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">matrix&lt; double, make_pattern&lt; 1, 2 &gt;({{0, 1}})&gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_acdee56ce2e317c27454c9ff32533525c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">matrix&lt; double, make_pattern&lt; 2, 1 &gt;({{1, 0}})&gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00045">access.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a534d149bbde48729eacd8b7a1384d18c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, make_pattern&lt; 1, 2 &gt;({{0, 1}})&gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00045">access.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_ad983c435acdd36095aa2b3da6bde4dcb"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, make_pattern&lt; 2, 1 &gt;({{1, 0}})&gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00044">access.cpp:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -412,19 +329,19 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the count of positions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00134">134</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                                            {</div>
-<div class="line"><span class="lineno">  135</span>  Matrix result;</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
-<div class="line"><span class="lineno">  138</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><span class="lineno">  139</span>    (sla::write_given&lt;Positions&gt;(result, values), ...);</div>
-<div class="line"><span class="lineno">  140</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00133">133</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                                            {</div>
+<div class="line"><span class="lineno">  134</span>  Matrix result;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
+<div class="line"><span class="lineno">  137</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><span class="lineno">  138</span>    (sla::write_given&lt;Positions&gt;(result, values), ...);</div>
+<div class="line"><span class="lineno">  139</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  142</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00096">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
+<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00095">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -551,337 +468,8 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 
 </div>
 </div>
-<a id="a590e4616de9cb63d7571d36d1676ead1" name="a590e4616de9cb63d7571d36d1676ead1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a590e4616de9cb63d7571d36d1676ead1">&#9670;&#160;</a></span>matrix_frob_norm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::floating_point Type, sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::matrix_frob_norm </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1a3ad9a347aa36ab370251c18d004fcf" name="a1a3ad9a347aa36ab370251c18d004fcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a3ad9a347aa36ab370251c18d004fcf">&#9670;&#160;</a></span>matrix_inf_norm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::matrix_inf_norm </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a611d3ebdf1fd6d59356eea014676deb7" name="a611d3ebdf1fd6d59356eea014676deb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a611d3ebdf1fd6d59356eea014676deb7">&#9670;&#160;</a></span>matrix_one_norm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::matrix_one_norm </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5f37fa8b5a517f3e4037abbe0d4978e0" name="a5f37fa8b5a517f3e4037abbe0d4978e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f37fa8b5a517f3e4037abbe0d4978e0">&#9670;&#160;</a></span>operator*() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.columns == Rhs.rows)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#a22a974884952de8722771dca7f79a808">pattern_product</a>&lt; Lhs, Rhs &gt; &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7e3c006924d89fb20a75ad14be112998" name="a7e3c006924d89fb20a75ad14be112998"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e3c006924d89fb20a75ad14be112998">&#9670;&#160;</a></span>operator*() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::type_identity_t&lt; Type &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a77565ab33231d3cd9debab4ad799a429" name="a77565ab33231d3cd9debab4ad799a429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77565ab33231d3cd9debab4ad799a429">&#9670;&#160;</a></span>operator*() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator* </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_identity_t&lt; Type &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9294f2b4fcf5d2e9c6b0fac99d316b79" name="a9294f2b4fcf5d2e9c6b0fac99d316b79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9294f2b4fcf5d2e9c6b0fac99d316b79">&#9670;&#160;</a></span>operator+()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#ab8975278c1d8ae0036b49bea78bbe8b5">pattern_union</a>&lt; Lhs, Rhs &gt; &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5b18d5f8c3bd1077b90b8f7974a139d4" name="a5b18d5f8c3bd1077b90b8f7974a139d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b18d5f8c3bd1077b90b8f7974a139d4">&#9670;&#160;</a></span>operator-() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#ab8975278c1d8ae0036b49bea78bbe8b5">pattern_union</a>&lt; Lhs, Rhs &gt; &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a71738e612b009cd42e42f9e742842a70" name="a71738e612b009cd42e42f9e742842a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71738e612b009cd42e42f9e742842a70">&#9670;&#160;</a></span>operator-() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adb9f3e8a7cbe744a0ded34000879d6e0" name="adb9f3e8a7cbe744a0ded34000879d6e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb9f3e8a7cbe744a0ded34000879d6e0">&#9670;&#160;</a></span>operator/()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator/ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::type_identity_t&lt; Type &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a77515763a766c9f5e3f118eb4fec1e28" name="a77515763a766c9f5e3f118eb4fec1e28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77515763a766c9f5e3f118eb4fec1e28">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; <br />
-requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Lhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Rhs &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3c6949c0273c292c8266ff66e9d8fb9b" name="a3c6949c0273c292c8266ff66e9d8fb9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c6949c0273c292c8266ff66e9d8fb9b">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6949c0273c292c8266ff66e9d8fb9b">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -923,33 +511,6 @@ template&lt;std::size_t LhsRows, std::size_t LhsColumns, std::size_t LhsCount, s
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a04db85bba84473309e67095247ae3574" name="a04db85bba84473309e67095247ae3574"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04db85bba84473309e67095247ae3574">&#9670;&#160;</a></span>transposed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::sparse::transposed </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="structfcarouge_1_1sparse_1_1matrix.xhtml">matrix</a>&lt; Type, <a class="el" href="#a1de7628cd60f9cbae47157d68cae07ee">pattern_transpose</a>&lt; Pattern &gt; &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a60901167b3058282c44c4fe6d9c27da0" name="a60901167b3058282c44c4fe6d9c27da0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60901167b3058282c44c4fe6d9c27da0">&#9670;&#160;</a></span>absent</h2>
@@ -976,7 +537,7 @@ template&lt;typename Type , sparsity_pattern auto Pattern&gt; </div>
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00070">70</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   70</span>{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="matrix_8hpp_source.xhtml#l00178">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::at()</a>, <a class="el" href="combine_8hpp_source.xhtml#l00055">fcarouge::sparse_linear_algebra::internal::combine()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00153">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="matrix_8hpp_source.xhtml#l00091">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::matrix()</a>, <a class="el" href="matrix_8hpp_source.xhtml#l00109">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::operator[]()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00165">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="combine_8hpp_source.xhtml#l00055">fcarouge::sparse_linear_algebra::internal::combine()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00153">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00165">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +823,7 @@ template&lt;sparsity_pattern auto Pattern&gt; </div>
 <div class="line"><span class="lineno">   73</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
 <div class="line"><span class="lineno">   74</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
 <div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (Pattern.positions[i].column == column) {</div>
-<div class="line"><span class="lineno">   76</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#acdee56ce2e317c27454c9ff32533525c">column</a>, Pattern.positions[i].row};</div>
+<div class="line"><span class="lineno">   76</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>, Pattern.positions[i].row};</div>
 <div class="line"><span class="lineno">   77</span>        ++index;</div>
 <div class="line"><span class="lineno">   78</span>      }</div>
 <div class="line"><span class="lineno">   79</span>    }</div>
@@ -1364,7 +925,7 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
 
 <p>The value of a structural zero in <code>make_matrix</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00056">56</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
 
 </div>
 </div>

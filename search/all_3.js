@@ -29,7 +29,7 @@ var searchData=
   ['ascending_26',['ascending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#aacd4cd9f01f2dfaba01e4873510f5c12',1,'fcarouge::test::anonymous_namespace{make.cpp}']]],
   ['assign_2ecpp_27',['assign.cpp',['../assign_8cpp.xhtml',1,'']]],
   ['assign_5ffail_2ecpp_28',['assign_fail.cpp',['../assign__fail_8cpp.xhtml',1,'']]],
-  ['at_29',['at',['../structfcarouge_1_1sparse_1_1matrix.xhtml#a80f6816a57eae6b41df864511650abb3',1,'fcarouge::sparse::matrix::at() -&gt; Type &amp;'],['../structfcarouge_1_1sparse_1_1matrix.xhtml#abb3931271dfd54914739a687bdf1f7c2',1,'fcarouge::sparse::matrix::at() const -&gt; Type']]],
+  ['at_29',['at',['../classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e',1,'fcarouge::sparse_matrix::at() -&gt; Type &amp;'],['../classfcarouge_1_1sparse__matrix.xhtml#af1aaf26be336df4fa5365d9be9d7da46',1,'fcarouge::sparse_matrix::at() const -&gt; Type']]],
   ['at_2ecpp_30',['at.cpp',['../at_8cpp.xhtml',1,'']]],
   ['attribution_31',['Attribution',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution',1,'']]]
 ];

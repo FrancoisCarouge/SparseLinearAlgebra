@@ -3,7 +3,7 @@ var namespacefcarouge_1_1sparse__linear__algebra =
     [ "internal", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml", [
       [ "element_t", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a09498d1a813606e03bf8c2c124a3f72e", null ],
       [ "absolute", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad5e85e15da93dcf0a935faa06a0c25c1", null ],
-      [ "combine", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88bbcf042137a9142dc40b9feca19acc", null ],
+      [ "combine", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a621210bcd7e88cd78ca6fe883d85a5b5", null ],
       [ "merge_positions", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a226b2f8eabf880917ed494bc82f5fdb7", null ],
       [ "position_out_of_range_or_duplicate", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a", null ],
       [ "product_positions", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aa0cbb4510404c25455aeb381500f59cc", null ],
@@ -19,6 +19,7 @@ var namespacefcarouge_1_1sparse__linear__algebra =
       [ "is_given_at", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a6cae54fb768e9abd8aff90adc39bcc3c", null ],
       [ "is_given_at< Value, Matrix, Position, false >", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af4e79a3d05a73750b6fb8736b967ef15", null ],
       [ "is_matrix", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6", null ],
+      [ "is_matrix< sparse_matrix< Type, Pattern > >", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#acbfe222a437ae79d90dd8cede09c8195", null ],
       [ "is_pattern", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a676d3e9fd4f0259013995520a084528a", null ],
       [ "projection", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
       [ "term_count", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ],

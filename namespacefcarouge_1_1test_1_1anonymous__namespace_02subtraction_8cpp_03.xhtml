@@ -123,7 +123,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000108">Test</a></b></dt><dd>Verifies the subtraction of matrices of overlapping and disjoint patterns. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000107">Test</a></b></dt><dd>Verifies the subtraction of matrices of overlapping and disjoint patterns. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="subtraction_8cpp_source.xhtml#l00042">42</a> of file <a class="el" href="subtraction_8cpp_source.xhtml">subtraction.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -135,51 +135,50 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>  <span class="keyword">using </span>sparse::make_matrix;</div>
 <div class="line"><span class="lineno">   50</span>  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keyword">using </span><a class="code hl_struct" href="structfcarouge_1_1sparse_1_1matrix.xhtml">sparse::matrix</a>;</div>
-<div class="line"><span class="lineno">   52</span>  <span class="keyword">using </span>sparse::structural_zero;</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> first_row{make_pattern&lt;2, 2&gt;({{0, 0}, {0, 1}})};</div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">first_column</a>{make_pattern&lt;2, 2&gt;({{0, 0}, {1, 0}})};</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{make_matrix&lt;matrix&lt;double, first_row&gt;&gt;(1., 2., structural_zero,</div>
-<div class="line"><span class="lineno">   58</span>                                                        structural_zero)};</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{make_matrix&lt;matrix&lt;double, first_column&gt;&gt;(</div>
-<div class="line"><span class="lineno">   60</span>      3., structural_zero, 4., structural_zero)};</div>
-<div class="line"><span class="lineno">   61</span>  <span class="keyword">const</span> matrix&lt;double, first_row&gt; zero_value;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>  <span class="comment">// An element stored by the right term only is negated, not copied.</span></div>
-<div class="line"><span class="lineno">   64</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>  <span class="keyword">static_assert</span>(</div>
-<div class="line"><span class="lineno">   67</span>      std::same_as&lt;</div>
-<div class="line"><span class="lineno">   68</span>          std::remove_cvref_t&lt;<span class="keyword">decltype</span>(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>)&gt;,</div>
-<div class="line"><span class="lineno">   69</span>          matrix&lt;double, sparse::pattern_union&lt;first_row, first_column&gt;&gt;&gt;);</div>
-<div class="line"><span class="lineno">   70</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;0, 0&gt;() == -2.));</div>
-<div class="line"><span class="lineno">   71</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;0, 1&gt;() == 2.));</div>
-<div class="line"><span class="lineno">   72</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;1, 0&gt;() == -4.));</div>
-<div class="line"><span class="lineno">   73</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;1, 1&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>  <span class="keyword">const</span> <span class="keyword">auto</span> reversed{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a> - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>};</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>  assert((reversed.at&lt;0, 0&gt;() == 2.));</div>
-<div class="line"><span class="lineno">   78</span>  assert((reversed.at&lt;0, 1&gt;() == -2.));</div>
-<div class="line"><span class="lineno">   79</span>  assert((reversed.at&lt;1, 0&gt;() == 4.));</div>
-<div class="line"><span class="lineno">   80</span>  assert((lhs - lhs == zero_value));</div>
-<div class="line"><span class="lineno">   81</span>  assert((-(lhs - rhs) == rhs - lhs));</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>  <span class="comment">// An integer element type.</span></div>
-<div class="line"><span class="lineno">   84</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{make_matrix&lt;matrix&lt;int, first_row&gt;&gt;(1, 2, structural_zero,</div>
-<div class="line"><span class="lineno">   85</span>                                                          structural_zero)};</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>  assert(((integers - integers).at&lt;0, 1&gt;() == 0));</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   90</span>}()};</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a860410845224e2c8e711b34c0ba4e162"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">fcarouge::test::anonymous_namespace{arithmetic.cpp}::difference</a></div><div class="ttdeci">constexpr auto difference</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00058">arithmetic.cpp:58</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00047">arithmetic.cpp:47</a></div></div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">using </span>sparse::structural_zero;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> first_row{make_pattern&lt;2, 2&gt;({{0, 0}, {0, 1}})};</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">first_column</a>{make_pattern&lt;2, 2&gt;({{0, 0}, {1, 0}})};</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{make_matrix&lt;sparse_matrix&lt;double, first_row&gt;&gt;(</div>
+<div class="line"><span class="lineno">   57</span>      1., 2., structural_zero, structural_zero)};</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{make_matrix&lt;sparse_matrix&lt;double, first_column&gt;&gt;(</div>
+<div class="line"><span class="lineno">   59</span>      3., structural_zero, 4., structural_zero)};</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keyword">const</span> sparse_matrix&lt;double, first_row&gt; zero_value;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>  <span class="comment">// An element stored by the right term only is negated, not copied.</span></div>
+<div class="line"><span class="lineno">   63</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>  <span class="keyword">static_assert</span>(</div>
+<div class="line"><span class="lineno">   66</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>)&gt;,</div>
+<div class="line"><span class="lineno">   67</span>                   sparse_matrix&lt;double, sparse::pattern_union&lt;<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a60a8aafa0deb8523e26ca83d1d573607">first_row</a>,</div>
+<div class="line"><span class="lineno">   68</span>                                                               <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">first_column</a>&gt;&gt;&gt;);</div>
+<div class="line"><span class="lineno">   69</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;0, 0&gt;() == -2.));</div>
+<div class="line"><span class="lineno">   70</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;0, 1&gt;() == 2.));</div>
+<div class="line"><span class="lineno">   71</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;1, 0&gt;() == -4.));</div>
+<div class="line"><span class="lineno">   72</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at&lt;1, 1&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="keyword">const</span> <span class="keyword">auto</span> reversed{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a> - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>};</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>  assert((reversed.at&lt;0, 0&gt;() == 2.));</div>
+<div class="line"><span class="lineno">   77</span>  assert((reversed.at&lt;0, 1&gt;() == -2.));</div>
+<div class="line"><span class="lineno">   78</span>  assert((reversed.at&lt;1, 0&gt;() == 4.));</div>
+<div class="line"><span class="lineno">   79</span>  assert((lhs - lhs == zero_value));</div>
+<div class="line"><span class="lineno">   80</span>  assert((-(lhs - rhs) == rhs - lhs));</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>  <span class="comment">// An integer element type.</span></div>
+<div class="line"><span class="lineno">   83</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{make_matrix&lt;sparse_matrix&lt;int, first_row&gt;&gt;(</div>
+<div class="line"><span class="lineno">   84</span>      1, 2, structural_zero, structural_zero)};</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>  assert(((integers - integers).at&lt;0, 1&gt;() == 0));</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   89</span>}()};</div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a860410845224e2c8e711b34c0ba4e162"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">fcarouge::test::anonymous_namespace{arithmetic.cpp}::difference</a></div><div class="ttdeci">constexpr auto difference</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00057">arithmetic.cpp:57</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_xhtml_a60a8aafa0deb8523e26ca83d1d573607"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a60a8aafa0deb8523e26ca83d1d573607">fcarouge::test::anonymous_namespace{operation_count.cpp}::first_row</a></div><div class="ttdeci">constexpr auto first_row</div><div class="ttdef"><b>Definition</b> <a href="operation__count_8cpp_source.xhtml#l00100">operation_count.cpp:100</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_xhtml_aeed154869303f869322d334ddd089283"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::first_column</a></div><div class="ttdeci">constexpr auto first_column</div><div class="ttdef"><b>Definition</b> <a href="pattern__algebra_8cpp_source.xhtml#l00097">pattern_algebra.cpp:97</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1matrix_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1matrix.xhtml">fcarouge::sparse::matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00067">sparse_linear_algebra_forward.hpp:67</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

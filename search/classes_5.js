@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['structural_5fzero_5ft_0',['structural_zero_t',['../structfcarouge_1_1sparse_1_1structural__zero__t.xhtml',1,'fcarouge::sparse']]]
+  ['total_0',['total',['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}']]]
 ];

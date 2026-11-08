@@ -152,56 +152,56 @@ $(function(){initNavTree('constant__velocity_8cpp_source.xhtml',''); initResizab
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">using </span><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#abf7018e0061f1e0506750ecc0d4d5882">sparse::dense</a>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">using </span><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260">sparse::diagonal</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">using </span><a class="code hl_struct" href="structfcarouge_1_1sparse_1_1matrix.xhtml">sparse::matrix</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">using </span><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40">sparse::upper_triangular</a>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">using </span>transition = matrix&lt;double, upper_triangular&lt;2&gt;&gt;;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">using </span>noise = matrix&lt;double, diagonal&lt;2&gt;&gt;;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">using </span>state = matrix&lt;double, dense&lt;2, 1&gt;&gt;;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">using </span>covariance = matrix&lt;double, dense&lt;2, 2&gt;&gt;;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">constexpr</span> <span class="keywordtype">double</span> period{0.5};</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// The bottom left element is a structural zero, without storage.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(transition) == 3 * <span class="keyword">sizeof</span>(double));</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> transition model{1., period, 1.};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">const</span> state initial{1., 3.};</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">const</span> noise uncertainty{4., 1.};</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">const</span> noise process{0.25, 0.5};</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// The prediction of the state: the position moves by the velocity.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted{model * initial};</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// The prediction of the uncertainty: upper triangular by diagonal by lower</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">// triangular, plus diagonal, is dense.</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">const</span> <span class="keyword">auto</span> propagated{model * uncertainty * transposed(model) + process};</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">static_assert</span>(std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(predicted)&gt;, state&gt;);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">static_assert</span>(</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(propagated)&gt;, covariance&gt;);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::println(<span class="stringliteral">&quot;State: {}&quot;</span>, predicted);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  std::println(<span class="stringliteral">&quot;Uncertainty: {}&quot;</span>, propagated);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  assert((predicted == state{2.5, 3.}));</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  assert((propagated == covariance{4.5, 0.5, 0.5, 1.5}));</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}()};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">using </span><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40">sparse::upper_triangular</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">using </span>transition = <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, upper_triangular&lt;2&gt;</a>&gt;;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">using </span>noise = <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, diagonal&lt;2&gt;</a>&gt;;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">using </span>state = <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, dense&lt;2, 1&gt;</a>&gt;;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">using </span>covariance = <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, dense&lt;2, 2&gt;</a>&gt;;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">constexpr</span> <span class="keywordtype">double</span> period{0.5};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">// The bottom left element is a structural zero, without storage.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(transition) == 3 * <span class="keyword">sizeof</span>(double));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">const</span> transition model{1., period, 1.};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> state initial{1., 3.};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">const</span> noise uncertainty{4., 1.};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">const</span> noise process{0.25, 0.5};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// The prediction of the state: the position moves by the velocity.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted{model * initial};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// The prediction of the uncertainty: upper triangular by diagonal by lower</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// triangular, plus diagonal, is dense.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">const</span> <span class="keyword">auto</span> propagated{model * uncertainty * <a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(model) + process};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">static_assert</span>(std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(predicted)&gt;, state&gt;);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">static_assert</span>(</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(propagated)&gt;, covariance&gt;);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  std::println(<span class="stringliteral">&quot;State: {}&quot;</span>, predicted);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::println(<span class="stringliteral">&quot;Uncertainty: {}&quot;</span>, propagated);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  assert((predicted == state{2.5, 3.}));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  assert((propagated == covariance{4.5, 0.5, 0.5, 1.5}));</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}()};</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>} <span class="comment">// namespace</span></div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>} <span class="comment">// namespace fcarouge::sample</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>} <span class="comment">// namespace fcarouge::sample</span></div>
 <div class="ttc" id="aclassfcarouge_1_1not__realtime_xhtml"><div class="ttname"><a href="classfcarouge_1_1not__realtime.xhtml">fcarouge::not_realtime</a></div><div class="ttdoc">Opt-out token of the real-time verification.</div><div class="ttdef"><b>Definition</b> <a href="realtime_8hpp_source.xhtml#l00056">realtime.hpp:56</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00074">sparse_linear_algebra_forward.hpp:74</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sample_1_1anonymous__namespace_02constant__velocity_8cpp_03_xhtml_a2f9cf9e7a7a24b0d7d964300f68070e7"><div class="ttname"><a href="namespacefcarouge_1_1sample_1_1anonymous__namespace_02constant__velocity_8cpp_03.xhtml#a2f9cf9e7a7a24b0d7d964300f68070e7">fcarouge::sample::anonymous_namespace{constant_velocity.cpp}::sample</a></div><div class="ttdeci">const auto sample</div><div class="ttdef"><b>Definition</b> <a href="#l00052">constant_velocity.cpp:52</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sample_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sample.xhtml">fcarouge::sample</a></div><div class="ttdoc">Usage samples.</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a3715e2ca0db50b08c5067c3feefd2a40"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40">fcarouge::sparse::upper_triangular</a></div><div class="ttdeci">constexpr auto upper_triangular</div><div class="ttdoc">The main diagonal and above of a square matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00291">pattern.hpp:291</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_abf7018e0061f1e0506750ecc0d4d5882"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#abf7018e0061f1e0506750ecc0d4d5882">fcarouge::sparse::dense</a></div><div class="ttdeci">constexpr auto dense</div><div class="ttdoc">Every position is stored: a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00264">pattern.hpp:264</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_ae4a0cbe5582ab666b4aee74fbae8c260"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260">fcarouge::sparse::diagonal</a></div><div class="ttdeci">constexpr auto diagonal</div><div class="ttdoc">The main diagonal of a square matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00279">pattern.hpp:279</a></div></div>
+<div class="ttc" id="anamespacefcarouge_xhtml_ad91a08ee8a52749487475f762d82fe0d"><div class="ttname"><a href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed</a></div><div class="ttdeci">constexpr auto transposed(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; sparse_matrix&lt; Type, sparse::pattern_transpose&lt; Pattern &gt; &gt;</div></div>
 <div class="ttc" id="arealtime_8hpp_xhtml"><div class="ttname"><a href="realtime_8hpp.xhtml">realtime.hpp</a></div><div class="ttdoc">Opt-out of the real-time verification.</div></div>
 <div class="ttc" id="asparse__linear__algebra_8hpp_xhtml"><div class="ttname"><a href="sparse__linear__algebra_8hpp.xhtml">sparse_linear_algebra.hpp</a></div><div class="ttdoc">Compile-time sparsity pattern linear algebra.</div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1matrix_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1matrix.xhtml">fcarouge::sparse::matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00067">sparse_linear_algebra_forward.hpp:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

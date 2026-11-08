@@ -10,6 +10,7 @@ var utility_8hpp =
     [ "dot_terms", "utility_8hpp.xhtml#a88c2d25e777e6730b2b1b20c342c2584", null ],
     [ "is_dense", "utility_8hpp.xhtml#a57f3af2e66fea7ebfc78fe3d8796c85f", null ],
     [ "is_matrix", "utility_8hpp.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6", null ],
+    [ "is_matrix< sparse_matrix< Type, Pattern > >", "utility_8hpp.xhtml#acbfe222a437ae79d90dd8cede09c8195", null ],
     [ "projection", "utility_8hpp.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
     [ "term_count", "utility_8hpp.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ]
 ];

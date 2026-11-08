@@ -148,13 +148,12 @@ $(function(){initNavTree('heat_diffusion_8cpp-example.xhtml',''); initResizable(
 <div class="line">  <span class="keyword">const</span> not_realtime opt_out;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">using </span><a id="a0" name="a0"></a><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#abf7018e0061f1e0506750ecc0d4d5882">sparse::dense</a>;</div>
-<div class="line">  <span class="keyword">using </span>sparse::matrix;</div>
 <div class="line">  <span class="keyword">using </span><a id="a1" name="a1"></a><a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690">sparse::tridiagonal</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">constexpr</span> std::size_t cells{8};</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">using </span>stencil = matrix&lt;double, tridiagonal&lt;cells&gt;&gt;;</div>
-<div class="line">  <span class="keyword">using </span>temperatures = matrix&lt;double, dense&lt;cells, 1&gt;&gt;;</div>
+<div class="line">  <span class="keyword">using </span>stencil = sparse_matrix&lt;double, tridiagonal&lt;cells&gt;&gt;;</div>
+<div class="line">  <span class="keyword">using </span>temperatures = sparse_matrix&lt;double, dense&lt;cells, 1&gt;&gt;;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">constexpr</span> std::size_t stored{stencil::structure.count};</div>
 <div class="line"> </div>

@@ -2,7 +2,6 @@ var annotated_dup =
 [
     [ "fcarouge", "namespacefcarouge.xhtml", [
       [ "sparse", "namespacefcarouge_1_1sparse.xhtml", [
-        [ "matrix", "structfcarouge_1_1sparse_1_1matrix.xhtml", "structfcarouge_1_1sparse_1_1matrix" ],
         [ "pattern", "structfcarouge_1_1sparse_1_1pattern.xhtml", "structfcarouge_1_1sparse_1_1pattern" ],
         [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ],
         [ "structural_zero_t", "structfcarouge_1_1sparse_1_1structural__zero__t.xhtml", null ]
@@ -16,6 +15,7 @@ var annotated_dup =
         ] ],
         [ "counted", "structfcarouge_1_1test_1_1counted.xhtml", "structfcarouge_1_1test_1_1counted" ]
       ] ],
-      [ "not_realtime", "classfcarouge_1_1not__realtime.xhtml", "classfcarouge_1_1not__realtime" ]
+      [ "not_realtime", "classfcarouge_1_1not__realtime.xhtml", "classfcarouge_1_1not__realtime" ],
+      [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml", "classfcarouge_1_1sparse__matrix" ]
     ] ]
 ];

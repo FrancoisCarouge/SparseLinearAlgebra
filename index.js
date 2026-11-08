@@ -7,7 +7,7 @@ var index =
       [ "Include", "index.xhtml#include", null ],
       [ "Namespace", "index.xhtml#namespace", null ],
       [ "Samples", "index.xhtml#samples", null ],
-      [ "Class Matrix", "index.xhtml#class-matrix", [
+      [ "Class Sparse Matrix", "index.xhtml#class-sparse-matrix", [
         [ "Declaration", "index.xhtml#declaration", null ],
         [ "Template Parameters", "index.xhtml#template-parameters", null ],
         [ "Member Variables", "index.xhtml#member-variables", null ],
