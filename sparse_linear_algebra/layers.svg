@@ -23,7 +23,7 @@
 
   <!-- Optional libraries -->
   <rect class="layer" x="24" y="92" width="832" height="60" rx="6" fill="#f6f8fa" stroke="#d1d9e0"/>
-  <text class="ink" x="40" y="117" font-size="15" font-weight="600" fill="#1f2328">Typed Linear Algebra · Kalman</text>
+  <text class="ink" x="40" y="117" font-size="15" font-weight="600" fill="#1f2328">Typed linear algebra · State estimation</text>
   <text class="muted" x="40" y="137" font-size="12" fill="#59636e">optional strongly-typed elements and state estimation, planned</text>
   <text class="ink" x="840" y="127" font-size="13" text-anchor="end" fill="#1f2328">units · axes · frames · filters</text>
 

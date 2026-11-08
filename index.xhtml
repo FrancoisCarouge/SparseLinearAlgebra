@@ -139,7 +139,7 @@ Include</h2>
 </div><!-- fragment --><p>The library is header-only and has no dependency. A single-header amalgamation, <code>sparse_linear_algebra.h</code>, is also <a href="https://francoiscarouge.github.io/SparseLinearAlgebra/amalgamate/fcarouge/sparse_linear_algebra.h">published</a>.</p>
 <h2><a class="anchor" id="namespace"></a>
 Namespace</h2>
-<p>The <code>sparse_matrix</code> class and its operations live in the <code>fcarouge</code> namespace, as TypedLinearAlgebra's <code>typed_matrix</code> and Kalman's <code>kalman</code> do. The patterns, their algebra, and the <code>0_o</code> structural zero literal live in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
+<p>The <code>sparse_matrix</code> class and its operations live in the <code>fcarouge</code> namespace. The patterns, their algebra, and the <code>0_o</code> structural zero literal live in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
 <h2><a class="anchor" id="samples"></a>
 Samples</h2>
 <table class="markdownTable">
@@ -413,7 +413,7 @@ Use Cases</h2>
 <li><b>Guidance, navigation, and control</b>: decoupled axes and cascaded loops whose gain and dynamics matrices are block or band structured.</li>
 <li><b>Simulation</b>: finite difference stencils, banded Jacobians, and explicit time integration.</li>
 <li><b>Robotics</b>: kinematic chains whose Jacobians only couple neighboring joints.</li>
-<li><b>Linear algebra backend</b>: a storage of fixed patterns beneath a typed linear algebra facade, such as <a href="https://github.com/FrancoisCarouge/TypedLinearAlgebra">TypedLinearAlgebra</a>.</li>
+<li><b>Linear algebra backend</b>: a storage of fixed patterns beneath a typed linear algebra facade.</li>
 </ul>
 <h2><a class="anchor" id="notes"></a>
 Notes</h2>
@@ -428,10 +428,10 @@ Notes</h2>
 </ul>
 <h2><a class="anchor" id="roadmap--vision"></a>
 Roadmap &amp; Vision</h2>
-<p>The library's patterns, pattern algebra, and matrix are stable in practice but not yet frozen. The longer-term ambition is to be the compile-time sparse storage beneath the <a href="https://github.com/FrancoisCarouge/TypedLinearAlgebra">TypedLinearAlgebra</a> facade, where dimensional and semantic type safety meets structural sparsity, and beneath the <a href="https://github.com/FrancoisCarouge/Kalman">Kalman</a> filters.</p>
+<p>The library's patterns, pattern algebra, and matrix are stable in practice but not yet frozen. The longer-term ambition is to be the compile-time sparse storage beneath typed linear algebra facades, where dimensional and semantic type safety meets structural sparsity, and beneath state estimation filters.</p>
 <p>Toward version 1.0:</p>
 <ul>
-<li>Integrate as a TypedLinearAlgebra backend, with its strong element types.</li>
+<li>Integrate as a typed linear algebra backend, with strong element types.</li>
 <li>Solve: triangular substitutions and factorizations, for the matrix division.</li>
 <li>Interoperate with <code>std::mdspan</code> and the <code>std::linalg</code> out-parameter algorithms.</li>
 <li>Compose block patterns from smaller patterns.</li>
