@@ -63,10 +63,14 @@ namespace sparse {
 //! @brief Concept of a compile-time sparsity pattern.
 template <typename Type>
 concept sparsity_pattern = sla::is_pattern<std::remove_cv_t<Type>>;
-
 } // namespace sparse
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+// The sparsity pattern is constrained by a requires-clause rather than by a
+// constrained placeholder, `sparse::sparsity_pattern auto Pattern`: MSVC does
+// not match the out-of-class definitions of the members of a class template
+// with a constrained placeholder template parameter to their declarations.
+template <typename Type, auto Pattern>
+  requires sparse::sparsity_pattern<decltype(Pattern)>
 class sparse_matrix;
 } // namespace fcarouge
 

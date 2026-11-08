@@ -83,7 +83,8 @@ Also documented in the [fcarouge/sparse_linear_algebra.hpp](https://github.com/F
 
 ```cpp
 namespace fcarouge {
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, auto Pattern>
+  requires sparse::sparsity_pattern<decltype(Pattern)>
 class sparse_matrix;
 }
 ```
