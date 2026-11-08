@@ -38,7 +38,7 @@ For more information, please refer to <https://unlicense.org> */
 #include <array>
 #include <cstddef>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief The infinity norm of a matrix: its largest absolute row sum.
 //!
 //! @details Of every shape, a vector included: the infinity norm of a row
@@ -48,7 +48,7 @@ namespace fcarouge::sparse {
 //! @see std::linalg::matrix_inf_norm
 //!
 //! @complexity Linear in the count of stored elements and of rows.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   std::array<Type, Pattern.rows> sums{};
@@ -64,6 +64,6 @@ matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
 
   return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MATRIX_INF_NORM_TPP

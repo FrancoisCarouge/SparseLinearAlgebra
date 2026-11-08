@@ -38,7 +38,6 @@ For more information, please refer to <https://unlicense.org> */
 namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
-using sparse::sparse_matrix;
 using sparse::tridiagonal;
 
 using storage = sparse_matrix<double, tridiagonal<3>>;

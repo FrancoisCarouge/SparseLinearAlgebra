@@ -37,7 +37,8 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief Francois Carouge's projects namespace.
 //!
 //! @details The definitions and implementations of the library intended for
-//! public usage. Lowers the name conflict probability in large projects. Use
+//! public usage: the sparse matrix and its operations, as the typed matrix of
+//! TypedLinearAlgebra and the filter of Kalman. Lowers the name conflict probability in large projects. Use
 //! using-declarations or namespace-alias-definition per your project
 //! guidelines.
 
@@ -45,15 +46,16 @@ For more information, please refer to <https://unlicense.org> */
 //!
 //! @brief Sparse linear algebra public namespace.
 //!
-//! @details The patterns, the matrix, and their operations, apart from the
-//! other projects' definitions of the `fcarouge` namespace.
+//! @details The patterns, their algebra, and the construction of a matrix from
+//! them, apart from the other projects' definitions of the `fcarouge`
+//! namespace.
 
 //! @namespace fcarouge::sparse_linear_algebra
 //!
 //! @brief Sparse linear algebra library namespace.
 //!
 //! @details Scopes the library's implementation details apart from the
-//! public definitions of the `fcarouge::sparse` namespace.
+//! public definitions of the `fcarouge` and `fcarouge::sparse` namespaces.
 
 //! @namespace fcarouge::sparse_linear_algebra::internal
 //!

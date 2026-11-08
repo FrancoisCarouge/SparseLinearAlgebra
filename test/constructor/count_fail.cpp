@@ -39,9 +39,8 @@ namespace {
 //! zero, does not compile: only the stored elements are given.
 [[maybe_unused]] const auto test{[] -> int {
   // Intended:
-  // const sparse::sparse_matrix<double, sparse::diagonal<2>> value{1., 2.};
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> value{1., 0., 0.,
-                                                                 2.};
+  // const sparse_matrix<double, sparse::diagonal<2>> value{1., 2.};
+  const sparse_matrix<double, sparse::diagonal<2>> value{1., 0., 0., 2.};
 
   assert((value.at<0, 0>() == 1.));
 

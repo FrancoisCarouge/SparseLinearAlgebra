@@ -44,37 +44,37 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 #include <type_traits>
 
-namespace fcarouge::sparse {
-template <typename Type, sparsity_pattern auto Pattern>
+namespace fcarouge {
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 template <std::same_as<Type>... Values>
   requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored)
     : values{stored...} {}
 
-template <typename Type, sparsity_pattern auto Pattern>
-template <sparsity_pattern auto Other>
-  requires is_subset_of<Other, Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <sparse::sparsity_pattern auto Other>
+  requires sparse::is_subset_of<Other, Pattern>
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
     const sparse_matrix<Type, Other> &other) {
   for (std::size_t i{0}; i < Pattern.count; ++i) {
     const std::size_t index{sla::projection<Other, Pattern>[i]};
 
-    if (index != absent) {
+    if (index != sparse::absent) {
       values[i] = other.values[index];
     }
   }
 }
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 constexpr auto
 sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                          std::size_t column) const -> Type {
   const std::size_t index{Pattern.index_of(row, column)};
 
-  return index == absent ? Type{} : values[index];
+  return index == sparse::absent ? Type{} : values[index];
 }
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 constexpr auto sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                                         std::size_t column)
     -> Type &
@@ -83,7 +83,7 @@ constexpr auto sparse_matrix<Type, Pattern>::operator[](std::size_t row,
   return values[(row * Pattern.columns) + column];
 }
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::operator[](
@@ -92,7 +92,7 @@ constexpr auto sparse_matrix<Type, Pattern>::operator[](
   return at<Row, Column>();
 }
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::at() -> Type & {
@@ -101,18 +101,18 @@ constexpr auto sparse_matrix<Type, Pattern>::at() -> Type & {
   return values[index];
 }
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 template <std::size_t Row, std::size_t Column>
   requires(Row < Pattern.rows and Column < Pattern.columns)
 constexpr auto sparse_matrix<Type, Pattern>::at() const -> Type {
   static constexpr std::size_t index{Pattern.index_of(Row, Column)};
 
-  if constexpr (index == absent) {
+  if constexpr (index == sparse::absent) {
     return Type{};
   } else {
     return values[index];
   }
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_SPARSE_LINEAR_ALGEBRA_TPP

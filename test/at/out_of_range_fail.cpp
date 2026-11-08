@@ -42,7 +42,7 @@ namespace {
   using zero = std::integral_constant<std::size_t, 0>;
   using one = std::integral_constant<std::size_t, 1>;
 
-  sparse::sparse_matrix<double, sparse::diagonal<2>> value;
+  sparse_matrix<double, sparse::diagonal<2>> value;
 
   // Intended:
   // value.at<1, 1>() = 1.;

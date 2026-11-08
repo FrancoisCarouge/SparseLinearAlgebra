@@ -64,7 +64,7 @@ The library is header-only and has no dependency. A single-header amalgamation, 
 
 ### Namespace
 
-The public API lives in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
+The `sparse_matrix` class and its operations live in the `fcarouge` namespace, as TypedLinearAlgebra's `typed_matrix` and Kalman's `kalman` do. The patterns, their algebra, and `make_matrix` live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
 
 ### Samples
 
@@ -82,8 +82,8 @@ Also documented in the [fcarouge/sparse_linear_algebra.hpp](https://github.com/F
 #### Declaration
 
 ```cpp
-namespace fcarouge::sparse {
-template <typename Type, sparsity_pattern auto Pattern>
+namespace fcarouge {
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 class sparse_matrix;
 }
 ```
@@ -247,7 +247,7 @@ The rejections of the writes and of the constructions are compile errors, which 
 
 ### Operations
 
-The operations below are supported, each as a function or an operator of the `fcarouge::sparse` namespace, found by argument-dependent lookup. `K` is the count of stored elements, `R` and `C` the counts of rows and columns, and `T` the [`product_term_count`](#pattern-algebra). Each result pattern is computed at compile time. The algorithms mirror the names of the C++26 standard linear algebra library, `std::linalg`, and return their results by value.
+The operations below are supported, each as a function or an operator of the `fcarouge` namespace, found by argument-dependent lookup on `sparse_matrix`. `K` is the count of stored elements, `R` and `C` the counts of rows and columns, and `T` the [`product_term_count`](#pattern-algebra). Each result pattern is computed at compile time. The algorithms mirror the names of the C++26 standard linear algebra library, `std::linalg`, and return their results by value.
 
 | Operation | Result Pattern | Run-Time Complexity |
 | --- | --- | --- |

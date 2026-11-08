@@ -37,7 +37,6 @@ namespace fcarouge::test {
 namespace {
 using sparse::dense;
 using sparse::diagonal;
-using sparse::sparse_matrix;
 using sparse::tridiagonal;
 
 //! @test Verifies a matrix converts implicitly when it cannot lose an element:

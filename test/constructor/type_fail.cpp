@@ -39,8 +39,8 @@ namespace {
 //! compile: a conversion must be decided by the end-user.
 [[maybe_unused]] const auto test{[] -> int {
   // Intended:
-  // const sparse::sparse_matrix<double, sparse::diagonal<2>> value{1., 2.};
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> value{1.F, 2.F};
+  // const sparse_matrix<double, sparse::diagonal<2>> value{1., 2.};
+  const sparse_matrix<double, sparse::diagonal<2>> value{1.F, 2.F};
 
   assert((value.at<0, 0>() == 1.));
 

@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies an assignment to the structural zero of a singleton does not
 //! compile.
 [[maybe_unused]] const auto test{[] -> int {
-  sparse::sparse_matrix<double, sparse::zero<1, 1>> value;
+  sparse_matrix<double, sparse::zero<1, 1>> value;
 
   // Intended:
   // assert((value.at<0, 0>() == 0.));

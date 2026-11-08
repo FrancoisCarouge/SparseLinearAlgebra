@@ -76,8 +76,8 @@ inline constexpr auto ascending{make_pattern<2, 2>({{0, 0}, {1, 1}})};
 inline constexpr auto descending{make_pattern<2, 2>({{1, 1}, {0, 0}})};
 
 static_assert(ascending == descending);
-static_assert(std::same_as<sparse::sparse_matrix<double, ascending>,
-                           sparse::sparse_matrix<double, descending>>);
+static_assert(std::same_as<sparse_matrix<double, ascending>,
+                           sparse_matrix<double, descending>>);
 
 //! @test Verifies an empty pattern stores nothing.
 inline constexpr auto empty{make_pattern<2, 3>()};

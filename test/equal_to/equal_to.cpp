@@ -45,7 +45,6 @@ namespace {
 
   using sparse::dense;
   using sparse::diagonal;
-  using sparse::sparse_matrix;
 
   const sparse_matrix<double, diagonal<2>> narrow{1., 2.};
   const sparse_matrix<double, dense<2, 2>> wide{1., 0., 0., 2.};

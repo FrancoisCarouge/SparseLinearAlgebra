@@ -39,7 +39,7 @@ namespace {
 static_assert(__STDC_HOSTED__ == 0);
 #endif
 
-using band_matrix = sparse::sparse_matrix<double, sparse::tridiagonal<3>>;
+using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
 
 inline constexpr band_matrix band{1., 2., 3., 4., 5., 6., 7.};
 
@@ -56,12 +56,11 @@ static_assert(band == band_matrix{1., 2., 3., 4., 5., 6., 7.});
 static_assert(matrix_one_norm(band) == 12.);
 static_assert(matrix_inf_norm(band) == 13.);
 static_assert(
-    matrix_frob_norm(sparse::sparse_matrix<
-                     double, sparse::make_pattern<2, 2>({{0, 1}, {1, 0}})>{
-        3., 4.}) == 5.);
-static_assert(dot(sparse::sparse_matrix<double, sparse::dense<2, 1>>{3., 4.},
-                  sparse::sparse_matrix<double, sparse::dense<1, 2>>{3., 4.}) ==
-              25.);
+    matrix_frob_norm(
+        sparse_matrix<double, sparse::make_pattern<2, 2>({{0, 1}, {1, 0}})>{
+            3., 4.}) == 5.);
+static_assert(dot(sparse_matrix<double, sparse::dense<2, 1>>{3., 4.},
+                  sparse_matrix<double, sparse::dense<1, 2>>{3., 4.}) == 25.);
 static_assert(sparse::make_matrix<band_matrix>(1., 2., sparse::structural_zero,
                                                3., 4., 5.,
                                                sparse::structural_zero, 6.,

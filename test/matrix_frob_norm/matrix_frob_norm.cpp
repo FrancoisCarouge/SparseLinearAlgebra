@@ -46,7 +46,6 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
 
   const sparse_matrix<double,
                       make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>

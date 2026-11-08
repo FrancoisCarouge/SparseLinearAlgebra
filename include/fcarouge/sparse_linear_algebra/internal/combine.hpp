@@ -52,13 +52,12 @@ namespace fcarouge::sparse_linear_algebra::internal {
 //! @param rhs_only The operation on the elements stored by the rhs matrix only.
 //! An element stored by the lhs matrix only is kept as-is.
 template <typename Type, auto Lhs, auto Rhs>
-[[nodiscard]] constexpr auto
-combine(const sparse::sparse_matrix<Type, Lhs> &lhs,
-        const sparse::sparse_matrix<Type, Rhs> &rhs, const auto &both,
-        const auto &rhs_only)
-    -> sparse::sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
+[[nodiscard]] constexpr auto combine(const sparse_matrix<Type, Lhs> &lhs,
+                                     const sparse_matrix<Type, Rhs> &rhs,
+                                     const auto &both, const auto &rhs_only)
+    -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
   constexpr auto combined{sparse::pattern_union<Lhs, Rhs>};
-  sparse::sparse_matrix<Type, combined> result;
+  sparse_matrix<Type, combined> result;
 
   for (std::size_t i{0}; i < combined.count; ++i) {
     const std::size_t lhs_index{projection<Lhs, combined>[i]};

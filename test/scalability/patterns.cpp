@@ -50,7 +50,7 @@ static_assert(sparse::product_term_count<wide, wide> == 890);
 static_assert(sparse::pattern_product<wide, wide>.count == 494);
 
 //! @test Verifies a matrix of that scale only stores its elements.
-using matrix_type = sparse::sparse_matrix<double, wide>;
+using matrix_type = sparse_matrix<double, wide>;
 
 static_assert(sizeof(matrix_type) == 298 * sizeof(double));
 
@@ -58,7 +58,7 @@ static_assert(sizeof(matrix_type) == 298 * sizeof(double));
 //! evaluation: a tridiagonal squared is pentadiagonal, and the identity is
 //! neutral.
 inline constexpr auto square{[] -> auto {
-  sparse::sparse_matrix<double, wide> value;
+  sparse_matrix<double, wide> value;
 
   for (auto &element : value.values) {
     element = 2.;
@@ -75,7 +75,7 @@ static_assert(square[0, 3] == 0.);
 static_assert(square[99, 99] == 8.);
 
 inline constexpr auto identity{[] -> auto {
-  sparse::sparse_matrix<double, sparse::diagonal<size>> value;
+  sparse_matrix<double, sparse::diagonal<size>> value;
 
   for (auto &element : value.values) {
     element = 1.;
@@ -84,9 +84,8 @@ inline constexpr auto identity{[] -> auto {
   return value;
 }()};
 
-static_assert(
-    std::same_as<decltype(identity * square),
-                 sparse::sparse_matrix<double, decltype(square)::structure>>);
+static_assert(std::same_as<decltype(identity * square),
+                           sparse_matrix<double, decltype(square)::structure>>);
 static_assert(identity * square == square);
 static_assert(square * identity == square);
 } // namespace

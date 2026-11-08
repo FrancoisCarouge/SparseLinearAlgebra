@@ -38,8 +38,8 @@ namespace {
 //! @test Verifies matrices of different element types do not mix: a
 //! conversion must be decided by the end-user.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
-  const sparse::sparse_matrix<float, sparse::diagonal<2>> rhs{1.F, 1.F};
+  const sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
+  const sparse_matrix<float, sparse::diagonal<2>> rhs{1.F, 1.F};
 
   // Intended:
   // const auto sum{lhs + lhs};

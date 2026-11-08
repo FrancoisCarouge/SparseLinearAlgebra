@@ -34,11 +34,11 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief Negation, of the same pattern.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 operator-(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, Pattern> {
@@ -50,6 +50,6 @@ operator-(const sparse_matrix<Type, Pattern> &value)
 
   return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MINUS_TPP

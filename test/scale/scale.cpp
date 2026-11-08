@@ -46,10 +46,9 @@ namespace {
 
   assert(run_time == 0);
 
-  using tridiagonal_matrix =
-      sparse::sparse_matrix<double, sparse::tridiagonal<3>>;
+  using tridiagonal_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
   using column_vector =
-      sparse::sparse_matrix<double, sparse::make_pattern<3, 1>({{1, 0}})>;
+      sparse_matrix<double, sparse::make_pattern<3, 1>({{1, 0}})>;
 
   const tridiagonal_matrix value{1., 2., 3., 4., 5., 6., 7.};
   const tridiagonal_matrix zero_value;

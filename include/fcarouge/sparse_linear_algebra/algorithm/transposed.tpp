@@ -38,7 +38,7 @@ For more information, please refer to <https://unlicense.org> */
 #include <array>
 #include <cstddef>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief The transposed matrix, of the transposed pattern.
 //!
 //! @details Returns a matrix, by value, rather than a view.
@@ -46,11 +46,11 @@ namespace fcarouge::sparse {
 //! @see std::linalg::transposed
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 transposed(const sparse_matrix<Type, Pattern> &value)
-    -> sparse_matrix<Type, pattern_transpose<Pattern>> {
-  constexpr auto mirrored{pattern_transpose<Pattern>};
+    -> sparse_matrix<Type, sparse::pattern_transpose<Pattern>> {
+  constexpr auto mirrored{sparse::pattern_transpose<Pattern>};
   constexpr auto indexes{[&mirrored]->std::array<std::size_t, Pattern.count>{
       std::array<std::size_t, Pattern.count> result{};
 
@@ -62,7 +62,7 @@ transposed(const sparse_matrix<Type, Pattern> &value)
   return result;
 }
 ()
-}; // namespace fcarouge::sparse
+}; // namespace fcarouge
 sparse_matrix<Type, mirrored> result;
 
 for (std::size_t i{0}; i < Pattern.count; ++i) {
@@ -71,6 +71,6 @@ for (std::size_t i{0}; i < Pattern.count; ++i) {
 
 return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_TRANSPOSED_TPP

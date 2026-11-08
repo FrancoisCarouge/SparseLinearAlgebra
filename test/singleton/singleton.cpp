@@ -43,8 +43,8 @@ namespace {
 
   assert(run_time == 0);
 
-  using singleton = sparse::sparse_matrix<double, sparse::dense<1, 1>>;
-  using empty_singleton = sparse::sparse_matrix<double, sparse::zero<1, 1>>;
+  using singleton = sparse_matrix<double, sparse::dense<1, 1>>;
+  using empty_singleton = sparse_matrix<double, sparse::zero<1, 1>>;
 
   singleton value{2.};
   const singleton other{5.};

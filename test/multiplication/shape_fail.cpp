@@ -38,8 +38,8 @@ namespace {
 //! @test Verifies the multiplication rejects a mismatch of the shapes, whatever
 //! the patterns.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
-  const sparse::sparse_matrix<double, sparse::diagonal<3>> rhs{1., 1., 1.};
+  const sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
+  const sparse_matrix<double, sparse::diagonal<3>> rhs{1., 1., 1.};
 
   // Intended:
   // const auto product{lhs * lhs};

@@ -37,8 +37,8 @@ namespace {
 //! compile.
 
 // Intended:
-// [[maybe_unused]] const sparse::sparse_matrix<double, sparse::dense<2, 2>>
+// [[maybe_unused]] const sparse_matrix<double, sparse::dense<2, 2>>
 // value;
-[[maybe_unused]] const sparse::sparse_matrix<double, 4> value;
+[[maybe_unused]] const sparse_matrix<double, 4> value;
 } // namespace
 } // namespace fcarouge::test

@@ -39,7 +39,6 @@ For more information, please refer to <https://unlicense.org> */
 namespace fcarouge::test {
 namespace {
 using sparse::make_pattern;
-using sparse::sparse_matrix;
 
 using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
 using column = sparse_matrix<double, make_pattern<2, 1>({{1, 0}})>;

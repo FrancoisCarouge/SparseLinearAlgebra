@@ -54,7 +54,6 @@ namespace {
 
   using sparse::dense;
   using sparse::diagonal;
-  using sparse::sparse_matrix;
   using sparse::upper_triangular;
 
   using transition = sparse_matrix<double, upper_triangular<2>>;
