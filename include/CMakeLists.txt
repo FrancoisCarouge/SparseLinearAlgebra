@@ -51,7 +51,6 @@ target_sources(
       "fcarouge/sparse_linear_algebra/format.tpp"
       "fcarouge/sparse_linear_algebra/internal/combine.hpp"
       "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-      "fcarouge/sparse_linear_algebra/make_matrix.hpp"
       "fcarouge/sparse_linear_algebra/pattern.hpp"
       "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
       "fcarouge/sparse_linear_algebra/sparse_linear_algebra.tpp"

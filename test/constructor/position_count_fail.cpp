@@ -1,4 +1,4 @@
-#[[ Sparse Linear Algebra
+/* Sparse Linear Algebra
 Version 0.1.0
 https://github.com/FrancoisCarouge/SparseLinearAlgebra
 
@@ -27,12 +27,29 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <https://unlicense.org> ]]
+For more information, please refer to <https://unlicense.org> */
 
-fail("count_fail")
-fail("matrix_fail")
-fail("structural_zero_fail")
-fail("type_fail")
-fail("value_fail")
-fail("zero_literal_fail")
-pass("make_matrix")
+#include "fcarouge/sparse_linear_algebra.hpp"
+
+#include <cassert>
+
+namespace fcarouge::test {
+namespace {
+//! @test Verifies a count of values other than the count of positions, or of
+//! stored elements, does not compile.
+[[maybe_unused]] const auto test{[] -> int {
+  using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
+
+  using sparse::literals::operator""_o;
+
+  // Intended:
+  // const diagonal_matrix value{1., 0_o,
+  //                             0_o, 2.};
+  const diagonal_matrix value{1., 0_o, 2.};
+
+  assert((value.at<1, 1>() == 2.));
+
+  return 0;
+}()};
+} // namespace
+} // namespace fcarouge::test

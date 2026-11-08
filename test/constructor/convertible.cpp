@@ -69,5 +69,25 @@ static_assert(not std::constructible_from<sparse_matrix<double, diagonal<2>>,
                                           double, double, double>);
 static_assert(
     not std::constructible_from<sparse_matrix<double, diagonal<2>>, double>);
+
+//! @test Verifies the construction from every position is explicit, of exactly
+//! the element type at a stored element, and of `0_o` at a structural zero.
+using structural_zero = sparse_linear_algebra::internal::structural_zero;
+
+static_assert(
+    std::constructible_from<sparse_matrix<double, diagonal<2>>, double,
+                            structural_zero, structural_zero, double>);
+static_assert(
+    not std::constructible_from<sparse_matrix<double, diagonal<2>>, int,
+                                structural_zero, structural_zero, double>);
+static_assert(
+    not std::constructible_from<sparse_matrix<double, diagonal<2>>, double,
+                                double, structural_zero, double>);
+static_assert(not std::convertible_to<
+              structural_zero, sparse_matrix<double, sparse::zero<1, 1>>>);
+
+//! @test Verifies a pattern without a structural zero takes no `0_o`.
+static_assert(not std::constructible_from<sparse_matrix<double, dense<1, 2>>,
+                                          double, structural_zero>);
 } // namespace
 } // namespace fcarouge::test

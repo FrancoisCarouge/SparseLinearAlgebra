@@ -50,7 +50,6 @@ For more information, please refer to <https://unlicense.org> */
 //! example `0 * infinity` is never computed, and is not a not-a-number value.
 
 #include "sparse_linear_algebra/internal/utility.hpp"
-#include "sparse_linear_algebra/make_matrix.hpp"
 #include "sparse_linear_algebra/pattern.hpp"
 #include "sparse_linear_algebra/pattern_algebra.hpp"
 #include "sparse_linear_algebra_forward.hpp"
@@ -59,6 +58,25 @@ For more information, please refer to <https://unlicense.org> */
 #include <concepts>
 #include <cstddef>
 #include <type_traits>
+
+namespace fcarouge::sparse::literals {
+//! @name Literals
+//! @{
+
+//! @brief The structural zero literal, the value of a structural zero in a
+//! construction from every position: `0_o`, or `0._o`.
+//!
+//! @details Does not participate in overload resolution unless the literal is
+//! a zero: `1_o` does not compile.
+template <char... Characters>
+  requires sparse_linear_algebra::internal::is_zero_literal<Characters...>
+[[nodiscard]] consteval auto operator""_o() noexcept
+    -> sparse_linear_algebra::internal::structural_zero {
+  return {};
+}
+
+//! @}
+} // namespace fcarouge::sparse::literals
 
 namespace fcarouge {
 //! @name Types
@@ -105,6 +123,24 @@ public:
   template <std::same_as<Type>... Values>
     requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
   constexpr explicit sparse_matrix(const Values &...stored);
+
+  //! @brief Construct from every position, in row-major order: the matrix as
+  //! it reads.
+  //!
+  //! @details Each stored element is exactly of the element type, and each
+  //! structural zero is the `0_o` literal: a value at a structural zero, even
+  //! a zero, does not compile, nor does `0_o` at a stored element. A pattern
+  //! without a structural zero is constructed from its stored elements.
+  //!
+  //! @param elements The value of each position, in row-major order.
+  //!
+  //! @complexity Linear in the count of positions.
+  template <typename... Values>
+    requires(
+        sizeof...(Values) == Pattern.rows * Pattern.columns and
+        not sparse_linear_algebra::internal::is_dense<Pattern> and
+        sparse_linear_algebra::internal::are_given<Type, Pattern, Values...>)
+  constexpr explicit sparse_matrix(const Values &...elements);
 
   //! @brief Convert from a matrix whose stored positions are all stored by
   //! this pattern, which cannot lose an element.
