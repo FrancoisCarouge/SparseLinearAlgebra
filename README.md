@@ -64,7 +64,7 @@ The library is header-only and has no dependency. A single-header amalgamation, 
 
 ### Namespace
 
-The `sparse_matrix` class and its operations live in the `fcarouge` namespace, as TypedLinearAlgebra's `typed_matrix` and Kalman's `kalman` do. The patterns, their algebra, and the `0_o` structural zero literal live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
+The `sparse_matrix` class and its operations live in the `fcarouge` namespace. The patterns, their algebra, and the `0_o` structural zero literal live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
 
 ### Samples
 
@@ -287,7 +287,7 @@ The library serves fixed-size computations whose structure is known at compile t
 - **Guidance, navigation, and control**: decoupled axes and cascaded loops whose gain and dynamics matrices are block or band structured.
 - **Simulation**: finite difference stencils, banded Jacobians, and explicit time integration.
 - **Robotics**: kinematic chains whose Jacobians only couple neighboring joints.
-- **Linear algebra backend**: a storage of fixed patterns beneath a typed linear algebra facade, such as [TypedLinearAlgebra](https://github.com/FrancoisCarouge/TypedLinearAlgebra).
+- **Linear algebra backend**: a storage of fixed patterns beneath a typed linear algebra facade.
 
 ### Notes
 
@@ -301,11 +301,11 @@ The library serves fixed-size computations whose structure is known at compile t
 
 ### Roadmap & Vision
 
-The library's patterns, pattern algebra, and matrix are stable in practice but not yet frozen. The longer-term ambition is to be the compile-time sparse storage beneath the [TypedLinearAlgebra](https://github.com/FrancoisCarouge/TypedLinearAlgebra) facade, where dimensional and semantic type safety meets structural sparsity, and beneath the [Kalman](https://github.com/FrancoisCarouge/Kalman) filters.
+The library's patterns, pattern algebra, and matrix are stable in practice but not yet frozen. The longer-term ambition is to be the compile-time sparse storage beneath typed linear algebra facades, where dimensional and semantic type safety meets structural sparsity, and beneath state estimation filters.
 
 Toward version 1.0:
 
-- Integrate as a TypedLinearAlgebra backend, with its strong element types.
+- Integrate as a typed linear algebra backend, with strong element types.
 - Solve: triangular substitutions and factorizations, for the matrix division.
 - Interoperate with `std::mdspan` and the `std::linalg` out-parameter algorithms.
 - Compose block patterns from smaller patterns.
