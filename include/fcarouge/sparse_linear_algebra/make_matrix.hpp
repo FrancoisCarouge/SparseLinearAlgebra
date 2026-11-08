@@ -68,8 +68,9 @@ namespace sparse::literals {
 //! @details Does not participate in overload resolution unless the literal is
 //! a zero: `1_o` does not compile.
 template <char... Characters>
-  requires sla::is_zero_literal<Characters...>
-[[nodiscard]] consteval auto operator""_o() noexcept -> sla::structural_zero {
+  requires sparse_linear_algebra::internal::is_zero_literal<Characters...>
+[[nodiscard]] consteval auto operator""_o() noexcept
+    -> sparse_linear_algebra::internal::structural_zero {
   return {};
 }
 
@@ -145,16 +146,17 @@ namespace sparse {
 //!
 //! @complexity Linear in the count of positions.
 template <typename Matrix, typename... Values>
-  requires sla::is_matrix<Matrix> and
+  requires sparse_linear_algebra::internal::is_matrix<Matrix> and
            (sizeof...(Values) ==
             Matrix::structure.rows * Matrix::structure.columns) and
-           sla::are_given<Matrix, Values...>
+           sparse_linear_algebra::internal::are_given<Matrix, Values...>
 [[nodiscard]] constexpr auto make_matrix(const Values &...values) -> Matrix {
   Matrix result;
 
   [&result, &values...]<std::size_t... Positions>(
       std::index_sequence<Positions...>) -> void {
-    (sla::write_given<Positions>(result, values), ...);
+    (sparse_linear_algebra::internal::write_given<Positions>(result, values),
+     ...);
   }(std::index_sequence_for<Values...>{});
 
   return result;

@@ -209,7 +209,7 @@ template <std::size_t Rows, std::size_t Columns, std::size_t Count>
     std::size_t j{i};
 
     if (value.row >= Rows || value.column >= Columns) {
-      sla::position_out_of_range_or_duplicate();
+      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
     }
 
     for (; j > 0 && value < result.positions[j - 1]; --j) {
@@ -217,7 +217,7 @@ template <std::size_t Rows, std::size_t Columns, std::size_t Count>
     }
 
     if (j > 0 && value == result.positions[j - 1]) {
-      sla::position_out_of_range_or_duplicate();
+      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
     }
 
     result.positions[j] = value;
@@ -261,7 +261,8 @@ template <std::size_t Rows, std::size_t Columns, auto Predicate>
 
 //! @brief Every position is stored: a matrix without structural zeros.
 template <std::size_t Rows, std::size_t Columns>
-inline constexpr auto dense{generate<Rows, Columns, sla::every>()};
+inline constexpr auto dense{
+    generate<Rows, Columns, sparse_linear_algebra::internal::every>()};
 
 //! @brief No position is stored: the zero matrix.
 template <std::size_t Rows, std::size_t Columns>
@@ -272,7 +273,8 @@ inline constexpr auto zero{make_pattern<Rows, Columns>()};
 template <std::size_t Rows, std::size_t Columns, std::size_t Lower,
           std::size_t Upper>
 inline constexpr auto banded{
-    generate<Rows, Columns, sla::within_band<Lower, Upper>>()};
+    generate<Rows, Columns,
+             sparse_linear_algebra::internal::within_band<Lower, Upper>>()};
 
 //! @brief The main diagonal of a square matrix.
 template <std::size_t Size>

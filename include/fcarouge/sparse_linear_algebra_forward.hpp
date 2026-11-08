@@ -42,30 +42,23 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 #include <type_traits>
 
-namespace fcarouge {
-namespace sparse {
+namespace fcarouge::sparse {
 struct position;
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>
 struct pattern;
-} // namespace sparse
 
-namespace sparse_linear_algebra::internal {
-struct structural_zero;
-
-template <typename Type> inline constexpr bool is_pattern{false};
-
-template <std::size_t Rows, std::size_t Columns, std::size_t Count>
-inline constexpr bool is_pattern<sparse::pattern<Rows, Columns, Count>>{true};
-} // namespace sparse_linear_algebra::internal
-
-namespace sla = sparse_linear_algebra::internal;
-
-namespace sparse {
 //! @brief Concept of a compile-time sparsity pattern.
+//!
+//! @details A pattern, of any count of rows, columns, and stored elements:
+//! the deduction of the arguments of a pattern from the type.
 template <typename Type>
-concept sparsity_pattern = sla::is_pattern<std::remove_cv_t<Type>>;
-} // namespace sparse
+concept sparsity_pattern = requires(std::remove_cv_t<Type> *value) {
+  []<std::size_t Rows, std::size_t Columns, std::size_t Count>(
+      pattern<Rows, Columns, Count> *) {}(value);
+};
+} // namespace fcarouge::sparse
 
+namespace fcarouge {
 // The sparsity pattern is constrained by a requires-clause rather than by a
 // constrained placeholder, `sparse::sparsity_pattern auto Pattern`: MSVC does
 // not match the out-of-class definitions of the members of a class template

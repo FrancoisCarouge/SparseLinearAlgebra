@@ -58,10 +58,10 @@ namespace {
   [[maybe_unused]] const volatile float quarter{0.25F};
 
   for ([[maybe_unused]] const auto &[value, root] : roots) {
-    assert(sla::square_root(value) == root);
+    assert(sparse_linear_algebra::internal::square_root(value) == root);
   }
 
-  assert(sla::square_root(quarter) == 0.5F);
+  assert(sparse_linear_algebra::internal::square_root(quarter) == 0.5F);
 
   return 0;
 }()};

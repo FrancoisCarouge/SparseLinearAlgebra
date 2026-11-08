@@ -139,7 +139,7 @@ public:
   //! @complexity Constant.
   [[nodiscard]] constexpr auto operator[](std::size_t row, std::size_t column)
       -> Type &
-    requires sla::is_dense<Pattern>;
+    requires sparse_linear_algebra::internal::is_dense<Pattern>;
 
   //! @brief The stored element at the given compile-time position.
   //!

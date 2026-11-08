@@ -84,7 +84,8 @@ template <typename Type, sparse::sparsity_pattern auto Lhs,
     -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> {
   sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> result;
 
-  for (const sla::term &element : sla::product_terms<Lhs, Rhs>) {
+  for (const sparse_linear_algebra::internal::term &element :
+       sparse_linear_algebra::internal::product_terms<Lhs, Rhs>) {
     result.values[element.result] +=
         lhs.values[element.lhs] * rhs.values[element.rhs];
   }

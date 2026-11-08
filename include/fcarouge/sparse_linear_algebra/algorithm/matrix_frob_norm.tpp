@@ -59,7 +59,7 @@ matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
     result += element * element;
   }
 
-  return sla::square_root(result);
+  return sparse_linear_algebra::internal::square_root(result);
 }
 } // namespace fcarouge
 
