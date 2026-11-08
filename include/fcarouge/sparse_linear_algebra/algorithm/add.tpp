@@ -34,6 +34,22 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "fcarouge/sparse_linear_algebra/internal/combine.hpp"
 
+namespace fcarouge::sparse_linear_algebra::internal {
+//! @brief The sum of the elements stored by both terms.
+//!
+//! @note The element operations are variable templates of the element type
+//! only, not lambdas of the operator: those would be instantiated for every
+//! pair of patterns, and never called for a pair without a common position, or
+//! without a position stored by the right term only.
+template <typename Type>
+inline constexpr auto sum{
+    [](const Type &left, const Type &right) -> Type { return left + right; }};
+
+//! @brief The element stored by the right term only, copied.
+template <typename Type>
+inline constexpr auto identity{[](const Type &right) -> Type { return right; }};
+} // namespace fcarouge::sparse_linear_algebra::internal
+
 namespace fcarouge {
 //! @brief Addition of two matrices of the same shape, of any patterns.
 //!
@@ -48,10 +64,7 @@ template <typename Type, sparse::sparsity_pattern auto Lhs,
 [[nodiscard]] constexpr auto operator+(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
-  return sla::combine(
-      lhs, rhs,
-      [](const Type &left, const Type &right) -> Type { return left + right; },
-      [](const Type &right) -> Type { return right; });
+  return sla::combine(lhs, rhs, sla::sum<Type>, sla::identity<Type>);
 }
 } // namespace fcarouge
 

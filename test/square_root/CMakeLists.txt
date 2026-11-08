@@ -30,3 +30,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org> ]]
 
 build("square_root")
+pass("run_time" BACKENDS "freestanding")
