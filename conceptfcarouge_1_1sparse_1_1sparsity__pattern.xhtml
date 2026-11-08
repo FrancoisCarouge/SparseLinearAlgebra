@@ -110,13 +110,16 @@ $(function(){initNavTree('conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml',
 <p><code>#include &lt;<a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a> =  <a class="code hl_variable" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a676d3e9fd4f0259013995520a084528a">sla::is_pattern&lt;std::remove_cv_t&lt;Type&gt;</a>&gt;</div>
-<div class="ttc" id="aconceptfcarouge_1_1sparse_1_1sparsity__pattern_xhtml"><div class="ttname"><a href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a></div><div class="ttdoc">Concept of a compile-time sparsity pattern.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00066">sparse_linear_algebra_forward.hpp:66</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_a676d3e9fd4f0259013995520a084528a"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a676d3e9fd4f0259013995520a084528a">fcarouge::sparse_linear_algebra::internal::is_pattern</a></div><div class="ttdeci">constexpr bool is_pattern</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">sparse_linear_algebra_forward.hpp:55</a></div></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a> =  <span class="keyword">requires</span>(std::remove_cv_t&lt;Type&gt; *value) {</div>
+<div class="line">  []&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt;(</div>
+<div class="line">      pattern&lt;Rows, Columns, Count&gt; *) {}(value);</div>
+<div class="line">}</div>
+<div class="ttc" id="aconceptfcarouge_1_1sparse_1_1sparsity__pattern_xhtml"><div class="ttname"><a href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a></div><div class="ttdoc">Concept of a compile-time sparsity pattern.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">sparse_linear_algebra_forward.hpp:55</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concept of a compile-time sparsity pattern. </p>
+<p>A pattern, of any count of rows, columns, and stored elements: the deduction of the arguments of a pattern from the type. </p>
 
-<p class="definition">Definition at line <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00066">66</a> of file <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

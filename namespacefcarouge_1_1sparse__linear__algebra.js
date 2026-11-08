@@ -20,7 +20,6 @@ var namespacefcarouge_1_1sparse__linear__algebra =
       [ "is_given_at< Value, Matrix, Position, false >", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af4e79a3d05a73750b6fb8736b967ef15", null ],
       [ "is_matrix", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6", null ],
       [ "is_matrix< sparse_matrix< Type, Pattern > >", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#acbfe222a437ae79d90dd8cede09c8195", null ],
-      [ "is_pattern", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a676d3e9fd4f0259013995520a084528a", null ],
       [ "is_zero_literal", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6", null ],
       [ "projection", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
       [ "term_count", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ],

@@ -323,14 +323,14 @@ Element Construction</h2>
 <code>make_matrix</code></h3>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a> {</div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Matrix, <span class="keyword">typename</span>... Values&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a>(<span class="keyword">const</span> Values &amp;...values) -&gt; Matrix;</div>
+<div class="line">[[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#ac9abbd7efe19317cf412b6238f3771e4">make_matrix</a>(<span class="keyword">const</span> Values &amp;...values) -&gt; Matrix;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>literals {</div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... Characters&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">consteval</span> <span class="keyword">auto</span> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_o() noexcept;</div>
 <div class="line">}</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_aca9e724c764c4c3c3ad75a1e0fc99f38"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00152">make_matrix.hpp:152</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_ac9abbd7efe19317cf412b6238f3771e4"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#ac9abbd7efe19317cf412b6238f3771e4">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00153">make_matrix.hpp:153</a></div></div>
 </div><!-- fragment --><p>Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless <code>Matrix</code> is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is the structural zero literal <code>0_o</code>: a <code>0.</code> at a structural zero does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>lower = sparse_matrix&lt;double, lower_triangular&lt;2&gt;&gt;;</div>
 <div class="line"> </div>

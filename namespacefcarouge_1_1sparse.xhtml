@@ -134,11 +134,11 @@ Concepts</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Element Construction</div></td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38" id="r_aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
-<tr class="memdesc:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
-<tr class="separator:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9abbd7efe19317cf412b6238f3771e4" id="r_ac9abbd7efe19317cf412b6238f3771e4"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sparse_linear_algebra::internal::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sparse_linear_algebra::internal::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
+<tr class="memitem:ac9abbd7efe19317cf412b6238f3771e4"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac9abbd7efe19317cf412b6238f3771e4">make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
+<tr class="memdesc:ac9abbd7efe19317cf412b6238f3771e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
+<tr class="separator:ac9abbd7efe19317cf412b6238f3771e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -156,7 +156,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a1de7628cd60f9cbae47157d68cae07ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transposed pattern.  <br /></td></tr>
 <tr class="separator:a1de7628cd60f9cbae47157d68cae07ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae265894a6b75da2c60b4e84d92a53b8e" id="r_ae265894a6b75da2c60b4e84d92a53b8e"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </td></tr>
-<tr class="memitem:ae265894a6b75da2c60b4e84d92a53b8e"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae265894a6b75da2c60b4e84d92a53b8e">product_term_count</a> {<a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4">sla::term_count</a>&lt;Lhs, Rhs&gt;}</td></tr>
+<tr class="memitem:ae265894a6b75da2c60b4e84d92a53b8e"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae265894a6b75da2c60b4e84d92a53b8e">product_term_count</a></td></tr>
 <tr class="memdesc:ae265894a6b75da2c60b4e84d92a53b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of elementary products of a matrix product.  <br /></td></tr>
 <tr class="separator:ae265894a6b75da2c60b4e84d92a53b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a974884952de8722771dca7f79a808" id="r_a22a974884952de8722771dca7f79a808"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </td></tr>
@@ -173,7 +173,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a60901167b3058282c44c4fe6d9c27da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of a position a pattern does not store.  <br /></td></tr>
 <tr class="separator:a60901167b3058282c44c4fe6d9c27da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7018e0061f1e0506750ecc0d4d5882" id="r_abf7018e0061f1e0506750ecc0d4d5882"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns&gt; </td></tr>
-<tr class="memitem:abf7018e0061f1e0506750ecc0d4d5882"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abf7018e0061f1e0506750ecc0d4d5882">dense</a> {<a class="el" href="#abdcb349d2e4548a4a74e51f6b0a40360">generate</a>&lt;Rows, Columns, <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5aa93548197b24d28510de50033fbf86">sla::every</a>&gt;()}</td></tr>
+<tr class="memitem:abf7018e0061f1e0506750ecc0d4d5882"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abf7018e0061f1e0506750ecc0d4d5882">dense</a></td></tr>
 <tr class="memdesc:abf7018e0061f1e0506750ecc0d4d5882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every position is stored: a matrix without structural zeros.  <br /></td></tr>
 <tr class="separator:abf7018e0061f1e0506750ecc0d4d5882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3665d23282b297a6cab2d660a140d748" id="r_a3665d23282b297a6cab2d660a140d748"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns&gt; </td></tr>
@@ -288,14 +288,14 @@ template&lt;std::size_t Rows, std::size_t Columns, auto Predicate&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aca9e724c764c4c3c3ad75a1e0fc99f38" name="aca9e724c764c4c3c3ad75a1e0fc99f38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca9e724c764c4c3c3ad75a1e0fc99f38">&#9670;&#160;</a></span>make_matrix()</h2>
+<a id="ac9abbd7efe19317cf412b6238f3771e4" name="ac9abbd7efe19317cf412b6238f3771e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9abbd7efe19317cf412b6238f3771e4">&#9670;&#160;</a></span>make_matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Matrix , typename... Values&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</div>
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sparse_linear_algebra::internal::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sparse_linear_algebra::internal::are_given</a>&lt;Matrix, Values...&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -331,25 +331,26 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the count of positions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00152">152</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>                                                                            {</div>
-<div class="line"><span class="lineno">  153</span>  Matrix result;</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
-<div class="line"><span class="lineno">  156</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><span class="lineno">  157</span>    (sla::write_given&lt;Positions&gt;(result, values), ...);</div>
-<div class="line"><span class="lineno">  158</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  161</span>}</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00153">153</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>                                                                            {</div>
+<div class="line"><span class="lineno">  154</span>  Matrix result;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
+<div class="line"><span class="lineno">  157</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><span class="lineno">  158</span>    (sparse_linear_algebra::internal::write_given&lt;Positions&gt;(result, values),</div>
+<div class="line"><span class="lineno">  159</span>     ...);</div>
+<div class="line"><span class="lineno">  160</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  163</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00114">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
+<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00115">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse_aca9e724c764c4c3c3ad75a1e0fc99f38_cgraph.svg" width="404" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse_ac9abbd7efe19317cf412b6238f3771e4_cgraph.svg" width="404" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -439,7 +440,7 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <div class="line"><span class="lineno">  209</span>    std::size_t j{i};</div>
 <div class="line"><span class="lineno">  210</span> </div>
 <div class="line"><span class="lineno">  211</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">value</a>.row &gt;= Rows || <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">value</a>.column &gt;= Columns) {</div>
-<div class="line"><span class="lineno">  212</span>      sla::position_out_of_range_or_duplicate();</div>
+<div class="line"><span class="lineno">  212</span>      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();</div>
 <div class="line"><span class="lineno">  213</span>    }</div>
 <div class="line"><span class="lineno">  214</span> </div>
 <div class="line"><span class="lineno">  215</span>    <span class="keywordflow">for</span> (; j &gt; 0 &amp;&amp; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">value</a> &lt; result.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]; --j) {</div>
@@ -447,7 +448,7 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <div class="line"><span class="lineno">  217</span>    }</div>
 <div class="line"><span class="lineno">  218</span> </div>
 <div class="line"><span class="lineno">  219</span>    <span class="keywordflow">if</span> (j &gt; 0 &amp;&amp; value == result.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]) {</div>
-<div class="line"><span class="lineno">  220</span>      sla::position_out_of_range_or_duplicate();</div>
+<div class="line"><span class="lineno">  220</span>      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();</div>
 <div class="line"><span class="lineno">  221</span>    }</div>
 <div class="line"><span class="lineno">  222</span> </div>
 <div class="line"><span class="lineno">  223</span>    result.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j] = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">value</a>;</div>
@@ -456,7 +457,7 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <div class="line"><span class="lineno">  226</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">  227</span>}</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_af784d3b560d61c397e7b6a5e270c950b"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr auto value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00039">duplicate_fail.cpp:39</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00049">sparse_linear_algebra_forward.hpp:49</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a9f09dfa4f6cdbf5fef0d1442be3cc61d"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml#a9f09dfa4f6cdbf5fef0d1442be3cc61d">fcarouge::sparse::pattern::positions</a></div><div class="ttdeci">std::array&lt; position,(Count &gt; 0 ? Count :1)&gt; positions</div><div class="ttdoc">The stored positions, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00125">pattern.hpp:125</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate()</a>.</p>
@@ -565,13 +566,16 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Lower, std::size_
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    generate&lt;Rows, Columns, sla::within_band&lt;Lower, Upper&gt;&gt;()}</div>
+<div class="line">    <a class="code hl_function" href="#abdcb349d2e4548a4a74e51f6b0a40360">generate</a>&lt;Rows, Columns,</div>
+<div class="line">             sparse_linear_algebra::internal::within_band&lt;Lower, Upper&gt;&gt;()}</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_abdcb349d2e4548a4a74e51f6b0a40360"><div class="ttname"><a href="#abdcb349d2e4548a4a74e51f6b0a40360">fcarouge::sparse::generate</a></div><div class="ttdeci">consteval auto generate()</div><div class="ttdoc">The pattern of the positions satisfying a predicate.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00235">pattern.hpp:235</a></div></div>
 </div><!-- fragment -->
 <p>The positions of the <code>Lower</code> sub-diagonals, the main diagonal, and the <code>Upper</code> super-diagonals. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00274">274</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  274</span>                            {</div>
-<div class="line"><span class="lineno">  275</span>    generate&lt;Rows, Columns, sla::within_band&lt;Lower, Upper&gt;&gt;()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00275">275</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>                            {</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="#abdcb349d2e4548a4a74e51f6b0a40360">generate</a>&lt;Rows, Columns,</div>
+<div class="line"><span class="lineno">  277</span>             sparse_linear_algebra::internal::within_band&lt;Lower, Upper&gt;&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -587,7 +591,7 @@ template&lt;std::size_t Rows, std::size_t Columns&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto fcarouge::sparse::dense {<a class="el" href="#abdcb349d2e4548a4a74e51f6b0a40360">generate</a>&lt;Rows, Columns, <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5aa93548197b24d28510de50033fbf86">sla::every</a>&gt;()}</td>
+          <td class="memname">auto fcarouge::sparse::dense</td>
         </tr>
       </table>
   </td>
@@ -596,13 +600,16 @@ template&lt;std::size_t Rows, std::size_t Columns&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    generate&lt;Rows, Columns, sparse_linear_algebra::internal::every&gt;()}</div>
+</div><!-- fragment -->
 <p>Every position is stored: a matrix without structural zeros. </p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="constant_velocity_8cpp-example.xhtml#a0">constant_velocity.cpp</a>, and <a class="el" href="heat_diffusion_8cpp-example.xhtml#a0">heat_diffusion.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00264">264</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  264</span>{generate&lt;Rows, Columns, sla::every&gt;()};</div>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>                           {</div>
+<div class="line"><span class="lineno">  265</span>    generate&lt;Rows, Columns, sparse_linear_algebra::internal::every&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -632,8 +639,8 @@ template&lt;std::size_t Size&gt; </div>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="constant_velocity_8cpp-example.xhtml#a1">constant_velocity.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00279">279</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  279</span>{banded&lt;Size, Size, 0, 0&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00281">281</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>{banded&lt;Size, Size, 0, 0&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -668,14 +675,14 @@ template&lt;sparsity_pattern auto Inner, sparsity_pattern auto Outer&gt; </div>
 </div><!-- fragment -->
 <p>Whether a pattern stores every position of another, of the same shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00106">106</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>                                  {[] -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Inner.rows != Outer.rows or Inner.columns != Outer.columns) {</div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  109</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> pattern_intersection&lt;Inner, Outer&gt;.count == Inner.count;</div>
-<div class="line"><span class="lineno">  111</span>  }</div>
-<div class="line"><span class="lineno">  112</span>}()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00109">109</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                  {[] -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Inner.rows != Outer.rows or Inner.columns != Outer.columns) {</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  112</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> pattern_intersection&lt;Inner, Outer&gt;.count == Inner.count;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="line"><span class="lineno">  115</span>}()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -703,8 +710,8 @@ template&lt;std::size_t Size&gt; </div>
 
 <p>The main diagonal and below of a square matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00287">287</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  287</span>{banded&lt;Size, Size, Size, 0&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00289">289</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>{banded&lt;Size, Size, Size, 0&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -730,15 +737,17 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sla::to_pattern&lt;Lhs.rows, Lhs.columns,</div>
-<div class="line">                    sla::merge_positions&lt;Lhs, Rhs, false&gt;()&gt;()}</div>
+<div class="line">    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line">        Lhs.rows, Lhs.columns,</div>
+<div class="line">        sparse_linear_algebra::internal::merge_positions&lt;Lhs, Rhs, false&gt;()&gt;()}</div>
 </div><!-- fragment -->
 <p>The positions stored by both patterns of the same shape. </p>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00060">60</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>                                          {</div>
-<div class="line"><span class="lineno">   61</span>    sla::to_pattern&lt;Lhs.rows, Lhs.columns,</div>
-<div class="line"><span class="lineno">   62</span>                    sla::merge_positions&lt;Lhs, Rhs, false&gt;()&gt;()};</div>
+<div class="line"><span class="lineno">   61</span>    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line"><span class="lineno">   62</span>        Lhs.rows, Lhs.columns,</div>
+<div class="line"><span class="lineno">   63</span>        sparse_linear_algebra::internal::merge_positions&lt;Lhs, Rhs, false&gt;()&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -764,16 +773,18 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sla::to_pattern&lt;Lhs.rows, Rhs.columns,</div>
-<div class="line">                    sla::product_positions&lt;Lhs, Rhs&gt;()&gt;()}</div>
+<div class="line">    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line">        Lhs.rows, Rhs.columns,</div>
+<div class="line">        sparse_linear_algebra::internal::product_positions&lt;Lhs, Rhs&gt;()&gt;()}</div>
 </div><!-- fragment -->
 <p>The structural pattern of a matrix product. </p>
 <p>A position is stored whenever a term reaches it, even if the values of the terms may cancel each other out at run time. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00099">99</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>                                     {</div>
-<div class="line"><span class="lineno">  100</span>    sla::to_pattern&lt;Lhs.rows, Rhs.columns,</div>
-<div class="line"><span class="lineno">  101</span>                    sla::product_positions&lt;Lhs, Rhs&gt;()&gt;()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00101">101</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>                                     {</div>
+<div class="line"><span class="lineno">  102</span>    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line"><span class="lineno">  103</span>        Lhs.rows, Rhs.columns,</div>
+<div class="line"><span class="lineno">  104</span>        sparse_linear_algebra::internal::product_positions&lt;Lhs, Rhs&gt;()&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -817,22 +828,22 @@ template&lt;sparsity_pattern auto Pattern&gt; </div>
 <p>The transposed pattern. </p>
 <p>The positions are bucketed by column: ascending rows within each column are already what the transposed row-major order requires. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00069">69</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>                                       {[] {</div>
-<div class="line"><span class="lineno">   70</span>  <a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">pattern</a>&lt;Pattern.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#aee1cce2be1db63325902705a276eb68e">columns</a>, Pattern.rows, Pattern.count&gt; result;</div>
-<div class="line"><span class="lineno">   71</span>  std::size_t index{0};</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (Pattern.positions[i].column == column) {</div>
-<div class="line"><span class="lineno">   76</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>, Pattern.positions[i].row};</div>
-<div class="line"><span class="lineno">   77</span>        ++index;</div>
-<div class="line"><span class="lineno">   78</span>      }</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>  }</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   83</span>}()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00070">70</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                                       {[] {</div>
+<div class="line"><span class="lineno">   71</span>  <a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">pattern</a>&lt;Pattern.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#aee1cce2be1db63325902705a276eb68e">columns</a>, Pattern.rows, Pattern.count&gt; result;</div>
+<div class="line"><span class="lineno">   72</span>  std::size_t index{0};</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">if</span> (Pattern.positions[i].column == column) {</div>
+<div class="line"><span class="lineno">   77</span>        result.positions[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>, Pattern.positions[i].row};</div>
+<div class="line"><span class="lineno">   78</span>        ++index;</div>
+<div class="line"><span class="lineno">   79</span>      }</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   84</span>}()};</div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_aee1cce2be1db63325902705a276eb68e"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml#aee1cce2be1db63325902705a276eb68e">fcarouge::sparse::pattern::columns</a></div><div class="ttdeci">std::size_t columns</div><div class="ttdoc">The count of columns of the matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00116">pattern.hpp:116</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -858,16 +869,16 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sla::to_pattern&lt;Lhs.rows, Lhs.columns,</div>
-<div class="line">                    sla::merge_positions&lt;Lhs, Rhs, true&gt;()&gt;()}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line">    Lhs.rows, Lhs.columns,</div>
+<div class="line">    sparse_linear_algebra::internal::merge_positions&lt;Lhs, Rhs, true&gt;()&gt;()}</div>
 </div><!-- fragment -->
 <p>The positions stored by either pattern of the same shape: the pattern of a sum or a difference. </p>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00053">53</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                   {</div>
-<div class="line"><span class="lineno">   54</span>    sla::to_pattern&lt;Lhs.rows, Lhs.columns,</div>
-<div class="line"><span class="lineno">   55</span>                    sla::merge_positions&lt;Lhs, Rhs, true&gt;()&gt;()};</div>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                   {sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line"><span class="lineno">   54</span>    Lhs.rows, Lhs.columns,</div>
+<div class="line"><span class="lineno">   55</span>    sparse_linear_algebra::internal::merge_positions&lt;Lhs, Rhs, true&gt;()&gt;()};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="combine_8hpp_source.xhtml#l00055">fcarouge::sparse_linear_algebra::internal::combine()</a>.</p>
 
@@ -885,7 +896,7 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t fcarouge::sparse::product_term_count {<a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4">sla::term_count</a>&lt;Lhs, Rhs&gt;}</td>
+          <td class="memname">std::size_t fcarouge::sparse::product_term_count</td>
         </tr>
       </table>
   </td>
@@ -894,14 +905,17 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    sparse_linear_algebra::internal::term_count&lt;Lhs, Rhs&gt;}</div>
+</div><!-- fragment -->
 <p>The count of elementary products of a matrix product. </p>
 <p>The count of the scalar multiplications, not of the stored positions of the result: several products may reach one position. </p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="heat_diffusion_8cpp-example.xhtml#a2">heat_diffusion.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00091">91</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{sla::term_count&lt;Lhs, Rhs&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00092">92</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                             {</div>
+<div class="line"><span class="lineno">   93</span>    sparse_linear_algebra::internal::term_count&lt;Lhs, Rhs&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -931,8 +945,8 @@ template&lt;std::size_t Size&gt; </div>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="heat_diffusion_8cpp-example.xhtml#a1">heat_diffusion.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00283">283</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  283</span>{banded&lt;Size, Size, 1, 1&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00285">285</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  285</span>{banded&lt;Size, Size, 1, 1&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -962,8 +976,8 @@ template&lt;std::size_t Size&gt; </div>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="constant_velocity_8cpp-example.xhtml#a2">constant_velocity.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00291">291</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  291</span>{banded&lt;Size, Size, 0, Size&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00293">293</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>{banded&lt;Size, Size, 0, Size&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -991,8 +1005,8 @@ template&lt;std::size_t Rows, std::size_t Columns&gt; </div>
 
 <p>No position is stored: the zero matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00268">268</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>{make_pattern&lt;Rows, Columns&gt;()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00269">269</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>{make_pattern&lt;Rows, Columns&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>

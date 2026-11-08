@@ -107,21 +107,21 @@ $(function(){initNavTree('namespacefcarouge_1_1sparse_1_1literals.xhtml',''); in
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Element Construction</div></td></tr>
-<tr class="memitem:adc37387bdc759f237bf6bd038d12095a" id="r_adc37387bdc759f237bf6bd038d12095a"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sla::is_zero_literal</a>&lt;Characters...&gt;</td></tr>
-<tr class="memitem:adc37387bdc759f237bf6bd038d12095a"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adc37387bdc759f237bf6bd038d12095a">operator&quot;&quot;_o</a> () noexcept -&gt; sla::structural_zero</td></tr>
-<tr class="memdesc:adc37387bdc759f237bf6bd038d12095a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural zero literal, the value of a structural zero in <code>make_matrix</code>: <code>0_o</code>, or <code>0._o</code>.  <br /></td></tr>
-<tr class="separator:adc37387bdc759f237bf6bd038d12095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfc1d514611e2bf5a486799ba3db801" id="r_a5dfc1d514611e2bf5a486799ba3db801"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; <br />
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sparse_linear_algebra::internal::is_zero_literal</a>&lt;Characters...&gt;</td></tr>
+<tr class="memitem:a5dfc1d514611e2bf5a486799ba3db801"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5dfc1d514611e2bf5a486799ba3db801">operator&quot;&quot;_o</a> () noexcept -&gt; sparse_linear_algebra::internal::structural_zero</td></tr>
+<tr class="memdesc:a5dfc1d514611e2bf5a486799ba3db801"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural zero literal, the value of a structural zero in <code>make_matrix</code>: <code>0_o</code>, or <code>0._o</code>.  <br /></td></tr>
+<tr class="separator:a5dfc1d514611e2bf5a486799ba3db801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adc37387bdc759f237bf6bd038d12095a" name="adc37387bdc759f237bf6bd038d12095a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc37387bdc759f237bf6bd038d12095a">&#9670;&#160;</a></span>operator&quot;&quot;_o()</h2>
+<a id="a5dfc1d514611e2bf5a486799ba3db801" name="a5dfc1d514611e2bf5a486799ba3db801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfc1d514611e2bf5a486799ba3db801">&#9670;&#160;</a></span>operator&quot;&quot;_o()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;char... Characters&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sla::is_zero_literal</a>&lt;Characters...&gt;</div>
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sparse_linear_algebra::internal::is_zero_literal</a>&lt;Characters...&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -130,7 +130,7 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
           <td class="memname">auto fcarouge::sparse::literals::operator&quot;&quot;_o </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; sla::structural_zero </td>
+          <td> -&gt; sparse_linear_algebra::internal::structural_zero </td>
         </tr>
       </table>
   </td>
@@ -144,9 +144,9 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 <p>Does not participate in overload resolution unless the literal is a zero: <code>1_o</code> does not compile. </p>
 
 <p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00072">72</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                                                                           {</div>
-<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   74</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                    {</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

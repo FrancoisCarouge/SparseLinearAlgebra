@@ -140,10 +140,10 @@ Variables</h2></td></tr>
 <div class="line">  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> quarter{0.25F};</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">for</span> ([[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> &amp;[value, root] : roots) {</div>
-<div class="line">    assert(sla::square_root(value) == root);</div>
+<div class="line">    assert(sparse_linear_algebra::internal::square_root(value) == root);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  assert(sla::square_root(quarter) == 0.5F);</div>
+<div class="line">  assert(sparse_linear_algebra::internal::square_root(quarter) == 0.5F);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()}</div>
@@ -167,10 +167,10 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   58</span>  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> quarter{0.25F};</div>
 <div class="line"><span class="lineno">   59</span> </div>
 <div class="line"><span class="lineno">   60</span>  <span class="keywordflow">for</span> ([[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> &amp;[value, root] : roots) {</div>
-<div class="line"><span class="lineno">   61</span>    assert(sla::square_root(value) == root);</div>
+<div class="line"><span class="lineno">   61</span>    assert(sparse_linear_algebra::internal::square_root(value) == root);</div>
 <div class="line"><span class="lineno">   62</span>  }</div>
 <div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  assert(sla::square_root(quarter) == 0.5F);</div>
+<div class="line"><span class="lineno">   64</span>  assert(sparse_linear_algebra::internal::square_root(quarter) == 0.5F);</div>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">   67</span>}()};</div>

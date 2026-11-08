@@ -32,7 +32,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38" target="_top" xlink:title="A matrix from a value at every position, in row&#45;major order.">
+<g id="a_Node000002"><a xlink:href="namespacefcarouge_1_1sparse.xhtml#ac9abbd7efe19317cf412b6238f3771e4" target="_top" xlink:title="A matrix from a value at every position, in row&#45;major order.">
 <polygon fill="white" stroke="#666666" points="115.75,-30.5 0,-30.5 0,0 115.75,0 115.75,-30.5"/>
 <text text-anchor="start" x="8" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00">fcarouge::sparse::make</text>
 <text text-anchor="middle" x="57.88" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">_matrix</text>

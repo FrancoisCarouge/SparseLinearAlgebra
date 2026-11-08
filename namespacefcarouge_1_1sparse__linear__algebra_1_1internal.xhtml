@@ -224,9 +224,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a1e826cd6cd6ae9b52bddc3583607e2e9"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1e826cd6cd6ae9b52bddc3583607e2e9">within_band</a></td></tr>
 <tr class="memdesc:a1e826cd6cd6ae9b52bddc3583607e2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The predicate of the positions of the <code>Lower</code> sub-diagonals, the main diagonal, and the <code>Upper</code> super-diagonals.  <br /></td></tr>
 <tr class="separator:a1e826cd6cd6ae9b52bddc3583607e2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a676d3e9fd4f0259013995520a084528a" id="r_a676d3e9fd4f0259013995520a084528a"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
-<tr class="memitem:a676d3e9fd4f0259013995520a084528a"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a676d3e9fd4f0259013995520a084528a">is_pattern</a> {false}</td></tr>
-<tr class="separator:a676d3e9fd4f0259013995520a084528a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal implementation details. </p>
@@ -357,7 +354,7 @@ template&lt;typename Type , auto Lhs, auto Rhs&gt; </div>
 <div class="line"><span class="lineno">   74</span> </div>
 <div class="line"><span class="lineno">   75</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00075">sparse_linear_algebra_forward.hpp:75</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00068">sparse_linear_algebra_forward.hpp:68</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml_a58a35b19a34167a6950f84dce9d309e2"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml#a58a35b19a34167a6950f84dce9d309e2">fcarouge::sparse_matrix::values</a></div><div class="ttdeci">std::array&lt; Type, Pattern.count &gt; values</div><div class="ttdoc">The stored elements, zero-initialized, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00089">sparse_linear_algebra.hpp:89</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
@@ -604,7 +601,7 @@ template&lt;std::size_t Rows, std::size_t Columns, auto List&gt; </div>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">  100</span>}</div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00049">sparse_linear_algebra_forward.hpp:49</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -674,21 +671,21 @@ template&lt;std::size_t Position, typename Matrix , typename Value &gt; </div>
 
 <p>Write the given value of a linear position into its stored element, if the position is stored. </p>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00114">114</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                               {</div>
-<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (not std::same_as&lt;Value, structural_zero&gt;) {</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t index{</div>
-<div class="line"><span class="lineno">  117</span>        Matrix::structure.index_of(Position / Matrix::structure.columns,</div>
-<div class="line"><span class="lineno">  118</span>                                   Position % Matrix::structure.columns)};</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="comment">// The implicit conversion the constraints verified, stated: a conversion</span></div>
-<div class="line"><span class="lineno">  121</span>    <span class="comment">// to the element type may narrow, or promote, which braces reject or an</span></div>
-<div class="line"><span class="lineno">  122</span>    <span class="comment">// implicit conversion warns of.</span></div>
-<div class="line"><span class="lineno">  123</span>    result.values[index] = <span class="keyword">static_cast&lt;</span>element_t&lt;Matrix&gt;<span class="keyword">&gt;</span>(value);</div>
-<div class="line"><span class="lineno">  124</span>  }</div>
-<div class="line"><span class="lineno">  125</span>}</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00115">115</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                               {</div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (not std::same_as&lt;Value, structural_zero&gt;) {</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t index{</div>
+<div class="line"><span class="lineno">  118</span>        Matrix::structure.index_of(Position / Matrix::structure.columns,</div>
+<div class="line"><span class="lineno">  119</span>                                   Position % Matrix::structure.columns)};</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <span class="comment">// The implicit conversion the constraints verified, stated: a conversion</span></div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// to the element type may narrow, or promote, which braces reject or an</span></div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">// implicit conversion warns of.</span></div>
+<div class="line"><span class="lineno">  124</span>    result.values[index] = <span class="keyword">static_cast&lt;</span>element_t&lt;Matrix&gt;<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="line"><span class="lineno">  126</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="make__matrix_8hpp_source.xhtml#l00152">fcarouge::sparse::make_matrix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="make__matrix_8hpp_source.xhtml#l00153">fcarouge::sparse::make_matrix()</a>.</p>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -723,13 +720,13 @@ template&lt;typename Matrix , typename... Values&gt; </div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">    <a class="code hl_variable" href="#a137571ba014ed44375cf20ee15dd244c">are_given_at</a>&lt;Matrix, std::index_sequence_for&lt;Values...&gt;, Values...&gt;}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_a137571ba014ed44375cf20ee15dd244c"><div class="ttname"><a href="#a137571ba014ed44375cf20ee15dd244c">fcarouge::sparse_linear_algebra::internal::are_given_at</a></div><div class="ttdeci">constexpr bool are_given_at</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00098">make_matrix.hpp:98</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_a137571ba014ed44375cf20ee15dd244c"><div class="ttname"><a href="#a137571ba014ed44375cf20ee15dd244c">fcarouge::sparse_linear_algebra::internal::are_given_at</a></div><div class="ttdeci">constexpr bool are_given_at</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00099">make_matrix.hpp:99</a></div></div>
 </div><!-- fragment -->
 <p>Whether the values may be given at every position of a matrix, in row-major order. </p>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00108">108</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>                               {</div>
-<div class="line"><span class="lineno">  109</span>    <a class="code hl_variable" href="#a137571ba014ed44375cf20ee15dd244c">are_given_at</a>&lt;Matrix, std::index_sequence_for&lt;Values...&gt;, Values...&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00109">109</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                               {</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="#a137571ba014ed44375cf20ee15dd244c">are_given_at</a>&lt;Matrix, std::index_sequence_for&lt;Values...&gt;, Values...&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -755,8 +752,8 @@ template&lt;typename Matrix , typename Positions , typename... Values&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00098">98</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>{<span class="keyword">false</span>};</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00099">99</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{<span class="keyword">false</span>};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -910,9 +907,9 @@ template&lt;typename Value , typename Matrix , std::size_t Position, bool Stored
 <p>Whether a value may be given at a linear position of a matrix: a structural zero only takes the <code>_o</code> literal, a stored element only takes an implicitly convertible value. </p>
 <p>Partially specialized variable templates rather than immediately invoked templated lambdas, for the constraints' evaluation by MSVC. </p>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00090">90</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>                                 {</div>
-<div class="line"><span class="lineno">   91</span>    std::is_convertible_v&lt;Value, element_t&lt;Matrix&gt;&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00091">91</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>                                 {</div>
+<div class="line"><span class="lineno">   92</span>    std::is_convertible_v&lt;Value, element_t&lt;Matrix&gt;&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -940,9 +937,9 @@ template&lt;typename Value , typename Matrix , std::size_t Position&gt; </div>
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">    std::same_as&lt;Value, structural_zero&gt;}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00094">94</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>                                                                 {</div>
-<div class="line"><span class="lineno">   95</span>    std::same_as&lt;Value, structural_zero&gt;};</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00095">95</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                                                                 {</div>
+<div class="line"><span class="lineno">   96</span>    std::same_as&lt;Value, structural_zero&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -999,33 +996,6 @@ template&lt;typename Type , sparse::sparsity_pattern auto Pattern&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00059">59</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   59</span>{<span class="keyword">true</span>};</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a676d3e9fd4f0259013995520a084528a" name="a676d3e9fd4f0259013995520a084528a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a676d3e9fd4f0259013995520a084528a">&#9670;&#160;</a></span>is_pattern</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Type &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool fcarouge::sparse_linear_algebra::internal::is_pattern {false}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{<span class="keyword">false</span>};</div>
 </div><!-- fragment -->
 </div>
 </div>

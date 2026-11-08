@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"structfcarouge_1_1sparse_1_1position.xhtml#a23637c3b2cbe9e54945a6ab5203349bd":[12,0,0,2,2,3],
-"structfcarouge_1_1sparse_1_1position.xhtml#a23637c3b2cbe9e54945a6ab5203349bd":[14,0,0,0,1,3],
 "structfcarouge_1_1sparse_1_1position.xhtml#a2f137f965485309957277d8c4b34eeb8":[12,0,0,2,2,5],
 "structfcarouge_1_1sparse_1_1position.xhtml#a2f137f965485309957277d8c4b34eeb8":[14,0,0,0,1,5],
 "structfcarouge_1_1sparse_1_1position.xhtml#aa06202631b0db7da8932ba8657501a6d":[12,0,0,2,2,0],
