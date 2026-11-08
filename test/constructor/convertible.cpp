@@ -70,24 +70,31 @@ static_assert(not std::constructible_from<sparse_matrix<double, diagonal<2>>,
 static_assert(
     not std::constructible_from<sparse_matrix<double, diagonal<2>>, double>);
 
-//! @test Verifies the construction from every position is explicit, of exactly
-//! the element type at a stored element, and of `0_o` at a structural zero.
-using structural_zero = sparse_linear_algebra::internal::structural_zero;
+//! @test Verifies the construction from every row is explicit, of exactly the
+//! element type at a stored element, and of `0_o` at a structural zero.
+using sparse::literals::operator""_o;
 
-static_assert(
-    std::constructible_from<sparse_matrix<double, diagonal<2>>, double,
-                            structural_zero, structural_zero, double>);
-static_assert(
-    not std::constructible_from<sparse_matrix<double, diagonal<2>>, int,
-                                structural_zero, structural_zero, double>);
-static_assert(
-    not std::constructible_from<sparse_matrix<double, diagonal<2>>, double,
-                                double, structural_zero, double>);
-static_assert(not std::convertible_to<
-              structural_zero, sparse_matrix<double, sparse::zero<1, 1>>>);
+template <typename Matrix>
+concept from_rows = requires { Matrix{{4., 0_o}, {0_o, 1.}}; };
 
-//! @test Verifies a pattern without a structural zero takes no `0_o`.
-static_assert(not std::constructible_from<sparse_matrix<double, dense<1, 2>>,
-                                          double, structural_zero>);
+template <typename Matrix>
+concept from_integer_rows = requires { Matrix{{4, 0_o}, {0_o, 1.}}; };
+
+template <typename Matrix>
+concept from_zero_value_rows = requires { Matrix{{4., 0.}, {0_o, 1.}}; };
+
+template <typename Matrix>
+concept from_flat_positions = requires { Matrix{4., 0_o, 0_o, 1.}; };
+
+template <typename Matrix>
+concept from_implicit_rows =
+    requires(void (*function)(Matrix)) { function({{4., 0_o}, {0_o, 1.}}); };
+
+static_assert(from_rows<sparse_matrix<double, diagonal<2>>>);
+static_assert(not from_integer_rows<sparse_matrix<double, diagonal<2>>>);
+static_assert(not from_zero_value_rows<sparse_matrix<double, diagonal<2>>>);
+static_assert(not from_flat_positions<sparse_matrix<double, diagonal<2>>>);
+static_assert(not from_implicit_rows<sparse_matrix<double, diagonal<2>>>);
+static_assert(not from_rows<sparse_matrix<double, dense<2, 2>>>);
 } // namespace
 } // namespace fcarouge::test

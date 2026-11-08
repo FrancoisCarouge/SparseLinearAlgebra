@@ -63,6 +63,8 @@ static_assert(
             3., 4.}) == 5.);
 static_assert(dot(sparse_matrix<double, sparse::dense<2, 1>>{3., 4.},
                   sparse_matrix<double, sparse::dense<1, 2>>{3., 4.}) == 25.);
-static_assert(band_matrix{1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.} == band);
+static_assert(band_matrix{{1., 2., 0_o},           //
+                          {3., 4., 5.},            //
+                          {0_o, 6., 7.}} == band); //
 } // namespace
 } // namespace fcarouge::test

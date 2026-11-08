@@ -43,9 +43,10 @@ namespace {
   using sparse::literals::operator""_o;
 
   // Intended:
-  // const diagonal_matrix value{1., 0_o,
-  //                             0_o, 2.};
-  const diagonal_matrix value{1.F, 0_o, 0_o, 2.};
+  // const diagonal_matrix value{{1., 0_o}, //
+  //                             {0_o, 2.}};
+  const diagonal_matrix value{{1.F, 0_o}, //
+                              {0_o, 2.}}; //
 
   assert((value.at<1, 1>() == 2.));
 

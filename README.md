@@ -109,7 +109,7 @@ class sparse_matrix;
 | --- | --- |
 | `(default constructor)` | Construct a zero matrix. |
 | `(explicit constructor)` | Construct from every stored element, in row-major order. Each one is exactly of `Type`, and there is at least one. |
-| `(explicit constructor)` | Construct from every position, in row-major order: each stored element exactly of `Type`, each structural zero the [`0_o` literal](#structural-zero-literal). Only for a pattern with a structural zero. |
+| `(explicit constructor)` | Construct from every row, each a braced list of every column: each stored element exactly of `Type`, each structural zero the [`0_o` literal](#structural-zero-literal). |
 | `(conversion constructor)` | Implicitly convert from a matrix of the same element type and shape, whose stored positions this pattern all stores. |
 | `at<Row, Column>()` | Access the stored element at the compile-time position, by reference. Only for a stored element. |
 | `at<Row, Column>() const` | Read the element at the compile-time position, by value. A structural zero reads as `Type{}`. |
@@ -212,13 +212,13 @@ template <char... Characters>
 }
 ```
 
-The value of a structural zero in a construction from every position, so that the declaration reads as the matrix. A value at a structural zero, even `0.`, does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
+The value of a structural zero in a construction from every row, so that the declaration reads as the matrix. A value at a structural zero, even `0.`, does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
 
 ```cpp
 using sparse::literals::operator""_o;
 
-const sparse_matrix<double, lower_triangular<2>> value{1., 0_o,
-                                                       2., 3.};
+const sparse_matrix<double, lower_triangular<2>> value{{1., 0_o}, //
+                                                       {2., 3.}}; //
 ```
 
 ### Element Access
@@ -231,7 +231,7 @@ A structural zero has nothing to refer to. A read is by value, and a write that 
 | Write: `at<i, j>() = value` | Yes. | Does not compile. |
 | Write: `operator[i, j] = value` | Without a structural zero only: its position is only known at run time. | Does not compile. |
 | Construction from the stored elements | Yes, in row-major order. | Takes no value. |
-| Construction from every position | Yes, in row-major order. | Yes, `0_o`. |
+| Construction from every row | Yes, of exactly `Type`. | Yes, `0_o`. |
 | Conversion from a matrix of a narrower pattern | Yes. | Yes, zero. |
 
 The rejections of the writes and of the constructions are compile errors, which a `requires` expression detects. To ask whether a position can be written, use `decltype(value)::structure.stores(i, j)`.
@@ -252,7 +252,7 @@ The operations below are supported, each as a function or an operator of the `fc
 | `matrix_frob_norm` | Not applicable. Returns an element. Floating-point elements only. | `O(K)`. |
 | `matrix_one_norm` | Not applicable. Returns an element, the largest absolute column sum. | `O(K + C)`. |
 | `matrix_inf_norm` | Not applicable. Returns an element, the largest absolute row sum. | `O(K + R)`. |
-| Construction from every position | The pattern of the matrix. | `O(R * C)`. |
+| Construction from every row | The pattern of the matrix. | `O(R * C)`. |
 | Read of an element at a run-time position | Not applicable. Returns an element. | `O(log K)`. |
 | Access of an element at a compile-time position | Not applicable. Returns an element. | `O(1)`. |
 

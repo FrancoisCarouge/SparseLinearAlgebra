@@ -67,10 +67,13 @@ namespace {
   // The bottom left element is a structural zero, without storage.
   static_assert(sizeof(transition) == 3 * sizeof(double));
 
-  const transition model{1., period, 0_o, 1.};
+  const transition model{{1., period}, //
+                         {0_o, 1.}};   //
   const state initial{1., 3.};
-  const noise uncertainty{4., 0_o, 0_o, 1.};
-  const noise process{0.25, 0_o, 0_o, 0.5};
+  const noise uncertainty{{4., 0_o},  //
+                          {0_o, 1.}}; //
+  const noise process{{0.25, 0_o},    //
+                      {0_o, 0.5}};    //
 
   // The prediction of the state: the position moves by the velocity.
   const auto predicted{model * initial};
@@ -87,7 +90,8 @@ namespace {
   std::println("Uncertainty: {}", propagated);
 
   assert((predicted == state{2.5, 3.}));
-  assert((propagated == covariance{4.5, 0.5, 0.5, 1.5}));
+  assert((propagated == covariance{{4.5, 0.5}, //
+                                   {0.5, 1.5}}));
 
   return 0;
 }()};

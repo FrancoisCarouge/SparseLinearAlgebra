@@ -64,7 +64,7 @@ namespace fcarouge::sparse::literals {
 //! @{
 
 //! @brief The structural zero literal, the value of a structural zero in a
-//! construction from every position: `0_o`, or `0._o`.
+//! construction from every row: `0_o`, or `0._o`.
 //!
 //! @details Does not participate in overload resolution unless the literal is
 //! a zero: `1_o` does not compile.
@@ -95,7 +95,8 @@ namespace fcarouge {
 //! @tparam Pattern The sparsity pattern of the matrix.
 template <typename Type, auto Pattern>
   requires sparse::sparsity_pattern<decltype(Pattern)>
-class sparse_matrix {
+class sparse_matrix
+    : public sparse_linear_algebra::internal::storage<Type, Pattern> {
 public:
   //! @name Public Member Variables
   //! @{
@@ -104,7 +105,7 @@ public:
   static constexpr auto structure{Pattern};
 
   //! @brief The stored elements, zero-initialized, in row-major order.
-  std::array<Type, Pattern.count> values{};
+  using sparse_linear_algebra::internal::storage<Type, Pattern>::values;
 
   //! @}
 
@@ -113,6 +114,16 @@ public:
 
   //! @brief Construct a zero matrix.
   constexpr sparse_matrix() = default;
+
+  //! @brief Construct from every row, in order, each a braced list of the value
+  //! of every column: the matrix as it reads.
+  //!
+  //! @details Each stored element is exactly of the element type, and each
+  //! structural zero is the `0_o` literal: a value at a structural zero, even
+  //! a zero, does not compile, nor does `0_o` at a stored element.
+  //!
+  //! @complexity Linear in the count of positions.
+  using sparse_linear_algebra::internal::storage<Type, Pattern>::storage;
 
   //! @brief Construct from every stored element, in row-major order.
   //!
@@ -123,24 +134,6 @@ public:
   template <std::same_as<Type>... Values>
     requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
   constexpr explicit sparse_matrix(const Values &...stored);
-
-  //! @brief Construct from every position, in row-major order: the matrix as
-  //! it reads.
-  //!
-  //! @details Each stored element is exactly of the element type, and each
-  //! structural zero is the `0_o` literal: a value at a structural zero, even
-  //! a zero, does not compile, nor does `0_o` at a stored element. A pattern
-  //! without a structural zero is constructed from its stored elements.
-  //!
-  //! @param elements The value of each position, in row-major order.
-  //!
-  //! @complexity Linear in the count of positions.
-  template <typename... Values>
-    requires(
-        sizeof...(Values) == Pattern.rows * Pattern.columns and
-        not sparse_linear_algebra::internal::is_dense<Pattern> and
-        sparse_linear_algebra::internal::are_given<Type, Pattern, Values...>)
-  constexpr explicit sparse_matrix(const Values &...elements);
 
   //! @brief Convert from a matrix whose stored positions are all stored by
   //! this pattern, which cannot lose an element.
