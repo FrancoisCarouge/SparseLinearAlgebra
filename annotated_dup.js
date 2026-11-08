@@ -3,8 +3,7 @@ var annotated_dup =
     [ "fcarouge", "namespacefcarouge.xhtml", [
       [ "sparse", "namespacefcarouge_1_1sparse.xhtml", [
         [ "pattern", "structfcarouge_1_1sparse_1_1pattern.xhtml", "structfcarouge_1_1sparse_1_1pattern" ],
-        [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ],
-        [ "structural_zero_t", "structfcarouge_1_1sparse_1_1structural__zero__t.xhtml", null ]
+        [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ]
       ] ],
       [ "test", "namespacefcarouge_1_1test.xhtml", [
         [ "anonymous_namespace{differential.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml", [

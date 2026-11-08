@@ -112,7 +112,7 @@ Added</h2>
 <ul>
 <li>Compile-time sparsity patterns: <code>position</code>, <code>pattern</code>, the <code>sparsity_pattern</code> concept, the <code>make_pattern</code> and <code>generate</code> factories, and the <code>dense</code>, <code>zero</code>, <code>banded</code>, <code>diagonal</code>, <code>tridiagonal</code>, <code>lower_triangular</code>, and <code>upper_triangular</code> named patterns.</li>
 <li>Pattern algebra: <code>pattern_union</code>, <code>pattern_intersection</code>, <code>pattern_transpose</code>, <code>pattern_product</code>, <code>product_term_count</code>, and <code>is_subset_of</code>.</li>
-<li>The <code>sparse_matrix</code> storing only the elements of its pattern, with its compile-time <code>at&lt;Row, Column&gt;()</code> and run-time <code>operator[]</code> element accesses, and <code>make_matrix</code> with <code>structural_zero</code> construction.</li>
+<li>The <code>sparse_matrix</code> storing only the elements of its pattern, with its compile-time <code>at&lt;Row, Column&gt;()</code> and run-time <code>operator[]</code> element accesses, and <code>make_matrix</code> with the <code>0_o</code> structural zero literal construction.</li>
 <li>Operations: <code>+</code>, <code>-</code>, unary <code>-</code>, <code>*</code> of matrices and by a scalar, <code>/</code> by a scalar, <code>==</code>, <code>transposed</code>, <code>dot</code>, <code>matrix_frob_norm</code>, <code>matrix_inf_norm</code>, and <code>matrix_one_norm</code>, each of a result pattern and arithmetic terms computed at compile time.</li>
 <li><code>std::formatter</code> support, on a hosted implementation.</li>
 <li>Freestanding, real-time, and constant expression support: no memory allocation, no exception, no input-output.</li>

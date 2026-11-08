@@ -101,7 +101,6 @@ $(function(){initNavTree('make__matrix_8hpp.xhtml',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -134,25 +133,21 @@ $(function(){initNavTree('make__matrix_8hpp.xhtml',''); initResizable(true); });
 </div>
 <p><a href="make__matrix_8hpp_source.xhtml">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml">fcarouge::sparse::structural_zero_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the value of a structural zero in <code>make_matrix</code>.  <a href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.xhtml">fcarouge</a></td></tr>
 <tr class="memdesc:namespacefcarouge"><td class="mdescLeft">&#160;</td><td class="mdescRight">Francois Carouge's projects namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a></td></tr>
-<tr class="memdesc:namespacefcarouge_1_1sparse"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse linear algebra public namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra.xhtml">fcarouge::sparse_linear_algebra</a></td></tr>
 <tr class="memdesc:namespacefcarouge_1_1sparse__linear__algebra"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse linear algebra library namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml">fcarouge::sparse_linear_algebra::internal</a></td></tr>
 <tr class="memdesc:namespacefcarouge_1_1sparse__linear__algebra_1_1internal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a></td></tr>
+<tr class="memdesc:namespacefcarouge_1_1sparse"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse linear algebra public namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse_1_1literals.xhtml">fcarouge::sparse::literals</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -161,12 +156,28 @@ Functions</h2></td></tr>
 <tr class="memitem:a5417703fdc9f6ae8f26e5393672fb4ed"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5417703fdc9f6ae8f26e5393672fb4ed">fcarouge::sparse_linear_algebra::internal::write_given</a> (Matrix &amp;result, const Value &amp;value)</td></tr>
 <tr class="memdesc:a5417703fdc9f6ae8f26e5393672fb4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the given value of a linear position into its stored element, if the position is stored.  <br /></td></tr>
 <tr class="separator:a5417703fdc9f6ae8f26e5393672fb4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Element Construction</div></td></tr>
+<tr class="memitem:adc37387bdc759f237bf6bd038d12095a" id="r_adc37387bdc759f237bf6bd038d12095a"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; <br />
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sla::is_zero_literal</a>&lt;Characters...&gt;</td></tr>
+<tr class="memitem:adc37387bdc759f237bf6bd038d12095a"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse_1_1literals.xhtml#adc37387bdc759f237bf6bd038d12095a">fcarouge::sparse::literals::operator&quot;&quot;_o</a> () noexcept -&gt; sla::structural_zero</td></tr>
+<tr class="memdesc:adc37387bdc759f237bf6bd038d12095a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural zero literal, the value of a structural zero in <code>make_matrix</code>: <code>0_o</code>, or <code>0._o</code>.  <br /></td></tr>
+<tr class="separator:adc37387bdc759f237bf6bd038d12095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Element Construction</div></td></tr>
+<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38" id="r_aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
+<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
+<tr class="memdesc:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
+<tr class="separator:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a62ae2e88187b445423e25870823e64b6" id="r_a62ae2e88187b445423e25870823e64b6"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; </td></tr>
+<tr class="memitem:a62ae2e88187b445423e25870823e64b6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">fcarouge::sparse_linear_algebra::internal::is_zero_literal</a></td></tr>
+<tr class="memdesc:a62ae2e88187b445423e25870823e64b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the characters of a literal spell a zero: zero digits, at least one, and at most one decimal point.  <br /></td></tr>
+<tr class="separator:a62ae2e88187b445423e25870823e64b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cae54fb768e9abd8aff90adc39bcc3c" id="r_a6cae54fb768e9abd8aff90adc39bcc3c"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename Matrix , std::size_t Position, bool Stored = Matrix::structure.stores(Position / Matrix::structure.columns,                                       Position % Matrix::structure.columns)&gt; </td></tr>
 <tr class="memitem:a6cae54fb768e9abd8aff90adc39bcc3c"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a6cae54fb768e9abd8aff90adc39bcc3c">fcarouge::sparse_linear_algebra::internal::is_given_at</a></td></tr>
-<tr class="memdesc:a6cae54fb768e9abd8aff90adc39bcc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a value may be given at a linear position of a matrix: a structural zero only takes <code>structural_zero</code>, a stored element only takes an implicitly convertible value.  <br /></td></tr>
+<tr class="memdesc:a6cae54fb768e9abd8aff90adc39bcc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a value may be given at a linear position of a matrix: a structural zero only takes the <code>_o</code> literal, a stored element only takes an implicitly convertible value.  <br /></td></tr>
 <tr class="separator:a6cae54fb768e9abd8aff90adc39bcc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e79a3d05a73750b6fb8736b967ef15" id="r_af4e79a3d05a73750b6fb8736b967ef15"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename Matrix , std::size_t Position&gt; </td></tr>
 <tr class="memitem:af4e79a3d05a73750b6fb8736b967ef15"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af4e79a3d05a73750b6fb8736b967ef15">fcarouge::sparse_linear_algebra::internal::is_given_at&lt; Value, Matrix, Position, false &gt;</a></td></tr>
@@ -178,16 +189,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a8976ea6317f3258677e2f9ee03003667"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">fcarouge::sparse_linear_algebra::internal::are_given</a></td></tr>
 <tr class="memdesc:a8976ea6317f3258677e2f9ee03003667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the values may be given at every position of a matrix, in row-major order.  <br /></td></tr>
 <tr class="separator:a8976ea6317f3258677e2f9ee03003667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Element Construction</h2></td></tr>
-<tr class="memitem:a621a2be8b93faa9da83e90819bfa8da6" id="r_a621a2be8b93faa9da83e90819bfa8da6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml">structural_zero_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6">fcarouge::sparse::structural_zero</a></td></tr>
-<tr class="memdesc:a621a2be8b93faa9da83e90819bfa8da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of a structural zero in <code>make_matrix</code>.  <br /></td></tr>
-<tr class="separator:a621a2be8b93faa9da83e90819bfa8da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38" id="r_aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
-<tr class="memdesc:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
-<tr class="separator:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The construction of a matrix from a value at every position. </p>

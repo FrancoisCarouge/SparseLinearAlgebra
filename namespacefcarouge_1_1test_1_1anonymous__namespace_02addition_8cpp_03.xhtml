@@ -135,18 +135,18 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>  <span class="keyword">using </span>sparse::make_matrix;</div>
 <div class="line"><span class="lineno">   50</span>  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keyword">using </span>sparse::structural_zero;</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">using </span>sparse::literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
 <div class="line"><span class="lineno">   52</span> </div>
 <div class="line"><span class="lineno">   53</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> first_row{make_pattern&lt;2, 2&gt;({{0, 0}, {0, 1}})};</div>
 <div class="line"><span class="lineno">   54</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">first_column</a>{make_pattern&lt;2, 2&gt;({{0, 0}, {1, 0}})};</div>
 <div class="line"><span class="lineno">   55</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> opposite{make_pattern&lt;2, 2&gt;({{1, 1}})};</div>
 <div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{make_matrix&lt;sparse_matrix&lt;double, first_row&gt;&gt;(</div>
-<div class="line"><span class="lineno">   58</span>      1., 2., structural_zero, structural_zero)};</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{make_matrix&lt;sparse_matrix&lt;double, first_column&gt;&gt;(</div>
-<div class="line"><span class="lineno">   60</span>      3., structural_zero, 4., structural_zero)};</div>
-<div class="line"><span class="lineno">   61</span>  <span class="keyword">const</span> <span class="keyword">auto</span> other{make_matrix&lt;sparse_matrix&lt;double, opposite&gt;&gt;(</div>
-<div class="line"><span class="lineno">   62</span>      structural_zero, structural_zero, structural_zero, 5.)};</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{</div>
+<div class="line"><span class="lineno">   58</span>      make_matrix&lt;sparse_matrix&lt;double, first_row&gt;&gt;(1., 2., 0_o, 0_o)};</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{</div>
+<div class="line"><span class="lineno">   60</span>      make_matrix&lt;sparse_matrix&lt;double, first_column&gt;&gt;(3., 0_o, 4., 0_o)};</div>
+<div class="line"><span class="lineno">   61</span>  <span class="keyword">const</span> <span class="keyword">auto</span> other{</div>
+<div class="line"><span class="lineno">   62</span>      make_matrix&lt;sparse_matrix&lt;double, opposite&gt;&gt;(0_o, 0_o, 0_o, 5.)};</div>
 <div class="line"><span class="lineno">   63</span> </div>
 <div class="line"><span class="lineno">   64</span>  <span class="comment">// Overlapping: the union of the patterns.</span></div>
 <div class="line"><span class="lineno">   65</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">sum</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> + <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
@@ -191,8 +191,8 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  104</span>  assert((sum == reference));</div>
 <div class="line"><span class="lineno">  105</span> </div>
 <div class="line"><span class="lineno">  106</span>  <span class="comment">// An integer element type.</span></div>
-<div class="line"><span class="lineno">  107</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{make_matrix&lt;sparse_matrix&lt;int, first_row&gt;&gt;(</div>
-<div class="line"><span class="lineno">  108</span>      1, 2, structural_zero, structural_zero)};</div>
+<div class="line"><span class="lineno">  107</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{</div>
+<div class="line"><span class="lineno">  108</span>      make_matrix&lt;sparse_matrix&lt;int, first_row&gt;&gt;(1, 2, 0_o, 0_o)};</div>
 <div class="line"><span class="lineno">  109</span> </div>
 <div class="line"><span class="lineno">  110</span>  assert(((integers + integers).at&lt;0, 1&gt;() == 4));</div>
 <div class="line"><span class="lineno">  111</span> </div>

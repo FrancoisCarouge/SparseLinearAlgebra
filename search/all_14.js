@@ -35,14 +35,12 @@ var searchData=
   ['storage_32',['storage',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a1b5bc91162ca3a46757550c2676471eb',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::storage'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a1411e35eca34633988de33ca2dd17a9b',1,'fcarouge::test::anonymous_namespace{layout.cpp}::storage']]],
   ['stores_33',['stores',['../structfcarouge_1_1sparse_1_1pattern.xhtml#a8b1bf39b65494984c57787f8b6172f35',1,'fcarouge::sparse::pattern']]],
   ['structural_20zero_20model_34',['The structural zero model',['..//github/workspace/AGENTS.md#the-structural-zero-model',1,'']]],
-  ['structural_5fzero_35',['structural_zero',['../namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6',1,'fcarouge::sparse']]],
-  ['structural_5fzero_5ffail_2ecpp_36',['structural_zero_fail.cpp',['../structural__zero__fail_8cpp.xhtml',1,'']]],
-  ['structural_5fzero_5ft_37',['structural_zero_t',['../structfcarouge_1_1sparse_1_1structural__zero__t.xhtml',1,'fcarouge::sparse']]],
-  ['structure_38',['structure',['../classfcarouge_1_1sparse__matrix.xhtml#acf6f8835abf3fab8e1e175e4367b7c29',1,'fcarouge::sparse_matrix']]],
-  ['subtraction_2ecpp_39',['subtraction.cpp',['../subtraction_8cpp.xhtml',1,'']]],
-  ['sum_40',['sum',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
-  ['support_20cmake_20tt_41',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['support_20consulting_42',['Commercial Support &amp; Consulting',['../index.xhtml#commercial-support--consulting',1,'']]],
-  ['support_20support_20cmake_20tt_43',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['supported_20versions_44',['Supported Versions',['../md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#supported-versions',1,'']]]
+  ['structural_5fzero_5ffail_2ecpp_35',['structural_zero_fail.cpp',['../structural__zero__fail_8cpp.xhtml',1,'']]],
+  ['structure_36',['structure',['../classfcarouge_1_1sparse__matrix.xhtml#acf6f8835abf3fab8e1e175e4367b7c29',1,'fcarouge::sparse_matrix']]],
+  ['subtraction_2ecpp_37',['subtraction.cpp',['../subtraction_8cpp.xhtml',1,'']]],
+  ['sum_38',['sum',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
+  ['support_20cmake_20tt_39',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
+  ['support_20consulting_40',['Commercial Support &amp; Consulting',['../index.xhtml#commercial-support--consulting',1,'']]],
+  ['support_20support_20cmake_20tt_41',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
+  ['supported_20versions_42',['Supported Versions',['../md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#supported-versions',1,'']]]
 ];

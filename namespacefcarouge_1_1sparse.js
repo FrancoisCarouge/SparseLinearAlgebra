@@ -1,8 +1,10 @@
 var namespacefcarouge_1_1sparse =
 [
+    [ "literals", "namespacefcarouge_1_1sparse_1_1literals.xhtml", [
+      [ "operator\"\"_o", "namespacefcarouge_1_1sparse_1_1literals.xhtml#adc37387bdc759f237bf6bd038d12095a", null ]
+    ] ],
     [ "pattern", "structfcarouge_1_1sparse_1_1pattern.xhtml", "structfcarouge_1_1sparse_1_1pattern" ],
     [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ],
-    [ "structural_zero_t", "structfcarouge_1_1sparse_1_1structural__zero__t.xhtml", null ],
     [ "sparsity_pattern", "conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml", null ],
     [ "generate", "namespacefcarouge_1_1sparse.xhtml#abdcb349d2e4548a4a74e51f6b0a40360", null ],
     [ "make_matrix", "namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38", null ],
@@ -20,7 +22,6 @@ var namespacefcarouge_1_1sparse =
     [ "pattern_transpose", "namespacefcarouge_1_1sparse.xhtml#a1de7628cd60f9cbae47157d68cae07ee", null ],
     [ "pattern_union", "namespacefcarouge_1_1sparse.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5", null ],
     [ "product_term_count", "namespacefcarouge_1_1sparse.xhtml#ae265894a6b75da2c60b4e84d92a53b8e", null ],
-    [ "structural_zero", "namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6", null ],
     [ "tridiagonal", "namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690", null ],
     [ "upper_triangular", "namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40", null ],
     [ "zero", "namespacefcarouge_1_1sparse.xhtml#a3665d23282b297a6cab2d660a140d748", null ]

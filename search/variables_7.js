@@ -13,5 +13,6 @@ var searchData=
   ['is_5fmatrix_10',['is_matrix',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['is_5fmatrix_3c_20sparse_5fmatrix_3c_20type_2c_20pattern_20_3e_20_3e_11',['is_matrix&lt; sparse_matrix&lt; Type, Pattern &gt; &gt;',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#acbfe222a437ae79d90dd8cede09c8195',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['is_5fpattern_12',['is_pattern',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a676d3e9fd4f0259013995520a084528a',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['is_5fsubset_5fof_13',['is_subset_of',['../namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d75cc4171775a210ea',1,'fcarouge::sparse']]]
+  ['is_5fsubset_5fof_13',['is_subset_of',['../namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d75cc4171775a210ea',1,'fcarouge::sparse']]],
+  ['is_5fzero_5fliteral_14',['is_zero_literal',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6',1,'fcarouge::sparse_linear_algebra::internal']]]
 ];

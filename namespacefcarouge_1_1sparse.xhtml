@@ -101,6 +101,7 @@ $(function(){initNavTree('namespacefcarouge_1_1sparse.xhtml',''); initResizable(
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a>  </div>
   <div class="headertitle"><div class="title">fcarouge::sparse Namespace Reference</div></div>
@@ -110,6 +111,11 @@ $(function(){initNavTree('namespacefcarouge_1_1sparse.xhtml',''); initResizable(
 <p>Sparse linear algebra public namespace.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse_1_1literals.xhtml">literals</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">pattern</a></td></tr>
@@ -118,15 +124,21 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1position.xhtml">position</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The row and column of a stored element.  <a href="structfcarouge_1_1sparse_1_1position.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml">structural_zero_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the value of a structural zero in <code>make_matrix</code>.  <a href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">sparsity_pattern</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept of a compile-time sparsity pattern. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Element Construction</div></td></tr>
+<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38" id="r_aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
+requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
+<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
+<tr class="memdesc:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
+<tr class="separator:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -155,16 +167,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a812a97717e5886d75cc4171775a210ea"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a812a97717e5886d75cc4171775a210ea">is_subset_of</a></td></tr>
 <tr class="memdesc:a812a97717e5886d75cc4171775a210ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern stores every position of another, of the same shape.  <br /></td></tr>
 <tr class="separator:a812a97717e5886d75cc4171775a210ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Element Construction</h2></td></tr>
-<tr class="memitem:a621a2be8b93faa9da83e90819bfa8da6" id="r_a621a2be8b93faa9da83e90819bfa8da6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml">structural_zero_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a621a2be8b93faa9da83e90819bfa8da6">structural_zero</a></td></tr>
-<tr class="memdesc:a621a2be8b93faa9da83e90819bfa8da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of a structural zero in <code>make_matrix</code>.  <br /></td></tr>
-<tr class="separator:a621a2be8b93faa9da83e90819bfa8da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38" id="r_aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplParams" colspan="2">template&lt;typename Matrix , typename... Values&gt; <br />
-requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6">sla::is_matrix</a>&lt;Matrix&gt; &amp;&amp; (sizeof...(Values) == Matrix::structure.rows * Matrix::structure.columns) &amp;&amp; <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8976ea6317f3258677e2f9ee03003667">sla::are_given</a>&lt;Matrix, Values...&gt;</td></tr>
-<tr class="memitem:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a> (const Values &amp;...values) -&gt; Matrix</td></tr>
-<tr class="memdesc:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix from a value at every position, in row-major order.  <br /></td></tr>
-<tr class="separator:aca9e724c764c4c3c3ad75a1e0fc99f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Patterns</h2></td></tr>
 <tr class="memitem:a60901167b3058282c44c4fe6d9c27da0" id="r_a60901167b3058282c44c4fe6d9c27da0"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60901167b3058282c44c4fe6d9c27da0">absent</a> {std::numeric_limits&lt;std::size_t&gt;::max()}</td></tr>
@@ -313,7 +315,7 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 </div><div class="memdoc">
 
 <p>A matrix from a value at every position, in row-major order. </p>
-<p>Each position is known at compile time, and the type of each value says what it is: a value for a structural zero, even a zero, or <code>structural_zero</code> for a stored element, does not compile. A run-time value needs no run-time check.</p>
+<p>Each position is known at compile time, and the type of each value says what it is: a value for a structural zero, even a zero, or <code>0_o</code> for a stored element, does not compile. A run-time value needs no run-time check.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Matrix</td><td>The sparse matrix type to construct. </td></tr>
@@ -323,25 +325,25 @@ requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1int
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">values</td><td>The value of each position, in row-major order: a value implicitly convertible to the element type at a stored element, <code>structural_zero</code> at a structural zero.</td></tr>
+    <tr><td class="paramname">values</td><td>The value of each position, in row-major order: a value implicitly convertible to the element type at a stored element, the <code>0_o</code> literal at a structural zero.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the count of positions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00133">133</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                                            {</div>
-<div class="line"><span class="lineno">  134</span>  Matrix result;</div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
-<div class="line"><span class="lineno">  137</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><span class="lineno">  138</span>    (sla::write_given&lt;Positions&gt;(result, values), ...);</div>
-<div class="line"><span class="lineno">  139</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  142</span>}</div>
+<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00152">152</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>                                                                            {</div>
+<div class="line"><span class="lineno">  153</span>  Matrix result;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  [&amp;result, &amp;values...]&lt;std::size_t... Positions&gt;(</div>
+<div class="line"><span class="lineno">  156</span>      std::index_sequence&lt;Positions...&gt;) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><span class="lineno">  157</span>    (sla::write_given&lt;Positions&gt;(result, values), ...);</div>
+<div class="line"><span class="lineno">  158</span>  }(std::index_sequence_for&lt;Values...&gt;{});</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  161</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00095">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
+<p class="reference">References <a class="el" href="make__matrix_8hpp_source.xhtml#l00114">fcarouge::sparse_linear_algebra::internal::write_given()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -901,32 +903,6 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00091">91</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   91</span>{sla::term_count&lt;Lhs, Rhs&gt;};</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a621a2be8b93faa9da83e90819bfa8da6" name="a621a2be8b93faa9da83e90819bfa8da6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a621a2be8b93faa9da83e90819bfa8da6">&#9670;&#160;</a></span>structural_zero</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfcarouge_1_1sparse_1_1structural__zero__t.xhtml">structural_zero_t</a> fcarouge::sparse::structural_zero</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The value of a structural zero in <code>make_matrix</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="make__matrix_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="make__matrix_8hpp_source.xhtml">make_matrix.hpp</a>.</p>
-
 </div>
 </div>
 <a id="a4878f89526272a6edbf9099732f4a690" name="a4878f89526272a6edbf9099732f4a690"></a>

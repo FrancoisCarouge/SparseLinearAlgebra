@@ -181,5 +181,8 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{value_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02value__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02value__fail_8cpp_03.xhtml#a63cc392f11b3e41100c609b46eeb2d7d", null ]
     ] ],
+    [ "anonymous_namespace{zero_literal_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02zero__literal__fail_8cpp_03.xhtml", [
+      [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02zero__literal__fail_8cpp_03.xhtml#ac9921e052afcbc6397f230dbdfcccd9c", null ]
+    ] ],
     [ "counted", "structfcarouge_1_1test_1_1counted.xhtml", "structfcarouge_1_1test_1_1counted" ]
 ];

@@ -322,19 +322,21 @@ Element Construction</h2>
 <h3><a class="anchor" id="make_matrix"></a>
 <code>make_matrix</code></h3>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a> {</div>
-<div class="line"><span class="keyword">struct </span>structural_zero_t;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> structural_zero_t <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6">structural_zero</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Matrix, <span class="keyword">typename</span>... Values&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">make_matrix</a>(<span class="keyword">const</span> Values &amp;...values) -&gt; Matrix;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>literals {</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... Characters&gt;</div>
+<div class="line">[[nodiscard]] <span class="keyword">consteval</span> <span class="keyword">auto</span> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_o() noexcept;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a621a2be8b93faa9da83e90819bfa8da6"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a621a2be8b93faa9da83e90819bfa8da6">fcarouge::sparse::structural_zero</a></div><div class="ttdeci">constexpr structural_zero_t structural_zero</div><div class="ttdoc">The value of a structural zero in make_matrix.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00055">make_matrix.hpp:55</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_aca9e724c764c4c3c3ad75a1e0fc99f38"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00133">make_matrix.hpp:133</a></div></div>
-</div><!-- fragment --><p>Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless <code>Matrix</code> is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is <code>structural_zero</code>: a <code>0.</code> at a structural zero does not compile, nor does <code>structural_zero</code> at a stored element.</p>
+<div class="line">}</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_aca9e724c764c4c3c3ad75a1e0fc99f38"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#aca9e724c764c4c3c3ad75a1e0fc99f38">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00152">make_matrix.hpp:152</a></div></div>
+</div><!-- fragment --><p>Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless <code>Matrix</code> is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is the structural zero literal <code>0_o</code>: a <code>0.</code> at a structural zero does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>lower = sparse_matrix&lt;double, lower_triangular&lt;2&gt;&gt;;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">const</span> lower value{make_matrix&lt;lower&gt;(1., structural_zero,</div>
+<div class="line"><span class="keyword">using </span>sparse::literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> lower value{make_matrix&lt;lower&gt;(1., 0_o,</div>
 <div class="line">                                     2., 3.)};</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -359,7 +361,7 @@ Element Access</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Construction from the stored elements   </td><td class="markdownTableBodyNone">Yes, in row-major order.   </td><td class="markdownTableBodyNone">Takes no value.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>make_matrix&lt;Matrix&gt;(values...)</code>   </td><td class="markdownTableBodyNone">Yes, a value.   </td><td class="markdownTableBodyNone">Yes, <code>structural_zero</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>make_matrix&lt;Matrix&gt;(values...)</code>   </td><td class="markdownTableBodyNone">Yes, a value.   </td><td class="markdownTableBodyNone">Yes, <code>0_o</code>.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Conversion from a matrix of a narrower pattern   </td><td class="markdownTableBodyNone">Yes.   </td><td class="markdownTableBodyNone">Yes, zero.   </td></tr>
 </table>
@@ -456,7 +458,7 @@ Lessons Learned</h2>
 <p><b>The pattern is in the type</b>, not in the object. A run-time sparse format stores its indexes beside its values and pays an indirection for each element. A compile-time pattern stores nothing but its values: the indexes, the result patterns, and the exact list of elementary products of each operation are constants of the program, computed once, by the compiler.</p>
 <p><b>A structural zero has nothing to refer to.</b> A reference to a structural zero would either write to nowhere, silently losing a value, or need a run-time check. Element writes are therefore compile-time positions only, and a run-time position is read by value. A pattern without structural zeros is an ordinary dense storage, with every element addressable.</p>
 <p><b>A structural zero is not a stored zero.</b> It is a property of the type: the product of a structural zero and an infinity is never computed. A stored zero is a value, which may become non-zero, and multiplies as any other value.</p>
-<p><b>Construction states the structure.</b> A value given for a structural zero, even a zero, is a defect: it says the author expected an element there. The <code>structural_zero</code> tag makes the intent explicit and checks it at compile time, at no run-time cost.</p>
+<p><b>Construction states the structure.</b> A value given for a structural zero, even a zero, is a defect: it says the author expected an element there. The <code>0_o</code> literal makes the intent explicit and checks it at compile time, at no run-time cost.</p>
 <h2><a class="anchor" id="performance"></a>
 Performance</h2>
 <p>The cost of an operation follows its count of stored elements and of elementary products, not its shape. See the <a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/benchmark/README.md">benchmarks</a>.</p>
