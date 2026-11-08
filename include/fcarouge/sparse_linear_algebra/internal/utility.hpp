@@ -223,16 +223,23 @@ template <std::size_t Capacity> struct position_list {
 };
 
 //! @brief The pattern of the positions of a list.
+//!
+//! @details The list is in row-major order: the construction of the pattern
+//! verifies it in linear time.
 template <std::size_t Rows, std::size_t Columns, auto List>
 [[nodiscard]] consteval auto to_pattern()
     -> sparse::pattern<Rows, Columns, List.size> {
-  sparse::pattern<Rows, Columns, List.size> result;
+  if constexpr (List.size == 0) {
+    return sparse::pattern{sparse::shape<Rows, Columns>};
+  } else {
+    sparse::position items[List.size]{};
 
-  for (std::size_t i{0}; i < List.size; ++i) {
-    result.positions[i] = List.items[i];
+    for (std::size_t i{0}; i < List.size; ++i) {
+      items[i] = List.items[i];
+    }
+
+    return sparse::pattern{sparse::shape<Rows, Columns>, items};
   }
-
-  return result;
 }
 
 //! @brief Merge two patterns, keeping the positions of both, or only those in
@@ -259,6 +266,24 @@ template <auto Lhs, auto Rhs, bool KeepAll>
       list.push(Lhs.positions[i]);
       ++i;
       ++j;
+    }
+  }
+
+  return list;
+}
+
+//! @brief The positions of a transposed pattern, in ascending order.
+//!
+//! @details The positions are bucketed by column: ascending rows within each
+//! column are already what the transposed row-major order requires.
+template <auto Pattern> [[nodiscard]] consteval auto transpose_positions() {
+  position_list<Pattern.count> list;
+
+  for (std::size_t column{0}; column < Pattern.columns; ++column) {
+    for (std::size_t i{0}; i < Pattern.count; ++i) {
+      if (Pattern.positions[i].column == column) {
+        list.push({column, Pattern.positions[i].row});
+      }
     }
   }
 

@@ -57,10 +57,11 @@ static_assert(transposed(band).at<1, 0>() == 2.);
 static_assert(band == band_matrix{1., 2., 3., 4., 5., 6., 7.});
 static_assert(matrix_one_norm(band) == 12.);
 static_assert(matrix_inf_norm(band) == 13.);
-static_assert(
-    matrix_frob_norm(
-        sparse_matrix<double, sparse::make_pattern<2, 2>({{0, 1}, {1, 0}})>{
-            3., 4.}) == 5.);
+inline constexpr sparse::pattern anti_diagonal_pattern{sparse::shape<2, 2>,
+                                                       {{0, 1}, {1, 0}}};
+
+static_assert(matrix_frob_norm(sparse_matrix<double, anti_diagonal_pattern>{
+                  3., 4.}) == 5.);
 static_assert(dot(sparse_matrix<double, sparse::dense<2, 1>>{3., 4.},
                   sparse_matrix<double, sparse::dense<1, 2>>{3., 4.}) == 25.);
 static_assert(band_matrix{{1., 2., 0_o},           //

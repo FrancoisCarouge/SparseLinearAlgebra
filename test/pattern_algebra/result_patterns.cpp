@@ -39,17 +39,17 @@ using sparse::banded;
 using sparse::dense;
 using sparse::diagonal;
 using sparse::lower_triangular;
-using sparse::make_pattern;
+using sparse::pattern;
+using sparse::shape;
 using sparse::tridiagonal;
 using sparse::upper_triangular;
 using sparse::zero;
 
 template <auto Pattern> using matrix = sparse_matrix<double, Pattern>;
 
-inline constexpr auto rectangular{make_pattern<2, 3>({{0, 2}, {1, 0}})};
-inline constexpr auto rectangular_transposed{
-    make_pattern<3, 2>({{0, 1}, {2, 0}})};
-inline constexpr auto first_element{make_pattern<3, 1>({{0, 0}})};
+inline constexpr pattern rectangular{shape<2, 3>, {{0, 2}, {1, 0}}};
+inline constexpr pattern rectangular_transposed{shape<3, 2>, {{0, 1}, {2, 0}}};
+inline constexpr pattern first_element{shape<3, 1>, {{0, 0}}};
 
 //! @test Verifies the sum and the difference store the union of their terms.
 static_assert(
@@ -102,9 +102,10 @@ static_assert(std::same_as<decltype(matrix<tridiagonal<3>>{} / 2.),
 static_assert(
     std::same_as<decltype(matrix<diagonal<3>>{} * matrix<first_element>{}),
                  matrix<first_element>>);
+inline constexpr pattern first_rows{shape<3, 1>, {{0, 0}, {1, 0}}};
 static_assert(
     std::same_as<decltype(matrix<tridiagonal<3>>{} * matrix<first_element>{}),
-                 matrix<make_pattern<3, 1>({{0, 0}, {1, 0}})>>);
+                 matrix<first_rows>>);
 
 //! @test Verifies the element type is kept whatever the pattern.
 static_assert(std::same_as<decltype(sparse_matrix<float, diagonal<3>>{} *

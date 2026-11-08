@@ -35,17 +35,18 @@ namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
 using sparse::lower_triangular;
-using sparse::make_pattern;
+using sparse::pattern;
 using sparse::pattern_intersection;
 using sparse::pattern_product;
 using sparse::pattern_transpose;
 using sparse::pattern_union;
+using sparse::shape;
 using sparse::tridiagonal;
 using sparse::upper_triangular;
 
-inline constexpr auto rectangular{make_pattern<2, 3>({{0, 2}, {1, 0}})};
-inline constexpr auto first_row{make_pattern<3, 3>({{0, 0}, {0, 1}, {0, 2}})};
-inline constexpr auto last_column{make_pattern<3, 3>({{0, 2}, {1, 2}, {2, 2}})};
+inline constexpr pattern rectangular{shape<2, 3>, {{0, 2}, {1, 0}}};
+inline constexpr pattern first_row{shape<3, 3>, {{0, 0}, {0, 1}, {0, 2}}};
+inline constexpr pattern last_column{shape<3, 3>, {{0, 2}, {1, 2}, {2, 2}}};
 
 //! @test Verifies the union, and that it is commutative and idempotent.
 static_assert(pattern_union<first_row, last_column>.count == 5);
@@ -59,7 +60,7 @@ static_assert(pattern_union<lower_triangular<3>, upper_triangular<3>> ==
 
 //! @test Verifies the intersection.
 static_assert(pattern_intersection<first_row, last_column> ==
-              make_pattern<3, 3>({{0, 2}}));
+              pattern{shape<3, 3>, {{0, 2}}});
 static_assert(pattern_intersection<first_row, sparse::zero<3, 3>>.count == 0);
 static_assert(pattern_intersection<lower_triangular<3>, upper_triangular<3>> ==
               diagonal<3>);
@@ -67,12 +68,12 @@ static_assert(pattern_intersection<lower_triangular<3>, upper_triangular<3>> ==
 //! @test Verifies the transposition, its shape, and that it is an involution
 //! that keeps the row-major order.
 static_assert(pattern_transpose<rectangular> ==
-              make_pattern<3, 2>({{0, 1}, {2, 0}}));
+              pattern{shape<3, 2>, {{0, 1}, {2, 0}}});
 static_assert(pattern_transpose<pattern_transpose<rectangular>> == rectangular);
 static_assert(pattern_transpose<lower_triangular<3>> == upper_triangular<3>);
 static_assert(pattern_transpose<diagonal<3>> == diagonal<3>);
 static_assert(pattern_transpose<first_row> ==
-              make_pattern<3, 3>({{0, 0}, {1, 0}, {2, 0}}));
+              pattern{shape<3, 3>, {{0, 0}, {1, 0}, {2, 0}}});
 
 //! @test Verifies the structural product of well-known families.
 static_assert(pattern_product<diagonal<3>, diagonal<3>> == diagonal<3>);
@@ -94,8 +95,8 @@ static_assert(pattern_product<sparse::dense<3, 3>, sparse::zero<3, 3>>.count ==
               0);
 
 //! @test Verifies the product of two non-empty patterns that never meet.
-inline constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};
-inline constexpr auto second_row{make_pattern<2, 2>({{1, 0}, {1, 1}})};
+inline constexpr pattern first_column{shape<2, 2>, {{0, 0}, {1, 0}}};
+inline constexpr pattern second_row{shape<2, 2>, {{1, 0}, {1, 1}}};
 
 static_assert(pattern_product<first_column, second_row>.count == 0);
 

@@ -45,15 +45,16 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
   using literals::operator""_o;
   using sparse::tridiagonal;
 
-  constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};
-  constexpr auto tall{make_pattern<3, 2>({{0, 1}, {1, 0}, {2, 1}})};
-  constexpr auto first_element{make_pattern<3, 1>({{0, 0}})};
-  constexpr auto row_pattern{make_pattern<1, 3>({{0, 0}, {0, 2}})};
-  constexpr auto column_pattern{make_pattern<3, 1>({{0, 0}, {1, 0}})};
+  constexpr pattern wide{shape<2, 3>, {{0, 0}, {0, 2}, {1, 1}}};
+  constexpr pattern tall{shape<3, 2>, {{0, 1}, {1, 0}, {2, 1}}};
+  constexpr pattern first_element{shape<3, 1>, {{0, 0}}};
+  constexpr pattern row_pattern{shape<1, 3>, {{0, 0}, {0, 2}}};
+  constexpr pattern column_pattern{shape<3, 1>, {{0, 0}, {1, 0}}};
 
   const sparse_matrix<double, diagonal<3>> scale_matrix{2., 3., 4.};
   const sparse_matrix<double, tridiagonal<3>> band{1., 2., 3., 4., 5., 6., 7.};

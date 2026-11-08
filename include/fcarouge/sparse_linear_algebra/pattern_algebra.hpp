@@ -63,25 +63,11 @@ inline constexpr auto pattern_intersection{
         sparse_linear_algebra::internal::merge_positions<Lhs, Rhs, false>()>()};
 
 //! @brief The transposed pattern.
-//!
-//! @details The positions are bucketed by column: ascending rows within each
-//! column are already what the transposed row-major order requires.
 template <sparsity_pattern auto Pattern>
-inline constexpr auto pattern_transpose{[] {
-  pattern<Pattern.columns, Pattern.rows, Pattern.count> result;
-  std::size_t index{0};
-
-  for (std::size_t column{0}; column < Pattern.columns; ++column) {
-    for (std::size_t i{0}; i < Pattern.count; ++i) {
-      if (Pattern.positions[i].column == column) {
-        result.positions[index] = {column, Pattern.positions[i].row};
-        ++index;
-      }
-    }
-  }
-
-  return result;
-}()};
+inline constexpr auto pattern_transpose{
+    sparse_linear_algebra::internal::to_pattern<
+        Pattern.columns, Pattern.rows,
+        sparse_linear_algebra::internal::transpose_positions<Pattern>()>()};
 
 //! @brief The count of elementary products of a matrix product.
 //!

@@ -160,10 +160,10 @@ struct differential {
 inline constexpr auto is_arrow{[](std::size_t row, std::size_t column) -> bool {
   return row == 0 || column == 0 || row == column;
 }};
-inline constexpr auto arrow{sparse::generate<3, 3, is_arrow>()};
-inline constexpr auto anti_diagonal{
-    sparse::make_pattern<3, 3>({{0, 2}, {1, 1}, {2, 0}})};
-inline constexpr auto corner{sparse::make_pattern<3, 3>({{2, 2}})};
+inline constexpr sparse::pattern arrow{sparse::shape<3, 3>, is_arrow};
+inline constexpr sparse::pattern anti_diagonal{sparse::shape<3, 3>,
+                                               {{0, 2}, {1, 1}, {2, 0}}};
+inline constexpr sparse::pattern corner{sparse::shape<3, 3>, {{2, 2}}};
 
 //! @test Verifies every pair of a subset of the patterns at compile time,
 //! within the compilers' constant evaluation limits.
@@ -183,10 +183,10 @@ static_assert([] -> bool {
 
   assert(run_time == 0);
 
-  constexpr auto wide{
-      sparse::make_pattern<2, 4>({{0, 0}, {0, 3}, {1, 1}, {1, 2}})};
-  constexpr auto tall{
-      sparse::make_pattern<4, 3>({{0, 2}, {1, 0}, {2, 1}, {3, 0}, {3, 2}})};
+  constexpr sparse::pattern wide{sparse::shape<2, 4>,
+                                 {{0, 0}, {0, 3}, {1, 1}, {1, 2}}};
+  constexpr sparse::pattern tall{sparse::shape<4, 3>,
+                                 {{0, 2}, {1, 0}, {2, 1}, {3, 0}, {3, 2}}};
 
   differential::verify_all_pairs<
       sparse::diagonal<3>, sparse::tridiagonal<3>, sparse::lower_triangular<3>,

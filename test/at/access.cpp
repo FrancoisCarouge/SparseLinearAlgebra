@@ -38,11 +38,14 @@ For more information, please refer to <https://unlicense.org> */
 
 namespace fcarouge::test {
 namespace {
-using sparse::make_pattern;
+using sparse::pattern;
+using sparse::shape;
 
 using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
-using column = sparse_matrix<double, make_pattern<2, 1>({{1, 0}})>;
-using row = sparse_matrix<double, make_pattern<1, 2>({{0, 1}})>;
+inline constexpr pattern column_pattern{shape<2, 1>, {{1, 0}}};
+using column = sparse_matrix<double, column_pattern>;
+inline constexpr pattern row_pattern{shape<1, 2>, {{0, 1}}};
+using row = sparse_matrix<double, row_pattern>;
 using singleton = sparse_matrix<double, sparse::dense<1, 1>>;
 using empty_singleton = sparse_matrix<double, sparse::zero<1, 1>>;
 

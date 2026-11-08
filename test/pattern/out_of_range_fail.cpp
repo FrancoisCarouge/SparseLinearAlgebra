@@ -35,7 +35,8 @@ namespace fcarouge::test {
 namespace {
 //! @test Verifies a pattern with a position out of the matrix does not compile.
 // Intended:
-// inline constexpr auto value{sparse::make_pattern<2, 2>({{0, 0}, {1, 1}})};
-inline constexpr auto value{sparse::make_pattern<2, 2>({{0, 0}, {1, 2}})};
+// inline constexpr sparse::pattern value{sparse::shape<2, 2>, {{0, 0}, {1,
+// 1}}};
+inline constexpr sparse::pattern value{sparse::shape<2, 2>, {{0, 0}, {1, 2}}};
 } // namespace
 } // namespace fcarouge::test

@@ -104,7 +104,9 @@ namespace {
   assert((dense_value.at<1, 0>() == 4.));
 
   // A vector.
-  sparse_matrix<double, sparse::make_pattern<4, 1>({{1, 0}, {3, 0}})> column;
+  constexpr sparse::pattern column_pattern{sparse::shape<4, 1>,
+                                           {{1, 0}, {3, 0}}};
+  sparse_matrix<double, column_pattern> column;
 
   column.at<1, 0>() = 5.;
   column.at<3, 0>() = 6.;

@@ -46,8 +46,9 @@ namespace {
 
   assert(run_time == 0);
 
-  using first_row =
-      sparse_matrix<double, sparse::make_pattern<2, 2>({{0, 0}, {0, 1}})>;
+  constexpr sparse::pattern first_row_pattern{sparse::shape<2, 2>,
+                                              {{0, 0}, {0, 1}}};
+  using first_row = sparse_matrix<double, first_row_pattern>;
 
   const first_row value{1., -2.};
 

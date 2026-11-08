@@ -30,7 +30,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org> ]]
 
 build("concept")
-build("make")
+build("construction")
 build("named")
 fail("duplicate_fail")
 fail("matrix_fail")

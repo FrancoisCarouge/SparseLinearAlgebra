@@ -44,12 +44,13 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
   using literals::operator""_o;
 
   using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
-  using column_vector =
-      sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
+  constexpr pattern column_vector_pattern{shape<3, 1>, {{0, 0}, {2, 0}}};
+  using column_vector = sparse_matrix<double, column_vector_pattern>;
 
   sparse_matrix<double, sparse::diagonal<3>> scale_matrix;
 

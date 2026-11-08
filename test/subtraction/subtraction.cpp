@@ -46,11 +46,12 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
   using literals::operator""_o;
 
-  constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};
-  constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};
+  constexpr pattern first_row{shape<2, 2>, {{0, 0}, {0, 1}}};
+  constexpr pattern first_column{shape<2, 2>, {{0, 0}, {1, 0}}};
 
   const sparse_matrix<double, first_row> lhs{{1., 2.},      //
                                              {0_o, 0_o}};   //
