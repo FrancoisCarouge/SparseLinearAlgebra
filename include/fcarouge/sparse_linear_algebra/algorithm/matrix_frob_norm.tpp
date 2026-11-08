@@ -50,7 +50,7 @@ namespace fcarouge {
 //! @see std::linalg::matrix_frob_norm
 //!
 //! @complexity Linear in the count of stored elements.
-template <std::floating_point Type, sparse::sparsity_pattern auto Pattern>
+template <std::floating_point Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   Type result{};

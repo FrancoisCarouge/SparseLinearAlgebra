@@ -58,8 +58,7 @@ namespace fcarouge {
 //! is copied.
 //!
 //! @complexity Linear in the count of stored elements of the result.
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator+(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)

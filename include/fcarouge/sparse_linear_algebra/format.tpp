@@ -50,8 +50,7 @@ For more information, please refer to <https://unlicense.org> */
 //! @details Formats every element, structural zeros included, so that the
 //! format does not depend on the pattern: a singleton as its element, a row
 //! vector as a list of elements, a column vector or a matrix as a list of rows.
-template <typename Type, fcarouge::sparse::sparsity_pattern auto Pattern,
-          typename Char>
+template <typename Type, fcarouge::sparsity_pattern auto Pattern, typename Char>
 struct std::formatter<fcarouge::sparse_matrix<Type, Pattern>, Char> {
   //! @todo Add a pretty, multi-line, aligned format option?
   //! @todo Add a debug, showing the stored elements, format option?

@@ -45,7 +45,7 @@ namespace fcarouge {
 //! @todo The division by a matrix needs a solver, a factorization.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern> {

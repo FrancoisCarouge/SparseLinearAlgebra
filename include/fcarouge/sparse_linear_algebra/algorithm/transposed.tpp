@@ -46,7 +46,7 @@ namespace fcarouge {
 //! @see std::linalg::transposed
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 transposed(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, sparse::pattern_transpose<Pattern>> {

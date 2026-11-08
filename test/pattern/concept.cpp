@@ -37,16 +37,15 @@ namespace fcarouge::test {
 namespace {
 //! @test Verifies the sparsity pattern concept accepts the patterns, of every
 //! construction, and only them.
-static_assert(sparse::sparsity_pattern<decltype(sparse::diagonal<2>)>);
-static_assert(sparse::sparsity_pattern<decltype(sparse::zero<2, 3>)>);
-static_assert(sparse::sparsity_pattern<sparse::pattern<2, 2, 1>>);
-static_assert(sparse::sparsity_pattern<const sparse::pattern<2, 2, 1>>);
-static_assert(sparse::sparsity_pattern<decltype(sparse::pattern{
-                  sparse::shape<1, 1>, {{0, 0}}})>);
-static_assert(not sparse::sparsity_pattern<int>);
-static_assert(not sparse::sparsity_pattern<std::size_t>);
-static_assert(not sparse::sparsity_pattern<sparse::position>);
+static_assert(sparsity_pattern<decltype(sparse::diagonal<2>)>);
+static_assert(sparsity_pattern<decltype(sparse::zero<2, 3>)>);
+static_assert(sparsity_pattern<sparse::pattern<2, 2, 1>>);
+static_assert(sparsity_pattern<const sparse::pattern<2, 2, 1>>);
 static_assert(
-    not sparse::sparsity_pattern<sparse_matrix<double, sparse::diagonal<2>>>);
+    sparsity_pattern<decltype(sparse::pattern{sparse::shape<1, 1>, {{0, 0}}})>);
+static_assert(not sparsity_pattern<int>);
+static_assert(not sparsity_pattern<std::size_t>);
+static_assert(not sparsity_pattern<sparse::position>);
+static_assert(not sparsity_pattern<sparse_matrix<double, sparse::diagonal<2>>>);
 } // namespace
 } // namespace fcarouge::test

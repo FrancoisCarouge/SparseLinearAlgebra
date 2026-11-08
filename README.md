@@ -69,7 +69,7 @@ The library is header-only and has no dependency. A single-header amalgamation, 
 
 ### Namespace
 
-The `sparse_matrix` class and its operations live in the `fcarouge` namespace, and the `0_o` structural zero literal in the `fcarouge::literals` namespace. The patterns and their algebra live in the `fcarouge::sparse` namespace. Import them with a using-declaration or namespace alias as your project's style prefers.
+The `sparse_matrix` class, its operations, and the `sparsity_pattern` concept live in the `fcarouge` namespace, and the `0_o` structural zero literal in the `fcarouge::literals` namespace. The patterns and their algebra live in the `fcarouge::sparse` namespace. Import them with a using-declaration or namespace alias as your project's style prefers.
 
 ### Samples
 
@@ -89,7 +89,7 @@ Also documented in the [fcarouge/sparse_linear_algebra.hpp](https://github.com/F
 ```cpp
 namespace fcarouge {
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 class sparse_matrix;
 }
 ```

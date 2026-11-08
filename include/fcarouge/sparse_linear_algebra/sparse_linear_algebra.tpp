@@ -47,7 +47,7 @@ For more information, please refer to <https://unlicense.org> */
 
 namespace fcarouge {
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 template <std::same_as<Type>... Values>
   requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored) {
@@ -55,9 +55,9 @@ constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored) {
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 template <auto Other>
-  requires(sparse::sparsity_pattern<decltype(Other)> and
+  requires(sparsity_pattern<decltype(Other)> and
            sparse::is_subset_of<Other, Pattern>)
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
     const sparse_matrix<Type, Other> &other) {
@@ -72,7 +72,7 @@ constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 constexpr auto
 sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                          std::size_t column) const -> Type {
@@ -82,7 +82,7 @@ sparse_matrix<Type, Pattern>::operator[](std::size_t row,
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 constexpr auto sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                                         std::size_t column)
     -> Type &
@@ -92,7 +92,7 @@ constexpr auto sparse_matrix<Type, Pattern>::operator[](std::size_t row,
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::operator[](
@@ -102,7 +102,7 @@ constexpr auto sparse_matrix<Type, Pattern>::operator[](
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::at() -> Type & {
@@ -112,7 +112,7 @@ constexpr auto sparse_matrix<Type, Pattern>::at() -> Type & {
 }
 
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 template <std::size_t Row, std::size_t Column>
   requires(Row < Pattern.rows and Column < Pattern.columns)
 constexpr auto sparse_matrix<Type, Pattern>::at() const -> Type {

@@ -75,7 +75,7 @@ namespace fcarouge {
 //! @tparam Type The matrix element type.
 //! @tparam Pattern The sparsity pattern of the matrix.
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 class sparse_matrix
     : public sparse_linear_algebra::internal::storage<Type, Pattern> {
 public:
@@ -124,7 +124,7 @@ public:
   //!
   //! @param other The matrix of a narrower, or the same, pattern.
   template <auto Other>
-    requires(sparse::sparsity_pattern<decltype(Other)> and
+    requires(sparsity_pattern<decltype(Other)> and
              sparse::is_subset_of<Other, Pattern>)
   constexpr explicit(false)
       sparse_matrix(const sparse_matrix<Type, Other> &other);
@@ -237,75 +237,70 @@ namespace fcarouge {
 //! @name Algorithms
 //! @{
 
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)
 [[nodiscard]] constexpr auto dot(const sparse_matrix<Type, Lhs> &lhs,
                                  const sparse_matrix<Type, Rhs> &rhs) -> Type;
 
-template <std::floating_point Type, sparse::sparsity_pattern auto Pattern>
+template <std::floating_point Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator==(const sparse_matrix<Type, Lhs> &lhs,
                                         const sparse_matrix<Type, Rhs> &rhs)
     -> bool;
 
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator+(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>>;
 
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator-(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>>;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 operator-(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>>;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
                                        const sparse_matrix<Type, Pattern> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 transposed(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, sparse::pattern_transpose<Pattern>>;

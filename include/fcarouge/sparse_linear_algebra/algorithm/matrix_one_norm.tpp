@@ -48,7 +48,7 @@ namespace fcarouge {
 //! @see std::linalg::matrix_one_norm
 //!
 //! @complexity Linear in the count of stored elements and of columns.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   std::array<Type, Pattern.columns> sums{};
