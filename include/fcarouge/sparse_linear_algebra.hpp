@@ -75,7 +75,8 @@ namespace fcarouge {
 //!
 //! @tparam Type The matrix element type.
 //! @tparam Pattern The sparsity pattern of the matrix.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, auto Pattern>
+  requires sparse::sparsity_pattern<decltype(Pattern)>
 class sparse_matrix {
 public:
   //! @name Public Member Variables
@@ -112,8 +113,9 @@ public:
   //! zero.
   //!
   //! @param other The matrix of a narrower, or the same, pattern.
-  template <sparse::sparsity_pattern auto Other>
-    requires sparse::is_subset_of<Other, Pattern>
+  template <auto Other>
+    requires(sparse::sparsity_pattern<decltype(Other)> and
+             sparse::is_subset_of<Other, Pattern>)
   constexpr explicit(false)
       sparse_matrix(const sparse_matrix<Type, Other> &other);
 
