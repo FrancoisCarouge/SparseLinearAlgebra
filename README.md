@@ -64,7 +64,7 @@ The library is header-only and has no dependency. A single-header amalgamation, 
 
 ### Namespace
 
-The `sparse_matrix` class and its operations live in the `fcarouge` namespace, as TypedLinearAlgebra's `typed_matrix` and Kalman's `kalman` do. The patterns, their algebra, and `make_matrix` live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
+The `sparse_matrix` class and its operations live in the `fcarouge` namespace, as TypedLinearAlgebra's `typed_matrix` and Kalman's `kalman` do. The patterns, their algebra, and the `0_o` structural zero literal live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
 
 ### Samples
 
@@ -109,6 +109,7 @@ class sparse_matrix;
 | --- | --- |
 | `(default constructor)` | Construct a zero matrix. |
 | `(explicit constructor)` | Construct from every stored element, in row-major order. Each one is exactly of `Type`, and there is at least one. |
+| `(explicit constructor)` | Construct from every position, in row-major order: each stored element exactly of `Type`, each structural zero the [`0_o` literal](#structural-zero-literal). Only for a pattern with a structural zero. |
 | `(conversion constructor)` | Implicitly convert from a matrix of the same element type and shape, whose stored positions this pattern all stores. |
 | `at<Row, Column>()` | Access the stored element at the compile-time position, by reference. Only for a stored element. |
 | `at<Row, Column>() const` | Read the element at the compile-time position, by value. A structural zero reads as `Type{}`. |
@@ -202,37 +203,23 @@ The compile-time computations the operations derive their results with, each a v
 | `product_term_count<Lhs, Rhs>` | The count of elementary products of a matrix product. |
 | `is_subset_of<Inner, Outer>` | Whether a pattern stores every position of another, of the same shape. |
 
-### Element Construction
-
-#### `make_matrix`
+### Structural Zero Literal
 
 ```cpp
-namespace fcarouge::sparse {
-template <typename Matrix, typename... Values>
-[[nodiscard]] constexpr auto make_matrix(const Values &...values) -> Matrix;
-
-namespace literals {
+namespace fcarouge::sparse::literals {
 template <char... Characters>
 [[nodiscard]] consteval auto operator""_o() noexcept;
 }
-}
 ```
 
-Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless `Matrix` is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is the structural zero literal `0_o`: a `0.` at a structural zero does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
+The value of a structural zero in a construction from every position, so that the declaration reads as the matrix. A value at a structural zero, even `0.`, does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
 
 ```cpp
-using lower = sparse_matrix<double, lower_triangular<2>>;
-
 using sparse::literals::operator""_o;
 
-const lower value{make_matrix<lower>(1., 0_o,
-                                     2., 3.)};
+const sparse_matrix<double, lower_triangular<2>> value{1., 0_o,
+                                                       2., 3.};
 ```
-
-| Parameter | Definition |
-| --- | --- |
-| `Matrix` | The sparse matrix type to construct. |
-| `values` | The value of each position, in row-major order. |
 
 ### Element Access
 
@@ -244,7 +231,7 @@ A structural zero has nothing to refer to. A read is by value, and a write that 
 | Write: `at<i, j>() = value` | Yes. | Does not compile. |
 | Write: `operator[i, j] = value` | Without a structural zero only: its position is only known at run time. | Does not compile. |
 | Construction from the stored elements | Yes, in row-major order. | Takes no value. |
-| `make_matrix<Matrix>(values...)` | Yes, a value. | Yes, `0_o`. |
+| Construction from every position | Yes, in row-major order. | Yes, `0_o`. |
 | Conversion from a matrix of a narrower pattern | Yes. | Yes, zero. |
 
 The rejections of the writes and of the constructions are compile errors, which a `requires` expression detects. To ask whether a position can be written, use `decltype(value)::structure.stores(i, j)`.
@@ -265,7 +252,7 @@ The operations below are supported, each as a function or an operator of the `fc
 | `matrix_frob_norm` | Not applicable. Returns an element. Floating-point elements only. | `O(K)`. |
 | `matrix_one_norm` | Not applicable. Returns an element, the largest absolute column sum. | `O(K + C)`. |
 | `matrix_inf_norm` | Not applicable. Returns an element, the largest absolute row sum. | `O(K + R)`. |
-| `make_matrix` | The pattern of the matrix to construct. | `O(R * C)`. |
+| Construction from every position | The pattern of the matrix. | `O(R * C)`. |
 | Read of an element at a run-time position | Not applicable. Returns an element. | `O(log K)`. |
 | Access of an element at a compile-time position | Not applicable. Returns an element. | `O(1)`. |
 

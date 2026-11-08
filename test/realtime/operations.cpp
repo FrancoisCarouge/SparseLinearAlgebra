@@ -44,7 +44,6 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_matrix;
   using sparse::make_pattern;
   using sparse::literals::operator""_o;
 
@@ -58,10 +57,9 @@ namespace {
   scale_matrix.at<1, 1>() = 3.;
   scale_matrix.at<2, 2>() = 4.;
 
-  const auto band{
-      make_matrix<band_matrix>(1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.)};
+  const band_matrix band{1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.};
   const band_matrix copy{band};
-  const auto column{make_matrix<column_vector>(3., 0_o, 4.)};
+  const column_vector column{3., 0_o, 4.};
 
   const auto product{scale_matrix * band};
   const auto sum{scale_matrix + band};

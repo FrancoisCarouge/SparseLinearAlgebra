@@ -35,21 +35,49 @@ For more information, please refer to <https://unlicense.org> */
 
 namespace fcarouge::test {
 namespace {
-//! @test Verifies a value not implicitly convertible to the element type does
-//! not compile.
+//! @test Verifies the construction of a matrix from a value at every position,
+//! a structural zero explicitly.
 [[maybe_unused]] const auto test{[] -> int {
-  using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
+  // Not a constant expression: every operation below is `constexpr`, and this
+  // test would otherwise be evaluated at compile time, and never at run time.
+  [[maybe_unused]] const volatile int run_time{0};
 
-  using sparse::make_matrix;
+  assert(run_time == 0);
+
+  using sparse::make_pattern;
   using sparse::literals::operator""_o;
 
-  // Intended:
-  // const diagonal_matrix value{
-  //     make_matrix<diagonal_matrix>(1., 0_o,
-  //     0_o, 2.)};
-  const diagonal_matrix value{make_matrix<diagonal_matrix>("1", 0_o, 0_o, 2.)};
+  using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
+  using column = sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
+  using row = sparse_matrix<double, make_pattern<1, 3>({{0, 1}})>;
 
-  assert((value.at<1, 1>() == 2.));
+  const band_matrix band{1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.};
+
+  assert((band == band_matrix{1., 2., 3., 4., 5., 6., 7.}));
+
+  // A vector, of either orientation.
+  const column first_last{1., 0_o, 3.};
+  const row middle{0_o, 2., 0_o};
+
+  assert((first_last.at<0, 0>() == 1.));
+  assert((first_last.at<1, 0>() == 0.));
+  assert((first_last.at<2, 0>() == 3.));
+  assert((middle.at<0, 0>() == 0.));
+  assert((middle.at<0, 1>() == 2.));
+
+  // A pattern without a stored element.
+  const sparse_matrix<double, sparse::zero<1, 2>> none{0_o, 0_o};
+
+  assert((none.at<0, 1>() == 0.));
+
+  // Every spelling of a zero literal.
+  const column spelled{1., 0._o, 3.};
+  const column decimal{1., 0.0_o, 3.};
+  const column fraction{1., .0_o, 3.};
+
+  assert((spelled == first_last));
+  assert((decimal == first_last));
+  assert((fraction == first_last));
 
   return 0;
 }()};

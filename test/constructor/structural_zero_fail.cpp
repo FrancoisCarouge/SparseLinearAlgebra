@@ -39,14 +39,12 @@ namespace {
 [[maybe_unused]] const auto test{[] -> int {
   using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
 
-  using sparse::make_matrix;
   using sparse::literals::operator""_o;
 
   // Intended:
-  // const diagonal_matrix value{
-  //     make_matrix<diagonal_matrix>(1., 0_o,
-  //     0_o, 2.)};
-  const diagonal_matrix value{make_matrix<diagonal_matrix>(0_o, 0_o, 0_o, 2.)};
+  // const diagonal_matrix value{1., 0_o,
+  //                             0_o, 2.};
+  const diagonal_matrix value{0_o, 0_o, 0_o, 2.};
 
   assert((value.at<1, 1>() == 2.));
 

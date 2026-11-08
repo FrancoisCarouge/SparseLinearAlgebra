@@ -55,6 +55,7 @@ namespace {
   using sparse::dense;
   using sparse::diagonal;
   using sparse::upper_triangular;
+  using sparse::literals::operator""_o;
 
   using transition = sparse_matrix<double, upper_triangular<2>>;
   using noise = sparse_matrix<double, diagonal<2>>;
@@ -66,10 +67,10 @@ namespace {
   // The bottom left element is a structural zero, without storage.
   static_assert(sizeof(transition) == 3 * sizeof(double));
 
-  const transition model{1., period, 1.};
+  const transition model{1., period, 0_o, 1.};
   const state initial{1., 3.};
-  const noise uncertainty{4., 1.};
-  const noise process{0.25, 0.5};
+  const noise uncertainty{4., 0_o, 0_o, 1.};
+  const noise process{0.25, 0_o, 0_o, 0.5};
 
   // The prediction of the state: the position moves by the velocity.
   const auto predicted{model * initial};

@@ -44,6 +44,7 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 #include <limits>
 #include <type_traits>
+#include <utility>
 
 #if __STDC_HOSTED__
 
@@ -73,6 +74,60 @@ template <typename Matrix> using element_t = element<Matrix>::type;
 //! structural zero.
 template <auto Pattern>
 inline constexpr bool is_dense{Pattern.count == Pattern.rows * Pattern.columns};
+
+//! @brief The type of the value of a structural zero in a construction from
+//! every position, the result of the `_o` literal.
+struct structural_zero {};
+
+//! @brief Whether the characters of a literal spell a zero: zero digits, at
+//! least one, and at most one decimal point.
+template <char... Characters>
+inline constexpr bool is_zero_literal{
+    ((Characters == '0' or Characters == '.') and ...) and
+    ((Characters == '0' ? 1 : 0) + ... + 0) >= 1 and
+    ((Characters == '.' ? 1 : 0) + ... + 0) <= 1};
+
+//! @brief Whether a value may be given at a linear position of a pattern: a
+//! structural zero only takes the `_o` literal, a stored element only takes a
+//! value of exactly the element type.
+//!
+//! @details Partially specialized variable templates rather than immediately
+//! invoked templated lambdas, for the constraints' evaluation by MSVC.
+template <typename Value, typename Type, auto Pattern, std::size_t Position,
+          bool Stored = Pattern.stores(Position / Pattern.columns,
+                                       Position % Pattern.columns)>
+inline constexpr bool is_given_at{std::same_as<Value, Type>};
+
+template <typename Value, typename Type, auto Pattern, std::size_t Position>
+inline constexpr bool is_given_at<Value, Type, Pattern, Position, false>{
+    std::same_as<Value, structural_zero>};
+
+template <typename Type, auto Pattern, typename Positions, typename... Values>
+inline constexpr bool are_given_at{false};
+
+template <typename Type, auto Pattern, std::size_t... Positions,
+          typename... Values>
+inline constexpr bool
+    are_given_at<Type, Pattern, std::index_sequence<Positions...>, Values...>{
+        (is_given_at<Values, Type, Pattern, Positions> and ...)};
+
+//! @brief Whether the values may be given at every position of a pattern, in
+//! row-major order.
+template <typename Type, auto Pattern, typename... Values>
+inline constexpr bool are_given{
+    are_given_at<Type, Pattern, std::index_sequence_for<Values...>, Values...>};
+
+//! @brief Write a given value into the next stored element, unless it is a
+//! structural zero: the stored elements are the given values in row-major
+//! order.
+template <typename Type, std::size_t Count, typename Value>
+constexpr void store_given(std::array<Type, Count> &stored, std::size_t &index,
+                           const Value &value) {
+  if constexpr (not std::same_as<Value, structural_zero>) {
+    stored[index] = value;
+    ++index;
+  }
+}
 
 //! @brief A growing list of positions, of a known maximum size, from which the
 //! pattern of an operation's result is sized.

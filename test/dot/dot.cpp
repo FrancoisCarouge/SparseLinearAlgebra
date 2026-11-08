@@ -44,7 +44,6 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_matrix;
   using sparse::make_pattern;
   using sparse::literals::operator""_o;
 
@@ -53,12 +52,10 @@ namespace {
   constexpr auto overlap{make_pattern<4, 1>({{0, 0}, {1, 0}, {3, 0}})};
   constexpr auto overlap_row{make_pattern<1, 4>({{0, 1}, {0, 3}})};
 
-  const auto lhs{make_matrix<sparse_matrix<double, ends>>(2., 0_o, 0_o, -3.)};
-  const auto disjoint{
-      make_matrix<sparse_matrix<double, inner>>(0_o, 5., 7., 0_o)};
-  const auto rhs{make_matrix<sparse_matrix<double, overlap>>(4., 5., 0_o, 6.)};
-  const auto row{
-      make_matrix<sparse_matrix<double, overlap_row>>(0_o, 5., 0_o, 6.)};
+  const sparse_matrix<double, ends> lhs{2., 0_o, 0_o, -3.};
+  const sparse_matrix<double, inner> disjoint{0_o, 5., 7., 0_o};
+  const sparse_matrix<double, overlap> rhs{4., 5., 0_o, 6.};
+  const sparse_matrix<double, overlap_row> row{0_o, 5., 0_o, 6.};
   const sparse_matrix<double, sparse::zero<4, 1>> none;
 
   assert(dot(lhs, rhs) == -10.);

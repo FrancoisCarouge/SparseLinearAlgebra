@@ -54,6 +54,19 @@ constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored)
 
 template <typename Type, auto Pattern>
   requires sparse::sparsity_pattern<decltype(Pattern)>
+template <typename... Values>
+  requires(sizeof...(Values) == Pattern.rows * Pattern.columns and
+           not sparse_linear_algebra::internal::is_dense<Pattern> and
+           sparse_linear_algebra::internal::are_given<Type, Pattern, Values...>)
+constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
+    const Values &...elements) {
+  std::size_t index{0};
+
+  (sparse_linear_algebra::internal::store_given(values, index, elements), ...);
+}
+
+template <typename Type, auto Pattern>
+  requires sparse::sparsity_pattern<decltype(Pattern)>
 template <auto Other>
   requires(sparse::sparsity_pattern<decltype(Other)> and
            sparse::is_subset_of<Other, Pattern>)
