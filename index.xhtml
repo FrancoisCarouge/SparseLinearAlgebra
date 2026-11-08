@@ -273,28 +273,29 @@ Patterns</h2>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_abdcb349d2e4548a4a74e51f6b0a40360"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#abdcb349d2e4548a4a74e51f6b0a40360">fcarouge::sparse::generate</a></div><div class="ttdeci">consteval auto generate()</div><div class="ttdoc">The pattern of the positions satisfying a predicate.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00235">pattern.hpp:235</a></div></div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Pattern   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<th class="markdownTableHeadNone">Pattern   </th><th class="markdownTableHeadNone">Example   </th><th class="markdownTableHeadNone">Definition    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>make_pattern&lt;R, C&gt;()</code>   </td><td class="markdownTableBodyNone">No position.    </td></tr>
+<td class="markdownTableBodyNone"><code>make_pattern&lt;R, C&gt;()</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_empty.svg" alt="A 4 by 6 pattern without position." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">No position.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>make_pattern&lt;R, C&gt;({{i, j}, ...})</code>   </td><td class="markdownTableBodyNone">The listed positions, in any order. A duplicate or out-of-range position does not compile.    </td></tr>
+<td class="markdownTableBodyNone"><code>make_pattern&lt;R, C&gt;({{i, j}, ...})</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_listed.svg" alt="A 4 by 6 pattern of five listed positions." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The listed positions, in any order. A duplicate or out-of-range position does not compile.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>generate&lt;R, C, predicate&gt;()</code>   </td><td class="markdownTableBodyNone">The positions satisfying a stateless predicate of a row and a column.    </td></tr>
+<td class="markdownTableBodyNone"><code>generate&lt;R, C, predicate&gt;()</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/generate.svg" alt="A 4 by 6 pattern of the positions whose row and column sum to a multiple of three." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The positions satisfying a stateless predicate of a row and a column.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>dense&lt;R, C&gt;</code>   </td><td class="markdownTableBodyNone">Every position: a matrix without structural zeros.    </td></tr>
+<td class="markdownTableBodyNone"><code>dense&lt;R, C&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/dense.svg" alt="A dense 4 by 6 pattern: every position." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">Every position: a matrix without structural zeros.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>zero&lt;R, C&gt;</code>   </td><td class="markdownTableBodyNone">No position: the zero matrix.    </td></tr>
+<td class="markdownTableBodyNone"><code>zero&lt;R, C&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/zero.svg" alt="A zero 4 by 6 pattern: no position." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">No position: the zero matrix.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>banded&lt;R, C, L, U&gt;</code>   </td><td class="markdownTableBodyNone">The <code>L</code> sub-diagonals, the main diagonal, and the <code>U</code> super-diagonals.    </td></tr>
+<td class="markdownTableBodyNone"><code>banded&lt;R, C, L, U&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/banded.svg" alt="A 6 by 6 banded pattern of one sub-diagonal and two super-diagonals." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The <code>L</code> sub-diagonals, the main diagonal, and the <code>U</code> super-diagonals.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>diagonal&lt;N&gt;</code>   </td><td class="markdownTableBodyNone">The main diagonal of a square matrix.    </td></tr>
+<td class="markdownTableBodyNone"><code>diagonal&lt;N&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/diagonal.svg" alt="A 6 by 6 diagonal pattern." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The main diagonal of a square matrix.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>tridiagonal&lt;N&gt;</code>   </td><td class="markdownTableBodyNone">The three central diagonals of a square matrix.    </td></tr>
+<td class="markdownTableBodyNone"><code>tridiagonal&lt;N&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/tridiagonal.svg" alt="A 6 by 6 tridiagonal pattern." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The three central diagonals of a square matrix.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>lower_triangular&lt;N&gt;</code>   </td><td class="markdownTableBodyNone">The main diagonal and below of a square matrix.    </td></tr>
+<td class="markdownTableBodyNone"><code>lower_triangular&lt;N&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/lower_triangular.svg" alt="A 6 by 6 lower triangular pattern." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The main diagonal and below of a square matrix.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>upper_triangular&lt;N&gt;</code>   </td><td class="markdownTableBodyNone">The main diagonal and above of a square matrix.   </td></tr>
+<td class="markdownTableBodyNone"><code>upper_triangular&lt;N&gt;</code>   </td><td class="markdownTableBodyNone"><img src="https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/upper_triangular.svg" alt="A 6 by 6 upper triangular pattern." style="pointer-events: none;" class="inline"/>   </td><td class="markdownTableBodyNone">The main diagonal and above of a square matrix.   </td></tr>
 </table>
+<p>The examples draw the stored positions filled and the structural zeros empty: the listed positions <code>{{0, 1}, {1, 4}, {2, 0}, {2, 3}, {3, 5}}</code>, the predicate <code>(i + j) % 3 == 0</code>, and the band <code>banded&lt;6, 6, 1, 2&gt;</code>.</p>
 <h2><a class="anchor" id="pattern-algebra"></a>
 Pattern Algebra</h2>
 <p>The compile-time computations the operations derive their results with, each a variable template of the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace.</p>
