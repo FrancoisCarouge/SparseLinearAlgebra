@@ -37,8 +37,7 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief Francois Carouge's projects namespace.
 //!
 //! @details The definitions and implementations of the library intended for
-//! public usage: the sparse matrix and its operations, as the typed matrix of
-//! TypedLinearAlgebra and the filter of Kalman. Lowers the name conflict probability in large projects. Use
+//! public usage: the sparse matrix and its operations. Lowers the name conflict probability in large projects. Use
 //! using-declarations or namespace-alias-definition per your project
 //! guidelines.
 

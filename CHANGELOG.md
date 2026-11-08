@@ -13,4 +13,3 @@ All notable changes to SparseLinearAlgebra are documented here. The format follo
 - `std::formatter` support, on a hosted implementation.
 - Freestanding, real-time, and constant expression support: no memory allocation, no exception, no input-output.
 - Samples, benchmarks, single-header amalgamation, CMake and pkg-config packages, and AI agent guidance (`AGENTS.md`).
-- Extracted from the TypedLinearAlgebra sparse backend prototype ([#579](https://github.com/FrancoisCarouge/TypedLinearAlgebra/pull/579)) into an independent, dependency-free project.
