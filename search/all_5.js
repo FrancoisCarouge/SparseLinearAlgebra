@@ -51,6 +51,5 @@ var searchData=
   ['count_5ffail_2ecpp_48',['count_fail.cpp',['../constructor_2count__fail_8cpp.xhtml',1,'(Global Namespace)'],['../make__matrix_2count__fail_8cpp.xhtml',1,'(Global Namespace)']]],
   ['counted_49',['counted',['../structfcarouge_1_1test_1_1counted.xhtml',1,'fcarouge::test']]],
   ['covenant_20code_20of_20conduct_50',['Contributor Covenant Code of Conduct',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml',1,'']]],
-  ['coverage_51',['Unit Test Code Coverage',['../unit_test_coverage.xhtml',1,'']]],
-  ['csv_52',['csv',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03.xhtml#ae472c6a3cdf7e4ce3bbb260409791ca4',1,'fcarouge::benchmark::anonymous_namespace{product.cpp}']]]
+  ['coverage_51',['Unit Test Code Coverage',['../unit_test_coverage.xhtml',1,'']]]
 ];

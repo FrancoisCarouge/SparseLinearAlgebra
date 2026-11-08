@@ -109,12 +109,9 @@ $(function(){initNavTree('namespacefcarouge_1_1benchmark_1_1anonymous__namespace
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae472c6a3cdf7e4ce3bbb260409791ca4" id="r_ae472c6a3cdf7e4ce3bbb260409791ca4"><td class="memTemplParams" colspan="2">template&lt;auto Size&gt; </td></tr>
-<tr class="memitem:ae472c6a3cdf7e4ce3bbb260409791ca4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae472c6a3cdf7e4ce3bbb260409791ca4">csv</a> () -&gt; std::string</td></tr>
-<tr class="separator:ae472c6a3cdf7e4ce3bbb260409791ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092c9adb0b821ea4d68fc417409b9a71" id="r_a092c9adb0b821ea4d68fc417409b9a71"><td class="memTemplParams" colspan="2">template&lt;auto Size, auto Pattern&gt; </td></tr>
 <tr class="memitem:a092c9adb0b821ea4d68fc417409b9a71"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a092c9adb0b821ea4d68fc417409b9a71">bench</a> (const char *title)</td></tr>
-<tr class="memdesc:a092c9adb0b821ea4d68fc417409b9a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square matrix-matrix product of the given pattern, of random stored elements.  <br /></td></tr>
+<tr class="memdesc:a092c9adb0b821ea4d68fc417409b9a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square matrix-matrix product of the given pattern, of random stored elements, appended as a Markdown table row of its median elapsed time in nanoseconds and its median absolute percentage error in percent.  <br /></td></tr>
 <tr class="separator:a092c9adb0b821ea4d68fc417409b9a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -122,6 +119,12 @@ Variables</h2></td></tr>
 <tr class="memitem:a24deaf754afccce3d9ccccf7c9aa798b" id="r_a24deaf754afccce3d9ccccf7c9aa798b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfcarouge_1_1not__realtime.xhtml">not_realtime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24deaf754afccce3d9ccccf7c9aa798b">opt_out</a></td></tr>
 <tr class="memdesc:a24deaf754afccce3d9ccccf7c9aa798b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The benchmark measures, prints, and tears down its counters past its entry point: it opts out of the real-time verification for its lifetime.  <br /></td></tr>
 <tr class="separator:a24deaf754afccce3d9ccccf7c9aa798b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4562d2f9a2c5d969d1c1f3fd7bf6a3d" id="r_ab4562d2f9a2c5d969d1c1f3fd7bf6a3d"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4562d2f9a2c5d969d1c1f3fd7bf6a3d">nanoseconds_per_second</a> {1e9}</td></tr>
+<tr class="memdesc:ab4562d2f9a2c5d969d1c1f3fd7bf6a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nanoseconds in a second, nanobench measuring elapsed time in seconds.  <br /></td></tr>
+<tr class="separator:ab4562d2f9a2c5d969d1c1f3fd7bf6a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644ea424528b4fc092784bcf439260b9" id="r_a644ea424528b4fc092784bcf439260b9"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a644ea424528b4fc092784bcf439260b9">percent_per_ratio</a> {100.}</td></tr>
+<tr class="memdesc:a644ea424528b4fc092784bcf439260b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Percent in a ratio, nanobench reporting its median absolute percentage error as a ratio.  <br /></td></tr>
+<tr class="separator:a644ea424528b4fc092784bcf439260b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a092c9adb0b821ea4d68fc417409b9a71" name="a092c9adb0b821ea4d68fc417409b9a71"></a>
@@ -141,7 +144,7 @@ template&lt;auto Size, auto Pattern&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Square matrix-matrix product of the given pattern, of random stored elements. </p>
+<p>Square matrix-matrix product of the given pattern, of random stored elements, appended as a Markdown table row of its median elapsed time in nanoseconds and its median absolute percentage error in percent. </p>
 
 <p class="definition">Definition at line <a class="el" href="product_8cpp_source.xhtml#l00060">60</a> of file <a class="el" href="product_8cpp_source.xhtml">product.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>                                                                 {</div>
@@ -156,23 +159,29 @@ template&lt;auto Size, auto Pattern&gt; </div>
 <div class="line"><span class="lineno">   69</span>    rhs.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1matrix.xhtml#a4ae8cc2685a30cc56bd9b17fd2a82889">values</a>[i] = distribution(generator);</div>
 <div class="line"><span class="lineno">   70</span>  }</div>
 <div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>  std::ofstream results{<span class="stringliteral">&quot;results.txt&quot;</span>, std::ios::app};</div>
-<div class="line"><span class="lineno">   73</span>  ankerl::nanobench::Bench{}</div>
-<div class="line"><span class="lineno">   74</span>      .output(<span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   75</span>      .title(title)</div>
-<div class="line"><span class="lineno">   76</span>      .run([&amp;lhs, &amp;rhs]() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
-<div class="line"><span class="lineno">   78</span>        ankerl::nanobench::doNotOptimizeAway(product);</div>
-<div class="line"><span class="lineno">   79</span>      })</div>
-<div class="line"><span class="lineno">   80</span>      .render(csv&lt;Size&gt;().c_str(), results);</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<div class="line"><span class="lineno">   72</span>  ankerl::nanobench::Bench runner;</div>
+<div class="line"><span class="lineno">   73</span>  runner.output(<span class="keyword">nullptr</span>).title(title).run([&amp;lhs, &amp;rhs]() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
+<div class="line"><span class="lineno">   75</span>    ankerl::nanobench::doNotOptimizeAway(product);</div>
+<div class="line"><span class="lineno">   76</span>  });</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;result{runner.results().front()};</div>
+<div class="line"><span class="lineno">   79</span>  std::ofstream results{<span class="stringliteral">&quot;results.txt&quot;</span>, std::ios::app};</div>
+<div class="line"><span class="lineno">   80</span>  results &lt;&lt; std::format(</div>
+<div class="line"><span class="lineno">   81</span>      <span class="stringliteral">&quot;| {} | {}x{} | {:.2f} | {:.2f} |\n&quot;</span>, title, Size, Size,</div>
+<div class="line"><span class="lineno">   82</span>      result.median(ankerl::nanobench::Result::Measure::elapsed) *</div>
+<div class="line"><span class="lineno">   83</span>          nanoseconds_per_second,</div>
+<div class="line"><span class="lineno">   84</span>      result.medianAbsolutePercentError(</div>
+<div class="line"><span class="lineno">   85</span>          ankerl::nanobench::Result::Measure::elapsed) *</div>
+<div class="line"><span class="lineno">   86</span>          percent_per_ratio);</div>
+<div class="line"><span class="lineno">   87</span>}</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_aaa65d3c3f89fe0c6e5bc7daa53e01ed1"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">fcarouge::test::anonymous_namespace{arithmetic.cpp}::product</a></div><div class="ttdeci">constexpr auto product</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00068">arithmetic.cpp:68</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00047">arithmetic.cpp:47</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1matrix_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1matrix.xhtml">fcarouge::sparse::matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00067">sparse_linear_algebra_forward.hpp:67</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1matrix_xhtml_a4ae8cc2685a30cc56bd9b17fd2a82889"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1matrix.xhtml#a4ae8cc2685a30cc56bd9b17fd2a82889">fcarouge::sparse::matrix::values</a></div><div class="ttdeci">std::array&lt; Type, Pattern.count &gt; values</div><div class="ttdoc">The stored elements, zero-initialized, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="matrix_8hpp_source.xhtml#l00067">matrix.hpp:67</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="product_8cpp_source.xhtml#l00060">bench()</a>, and <a class="el" href="matrix_8hpp_source.xhtml#l00067">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::values</a>.</p>
+<p class="reference">References <a class="el" href="product_8cpp_source.xhtml#l00060">bench()</a>, <a class="el" href="product_8cpp_source.xhtml#l00051">nanoseconds_per_second</a>, <a class="el" href="product_8cpp_source.xhtml#l00055">percent_per_ratio</a>, and <a class="el" href="matrix_8hpp_source.xhtml#l00067">fcarouge::sparse::matrix&lt; Type, Pattern &gt;::values</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="product_8cpp_source.xhtml#l00060">bench()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -192,53 +201,36 @@ template&lt;auto Size, auto Pattern&gt; </div>
 
 </div>
 </div>
-<a id="ae472c6a3cdf7e4ce3bbb260409791ca4" name="ae472c6a3cdf7e4ce3bbb260409791ca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae472c6a3cdf7e4ce3bbb260409791ca4">&#9670;&#160;</a></span>csv()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ab4562d2f9a2c5d969d1c1f3fd7bf6a3d" name="ab4562d2f9a2c5d969d1c1f3fd7bf6a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4562d2f9a2c5d969d1c1f3fd7bf6a3d">&#9670;&#160;</a></span>nanoseconds_per_second</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;auto Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto fcarouge::benchmark::anonymous_namespace{product.cpp}::csv </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; std::string </td>
+          <td class="memname">double fcarouge::benchmark::anonymous_namespace{product.cpp}::nanoseconds_per_second {1e9}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="product_8cpp_source.xhtml#l00050">50</a> of file <a class="el" href="product_8cpp_source.xhtml">product.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                             {</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">return</span> std::format(</div>
-<div class="line"><span class="lineno">   52</span>      <span class="stringliteral">&quot;{{{{#result}}}}| {{{{title}}}} | {:5d}x{:&lt;5d} | &quot;</span></div>
-<div class="line"><span class="lineno">   53</span>      <span class="stringliteral">&quot;{{{{median(elapsed)}}}} | &quot;</span></div>
-<div class="line"><span class="lineno">   54</span>      <span class="stringliteral">&quot;{{{{medianAbsolutePercentError(elapsed)}}}} |{{{{/result}}}}\n&quot;</span>,</div>
-<div class="line"><span class="lineno">   55</span>      Size, Size);</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p>Nanoseconds in a second, nanobench measuring elapsed time in seconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="product_8cpp_source.xhtml#l00051">51</a> of file <a class="el" href="product_8cpp_source.xhtml">product.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{1e9};</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="product_8cpp_source.xhtml#l00050">csv()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="product_8cpp_source.xhtml#l00050">csv()</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03_ae472c6a3cdf7e4ce3bbb260409791ca4_cgraph.svg" width="179" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03_ae472c6a3cdf7e4ce3bbb260409791ca4_icgraph.svg" width="179" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="reference">Referenced by <a class="el" href="product_8cpp_source.xhtml#l00060">bench()</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
 <a id="a24deaf754afccce3d9ccccf7c9aa798b" name="a24deaf754afccce3d9ccccf7c9aa798b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24deaf754afccce3d9ccccf7c9aa798b">&#9670;&#160;</a></span>opt_out</h2>
 
@@ -254,6 +246,35 @@ template&lt;auto Size&gt; </div>
 <p>The benchmark measures, prints, and tears down its counters past its entry point: it opts out of the real-time verification for its lifetime. </p>
 
 <p class="definition">Definition at line <a class="el" href="product_8cpp_source.xhtml#l00048">48</a> of file <a class="el" href="product_8cpp_source.xhtml">product.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a644ea424528b4fc092784bcf439260b9" name="a644ea424528b4fc092784bcf439260b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644ea424528b4fc092784bcf439260b9">&#9670;&#160;</a></span>percent_per_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fcarouge::benchmark::anonymous_namespace{product.cpp}::percent_per_ratio {100.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Percent in a ratio, nanobench reporting its median absolute percentage error as a ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="product_8cpp_source.xhtml#l00055">55</a> of file <a class="el" href="product_8cpp_source.xhtml">product.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{100.};</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="product_8cpp_source.xhtml#l00060">bench()</a>.</p>
 
 </div>
 </div>
