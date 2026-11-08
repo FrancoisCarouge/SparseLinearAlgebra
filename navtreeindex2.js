@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02multiplication_8cpp_03.xhtml":[12,0,0,4,27],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02multiplication_8cpp_03.xhtml#a98d216541d66cee789408d1265f0cdb2":[12,0,0,4,27,0],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02named_8cpp_03.xhtml":[12,0,0,4,28],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02narrowing__fail_8cpp_03.xhtml":[12,0,0,4,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "structfcarouge_1_1sparse_1_1position.xhtml#abdba1c2780bb4c359ec15f9837d27dd8":[14,0,0,0,2,4],
 "structfcarouge_1_1sparse_1_1structural__zero__t.xhtml":[12,0,0,2,3],
 "structfcarouge_1_1sparse_1_1structural__zero__t.xhtml":[14,0,0,0,3],
-"structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml":[12,0,0,4,11,0],
-"structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml":[14,0,0,1,0,0]
+"structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml":[12,0,0,4,11,0]
 };

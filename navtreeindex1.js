@@ -1,9 +1,10 @@
 var NAVTREEINDEX1 =
 {
-"index.xhtml#samples":[0,1,3],
+"index.xhtml#roadmap--vision":[0,2,2],
+"index.xhtml#samples":[0,1,4],
 "index.xhtml#sponsors":[0,2,9],
-"index.xhtml#template-parameters":[0,1,4,1],
-"index.xhtml#template-parameters-1":[0,1,5,1],
+"index.xhtml#template-parameters":[0,1,5,1],
+"index.xhtml#template-parameters-1":[0,1,6,1],
 "index.xhtml#third-party-acknowledgement":[0,2,7],
 "index.xhtml#use-cases":[0,2,0],
 "integer__fail_8cpp.xhtml":[15,0,6,14,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__one__norm_8cpp_03.xhtml":[12,0,0,4,25],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__one__norm_8cpp_03.xhtml#ad849cc4c1efc5284632e64d84f87bde2":[12,0,0,4,25,0],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02minus_8cpp_03.xhtml":[12,0,0,4,26],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02minus_8cpp_03.xhtml#adeabe6b6d6e75ac72a62628d9ec6db31":[12,0,0,4,26,0],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02multiplication_8cpp_03.xhtml":[12,0,0,4,27]
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02minus_8cpp_03.xhtml#adeabe6b6d6e75ac72a62628d9ec6db31":[12,0,0,4,26,0]
 };
