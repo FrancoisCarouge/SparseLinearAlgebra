@@ -43,8 +43,7 @@ namespace fcarouge {
 //! @see std::linalg::dot
 //!
 //! @complexity Linear in the count of elements stored by both vectors.
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)

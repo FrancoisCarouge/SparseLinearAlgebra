@@ -76,8 +76,7 @@ inline constexpr auto product_terms{
 //!
 //! @complexity Linear in the count of stored elements of the result and of
 //! elementary products, `product_term_count`.
-template <typename Type, sparse::sparsity_pattern auto Lhs,
-          sparse::sparsity_pattern auto Rhs>
+template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
@@ -99,7 +98,7 @@ template <typename Type, sparse::sparsity_pattern auto Lhs,
 //! note on non-finite values.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern> {
@@ -118,7 +117,7 @@ template <typename Type, sparse::sparsity_pattern auto Pattern>
 //! note on non-finite values.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
                                        const sparse_matrix<Type, Pattern> &rhs)
     -> sparse_matrix<Type, Pattern> {

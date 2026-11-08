@@ -46,7 +46,9 @@ namespace fcarouge::sparse {
 struct position;
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>
 struct pattern;
+} // namespace fcarouge::sparse
 
+namespace fcarouge {
 //! @brief Concept of a compile-time sparsity pattern.
 //!
 //! @details A pattern, of any count of rows, columns, and stored elements:
@@ -54,17 +56,15 @@ struct pattern;
 template <typename Type>
 concept sparsity_pattern = requires(std::remove_cv_t<Type> *value) {
   []<std::size_t Rows, std::size_t Columns, std::size_t Count>(
-      pattern<Rows, Columns, Count> *) {}(value);
+      sparse::pattern<Rows, Columns, Count> *) {}(value);
 };
-} // namespace fcarouge::sparse
 
-namespace fcarouge {
 // The sparsity pattern is constrained by a requires-clause rather than by a
-// constrained placeholder, `sparse::sparsity_pattern auto Pattern`: MSVC does
+// constrained placeholder, `sparsity_pattern auto Pattern`: MSVC does
 // not match the out-of-class definitions of the members of a class template
 // with a constrained placeholder template parameter to their declarations.
 template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
+  requires sparsity_pattern<decltype(Pattern)>
 class sparse_matrix;
 } // namespace fcarouge
 

@@ -38,7 +38,7 @@ namespace fcarouge {
 //! @brief Negation, of the same pattern.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 operator-(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, Pattern> {

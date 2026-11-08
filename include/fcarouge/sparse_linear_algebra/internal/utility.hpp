@@ -56,13 +56,13 @@ namespace fcarouge::sparse_linear_algebra::internal {
 //! @brief Whether a type is a sparse matrix.
 template <typename Type> inline constexpr bool is_matrix{false};
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 inline constexpr bool is_matrix<sparse_matrix<Type, Pattern>>{true};
 
 //! @brief The element type of a sparse matrix.
 template <typename Matrix> struct element {};
 
-template <typename Type, sparse::sparsity_pattern auto Pattern>
+template <typename Type, sparsity_pattern auto Pattern>
 struct element<sparse_matrix<Type, Pattern>> {
   using type = Type;
 };
