@@ -44,10 +44,12 @@ namespace {
 [[maybe_unused]] const auto test{[] -> int {
   const not_realtime opt_out;
 
+  using sparse::literals::operator""_o;
+
   using band_matrix = sparse_matrix<int, sparse::tridiagonal<3>>;
 
-  const band_matrix band{sparse::make_matrix<band_matrix>(
-      1, 2, sparse::structural_zero, 3, 4, 5, sparse::structural_zero, 6, 7)};
+  const band_matrix band{
+      sparse::make_matrix<band_matrix>(1, 2, 0_o, 3, 4, 5, 0_o, 6, 7)};
 
   assert(std::format("{}", band) == "[[1, 2, 0], [3, 4, 5], [0, 6, 7]]");
   assert(std::format("{}", band + transposed(band)) ==

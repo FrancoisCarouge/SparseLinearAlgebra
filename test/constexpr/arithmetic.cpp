@@ -36,7 +36,7 @@ namespace {
 using sparse::diagonal;
 using sparse::make_matrix;
 using sparse::make_pattern;
-using sparse::structural_zero;
+using sparse::literals::operator""_o;
 using sparse::tridiagonal;
 
 using diagonal_matrix = sparse_matrix<double, diagonal<3>>;
@@ -79,8 +79,7 @@ static_assert(sum == rhs + lhs);
 
 inline constexpr auto rectangular{
     make_matrix<sparse_matrix<double, make_pattern<2, 3>({{0, 2}, {1, 0}})>>(
-        structural_zero, structural_zero, 5., 6., structural_zero,
-        structural_zero)};
+        0_o, 0_o, 5., 6., 0_o, 0_o)};
 inline constexpr auto flipped{transposed(rectangular)};
 
 static_assert(flipped.at<2, 0>() == 5.);
@@ -94,7 +93,7 @@ static_assert(
     matrix_frob_norm(
         make_matrix<
             sparse_matrix<double, make_pattern<2, 2>({{0, 1}, {1, 0}})>>(
-            structural_zero, 3., 4., structural_zero)) == 5.);
+            0_o, 3., 4., 0_o)) == 5.);
 
 inline constexpr sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>
     first_third{2., 3.};

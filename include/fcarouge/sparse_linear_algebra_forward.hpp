@@ -47,10 +47,11 @@ namespace sparse {
 struct position;
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>
 struct pattern;
-struct structural_zero_t;
 } // namespace sparse
 
 namespace sparse_linear_algebra::internal {
+struct structural_zero;
+
 template <typename Type> inline constexpr bool is_pattern{false};
 
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>

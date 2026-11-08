@@ -39,6 +39,8 @@ namespace {
 static_assert(__STDC_HOSTED__ == 0);
 #endif
 
+using sparse::literals::operator""_o;
+
 using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
 
 inline constexpr band_matrix band{1., 2., 3., 4., 5., 6., 7.};
@@ -61,9 +63,7 @@ static_assert(
             3., 4.}) == 5.);
 static_assert(dot(sparse_matrix<double, sparse::dense<2, 1>>{3., 4.},
                   sparse_matrix<double, sparse::dense<1, 2>>{3., 4.}) == 25.);
-static_assert(sparse::make_matrix<band_matrix>(1., 2., sparse::structural_zero,
-                                               3., 4., 5.,
-                                               sparse::structural_zero, 6.,
+static_assert(sparse::make_matrix<band_matrix>(1., 2., 0_o, 3., 4., 5., 0_o, 6.,
                                                7.) == band);
 } // namespace
 } // namespace fcarouge::test

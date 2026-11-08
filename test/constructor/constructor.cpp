@@ -44,7 +44,7 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::structural_zero;
+  using sparse::literals::operator""_o;
   using sparse::tridiagonal;
 
   using diagonal_matrix = sparse_matrix<double, diagonal<2>>;
@@ -57,8 +57,8 @@ namespace {
   assert((zero_value.at<1, 1>() == 0.));
 
   // Every position is given, a structural zero explicitly.
-  const diagonal_matrix listed{sparse::make_matrix<diagonal_matrix>(
-      1., structural_zero, structural_zero, 2.)};
+  const diagonal_matrix listed{
+      sparse::make_matrix<diagonal_matrix>(1., 0_o, 0_o, 2.)};
 
   assert((listed.at<0, 0>() == 1.));
   assert((listed.at<0, 1>() == 0.));

@@ -47,7 +47,7 @@ namespace {
   using sparse::diagonal;
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::structural_zero;
+  using sparse::literals::operator""_o;
   using sparse::tridiagonal;
 
   constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};
@@ -82,10 +82,10 @@ namespace {
   assert((square.at<2, 2>() == 79.));
 
   // A non-square product.
-  const auto lhs{make_matrix<sparse_matrix<double, wide>>(
-      1., structural_zero, 2., structural_zero, 3., structural_zero)};
-  const auto rhs{make_matrix<sparse_matrix<double, tall>>(
-      structural_zero, 4., 5., structural_zero, structural_zero, 6.)};
+  const auto lhs{
+      make_matrix<sparse_matrix<double, wide>>(1., 0_o, 2., 0_o, 3., 0_o)};
+  const auto rhs{
+      make_matrix<sparse_matrix<double, tall>>(0_o, 4., 5., 0_o, 0_o, 6.)};
 
   const auto product{lhs * rhs};
 

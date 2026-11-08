@@ -208,21 +208,24 @@ The compile-time computations the operations derive their results with, each a v
 
 ```cpp
 namespace fcarouge::sparse {
-struct structural_zero_t;
-
-inline constexpr structural_zero_t structural_zero;
-
 template <typename Matrix, typename... Values>
 [[nodiscard]] constexpr auto make_matrix(const Values &...values) -> Matrix;
+
+namespace literals {
+template <char... Characters>
+[[nodiscard]] consteval auto operator""_o() noexcept;
+}
 }
 ```
 
-Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless `Matrix` is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is `structural_zero`: a `0.` at a structural zero does not compile, nor does `structural_zero` at a stored element.
+Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless `Matrix` is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is the structural zero literal `0_o`: a `0.` at a structural zero does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
 
 ```cpp
 using lower = sparse_matrix<double, lower_triangular<2>>;
 
-const lower value{make_matrix<lower>(1., structural_zero,
+using sparse::literals::operator""_o;
+
+const lower value{make_matrix<lower>(1., 0_o,
                                      2., 3.)};
 ```
 
@@ -241,7 +244,7 @@ A structural zero has nothing to refer to. A read is by value, and a write that 
 | Write: `at<i, j>() = value` | Yes. | Does not compile. |
 | Write: `operator[i, j] = value` | Without a structural zero only: its position is only known at run time. | Does not compile. |
 | Construction from the stored elements | Yes, in row-major order. | Takes no value. |
-| `make_matrix<Matrix>(values...)` | Yes, a value. | Yes, `structural_zero`. |
+| `make_matrix<Matrix>(values...)` | Yes, a value. | Yes, `0_o`. |
 | Conversion from a matrix of a narrower pattern | Yes. | Yes, zero. |
 
 The rejections of the writes and of the constructions are compile errors, which a `requires` expression detects. To ask whether a position can be written, use `decltype(value)::structure.stores(i, j)`.
@@ -330,7 +333,7 @@ Toward version 1.0:
 
 **A structural zero is not a stored zero.** It is a property of the type: the product of a structural zero and an infinity is never computed. A stored zero is a value, which may become non-zero, and multiplies as any other value.
 
-**Construction states the structure.** A value given for a structural zero, even a zero, is a defect: it says the author expected an element there. The `structural_zero` tag makes the intent explicit and checks it at compile time, at no run-time cost.
+**Construction states the structure.** A value given for a structural zero, even a zero, is a defect: it says the author expected an element there. The `0_o` literal makes the intent explicit and checks it at compile time, at no run-time cost.
 
 ### Performance
 
