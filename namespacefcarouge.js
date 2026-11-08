@@ -10,6 +10,7 @@ var namespacefcarouge =
     [ "test", "namespacefcarouge_1_1test.xhtml", "namespacefcarouge_1_1test" ],
     [ "not_realtime", "classfcarouge_1_1not__realtime.xhtml", "classfcarouge_1_1not__realtime" ],
     [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml", "classfcarouge_1_1sparse__matrix" ],
+    [ "sparsity_pattern", "conceptfcarouge_1_1sparsity__pattern.xhtml", null ],
     [ "dot", "namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a", null ],
     [ "matrix_frob_norm", "namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6", null ],
     [ "matrix_inf_norm", "namespacefcarouge.xhtml#ac11dc26564c17d64133950b35d309793", null ],

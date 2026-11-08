@@ -3,7 +3,6 @@ var namespacefcarouge_1_1sparse =
     [ "pattern", "structfcarouge_1_1sparse_1_1pattern.xhtml", "structfcarouge_1_1sparse_1_1pattern" ],
     [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ],
     [ "shape_t", "structfcarouge_1_1sparse_1_1shape__t.xhtml", "structfcarouge_1_1sparse_1_1shape__t" ],
-    [ "sparsity_pattern", "conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml", null ],
     [ "operator==", "namespacefcarouge_1_1sparse.xhtml#a3c6949c0273c292c8266ff66e9d8fb9b", null ],
     [ "pattern", "namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003", null ],
     [ "pattern", "namespacefcarouge_1_1sparse.xhtml#afc1d7be1e0472013a55c700cb2e2ad68", null ],

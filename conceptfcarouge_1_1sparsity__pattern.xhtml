@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparse Linear Algebra: fcarouge::sparse::sparsity_pattern Concept Reference</title>
+<title>Sparse Linear Algebra: fcarouge::sparsity_pattern Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,7 +74,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml',''); initResizable(true); });
+$(function(){initNavTree('conceptfcarouge_1_1sparsity__pattern.xhtml',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -100,7 +100,7 @@ $(function(){initNavTree('conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml',
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">fcarouge::sparse::sparsity_pattern Concept Reference</div></div>
+  <div class="headertitle"><div class="title">fcarouge::sparsity_pattern Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -110,23 +110,23 @@ $(function(){initNavTree('conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml',
 <p><code>#include &lt;<a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a> =  <span class="keyword">requires</span>(std::remove_cv_t&lt;Type&gt; *value) {</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptfcarouge_1_1sparsity__pattern.xhtml">fcarouge::sparsity_pattern</a> =  <span class="keyword">requires</span>(std::remove_cv_t&lt;Type&gt; *value) {</div>
 <div class="line">  []&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt;(</div>
-<div class="line">      <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern&lt;Rows, Columns, Count&gt;</a> *) {}(value);</div>
+<div class="line">      <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">sparse::pattern&lt;Rows, Columns, Count&gt;</a> *) {}(value);</div>
 <div class="line">}</div>
-<div class="ttc" id="aconceptfcarouge_1_1sparse_1_1sparsity__pattern_xhtml"><div class="ttname"><a href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a></div><div class="ttdoc">Concept of a compile-time sparsity pattern.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">sparse_linear_algebra_forward.hpp:55</a></div></div>
+<div class="ttc" id="aconceptfcarouge_1_1sparsity__pattern_xhtml"><div class="ttname"><a href="conceptfcarouge_1_1sparsity__pattern.xhtml">fcarouge::sparsity_pattern</a></div><div class="ttdoc">Concept of a compile-time sparsity pattern.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00057">sparse_linear_algebra_forward.hpp:57</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a48ebf459a670160993e62b05114ca003"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">fcarouge::sparse::pattern</a></div><div class="ttdeci">pattern(shape_t&lt; Rows, Columns &gt;) -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">Deduce the pattern without any stored position.</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concept of a compile-time sparsity pattern. </p>
 <p>A pattern, of any count of rows, columns, and stored elements: the deduction of the arguments of a pattern from the type. </p>
 
-<p class="definition">Definition at line <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00057">57</a> of file <a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">sparse_linear_algebra_forward.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacefcarouge.xhtml">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1sparse.xhtml">sparse</a></li><li class="navelem"><a class="el" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">sparsity_pattern</a></li>
+    <li class="navelem"><a class="el" href="namespacefcarouge.xhtml">fcarouge</a></li><li class="navelem"><a class="el" href="conceptfcarouge_1_1sparsity__pattern.xhtml">sparsity_pattern</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>

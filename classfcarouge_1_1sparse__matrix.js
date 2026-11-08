@@ -2,7 +2,7 @@ var classfcarouge_1_1sparse__matrix =
 [
     [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml#aa94e05bb752ac3dd28c45a44e873662f", null ],
     [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml#a9c64829cfcfbc847aee148b494d6c6e0", null ],
-    [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml#a462b43850fafd7af3f5bc1b773a54c28", null ],
+    [ "sparse_matrix", "classfcarouge_1_1sparse__matrix.xhtml#a88de00c8fe163e4616a6e1f90e8ade1e", null ],
     [ "at", "classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e", null ],
     [ "at", "classfcarouge_1_1sparse__matrix.xhtml#af1aaf26be336df4fa5365d9be9d7da46", null ],
     [ "operator[]", "classfcarouge_1_1sparse__matrix.xhtml#acd80612714c20e3426677d0b29abbc15", null ],
