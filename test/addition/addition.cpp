@@ -48,7 +48,6 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};

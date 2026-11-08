@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies the Frobenius norm of an integer element type does not
 //! compile: an integer has no exact square root.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<int, sparse::diagonal<2>> value{1, 0};
+  const sparse_matrix<int, sparse::diagonal<2>> value{1, 0};
 
   // Intended:
   // const auto norm{matrix_one_norm(value)};

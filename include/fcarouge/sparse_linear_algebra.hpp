@@ -60,7 +60,7 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 #include <type_traits>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @name Types
 //! @{
 
@@ -75,7 +75,8 @@ namespace fcarouge::sparse {
 //!
 //! @tparam Type The matrix element type.
 //! @tparam Pattern The sparsity pattern of the matrix.
-template <typename Type, sparsity_pattern auto Pattern> class sparse_matrix {
+template <typename Type, sparse::sparsity_pattern auto Pattern>
+class sparse_matrix {
 public:
   //! @name Public Member Variables
   //! @{
@@ -111,8 +112,8 @@ public:
   //! zero.
   //!
   //! @param other The matrix of a narrower, or the same, pattern.
-  template <sparsity_pattern auto Other>
-    requires is_subset_of<Other, Pattern>
+  template <sparse::sparsity_pattern auto Other>
+    requires sparse::is_subset_of<Other, Pattern>
   constexpr explicit(false)
       sparse_matrix(const sparse_matrix<Type, Other> &other);
 
@@ -186,7 +187,7 @@ public:
 };
 
 //! @}
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #include "sparse_linear_algebra/algorithm/add.tpp"
 #include "sparse_linear_algebra/algorithm/divide.tpp"
@@ -202,79 +203,84 @@ public:
 #include "sparse_linear_algebra/format.tpp"
 #include "sparse_linear_algebra/sparse_linear_algebra.tpp"
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @name Algorithms
 //! @{
 
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)
 [[nodiscard]] constexpr auto dot(const sparse_matrix<Type, Lhs> &lhs,
                                  const sparse_matrix<Type, Rhs> &rhs) -> Type;
 
-template <std::floating_point Type, sparsity_pattern auto Pattern>
+template <std::floating_point Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator==(const sparse_matrix<Type, Lhs> &lhs,
                                         const sparse_matrix<Type, Rhs> &rhs)
     -> bool;
 
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator+(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
-    -> sparse_matrix<Type, pattern_union<Lhs, Rhs>>;
+    -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>>;
 
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator-(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
-    -> sparse_matrix<Type, pattern_union<Lhs, Rhs>>;
+    -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>>;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 operator-(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
-    -> sparse_matrix<Type, pattern_product<Lhs, Rhs>>;
+    -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>>;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
                                        const sparse_matrix<Type, Pattern> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern>;
 
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 transposed(const sparse_matrix<Type, Pattern> &value)
-    -> sparse_matrix<Type, pattern_transpose<Pattern>>;
+    -> sparse_matrix<Type, sparse::pattern_transpose<Pattern>>;
 
 //! @}
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_HPP

@@ -44,7 +44,6 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::sparse_matrix;
   using sparse::structural_zero;
   using sparse::tridiagonal;
 

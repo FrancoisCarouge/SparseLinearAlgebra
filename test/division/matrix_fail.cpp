@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies a matrix division does not compile yet: it needs a solver, a
 //! factorization.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
+  const sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
 
   // Intended:
   // const auto divided{lhs / 2.};

@@ -48,8 +48,8 @@ namespace {
 
   constexpr std::size_t size{32};
 
-  using band_matrix = sparse::sparse_matrix<double, sparse::tridiagonal<size>>;
-  using column_vector = sparse::sparse_matrix<double, sparse::dense<size, 1>>;
+  using band_matrix = sparse_matrix<double, sparse::tridiagonal<size>>;
+  using column_vector = sparse_matrix<double, sparse::dense<size, 1>>;
 
   band_matrix band;
   column_vector constant;

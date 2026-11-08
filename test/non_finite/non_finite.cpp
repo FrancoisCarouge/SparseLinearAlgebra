@@ -47,7 +47,6 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::sparse_matrix;
 
   constexpr double infinity{std::numeric_limits<double>::infinity()};
   constexpr double not_a_number{std::numeric_limits<double>::quiet_NaN()};

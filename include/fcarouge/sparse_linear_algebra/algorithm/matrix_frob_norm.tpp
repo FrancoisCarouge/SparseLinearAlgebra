@@ -37,7 +37,7 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <concepts>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief The Frobenius norm of a matrix.
 //!
 //! @details The square root of the sum of the squares of the stored elements.
@@ -50,7 +50,7 @@ namespace fcarouge::sparse {
 //! @see std::linalg::matrix_frob_norm
 //!
 //! @complexity Linear in the count of stored elements.
-template <std::floating_point Type, sparsity_pattern auto Pattern>
+template <std::floating_point Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   Type result{};
@@ -61,6 +61,6 @@ matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
 
   return sla::square_root(result);
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MATRIX_FROB_NORM_TPP

@@ -47,7 +47,7 @@ namespace {
 
   assert(run_time == 0);
 
-  using diagonal_matrix = sparse::sparse_matrix<double, sparse::diagonal<3>>;
+  using diagonal_matrix = sparse_matrix<double, sparse::diagonal<3>>;
   using zero = std::integral_constant<std::size_t, 0>;
   using one = std::integral_constant<std::size_t, 1>;
 
@@ -96,7 +96,7 @@ namespace {
   static_assert(std::same_as<decltype(value[zero{}, one{}]), double>);
 
   // A run-time position of a matrix without a structural zero is a reference.
-  sparse::sparse_matrix<double, sparse::dense<2, 2>> dense_value;
+  sparse_matrix<double, sparse::dense<2, 2>> dense_value;
 
   dense_value[1, 0] = 4.;
 
@@ -104,8 +104,7 @@ namespace {
   assert((dense_value.at<1, 0>() == 4.));
 
   // A vector.
-  sparse::sparse_matrix<double, sparse::make_pattern<4, 1>({{1, 0}, {3, 0}})>
-      column;
+  sparse_matrix<double, sparse::make_pattern<4, 1>({{1, 0}, {3, 0}})> column;
 
   column.at<1, 0>() = 5.;
   column.at<3, 0>() = 6.;

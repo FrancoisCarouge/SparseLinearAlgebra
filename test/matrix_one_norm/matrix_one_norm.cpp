@@ -47,7 +47,6 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
 
   // The largest absolute column sum is not the largest absolute row sum.
   const sparse_matrix<double,

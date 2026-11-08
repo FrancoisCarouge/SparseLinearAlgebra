@@ -44,7 +44,7 @@ using sparse::tridiagonal;
 using sparse::upper_triangular;
 using sparse::zero;
 
-template <auto Pattern> using matrix = sparse::sparse_matrix<double, Pattern>;
+template <auto Pattern> using matrix = sparse_matrix<double, Pattern>;
 
 inline constexpr auto rectangular{make_pattern<2, 3>({{0, 2}, {1, 0}})};
 inline constexpr auto rectangular_transposed{
@@ -107,9 +107,8 @@ static_assert(
                  matrix<make_pattern<3, 1>({{0, 0}, {1, 0}})>>);
 
 //! @test Verifies the element type is kept whatever the pattern.
-static_assert(
-    std::same_as<decltype(sparse::sparse_matrix<float, diagonal<3>>{} *
-                          sparse::sparse_matrix<float, dense<3, 3>>{}),
-                 sparse::sparse_matrix<float, dense<3, 3>>>);
+static_assert(std::same_as<decltype(sparse_matrix<float, diagonal<3>>{} *
+                                    sparse_matrix<float, dense<3, 3>>{}),
+                           sparse_matrix<float, dense<3, 3>>>);
 } // namespace
 } // namespace fcarouge::test

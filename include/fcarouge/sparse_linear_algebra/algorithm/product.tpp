@@ -67,7 +67,6 @@ inline constexpr auto product_terms{
     }()};
 } // namespace sparse_linear_algebra::internal
 
-namespace sparse {
 //! @brief Matrix multiplication, of matrices and vectors of compatible shapes,
 //! of any patterns.
 //!
@@ -77,12 +76,13 @@ namespace sparse {
 //!
 //! @complexity Linear in the count of stored elements of the result and of
 //! elementary products, `product_term_count`.
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
-    -> sparse_matrix<Type, pattern_product<Lhs, Rhs>> {
-  sparse_matrix<Type, pattern_product<Lhs, Rhs>> result;
+    -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> {
+  sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> result;
 
   for (const sla::term &element : sla::product_terms<Lhs, Rhs>) {
     result.values[element.result] +=
@@ -98,7 +98,7 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 //! note on non-finite values.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern> {
@@ -117,7 +117,7 @@ template <typename Type, sparsity_pattern auto Pattern>
 //! note on non-finite values.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
                                        const sparse_matrix<Type, Pattern> &rhs)
     -> sparse_matrix<Type, Pattern> {
@@ -129,7 +129,6 @@ template <typename Type, sparsity_pattern auto Pattern>
 
   return result;
 }
-} // namespace sparse
 } // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_PRODUCT_TPP

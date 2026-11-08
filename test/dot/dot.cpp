@@ -46,7 +46,6 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   constexpr auto ends{make_pattern<4, 1>({{0, 0}, {3, 0}})};

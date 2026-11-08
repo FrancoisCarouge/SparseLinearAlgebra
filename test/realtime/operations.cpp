@@ -46,7 +46,6 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;

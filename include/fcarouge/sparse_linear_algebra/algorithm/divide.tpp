@@ -36,7 +36,7 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <type_traits>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief Scaling by the inverse of a scalar divisor, of the same pattern.
 //!
 //! @note A zero divisor leaves every structural zero an exact zero: see the
@@ -45,7 +45,7 @@ namespace fcarouge::sparse {
 //! @todo The division by a matrix needs a solver, a factorization.
 //!
 //! @complexity Linear in the count of stored elements.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
     -> sparse_matrix<Type, Pattern> {
@@ -57,6 +57,6 @@ template <typename Type, sparsity_pattern auto Pattern>
 
   return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_DIVIDE_TPP

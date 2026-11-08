@@ -52,7 +52,7 @@ For more information, please refer to <https://unlicense.org> */
 //! vector as a list of elements, a column vector or a matrix as a list of rows.
 template <typename Type, fcarouge::sparse::sparsity_pattern auto Pattern,
           typename Char>
-struct std::formatter<fcarouge::sparse::sparse_matrix<Type, Pattern>, Char> {
+struct std::formatter<fcarouge::sparse_matrix<Type, Pattern>, Char> {
   //! @todo Add a pretty, multi-line, aligned format option?
   //! @todo Add a debug, showing the stored elements, format option?
   static constexpr auto
@@ -61,9 +61,9 @@ struct std::formatter<fcarouge::sparse::sparse_matrix<Type, Pattern>, Char> {
   }
 
   template <typename FormatContext>
-  constexpr auto
-  format(const fcarouge::sparse::sparse_matrix<Type, Pattern> &value,
-         FormatContext &format_context) const -> FormatContext::iterator {
+  constexpr auto format(const fcarouge::sparse_matrix<Type, Pattern> &value,
+                        FormatContext &format_context) const
+      -> FormatContext::iterator {
     if constexpr (Pattern.rows == 1 and Pattern.columns == 1) {
       format_context.advance_to(
           std::format_to(format_context.out(), "{}", value[0, 0]));

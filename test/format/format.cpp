@@ -43,7 +43,6 @@ namespace {
   const not_realtime opt_out;
 
   using sparse::make_pattern;
-  using sparse::sparse_matrix;
 
   const sparse_matrix<double, sparse::diagonal<2>> value{1., 2.5};
   const sparse_matrix<double, sparse::dense<2, 2>> dense_value{1., 0., 0., 2.5};

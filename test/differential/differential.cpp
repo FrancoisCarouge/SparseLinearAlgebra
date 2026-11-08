@@ -47,8 +47,8 @@ struct differential {
   //! values of exact products and sums.
   template <auto Pattern>
   [[nodiscard]] static constexpr auto fill(double seed)
-      -> sparse::sparse_matrix<double, Pattern> {
-    sparse::sparse_matrix<double, Pattern> result;
+      -> sparse_matrix<double, Pattern> {
+    sparse_matrix<double, Pattern> result;
 
     for (std::size_t i{0}; i < Pattern.count; ++i) {
       const double value{seed + static_cast<double>(i)};
@@ -62,7 +62,7 @@ struct differential {
   //! @brief The matrix as an explicit dense array, read at each position.
   template <auto Pattern>
   [[nodiscard]] static constexpr auto
-  to_reference(const sparse::sparse_matrix<double, Pattern> &value)
+  to_reference(const sparse_matrix<double, Pattern> &value)
       -> reference<Pattern.rows, Pattern.columns> {
     reference<Pattern.rows, Pattern.columns> result{};
 
@@ -134,7 +134,7 @@ struct differential {
   //! @brief A matrix computes the same as a matrix without structural zeros.
   template <auto Lhs, auto Rhs> static constexpr void verify_dense() {
     using dense_matrix =
-        sparse::sparse_matrix<double, sparse::dense<Lhs.rows, Lhs.columns>>;
+        sparse_matrix<double, sparse::dense<Lhs.rows, Lhs.columns>>;
 
     const auto lhs{fill<Lhs>(3.)};
     const auto rhs{fill<Rhs>(11.)};

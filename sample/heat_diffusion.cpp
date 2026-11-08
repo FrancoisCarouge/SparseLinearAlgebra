@@ -52,7 +52,6 @@ namespace {
   const not_realtime opt_out;
 
   using sparse::dense;
-  using sparse::sparse_matrix;
   using sparse::tridiagonal;
 
   constexpr std::size_t cells{8};

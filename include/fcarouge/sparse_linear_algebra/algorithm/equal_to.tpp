@@ -37,7 +37,7 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <cstddef>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief Element-wise equality of two matrices of the same shape, of any
 //! patterns.
 //!
@@ -46,12 +46,13 @@ namespace fcarouge::sparse {
 //!
 //! @complexity Linear in the count of stored elements of the union of the
 //! patterns, each read logarithmic in the count of stored elements.
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator==(const sparse_matrix<Type, Lhs> &lhs,
                                         const sparse_matrix<Type, Rhs> &rhs)
     -> bool {
-  constexpr auto combined{pattern_union<Lhs, Rhs>};
+  constexpr auto combined{sparse::pattern_union<Lhs, Rhs>};
 
   for (std::size_t i{0}; i < combined.count; ++i) {
     const auto [row, column]{combined.positions[i]};
@@ -63,6 +64,6 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 
   return true;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_EQUAL_TO_TPP

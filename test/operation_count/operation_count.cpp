@@ -63,7 +63,7 @@ struct counted {
 };
 
 namespace {
-template <auto Pattern> using storage = sparse::sparse_matrix<counted, Pattern>;
+template <auto Pattern> using storage = sparse_matrix<counted, Pattern>;
 
 //! @brief The sums of the counts of a matrix's stored elements.
 struct total {

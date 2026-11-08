@@ -64,8 +64,10 @@ namespace sparse {
 template <typename Type>
 concept sparsity_pattern = sla::is_pattern<std::remove_cv_t<Type>>;
 
-template <typename Type, sparsity_pattern auto Pattern> class sparse_matrix;
 } // namespace sparse
+
+template <typename Type, sparse::sparsity_pattern auto Pattern>
+class sparse_matrix;
 } // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_FORWARD_HPP

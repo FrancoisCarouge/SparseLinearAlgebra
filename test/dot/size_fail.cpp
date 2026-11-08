@@ -37,8 +37,8 @@ namespace fcarouge::test {
 namespace {
 //! @test Verifies the dot product rejects vectors of different sizes.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<double, sparse::dense<3, 1>> lhs{1., 2., 3.};
-  const sparse::sparse_matrix<double, sparse::dense<4, 1>> rhs{1., 2., 3., 4.};
+  const sparse_matrix<double, sparse::dense<3, 1>> lhs{1., 2., 3.};
+  const sparse_matrix<double, sparse::dense<4, 1>> rhs{1., 2., 3., 4.};
 
   // Intended:
   // const double product{dot(lhs, lhs)};

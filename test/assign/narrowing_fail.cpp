@@ -38,12 +38,11 @@ namespace {
 //! @test Verifies the sum of two patterns does not assign to a narrower
 //! pattern: an element would be lost.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
-  const sparse::sparse_matrix<double, sparse::tridiagonal<2>> rhs{1., 1., 1.,
-                                                                  1.};
+  const sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
+  const sparse_matrix<double, sparse::tridiagonal<2>> rhs{1., 1., 1., 1.};
 
-  sparse::sparse_matrix<double, sparse::diagonal<2>> narrow;
-  sparse::sparse_matrix<double, sparse::tridiagonal<2>> wide;
+  sparse_matrix<double, sparse::diagonal<2>> narrow;
+  sparse_matrix<double, sparse::tridiagonal<2>> wide;
 
   // Intended:
   // wide = lhs + rhs;

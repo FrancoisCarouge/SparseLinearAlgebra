@@ -35,7 +35,7 @@ For more information, please refer to <https://unlicense.org> */
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief The dot product of two vectors of the same size, of any orientation.
 //!
 //! @details The sum of the products of the elements stored by both vectors.
@@ -43,7 +43,8 @@ namespace fcarouge::sparse {
 //! @see std::linalg::dot
 //!
 //! @complexity Linear in the count of elements stored by both vectors.
-template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+template <typename Type, sparse::sparsity_pattern auto Lhs,
+          sparse::sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)
@@ -57,6 +58,6 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 
   return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_DOT_TPP

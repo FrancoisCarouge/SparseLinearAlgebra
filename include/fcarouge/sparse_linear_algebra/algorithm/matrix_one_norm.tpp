@@ -38,7 +38,7 @@ For more information, please refer to <https://unlicense.org> */
 #include <array>
 #include <cstddef>
 
-namespace fcarouge::sparse {
+namespace fcarouge {
 //! @brief The one norm of a matrix: its largest absolute column sum.
 //!
 //! @details Of every shape, a vector included: the one norm of a row vector is
@@ -48,7 +48,7 @@ namespace fcarouge::sparse {
 //! @see std::linalg::matrix_one_norm
 //!
 //! @complexity Linear in the count of stored elements and of columns.
-template <typename Type, sparsity_pattern auto Pattern>
+template <typename Type, sparse::sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   std::array<Type, Pattern.columns> sums{};
@@ -64,6 +64,6 @@ matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
 
   return result;
 }
-} // namespace fcarouge::sparse
+} // namespace fcarouge
 
 #endif // FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MATRIX_ONE_NORM_TPP
