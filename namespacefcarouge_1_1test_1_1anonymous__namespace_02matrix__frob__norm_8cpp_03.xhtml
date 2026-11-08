@@ -123,38 +123,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{[] -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  </div>
-<div class="line">  </div>
-<div class="line">  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">int</span> run_time{0};</div>
-<div class="line"> </div>
-<div class="line">  assert(run_time == 0);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;double,</div>
-<div class="line">                      make_pattern&lt;2, 3&gt;({{0, 0}, {0, 1}, {1, 0}, {1, 2}})&gt;</div>
-<div class="line">      value{1., -2., -3., 4.};</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;1, 3&gt;({{0, 0}, {0, 2}})&gt; row{-3.,</div>
-<div class="line">                                                                        4.};</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;3, 1&gt;({{0, 0}, {2, 0}})&gt; column{-3.,</div>
-<div class="line">                                                                           4.};</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;2, 2&gt;({{0, 0}})&gt; corner{-2.};</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::zero&lt;2, 2&gt;&gt; none;</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;float, sparse::diagonal&lt;2&gt;&gt; single_precision{3.F, 4.F};</div>
-<div class="line"> </div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(value) == std::sqrt(30.));</div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(row) == 5.);</div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(column) == 5.);</div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(corner) == 2.);</div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(none) == 0.);</div>
-<div class="line">  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(single_precision) == 5.F);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()}</div>
-<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00068">sparse_linear_algebra_forward.hpp:68</a></div></div>
-<div class="ttc" id="anamespacefcarouge_xhtml_a85f4cd8428b5506d9efb9155770793c6"><div class="ttname"><a href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">fcarouge::matrix_frob_norm</a></div><div class="ttdeci">constexpr auto matrix_frob_norm(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; Type</div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000049">Test</a></b></dt><dd>Verifies the Frobenius norm, of the stored elements only, of every shape. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000049">Test</a></b></dt><dd>Verifies the Frobenius norm, of the stored elements only, of every shape. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="matrix__frob__norm_8cpp_source.xhtml#l00041">41</a> of file <a class="el" href="matrix__frob__norm_8cpp_source.xhtml">matrix_frob_norm.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -164,28 +133,39 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   45</span> </div>
 <div class="line"><span class="lineno">   46</span>  assert(run_time == 0);</div>
 <div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;double,</div>
-<div class="line"><span class="lineno">   51</span>                      make_pattern&lt;2, 3&gt;({{0, 0}, {0, 1}, {1, 0}, {1, 2}})&gt;</div>
-<div class="line"><span class="lineno">   52</span>      value{1., -2., -3., 4.};</div>
-<div class="line"><span class="lineno">   53</span>  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;1, 3&gt;({{0, 0}, {0, 2}})&gt; row{-3.,</div>
-<div class="line"><span class="lineno">   54</span>                                                                        4.};</div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;3, 1&gt;({{0, 0}, {2, 0}})&gt; column{-3.,</div>
-<div class="line"><span class="lineno">   56</span>                                                                           4.};</div>
-<div class="line"><span class="lineno">   57</span>  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;2, 2&gt;({{0, 0}})&gt; corner{-2.};</div>
-<div class="line"><span class="lineno">   58</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::zero&lt;2, 2&gt;&gt; none;</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> sparse_matrix&lt;float, sparse::diagonal&lt;2&gt;&gt; single_precision{3.F, 4.F};</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(value) == std::sqrt(30.));</div>
-<div class="line"><span class="lineno">   62</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(row) == 5.);</div>
-<div class="line"><span class="lineno">   63</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(column) == 5.);</div>
-<div class="line"><span class="lineno">   64</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(corner) == 2.);</div>
-<div class="line"><span class="lineno">   65</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(none) == 0.);</div>
-<div class="line"><span class="lineno">   66</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(single_precision) == 5.F);</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   69</span>}()};</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span><a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>;</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keyword">using </span>sparse::shape;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">constexpr</span> pattern value_pattern{shape&lt;2, 3&gt;,</div>
+<div class="line"><span class="lineno">   52</span>                                  {{0, 0}, {0, 1}, {1, 0}, {1, 2}}};</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">const</span> sparse_matrix&lt;double, value_pattern&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{1., -2., -3., 4.};</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9">row_pattern</a>{shape&lt;1, 3&gt;, {{0, 0}, {0, 2}}};</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> sparse_matrix&lt;double, row_pattern&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>{-3., 4.};</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ab1c90de56c5a56d92dffc8d3f7978ad4">column_pattern</a>{shape&lt;3, 1&gt;, {{0, 0}, {2, 0}}};</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keyword">const</span> sparse_matrix&lt;double, column_pattern&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>{-3., 4.};</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> corner_pattern{shape&lt;2, 2&gt;, {{0, 0}}};</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> sparse_matrix&lt;double, corner_pattern&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7196e529f6392ee3faa00cec8a9f1884">corner</a>{-2.};</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::zero&lt;2, 2&gt;&gt; none;</div>
+<div class="line"><span class="lineno">   61</span>  <span class="keyword">const</span> sparse_matrix&lt;float, sparse::diagonal&lt;2&gt;&gt; single_precision{3.F, 4.F};</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(value) == std::sqrt(30.));</div>
+<div class="line"><span class="lineno">   64</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(row) == 5.);</div>
+<div class="line"><span class="lineno">   65</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(column) == 5.);</div>
+<div class="line"><span class="lineno">   66</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(corner) == 2.);</div>
+<div class="line"><span class="lineno">   67</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(none) == 0.);</div>
+<div class="line"><span class="lineno">   68</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(single_precision) == 5.F);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   71</span>}()};</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a48ebf459a670160993e62b05114ca003"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">fcarouge::sparse::pattern</a></div><div class="ttdeci">pattern(shape_t&lt; Rows, Columns &gt;) -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">Deduce the pattern without any stored position.</div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a673337de1e05cc27599bcaf38df180a9"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9">fcarouge::test::anonymous_namespace{access.cpp}::row_pattern</a></div><div class="ttdeci">constexpr pattern row_pattern</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00047">access.cpp:47</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_ab1c90de56c5a56d92dffc8d3f7978ad4"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ab1c90de56c5a56d92dffc8d3f7978ad4">fcarouge::test::anonymous_namespace{access.cpp}::column_pattern</a></div><div class="ttdeci">constexpr pattern column_pattern</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00045">access.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_xhtml_a7196e529f6392ee3faa00cec8a9f1884"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7196e529f6392ee3faa00cec8a9f1884">fcarouge::test::anonymous_namespace{differential.cpp}::corner</a></div><div class="ttdeci">constexpr sparse::pattern corner</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00166">differential.cpp:166</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
+<div class="ttc" id="anamespacefcarouge_xhtml_a85f4cd8428b5506d9efb9155770793c6"><div class="ttname"><a href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">fcarouge::matrix_frob_norm</a></div><div class="ttdeci">constexpr auto matrix_frob_norm(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; Type</div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

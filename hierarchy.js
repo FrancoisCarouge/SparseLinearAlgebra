@@ -5,6 +5,7 @@ var hierarchy =
     [ "fcarouge::not_realtime", "classfcarouge_1_1not__realtime.xhtml", null ],
     [ "fcarouge::sparse::pattern< Rows, Columns, Count >", "structfcarouge_1_1sparse_1_1pattern.xhtml", null ],
     [ "fcarouge::sparse::position", "structfcarouge_1_1sparse_1_1position.xhtml", null ],
+    [ "fcarouge::sparse::shape_t< Rows, Columns >", "structfcarouge_1_1sparse_1_1shape__t.xhtml", null ],
     [ "fcarouge::sparse_linear_algebra::internal::storage< Type, Pattern, Rows >", null, [
       [ "fcarouge::sparse_matrix< Type, Pattern >", "classfcarouge_1_1sparse__matrix.xhtml", null ]
     ] ],

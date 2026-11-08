@@ -112,9 +112,10 @@ $(function(){initNavTree('conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml',
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a> =  <span class="keyword">requires</span>(std::remove_cv_t&lt;Type&gt; *value) {</div>
 <div class="line">  []&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt;(</div>
-<div class="line">      pattern&lt;Rows, Columns, Count&gt; *) {}(value);</div>
+<div class="line">      <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern&lt;Rows, Columns, Count&gt;</a> *) {}(value);</div>
 <div class="line">}</div>
 <div class="ttc" id="aconceptfcarouge_1_1sparse_1_1sparsity__pattern_xhtml"><div class="ttname"><a href="conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml">fcarouge::sparse::sparsity_pattern</a></div><div class="ttdoc">Concept of a compile-time sparsity pattern.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00055">sparse_linear_algebra_forward.hpp:55</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a48ebf459a670160993e62b05114ca003"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">fcarouge::sparse::pattern</a></div><div class="ttdeci">pattern(shape_t&lt; Rows, Columns &gt;) -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">Deduce the pattern without any stored position.</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concept of a compile-time sparsity pattern. </p>
 <p>A pattern, of any count of rows, columns, and stored elements: the deduction of the arguments of a pattern from the type. </p>

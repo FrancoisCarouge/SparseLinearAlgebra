@@ -123,7 +123,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000110">Test</a></b></dt><dd>Verifies the transposition moves each element to its mirrored position, on non-square and unsymmetric patterns. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000113">Test</a></b></dt><dd>Verifies the transposition moves each element to its mirrored position, on non-square and unsymmetric patterns. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="transposed_8cpp_source.xhtml#l00040">40</a> of file <a class="el" href="transposed_8cpp_source.xhtml">transposed.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   40</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -133,56 +133,62 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>  assert(run_time == 0);</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> wide{make_pattern&lt;2, 3&gt;({{0, 0}, {0, 2}, {1, 1}})};</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>  <span class="keyword">const</span> sparse_matrix&lt;double, wide&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">value</a>{{1., 0_o, 2.},   <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   53</span>                                          {0_o, 3., 0_o}}; <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> <span class="keyword">auto</span> mirrored{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(value)};</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>  <span class="keyword">static_assert</span>(<span class="keyword">decltype</span>(mirrored)::structure.rows == 3 and</div>
-<div class="line"><span class="lineno">   58</span>                <span class="keyword">decltype</span>(mirrored)::structure.columns == 2);</div>
-<div class="line"><span class="lineno">   59</span>  assert((mirrored.at&lt;0, 0&gt;() == 1.));</div>
-<div class="line"><span class="lineno">   60</span>  assert((mirrored.at&lt;2, 0&gt;() == 2.));</div>
-<div class="line"><span class="lineno">   61</span>  assert((mirrored.at&lt;1, 1&gt;() == 3.));</div>
-<div class="line"><span class="lineno">   62</span>  assert((mirrored.at&lt;0, 1&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   63</span>  assert((mirrored.at&lt;1, 0&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   64</span>  assert((mirrored.at&lt;2, 1&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   65</span>  assert((<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(mirrored) == value));</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>  <span class="comment">// The stored order changes: a column then row reading of the storage.</span></div>
-<div class="line"><span class="lineno">   68</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::lower_triangular&lt;3&gt;&gt; lower{</div>
-<div class="line"><span class="lineno">   69</span>      {1., 0_o, 0_o}, <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   70</span>      {2., 3., 0_o},  <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   71</span>      {4., 5., 6.}};  <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upper{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lower)};</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>  assert((upper.at&lt;0, 0&gt;() == 1.));</div>
-<div class="line"><span class="lineno">   76</span>  assert((upper.at&lt;0, 1&gt;() == 2.));</div>
-<div class="line"><span class="lineno">   77</span>  assert((upper.at&lt;0, 2&gt;() == 4.));</div>
-<div class="line"><span class="lineno">   78</span>  assert((upper.at&lt;1, 1&gt;() == 3.));</div>
-<div class="line"><span class="lineno">   79</span>  assert((upper.at&lt;1, 2&gt;() == 5.));</div>
-<div class="line"><span class="lineno">   80</span>  assert((upper.at&lt;2, 2&gt;() == 6.));</div>
-<div class="line"><span class="lineno">   81</span>  assert((upper.at&lt;1, 0&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>  <span class="comment">// A row vector to a column vector.</span></div>
-<div class="line"><span class="lineno">   84</span>  <span class="keyword">const</span> sparse_matrix&lt;double, make_pattern&lt;1, 3&gt;({{0, 1}})&gt; row{7.};</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(row)};</div>
+<div class="line"><span class="lineno">   47</span>  <span class="keyword">using </span><a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>;</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span>sparse::shape;</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">constexpr</span> pattern wide{shape&lt;2, 3&gt;, {{0, 0}, {0, 2}, {1, 1}}};</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">const</span> sparse_matrix&lt;double, wide&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{{1., 0_o, 2.},   <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   54</span>                                          {0_o, 3., 0_o}}; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">const</span> <span class="keyword">auto</span> mirrored{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(value)};</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>  <span class="keyword">static_assert</span>(<span class="keyword">decltype</span>(mirrored)::structure.rows == 3 and</div>
+<div class="line"><span class="lineno">   59</span>                <span class="keyword">decltype</span>(mirrored)::structure.columns == 2);</div>
+<div class="line"><span class="lineno">   60</span>  assert((mirrored.at&lt;0, 0&gt;() == 1.));</div>
+<div class="line"><span class="lineno">   61</span>  assert((mirrored.at&lt;2, 0&gt;() == 2.));</div>
+<div class="line"><span class="lineno">   62</span>  assert((mirrored.at&lt;1, 1&gt;() == 3.));</div>
+<div class="line"><span class="lineno">   63</span>  assert((mirrored.at&lt;0, 1&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   64</span>  assert((mirrored.at&lt;1, 0&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   65</span>  assert((mirrored.at&lt;2, 1&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   66</span>  assert((<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(mirrored) == value));</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>  <span class="comment">// The stored order changes: a column then row reading of the storage.</span></div>
+<div class="line"><span class="lineno">   69</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::lower_triangular&lt;3&gt;&gt; lower{</div>
+<div class="line"><span class="lineno">   70</span>      {1., 0_o, 0_o}, <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   71</span>      {2., 3., 0_o},  <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   72</span>      {4., 5., 6.}};  <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upper{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lower)};</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>  assert((upper.at&lt;0, 0&gt;() == 1.));</div>
+<div class="line"><span class="lineno">   77</span>  assert((upper.at&lt;0, 1&gt;() == 2.));</div>
+<div class="line"><span class="lineno">   78</span>  assert((upper.at&lt;0, 2&gt;() == 4.));</div>
+<div class="line"><span class="lineno">   79</span>  assert((upper.at&lt;1, 1&gt;() == 3.));</div>
+<div class="line"><span class="lineno">   80</span>  assert((upper.at&lt;1, 2&gt;() == 5.));</div>
+<div class="line"><span class="lineno">   81</span>  assert((upper.at&lt;2, 2&gt;() == 6.));</div>
+<div class="line"><span class="lineno">   82</span>  assert((upper.at&lt;1, 0&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>  <span class="comment">// A row vector to a column vector.</span></div>
+<div class="line"><span class="lineno">   85</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9">row_pattern</a>{shape&lt;1, 3&gt;, {{0, 1}}};</div>
+<div class="line"><span class="lineno">   86</span>  <span class="keyword">const</span> sparse_matrix&lt;double, row_pattern&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>{7.};</div>
 <div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>.at&lt;0, 0&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   89</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>.at&lt;1, 0&gt;() == 7.));</div>
-<div class="line"><span class="lineno">   90</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">column</a>.at&lt;2, 0&gt;() == 0.));</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   93</span>}()};</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_ad983c435acdd36095aa2b3da6bde4dcb"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ad983c435acdd36095aa2b3da6bde4dcb">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, make_pattern&lt; 2, 1 &gt;({{1, 0}})&gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00044">access.cpp:44</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_af784d3b560d61c397e7b6a5e270c950b"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr auto value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00039">duplicate_fail.cpp:39</a></div></div>
+<div class="line"><span class="lineno">   88</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>{<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(row)};</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>.at&lt;0, 0&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   91</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>.at&lt;1, 0&gt;() == 7.));</div>
+<div class="line"><span class="lineno">   92</span>  assert((<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>.at&lt;2, 0&gt;() == 0.));</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   95</span>}()};</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a48ebf459a670160993e62b05114ca003"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">fcarouge::sparse::pattern</a></div><div class="ttdeci">pattern(shape_t&lt; Rows, Columns &gt;) -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">Deduce the pattern without any stored position.</div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a673337de1e05cc27599bcaf38df180a9"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9">fcarouge::test::anonymous_namespace{access.cpp}::row_pattern</a></div><div class="ttdeci">constexpr pattern row_pattern</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00047">access.cpp:47</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
 <div class="ttc" id="anamespacefcarouge_xhtml_ad91a08ee8a52749487475f762d82fe0d"><div class="ttname"><a href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed</a></div><div class="ttdeci">constexpr auto transposed(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; sparse_matrix&lt; Type, sparse::pattern_transpose&lt; Pattern &gt; &gt;</div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

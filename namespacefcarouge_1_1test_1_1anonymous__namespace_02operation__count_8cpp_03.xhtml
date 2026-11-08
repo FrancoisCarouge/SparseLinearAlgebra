@@ -126,6 +126,10 @@ Variables</h2></td></tr>
 <tr class="separator:a60a8aafa0deb8523e26ca83d1d573607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab45e84faa6be16fc8dc04461aef0c370" id="r_ab45e84faa6be16fc8dc04461aef0c370"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab45e84faa6be16fc8dc04461aef0c370">last_row</a></td></tr>
 <tr class="separator:ab45e84faa6be16fc8dc04461aef0c370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c3d3c9a1b4a19241dc1d034cfefb5e" id="r_ae3c3d3c9a1b4a19241dc1d034cfefb5e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c3d3c9a1b4a19241dc1d034cfefb5e">sparse_column_pattern</a></td></tr>
+<tr class="separator:ae3c3d3c9a1b4a19241dc1d034cfefb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5296a817bcc6bd4503d3ccdc3cc98d" id="r_aed5296a817bcc6bd4503d3ccdc3cc98d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed5296a817bcc6bd4503d3ccdc3cc98d">sparse_row_pattern</a></td></tr>
+<tr class="separator:aed5296a817bcc6bd4503d3ccdc3cc98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a1b5bc91162ca3a46757550c2676471eb" name="a1b5bc91162ca3a46757550c2676471eb"></a>
@@ -167,11 +171,12 @@ template&lt;auto Pattern&gt; </div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sparse::make_pattern&lt;3, 3&gt;({{0, 0}, {0, 1}, {0, 2}})}</div>
+<div class="line">    sparse::pattern{sparse::shape&lt;3, 3&gt;, {{0, 0}, {0, 1}, {0, 2}}}}</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00100">100</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  100</span>                               {</div>
-<div class="line"><span class="lineno">  101</span>    sparse::make_pattern&lt;3, 3&gt;({{0, 0}, {0, 1}, {0, 2}})};</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>{sparse::shape&lt;3, 3&gt;, {{0, 0}, {0, 1}, {0, 2}}}};</div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,11 +200,71 @@ template&lt;auto Pattern&gt; </div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    sparse::make_pattern&lt;3, 3&gt;({{2, 0}, {2, 1}, {2, 2}})}</div>
+<div class="line">    sparse::pattern{sparse::shape&lt;3, 3&gt;, {{2, 0}, {2, 1}, {2, 2}}}}</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00102">102</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  102</span>                              {</div>
-<div class="line"><span class="lineno">  103</span>    sparse::make_pattern&lt;3, 3&gt;({{2, 0}, {2, 1}, {2, 2}})};</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>{sparse::shape&lt;3, 3&gt;, {{2, 0}, {2, 1}, {2, 2}}}};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae3c3d3c9a1b4a19241dc1d034cfefb5e" name="ae3c3d3c9a1b4a19241dc1d034cfefb5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c3d3c9a1b4a19241dc1d034cfefb5e">&#9670;&#160;</a></span>sparse_column_pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a> fcarouge::test::anonymous_namespace{operation_count.cpp}::sparse_column_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    sparse::shape&lt;4, 1&gt;, {{0, 0}, {1, 0}, {3, 0}}}</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000058">Test</a></b></dt><dd>Verifies a product computes exactly its elementary products, far fewer than the dense product's for the same shape. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000059">Test</a></b></dt><dd>Verifies the count scales with the stored elements, not the shape: a diagonal product is linear, where a dense product is cubic in the size. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000060">Test</a></b></dt><dd>Verifies a sum only adds the elements stored by both terms: an element stored by one term is copied. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000061">Test</a></b></dt><dd>Verifies the dot product only multiplies the elements stored by both vectors. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00144">144</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>                                                    {</div>
+<div class="line"><span class="lineno">  145</span>    sparse::shape&lt;4, 1&gt;, {{0, 0}, {1, 0}, {3, 0}}};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed5296a817bcc6bd4503d3ccdc3cc98d" name="aed5296a817bcc6bd4503d3ccdc3cc98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed5296a817bcc6bd4503d3ccdc3cc98d">&#9670;&#160;</a></span>sparse_row_pattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a> fcarouge::test::anonymous_namespace{operation_count.cpp}::sparse_row_pattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{sparse::shape&lt;1, 4&gt;,</div>
+<div class="line">                                                    {{0, 1}, {0, 2}, {0, 3}}}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00146">146</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>                                                 {sparse::shape&lt;1, 4&gt;,</div>
+<div class="line"><span class="lineno">  147</span>                                                    {{0, 1}, {0, 2}, {0, 3}}};</div>
 </div><!-- fragment -->
 </div>
 </div>

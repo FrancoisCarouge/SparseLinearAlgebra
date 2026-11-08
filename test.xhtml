@@ -106,7 +106,7 @@ $(function(){initNavTree('test.xhtml',''); initResizable(true); });
 <div class="textblock"><dl class="reflist">
 <dt>{<a class="el" href="addition_8cpp.xhtml">addition.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02addition_8cpp_03.xhtml#a3e4a1c14034650b6d66fabfbd1e25ff9">fcarouge::test::anonymous_namespace{addition.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000001"></a>Verifies the addition of matrices of overlapping and disjoint patterns.  </dd>
-<dt>{<a class="el" href="arithmetic_8cpp.xhtml">arithmetic.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a36608ad795e27cef877e4936f2cc5e31">fcarouge::test::anonymous_namespace{arithmetic.cpp}::first_third</a>  </dt>
+<dt>{<a class="el" href="arithmetic_8cpp.xhtml">arithmetic.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a01c960f119a80d27c6084e12f96b19af">fcarouge::test::anonymous_namespace{arithmetic.cpp}::anti_diagonal_pattern</a>  </dt>
 <dd><a class="anchor" id="_test000019"></a>Verifies the norms and the dot product in a constant expression.  </dd>
 <dt>{<a class="el" href="arithmetic_8cpp.xhtml">arithmetic.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">fcarouge::test::anonymous_namespace{arithmetic.cpp}::sum</a>  </dt>
 <dd><a class="anchor" id="_test000018"></a>Verifies each operation is available in a constant expression: everything is known at compile time, down to the values.  </dd>
@@ -120,6 +120,23 @@ $(function(){initNavTree('test.xhtml',''); initResizable(true); });
 <dd><a class="anchor" id="_test000013"></a>Verifies the element access of a stored element and a structural zero, through each accessor form, at run time.  </dd>
 <dt>{<a class="el" href="constant__index__fail_8cpp.xhtml">constant_index_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02constant__index__fail_8cpp_03.xhtml#ac718b6faf5c48387220033a7d33d4bbf">fcarouge::test::anonymous_namespace{constant_index_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000014"></a>Verifies an assignment to a structural zero at a compile-time position does not compile: its value would be lost.  </dd>
+<dt>{<a class="el" href="construction_8cpp.xhtml">construction.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011">fcarouge::test::anonymous_namespace{construction.cpp}::ascending</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_test000063"></a>Verifies the positions are sorted in row-major order, whatever the order they are given in. </p>
+<p class="interdd"><a class="anchor" id="_test000064"></a>Verifies the pattern's shape and count. </p>
+<p class="interdd"><a class="anchor" id="_test000065"></a>Verifies a position's index is its row-major rank, and a structural zero has none. </p>
+<p class="interdd"><a class="anchor" id="_test000066"></a>Verifies a lookup past the last position, or out of the matrix, finds no element. </p>
+<p class="enddd"><a class="anchor" id="_test000067"></a>Verifies the order of the given positions does not change the type or the value: two equal patterns are the same matrix type.  </p>
+</dd>
+<dt>{<a class="el" href="construction_8cpp.xhtml">construction.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a5d03cf61866a8e74c53e56e13a7ee051">fcarouge::test::anonymous_namespace{construction.cpp}::empty</a>  </dt>
+<dd><a class="anchor" id="_test000068"></a>Verifies an empty pattern stores nothing.  </dd>
+<dt>{<a class="el" href="construction_8cpp.xhtml">construction.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a90ba51a5f6c36cec3d655c9fabb9f8af">fcarouge::test::anonymous_namespace{construction.cpp}::empty_pattern</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_test000070"></a>Verifies the generated and the listed patterns of the same positions are the same matrix type. </p>
+<p class="interdd"><a class="anchor" id="_test000071"></a>Verifies the class template arguments are deduced from the shape and the positions, or from the shape and the predicate. </p>
+<p class="interdd"><a class="anchor" id="_test000072"></a>Verifies a pattern of explicit arguments is constructed from a predicate selecting as many positions, and only then. </p>
+<p class="enddd"><a class="anchor" id="_test000074"></a>Verifies a pattern is only constructed from its shape: not from another shape, not by default, and not from its members, which would skip the order of its positions.  </p>
+</dd>
+<dt>{<a class="el" href="construction_8cpp.xhtml">construction.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a0a00e32e5d2be21e870201b34bbf69c7">fcarouge::test::anonymous_namespace{construction.cpp}::is_even</a>  </dt>
+<dd><a class="anchor" id="_test000069"></a>Verifies a pattern generated from a predicate.  </dd>
 <dt>{<a class="el" href="constructor_8cpp.xhtml">constructor.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml#aa778e613d53f3f3c6755e709302888cd">fcarouge::test::anonymous_namespace{constructor.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000021"></a>Verifies the constructions of a sparse matrix.  </dd>
 <dt>{<a class="el" href="count__fail_8cpp.xhtml">count_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02count__fail_8cpp_03.xhtml#a92a63c8f320bd61e75aeaf8460ed2975">fcarouge::test::anonymous_namespace{count_fail.cpp}::test</a>  </dt>
@@ -130,33 +147,24 @@ $(function(){initNavTree('test.xhtml',''); initResizable(true); });
 </dd>
 <dt>{<a class="el" href="dot_8cpp.xhtml">dot.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02dot_8cpp_03.xhtml#af99cb3cd0ab9d4707a7e0859b4f83d07">fcarouge::test::anonymous_namespace{dot.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000039"></a>Verifies the dot product only reaches the elements stored by both vectors, of any orientation.  </dd>
-<dt>{<a class="el" href="duplicate__fail_8cpp.xhtml">duplicate_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a>  </dt>
+<dt>{<a class="el" href="duplicate__fail_8cpp.xhtml">duplicate_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a>  </dt>
 <dd><a class="anchor" id="_test000062"></a>Verifies a pattern with a duplicate position does not compile.  </dd>
 <dt>{<a class="el" href="equal__to_8cpp.xhtml">equal_to.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02equal__to_8cpp_03.xhtml#afa5acde068b7db37e18a61497f776229">fcarouge::test::anonymous_namespace{equal_to.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000043"></a>Verifies the equality compares values, not patterns.  </dd>
+<dd><a class="anchor" id="_test000042"></a>Verifies the equality compares values, not patterns.  </dd>
 <dt>{<a class="el" href="format_8cpp.xhtml">format.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02format_8cpp_03.xhtml#ae2b2da7ce12d101243588ab0bf2cfbd9">fcarouge::test::anonymous_namespace{format.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000044"></a>Verifies a structural zero is formatted as an element, so the format does not depend on the pattern.  </dd>
+<dt>{<a class="el" href="freestanding_8cpp.xhtml">freestanding.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a988e41a4d6ca6f6927c9f918f8e9c4c3">fcarouge::test::anonymous_namespace{freestanding.cpp}::anti_diagonal_pattern</a>  </dt>
+<dd><a class="anchor" id="_test000046"></a>Verifies the operations without a hosted implementation, the square root's included.  </dd>
 <dt>{<a class="el" href="integer__fail_8cpp.xhtml">integer_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02integer__fail_8cpp_03.xhtml#acb476fe5fe1cfd83505f3b375f0934e4">fcarouge::test::anonymous_namespace{integer_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000048"></a>Verifies the Frobenius norm of an integer element type does not compile: an integer has no exact square root.  </dd>
 <dt>{<a class="el" href="large_8cpp.xhtml">large.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02large_8cpp_03.xhtml#af34de5324488fecd529604a2b5271143">fcarouge::test::anonymous_namespace{large.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000093"></a>Verifies the operations on a large matrix, on run-time values, in a real-time context: no memory allocation, no lock, no blocking call.  </dd>
-<dt>{<a class="el" href="make_8cpp.xhtml">make.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#aacd4cd9f01f2dfaba01e4873510f5c12">fcarouge::test::anonymous_namespace{make.cpp}::ascending</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_test000064"></a>Verifies the positions are sorted in row-major order, whatever the order they are given in. </p>
-<p class="interdd"><a class="anchor" id="_test000065"></a>Verifies the pattern's shape and count. </p>
-<p class="interdd"><a class="anchor" id="_test000066"></a>Verifies a position's index is its row-major rank, and a structural zero has none. </p>
-<p class="interdd"><a class="anchor" id="_test000067"></a>Verifies a lookup past the last position, or out of the matrix, finds no element. </p>
-<p class="enddd"><a class="anchor" id="_test000068"></a>Verifies the order of the given positions does not change the type or the value: two equal patterns are the same matrix type.  </p>
-</dd>
-<dt>{<a class="el" href="make_8cpp.xhtml">make.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#ac91cc9109e949f9708d81da3e4c8ae73">fcarouge::test::anonymous_namespace{make.cpp}::empty</a>  </dt>
-<dd><a class="anchor" id="_test000069"></a>Verifies an empty pattern stores nothing.  </dd>
-<dt>{<a class="el" href="make_8cpp.xhtml">make.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#a21ddeb112f2f3b93b5dd93941f13cc17">fcarouge::test::anonymous_namespace{make.cpp}::is_even</a>  </dt>
-<dd><a class="anchor" id="_test000070"></a>Verifies a pattern generated from a predicate.  </dd>
+<dd><a class="anchor" id="_test000097"></a>Verifies the operations on a large matrix, on run-time values, in a real-time context: no memory allocation, no lock, no blocking call.  </dd>
 <dt>{matrix_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml#a50439aace962c18a908b4f3a82c0531c">fcarouge::test::anonymous_namespace{matrix_fail.cpp}::test</a>  </dt>
 <dd><p class="startdd"><a class="anchor" id="_test000035"></a>Verifies a matrix division does not compile yet: it needs a solver, a factorization. </p>
 <p class="enddd"><a class="anchor" id="_test000040"></a>Verifies the dot product rejects a matrix, even of a vector's count of elements.  </p>
 </dd>
 <dt>{matrix_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml#a6d443ce925a4815e25c59a14b86c8a21">fcarouge::test::anonymous_namespace{matrix_fail.cpp}::value</a>  </dt>
-<dd><a class="anchor" id="_test000063"></a>Verifies a matrix of another template argument than a pattern does not compile.  </dd>
+<dd><a class="anchor" id="_test000073"></a>Verifies a matrix of another template argument than a pattern does not compile.  </dd>
 <dt>{<a class="el" href="matrix__frob__norm_8cpp.xhtml">matrix_frob_norm.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__frob__norm_8cpp_03.xhtml#a9df2cf46b10fd925924f82cbdf2cef79">fcarouge::test::anonymous_namespace{matrix_frob_norm.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000049"></a>Verifies the Frobenius norm, of the stored elements only, of every shape.  </dd>
 <dt>{<a class="el" href="matrix__inf__norm_8cpp.xhtml">matrix_inf_norm.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__inf__norm_8cpp_03.xhtml#a289e0930b64b75e5f6722246bf67c7b6">fcarouge::test::anonymous_namespace{matrix_inf_norm.cpp}::test</a>  </dt>
@@ -173,26 +181,32 @@ $(function(){initNavTree('test.xhtml',''); initResizable(true); });
 </dd>
 <dt>{<a class="el" href="non__finite_8cpp.xhtml">non_finite.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02non__finite_8cpp_03.xhtml#ab4725ecfcdbf0d1ca14aef9e90b657c0">fcarouge::test::anonymous_namespace{non_finite.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000056"></a>Verifies the documented semantics of non-finite values: a structural zero has no term, so it stays an exact zero, where a dense computation yields a not-a-number value.  </dd>
+<dt>{<a class="el" href="operation__count_8cpp.xhtml">operation_count.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#ae3c3d3c9a1b4a19241dc1d034cfefb5e">fcarouge::test::anonymous_namespace{operation_count.cpp}::sparse_column_pattern</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_test000058"></a>Verifies a product computes exactly its elementary products, far fewer than the dense product's for the same shape. </p>
+<p class="interdd"><a class="anchor" id="_test000059"></a>Verifies the count scales with the stored elements, not the shape: a diagonal product is linear, where a dense product is cubic in the size. </p>
+<p class="interdd"><a class="anchor" id="_test000060"></a>Verifies a sum only adds the elements stored by both terms: an element stored by one term is copied. </p>
+<p class="enddd"><a class="anchor" id="_test000061"></a>Verifies the dot product only multiplies the elements stored by both vectors.  </p>
+</dd>
 <dt>{<a class="el" href="operations_8cpp.xhtml">operations.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operations_8cpp_03.xhtml#a0965f115bac2341537935120757bfa70">fcarouge::test::anonymous_namespace{operations.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000094"></a>Verifies every operation at run time, in the real-time context of the real-time sanitizer job: no memory allocation, no lock, no blocking call.  </dd>
+<dd><a class="anchor" id="_test000096"></a>Verifies every operation at run time, in the real-time context of the real-time sanitizer job: no memory allocation, no lock, no blocking call.  </dd>
 <dt>{out_of_range_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#ade0ccec7a8924dd689fe049d9c0c75a0">fcarouge::test::anonymous_namespace{out_of_range_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000015"></a>Verifies an access out of the matrix does not compile.  </dd>
-<dt>{out_of_range_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#a738226fb54e1ec6958b88cd209ba21cb">fcarouge::test::anonymous_namespace{out_of_range_fail.cpp}::value</a>  </dt>
-<dd><a class="anchor" id="_test000076"></a>Verifies a pattern with a position out of the matrix does not compile.  </dd>
-<dt>{<a class="el" href="pattern__algebra_8cpp.xhtml">pattern_algebra.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283">fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::first_column</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_test000077"></a>Verifies the union, and that it is commutative and idempotent. </p>
-<p class="interdd"><a class="anchor" id="_test000078"></a>Verifies the intersection. </p>
-<p class="interdd"><a class="anchor" id="_test000079"></a>Verifies the transposition, its shape, and that it is an involution that keeps the row-major order. </p>
-<p class="interdd"><a class="anchor" id="_test000080"></a>Verifies the structural product of well-known families. </p>
-<p class="interdd"><a class="anchor" id="_test000081"></a>Verifies a structural zero annihilates the product. </p>
-<p class="enddd"><a class="anchor" id="_test000083"></a>Verifies the product of two non-empty patterns that never meet.  </p>
+<dt>{out_of_range_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#a96e9f684ee33c3714bad2def9de33ed8">fcarouge::test::anonymous_namespace{out_of_range_fail.cpp}::value</a>  </dt>
+<dd><a class="anchor" id="_test000075"></a>Verifies a pattern with a position out of the matrix does not compile.  </dd>
+<dt>{<a class="el" href="pattern__algebra_8cpp.xhtml">pattern_algebra.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a23939332daf477f275f1aaa8c469508a">fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::first_column</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_test000080"></a>Verifies the union, and that it is commutative and idempotent. </p>
+<p class="interdd"><a class="anchor" id="_test000081"></a>Verifies the intersection. </p>
+<p class="interdd"><a class="anchor" id="_test000082"></a>Verifies the transposition, its shape, and that it is an involution that keeps the row-major order. </p>
+<p class="interdd"><a class="anchor" id="_test000083"></a>Verifies the structural product of well-known families. </p>
+<p class="interdd"><a class="anchor" id="_test000084"></a>Verifies a structural zero annihilates the product. </p>
+<p class="enddd"><a class="anchor" id="_test000085"></a>Verifies the product of two non-empty patterns that never meet.  </p>
 </dd>
 <dt>{<a class="el" href="patterns_8cpp.xhtml">patterns.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a585da428e9f9ebbc2c8ecd84c62fac24">fcarouge::test::anonymous_namespace{patterns.cpp}::matrix_type</a>  </dt>
-<dd><a class="anchor" id="_test000096"></a>Verifies a matrix of that scale only stores its elements.  </dd>
+<dd><a class="anchor" id="_test000099"></a>Verifies a matrix of that scale only stores its elements.  </dd>
 <dt>{<a class="el" href="patterns_8cpp.xhtml">patterns.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">fcarouge::test::anonymous_namespace{patterns.cpp}::size</a>  </dt>
-<dd><a class="anchor" id="_test000095"></a>Verifies the compile-time cost is practical at the supported scale, a few hundred stored elements, for each pattern operation.  </dd>
+<dd><a class="anchor" id="_test000098"></a>Verifies the compile-time cost is practical at the supported scale, a few hundred stored elements, for each pattern operation.  </dd>
 <dt>{<a class="el" href="patterns_8cpp.xhtml">patterns.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afb233039a02e1098d56b2cac0235f564">fcarouge::test::anonymous_namespace{patterns.cpp}::square</a>  </dt>
-<dd><a class="anchor" id="_test000097"></a>Verifies the operations on a matrix of that scale in constant evaluation: a tridiagonal squared is pentadiagonal, and the identity is neutral.  </dd>
+<dd><a class="anchor" id="_test000100"></a>Verifies the operations on a matrix of that scale in constant evaluation: a tridiagonal squared is pentadiagonal, and the identity is neutral.  </dd>
 <dt>{<a class="el" href="position_8cpp.xhtml">position.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02position_8cpp_03.xhtml#a04a78be99ab08e4aa7f92add8e9edbad">fcarouge::test::anonymous_namespace{position.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000029"></a>Verifies the construction of a matrix from a value at every position, a structural zero explicitly.  </dd>
 <dt>{<a class="el" href="position__count__fail_8cpp.xhtml">position_count_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02position__count__fail_8cpp_03.xhtml#aec8c030afac2cbeb23c13688b0c87f5a">fcarouge::test::anonymous_namespace{position_count_fail.cpp}::test</a>  </dt>
@@ -201,38 +215,45 @@ $(function(){initNavTree('test.xhtml',''); initResizable(true); });
 <dd><a class="anchor" id="_test000030"></a>Verifies a stored element of another type does not compile: a conversion must be decided by the end-user.  </dd>
 <dt>{<a class="el" href="representation__fail_8cpp.xhtml">representation_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02representation__fail_8cpp_03.xhtml#af4a32089a76bab3104f3d37cfd34f200">fcarouge::test::anonymous_namespace{representation_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000002"></a>Verifies matrices of different element types do not mix: a conversion must be decided by the end-user.  </dd>
+<dt>{<a class="el" href="result__patterns_8cpp.xhtml">result_patterns.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a08824a97292c7c8b5bd93e661eab0f91">fcarouge::test::anonymous_namespace{result_patterns.cpp}::first_rows</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_test000090"></a>Verifies the sum and the difference store the union of their terms. </p>
+<p class="interdd"><a class="anchor" id="_test000091"></a>Verifies the product stores the structural product of its factors. </p>
+<p class="interdd"><a class="anchor" id="_test000092"></a>Verifies the transposition transposes the pattern, and the shape. </p>
+<p class="interdd"><a class="anchor" id="_test000093"></a>Verifies the negation and the scaling keep the pattern. </p>
+<p class="enddd"><a class="anchor" id="_test000094"></a>Verifies a matrix-vector product is sparse when the factors are.  </p>
+</dd>
 <dt>{<a class="el" href="run__time_8cpp.xhtml">run_time.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml#ad668e16ca38141fd7b3ca3231c86e8e0">fcarouge::test::anonymous_namespace{run_time.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000101"></a>Verifies the run-time square root of a freestanding implementation, computed by Newton's method rather than by <code>std::sqrt</code>: the exact root of a perfect square, below and above one, and the identity on zero and on an infinite value.  </dd>
+<dd><a class="anchor" id="_test000103"></a>Verifies the run-time square root of a freestanding implementation, computed by Newton's method rather than by <code>std::sqrt</code>: the exact root of a perfect square, below and above one, and the identity on zero and on an infinite value.  </dd>
 <dt>{<a class="el" href="run__time__index__fail_8cpp.xhtml">run_time_index_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time__index__fail_8cpp_03.xhtml#ac344bd5fd339662aed07e2f09af188ca">fcarouge::test::anonymous_namespace{run_time_index_fail.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000016"></a>Verifies an assignment at a run-time position of a pattern with a structural zero does not compile: its position is only known at run time.  </dd>
+<dd><a class="anchor" id="_test000017"></a>Verifies an assignment at a run-time position of a pattern with a structural zero does not compile: its position is only known at run time.  </dd>
 <dt>{<a class="el" href="scalar_8cpp.xhtml">scalar.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02scalar_8cpp_03.xhtml#a19fd32d289c4028484e648f18a3cd395">fcarouge::test::anonymous_namespace{scalar.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000038"></a>Verifies the division of a matrix by a scalar, of the same pattern.  </dd>
 <dt>{<a class="el" href="scalar__type__fail_8cpp.xhtml">scalar_type_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02scalar__type__fail_8cpp_03.xhtml#adcdfb8526cf768f14c61c9df8aa24aee">fcarouge::test::anonymous_namespace{scalar_type_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000053"></a>Verifies a scaling by a factor not convertible to the element type does not compile.  </dd>
 <dt>{<a class="el" href="scale_8cpp.xhtml">scale.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02scale_8cpp_03.xhtml#a3ef76e6b72737bf492218ed0ce44c7f6">fcarouge::test::anonymous_namespace{scale.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000098"></a>Verifies the scaling of a matrix by a scalar, on either side, of the same pattern.  </dd>
+<dd><a class="anchor" id="_test000101"></a>Verifies the scaling of a matrix by a scalar, on either side, of the same pattern.  </dd>
 <dt>{shape_fail.cpp} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02shape__fail_8cpp_03.xhtml#a63df85fc6192298ee5eec87647d2053f">fcarouge::test::anonymous_namespace{shape_fail.cpp}::test</a>  </dt>
 <dd><p class="startdd"><a class="anchor" id="_test000003"></a>Verifies the addition rejects a mismatch of the shapes, whatever the patterns. </p>
-<p class="interdd"><a class="anchor" id="_test000042"></a>Verifies the equality rejects a mismatch of the shapes: a matrix of another shape is not comparable, not unequal. </p>
+<p class="interdd"><a class="anchor" id="_test000043"></a>Verifies the equality rejects a mismatch of the shapes: a matrix of another shape is not comparable, not unequal. </p>
 <p class="interdd"><a class="anchor" id="_test000055"></a>Verifies the multiplication rejects a mismatch of the shapes, whatever the patterns. </p>
-<p class="enddd"><a class="anchor" id="_test000108"></a>Verifies the subtraction rejects a mismatch of the shapes, whatever the patterns.  </p>
+<p class="enddd"><a class="anchor" id="_test000111"></a>Verifies the subtraction rejects a mismatch of the shapes, whatever the patterns.  </p>
 </dd>
 <dt>{<a class="el" href="singleton_8cpp.xhtml">singleton.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02singleton_8cpp_03.xhtml#aa2a578ae3ade5fab136c811ace484529">fcarouge::test::anonymous_namespace{singleton.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000099"></a>Verifies the singleton matrix, stored or a structural zero.  </dd>
+<dd><a class="anchor" id="_test000102"></a>Verifies the singleton matrix, stored or a structural zero.  </dd>
 <dt>{<a class="el" href="singleton__fail_8cpp.xhtml">singleton_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02singleton__fail_8cpp_03.xhtml#ab79462e1ea1042aba1881f8c83e08452">fcarouge::test::anonymous_namespace{singleton_fail.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000017"></a>Verifies an assignment to the structural zero of a singleton does not compile.  </dd>
+<dd><a class="anchor" id="_test000016"></a>Verifies an assignment to the structural zero of a singleton does not compile.  </dd>
 <dt>{<a class="el" href="size__fail_8cpp.xhtml">size_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02size__fail_8cpp_03.xhtml#a003b8dd83734ed2ee94a3522ef415e24">fcarouge::test::anonymous_namespace{size_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000041"></a>Verifies the dot product rejects vectors of different sizes.  </dd>
 <dt>{<a class="el" href="square__root_8cpp.xhtml">square_root.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae">fcarouge::test::anonymous_namespace{square_root.cpp}::exponent</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_test000100"></a>Verifies the compile-time square root reaches the exact root of a perfect square, and the identity on zero and one. </p>
-<p class="enddd"><a class="anchor" id="_test000102"></a>Verifies the compile-time square root of an infinite or a not-a-number value, as <code>std::sqrt</code>'s.  </p>
+<dd><p class="startdd"><a class="anchor" id="_test000104"></a>Verifies the compile-time square root reaches the exact root of a perfect square, and the identity on zero and one. </p>
+<p class="enddd"><a class="anchor" id="_test000105"></a>Verifies the compile-time square root of an infinite or a not-a-number value, as <code>std::sqrt</code>'s.  </p>
 </dd>
 <dt>{<a class="el" href="structural__zero__fail_8cpp.xhtml">structural_zero_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02structural__zero__fail_8cpp_03.xhtml#abbe2b23e93621ee4312197b1a7ed4dc7">fcarouge::test::anonymous_namespace{structural_zero_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000031"></a>Verifies <code>0_o</code> for a stored element does not compile.  </dd>
 <dt>{<a class="el" href="subtraction_8cpp.xhtml">subtraction.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02subtraction_8cpp_03.xhtml#a7efa6546ccfacea1ea53afafecbbe23b">fcarouge::test::anonymous_namespace{subtraction.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000109"></a>Verifies the subtraction of matrices of overlapping and disjoint patterns.  </dd>
+<dd><a class="anchor" id="_test000112"></a>Verifies the subtraction of matrices of overlapping and disjoint patterns.  </dd>
 <dt>{<a class="el" href="transposed_8cpp.xhtml">transposed.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02transposed_8cpp_03.xhtml#a208c6d823bd60cdbb79569079adcb79e">fcarouge::test::anonymous_namespace{transposed.cpp}::test</a>  </dt>
-<dd><a class="anchor" id="_test000110"></a>Verifies the transposition moves each element to its mirrored position, on non-square and unsymmetric patterns.  </dd>
+<dd><a class="anchor" id="_test000113"></a>Verifies the transposition moves each element to its mirrored position, on non-square and unsymmetric patterns.  </dd>
 <dt>{<a class="el" href="type__fail_8cpp.xhtml">type_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02type__fail_8cpp_03.xhtml#a747d0a1603083246280f9c449edf7de6">fcarouge::test::anonymous_namespace{type_fail.cpp}::test</a>  </dt>
 <dd><a class="anchor" id="_test000032"></a>Verifies a construction from stored elements of another type does not compile: a conversion must be decided by the end-user.  </dd>
 <dt>{<a class="el" href="value__fail_8cpp.xhtml">value_fail.cpp</a>} Member <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02value__fail_8cpp_03.xhtml#a63cc392f11b3e41100c609b46eeb2d7d">fcarouge::test::anonymous_namespace{value_fail.cpp}::test</a>  </dt>

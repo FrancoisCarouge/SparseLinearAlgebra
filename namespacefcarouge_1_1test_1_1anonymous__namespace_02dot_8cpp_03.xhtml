@@ -133,44 +133,47 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>  assert(run_time == 0);</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>  <span class="keyword">using </span>sparse::make_pattern;</div>
-<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> ends{make_pattern&lt;4, 1&gt;({{0, 0}, {3, 0}})};</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> inner{make_pattern&lt;4, 1&gt;({{1, 0}, {2, 0}})};</div>
-<div class="line"><span class="lineno">   52</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> overlap{make_pattern&lt;4, 1&gt;({{0, 0}, {1, 0}, {3, 0}})};</div>
-<div class="line"><span class="lineno">   53</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> overlap_row{make_pattern&lt;1, 4&gt;({{0, 1}, {0, 3}})};</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> sparse_matrix&lt;double, ends&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{{2.},         <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   56</span>                                        {0_o},        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   47</span>  <span class="keyword">using </span><a class="code hl_struct" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>;</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keyword">using </span>sparse::shape;</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">constexpr</span> pattern ends{shape&lt;4, 1&gt;, {{0, 0}, {3, 0}}};</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> inner{shape&lt;4, 1&gt;, {{1, 0}, {2, 0}}};</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> overlap{shape&lt;4, 1&gt;, {{0, 0}, {1, 0}, {3, 0}}};</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">pattern</a> overlap_row{shape&lt;1, 4&gt;, {{0, 1}, {0, 3}}};</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">const</span> sparse_matrix&lt;double, ends&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{{2.},         <span class="comment">//</span></div>
 <div class="line"><span class="lineno">   57</span>                                        {0_o},        <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   58</span>                                        {-3.}};       <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> sparse_matrix&lt;double, inner&gt; disjoint{{0_o},  <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   60</span>                                              {5.},   <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   61</span>                                              {7.},   <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   62</span>                                              {0_o}}; <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   63</span>  <span class="keyword">const</span> sparse_matrix&lt;double, overlap&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{{4.},      <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   64</span>                                           {5.},      <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   65</span>                                           {0_o},     <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   66</span>                                           {6.}};     <span class="comment">//</span></div>
-<div class="line"><span class="lineno">   67</span>  <span class="keyword">const</span> sparse_matrix&lt;double, overlap_row&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">row</a>{{0_o, 5., 0_o, 6.}};</div>
-<div class="line"><span class="lineno">   68</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::zero&lt;4, 1&gt;&gt; none;</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, rhs) == -10.);</div>
-<div class="line"><span class="lineno">   71</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(rhs, lhs) == -10.);</div>
-<div class="line"><span class="lineno">   72</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, disjoint) == 0.);</div>
-<div class="line"><span class="lineno">   73</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, lhs) == 13.);</div>
-<div class="line"><span class="lineno">   74</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(rhs, row) == 61.);</div>
-<div class="line"><span class="lineno">   75</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(row, rhs) == 61.);</div>
-<div class="line"><span class="lineno">   76</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, row) == -18.);</div>
-<div class="line"><span class="lineno">   77</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, none) == 0.);</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   80</span>}()};</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a534d149bbde48729eacd8b7a1384d18c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, make_pattern&lt; 1, 2 &gt;({{0, 1}})&gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00045">access.cpp:45</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00044">arithmetic.cpp:44</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
+<div class="line"><span class="lineno">   58</span>                                        {0_o},        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   59</span>                                        {-3.}};       <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   60</span>  <span class="keyword">const</span> sparse_matrix&lt;double, inner&gt; disjoint{{0_o},  <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   61</span>                                              {5.},   <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   62</span>                                              {7.},   <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   63</span>                                              {0_o}}; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   64</span>  <span class="keyword">const</span> sparse_matrix&lt;double, overlap&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{{4.},      <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   65</span>                                           {5.},      <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   66</span>                                           {0_o},     <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   67</span>                                           {6.}};     <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   68</span>  <span class="keyword">const</span> sparse_matrix&lt;double, overlap_row&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>{{0_o, 5., 0_o, 6.}};</div>
+<div class="line"><span class="lineno">   69</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::zero&lt;4, 1&gt;&gt; none;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, rhs) == -10.);</div>
+<div class="line"><span class="lineno">   72</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(rhs, lhs) == -10.);</div>
+<div class="line"><span class="lineno">   73</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, disjoint) == 0.);</div>
+<div class="line"><span class="lineno">   74</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, lhs) == 13.);</div>
+<div class="line"><span class="lineno">   75</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(rhs, row) == 61.);</div>
+<div class="line"><span class="lineno">   76</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(row, rhs) == 61.);</div>
+<div class="line"><span class="lineno">   77</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, row) == -18.);</div>
+<div class="line"><span class="lineno">   78</span>  assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, none) == 0.);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   81</span>}()};</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a48ebf459a670160993e62b05114ca003"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a48ebf459a670160993e62b05114ca003">fcarouge::sparse::pattern</a></div><div class="ttdeci">pattern(shape_t&lt; Rows, Columns &gt;) -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">Deduce the pattern without any stored position.</div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
 <div class="ttc" id="anamespacefcarouge_xhtml_ae2a6bc01c911af73ac553f0e33ce3c7a"><div class="ttname"><a href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">fcarouge::dot</a></div><div class="ttdeci">constexpr auto dot(const sparse_matrix&lt; Type, Lhs &gt; &amp;lhs, const sparse_matrix&lt; Type, Rhs &gt; &amp;rhs) -&gt; Type</div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

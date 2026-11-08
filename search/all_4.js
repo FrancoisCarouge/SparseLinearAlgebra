@@ -2,7 +2,7 @@ var searchData=
 [
   ['band_0',['band',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}']]],
   ['band_5fmatrix_1',['band_matrix',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}']]],
-  ['banded_2',['banded',['../namespacefcarouge_1_1sparse.xhtml#aaccda47c7c7ead9781b8181f94136c06',1,'fcarouge::sparse']]],
+  ['banded_2',['banded',['../namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212',1,'fcarouge::sparse']]],
   ['bench_3',['bench',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03.xhtml#a092c9adb0b821ea4d68fc417409b9a71',1,'fcarouge::benchmark::anonymous_namespace{product.cpp}']]],
   ['benchmark_20generation_20tt_20support_20support_20cmake_20tt_4',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
   ['benchmarks_5',['Benchmarks',['../md__2github_2workspace_2benchmark_2_r_e_a_d_m_e.xhtml',1,'']]],

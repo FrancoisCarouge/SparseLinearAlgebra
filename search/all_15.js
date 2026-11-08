@@ -19,13 +19,14 @@ var searchData=
   ['to_5freference_16',['to_reference',['../structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a',1,'fcarouge::test::anonymous_namespace{differential.cpp}::differential']]],
   ['total_17',['total',['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}']]],
   ['traces_18',['Compile-Time Traces',['../time_trace.xhtml',1,'']]],
-  ['transposed_19',['transposed',['../namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d',1,'fcarouge']]],
-  ['transposed_2ecpp_20',['transposed.cpp',['../transposed_8cpp.xhtml',1,'']]],
-  ['tridiagonal_21',['tridiagonal',['../namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690',1,'fcarouge::sparse']]],
-  ['tridiagonal_5fmatrix_22',['tridiagonal_matrix',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
-  ['tt_23',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['tt_20support_20support_20cmake_20tt_24',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['type_5ffail_2ecpp_25',['type_fail.cpp',['../type__fail_8cpp.xhtml',1,'']]],
-  ['type_5fignorelist_2etxt_26',['type_ignorelist.txt',['../type__ignorelist_8txt.xhtml',1,'']]],
-  ['typedlinearalgebra_20and_20kalman_27',['Relation to TypedLinearAlgebra and Kalman',['..//github/workspace/AGENTS.md#relation-to-typedlinearalgebra-and-kalman',1,'']]]
+  ['transpose_5fpositions_19',['transpose_positions',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a7851858e5ca3e63cf777631cdcf9f0c1',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['transposed_20',['transposed',['../namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d',1,'fcarouge']]],
+  ['transposed_2ecpp_21',['transposed.cpp',['../transposed_8cpp.xhtml',1,'']]],
+  ['tridiagonal_22',['tridiagonal',['../namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690',1,'fcarouge::sparse']]],
+  ['tridiagonal_5fmatrix_23',['tridiagonal_matrix',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
+  ['tt_24',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
+  ['tt_20support_20support_20cmake_20tt_25',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
+  ['type_5ffail_2ecpp_26',['type_fail.cpp',['../type__fail_8cpp.xhtml',1,'']]],
+  ['type_5fignorelist_2etxt_27',['type_ignorelist.txt',['../type__ignorelist_8txt.xhtml',1,'']]],
+  ['typedlinearalgebra_20and_20kalman_28',['Relation to TypedLinearAlgebra and Kalman',['..//github/workspace/AGENTS.md#relation-to-typedlinearalgebra-and-kalman',1,'']]]
 ];

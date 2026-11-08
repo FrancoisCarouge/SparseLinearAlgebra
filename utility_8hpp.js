@@ -8,6 +8,7 @@ var utility_8hpp =
     [ "square_root", "utility_8hpp.xhtml#a1a233ab1fff31506d10bc21d0b9591cd", null ],
     [ "store_given", "utility_8hpp.xhtml#a1ef27b2f10a7918a5943a6b05047dbbe", null ],
     [ "to_pattern", "utility_8hpp.xhtml#a1097908a93a1910a5b93197def52dfe8", null ],
+    [ "transpose_positions", "utility_8hpp.xhtml#a7851858e5ca3e63cf777631cdcf9f0c1", null ],
     [ "vector_index", "utility_8hpp.xhtml#add959a0d276cf42c6de4e7edbeba502b", null ],
     [ "are_given_in_row", "utility_8hpp.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2", null ],
     [ "are_given_in_row_at", "utility_8hpp.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f", null ],

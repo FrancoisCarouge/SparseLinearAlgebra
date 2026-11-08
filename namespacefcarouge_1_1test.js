@@ -7,13 +7,16 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{arithmetic.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml", [
       [ "diagonal_matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a4735ea677c4c31d1bfd063a48bb73a8a", null ],
       [ "tridiagonal_matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443", null ],
+      [ "anti_diagonal_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a01c960f119a80d27c6084e12f96b19af", null ],
       [ "difference", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162", null ],
-      [ "first_third", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a36608ad795e27cef877e4936f2cc5e31", null ],
+      [ "first_third", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a696e090a16303ff737d361c95fcc8f42", null ],
+      [ "first_third_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a78d45de13d7f1b93a1cc4eb56c127d29", null ],
       [ "flipped", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a128b1ebfbdd60f6f34eeae35ae0e737e", null ],
       [ "lhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2", null ],
       [ "negated", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1", null ],
       [ "product", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1", null ],
-      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ac720ece24c7d59ca95ef49df415dde1b", null ],
+      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715", null ],
+      [ "rectangular_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a64c62fc29eac59704fc8ee86886698d0", null ],
       [ "rhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638", null ],
       [ "scaled", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854", null ],
       [ "sum", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae", null ],
@@ -32,6 +35,15 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{constant_index_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constant__index__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constant__index__fail_8cpp_03.xhtml#ac718b6faf5c48387220033a7d33d4bbf", null ]
     ] ],
+    [ "anonymous_namespace{construction.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml", [
+      [ "empty_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a90ba51a5f6c36cec3d655c9fabb9f8af", null ],
+      [ "ascending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011", null ],
+      [ "checkerboard", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#aacf3b88864f2bf187e6c7b098405a5b2", null ],
+      [ "descending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a9f3ac314b262d4c377b0b9028889bc4b", null ],
+      [ "empty", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a5d03cf61866a8e74c53e56e13a7ee051", null ],
+      [ "is_even", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a0a00e32e5d2be21e870201b34bbf69c7", null ],
+      [ "unordered", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#acfba3aa9494ad1cd7bccb3e64ac6855c", null ]
+    ] ],
     [ "anonymous_namespace{constructor.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml#aa778e613d53f3f3c6755e709302888cd", null ]
     ] ],
@@ -44,7 +56,7 @@ var namespacefcarouge_1_1test =
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02dot_8cpp_03.xhtml#af99cb3cd0ab9d4707a7e0859b4f83d07", null ]
     ] ],
     [ "anonymous_namespace{duplicate_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml", [
-      [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#af784d3b560d61c397e7b6a5e270c950b", null ]
+      [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388", null ]
     ] ],
     [ "anonymous_namespace{equal_to.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02equal__to_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02equal__to_8cpp_03.xhtml#afa5acde068b7db37e18a61497f776229", null ]
@@ -54,6 +66,7 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "anonymous_namespace{freestanding.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml", [
       [ "band_matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f", null ],
+      [ "anti_diagonal_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a988e41a4d6ca6f6927c9f918f8e9c4c3", null ],
       [ "band", "namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db", null ]
     ] ],
     [ "anonymous_namespace{integer_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02integer__fail_8cpp_03.xhtml", [
@@ -65,14 +78,6 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{layout.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml", [
       [ "storage", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a1411e35eca34633988de33ca2dd17a9b", null ],
       [ "dense_values", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a048a09762edb42a649125dbd10051c81", null ]
-    ] ],
-    [ "anonymous_namespace{make.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml", [
-      [ "ascending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#aacd4cd9f01f2dfaba01e4873510f5c12", null ],
-      [ "checkerboard", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#aa68bd7bc4589ec4c1d6a597cdae22807", null ],
-      [ "descending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#a923f56a17a05862684855236edb68eb9", null ],
-      [ "empty", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#ac91cc9109e949f9708d81da3e4c8ae73", null ],
-      [ "is_even", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#a21ddeb112f2f3b93b5dd93941f13cc17", null ],
-      [ "unordered", "namespacefcarouge_1_1test_1_1anonymous__namespace_02make_8cpp_03.xhtml#a87f0ab39f7401839ccbf2573e5e9533f", null ]
     ] ],
     [ "anonymous_namespace{matrix_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml#a50439aace962c18a908b4f3a82c0531c", null ],
@@ -106,14 +111,14 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "anonymous_namespace{out_of_range_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#ade0ccec7a8924dd689fe049d9c0c75a0", null ],
-      [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#a738226fb54e1ec6958b88cd209ba21cb", null ]
+      [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#a96e9f684ee33c3714bad2def9de33ed8", null ]
     ] ],
     [ "anonymous_namespace{pattern_algebra.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml", [
-      [ "first_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aeed154869303f869322d334ddd089283", null ],
-      [ "first_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a5daff44d2a53b3e847437d8f794d239f", null ],
-      [ "last_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#aa27e35353fc90cedff9d4e4e913af711", null ],
-      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#afa6a2a9e313f28bb7e0890dcf1242c2d", null ],
-      [ "second_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a1f5f7c928d6f1c49b7c86e60dca01998", null ]
+      [ "first_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a23939332daf477f275f1aaa8c469508a", null ],
+      [ "first_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a81ad5c112c72faf36da3c2606af281d8", null ],
+      [ "last_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a93ad773f10862fcff3946ad90e9cd658", null ],
+      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#ae453f8c66f5172ccf6cf191c8c51b650", null ],
+      [ "second_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a5ec7eebfa3dfd55c6c50739c14d71845", null ]
     ] ],
     [ "anonymous_namespace{patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml", [
       [ "matrix_type", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a585da428e9f9ebbc2c8ecd84c62fac24", null ],
@@ -136,9 +141,10 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "anonymous_namespace{result_patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml", [
       [ "matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#acb832466f78210fd5f6eed6e1af14885", null ],
-      [ "first_element", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#acc753fd630e152f380f37798659b1b63", null ],
-      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a119b7d635ad16428448b2df8195dc9aa", null ],
-      [ "rectangular_transposed", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#ac544da627398d4d23b454aa7d542d4cb", null ]
+      [ "first_element", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#aca5a06db847580251736d98c8771145d", null ],
+      [ "first_rows", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a08824a97292c7c8b5bd93e661eab0f91", null ],
+      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a7e760ab6cc933ae3a852945dbf71fc34", null ],
+      [ "rectangular_transposed", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#af6ee0168084341fd698493f08b5153a3", null ]
     ] ],
     [ "anonymous_namespace{run_time.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml#ad668e16ca38141fd7b3ca3231c86e8e0", null ]

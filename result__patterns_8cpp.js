@@ -1,7 +1,8 @@
 var result__patterns_8cpp =
 [
     [ "matrix", "result__patterns_8cpp.xhtml#acb832466f78210fd5f6eed6e1af14885", null ],
-    [ "first_element", "result__patterns_8cpp.xhtml#acc753fd630e152f380f37798659b1b63", null ],
-    [ "rectangular", "result__patterns_8cpp.xhtml#a119b7d635ad16428448b2df8195dc9aa", null ],
-    [ "rectangular_transposed", "result__patterns_8cpp.xhtml#ac544da627398d4d23b454aa7d542d4cb", null ]
+    [ "first_element", "result__patterns_8cpp.xhtml#aca5a06db847580251736d98c8771145d", null ],
+    [ "first_rows", "result__patterns_8cpp.xhtml#a08824a97292c7c8b5bd93e661eab0f91", null ],
+    [ "rectangular", "result__patterns_8cpp.xhtml#a7e760ab6cc933ae3a852945dbf71fc34", null ],
+    [ "rectangular_transposed", "result__patterns_8cpp.xhtml#af6ee0168084341fd698493f08b5153a3", null ]
 ];
