@@ -36,6 +36,12 @@ See [INSTALL.md](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/mas
 
 ## Reference
 
+### Layers
+
+![Where Sparse Linear Algebra sits in the technical stack: below the application and its optional typed or estimation libraries, building on the C++ language alone and storing arithmetic element types.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/layers.svg)
+
+The library is the compile-time sparsity layer between the application and the C++ language, without dependency.
+
 ### CMake
 
 Link against the CMake target `fcarouge-sparse-linear-algebra::slinalg`.
