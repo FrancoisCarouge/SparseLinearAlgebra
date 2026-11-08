@@ -39,7 +39,7 @@ namespace {
 static_assert(__STDC_HOSTED__ == 0);
 #endif
 
-using sparse::literals::operator""_o;
+using literals::operator""_o;
 
 using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
 

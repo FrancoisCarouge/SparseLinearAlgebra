@@ -69,7 +69,7 @@ The library is header-only and has no dependency. A single-header amalgamation, 
 
 ### Namespace
 
-The `sparse_matrix` class and its operations live in the `fcarouge` namespace. The patterns, their algebra, and the `0_o` structural zero literal live in the `fcarouge::sparse` namespace. Import it with a using-declaration or namespace alias as your project's style prefers.
+The `sparse_matrix` class and its operations live in the `fcarouge` namespace, and the `0_o` structural zero literal in the `fcarouge::literals` namespace. The patterns and their algebra live in the `fcarouge::sparse` namespace. Import them with a using-declaration or namespace alias as your project's style prefers.
 
 ### Samples
 
@@ -211,7 +211,7 @@ The compile-time computations the operations derive their results with, each a v
 ### Structural Zero Literal
 
 ```cpp
-namespace fcarouge::sparse::literals {
+namespace fcarouge::literals {
 template <char... Characters>
 [[nodiscard]] consteval auto operator""_o() noexcept;
 }
@@ -220,7 +220,7 @@ template <char... Characters>
 The value of a structural zero in a construction from every row, so that the declaration reads as the matrix. A value at a structural zero, even `0.`, does not compile, nor does `0_o` at a stored element. The literal is a zero only, `0_o` or `0._o`: `1_o` does not compile.
 
 ```cpp
-using sparse::literals::operator""_o;
+using literals::operator""_o;
 
 const sparse_matrix<double, lower_triangular<2>> value{{1., 0_o}, //
                                                        {2., 3.}}; //

@@ -47,7 +47,7 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
 
   constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};
   constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};

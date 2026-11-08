@@ -38,8 +38,8 @@ jobs:
     # cppcheck cannot evaluate the `__has_feature` compiler built-in. The
     # library's raw loops are deliberate: it stays freestanding, without the
     # algorithms library. The converting constructor is implicit by design.
-    # cppcheck takes the `using sparse::literals::operator""_o;` declaration of
-    # the tests and samples for an unused expression statement.
+    # cppcheck takes the `using literals::operator""_o;` declaration of the tests
+    # and samples for an unused expression statement.
     - name: Verify
       run: |
         cppcheck \

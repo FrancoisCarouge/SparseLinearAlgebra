@@ -45,7 +45,7 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
 
   using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
   using column = sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;

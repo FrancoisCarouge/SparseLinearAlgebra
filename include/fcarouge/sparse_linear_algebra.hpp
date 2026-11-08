@@ -59,25 +59,6 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 #include <type_traits>
 
-namespace fcarouge::sparse::literals {
-//! @name Literals
-//! @{
-
-//! @brief The structural zero literal, the value of a structural zero in a
-//! construction from every row: `0_o`, or `0._o`.
-//!
-//! @details Does not participate in overload resolution unless the literal is
-//! a zero: `1_o` does not compile.
-template <char... Characters>
-  requires sparse_linear_algebra::internal::is_zero_literal<Characters...>
-[[nodiscard]] consteval auto operator""_o() noexcept
-    -> sparse_linear_algebra::internal::structural_zero {
-  return {};
-}
-
-//! @}
-} // namespace fcarouge::sparse::literals
-
 namespace fcarouge {
 //! @name Types
 //! @{
@@ -218,6 +199,23 @@ public:
 };
 
 //! @}
+
+//! @name Literals
+//! @{
+
+namespace literals {
+//! @brief The structural zero literal, the value of a structural zero in a
+//! construction from every row: `0_o`, or `0._o`.
+//!
+//! @details Does not participate in overload resolution unless the literal is
+//! a zero: `1_o` does not compile.
+template <char... Characters>
+  requires sparse_linear_algebra::internal::is_zero_literal<Characters...>
+[[nodiscard]] consteval auto operator""_o() noexcept
+    -> sparse_linear_algebra::internal::structural_zero;
+} // namespace literals
+
+//! @}
 } // namespace fcarouge
 
 #include "sparse_linear_algebra/algorithm/add.tpp"
@@ -232,6 +230,7 @@ public:
 #include "sparse_linear_algebra/algorithm/subtract.tpp"
 #include "sparse_linear_algebra/algorithm/transposed.tpp"
 #include "sparse_linear_algebra/format.tpp"
+#include "sparse_linear_algebra/literals.tpp"
 #include "sparse_linear_algebra/sparse_linear_algebra.tpp"
 
 namespace fcarouge {

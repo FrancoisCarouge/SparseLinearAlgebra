@@ -45,7 +45,7 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::literals::operator""_o;
+  using literals::operator""_o;
 
   constexpr auto ends{make_pattern<4, 1>({{0, 0}, {3, 0}})};
   constexpr auto inner{make_pattern<4, 1>({{1, 0}, {2, 0}})};
