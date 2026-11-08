@@ -52,13 +52,13 @@ namespace {
   const not_realtime opt_out;
 
   using sparse::dense;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::tridiagonal;
 
   constexpr std::size_t cells{8};
 
-  using stencil = matrix<double, tridiagonal<cells>>;
-  using temperatures = matrix<double, dense<cells, 1>>;
+  using stencil = sparse_matrix<double, tridiagonal<cells>>;
+  using temperatures = sparse_matrix<double, dense<cells, 1>>;
 
   constexpr std::size_t stored{stencil::structure.count};
 

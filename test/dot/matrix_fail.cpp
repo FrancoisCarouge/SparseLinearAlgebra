@@ -38,8 +38,8 @@ namespace {
 //! @test Verifies the dot product rejects a matrix, even of a vector's count of
 //! elements.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::matrix<double, sparse::dense<4, 1>> lhs{1., 2., 3., 4.};
-  const sparse::matrix<double, sparse::diagonal<2>> rhs{1., 4.};
+  const sparse::sparse_matrix<double, sparse::dense<4, 1>> lhs{1., 2., 3., 4.};
+  const sparse::sparse_matrix<double, sparse::diagonal<2>> rhs{1., 4.};
 
   // Intended:
   // const double product{dot(lhs, lhs)};

@@ -32,8 +32,8 @@ For more information, please refer to <https://unlicense.org> */
 #ifndef FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_TRANSPOSED_TPP
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_TRANSPOSED_TPP
 
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <array>
 #include <cstddef>
@@ -47,8 +47,9 @@ namespace fcarouge::sparse {
 //!
 //! @complexity Linear in the count of stored elements.
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto transposed(const matrix<Type, Pattern> &value)
-    -> matrix<Type, pattern_transpose<Pattern>> {
+[[nodiscard]] constexpr auto
+transposed(const sparse_matrix<Type, Pattern> &value)
+    -> sparse_matrix<Type, pattern_transpose<Pattern>> {
   constexpr auto mirrored{pattern_transpose<Pattern>};
   constexpr auto indexes{[&mirrored]->std::array<std::size_t, Pattern.count>{
       std::array<std::size_t, Pattern.count> result{};
@@ -62,7 +63,7 @@ template <typename Type, sparsity_pattern auto Pattern>
 }
 ()
 }; // namespace fcarouge::sparse
-matrix<Type, mirrored> result;
+sparse_matrix<Type, mirrored> result;
 
 for (std::size_t i{0}; i < Pattern.count; ++i) {
   result.values[i] = value.values[indexes[i]];

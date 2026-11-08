@@ -47,18 +47,18 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
   constexpr double infinity{std::numeric_limits<double>::infinity()};
   constexpr double not_a_number{std::numeric_limits<double>::quiet_NaN()};
 
-  const matrix<double, diagonal<2>> value{1., 2.};
-  const matrix<double, diagonal<2>> unbounded{infinity, 1.};
-  const matrix<double, diagonal<2>> invalid{not_a_number, 1.};
+  const sparse_matrix<double, diagonal<2>> value{1., 2.};
+  const sparse_matrix<double, diagonal<2>> unbounded{infinity, 1.};
+  const sparse_matrix<double, diagonal<2>> invalid{not_a_number, 1.};
 
   // Scaling.
   const auto scaled{value * infinity};
-  const auto dense_scaled{matrix<double, sparse::dense<2, 2>>{value} *
+  const auto dense_scaled{sparse_matrix<double, sparse::dense<2, 2>>{value} *
                           infinity};
 
   assert((scaled.at<0, 0>() == infinity));

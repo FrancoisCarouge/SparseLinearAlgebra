@@ -33,7 +33,7 @@ For more information, please refer to <https://unlicense.org> */
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MATRIX_INF_NORM_TPP
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <array>
 #include <cstddef>
@@ -49,8 +49,8 @@ namespace fcarouge::sparse {
 //!
 //! @complexity Linear in the count of stored elements and of rows.
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto matrix_inf_norm(const matrix<Type, Pattern> &value)
-    -> Type {
+[[nodiscard]] constexpr auto
+matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   std::array<Type, Pattern.rows> sums{};
   Type result{};
 

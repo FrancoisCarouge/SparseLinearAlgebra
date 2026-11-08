@@ -47,12 +47,12 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
-  using band_matrix = matrix<double, sparse::tridiagonal<3>>;
-  using column = matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
-  using row = matrix<double, make_pattern<1, 3>({{0, 1}})>;
+  using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
+  using column = sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
+  using row = sparse_matrix<double, make_pattern<1, 3>({{0, 1}})>;
 
   const auto band{make_matrix<band_matrix>(1., 2., structural_zero, 3., 4., 5.,
                                            structural_zero, 6., 7.)};
@@ -80,8 +80,8 @@ namespace {
 
   // A pattern without a structural zero, and one without a stored element.
   const auto dense_value{
-      make_matrix<matrix<double, sparse::dense<1, 2>>>(1., 2.)};
-  const auto none{make_matrix<matrix<double, sparse::zero<1, 2>>>(
+      make_matrix<sparse_matrix<double, sparse::dense<1, 2>>>(1., 2.)};
+  const auto none{make_matrix<sparse_matrix<double, sparse::zero<1, 2>>>(
       structural_zero, structural_zero)};
 
   assert((dense_value.at<0, 1>() == 2.));

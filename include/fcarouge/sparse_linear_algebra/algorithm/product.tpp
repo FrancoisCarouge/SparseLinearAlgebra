@@ -33,8 +33,8 @@ For more information, please refer to <https://unlicense.org> */
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_PRODUCT_TPP
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <array>
 #include <cstddef>
@@ -79,10 +79,10 @@ namespace sparse {
 //! elementary products, `product_term_count`.
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
-[[nodiscard]] constexpr auto operator*(const matrix<Type, Lhs> &lhs,
-                                       const matrix<Type, Rhs> &rhs)
-    -> matrix<Type, pattern_product<Lhs, Rhs>> {
-  matrix<Type, pattern_product<Lhs, Rhs>> result;
+[[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
+                                       const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, pattern_product<Lhs, Rhs>> {
+  sparse_matrix<Type, pattern_product<Lhs, Rhs>> result;
 
   for (const sla::term &element : sla::product_terms<Lhs, Rhs>) {
     result.values[element.result] +=
@@ -99,10 +99,10 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 //!
 //! @complexity Linear in the count of stored elements.
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator*(const matrix<Type, Pattern> &lhs,
+[[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
-    -> matrix<Type, Pattern> {
-  matrix<Type, Pattern> result{lhs};
+    -> sparse_matrix<Type, Pattern> {
+  sparse_matrix<Type, Pattern> result{lhs};
 
   for (Type &element : result.values) {
     element = element * rhs;
@@ -119,9 +119,9 @@ template <typename Type, sparsity_pattern auto Pattern>
 //! @complexity Linear in the count of stored elements.
 template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
-                                       const matrix<Type, Pattern> &rhs)
-    -> matrix<Type, Pattern> {
-  matrix<Type, Pattern> result{rhs};
+                                       const sparse_matrix<Type, Pattern> &rhs)
+    -> sparse_matrix<Type, Pattern> {
+  sparse_matrix<Type, Pattern> result{rhs};
 
   for (Type &element : result.values) {
     element = lhs * element;

@@ -46,10 +46,10 @@ jobs:
           --error-exitcode=1 \
           --suppress=functionStatic:build/amalgamate/fcarouge/sparse_linear_algebra.h \
           --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/format.tpp \
-          --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/matrix.hpp \
+          --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/sparse_linear_algebra.tpp \
           --suppress=missingIncludeSystem \
           --suppress=noExplicitConstructor:build/amalgamate/fcarouge/sparse_linear_algebra.h \
-          --suppress=noExplicitConstructor:include/fcarouge/sparse_linear_algebra/matrix.hpp \
+          --suppress=noExplicitConstructor:include/fcarouge/sparse_linear_algebra.hpp \
           --suppress=unhandledChar \
           --suppress=unmatchedSuppression \
           --suppress=unusedFunction \

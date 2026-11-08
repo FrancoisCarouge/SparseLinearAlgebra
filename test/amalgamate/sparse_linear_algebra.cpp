@@ -44,7 +44,7 @@ namespace {
 [[maybe_unused]] const auto test{[] -> int {
   const not_realtime opt_out;
 
-  using band_matrix = sparse::matrix<int, sparse::tridiagonal<3>>;
+  using band_matrix = sparse::sparse_matrix<int, sparse::tridiagonal<3>>;
 
   const band_matrix band{sparse::make_matrix<band_matrix>(
       1, 2, sparse::structural_zero, 3, 4, 5, sparse::structural_zero, 6, 7)};

@@ -47,42 +47,46 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
   // The largest absolute column sum is not the largest absolute row sum.
-  const matrix<double, make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
+  const sparse_matrix<double,
+                      make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
       value{1., -2., -3., 4.};
 
   assert(matrix_one_norm(value) == 4.);
 
   // A row vector: the one norm is its largest absolute element.
-  const matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3., 4.};
+  const sparse_matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3.,
+                                                                        4.};
 
   assert(matrix_one_norm(row) == 4.);
 
   // A column vector: the one norm is the sum of its absolute elements.
-  const matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3., 4.};
+  const sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3.,
+                                                                           4.};
 
   assert(matrix_one_norm(column) == 7.);
 
   // A column without any stored element.
-  const matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
+  const sparse_matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
 
   assert(matrix_one_norm(corner) == 2.);
 
   // Every negative column: the maximum is not of the signed sums.
-  const matrix<double, make_pattern<2, 2>({{0, 1}, {1, 1}})> last_column{-1.,
-                                                                         -2.};
+  const sparse_matrix<double, make_pattern<2, 2>({{0, 1}, {1, 1}})> last_column{
+      -1., -2.};
 
   assert(matrix_one_norm(last_column) == 3.);
 
   // The zero matrix.
-  const matrix<double, sparse::zero<2, 2>> none;
+  const sparse_matrix<double, sparse::zero<2, 2>> none;
 
   assert(matrix_one_norm(none) == 0.);
 
   // An integer element type, needing no square root.
-  const matrix<int, make_pattern<2, 2>({{0, 0}, {1, 0}})> integers{-2, 3};
+  const sparse_matrix<int, make_pattern<2, 2>({{0, 0}, {1, 0}})> integers{-2,
+                                                                          3};
 
   assert(matrix_one_norm(integers) == 5);
 

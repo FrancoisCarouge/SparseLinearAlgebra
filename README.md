@@ -3,7 +3,7 @@
 Most matrices of estimation, control, and simulation problems are mostly zeros, and their structure is known before the program runs: a diagonal noise, a triangular transition, a banded stencil. Ordinary dense linear algebra stores and multiplies those zeros anyway, and ordinary sparse linear algebra discovers them at run time, with memory allocations and indirections. This library is a C++ compile-time sparsity pattern linear algebra: the positions of the stored elements are part of the matrix type. Every other element is a structural zero, occupying no memory and costing no operation. Each operation computes the pattern of its result, and the exact arithmetic terms it needs, at compile time. There is no memory allocation, no exception, no input-output, and every operation is `constexpr`, freestanding, and real-time.
 
 ```cpp
-using band = matrix<double, tridiagonal<3>>;
+using band = sparse_matrix<double, tridiagonal<3>>;
 
 band value{1., 2., 3., 4., 5., 6., 7.}; // Stores 7 of the 9 elements.
 
@@ -73,18 +73,18 @@ The public API lives in the `fcarouge::sparse` namespace. Import it with a using
 | Constant velocity prediction | [Usage example: `sample/constant_velocity.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/constant_velocity.cpp). |
 | Heat diffusion stencil | [Usage example: `sample/heat_diffusion.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/heat_diffusion.cpp). |
 
-### Class Matrix
+### Class Sparse Matrix
 
 Compile-time sparsity pattern matrix. Stores the elements of the pattern in place, in row-major order. Every other element is a structural zero: it reads as a zero, and a write to it does not compile.
 
-Also documented in the [fcarouge/sparse_linear_algebra/matrix.hpp](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/include/fcarouge/sparse_linear_algebra/matrix.hpp) header.
+Also documented in the [fcarouge/sparse_linear_algebra.hpp](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/include/fcarouge/sparse_linear_algebra.hpp) header.
 
 #### Declaration
 
 ```cpp
 namespace fcarouge::sparse {
 template <typename Type, sparsity_pattern auto Pattern>
-struct matrix;
+class sparse_matrix;
 }
 ```
 
@@ -219,7 +219,7 @@ template <typename Matrix, typename... Values>
 Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless `Matrix` is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is `structural_zero`: a `0.` at a structural zero does not compile, nor does `structural_zero` at a stored element.
 
 ```cpp
-using lower = matrix<double, lower_triangular<2>>;
+using lower = sparse_matrix<double, lower_triangular<2>>;
 
 const lower value{make_matrix<lower>(1., structural_zero,
                                      2., 3.)};
@@ -281,7 +281,7 @@ The following are not supported yet:
 A matrix formats every element, structural zeros included, so the format does not depend on the pattern: a singleton as its element, a row vector as a list of elements, a column vector or a matrix as a list of rows. Hosted implementation only.
 
 ```cpp
-const matrix<double, diagonal<2>> value{1., 2.5};
+const sparse_matrix<double, diagonal<2>> value{1., 2.5};
 
 std::println("{}", value); // [[1, 0], [0, 2.5]]
 ```

@@ -45,10 +45,10 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
-  using diagonal_matrix = matrix<double, diagonal<2>>;
-  using dense_matrix = matrix<double, sparse::dense<2, 2>>;
+  using diagonal_matrix = sparse_matrix<double, diagonal<2>>;
+  using dense_matrix = sparse_matrix<double, sparse::dense<2, 2>>;
 
   const diagonal_matrix listed{1., 2.};
 

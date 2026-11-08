@@ -58,8 +58,8 @@ constexpr double percent_per_ratio{100.};
 //! elements, appended as a Markdown table row of its median elapsed time in
 //! nanoseconds and its median absolute percentage error in percent.
 template <auto Size, auto Pattern> void bench(const char *title) {
-  sparse::matrix<double, Pattern> lhs;
-  sparse::matrix<double, Pattern> rhs;
+  sparse::sparse_matrix<double, Pattern> lhs;
+  sparse::sparse_matrix<double, Pattern> rhs;
   std::random_device device;
   std::mt19937 generator{device()};
   std::uniform_real_distribution<> distribution{0., 1.};

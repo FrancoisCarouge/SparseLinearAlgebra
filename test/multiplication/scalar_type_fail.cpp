@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies a scaling by a factor not convertible to the element type
 //! does not compile.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::matrix<double, sparse::diagonal<2>> value{1., 1.};
+  const sparse::sparse_matrix<double, sparse::diagonal<2>> value{1., 1.};
 
   // Intended:
   // const auto product{value * 2.};

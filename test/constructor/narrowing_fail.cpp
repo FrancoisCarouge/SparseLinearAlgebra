@@ -38,11 +38,12 @@ namespace {
 //! @test Verifies a matrix does not convert to a pattern not storing all its
 //! elements: an element would be lost.
 [[maybe_unused]] const auto test{[] -> int {
-  const sparse::matrix<double, sparse::dense<2, 2>> value{1., 2., 3., 4.};
+  const sparse::sparse_matrix<double, sparse::dense<2, 2>> value{1., 2., 3.,
+                                                                 4.};
 
   // Intended:
-  // const sparse::matrix<double, sparse::dense<2, 2>> converted{value};
-  const sparse::matrix<double, sparse::diagonal<2>> converted{value};
+  // const sparse::sparse_matrix<double, sparse::dense<2, 2>> converted{value};
+  const sparse::sparse_matrix<double, sparse::diagonal<2>> converted{value};
 
   assert((converted.at<0, 0>() == 1.));
 

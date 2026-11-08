@@ -47,7 +47,7 @@ namespace {
   using sparse::diagonal;
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
   using sparse::tridiagonal;
 
@@ -57,8 +57,8 @@ namespace {
   constexpr auto row_pattern{make_pattern<1, 3>({{0, 0}, {0, 2}})};
   constexpr auto column_pattern{make_pattern<3, 1>({{0, 0}, {1, 0}})};
 
-  const matrix<double, diagonal<3>> scale_matrix{2., 3., 4.};
-  const matrix<double, tridiagonal<3>> band{1., 2., 3., 4., 5., 6., 7.};
+  const sparse_matrix<double, diagonal<3>> scale_matrix{2., 3., 4.};
+  const sparse_matrix<double, tridiagonal<3>> band{1., 2., 3., 4., 5., 6., 7.};
 
   // Left scales the rows, right scales the columns: not commutative.
   const auto left{scale_matrix * band};
@@ -83,9 +83,9 @@ namespace {
   assert((square.at<2, 2>() == 79.));
 
   // A non-square product.
-  const auto lhs{make_matrix<matrix<double, wide>>(
+  const auto lhs{make_matrix<sparse_matrix<double, wide>>(
       1., structural_zero, 2., structural_zero, 3., structural_zero)};
-  const auto rhs{make_matrix<matrix<double, tall>>(
+  const auto rhs{make_matrix<sparse_matrix<double, tall>>(
       structural_zero, 4., 5., structural_zero, structural_zero, 6.)};
 
   const auto product{lhs * rhs};
@@ -108,7 +108,7 @@ namespace {
   assert((reversed.at<0, 0>() == 0.));
 
   // A matrix by a vector: a sparse vector stays sparse.
-  const matrix<double, first_element> column{2.};
+  const sparse_matrix<double, first_element> column{2.};
   const auto image{band * column};
 
   static_assert(decltype(image)::structure.count == 2);
@@ -117,8 +117,8 @@ namespace {
   assert((image.at<2, 0>() == 0.));
 
   // A row by a column is a singleton, a column by a row is a matrix.
-  const matrix<double, row_pattern> row_vector{3., 4.};
-  const matrix<double, column_pattern> column_vector{5., 6.};
+  const sparse_matrix<double, row_pattern> row_vector{3., 4.};
+  const sparse_matrix<double, column_pattern> column_vector{5., 6.};
 
   const auto inner{row_vector * column_vector};
   const auto outer{column_vector * row_vector};
@@ -140,7 +140,7 @@ namespace {
   assert((band * (scale_matrix + band) == band * scale_matrix + band * band));
 
   // A zero matrix absorbs.
-  const auto none{band * matrix<double, sparse::zero<3, 3>>{}};
+  const auto none{band * sparse_matrix<double, sparse::zero<3, 3>>{}};
 
   static_assert(decltype(none)::structure.count == 0);
   assert((none.at<1, 1>() == 0.));

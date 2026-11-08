@@ -39,13 +39,13 @@ For more information, please refer to <https://unlicense.org> */
 namespace fcarouge::test {
 namespace {
 using sparse::make_pattern;
-using sparse::matrix;
+using sparse::sparse_matrix;
 
-using diagonal_matrix = matrix<double, sparse::diagonal<2>>;
-using column = matrix<double, make_pattern<2, 1>({{1, 0}})>;
-using row = matrix<double, make_pattern<1, 2>({{0, 1}})>;
-using singleton = matrix<double, sparse::dense<1, 1>>;
-using empty_singleton = matrix<double, sparse::zero<1, 1>>;
+using diagonal_matrix = sparse_matrix<double, sparse::diagonal<2>>;
+using column = sparse_matrix<double, make_pattern<2, 1>({{1, 0}})>;
+using row = sparse_matrix<double, make_pattern<1, 2>({{0, 1}})>;
+using singleton = sparse_matrix<double, sparse::dense<1, 1>>;
+using empty_singleton = sparse_matrix<double, sparse::zero<1, 1>>;
 
 template <typename Matrix, std::size_t Row, std::size_t Column>
 concept writable_at =
@@ -101,8 +101,8 @@ static_assert(not assignable_at<diagonal_matrix, 0, 1>);
 static_assert(
     std::same_as<decltype(std::declval<diagonal_matrix &>()[0, 1]), double>);
 static_assert(
-    std::same_as<
-        decltype(std::declval<matrix<double, sparse::dense<2, 2>> &>()[0, 1]),
-        double &>);
+    std::same_as<decltype(std::declval<sparse_matrix<
+                              double, sparse::dense<2, 2>> &>()[0, 1]),
+                 double &>);
 } // namespace
 } // namespace fcarouge::test

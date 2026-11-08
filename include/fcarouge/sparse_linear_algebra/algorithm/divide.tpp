@@ -32,7 +32,7 @@ For more information, please refer to <https://unlicense.org> */
 #ifndef FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_DIVIDE_TPP
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_DIVIDE_TPP
 
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <type_traits>
 
@@ -46,10 +46,10 @@ namespace fcarouge::sparse {
 //!
 //! @complexity Linear in the count of stored elements.
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator/(const matrix<Type, Pattern> &lhs,
+[[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
-    -> matrix<Type, Pattern> {
-  matrix<Type, Pattern> result{lhs};
+    -> sparse_matrix<Type, Pattern> {
+  sparse_matrix<Type, Pattern> result{lhs};
 
   for (Type &element : result.values) {
     element = element / rhs;

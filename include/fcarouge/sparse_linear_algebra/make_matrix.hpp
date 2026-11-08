@@ -36,7 +36,6 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief The construction of a matrix from a value at every position.
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <concepts>

@@ -64,7 +64,7 @@ namespace sparse {
 template <typename Type>
 concept sparsity_pattern = sla::is_pattern<std::remove_cv_t<Type>>;
 
-template <typename Type, sparsity_pattern auto Pattern> struct matrix;
+template <typename Type, sparsity_pattern auto Pattern> class sparse_matrix;
 } // namespace sparse
 } // namespace fcarouge
 

@@ -33,7 +33,7 @@ For more information, please refer to <https://unlicense.org> */
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_DOT_TPP
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 namespace fcarouge::sparse {
 //! @brief The dot product of two vectors of the same size, of any orientation.
@@ -47,8 +47,8 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)
-[[nodiscard]] constexpr auto dot(const matrix<Type, Lhs> &lhs,
-                                 const matrix<Type, Rhs> &rhs) -> Type {
+[[nodiscard]] constexpr auto dot(const sparse_matrix<Type, Lhs> &lhs,
+                                 const sparse_matrix<Type, Rhs> &rhs) -> Type {
   Type result{};
 
   for (const sla::term &element : sla::dot_terms<Lhs, Rhs>) {
