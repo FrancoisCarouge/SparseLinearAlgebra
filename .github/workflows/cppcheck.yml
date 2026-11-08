@@ -38,12 +38,15 @@ jobs:
     # cppcheck cannot evaluate the `__has_feature` compiler built-in. The
     # library's raw loops are deliberate: it stays freestanding, without the
     # algorithms library. The converting constructor is implicit by design.
+    # cppcheck takes the `using sparse::literals::operator""_o;` declaration of
+    # the tests for an unused expression statement.
     - name: Verify
       run: |
         cppcheck \
           --check-level=exhaustive \
           --enable=all \
           --error-exitcode=1 \
+          --suppress='constStatement:test/*' \
           --suppress=functionStatic:build/amalgamate/fcarouge/sparse_linear_algebra.h \
           --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/format.tpp \
           --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/sparse_linear_algebra.tpp \
