@@ -45,16 +45,18 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
 
-  const sparse_matrix<double,
-                      make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
-      value{1., -2., -3., 4.};
-  const sparse_matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3.,
-                                                                        4.};
-  const sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3.,
-                                                                           4.};
-  const sparse_matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
+  constexpr pattern value_pattern{shape<2, 3>,
+                                  {{0, 0}, {0, 1}, {1, 0}, {1, 2}}};
+  const sparse_matrix<double, value_pattern> value{1., -2., -3., 4.};
+  constexpr pattern row_pattern{shape<1, 3>, {{0, 0}, {0, 2}}};
+  const sparse_matrix<double, row_pattern> row{-3., 4.};
+  constexpr pattern column_pattern{shape<3, 1>, {{0, 0}, {2, 0}}};
+  const sparse_matrix<double, column_pattern> column{-3., 4.};
+  constexpr pattern corner_pattern{shape<2, 2>, {{0, 0}}};
+  const sparse_matrix<double, corner_pattern> corner{-2.};
   const sparse_matrix<double, sparse::zero<2, 2>> none;
   const sparse_matrix<float, sparse::diagonal<2>> single_precision{3.F, 4.F};
 

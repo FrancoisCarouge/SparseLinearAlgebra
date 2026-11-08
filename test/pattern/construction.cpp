@@ -33,14 +33,16 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <concepts>
 #include <cstddef>
+#include <type_traits>
 
 namespace fcarouge::test {
 namespace {
-using sparse::make_pattern;
+using sparse::pattern;
 using sparse::position;
+using sparse::shape;
 
-inline constexpr auto unordered{
-    make_pattern<3, 4>({{2, 3}, {0, 1}, {1, 2}, {0, 0}})};
+inline constexpr pattern unordered{shape<3, 4>,
+                                   {{2, 3}, {0, 1}, {1, 2}, {0, 0}}};
 
 //! @test Verifies the positions are sorted in row-major order, whatever the
 //! order they are given in.
@@ -72,15 +74,15 @@ static_assert(unordered.index_of(3, 0) == sparse::absent);
 
 //! @test Verifies the order of the given positions does not change the type or
 //! the value: two equal patterns are the same matrix type.
-inline constexpr auto ascending{make_pattern<2, 2>({{0, 0}, {1, 1}})};
-inline constexpr auto descending{make_pattern<2, 2>({{1, 1}, {0, 0}})};
+inline constexpr pattern ascending{shape<2, 2>, {{0, 0}, {1, 1}}};
+inline constexpr pattern descending{shape<2, 2>, {{1, 1}, {0, 0}}};
 
 static_assert(ascending == descending);
 static_assert(std::same_as<sparse_matrix<double, ascending>,
                            sparse_matrix<double, descending>>);
 
 //! @test Verifies an empty pattern stores nothing.
-inline constexpr auto empty{make_pattern<2, 3>()};
+inline constexpr pattern empty{shape<2, 3>};
 
 static_assert(empty.count == 0);
 static_assert(not empty.stores(0, 0));
@@ -90,7 +92,7 @@ static_assert(empty.index_of(0, 0) == sparse::absent);
 inline constexpr auto is_even{[](std::size_t row, std::size_t column) -> bool {
   return (row + column) % 2 == 0;
 }};
-inline constexpr auto checkerboard{sparse::generate<3, 3, is_even>()};
+inline constexpr pattern checkerboard{shape<3, 3>, is_even};
 
 static_assert(checkerboard.count == 5);
 static_assert(checkerboard.stores(1, 1));
@@ -99,6 +101,33 @@ static_assert(not checkerboard.stores(0, 1));
 //! @test Verifies the generated and the listed patterns of the same positions
 //! are the same matrix type.
 static_assert(checkerboard ==
-              make_pattern<3, 3>({{0, 0}, {0, 2}, {1, 1}, {2, 0}, {2, 2}}));
+              pattern{shape<3, 3>, {{0, 0}, {0, 2}, {1, 1}, {2, 0}, {2, 2}}});
+
+//! @test Verifies the class template arguments are deduced from the shape and
+//! the positions, or from the shape and the predicate.
+static_assert(std::same_as<decltype(unordered), const pattern<3, 4, 4>>);
+static_assert(std::same_as<decltype(empty), const pattern<2, 3, 0>>);
+static_assert(std::same_as<decltype(checkerboard), const pattern<3, 3, 5>>);
+static_assert(
+    std::same_as<decltype(pattern{shape<2, 2>, {{1, 0}}}), pattern<2, 2, 1>>);
+
+//! @test Verifies a pattern of explicit arguments is constructed from a
+//! predicate selecting as many positions, and only then.
+static_assert(pattern<3, 3, 5>{shape<3, 3>, is_even} == checkerboard);
+static_assert(std::is_constructible_v<pattern<3, 3, 5>, sparse::shape_t<3, 3>,
+                                      decltype(is_even)>);
+static_assert(not std::is_constructible_v<
+              pattern<3, 3, 4>, sparse::shape_t<3, 3>, decltype(is_even)>);
+
+//! @test Verifies a pattern is only constructed from its shape: not from
+//! another shape, not by default, and not from its members, which would skip
+//! the order of its positions.
+using empty_pattern = std::remove_const_t<decltype(empty)>;
+
+static_assert(std::is_constructible_v<empty_pattern, sparse::shape_t<2, 3>>);
+static_assert(
+    not std::is_constructible_v<empty_pattern, sparse::shape_t<3, 2>>);
+static_assert(not std::is_default_constructible_v<empty_pattern>);
+static_assert(not std::is_aggregate_v<pattern<2, 2, 1>>);
 } // namespace
 } // namespace fcarouge::test

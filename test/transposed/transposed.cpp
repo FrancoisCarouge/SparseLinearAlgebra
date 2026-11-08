@@ -44,10 +44,11 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
   using literals::operator""_o;
 
-  constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};
+  constexpr pattern wide{shape<2, 3>, {{0, 0}, {0, 2}, {1, 1}}};
 
   const sparse_matrix<double, wide> value{{1., 0_o, 2.},   //
                                           {0_o, 3., 0_o}}; //
@@ -81,7 +82,8 @@ namespace {
   assert((upper.at<1, 0>() == 0.));
 
   // A row vector to a column vector.
-  const sparse_matrix<double, make_pattern<1, 3>({{0, 1}})> row{7.};
+  constexpr pattern row_pattern{shape<1, 3>, {{0, 1}}};
+  const sparse_matrix<double, row_pattern> row{7.};
 
   const auto column{transposed(row)};
 

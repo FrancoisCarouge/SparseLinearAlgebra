@@ -34,7 +34,8 @@ For more information, please refer to <https://unlicense.org> */
 namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
-using sparse::make_pattern;
+using sparse::pattern;
+using sparse::shape;
 using literals::operator""_o;
 using sparse::tridiagonal;
 
@@ -76,9 +77,10 @@ static_assert((2. * lhs).at<2, 2>() == 8.);
 static_assert((lhs / 2.).at<2, 2>() == 2.);
 static_assert(sum == rhs + lhs);
 
-inline constexpr sparse_matrix<double, make_pattern<2, 3>({{0, 2}, {1, 0}})>
-    rectangular{{0_o, 0_o, 5.},  //
-                {6., 0_o, 0_o}}; //
+inline constexpr pattern rectangular_pattern{shape<2, 3>, {{0, 2}, {1, 0}}};
+inline constexpr sparse_matrix<double, rectangular_pattern> rectangular{
+    {0_o, 0_o, 5.},  //
+    {6., 0_o, 0_o}}; //
 inline constexpr auto flipped{transposed(rectangular)};
 
 static_assert(flipped.at<2, 0>() == 5.);
@@ -86,15 +88,16 @@ static_assert(flipped.at<0, 1>() == 6.);
 static_assert(flipped.at<1, 1>() == 0.);
 
 //! @test Verifies the norms and the dot product in a constant expression.
+inline constexpr pattern anti_diagonal_pattern{shape<2, 2>, {{0, 1}, {1, 0}}};
+
 static_assert(matrix_one_norm(rhs) == 12.);
 static_assert(matrix_inf_norm(rhs) == 13.);
-static_assert(matrix_frob_norm(
-                  sparse_matrix<double, make_pattern<2, 2>({{0, 1}, {1, 0}})>{
-                      {0_o, 3.},          //
-                      {4., 0_o}}) == 5.); //
+static_assert(matrix_frob_norm(sparse_matrix<double, anti_diagonal_pattern>{
+                  {0_o, 3.},          //
+                  {4., 0_o}}) == 5.); //
 
-inline constexpr sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>
-    first_third{2., 3.};
+inline constexpr pattern first_third_pattern{shape<3, 1>, {{0, 0}, {2, 0}}};
+inline constexpr sparse_matrix<double, first_third_pattern> first_third{2., 3.};
 
 static_assert(dot(first_third, first_third) == 13.);
 

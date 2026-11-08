@@ -98,9 +98,9 @@ using sparse::tridiagonal;
 using sparse::zero;
 
 inline constexpr auto first_row{
-    sparse::make_pattern<3, 3>({{0, 0}, {0, 1}, {0, 2}})};
+    sparse::pattern{sparse::shape<3, 3>, {{0, 0}, {0, 1}, {0, 2}}}};
 inline constexpr auto last_row{
-    sparse::make_pattern<3, 3>({{2, 0}, {2, 1}, {2, 2}})};
+    sparse::pattern{sparse::shape<3, 3>, {{2, 0}, {2, 1}, {2, 2}}}};
 
 //! @test Verifies a product computes exactly its elementary products, far fewer
 //! than the dense product's for the same shape.
@@ -141,9 +141,13 @@ static_assert(total::additions(storage<first_row>{} + storage<last_row>{}) ==
 
 //! @test Verifies the dot product only multiplies the elements stored by both
 //! vectors.
-static_assert(
-    dot(storage<sparse::make_pattern<4, 1>({{0, 0}, {1, 0}, {3, 0}})>{},
-        storage<sparse::make_pattern<1, 4>({{0, 1}, {0, 2}, {0, 3}})>{})
-        .multiplications == 2);
+inline constexpr sparse::pattern sparse_column_pattern{
+    sparse::shape<4, 1>, {{0, 0}, {1, 0}, {3, 0}}};
+inline constexpr sparse::pattern sparse_row_pattern{sparse::shape<1, 4>,
+                                                    {{0, 1}, {0, 2}, {0, 3}}};
+
+static_assert(dot(storage<sparse_column_pattern>{},
+                  storage<sparse_row_pattern>{})
+                  .multiplications == 2);
 } // namespace
 } // namespace fcarouge::test

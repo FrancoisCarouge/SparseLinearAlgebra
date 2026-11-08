@@ -39,8 +39,10 @@ For more information, please refer to <https://unlicense.org> */
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <array>
+#include <concepts>
 #include <cstddef>
 #include <limits>
+#include <type_traits>
 
 namespace fcarouge {
 namespace sparse_linear_algebra::internal {
@@ -60,11 +62,53 @@ inline constexpr auto within_band{
     [](std::size_t row, std::size_t column) -> bool {
       return row <= column + Lower && column <= row + Upper;
     }};
+
+//! @brief Concept of a predicate of a row and a column, stateless, so that its
+//! type alone determines the positions it selects.
+template <typename Predicate>
+concept position_predicate =
+    std::is_empty_v<Predicate> and std::default_initializable<Predicate> and
+    std::predicate<const Predicate &, std::size_t, std::size_t>;
+
+//! @brief The count of the positions of a matrix of the given shape satisfying
+//! a stateless predicate.
+//!
+//! @details A constrained function rather than a variable template, so that a
+//! deduction guide naming it with an argument that is not a predicate is a
+//! substitution failure, not a hard error, on compilers that substitute the
+//! guide's result before checking its constraints.
+template <std::size_t Rows, std::size_t Columns, position_predicate Predicate>
+[[nodiscard]] consteval auto count_of() -> std::size_t {
+  const Predicate predicate{};
+  std::size_t result{0};
+
+  for (std::size_t row{0}; row < Rows; ++row) {
+    for (std::size_t column{0}; column < Columns; ++column) {
+      result += predicate(row, column) ? std::size_t{1} : std::size_t{0};
+    }
+  }
+
+  return result;
+}
 } // namespace sparse_linear_algebra::internal
 
 namespace sparse {
 //! @name Patterns
 //! @{
+
+//! @brief The shape of a matrix, the tag type of `shape`.
+//!
+//! @tparam Rows The count of rows of the matrix.
+//! @tparam Columns The count of columns of the matrix.
+template <std::size_t Rows, std::size_t Columns> struct shape_t {
+  //! @brief Construct the tag.
+  explicit shape_t() = default;
+};
+
+//! @brief The shape of a matrix, the first argument of the construction of a
+//! pattern, from which its counts of rows and columns are deduced.
+template <std::size_t Rows, std::size_t Columns>
+inline constexpr shape_t<Rows, Columns> shape{};
 
 //! @brief The index of a position a pattern does not store.
 inline constexpr std::size_t absent{std::numeric_limits<std::size_t>::max()};
@@ -101,8 +145,9 @@ struct position {
 //! @details A structural type, usable as a template argument, of strictly
 //! ascending row-major positions: two equal patterns are one and the same type
 //! of matrix, and a stored element's index is its rank among the positions.
-//! Prefer `make_pattern`, `generate`, and the named patterns, which establish
-//! that order.
+//! Its constructors establish that order, from listed positions or from a
+//! predicate, and the class template arguments are deduced from them:
+//! `pattern{shape<2, 3>, {{0, 2}, {1, 0}}}`.
 //!
 //! @tparam Rows The count of rows of the matrix.
 //! @tparam Columns The count of columns of the matrix.
@@ -123,6 +168,74 @@ struct pattern {
   //! @details One unused position when none is stored: not every standard
   //! library's empty array is a structural type.
   std::array<position, (Count > 0 ? Count : 1)> positions{};
+
+  //! @brief The pattern without any stored position.
+  //!
+  //! @param dimensions The shape of the matrix.
+  consteval explicit pattern([[maybe_unused]] shape_t<Rows, Columns> dimensions)
+    requires(Count == 0)
+  {}
+
+  //! @brief The pattern of the given positions, in any order.
+  //!
+  //! @details A position out of the matrix, or a duplicate position, does not
+  //! compile.
+  //!
+  //! @param dimensions The shape of the matrix.
+  //! @param stored The stored positions, in any order.
+  //!
+  //! @tparam Size The count of the given positions, a template parameter of
+  //! its own: an array of no position is not a type.
+  //!
+  //! @complexity Quadratic in the count of stored elements, linear when they
+  //! are given in row-major order.
+  template <std::size_t Size>
+    requires(Size == Count)
+  consteval pattern([[maybe_unused]] shape_t<Rows, Columns> dimensions,
+                    const position (&stored)[Size]) {
+    for (std::size_t i{0}; i < Count; ++i) {
+      const position value{stored[i]};
+      std::size_t j{i};
+
+      if (value.row >= Rows || value.column >= Columns) {
+        sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
+      }
+
+      for (; j > 0 && value < positions[j - 1]; --j) {
+        positions[j] = positions[j - 1];
+      }
+
+      if (j > 0 && value == positions[j - 1]) {
+        sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
+      }
+
+      positions[j] = value;
+    }
+  }
+
+  //! @brief The pattern of the positions satisfying a predicate.
+  //!
+  //! @param dimensions The shape of the matrix.
+  //! @param predicate A stateless predicate of a row and a column.
+  //!
+  //! @complexity Linear in the count of positions of the matrix.
+  template <sparse_linear_algebra::internal::position_predicate Predicate>
+    requires(
+        sparse_linear_algebra::internal::count_of<Rows, Columns, Predicate>() ==
+        Count)
+  consteval pattern([[maybe_unused]] shape_t<Rows, Columns> dimensions,
+                    const Predicate &predicate) {
+    std::size_t index{0};
+
+    for (std::size_t row{0}; row < Rows; ++row) {
+      for (std::size_t column{0}; column < Columns; ++column) {
+        if (predicate(row, column)) {
+          positions[index] = {row, column};
+          ++index;
+        }
+      }
+    }
+  }
 
   //! @brief The index of the first stored position not before the given one.
   //!
@@ -183,98 +296,38 @@ operator==(const pattern<LhsRows, LhsColumns, LhsCount> &lhs,
   }
 }
 
-//! @brief The pattern of a matrix without any stored element.
+//! @brief Deduce the pattern without any stored position.
 template <std::size_t Rows, std::size_t Columns>
-[[nodiscard]] consteval auto make_pattern() -> pattern<Rows, Columns, 0> {
-  return {};
-}
+pattern(shape_t<Rows, Columns>) -> pattern<Rows, Columns, 0>;
 
-//! @brief The pattern of the given positions, in any order.
-//!
-//! @details A position out of the matrix, or a duplicate position, does not
-//! compile.
-//!
-//! @tparam Rows The count of rows of the matrix.
-//! @tparam Columns The count of columns of the matrix.
-//! @tparam Count The count of the given positions.
-//!
-//! @param positions The stored positions, in any order.
+//! @brief Deduce the pattern of the given positions.
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>
-[[nodiscard]] consteval auto make_pattern(const position (&positions)[Count])
-    -> pattern<Rows, Columns, Count> {
-  pattern<Rows, Columns, Count> result;
+pattern(shape_t<Rows, Columns>, const position (&)[Count])
+    -> pattern<Rows, Columns, Count>;
 
-  for (std::size_t i{0}; i < Count; ++i) {
-    const position value{positions[i]};
-    std::size_t j{i};
-
-    if (value.row >= Rows || value.column >= Columns) {
-      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
-    }
-
-    for (; j > 0 && value < result.positions[j - 1]; --j) {
-      result.positions[j] = result.positions[j - 1];
-    }
-
-    if (j > 0 && value == result.positions[j - 1]) {
-      sparse_linear_algebra::internal::position_out_of_range_or_duplicate();
-    }
-
-    result.positions[j] = value;
-  }
-
-  return result;
-}
-
-//! @brief The pattern of the positions satisfying a predicate.
-//!
-//! @tparam Rows The count of rows of the matrix.
-//! @tparam Columns The count of columns of the matrix.
-//! @tparam Predicate A stateless predicate of a row and a column.
-template <std::size_t Rows, std::size_t Columns, auto Predicate>
-[[nodiscard]] consteval auto generate() {
-  constexpr std::size_t count{[] -> std::size_t {
-    std::size_t result{0};
-
-    for (std::size_t row{0}; row < Rows; ++row) {
-      for (std::size_t column{0}; column < Columns; ++column) {
-        result += Predicate(row, column) ? std::size_t{1} : std::size_t{0};
-      }
-    }
-
-    return result;
-  }()};
-
-  pattern<Rows, Columns, count> result;
-
-  for (std::size_t row{0}, index{0}; row < Rows; ++row) {
-    for (std::size_t column{0}; column < Columns; ++column) {
-      if (Predicate(row, column)) {
-        result.positions[index] = {row, column};
-        ++index;
-      }
-    }
-  }
-
-  return result;
-}
+//! @brief Deduce the pattern of the positions satisfying a predicate.
+template <std::size_t Rows, std::size_t Columns,
+          sparse_linear_algebra::internal::position_predicate Predicate>
+pattern(shape_t<Rows, Columns>, Predicate) -> pattern<
+    Rows, Columns,
+    sparse_linear_algebra::internal::count_of<Rows, Columns, Predicate>()>;
 
 //! @brief Every position is stored: a matrix without structural zeros.
 template <std::size_t Rows, std::size_t Columns>
-inline constexpr auto dense{
-    generate<Rows, Columns, sparse_linear_algebra::internal::every>()};
+inline constexpr pattern dense{shape<Rows, Columns>,
+                               sparse_linear_algebra::internal::every};
 
 //! @brief No position is stored: the zero matrix.
 template <std::size_t Rows, std::size_t Columns>
-inline constexpr auto zero{make_pattern<Rows, Columns>()};
+inline constexpr pattern zero{shape<Rows, Columns>};
 
 //! @brief The positions of the `Lower` sub-diagonals, the main diagonal, and
 //! the `Upper` super-diagonals.
 template <std::size_t Rows, std::size_t Columns, std::size_t Lower,
           std::size_t Upper>
-inline constexpr auto banded{
-    generate<Rows, Columns,
-             sparse_linear_algebra::internal::within_band<Lower, Upper>>()};
+inline constexpr pattern banded{
+    shape<Rows, Columns>,
+    sparse_linear_algebra::internal::within_band<Lower, Upper>};
 
 //! @brief The main diagonal of a square matrix.
 template <std::size_t Size>

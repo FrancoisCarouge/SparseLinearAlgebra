@@ -46,35 +46,37 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
 
   // The largest absolute column sum is not the largest absolute row sum.
-  const sparse_matrix<double,
-                      make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
-      value{1., -2., -3., 4.};
+  constexpr pattern value_pattern{shape<2, 3>,
+                                  {{0, 0}, {0, 1}, {1, 0}, {1, 2}}};
+  const sparse_matrix<double, value_pattern> value{1., -2., -3., 4.};
 
   assert(matrix_one_norm(value) == 4.);
 
   // A row vector: the one norm is its largest absolute element.
-  const sparse_matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3.,
-                                                                        4.};
+  constexpr pattern row_pattern{shape<1, 3>, {{0, 0}, {0, 2}}};
+  const sparse_matrix<double, row_pattern> row{-3., 4.};
 
   assert(matrix_one_norm(row) == 4.);
 
   // A column vector: the one norm is the sum of its absolute elements.
-  const sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3.,
-                                                                           4.};
+  constexpr pattern column_pattern{shape<3, 1>, {{0, 0}, {2, 0}}};
+  const sparse_matrix<double, column_pattern> column{-3., 4.};
 
   assert(matrix_one_norm(column) == 7.);
 
   // A column without any stored element.
-  const sparse_matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
+  constexpr pattern corner_pattern{shape<2, 2>, {{0, 0}}};
+  const sparse_matrix<double, corner_pattern> corner{-2.};
 
   assert(matrix_one_norm(corner) == 2.);
 
   // Every negative column: the maximum is not of the signed sums.
-  const sparse_matrix<double, make_pattern<2, 2>({{0, 1}, {1, 1}})> last_column{
-      -1., -2.};
+  constexpr pattern last_column_pattern{shape<2, 2>, {{0, 1}, {1, 1}}};
+  const sparse_matrix<double, last_column_pattern> last_column{-1., -2.};
 
   assert(matrix_one_norm(last_column) == 3.);
 
@@ -84,8 +86,8 @@ namespace {
   assert(matrix_one_norm(none) == 0.);
 
   // An integer element type, needing no square root.
-  const sparse_matrix<int, make_pattern<2, 2>({{0, 0}, {1, 0}})> integers{-2,
-                                                                          3};
+  constexpr pattern integers_pattern{shape<2, 2>, {{0, 0}, {1, 0}}};
+  const sparse_matrix<int, integers_pattern> integers{-2, 3};
 
   assert(matrix_one_norm(integers) == 5);
 

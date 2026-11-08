@@ -44,13 +44,14 @@ namespace {
 
   assert(run_time == 0);
 
-  using sparse::make_pattern;
+  using sparse::pattern;
+  using sparse::shape;
   using literals::operator""_o;
 
-  constexpr auto ends{make_pattern<4, 1>({{0, 0}, {3, 0}})};
-  constexpr auto inner{make_pattern<4, 1>({{1, 0}, {2, 0}})};
-  constexpr auto overlap{make_pattern<4, 1>({{0, 0}, {1, 0}, {3, 0}})};
-  constexpr auto overlap_row{make_pattern<1, 4>({{0, 1}, {0, 3}})};
+  constexpr pattern ends{shape<4, 1>, {{0, 0}, {3, 0}}};
+  constexpr pattern inner{shape<4, 1>, {{1, 0}, {2, 0}}};
+  constexpr pattern overlap{shape<4, 1>, {{0, 0}, {1, 0}, {3, 0}}};
+  constexpr pattern overlap_row{shape<1, 4>, {{0, 1}, {0, 3}}};
 
   const sparse_matrix<double, ends> lhs{{2.},         //
                                         {0_o},        //

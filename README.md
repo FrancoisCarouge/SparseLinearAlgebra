@@ -124,7 +124,7 @@ class sparse_matrix;
 
 ### Class Pattern
 
-The positions of the stored elements of a matrix. A structural type, usable as a template argument, of strictly ascending row-major positions: two equal patterns are one and the same type of matrix. Prefer the [named patterns and factories](#patterns), which establish that order.
+The positions of the stored elements of a matrix. A structural type, usable as a template argument, of strictly ascending row-major positions: two equal patterns are one and the same type of matrix. Its [constructors](#patterns) establish that order, and its class template arguments are deduced from them.
 
 #### Declaration
 
@@ -136,6 +136,12 @@ inline constexpr std::size_t absent;
 
 template <std::size_t Rows, std::size_t Columns, std::size_t Count>
 struct pattern;
+
+template <std::size_t Rows, std::size_t Columns>
+struct shape_t;
+
+template <std::size_t Rows, std::size_t Columns>
+inline constexpr shape_t<Rows, Columns> shape;
 }
 ```
 
@@ -160,6 +166,7 @@ struct pattern;
 
 | Member Function | Definition |
 | --- | --- |
+| `(constructor)` | Construct from the shape of the matrix, `shape<R, C>`, and the stored positions or a predicate: see [Patterns](#patterns). Not default-constructible, and not an aggregate. |
 | `lower_bound(position)` | The index of the first stored position not before the given one. |
 | `index_of(row, column)` | The index of the stored element at the given position, or `absent` for a structural zero. |
 | `stores(row, column)` | Whether the given position is a stored element. |
@@ -167,24 +174,13 @@ struct pattern;
 
 ### Patterns
 
-```cpp
-namespace fcarouge::sparse {
-template <std::size_t Rows, std::size_t Columns>
-consteval auto make_pattern();
-
-template <std::size_t Rows, std::size_t Columns, std::size_t Count>
-consteval auto make_pattern(const position (&positions)[Count]);
-
-template <std::size_t Rows, std::size_t Columns, auto Predicate>
-consteval auto generate();
-}
-```
+A pattern is constructed at compile time from the shape of its matrix, `shape<R, C>`, and its stored positions, or a predicate selecting them. The count of stored elements is deduced, as are the counts of rows and columns: `pattern{shape<2, 3>, {{0, 2}, {1, 0}}}` is a `pattern<2, 3, 2>`.
 
 | Pattern | Example | Definition |
 | --- | --- | --- |
-| `make_pattern<R, C>()` | ![A 4 by 6 pattern without position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_empty.svg) | No position. |
-| `make_pattern<R, C>({{i, j}, ...})` | ![A 4 by 6 pattern of five listed positions.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_listed.svg) | The listed positions, in any order. A duplicate or out-of-range position does not compile. |
-| `generate<R, C, predicate>()` | ![A 4 by 6 pattern of the positions whose row and column sum to a multiple of three.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/generate.svg) | The positions satisfying a stateless predicate of a row and a column. |
+| `pattern{shape<R, C>}` | ![A 4 by 6 pattern without position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_empty.svg) | No position. |
+| `pattern{shape<R, C>, {{i, j}, ...}}` | ![A 4 by 6 pattern of five listed positions.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_listed.svg) | The listed positions, in any order. A duplicate or out-of-range position does not compile. |
+| `pattern{shape<R, C>, predicate}` | ![A 4 by 6 pattern of the positions whose row and column sum to a multiple of three.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/generate.svg) | The positions satisfying a stateless predicate of a row and a column. |
 | `dense<R, C>` | ![A dense 4 by 6 pattern: every position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/dense.svg) | Every position: a matrix without structural zeros. |
 | `zero<R, C>` | ![A zero 4 by 6 pattern: no position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/zero.svg) | No position: the zero matrix. |
 | `banded<R, C, L, U>` | ![A 6 by 6 banded pattern of one sub-diagonal and two super-diagonals.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/banded.svg) | The `L` sub-diagonals, the main diagonal, and the `U` super-diagonals. |
