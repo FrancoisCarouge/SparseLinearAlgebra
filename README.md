@@ -173,18 +173,20 @@ consteval auto generate();
 }
 ```
 
-| Pattern | Definition |
-| --- | --- |
-| `make_pattern<R, C>()` | No position. |
-| `make_pattern<R, C>({{i, j}, ...})` | The listed positions, in any order. A duplicate or out-of-range position does not compile. |
-| `generate<R, C, predicate>()` | The positions satisfying a stateless predicate of a row and a column. |
-| `dense<R, C>` | Every position: a matrix without structural zeros. |
-| `zero<R, C>` | No position: the zero matrix. |
-| `banded<R, C, L, U>` | The `L` sub-diagonals, the main diagonal, and the `U` super-diagonals. |
-| `diagonal<N>` | The main diagonal of a square matrix. |
-| `tridiagonal<N>` | The three central diagonals of a square matrix. |
-| `lower_triangular<N>` | The main diagonal and below of a square matrix. |
-| `upper_triangular<N>` | The main diagonal and above of a square matrix. |
+| Pattern | Example | Definition |
+| --- | --- | --- |
+| `make_pattern<R, C>()` | ![A 4 by 6 pattern without position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_empty.svg) | No position. |
+| `make_pattern<R, C>({{i, j}, ...})` | ![A 4 by 6 pattern of five listed positions.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/make_pattern_listed.svg) | The listed positions, in any order. A duplicate or out-of-range position does not compile. |
+| `generate<R, C, predicate>()` | ![A 4 by 6 pattern of the positions whose row and column sum to a multiple of three.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/generate.svg) | The positions satisfying a stateless predicate of a row and a column. |
+| `dense<R, C>` | ![A dense 4 by 6 pattern: every position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/dense.svg) | Every position: a matrix without structural zeros. |
+| `zero<R, C>` | ![A zero 4 by 6 pattern: no position.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/zero.svg) | No position: the zero matrix. |
+| `banded<R, C, L, U>` | ![A 6 by 6 banded pattern of one sub-diagonal and two super-diagonals.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/banded.svg) | The `L` sub-diagonals, the main diagonal, and the `U` super-diagonals. |
+| `diagonal<N>` | ![A 6 by 6 diagonal pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/diagonal.svg) | The main diagonal of a square matrix. |
+| `tridiagonal<N>` | ![A 6 by 6 tridiagonal pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/tridiagonal.svg) | The three central diagonals of a square matrix. |
+| `lower_triangular<N>` | ![A 6 by 6 lower triangular pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/lower_triangular.svg) | The main diagonal and below of a square matrix. |
+| `upper_triangular<N>` | ![A 6 by 6 upper triangular pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern/upper_triangular.svg) | The main diagonal and above of a square matrix. |
+
+The examples draw the stored positions filled and the structural zeros empty: the listed positions `{{0, 1}, {1, 4}, {2, 0}, {2, 3}, {3, 5}}`, the predicate `(i + j) % 3 == 0`, and the band `banded<6, 6, 1, 2>`.
 
 ### Pattern Algebra
 
