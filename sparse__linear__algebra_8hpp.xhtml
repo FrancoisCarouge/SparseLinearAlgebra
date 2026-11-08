@@ -102,7 +102,8 @@ $(function(){initNavTree('sparse__linear__algebra_8hpp.xhtml',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">sparse_linear_algebra.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -129,6 +130,7 @@ $(function(){initNavTree('sparse__linear__algebra_8hpp.xhtml',''); initResizable
 <code>#include &quot;sparse_linear_algebra/algorithm/subtract.tpp&quot;</code><br />
 <code>#include &quot;sparse_linear_algebra/algorithm/transposed.tpp&quot;</code><br />
 <code>#include &quot;sparse_linear_algebra/format.tpp&quot;</code><br />
+<code>#include &quot;sparse_linear_algebra/literals.tpp&quot;</code><br />
 <code>#include &quot;sparse_linear_algebra/sparse_linear_algebra.tpp&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sparse_linear_algebra.hpp:</div>
@@ -158,20 +160,16 @@ Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.xhtml">fcarouge</a></td></tr>
 <tr class="memdesc:namespacefcarouge"><td class="mdescLeft">&#160;</td><td class="mdescRight">Francois Carouge's projects namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a></td></tr>
-<tr class="memdesc:namespacefcarouge_1_1sparse"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse linear algebra public namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse_1_1literals.xhtml">fcarouge::sparse::literals</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1literals.xhtml">fcarouge::literals</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Literals</div></td></tr>
-<tr class="memitem:a5dfc1d514611e2bf5a486799ba3db801" id="r_a5dfc1d514611e2bf5a486799ba3db801"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; <br />
+<tr class="memitem:ad1446341e5ce603e4bad40eef1faf689" id="r_ad1446341e5ce603e4bad40eef1faf689"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; <br />
 requires <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">sparse_linear_algebra::internal::is_zero_literal</a>&lt;Characters...&gt;</td></tr>
-<tr class="memitem:a5dfc1d514611e2bf5a486799ba3db801"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse_1_1literals.xhtml#a5dfc1d514611e2bf5a486799ba3db801">fcarouge::sparse::literals::operator&quot;&quot;_o</a> () noexcept -&gt; sparse_linear_algebra::internal::structural_zero</td></tr>
-<tr class="memdesc:a5dfc1d514611e2bf5a486799ba3db801"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural zero literal, the value of a structural zero in a construction from every row: <code>0_o</code>, or <code>0._o</code>.  <br /></td></tr>
-<tr class="separator:a5dfc1d514611e2bf5a486799ba3db801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1446341e5ce603e4bad40eef1faf689"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1literals.xhtml#ad1446341e5ce603e4bad40eef1faf689">fcarouge::literals::operator&quot;&quot;_o</a> () noexcept -&gt; sparse_linear_algebra::internal::structural_zero</td></tr>
+<tr class="memdesc:ad1446341e5ce603e4bad40eef1faf689"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural zero literal, the value of a structural zero in a construction from every row: <code>0_o</code>, or <code>0._o</code>.  <br /></td></tr>
+<tr class="separator:ad1446341e5ce603e4bad40eef1faf689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Algorithms</div></td></tr>
 <tr class="memitem:ae2a6bc01c911af73ac553f0e33ce3c7a" id="r_ae2a6bc01c911af73ac553f0e33ce3c7a"><td class="memTemplParams" colspan="2">template&lt;typename Type , sparse::sparsity_pattern auto Lhs, sparse::sparsity_pattern auto Rhs&gt; <br />
 requires ((Lhs.rows == 1 || Lhs.columns == 1) &amp;&amp; (Rhs.rows == 1 || Rhs.columns == 1) &amp;&amp; Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)</td></tr>

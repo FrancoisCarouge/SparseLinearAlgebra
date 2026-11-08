@@ -1,5 +1,6 @@
 <map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_dense" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_dense">
-<area shape="rect" id="Node000001" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="5,5,202,61"/>
-<area shape="rect" id="Node000002" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="250,20,391,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,30,234,30,234,36,202,36"/>
+<area shape="rect" id="Node000001" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="5,14,202,70"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="250,29,391,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,40,234,40,234,45,202,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="284,31,277,21,281,11,296,5,320,3,347,5,360,12,358,17,345,10,320,8,297,10,285,15,282,20,288,27"/>
 </map>

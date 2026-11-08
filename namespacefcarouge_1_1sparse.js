@@ -1,8 +1,5 @@
 var namespacefcarouge_1_1sparse =
 [
-    [ "literals", "namespacefcarouge_1_1sparse_1_1literals.xhtml", [
-      [ "operator\"\"_o", "namespacefcarouge_1_1sparse_1_1literals.xhtml#a5dfc1d514611e2bf5a486799ba3db801", null ]
-    ] ],
     [ "pattern", "structfcarouge_1_1sparse_1_1pattern.xhtml", "structfcarouge_1_1sparse_1_1pattern" ],
     [ "position", "structfcarouge_1_1sparse_1_1position.xhtml", "structfcarouge_1_1sparse_1_1position" ],
     [ "sparsity_pattern", "conceptfcarouge_1_1sparse_1_1sparsity__pattern.xhtml", null ],

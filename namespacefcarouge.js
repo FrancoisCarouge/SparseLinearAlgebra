@@ -1,6 +1,9 @@
 var namespacefcarouge =
 [
     [ "benchmark", "namespacefcarouge_1_1benchmark.xhtml", "namespacefcarouge_1_1benchmark" ],
+    [ "literals", "namespacefcarouge_1_1literals.xhtml", [
+      [ "operator\"\"_o", "namespacefcarouge_1_1literals.xhtml#ad1446341e5ce603e4bad40eef1faf689", null ]
+    ] ],
     [ "sample", "namespacefcarouge_1_1sample.xhtml", "namespacefcarouge_1_1sample" ],
     [ "sparse", "namespacefcarouge_1_1sparse.xhtml", "namespacefcarouge_1_1sparse" ],
     [ "sparse_linear_algebra", "namespacefcarouge_1_1sparse__linear__algebra.xhtml", "namespacefcarouge_1_1sparse__linear__algebra" ],
