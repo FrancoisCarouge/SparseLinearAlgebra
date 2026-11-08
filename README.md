@@ -5,14 +5,19 @@ Most matrices of estimation, control, and simulation problems are mostly zeros, 
 ```cpp
 using band = sparse_matrix<double, tridiagonal<3>>;
 
-band value{1., 2., 3., 4., 5., 6., 7.}; // Stores 7 of the 9 elements.
+// Stores 7 of the 9 elements.
+band value{{1.0, 2.0, 0_o},  //
+           {3.0, 4.0, 5.0},  //
+           {0_o, 6.0, 7.0}}; //
 
 value.at<1, 2>() = 8.;     // Writes a stored element.
 // value.at<0, 2>() = 8.;  // Does not compile: a structural zero.
 
 std::println("{}", value * value); // Computes 17 of the 27 products.
 
-// [[7, 10, 16], [15, 70, 88], [18, 66, 97]]
+// [[ 7, 10, 16],
+//  [15, 70, 88],
+//  [18, 66, 97]]
 ```
 
 [![Pipeline](https://github.com/FrancoisCarouge/SparseLinearAlgebra/actions/workflows/pipeline.yml/badge.svg)](https://github.com/FrancoisCarouge/SparseLinearAlgebra/actions/workflows/pipeline.yml)
