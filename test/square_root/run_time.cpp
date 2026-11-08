@@ -55,9 +55,9 @@ namespace {
                                                         {144., 12.},
                                                         {1e10, 1e5},
                                                         {infinity, infinity}}};
-  const volatile float quarter{0.25F};
+  [[maybe_unused]] const volatile float quarter{0.25F};
 
-  for (const auto &[value, root] : roots) {
+  for ([[maybe_unused]] const auto &[value, root] : roots) {
     assert(sla::square_root(value) == root);
   }
 
