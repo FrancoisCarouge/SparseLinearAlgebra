@@ -51,13 +51,17 @@ namespace {
   using column = sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
   using row = sparse_matrix<double, make_pattern<1, 3>({{0, 1}})>;
 
-  const band_matrix band{1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.};
+  const band_matrix band{{1., 2., 0_o},  //
+                         {3., 4., 5.},   //
+                         {0_o, 6., 7.}}; //
 
   assert((band == band_matrix{1., 2., 3., 4., 5., 6., 7.}));
 
   // A vector, of either orientation.
-  const column first_last{1., 0_o, 3.};
-  const row middle{0_o, 2., 0_o};
+  const column first_last{{1.},  //
+                          {0_o}, //
+                          {3.}}; //
+  const row middle{{0_o, 2., 0_o}};
 
   assert((first_last.at<0, 0>() == 1.));
   assert((first_last.at<1, 0>() == 0.));
@@ -66,14 +70,20 @@ namespace {
   assert((middle.at<0, 1>() == 2.));
 
   // A pattern without a stored element.
-  const sparse_matrix<double, sparse::zero<1, 2>> none{0_o, 0_o};
+  const sparse_matrix<double, sparse::zero<1, 2>> none{{0_o, 0_o}};
 
   assert((none.at<0, 1>() == 0.));
 
   // Every spelling of a zero literal.
-  const column spelled{1., 0._o, 3.};
-  const column decimal{1., 0.0_o, 3.};
-  const column fraction{1., .0_o, 3.};
+  const column spelled{{1.},    //
+                       {0._o},  //
+                       {3.}};   //
+  const column decimal{{1.},    //
+                       {0.0_o}, //
+                       {3.}};   //
+  const column fraction{{1.},   //
+                        {.0_o}, //
+                        {3.}};  //
 
   assert((spelled == first_last));
   assert((decimal == first_last));

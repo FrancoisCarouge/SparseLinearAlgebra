@@ -49,7 +49,8 @@ namespace {
 
   constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};
 
-  const sparse_matrix<double, wide> value{1., 0_o, 2., 0_o, 3., 0_o};
+  const sparse_matrix<double, wide> value{{1., 0_o, 2.},   //
+                                          {0_o, 3., 0_o}}; //
 
   const auto mirrored{transposed(value)};
 
@@ -65,7 +66,9 @@ namespace {
 
   // The stored order changes: a column then row reading of the storage.
   const sparse_matrix<double, sparse::lower_triangular<3>> lower{
-      1., 0_o, 0_o, 2., 3., 0_o, 4., 5., 6.};
+      {1., 0_o, 0_o}, //
+      {2., 3., 0_o},  //
+      {4., 5., 6.}};  //
 
   const auto upper{transposed(lower)};
 

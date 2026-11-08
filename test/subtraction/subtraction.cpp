@@ -52,8 +52,10 @@ namespace {
   constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};
   constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};
 
-  const sparse_matrix<double, first_row> lhs{1., 2., 0_o, 0_o};
-  const sparse_matrix<double, first_column> rhs{3., 0_o, 4., 0_o};
+  const sparse_matrix<double, first_row> lhs{{1., 2.},      //
+                                             {0_o, 0_o}};   //
+  const sparse_matrix<double, first_column> rhs{{3., 0_o},  //
+                                                {4., 0_o}}; //
   const sparse_matrix<double, first_row> zero_value;
 
   // An element stored by the right term only is negated, not copied.
@@ -77,9 +79,11 @@ namespace {
   assert((-(lhs - rhs) == rhs - lhs));
 
   // An integer element type.
-  const sparse_matrix<int, first_row> integers{1, 2, 0_o, 0_o};
+  const sparse_matrix<int, first_row> integers{{1, 2},      //
+                                               {0_o, 0_o}}; //
 
-  const sparse_matrix<int, first_column> integer_column{3, 0_o, 4, 0_o};
+  const sparse_matrix<int, first_column> integer_column{{3, 0_o},  //
+                                                        {4, 0_o}}; //
   const auto integer_difference{integers - integer_column};
 
   assert(((integers - integers).at<0, 1>() == 0));

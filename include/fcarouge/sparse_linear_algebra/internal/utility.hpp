@@ -76,7 +76,7 @@ template <auto Pattern>
 inline constexpr bool is_dense{Pattern.count == Pattern.rows * Pattern.columns};
 
 //! @brief The type of the value of a structural zero in a construction from
-//! every position, the result of the `_o` literal.
+//! every row, the result of the `_o` literal.
 struct structural_zero {};
 
 //! @brief Whether the characters of a literal spell a zero: zero digits, at
@@ -102,20 +102,38 @@ template <typename Value, typename Type, auto Pattern, std::size_t Position>
 inline constexpr bool is_given_at<Value, Type, Pattern, Position, false>{
     std::same_as<Value, structural_zero>};
 
-template <typename Type, auto Pattern, typename Positions, typename... Values>
-inline constexpr bool are_given_at{false};
-
-template <typename Type, auto Pattern, std::size_t... Positions,
+template <typename Type, auto Pattern, std::size_t Row, typename Columns,
           typename... Values>
-inline constexpr bool
-    are_given_at<Type, Pattern, std::index_sequence<Positions...>, Values...>{
-        (is_given_at<Values, Type, Pattern, Positions> and ...)};
+inline constexpr bool are_given_in_row_at{false};
 
-//! @brief Whether the values may be given at every position of a pattern, in
-//! row-major order.
-template <typename Type, auto Pattern, typename... Values>
-inline constexpr bool are_given{
-    are_given_at<Type, Pattern, std::index_sequence_for<Values...>, Values...>};
+template <typename Type, auto Pattern, std::size_t Row, std::size_t... Columns,
+          typename... Values>
+inline constexpr bool are_given_in_row_at<
+    Type, Pattern, Row, std::index_sequence<Columns...>, Values...>{
+    (is_given_at<Values, Type, Pattern, Row * Pattern.columns + Columns> and
+     ...)};
+
+//! @brief Whether the values may be given at every column of a row of a
+//! pattern, in order.
+template <typename Type, auto Pattern, std::size_t Row, typename... Values>
+inline constexpr bool are_given_in_row{
+    are_given_in_row_at<Type, Pattern, Row, std::index_sequence_for<Values...>,
+                        Values...>};
+
+//! @brief The count of stored elements of a row of a pattern.
+template <auto Pattern, std::size_t Row>
+inline constexpr std::size_t stored_in_row{[] consteval -> std::size_t {
+  constexpr std::size_t stored{Pattern.count};
+  std::size_t count{0};
+
+  for (std::size_t i{0}; i < stored; ++i) {
+    if (Pattern.positions[i].row == Row) {
+      ++count;
+    }
+  }
+
+  return count;
+}()};
 
 //! @brief Write a given value into the next stored element, unless it is a
 //! structural zero: the stored elements are the given values in row-major
@@ -128,6 +146,69 @@ constexpr void store_given(std::array<Type, Count> &stored, std::size_t &index,
     ++index;
   }
 }
+
+//! @brief Append the stored elements of a row to the stored elements of a
+//! matrix.
+template <typename Type, std::size_t Count, std::size_t RowCount>
+constexpr void append_row(std::array<Type, Count> &stored, std::size_t &index,
+                          const std::array<Type, RowCount> &elements) {
+  for (const Type &element : elements) {
+    stored[index] = element;
+    ++index;
+  }
+}
+
+//! @brief The stored elements of a row of a matrix, given at every column: a
+//! value of exactly the element type at a stored element, the `0_o` literal at
+//! a structural zero.
+//!
+//! @details Implicitly constructed from a braced row of a matrix declaration.
+template <typename Type, auto Pattern, std::size_t Row> struct row {
+  //! @brief The stored elements of the row, in column order.
+  std::array<Type, stored_in_row<Pattern, Row>> elements{};
+
+  //! @brief Construct from the value of every column of the row.
+  template <typename... Values>
+    requires(sizeof...(Values) == Pattern.columns and
+             are_given_in_row<Type, Pattern, Row, Values...>)
+  constexpr explicit(false) row(const Values &...values) {
+    std::size_t index{0};
+
+    (store_given(elements, index, values), ...);
+  }
+};
+
+//! @brief The count of rows of a pattern.
+//!
+//! @details Named, for CppCheck, which misparses a member access in a template
+//! argument list.
+template <auto Pattern> inline constexpr std::size_t row_count{Pattern.rows};
+
+//! @brief The storage of a matrix, and its construction from every row.
+//!
+//! @details A base of the matrix: the parameters of the construction from every
+//! row are of a type each, the pack expansion of the rows of the pattern.
+template <typename Type, auto Pattern,
+          typename Rows = std::make_index_sequence<row_count<Pattern>>>
+struct storage;
+
+template <typename Type, auto Pattern, std::size_t... Rows>
+struct storage<Type, Pattern, std::index_sequence<Rows...>> {
+  //! @brief The stored elements, zero-initialized, in row-major order.
+  std::array<Type, Pattern.count> values{};
+
+  //! @brief Construct a zero matrix.
+  constexpr storage() = default;
+
+  //! @brief Construct from every row, in order.
+  //!
+  //! @param rows The rows, each of the value of every column.
+  constexpr explicit storage(const row<Type, Pattern, Rows> &...rows) {
+    std::size_t index{0};
+
+    (append_row(values, index, rows.elements), ...);
+  }
+};
 
 //! @brief A growing list of positions, of a known maximum size, from which the
 //! pattern of an operation's result is sized.

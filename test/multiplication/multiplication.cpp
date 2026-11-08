@@ -81,8 +81,11 @@ namespace {
   assert((square.at<2, 2>() == 79.));
 
   // A non-square product.
-  const sparse_matrix<double, wide> lhs{1., 0_o, 2., 0_o, 3., 0_o};
-  const sparse_matrix<double, tall> rhs{0_o, 4., 5., 0_o, 0_o, 6.};
+  const sparse_matrix<double, wide> lhs{{1., 0_o, 2.},   //
+                                        {0_o, 3., 0_o}}; //
+  const sparse_matrix<double, tall> rhs{{0_o, 4.},       //
+                                        {5., 0_o},       //
+                                        {0_o, 6.}};      //
 
   const auto product{lhs * rhs};
 

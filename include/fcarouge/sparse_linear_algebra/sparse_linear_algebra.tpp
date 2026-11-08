@@ -40,6 +40,7 @@ For more information, please refer to <https://unlicense.org> */
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
+#include <array>
 #include <concepts>
 #include <cstddef>
 #include <type_traits>
@@ -49,20 +50,8 @@ template <typename Type, auto Pattern>
   requires sparse::sparsity_pattern<decltype(Pattern)>
 template <std::same_as<Type>... Values>
   requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
-constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored)
-    : values{stored...} {}
-
-template <typename Type, auto Pattern>
-  requires sparse::sparsity_pattern<decltype(Pattern)>
-template <typename... Values>
-  requires(sizeof...(Values) == Pattern.rows * Pattern.columns and
-           not sparse_linear_algebra::internal::is_dense<Pattern> and
-           sparse_linear_algebra::internal::are_given<Type, Pattern, Values...>)
-constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
-    const Values &...elements) {
-  std::size_t index{0};
-
-  (sparse_linear_algebra::internal::store_given(values, index, elements), ...);
+constexpr sparse_matrix<Type, Pattern>::sparse_matrix(const Values &...stored) {
+  values = std::array<Type, Pattern.count>{stored...};
 }
 
 template <typename Type, auto Pattern>
