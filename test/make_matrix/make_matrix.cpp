@@ -47,24 +47,23 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::structural_zero;
+  using sparse::literals::operator""_o;
 
   using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
   using column = sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
   using row = sparse_matrix<double, make_pattern<1, 3>({{0, 1}})>;
 
-  const auto band{make_matrix<band_matrix>(1., 2., structural_zero, 3., 4., 5.,
-                                           structural_zero, 6., 7.)};
+  const auto band{
+      make_matrix<band_matrix>(1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.)};
 
   static_assert(std::same_as<decltype(make_matrix<band_matrix>(
-                                 1., 2., structural_zero, 3., 4., 5.,
-                                 structural_zero, 6., 7.)),
+                                 1., 2., 0_o, 3., 4., 5., 0_o, 6., 7.)),
                              band_matrix>);
   assert((band == band_matrix{1., 2., 3., 4., 5., 6., 7.}));
 
   // A vector, of either orientation.
-  const auto first_last{make_matrix<column>(1., structural_zero, 3.)};
-  const auto middle{make_matrix<row>(structural_zero, 2., structural_zero)};
+  const auto first_last{make_matrix<column>(1., 0_o, 3.)};
+  const auto middle{make_matrix<row>(0_o, 2., 0_o)};
 
   assert((first_last.at<0, 0>() == 1.));
   assert((first_last.at<1, 0>() == 0.));
@@ -73,18 +72,27 @@ namespace {
   assert((middle.at<0, 1>() == 2.));
 
   // A value implicitly convertible to the element type.
-  const auto converted{make_matrix<column>(1, structural_zero, 3.F)};
+  const auto converted{make_matrix<column>(1, 0_o, 3.F)};
 
   assert((converted == first_last));
 
   // A pattern without a structural zero, and one without a stored element.
   const auto dense_value{
       make_matrix<sparse_matrix<double, sparse::dense<1, 2>>>(1., 2.)};
-  const auto none{make_matrix<sparse_matrix<double, sparse::zero<1, 2>>>(
-      structural_zero, structural_zero)};
+  const auto none{
+      make_matrix<sparse_matrix<double, sparse::zero<1, 2>>>(0_o, 0_o)};
 
   assert((dense_value.at<0, 1>() == 2.));
   assert((none.at<0, 1>() == 0.));
+
+  // Every spelling of a zero literal.
+  const auto spelled{make_matrix<column>(1., 0._o, 3.)};
+  const auto decimal{make_matrix<column>(1., 0.0_o, 3.)};
+  const auto fraction{make_matrix<column>(1., .0_o, 3.)};
+
+  assert((spelled == first_last));
+  assert((decimal == first_last));
+  assert((fraction == first_last));
 
   return 0;
 }()};

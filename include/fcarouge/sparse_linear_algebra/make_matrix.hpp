@@ -44,22 +44,41 @@ For more information, please refer to <https://unlicense.org> */
 #include <utility>
 
 namespace fcarouge {
-namespace sparse {
+namespace sparse_linear_algebra::internal {
+//! @brief The type of the value of a structural zero in `make_matrix`, the
+//! result of the `_o` literal.
+struct structural_zero {};
+
+//! @brief Whether the characters of a literal spell a zero: zero digits, at
+//! least one, and at most one decimal point.
+template <char... Characters>
+inline constexpr bool is_zero_literal{
+    ((Characters == '0' or Characters == '.') and ...) and
+    ((Characters == '0' ? 1 : 0) + ... + 0) >= 1 and
+    ((Characters == '.' ? 1 : 0) + ... + 0) <= 1};
+} // namespace sparse_linear_algebra::internal
+
+namespace sparse::literals {
 //! @name Element Construction
 //! @{
 
-//! @brief The type of the value of a structural zero in `make_matrix`.
-struct structural_zero_t {};
-
-//! @brief The value of a structural zero in `make_matrix`.
-inline constexpr structural_zero_t structural_zero;
+//! @brief The structural zero literal, the value of a structural zero in
+//! `make_matrix`: `0_o`, or `0._o`.
+//!
+//! @details Does not participate in overload resolution unless the literal is
+//! a zero: `1_o` does not compile.
+template <char... Characters>
+  requires sla::is_zero_literal<Characters...>
+[[nodiscard]] consteval auto operator""_o() noexcept -> sla::structural_zero {
+  return {};
+}
 
 //! @}
-} // namespace sparse
+} // namespace sparse::literals
 
 namespace sparse_linear_algebra::internal {
 //! @brief Whether a value may be given at a linear position of a matrix: a
-//! structural zero only takes `structural_zero`, a stored element only takes an
+//! structural zero only takes the `_o` literal, a stored element only takes an
 //! implicitly convertible value.
 //!
 //! @details Partially specialized variable templates rather than immediately
@@ -73,7 +92,7 @@ inline constexpr bool is_given_at{
 
 template <typename Value, typename Matrix, std::size_t Position>
 inline constexpr bool is_given_at<Value, Matrix, Position, false>{
-    std::same_as<Value, sparse::structural_zero_t>};
+    std::same_as<Value, structural_zero>};
 
 template <typename Matrix, typename Positions, typename... Values>
 inline constexpr bool are_given_at{false};
@@ -93,7 +112,7 @@ inline constexpr bool are_given{
 //! if the position is stored.
 template <std::size_t Position, typename Matrix, typename Value>
 constexpr void write_given(Matrix &result, const Value &value) {
-  if constexpr (not std::same_as<Value, sparse::structural_zero_t>) {
+  if constexpr (not std::same_as<Value, structural_zero>) {
     static constexpr std::size_t index{
         Matrix::structure.index_of(Position / Matrix::structure.columns,
                                    Position % Matrix::structure.columns)};
@@ -114,7 +133,7 @@ namespace sparse {
 //!
 //! @details Each position is known at compile time, and the type of each value
 //! says what it is: a value for a structural zero, even a zero, or
-//! `structural_zero` for a stored element, does not compile. A run-time value
+//! `0_o` for a stored element, does not compile. A run-time value
 //! needs no run-time check.
 //!
 //! @tparam Matrix The sparse matrix type to construct.
@@ -122,7 +141,7 @@ namespace sparse {
 //!
 //! @param values The value of each position, in row-major order: a value
 //! implicitly convertible to the element type at a stored element,
-//! `structural_zero` at a structural zero.
+//! the `0_o` literal at a structural zero.
 //!
 //! @complexity Linear in the count of positions.
 template <typename Matrix, typename... Values>
