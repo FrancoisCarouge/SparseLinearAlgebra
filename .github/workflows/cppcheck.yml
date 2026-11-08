@@ -39,7 +39,7 @@ jobs:
     # library's raw loops are deliberate: it stays freestanding, without the
     # algorithms library. The converting constructor is implicit by design.
     # cppcheck takes the `using sparse::literals::operator""_o;` declaration of
-    # the tests for an unused expression statement.
+    # the tests and samples for an unused expression statement.
     - name: Verify
       run: |
         cppcheck \
@@ -47,6 +47,7 @@ jobs:
           --enable=all \
           --error-exitcode=1 \
           --suppress='constStatement:test/*' \
+          --suppress=constStatement:sample/constant_velocity.cpp \
           --suppress=functionStatic:build/amalgamate/fcarouge/sparse_linear_algebra.h \
           --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/format.tpp \
           --suppress=functionStatic:include/fcarouge/sparse_linear_algebra/sparse_linear_algebra.tpp \
