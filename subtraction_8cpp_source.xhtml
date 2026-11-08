@@ -188,14 +188,21 @@ $(function(){initNavTree('subtraction_8cpp_source.xhtml',''); initResizable(true
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      make_matrix&lt;sparse_matrix&lt;int, first_row&gt;&gt;(1, 2, 0_o, 0_o)};</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  assert(((integers - integers).at&lt;0, 1&gt;() == 0));</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}()};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integer_column{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      make_matrix&lt;sparse_matrix&lt;int, first_column&gt;&gt;(3, 0_o, 4, 0_o)};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integer_difference{integers - integer_column};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  assert(((integers - integers).at&lt;0, 1&gt;() == 0));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  assert((integer_difference.at&lt;0, 0&gt;() == -2));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  assert((integer_difference.at&lt;0, 1&gt;() == 2));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  assert((integer_difference.at&lt;1, 0&gt;() == -4));</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}()};</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>} <span class="comment">// namespace</span></div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>} <span class="comment">// namespace fcarouge::test</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>} <span class="comment">// namespace fcarouge::test</span></div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00075">sparse_linear_algebra_forward.hpp:75</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a8668d4439611b9cb7776e4383972fdbd"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a8668d4439611b9cb7776e4383972fdbd">fcarouge::sparse::make_pattern</a></div><div class="ttdeci">consteval auto make_pattern() -&gt; pattern&lt; Rows, Columns, 0 &gt;</div><div class="ttdoc">The pattern of a matrix without any stored element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00188">pattern.hpp:188</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_ab8975278c1d8ae0036b49bea78bbe8b5"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5">fcarouge::sparse::pattern_union</a></div><div class="ttdeci">constexpr auto pattern_union</div><div class="ttdoc">The positions stored by either pattern of the same shape: the pattern of a sum or a difference.</div><div class="ttdef"><b>Definition</b> <a href="pattern__algebra_8hpp_source.xhtml#l00053">pattern_algebra.hpp:53</a></div></div>

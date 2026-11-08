@@ -194,10 +194,17 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  107</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integers{</div>
 <div class="line"><span class="lineno">  108</span>      make_matrix&lt;sparse_matrix&lt;int, first_row&gt;&gt;(1, 2, 0_o, 0_o)};</div>
 <div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>  assert(((integers + integers).at&lt;0, 1&gt;() == 4));</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  113</span>}()};</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integer_column{</div>
+<div class="line"><span class="lineno">  111</span>      make_matrix&lt;sparse_matrix&lt;int, first_column&gt;&gt;(3, 0_o, 4, 0_o)};</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keyword">const</span> <span class="keyword">auto</span> integer_sum{integers + integer_column};</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>  assert(((integers + integers).at&lt;0, 1&gt;() == 4));</div>
+<div class="line"><span class="lineno">  115</span>  assert((integer_sum.at&lt;0, 0&gt;() == 4));</div>
+<div class="line"><span class="lineno">  116</span>  assert((integer_sum.at&lt;0, 1&gt;() == 2));</div>
+<div class="line"><span class="lineno">  117</span>  assert((integer_sum.at&lt;1, 0&gt;() == 4));</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  120</span>}()};</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a00aaee662629cd65f44a55c9478795ae"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">fcarouge::test::anonymous_namespace{arithmetic.cpp}::sum</a></div><div class="ttdeci">constexpr auto sum</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00050">arithmetic.cpp:50</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>

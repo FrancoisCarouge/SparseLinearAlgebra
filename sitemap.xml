@@ -41,10 +41,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/heat__diffusion_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8hpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8hpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8cpp_source.xhtml</loc>
@@ -65,10 +65,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/access_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/at_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/at_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constant__index__fail_8cpp_source.xhtml</loc>
@@ -92,10 +92,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2count__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/make__matrix_2count__fail_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign_2narrowing__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign_2narrowing__fail_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/make__matrix_2count__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2narrowing__fail_8cpp_source.xhtml</loc>
@@ -170,13 +170,13 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/integer__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__frob__norm_8cpp_source.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__inf__norm_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__one__norm_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__frob__norm_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/minus_8cpp_source.xhtml</loc>
@@ -233,16 +233,22 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singleton_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__root_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/run__time_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/layout_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__root_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/transposed_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/product_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_a_g_e_n_t_s_8md.xhtml</loc>
@@ -254,13 +260,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_r_e_a_d_m_e_8md.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/product_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_h_a_n_g_e_l_o_g_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_i_n_g_8md.xhtml</loc>
@@ -269,10 +272,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_o_r_s_8md.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/documentation_8dox.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8hpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8hpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/documentation_8dox.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/combine_8hpp.xhtml</loc>
@@ -497,10 +500,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign_2narrowing__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2narrowing__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2type__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2type__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2narrowing__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/make__matrix_2type__fail_8cpp.xhtml</loc>
@@ -551,22 +554,22 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/freestanding_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structural__zero__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/find__package_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/make__matrix_8cpp.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structural__zero__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/value__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/integer__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/zero__literal__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/zero__literal__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/integer__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__frob__norm_8cpp.xhtml</loc>
@@ -632,6 +635,9 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singleton_8cpp.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/run__time_8cpp.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__root_8cpp.xhtml</loc>
   </url>
   <url>
@@ -680,10 +686,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/classfcarouge_1_1not__realtime.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/classfcarouge_1_1sparse__matrix.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/classfcarouge_1_1sparse__matrix.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/classfcarouge_1_1not__realtime.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/classfcarouge_1_1not__realtime-members.xhtml</loc>
@@ -876,6 +882,9 @@
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time__index__fail_8cpp_03.xhtml</loc>
