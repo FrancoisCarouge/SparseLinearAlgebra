@@ -51,10 +51,142 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "sparse_linear_algebra/internal/utility.hpp"
 #include "sparse_linear_algebra/make_matrix.hpp"
-#include "sparse_linear_algebra/matrix.hpp"
 #include "sparse_linear_algebra/pattern.hpp"
 #include "sparse_linear_algebra/pattern_algebra.hpp"
 #include "sparse_linear_algebra_forward.hpp"
+
+#include <array>
+#include <concepts>
+#include <cstddef>
+#include <type_traits>
+
+namespace fcarouge::sparse {
+//! @name Types
+//! @{
+
+//! @brief Compile-time sparsity pattern matrix.
+//!
+//! @details Stores only the elements of the pattern, in row-major order, in
+//! place. Every other element is a structural zero: it occupies no memory and
+//! costs no operation. A read of a structural zero yields a zero value. A
+//! structural zero has no element to refer to, so no write can reach it and no
+//! value can be lost: a write to a structural zero does not compile. A pattern
+//! without a structural zero behaves as any dense storage.
+//!
+//! @tparam Type The matrix element type.
+//! @tparam Pattern The sparsity pattern of the matrix.
+template <typename Type, sparsity_pattern auto Pattern> class sparse_matrix {
+public:
+  //! @name Public Member Variables
+  //! @{
+
+  //! @brief The sparsity pattern of the matrix.
+  static constexpr auto structure{Pattern};
+
+  //! @brief The stored elements, zero-initialized, in row-major order.
+  std::array<Type, Pattern.count> values{};
+
+  //! @}
+
+  //! @name Public Member Functions
+  //! @{
+
+  //! @brief Construct a zero matrix.
+  constexpr sparse_matrix() = default;
+
+  //! @brief Construct from every stored element, in row-major order.
+  //!
+  //! @details Each element is exactly of the element type, and there is at
+  //! least one: a structural zero takes no value.
+  //!
+  //! @param stored The stored elements, in row-major order.
+  template <std::same_as<Type>... Values>
+    requires(sizeof...(Values) == Pattern.count and Pattern.count > 0)
+  constexpr explicit sparse_matrix(const Values &...stored);
+
+  //! @brief Convert from a matrix whose stored positions are all stored by
+  //! this pattern, which cannot lose an element.
+  //!
+  //! @details The positions this pattern stores and the other does not are
+  //! zero.
+  //!
+  //! @param other The matrix of a narrower, or the same, pattern.
+  template <sparsity_pattern auto Other>
+    requires is_subset_of<Other, Pattern>
+  constexpr explicit(false)
+      sparse_matrix(const sparse_matrix<Type, Other> &other);
+
+  //! @brief Read the element at the given position, by value.
+  //!
+  //! @details A structural zero reads as a zero of the element type.
+  //!
+  //! @param row The row of the element.
+  //! @param column The column of the element.
+  //!
+  //! @complexity Logarithmic in the count of stored elements.
+  [[nodiscard]] constexpr auto operator[](std::size_t row,
+                                          std::size_t column) const -> Type;
+
+  //! @brief The element at the given position, of a pattern without a
+  //! structural zero: every position is addressable, as in any dense storage.
+  //!
+  //! @param row The row of the element.
+  //! @param column The column of the element.
+  //!
+  //! @complexity Constant.
+  [[nodiscard]] constexpr auto operator[](std::size_t row, std::size_t column)
+      -> Type &
+    requires sla::is_dense<Pattern>;
+
+  //! @brief The stored element at the given compile-time position.
+  //!
+  //! @details A structural zero has nothing to refer to, and no such access.
+  //! The position's type is the standard type of the compile-time index of a
+  //! linear algebra library, for a generic access by position.
+  //!
+  //! @tparam Row The row of the element.
+  //! @tparam Column The column of the element.
+  //!
+  //! @complexity Constant.
+  template <std::size_t Row, std::size_t Column>
+    requires(Pattern.stores(Row, Column))
+  [[nodiscard]] constexpr auto
+  operator[](std::integral_constant<std::size_t, Row> /*row*/,
+             std::integral_constant<std::size_t, Column> /*column*/) -> Type &;
+
+  //! @brief The stored element at the given compile-time position.
+  //!
+  //! @details A structural zero has nothing to refer to, and no such access:
+  //! the read-only overload reads it, by value.
+  //!
+  //! @tparam Row The row of the element.
+  //! @tparam Column The column of the element.
+  //!
+  //! @complexity Constant.
+  template <std::size_t Row, std::size_t Column>
+    requires(Pattern.stores(Row, Column))
+  [[nodiscard]] constexpr auto at() -> Type &;
+
+  //! @brief Read the element at the given compile-time position, by value.
+  //!
+  //! @details A structural zero reads as a zero of the element type. Selected
+  //! for a structural zero of a modifiable matrix too: the read is a value, not
+  //! a reference, so that an assignment to the element of an arithmetic type, a
+  //! write that would be lost, does not compile.
+  //!
+  //! @tparam Row The row of the element.
+  //! @tparam Column The column of the element.
+  //!
+  //! @complexity Constant.
+  template <std::size_t Row, std::size_t Column>
+    requires(Row < Pattern.rows and Column < Pattern.columns)
+  [[nodiscard]] constexpr auto at() const -> Type;
+
+  //! @}
+};
+
+//! @}
+} // namespace fcarouge::sparse
 
 #include "sparse_linear_algebra/algorithm/add.tpp"
 #include "sparse_linear_algebra/algorithm/divide.tpp"
@@ -68,9 +200,7 @@ For more information, please refer to <https://unlicense.org> */
 #include "sparse_linear_algebra/algorithm/subtract.tpp"
 #include "sparse_linear_algebra/algorithm/transposed.tpp"
 #include "sparse_linear_algebra/format.tpp"
-
-#include <concepts>
-#include <type_traits>
+#include "sparse_linear_algebra/sparse_linear_algebra.tpp"
 
 namespace fcarouge::sparse {
 //! @name Algorithms
@@ -80,66 +210,69 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires((Lhs.rows == 1 or Lhs.columns == 1) and
            (Rhs.rows == 1 or Rhs.columns == 1) and
            Lhs.rows * Lhs.columns == Rhs.rows * Rhs.columns)
-[[nodiscard]] constexpr auto dot(const matrix<Type, Lhs> &lhs,
-                                 const matrix<Type, Rhs> &rhs) -> Type;
+[[nodiscard]] constexpr auto dot(const sparse_matrix<Type, Lhs> &lhs,
+                                 const sparse_matrix<Type, Rhs> &rhs) -> Type;
 
 template <std::floating_point Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
-matrix_frob_norm(const matrix<Type, Pattern> &value) -> Type;
+matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto matrix_inf_norm(const matrix<Type, Pattern> &value)
-    -> Type;
+[[nodiscard]] constexpr auto
+matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto matrix_one_norm(const matrix<Type, Pattern> &value)
-    -> Type;
+[[nodiscard]] constexpr auto
+matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type;
 
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
-[[nodiscard]] constexpr auto operator==(const matrix<Type, Lhs> &lhs,
-                                        const matrix<Type, Rhs> &rhs) -> bool;
+[[nodiscard]] constexpr auto operator==(const sparse_matrix<Type, Lhs> &lhs,
+                                        const sparse_matrix<Type, Rhs> &rhs)
+    -> bool;
 
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
-[[nodiscard]] constexpr auto operator+(const matrix<Type, Lhs> &lhs,
-                                       const matrix<Type, Rhs> &rhs)
-    -> matrix<Type, pattern_union<Lhs, Rhs>>;
+[[nodiscard]] constexpr auto operator+(const sparse_matrix<Type, Lhs> &lhs,
+                                       const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, pattern_union<Lhs, Rhs>>;
 
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
-[[nodiscard]] constexpr auto operator-(const matrix<Type, Lhs> &lhs,
-                                       const matrix<Type, Rhs> &rhs)
-    -> matrix<Type, pattern_union<Lhs, Rhs>>;
+[[nodiscard]] constexpr auto operator-(const sparse_matrix<Type, Lhs> &lhs,
+                                       const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, pattern_union<Lhs, Rhs>>;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator-(const matrix<Type, Pattern> &value)
-    -> matrix<Type, Pattern>;
+[[nodiscard]] constexpr auto
+operator-(const sparse_matrix<Type, Pattern> &value)
+    -> sparse_matrix<Type, Pattern>;
 
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
-[[nodiscard]] constexpr auto operator*(const matrix<Type, Lhs> &lhs,
-                                       const matrix<Type, Rhs> &rhs)
-    -> matrix<Type, pattern_product<Lhs, Rhs>>;
+[[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
+                                       const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, pattern_product<Lhs, Rhs>>;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator*(const matrix<Type, Pattern> &lhs,
+[[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
-    -> matrix<Type, Pattern>;
+    -> sparse_matrix<Type, Pattern>;
 
 template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto operator*(const std::type_identity_t<Type> &lhs,
-                                       const matrix<Type, Pattern> &rhs)
-    -> matrix<Type, Pattern>;
+                                       const sparse_matrix<Type, Pattern> &rhs)
+    -> sparse_matrix<Type, Pattern>;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator/(const matrix<Type, Pattern> &lhs,
+[[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Pattern> &lhs,
                                        const std::type_identity_t<Type> &rhs)
-    -> matrix<Type, Pattern>;
+    -> sparse_matrix<Type, Pattern>;
 
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto transposed(const matrix<Type, Pattern> &value)
-    -> matrix<Type, pattern_transpose<Pattern>>;
+[[nodiscard]] constexpr auto
+transposed(const sparse_matrix<Type, Pattern> &value)
+    -> sparse_matrix<Type, pattern_transpose<Pattern>>;
 
 //! @}
 } // namespace fcarouge::sparse

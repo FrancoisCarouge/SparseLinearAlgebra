@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies a count of values other than the count of positions does not
 //! compile.
 [[maybe_unused]] const auto test{[] -> int {
-  using diagonal_matrix = sparse::matrix<double, sparse::diagonal<2>>;
+  using diagonal_matrix = sparse::sparse_matrix<double, sparse::diagonal<2>>;
 
   using sparse::make_matrix;
   using sparse::structural_zero;

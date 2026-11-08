@@ -54,13 +54,13 @@ namespace {
 
   using sparse::dense;
   using sparse::diagonal;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::upper_triangular;
 
-  using transition = matrix<double, upper_triangular<2>>;
-  using noise = matrix<double, diagonal<2>>;
-  using state = matrix<double, dense<2, 1>>;
-  using covariance = matrix<double, dense<2, 2>>;
+  using transition = sparse_matrix<double, upper_triangular<2>>;
+  using noise = sparse_matrix<double, diagonal<2>>;
+  using state = sparse_matrix<double, dense<2, 1>>;
+  using covariance = sparse_matrix<double, dense<2, 2>>;
 
   constexpr double period{0.5};
 

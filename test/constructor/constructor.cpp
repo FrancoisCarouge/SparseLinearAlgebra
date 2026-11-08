@@ -44,12 +44,12 @@ namespace {
   assert(run_time == 0);
 
   using sparse::diagonal;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
   using sparse::tridiagonal;
 
-  using diagonal_matrix = matrix<double, diagonal<2>>;
-  using dense_matrix = matrix<double, sparse::dense<2, 2>>;
+  using diagonal_matrix = sparse_matrix<double, diagonal<2>>;
+  using dense_matrix = sparse_matrix<double, sparse::dense<2, 2>>;
 
   // A default construction is zero-initialized.
   const diagonal_matrix zero_value;
@@ -67,7 +67,8 @@ namespace {
   assert((listed.at<1, 1>() == 2.));
 
   // A construction from the stored elements, in row-major order.
-  const matrix<double, tridiagonal<3>> stored{1., 2., 3., 4., 5., 6., 7.};
+  const sparse_matrix<double, tridiagonal<3>> stored{1., 2., 3., 4.,
+                                                     5., 6., 7.};
 
   assert((stored.at<0, 0>() == 1.));
   assert((stored.at<0, 1>() == 2.));

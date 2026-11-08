@@ -32,16 +32,17 @@ For more information, please refer to <https://unlicense.org> */
 #ifndef FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MINUS_TPP
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MINUS_TPP
 
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 namespace fcarouge::sparse {
 //! @brief Negation, of the same pattern.
 //!
 //! @complexity Linear in the count of stored elements.
 template <typename Type, sparsity_pattern auto Pattern>
-[[nodiscard]] constexpr auto operator-(const matrix<Type, Pattern> &value)
-    -> matrix<Type, Pattern> {
-  matrix<Type, Pattern> result{value};
+[[nodiscard]] constexpr auto
+operator-(const sparse_matrix<Type, Pattern> &value)
+    -> sparse_matrix<Type, Pattern> {
+  sparse_matrix<Type, Pattern> result{value};
 
   for (Type &element : result.values) {
     element = -element;

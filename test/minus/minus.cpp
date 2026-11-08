@@ -47,7 +47,8 @@ namespace {
   assert(run_time == 0);
 
   using first_row =
-      sparse::matrix<double, sparse::make_pattern<2, 2>({{0, 0}, {0, 1}})>;
+      sparse::sparse_matrix<double,
+                            sparse::make_pattern<2, 2>({{0, 0}, {0, 1}})>;
 
   const first_row value{1., -2.};
 
@@ -61,7 +62,7 @@ namespace {
   assert((-negated == value));
 
   // An integer element type.
-  const sparse::matrix<int, sparse::diagonal<2>> integers{1, -2};
+  const sparse::sparse_matrix<int, sparse::diagonal<2>> integers{1, -2};
 
   assert(((-integers).at<1, 1>() == 2));
 

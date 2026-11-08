@@ -41,7 +41,7 @@ namespace {
 
   // Intended:
   // const auto value{
-  //     make_matrix<sparse::matrix<double, sparse::dense<1, 1>>>(1.)};
+  //     make_matrix<sparse::sparse_matrix<double, sparse::dense<1, 1>>>(1.)};
   const auto value{make_matrix<double>(1.)};
 
   assert(value == 1.);

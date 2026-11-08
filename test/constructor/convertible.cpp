@@ -37,37 +37,38 @@ namespace fcarouge::test {
 namespace {
 using sparse::dense;
 using sparse::diagonal;
-using sparse::matrix;
+using sparse::sparse_matrix;
 using sparse::tridiagonal;
 
 //! @test Verifies a matrix converts implicitly when it cannot lose an element:
 //! to a pattern storing every one of its positions.
-static_assert(std::convertible_to<matrix<double, diagonal<2>>,
-                                  matrix<double, dense<2, 2>>>);
-static_assert(std::convertible_to<matrix<double, diagonal<3>>,
-                                  matrix<double, tridiagonal<3>>>);
-static_assert(std::convertible_to<matrix<double, sparse::zero<3, 3>>,
-                                  matrix<double, diagonal<3>>>);
+static_assert(std::convertible_to<sparse_matrix<double, diagonal<2>>,
+                                  sparse_matrix<double, dense<2, 2>>>);
+static_assert(std::convertible_to<sparse_matrix<double, diagonal<3>>,
+                                  sparse_matrix<double, tridiagonal<3>>>);
+static_assert(std::convertible_to<sparse_matrix<double, sparse::zero<3, 3>>,
+                                  sparse_matrix<double, diagonal<3>>>);
 
 //! @test Verifies a matrix does not convert to a narrower pattern, nor to
 //! another shape, nor to another element type.
-static_assert(not std::constructible_from<matrix<double, diagonal<2>>,
-                                          matrix<double, dense<2, 2>>>);
-static_assert(not std::constructible_from<matrix<double, diagonal<3>>,
-                                          matrix<double, diagonal<2>>>);
-static_assert(not std::constructible_from<matrix<double, dense<2, 2>>,
-                                          matrix<float, diagonal<2>>>);
+static_assert(not std::constructible_from<sparse_matrix<double, diagonal<2>>,
+                                          sparse_matrix<double, dense<2, 2>>>);
+static_assert(not std::constructible_from<sparse_matrix<double, diagonal<3>>,
+                                          sparse_matrix<double, diagonal<2>>>);
+static_assert(not std::constructible_from<sparse_matrix<double, dense<2, 2>>,
+                                          sparse_matrix<float, diagonal<2>>>);
 
 //! @test Verifies the construction from the stored elements is explicit, of
 //! exactly the element type, and of every stored element.
+static_assert(std::constructible_from<sparse_matrix<double, diagonal<2>>,
+                                      double, double>);
+static_assert(not std::convertible_to<
+              double, sparse_matrix<double, sparse::dense<1, 1>>>);
+static_assert(not std::constructible_from<sparse_matrix<double, diagonal<2>>,
+                                          float, float>);
+static_assert(not std::constructible_from<sparse_matrix<double, diagonal<2>>,
+                                          double, double, double>);
 static_assert(
-    std::constructible_from<matrix<double, diagonal<2>>, double, double>);
-static_assert(
-    not std::convertible_to<double, matrix<double, sparse::dense<1, 1>>>);
-static_assert(
-    not std::constructible_from<matrix<double, diagonal<2>>, float, float>);
-static_assert(not std::constructible_from<matrix<double, diagonal<2>>, double,
-                                          double, double>);
-static_assert(not std::constructible_from<matrix<double, diagonal<2>>, double>);
+    not std::constructible_from<sparse_matrix<double, diagonal<2>>, double>);
 } // namespace
 } // namespace fcarouge::test

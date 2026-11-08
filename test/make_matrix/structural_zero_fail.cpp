@@ -37,7 +37,7 @@ namespace fcarouge::test {
 namespace {
 //! @test Verifies `structural_zero` for a stored element does not compile.
 [[maybe_unused]] const auto test{[] -> int {
-  using diagonal_matrix = sparse::matrix<double, sparse::diagonal<2>>;
+  using diagonal_matrix = sparse::sparse_matrix<double, sparse::diagonal<2>>;
 
   using sparse::make_matrix;
   using sparse::structural_zero;

@@ -38,7 +38,7 @@ namespace {
 //! @test Verifies a value for a structural zero does not compile, even a zero:
 //! only `structural_zero` says so at compile time.
 [[maybe_unused]] const auto test{[] -> int {
-  using diagonal_matrix = sparse::matrix<double, sparse::diagonal<2>>;
+  using diagonal_matrix = sparse::sparse_matrix<double, sparse::diagonal<2>>;
 
   using sparse::make_matrix;
   using sparse::structural_zero;

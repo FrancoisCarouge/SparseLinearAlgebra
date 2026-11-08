@@ -46,15 +46,18 @@ namespace {
   assert(run_time == 0);
 
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
-  const matrix<double, make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
+  const sparse_matrix<double,
+                      make_pattern<2, 3>({{0, 0}, {0, 1}, {1, 0}, {1, 2}})>
       value{1., -2., -3., 4.};
-  const matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3., 4.};
-  const matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3., 4.};
-  const matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
-  const matrix<double, sparse::zero<2, 2>> none;
-  const matrix<float, sparse::diagonal<2>> single_precision{3.F, 4.F};
+  const sparse_matrix<double, make_pattern<1, 3>({{0, 0}, {0, 2}})> row{-3.,
+                                                                        4.};
+  const sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})> column{-3.,
+                                                                           4.};
+  const sparse_matrix<double, make_pattern<2, 2>({{0, 0}})> corner{-2.};
+  const sparse_matrix<double, sparse::zero<2, 2>> none;
+  const sparse_matrix<float, sparse::diagonal<2>> single_precision{3.F, 4.F};
 
   assert(matrix_frob_norm(value) == std::sqrt(30.));
   assert(matrix_frob_norm(row) == 5.);

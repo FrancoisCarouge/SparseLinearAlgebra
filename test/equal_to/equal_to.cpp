@@ -45,12 +45,12 @@ namespace {
 
   using sparse::dense;
   using sparse::diagonal;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
-  const matrix<double, diagonal<2>> narrow{1., 2.};
-  const matrix<double, dense<2, 2>> wide{1., 0., 0., 2.};
-  const matrix<double, dense<2, 2>> different{1., 3., 0., 2.};
-  const matrix<double, sparse::tridiagonal<2>> band{1., 0., 0., 2.};
+  const sparse_matrix<double, diagonal<2>> narrow{1., 2.};
+  const sparse_matrix<double, dense<2, 2>> wide{1., 0., 0., 2.};
+  const sparse_matrix<double, dense<2, 2>> different{1., 3., 0., 2.};
+  const sparse_matrix<double, sparse::tridiagonal<2>> band{1., 0., 0., 2.};
 
   // A structural zero equals a stored zero, in both directions.
   assert((narrow == wide));
@@ -63,11 +63,11 @@ namespace {
   assert((narrow != different));
 
   // A difference at a stored position.
-  assert((narrow != matrix<double, diagonal<2>>{1., 3.}));
+  assert((narrow != sparse_matrix<double, diagonal<2>>{1., 3.}));
 
   // The zero matrices of every pattern.
-  static_assert(matrix<double, sparse::zero<2, 2>>{} ==
-                matrix<double, dense<2, 2>>{});
+  static_assert(sparse_matrix<double, sparse::zero<2, 2>>{} ==
+                sparse_matrix<double, dense<2, 2>>{});
 
   return 0;
 }()};

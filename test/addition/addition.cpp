@@ -48,27 +48,27 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};
   constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};
   constexpr auto opposite{make_pattern<2, 2>({{1, 1}})};
 
-  const auto lhs{make_matrix<matrix<double, first_row>>(1., 2., structural_zero,
-                                                        structural_zero)};
-  const auto rhs{make_matrix<matrix<double, first_column>>(
+  const auto lhs{make_matrix<sparse_matrix<double, first_row>>(
+      1., 2., structural_zero, structural_zero)};
+  const auto rhs{make_matrix<sparse_matrix<double, first_column>>(
       3., structural_zero, 4., structural_zero)};
-  const auto other{make_matrix<matrix<double, opposite>>(
+  const auto other{make_matrix<sparse_matrix<double, opposite>>(
       structural_zero, structural_zero, structural_zero, 5.)};
 
   // Overlapping: the union of the patterns.
   const auto sum{lhs + rhs};
 
   static_assert(
-      std::same_as<
-          std::remove_cvref_t<decltype(sum)>,
-          matrix<double, sparse::pattern_union<first_row, first_column>>>);
+      std::same_as<std::remove_cvref_t<decltype(sum)>,
+                   sparse_matrix<double, sparse::pattern_union<first_row,
+                                                               first_column>>>);
   assert((sum.at<0, 0>() == 4.));
   assert((sum.at<0, 1>() == 2.));
   assert((sum.at<1, 0>() == 4.));
@@ -86,27 +86,27 @@ namespace {
   assert((lhs + rhs == rhs + lhs));
 
   // A zero matrix is neutral, and the pattern does not grow.
-  const auto neutral{lhs + matrix<double, sparse::zero<2, 2>>{}};
+  const auto neutral{lhs + sparse_matrix<double, sparse::zero<2, 2>>{}};
 
   static_assert(std::same_as<std::remove_cvref_t<decltype(neutral)>,
-                             matrix<double, first_row>>);
+                             sparse_matrix<double, first_row>>);
   assert((neutral == lhs));
 
   // Elements cancelling out at run time stay stored: a pattern is structural.
   const auto cancelled{lhs + (-lhs)};
 
   static_assert(std::same_as<std::remove_cvref_t<decltype(cancelled)>,
-                             matrix<double, first_row>>);
+                             sparse_matrix<double, first_row>>);
   assert((cancelled.at<0, 0>() == 0.));
 
   // Run-time values reach the result, through a dense reference.
-  const matrix<double, sparse::dense<2, 2>> reference{4., 2., 4., 0.};
+  const sparse_matrix<double, sparse::dense<2, 2>> reference{4., 2., 4., 0.};
 
   assert((sum == reference));
 
   // An integer element type.
-  const auto integers{make_matrix<matrix<int, first_row>>(1, 2, structural_zero,
-                                                          structural_zero)};
+  const auto integers{make_matrix<sparse_matrix<int, first_row>>(
+      1, 2, structural_zero, structural_zero)};
 
   assert(((integers + integers).at<0, 1>() == 4));
 

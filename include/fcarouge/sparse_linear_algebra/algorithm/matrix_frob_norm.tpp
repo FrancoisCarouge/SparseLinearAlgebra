@@ -33,7 +33,7 @@ For more information, please refer to <https://unlicense.org> */
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_MATRIX_FROB_NORM_TPP
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <concepts>
 
@@ -52,7 +52,7 @@ namespace fcarouge::sparse {
 //! @complexity Linear in the count of stored elements.
 template <std::floating_point Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
-matrix_frob_norm(const matrix<Type, Pattern> &value) -> Type {
+matrix_frob_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   Type result{};
 
   for (const Type &element : value.values) {

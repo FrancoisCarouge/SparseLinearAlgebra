@@ -36,9 +36,9 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief The element-wise combination of two matrices of the same shape.
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/matrix.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
+#include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <cstddef>
 
@@ -52,12 +52,13 @@ namespace fcarouge::sparse_linear_algebra::internal {
 //! @param rhs_only The operation on the elements stored by the rhs matrix only.
 //! An element stored by the lhs matrix only is kept as-is.
 template <typename Type, auto Lhs, auto Rhs>
-[[nodiscard]] constexpr auto combine(const sparse::matrix<Type, Lhs> &lhs,
-                                     const sparse::matrix<Type, Rhs> &rhs,
-                                     const auto &both, const auto &rhs_only)
-    -> sparse::matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
+[[nodiscard]] constexpr auto
+combine(const sparse::sparse_matrix<Type, Lhs> &lhs,
+        const sparse::sparse_matrix<Type, Rhs> &rhs, const auto &both,
+        const auto &rhs_only)
+    -> sparse::sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
   constexpr auto combined{sparse::pattern_union<Lhs, Rhs>};
-  sparse::matrix<Type, combined> result;
+  sparse::sparse_matrix<Type, combined> result;
 
   for (std::size_t i{0}; i < combined.count; ++i) {
     const std::size_t lhs_index{projection<Lhs, combined>[i]};

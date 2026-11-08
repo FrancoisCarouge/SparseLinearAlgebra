@@ -48,25 +48,25 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   constexpr auto first_row{make_pattern<2, 2>({{0, 0}, {0, 1}})};
   constexpr auto first_column{make_pattern<2, 2>({{0, 0}, {1, 0}})};
 
-  const auto lhs{make_matrix<matrix<double, first_row>>(1., 2., structural_zero,
-                                                        structural_zero)};
-  const auto rhs{make_matrix<matrix<double, first_column>>(
+  const auto lhs{make_matrix<sparse_matrix<double, first_row>>(
+      1., 2., structural_zero, structural_zero)};
+  const auto rhs{make_matrix<sparse_matrix<double, first_column>>(
       3., structural_zero, 4., structural_zero)};
-  const matrix<double, first_row> zero_value;
+  const sparse_matrix<double, first_row> zero_value;
 
   // An element stored by the right term only is negated, not copied.
   const auto difference{lhs - rhs};
 
   static_assert(
-      std::same_as<
-          std::remove_cvref_t<decltype(difference)>,
-          matrix<double, sparse::pattern_union<first_row, first_column>>>);
+      std::same_as<std::remove_cvref_t<decltype(difference)>,
+                   sparse_matrix<double, sparse::pattern_union<first_row,
+                                                               first_column>>>);
   assert((difference.at<0, 0>() == -2.));
   assert((difference.at<0, 1>() == 2.));
   assert((difference.at<1, 0>() == -4.));
@@ -81,8 +81,8 @@ namespace {
   assert((-(lhs - rhs) == rhs - lhs));
 
   // An integer element type.
-  const auto integers{make_matrix<matrix<int, first_row>>(1, 2, structural_zero,
-                                                          structural_zero)};
+  const auto integers{make_matrix<sparse_matrix<int, first_row>>(
+      1, 2, structural_zero, structural_zero)};
 
   assert(((integers - integers).at<0, 1>() == 0));
 

@@ -46,7 +46,7 @@ static_assert(
 static_assert(not sparse::sparsity_pattern<int>);
 static_assert(not sparse::sparsity_pattern<std::size_t>);
 static_assert(not sparse::sparsity_pattern<sparse::position>);
-static_assert(
-    not sparse::sparsity_pattern<sparse::matrix<double, sparse::diagonal<2>>>);
+static_assert(not sparse::sparsity_pattern<
+              sparse::sparse_matrix<double, sparse::diagonal<2>>>);
 } // namespace
 } // namespace fcarouge::test

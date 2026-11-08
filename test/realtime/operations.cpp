@@ -46,13 +46,14 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
-  using band_matrix = matrix<double, sparse::tridiagonal<3>>;
-  using column_vector = matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
+  using band_matrix = sparse_matrix<double, sparse::tridiagonal<3>>;
+  using column_vector =
+      sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>;
 
-  matrix<double, sparse::diagonal<3>> scale_matrix;
+  sparse_matrix<double, sparse::diagonal<3>> scale_matrix;
 
   scale_matrix.at<0, 0>() = 2.;
   scale_matrix.at<1, 1>() = 3.;
@@ -70,7 +71,7 @@ namespace {
   const auto scaled{band * 2.};
   const auto divided{band / 2.};
   const auto mirrored{transposed(band)};
-  const matrix<double, sparse::dense<3, 3>> widened{band};
+  const sparse_matrix<double, sparse::dense<3, 3>> widened{band};
 
   assert((product.at<2, 1>() == 24.));
   assert((sum.at<0, 0>() == 3.));

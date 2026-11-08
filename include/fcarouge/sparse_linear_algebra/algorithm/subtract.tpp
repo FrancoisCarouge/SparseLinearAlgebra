@@ -44,9 +44,9 @@ namespace fcarouge::sparse {
 //! @complexity Linear in the count of stored elements of the result.
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
-[[nodiscard]] constexpr auto operator-(const matrix<Type, Lhs> &lhs,
-                                       const matrix<Type, Rhs> &rhs)
-    -> matrix<Type, pattern_union<Lhs, Rhs>> {
+[[nodiscard]] constexpr auto operator-(const sparse_matrix<Type, Lhs> &lhs,
+                                       const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, pattern_union<Lhs, Rhs>> {
   return sla::combine(
       lhs, rhs,
       [](const Type &left, const Type &right) -> Type { return left - right; },

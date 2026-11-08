@@ -36,12 +36,12 @@ namespace {
 using sparse::diagonal;
 using sparse::make_matrix;
 using sparse::make_pattern;
-using sparse::matrix;
+using sparse::sparse_matrix;
 using sparse::structural_zero;
 using sparse::tridiagonal;
 
-using diagonal_matrix = matrix<double, diagonal<3>>;
-using tridiagonal_matrix = matrix<double, tridiagonal<3>>;
+using diagonal_matrix = sparse_matrix<double, diagonal<3>>;
+using tridiagonal_matrix = sparse_matrix<double, tridiagonal<3>>;
 
 inline constexpr diagonal_matrix lhs{2., 3., 4.};
 inline constexpr tridiagonal_matrix rhs{1., 2., 3., 4., 5., 6., 7.};
@@ -79,7 +79,7 @@ static_assert((lhs / 2.).at<2, 2>() == 2.);
 static_assert(sum == rhs + lhs);
 
 inline constexpr auto rectangular{
-    make_matrix<matrix<double, make_pattern<2, 3>({{0, 2}, {1, 0}})>>(
+    make_matrix<sparse_matrix<double, make_pattern<2, 3>({{0, 2}, {1, 0}})>>(
         structural_zero, structural_zero, 5., 6., structural_zero,
         structural_zero)};
 inline constexpr auto flipped{transposed(rectangular)};
@@ -93,10 +93,11 @@ static_assert(matrix_one_norm(rhs) == 12.);
 static_assert(matrix_inf_norm(rhs) == 13.);
 static_assert(
     matrix_frob_norm(
-        make_matrix<matrix<double, make_pattern<2, 2>({{0, 1}, {1, 0}})>>(
+        make_matrix<
+            sparse_matrix<double, make_pattern<2, 2>({{0, 1}, {1, 0}})>>(
             structural_zero, 3., 4., structural_zero)) == 5.);
 
-inline constexpr matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>
+inline constexpr sparse_matrix<double, make_pattern<3, 1>({{0, 0}, {2, 0}})>
     first_third{2., 3.};
 
 static_assert(dot(first_third, first_third) == 13.);

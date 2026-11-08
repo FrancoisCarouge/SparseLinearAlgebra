@@ -43,14 +43,14 @@ namespace {
   const not_realtime opt_out;
 
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
 
-  const matrix<double, sparse::diagonal<2>> value{1., 2.5};
-  const matrix<double, sparse::dense<2, 2>> dense_value{1., 0., 0., 2.5};
-  const matrix<double, make_pattern<3, 1>({{1, 0}})> column{4.};
-  const matrix<double, make_pattern<1, 3>({{0, 2}})> row{5.};
-  const matrix<double, sparse::zero<1, 1>> singleton;
-  const matrix<int, sparse::dense<1, 1>> stored_singleton{7};
+  const sparse_matrix<double, sparse::diagonal<2>> value{1., 2.5};
+  const sparse_matrix<double, sparse::dense<2, 2>> dense_value{1., 0., 0., 2.5};
+  const sparse_matrix<double, make_pattern<3, 1>({{1, 0}})> column{4.};
+  const sparse_matrix<double, make_pattern<1, 3>({{0, 2}})> row{5.};
+  const sparse_matrix<double, sparse::zero<1, 1>> singleton;
+  const sparse_matrix<int, sparse::dense<1, 1>> stored_singleton{7};
 
   assert(std::format("{}", value) == "[[1, 0], [0, 2.5]]");
   assert(std::format("{}", value) == std::format("{}", dense_value));

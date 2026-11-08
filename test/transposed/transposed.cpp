@@ -46,12 +46,12 @@ namespace {
 
   using sparse::make_matrix;
   using sparse::make_pattern;
-  using sparse::matrix;
+  using sparse::sparse_matrix;
   using sparse::structural_zero;
 
   constexpr auto wide{make_pattern<2, 3>({{0, 0}, {0, 2}, {1, 1}})};
 
-  const auto value{make_matrix<matrix<double, wide>>(
+  const auto value{make_matrix<sparse_matrix<double, wide>>(
       1., structural_zero, 2., structural_zero, 3., structural_zero)};
 
   const auto mirrored{transposed(value)};
@@ -67,9 +67,10 @@ namespace {
   assert((transposed(mirrored) == value));
 
   // The stored order changes: a column then row reading of the storage.
-  const auto lower{make_matrix<matrix<double, sparse::lower_triangular<3>>>(
-      1., structural_zero, structural_zero, 2., 3., structural_zero, 4., 5.,
-      6.)};
+  const auto lower{
+      make_matrix<sparse_matrix<double, sparse::lower_triangular<3>>>(
+          1., structural_zero, structural_zero, 2., 3., structural_zero, 4., 5.,
+          6.)};
 
   const auto upper{transposed(lower)};
 
@@ -82,7 +83,7 @@ namespace {
   assert((upper.at<1, 0>() == 0.));
 
   // A row vector to a column vector.
-  const matrix<double, make_pattern<1, 3>({{0, 1}})> row{7.};
+  const sparse_matrix<double, make_pattern<1, 3>({{0, 1}})> row{7.};
 
   const auto column{transposed(row)};
 

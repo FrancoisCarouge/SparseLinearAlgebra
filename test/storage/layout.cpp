@@ -38,26 +38,29 @@ For more information, please refer to <https://unlicense.org> */
 namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
-using sparse::matrix;
+using sparse::sparse_matrix;
 using sparse::tridiagonal;
 
-using storage = matrix<double, tridiagonal<3>>;
+using storage = sparse_matrix<double, tridiagonal<3>>;
 
-inline constexpr matrix<double, sparse::dense<2, 2>> dense_values{1., 2., 3.,
-                                                                  4.};
+inline constexpr sparse_matrix<double, sparse::dense<2, 2>> dense_values{
+    1., 2., 3., 4.};
 
 //! @test Verifies a matrix stores only its pattern's elements: there is no
 //! index nor pointer of any kind in the object, the pattern is in the type.
-static_assert(sizeof(matrix<double, diagonal<3>>) == 3 * sizeof(double));
-static_assert(sizeof(matrix<double, tridiagonal<3>>) == 7 * sizeof(double));
-static_assert(sizeof(matrix<float, tridiagonal<3>>) == 7 * sizeof(float));
-static_assert(sizeof(matrix<double, sparse::dense<4, 4>>) ==
+static_assert(sizeof(sparse_matrix<double, diagonal<3>>) == 3 * sizeof(double));
+static_assert(sizeof(sparse_matrix<double, tridiagonal<3>>) ==
+              7 * sizeof(double));
+static_assert(sizeof(sparse_matrix<float, tridiagonal<3>>) ==
+              7 * sizeof(float));
+static_assert(sizeof(sparse_matrix<double, sparse::dense<4, 4>>) ==
               16 * sizeof(double));
-static_assert(sizeof(matrix<double, diagonal<16>>) == 16 * sizeof(double));
+static_assert(sizeof(sparse_matrix<double, diagonal<16>>) ==
+              16 * sizeof(double));
 
 //! @test Verifies the memory saved over a dense matrix of the same shape.
-static_assert(sizeof(matrix<double, diagonal<16>>) * 16 ==
-              sizeof(matrix<double, sparse::dense<16, 16>>));
+static_assert(sizeof(sparse_matrix<double, diagonal<16>>) * 16 ==
+              sizeof(sparse_matrix<double, sparse::dense<16, 16>>));
 
 //! @test Verifies the storage has the properties of an array of values.
 static_assert(std::is_trivially_copyable_v<storage>);

@@ -45,7 +45,8 @@ namespace {
 
   assert(run_time == 0);
 
-  using tridiagonal_matrix = sparse::matrix<double, sparse::tridiagonal<3>>;
+  using tridiagonal_matrix =
+      sparse::sparse_matrix<double, sparse::tridiagonal<3>>;
 
   const tridiagonal_matrix value{1., 2., 3., 4., 5., 6., 7.};
 
@@ -59,7 +60,7 @@ namespace {
   assert((divided * 2. == value));
 
   // An integer division truncates each stored element.
-  const sparse::matrix<int, sparse::diagonal<2>> integers{3, -5};
+  const sparse::sparse_matrix<int, sparse::diagonal<2>> integers{3, -5};
   const auto truncated{integers / 2};
 
   assert((truncated.at<0, 0>() == 1));
