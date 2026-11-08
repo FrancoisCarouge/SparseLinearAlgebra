@@ -139,7 +139,7 @@ Include</h2>
 </div><!-- fragment --><p>The library is header-only and has no dependency. A single-header amalgamation, <code>sparse_linear_algebra.h</code>, is also <a href="https://francoiscarouge.github.io/SparseLinearAlgebra/amalgamate/fcarouge/sparse_linear_algebra.h">published</a>.</p>
 <h2><a class="anchor" id="namespace"></a>
 Namespace</h2>
-<p>The <code>sparse_matrix</code> class and its operations live in the <code>fcarouge</code> namespace, as TypedLinearAlgebra's <code>typed_matrix</code> and Kalman's <code>kalman</code> do. The patterns, their algebra, and <code>make_matrix</code> live in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
+<p>The <code>sparse_matrix</code> class and its operations live in the <code>fcarouge</code> namespace, as TypedLinearAlgebra's <code>typed_matrix</code> and Kalman's <code>kalman</code> do. The patterns, their algebra, and the <code>0_o</code> structural zero literal live in the <code><a class="el" href="namespacefcarouge_1_1sparse.xhtml" title="Sparse linear algebra public namespace.">fcarouge::sparse</a></code> namespace. Import it with a using-declaration or namespace alias as your project's style prefers.</p>
 <h2><a class="anchor" id="samples"></a>
 Samples</h2>
 <table class="markdownTable">
@@ -192,16 +192,18 @@ Member Functions</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>(explicit constructor)</code>   </td><td class="markdownTableBodyNone">Construct from every stored element, in row-major order. Each one is exactly of <code>Type</code>, and there is at least one.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>(explicit constructor)</code>   </td><td class="markdownTableBodyNone">Construct from every row, each a braced list of every column: each stored element exactly of <code>Type</code>, each structural zero the <a class="el" href="#structural-zero-literal">`0_o` literal</a>.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>(conversion constructor)</code>   </td><td class="markdownTableBodyNone">Implicitly convert from a matrix of the same element type and shape, whose stored positions this pattern all stores.    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>at&lt;Row, Column&gt;()</code>   </td><td class="markdownTableBodyNone">Access the stored element at the compile-time position, by reference. Only for a stored element.    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>at&lt;Row, Column&gt;() const</code>   </td><td class="markdownTableBodyNone">Read the element at the compile-time position, by value. A structural zero reads as <code>Type{}</code>.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>operator[row, column] const</code>   </td><td class="markdownTableBodyNone">Read the element at the run-time position, by value. A structural zero reads as <code>Type{}</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>operator[row, column]</code>   </td><td class="markdownTableBodyNone">Access the element at the run-time position, by reference. Only without a structural zero.    </td></tr>
+<td class="markdownTableBodyNone"><code>operator[row, column] const</code>   </td><td class="markdownTableBodyNone">Read the element at the run-time position, by value. A structural zero reads as <code>Type{}</code>.    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>operator[row, column]</code>   </td><td class="markdownTableBodyNone">Access the element at the run-time position, by reference. Only without a structural zero.    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>operator[std::integral_constant&lt;std::size_t, Row&gt;, std::integral_constant&lt;std::size_t, Column&gt;]</code>   </td><td class="markdownTableBodyNone">Access the stored element at the compile-time position, by reference. Only for a stored element. The generic access of a linear algebra library by compile-time position.   </td></tr>
 </table>
 <h2><a class="anchor" id="class-pattern"></a>
@@ -317,36 +319,19 @@ Pattern Algebra</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>is_subset_of&lt;Inner, Outer&gt;</code>   </td><td class="markdownTableBodyNone">Whether a pattern stores every position of another, of the same shape.   </td></tr>
 </table>
-<h2><a class="anchor" id="element-construction"></a>
-Element Construction</h2>
-<h3><a class="anchor" id="make_matrix"></a>
-<code>make_matrix</code></h3>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge_1_1sparse.xhtml">fcarouge::sparse</a> {</div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Matrix, <span class="keyword">typename</span>... Values&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacefcarouge_1_1sparse.xhtml#ac9abbd7efe19317cf412b6238f3771e4">make_matrix</a>(<span class="keyword">const</span> Values &amp;...values) -&gt; Matrix;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>literals {</div>
+<h2><a class="anchor" id="structural-zero-literal"></a>
+Structural Zero Literal</h2>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefcarouge_1_1sparse_1_1literals.xhtml">fcarouge::sparse::literals</a> {</div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... Characters&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">consteval</span> <span class="keyword">auto</span> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_o() noexcept;</div>
 <div class="line">}</div>
-<div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_ac9abbd7efe19317cf412b6238f3771e4"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#ac9abbd7efe19317cf412b6238f3771e4">fcarouge::sparse::make_matrix</a></div><div class="ttdeci">constexpr auto make_matrix(const Values &amp;...values) -&gt; Matrix</div><div class="ttdoc">A matrix from a value at every position, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="make__matrix_8hpp_source.xhtml#l00153">make_matrix.hpp:153</a></div></div>
-</div><!-- fragment --><p>Construct a matrix from a value at every position, in row-major order. Does not participate in overload resolution unless <code>Matrix</code> is a sparse matrix, every position has a value, every stored element's value is implicitly convertible to the element type, and every structural zero's value is the structural zero literal <code>0_o</code>: a <code>0.</code> at a structural zero does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
-<div class="fragment"><div class="line"><span class="keyword">using </span>lower = sparse_matrix&lt;double, lower_triangular&lt;2&gt;&gt;;</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_1_1literals_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sparse_1_1literals.xhtml">fcarouge::sparse::literals</a></div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00062">sparse_linear_algebra.hpp:62</a></div></div>
+</div><!-- fragment --><p>The value of a structural zero in a construction from every row, so that the declaration reads as the matrix. A value at a structural zero, even <code>0.</code>, does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
+<div class="fragment"><div class="line"><span class="keyword">using </span>sparse::literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using </span>sparse::literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">const</span> lower value{make_matrix&lt;lower&gt;(1., 0_o,</div>
-<div class="line">                                     2., 3.)};</div>
-</div><!-- fragment --><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Parameter   </th><th class="markdownTableHeadNone">Definition    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Matrix</code>   </td><td class="markdownTableBodyNone">The sparse matrix type to construct.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>values</code>   </td><td class="markdownTableBodyNone">The value of each position, in row-major order.   </td></tr>
-</table>
-<h2><a class="anchor" id="element-access"></a>
+<div class="line"><span class="keyword">const</span> sparse_matrix&lt;double, lower_triangular&lt;2&gt;&gt; value{{1., 0_o}, <span class="comment">//</span></div>
+<div class="line">                                                       {2., 3.}}; <span class="comment">//</span></div>
+</div><!-- fragment --><h2><a class="anchor" id="element-access"></a>
 Element Access</h2>
 <p>A structural zero has nothing to refer to. A read is by value, and a write that would be lost does not compile, whatever the value. A pattern without a structural zero is an ordinary dense storage.</p>
 <table class="markdownTable">
@@ -361,7 +346,7 @@ Element Access</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Construction from the stored elements   </td><td class="markdownTableBodyNone">Yes, in row-major order.   </td><td class="markdownTableBodyNone">Takes no value.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>make_matrix&lt;Matrix&gt;(values...)</code>   </td><td class="markdownTableBodyNone">Yes, a value.   </td><td class="markdownTableBodyNone">Yes, <code>0_o</code>.    </td></tr>
+<td class="markdownTableBodyNone">Construction from every row   </td><td class="markdownTableBodyNone">Yes, of exactly <code>Type</code>.   </td><td class="markdownTableBodyNone">Yes, <code>0_o</code>.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Conversion from a matrix of a narrower pattern   </td><td class="markdownTableBodyNone">Yes.   </td><td class="markdownTableBodyNone">Yes, zero.   </td></tr>
 </table>
@@ -393,7 +378,7 @@ Operations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>matrix_inf_norm</code>   </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute row sum.   </td><td class="markdownTableBodyNone"><code>O(K + R)</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>make_matrix</code>   </td><td class="markdownTableBodyNone">The pattern of the matrix to construct.   </td><td class="markdownTableBodyNone"><code>O(R * C)</code>.    </td></tr>
+<td class="markdownTableBodyNone">Construction from every row   </td><td class="markdownTableBodyNone">The pattern of the matrix.   </td><td class="markdownTableBodyNone"><code>O(R * C)</code>.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Read of an element at a run-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(log K)</code>.    </td></tr>
 <tr class="markdownTableRowOdd">

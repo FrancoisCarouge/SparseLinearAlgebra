@@ -21,9 +21,7 @@ var index =
       ] ],
       [ "Patterns", "index.xhtml#patterns", null ],
       [ "Pattern Algebra", "index.xhtml#pattern-algebra", null ],
-      [ "Element Construction", "index.xhtml#element-construction", [
-        [ "make_matrix", "index.xhtml#make_matrix", null ]
-      ] ],
+      [ "Structural Zero Literal", "index.xhtml#structural-zero-literal", null ],
       [ "Element Access", "index.xhtml#element-access", null ],
       [ "Operations", "index.xhtml#operations", null ],
       [ "Concepts", "index.xhtml#concepts", null ],

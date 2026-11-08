@@ -5,7 +5,7 @@ var searchData=
   ['realtime_2ecpp_2',['realtime.cpp',['../realtime_8cpp.xhtml',1,'']]],
   ['realtime_2ehpp_3',['realtime.hpp',['../realtime_8hpp.xhtml',1,'']]],
   ['recipe_3a_20adding_20an_20algorithm_4',['Recipe: adding an algorithm',['..//github/workspace/AGENTS.md#recipe-adding-an-algorithm',1,'']]],
-  ['rectangular_5',['rectangular',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ad9d4129c6ba114b5dad4454f008b8ef9',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::rectangular'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#afa6a2a9e313f28bb7e0890dcf1242c2d',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::rectangular'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a119b7d635ad16428448b2df8195dc9aa',1,'fcarouge::test::anonymous_namespace{result_patterns.cpp}::rectangular']]],
+  ['rectangular_5',['rectangular',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ac720ece24c7d59ca95ef49df415dde1b',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::rectangular'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#afa6a2a9e313f28bb7e0890dcf1242c2d',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::rectangular'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a119b7d635ad16428448b2df8195dc9aa',1,'fcarouge::test::anonymous_namespace{result_patterns.cpp}::rectangular']]],
   ['rectangular_5ftransposed_6',['rectangular_transposed',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#ac544da627398d4d23b454aa7d542d4cb',1,'fcarouge::test::anonymous_namespace{result_patterns.cpp}']]],
   ['reference_7',['Reference',['../index.xhtml#reference',1,'']]],
   ['reference_8',['reference',['../structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a0faab02ca1139a373c2844ebad32676e',1,'fcarouge::test::anonymous_namespace{differential.cpp}::differential']]],
@@ -22,8 +22,9 @@ var searchData=
   ['rhs_19',['rhs',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
   ['roadmap_20vision_20',['Roadmap &amp; Vision',['../index.xhtml#roadmap--vision',1,'']]],
   ['row_21',['row',['../structfcarouge_1_1sparse_1_1position.xhtml#a2f137f965485309957277d8c4b34eeb8',1,'fcarouge::sparse::position::row'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a534d149bbde48729eacd8b7a1384d18c',1,'fcarouge::test::anonymous_namespace{access.cpp}::row']]],
-  ['rows_22',['rows',['../structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f',1,'fcarouge::sparse::pattern']]],
-  ['run_23',['Development Build &amp; Run',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run',1,'']]],
-  ['run_5ftime_2ecpp_24',['run_time.cpp',['../run__time_8cpp.xhtml',1,'']]],
-  ['run_5ftime_5findex_5ffail_2ecpp_25',['run_time_index_fail.cpp',['../run__time__index__fail_8cpp.xhtml',1,'']]]
+  ['row_5fcount_22',['row_count',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['rows_23',['rows',['../structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f',1,'fcarouge::sparse::pattern']]],
+  ['run_24',['Development Build &amp; Run',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run',1,'']]],
+  ['run_5ftime_2ecpp_25',['run_time.cpp',['../run__time_8cpp.xhtml',1,'']]],
+  ['run_5ftime_5findex_5ffail_2ecpp_26',['run_time_index_fail.cpp',['../run__time__index__fail_8cpp.xhtml',1,'']]]
 ];

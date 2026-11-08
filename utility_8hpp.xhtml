@@ -118,12 +118,13 @@ $(function(){initNavTree('utility_8hpp.xhtml',''); initResizable(true); });
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for utility.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="utility_8hpp__incl.svg" width="540" height="318"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="utility_8hpp__incl.svg" width="615" height="318"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -156,6 +157,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1ef27b2f10a7918a5943a6b05047dbbe" id="r_a1ef27b2f10a7918a5943a6b05047dbbe"><td class="memTemplParams" colspan="2">template&lt;typename Type , std::size_t Count, typename Value &gt; </td></tr>
+<tr class="memitem:a1ef27b2f10a7918a5943a6b05047dbbe"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a1ef27b2f10a7918a5943a6b05047dbbe">fcarouge::sparse_linear_algebra::internal::store_given</a> (std::array&lt; Type, Count &gt; &amp;stored, std::size_t &amp;index, const Value &amp;value)</td></tr>
+<tr class="memdesc:a1ef27b2f10a7918a5943a6b05047dbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a given value into the next stored element, unless it is a structural zero: the stored elements are the given values in row-major order.  <br /></td></tr>
+<tr class="separator:a1ef27b2f10a7918a5943a6b05047dbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e51e1ea038d8ce18439571d3dc6c40c" id="r_a9e51e1ea038d8ce18439571d3dc6c40c"><td class="memTemplParams" colspan="2">template&lt;typename Type , std::size_t Count, std::size_t RowCount&gt; </td></tr>
+<tr class="memitem:a9e51e1ea038d8ce18439571d3dc6c40c"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9e51e1ea038d8ce18439571d3dc6c40c">fcarouge::sparse_linear_algebra::internal::append_row</a> (std::array&lt; Type, Count &gt; &amp;stored, std::size_t &amp;index, const std::array&lt; Type, RowCount &gt; &amp;elements)</td></tr>
+<tr class="memdesc:a9e51e1ea038d8ce18439571d3dc6c40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the stored elements of a row to the stored elements of a matrix.  <br /></td></tr>
+<tr class="separator:a9e51e1ea038d8ce18439571d3dc6c40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1097908a93a1910a5b93197def52dfe8" id="r_a1097908a93a1910a5b93197def52dfe8"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns, auto List&gt; </td></tr>
 <tr class="memitem:a1097908a93a1910a5b93197def52dfe8"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a1097908a93a1910a5b93197def52dfe8">fcarouge::sparse_linear_algebra::internal::to_pattern</a> () -&gt; <a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>&lt; Rows, Columns, List.size &gt;</td></tr>
 <tr class="memdesc:a1097908a93a1910a5b93197def52dfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pattern of the positions of a list.  <br /></td></tr>
@@ -194,6 +203,32 @@ Variables</h2></td></tr>
 <tr class="memitem:a57f3af2e66fea7ebfc78fe3d8796c85f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a57f3af2e66fea7ebfc78fe3d8796c85f">fcarouge::sparse_linear_algebra::internal::is_dense</a> {Pattern.count == Pattern.rows * Pattern.columns}</td></tr>
 <tr class="memdesc:a57f3af2e66fea7ebfc78fe3d8796c85f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern stores every position: a pattern without a structural zero.  <br /></td></tr>
 <tr class="separator:a57f3af2e66fea7ebfc78fe3d8796c85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ae2e88187b445423e25870823e64b6" id="r_a62ae2e88187b445423e25870823e64b6"><td class="memTemplParams" colspan="2">template&lt;char... Characters&gt; </td></tr>
+<tr class="memitem:a62ae2e88187b445423e25870823e64b6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6">fcarouge::sparse_linear_algebra::internal::is_zero_literal</a></td></tr>
+<tr class="memdesc:a62ae2e88187b445423e25870823e64b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the characters of a literal spell a zero: zero digits, at least one, and at most one decimal point.  <br /></td></tr>
+<tr class="separator:a62ae2e88187b445423e25870823e64b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c867de958aff6b24ced8b9fe3bf0899" id="r_a3c867de958aff6b24ced8b9fe3bf0899"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename Type , auto Pattern, std::size_t Position, bool Stored = Pattern.stores(Position / Pattern.columns,                                       Position % Pattern.columns)&gt; </td></tr>
+<tr class="memitem:a3c867de958aff6b24ced8b9fe3bf0899"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a3c867de958aff6b24ced8b9fe3bf0899">fcarouge::sparse_linear_algebra::internal::is_given_at</a> {std::same_as&lt;Value, Type&gt;}</td></tr>
+<tr class="memdesc:a3c867de958aff6b24ced8b9fe3bf0899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a value may be given at a linear position of a pattern: a structural zero only takes the <code>_o</code> literal, a stored element only takes a value of exactly the element type.  <br /></td></tr>
+<tr class="separator:a3c867de958aff6b24ced8b9fe3bf0899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840d62cf8ac8aa39d3bf80e3ac6e9f89" id="r_a840d62cf8ac8aa39d3bf80e3ac6e9f89"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename Type , auto Pattern, std::size_t Position&gt; </td></tr>
+<tr class="memitem:a840d62cf8ac8aa39d3bf80e3ac6e9f89"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a840d62cf8ac8aa39d3bf80e3ac6e9f89">fcarouge::sparse_linear_algebra::internal::is_given_at&lt; Value, Type, Pattern, Position, false &gt;</a></td></tr>
+<tr class="separator:a840d62cf8ac8aa39d3bf80e3ac6e9f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0878a4c2d1f8703b90d307f693bb3f" id="r_a8c0878a4c2d1f8703b90d307f693bb3f"><td class="memTemplParams" colspan="2">template&lt;typename Type , auto Pattern, std::size_t Row, typename Columns , typename... Values&gt; </td></tr>
+<tr class="memitem:a8c0878a4c2d1f8703b90d307f693bb3f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f">fcarouge::sparse_linear_algebra::internal::are_given_in_row_at</a> {false}</td></tr>
+<tr class="separator:a8c0878a4c2d1f8703b90d307f693bb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2ef5fd4323622e5ef3575f073df4e2" id="r_a7c2ef5fd4323622e5ef3575f073df4e2"><td class="memTemplParams" colspan="2">template&lt;typename Type , auto Pattern, std::size_t Row, typename... Values&gt; </td></tr>
+<tr class="memitem:a7c2ef5fd4323622e5ef3575f073df4e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2">fcarouge::sparse_linear_algebra::internal::are_given_in_row</a></td></tr>
+<tr class="memdesc:a7c2ef5fd4323622e5ef3575f073df4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the values may be given at every column of a row of a pattern, in order.  <br /></td></tr>
+<tr class="separator:a7c2ef5fd4323622e5ef3575f073df4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a46880afae74b629f68a0b90d0ef919" id="r_a2a46880afae74b629f68a0b90d0ef919"><td class="memTemplParams" colspan="2">template&lt;auto Pattern, std::size_t Row&gt; </td></tr>
+<tr class="memitem:a2a46880afae74b629f68a0b90d0ef919"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a2a46880afae74b629f68a0b90d0ef919">fcarouge::sparse_linear_algebra::internal::stored_in_row</a></td></tr>
+<tr class="memdesc:a2a46880afae74b629f68a0b90d0ef919"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of stored elements of a row of a pattern.  <br /></td></tr>
+<tr class="separator:a2a46880afae74b629f68a0b90d0ef919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433b211012e809ad37ff6b444f78dab1" id="r_a433b211012e809ad37ff6b444f78dab1"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a433b211012e809ad37ff6b444f78dab1"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1">fcarouge::sparse_linear_algebra::internal::row_count</a> {Pattern.rows}</td></tr>
+<tr class="memdesc:a433b211012e809ad37ff6b444f78dab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of rows of a pattern.  <br /></td></tr>
+<tr class="separator:a433b211012e809ad37ff6b444f78dab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f4a5decbaefce9fa0a03326c7ea3a4" id="r_a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
 <tr class="memitem:a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4">fcarouge::sparse_linear_algebra::internal::term_count</a></td></tr>
 <tr class="memdesc:a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of elementary products of a matrix product.  <br /></td></tr>
