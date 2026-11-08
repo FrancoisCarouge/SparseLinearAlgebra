@@ -39,16 +39,17 @@ namespace fcarouge::test {
 namespace {
 //! @test Verifies the compile-time square root reaches the exact root of a
 //! perfect square, and the identity on zero and one.
-static_assert(sla::square_root(0.) == 0.);
-static_assert(sla::square_root(1.) == 1.);
-static_assert(sla::square_root(0.25) == 0.5);
-static_assert(sla::square_root(144.) == 12.);
-static_assert(sla::square_root(1e10) == 1e5);
-static_assert(sla::square_root(0.25F) == 0.5F);
+static_assert(sparse_linear_algebra::internal::square_root(0.) == 0.);
+static_assert(sparse_linear_algebra::internal::square_root(1.) == 1.);
+static_assert(sparse_linear_algebra::internal::square_root(0.25) == 0.5);
+static_assert(sparse_linear_algebra::internal::square_root(144.) == 12.);
+static_assert(sparse_linear_algebra::internal::square_root(1e10) == 1e5);
+static_assert(sparse_linear_algebra::internal::square_root(0.25F) == 0.5F);
 
 //! @test Verifies the compile-time square root of an infinite or a
 //! not-a-number value, as `std::sqrt`'s.
-static_assert(sla::square_root(std::numeric_limits<double>::infinity()) ==
+static_assert(sparse_linear_algebra::internal::square_root(
+                  std::numeric_limits<double>::infinity()) ==
               std::numeric_limits<double>::infinity());
 
 // A not-a-number value is recognized by its encoding, all exponent bits set
@@ -57,8 +58,9 @@ static_assert(sla::square_root(std::numeric_limits<double>::infinity()) ==
 // expression.
 inline constexpr std::uint64_t exponent{0x7FF0'0000'0000'0000};
 inline constexpr std::uint64_t significand{0x000F'FFFF'FFFF'FFFF};
-inline constexpr std::uint64_t not_a_number_root{std::bit_cast<std::uint64_t>(
-    sla::square_root(std::numeric_limits<double>::quiet_NaN()))};
+inline constexpr std::uint64_t not_a_number_root{
+    std::bit_cast<std::uint64_t>(sparse_linear_algebra::internal::square_root(
+        std::numeric_limits<double>::quiet_NaN()))};
 
 static_assert((not_a_number_root & exponent) == exponent);
 static_assert((not_a_number_root & significand) != 0);

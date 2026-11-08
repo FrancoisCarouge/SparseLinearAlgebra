@@ -65,7 +65,9 @@ template <typename Type, sparse::sparsity_pattern auto Lhs,
 [[nodiscard]] constexpr auto operator-(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
-  return sla::combine(lhs, rhs, sla::difference<Type>, sla::negation<Type>);
+  return sparse_linear_algebra::internal::combine(
+      lhs, rhs, sparse_linear_algebra::internal::difference<Type>,
+      sparse_linear_algebra::internal::negation<Type>);
 }
 } // namespace fcarouge
 

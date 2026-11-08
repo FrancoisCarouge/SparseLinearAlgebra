@@ -52,7 +52,8 @@ template <typename Type, sparse::sparsity_pattern auto Lhs,
                                  const sparse_matrix<Type, Rhs> &rhs) -> Type {
   Type result{};
 
-  for (const sla::term &element : sla::dot_terms<Lhs, Rhs>) {
+  for (const sparse_linear_algebra::internal::term &element :
+       sparse_linear_algebra::internal::dot_terms<Lhs, Rhs>) {
     result += lhs.values[element.lhs] * rhs.values[element.rhs];
   }
 

@@ -50,16 +50,17 @@ namespace fcarouge::sparse {
 //! of a sum or a difference.
 template <sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
-inline constexpr auto pattern_union{
-    sla::to_pattern<Lhs.rows, Lhs.columns,
-                    sla::merge_positions<Lhs, Rhs, true>()>()};
+inline constexpr auto pattern_union{sparse_linear_algebra::internal::to_pattern<
+    Lhs.rows, Lhs.columns,
+    sparse_linear_algebra::internal::merge_positions<Lhs, Rhs, true>()>()};
 
 //! @brief The positions stored by both patterns of the same shape.
 template <sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 inline constexpr auto pattern_intersection{
-    sla::to_pattern<Lhs.rows, Lhs.columns,
-                    sla::merge_positions<Lhs, Rhs, false>()>()};
+    sparse_linear_algebra::internal::to_pattern<
+        Lhs.rows, Lhs.columns,
+        sparse_linear_algebra::internal::merge_positions<Lhs, Rhs, false>()>()};
 
 //! @brief The transposed pattern.
 //!
@@ -88,7 +89,8 @@ inline constexpr auto pattern_transpose{[] {
 //! positions of the result: several products may reach one position.
 template <sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
-inline constexpr std::size_t product_term_count{sla::term_count<Lhs, Rhs>};
+inline constexpr std::size_t product_term_count{
+    sparse_linear_algebra::internal::term_count<Lhs, Rhs>};
 
 //! @brief The structural pattern of a matrix product.
 //!
@@ -97,8 +99,9 @@ inline constexpr std::size_t product_term_count{sla::term_count<Lhs, Rhs>};
 template <sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.columns == Rhs.rows)
 inline constexpr auto pattern_product{
-    sla::to_pattern<Lhs.rows, Rhs.columns,
-                    sla::product_positions<Lhs, Rhs>()>()};
+    sparse_linear_algebra::internal::to_pattern<
+        Lhs.rows, Rhs.columns,
+        sparse_linear_algebra::internal::product_positions<Lhs, Rhs>()>()};
 
 //! @brief Whether a pattern stores every position of another, of the same
 //! shape.

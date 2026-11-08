@@ -55,7 +55,8 @@ matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   Type result{};
 
   for (std::size_t i{0}; i < Pattern.count; ++i) {
-    sums[Pattern.positions[i].column] += sla::absolute(value.values[i]);
+    sums[Pattern.positions[i].column] +=
+        sparse_linear_algebra::internal::absolute(value.values[i]);
   }
 
   for (const Type &sum : sums) {

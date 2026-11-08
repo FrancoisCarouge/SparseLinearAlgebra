@@ -60,7 +60,8 @@ template <auto Other>
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
     const sparse_matrix<Type, Other> &other) {
   for (std::size_t i{0}; i < Pattern.count; ++i) {
-    const std::size_t index{sla::projection<Other, Pattern>[i]};
+    const std::size_t index{
+        sparse_linear_algebra::internal::projection<Other, Pattern>[i]};
 
     if (index != sparse::absent) {
       values[i] = other.values[index];
@@ -83,7 +84,7 @@ template <typename Type, auto Pattern>
 constexpr auto sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                                         std::size_t column)
     -> Type &
-  requires sla::is_dense<Pattern>
+  requires sparse_linear_algebra::internal::is_dense<Pattern>
 {
   return values[(row * Pattern.columns) + column];
 }
