@@ -75,6 +75,9 @@ inline constexpr auto scaled{lhs * 2.};
 static_assert(scaled.at<1, 1>() == 6.);
 static_assert((2. * lhs).at<2, 2>() == 8.);
 static_assert((lhs / 2.).at<2, 2>() == 2.);
+static_assert((rhs / lhs).at<0, 0>() == 0.5);
+static_assert((rhs / lhs).at<2, 2>() == 1.75);
+static_assert((rhs / lhs).at<0, 2>() == 0.);
 static_assert(sum == rhs + lhs);
 
 inline constexpr pattern rectangular_pattern{shape<2, 3>, {{0, 2}, {1, 0}}};

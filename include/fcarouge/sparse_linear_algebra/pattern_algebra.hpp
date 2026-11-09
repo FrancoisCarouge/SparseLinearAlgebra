@@ -89,6 +89,34 @@ inline constexpr auto pattern_product{
         Lhs.rows, Rhs.columns,
         sparse_linear_algebra::internal::product_positions<Lhs, Rhs>()>()};
 
+//! @brief The structural rank of a pattern: the largest count of its positions
+//! no two of which share a row or a column.
+//!
+//! @details The rank of a matrix is at most the structural rank of its
+//! pattern, and equal to it for almost every value of its stored elements. A
+//! square matrix of a pattern of a structural rank below its size is singular,
+//! whatever the values of its stored elements.
+template <sparsity_pattern auto Pattern>
+inline constexpr std::size_t structural_rank{
+    sparse_linear_algebra::internal::maximum_matching<Pattern>().size};
+
+//! @brief The structural pattern of a matrix division, the quotient `x` of
+//! `x * rhs = lhs`, by a square denominator of full structural rank.
+//!
+//! @details A position is stored whenever the solution reaches it from a stored
+//! element of the numerator: a diagonal denominator keeps the numerator's
+//! pattern, a triangular one closes it along its substitution, and an
+//! irreducible diagonal block of the denominator's block triangular form fills
+//! every row of the numerator it reaches. A position is stored even if its
+//! value cancels out at run time.
+template <sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
+  requires(Rhs.rows == Rhs.columns and Lhs.columns == Rhs.rows and
+           structural_rank<Rhs> == Rhs.rows)
+inline constexpr auto pattern_quotient{
+    sparse_linear_algebra::internal::to_pattern<
+        Lhs.rows, Rhs.columns,
+        sparse_linear_algebra::internal::quotient_positions<Lhs, Rhs>()>()};
+
 //! @brief Whether a pattern stores every position of another, of the same
 //! shape.
 template <sparsity_pattern auto Inner, sparsity_pattern auto Outer>

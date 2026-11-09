@@ -98,6 +98,17 @@ static_assert(std::same_as<decltype(2. * matrix<tridiagonal<3>>{}),
 static_assert(std::same_as<decltype(matrix<tridiagonal<3>>{} / 2.),
                            matrix<tridiagonal<3>>>);
 
+//! @test Verifies the division by a matrix stores the structural quotient.
+static_assert(
+    std::same_as<decltype(matrix<tridiagonal<3>>{} / matrix<diagonal<3>>{}),
+                 matrix<tridiagonal<3>>>);
+static_assert(std::same_as<decltype(matrix<diagonal<3>>{} /
+                                    matrix<lower_triangular<3>>{}),
+                           matrix<lower_triangular<3>>>);
+static_assert(
+    std::same_as<decltype(matrix<diagonal<3>>{} / matrix<tridiagonal<3>>{}),
+                 matrix<dense<3, 3>>>);
+
 //! @test Verifies a matrix-vector product is sparse when the factors are.
 static_assert(
     std::same_as<decltype(matrix<diagonal<3>>{} * matrix<first_element>{}),

@@ -88,5 +88,21 @@ static_assert(std::same_as<decltype(identity * square),
                            sparse_matrix<double, decltype(square)::structure>>);
 static_assert(identity * square == square);
 static_assert(square * identity == square);
+
+//! @test Verifies the division at that scale: a diagonal denominator keeps the
+//! numerator's pattern, and the structural rank of a tridiagonal pattern is
+//! full.
+static_assert(sparse::structural_rank<wide> == size);
+static_assert(sparse::pattern_quotient<wide, sparse::diagonal<size>> == wide);
+static_assert(square / identity == square);
+
+//! @test Verifies the plan of a division by an irreducible denominator, of a
+//! dense quotient, at the scale of its verified limit.
+inline constexpr std::size_t irreducible{48};
+
+static_assert(sparse_linear_algebra::internal::division_plan<
+                  sparse::diagonal<irreducible>,
+                  sparse::tridiagonal<irreducible>>.filled.stores ==
+              irreducible * irreducible);
 } // namespace
 } // namespace fcarouge::test

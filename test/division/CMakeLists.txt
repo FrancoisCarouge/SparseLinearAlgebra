@@ -29,5 +29,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org> ]]
 
-fail("matrix_fail")
+fail("singular_fail")
+fail("size_fail")
+fail("square_fail")
+pass("matrix")
 pass("scalar")

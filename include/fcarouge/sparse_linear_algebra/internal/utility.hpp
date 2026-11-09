@@ -400,6 +400,333 @@ inline constexpr auto dot_terms{[] {
   return result;
 }()};
 
+//! @brief A maximum matching of the rows and the columns of a pattern: the row
+//! matched to each column, or `absent`, and the count of matched pairs.
+template <std::size_t Columns> struct matching {
+  std::array<std::size_t, Columns> row{};
+  std::size_t size{0};
+};
+
+//! @brief Match a row to a column, by an augmenting path: a breadth-first
+//! search of the columns reachable from the row through the rows of the columns
+//! already matched, until a column not matched, then the reassignment of the
+//! columns of the path, each to the row it was reached from.
+template <auto Pattern>
+[[nodiscard]] consteval auto augment(std::size_t start,
+                                     matching<Pattern.columns> &matched)
+    -> bool {
+  std::array<bool, Pattern.columns> visited{};
+  std::array<std::size_t, Pattern.columns> previous{};
+  std::array<std::size_t, Pattern.columns> queue{};
+  std::size_t head{0};
+  std::size_t tail{0};
+  std::size_t row{start};
+  std::size_t from{sparse::absent};
+
+  while (row != sparse::absent) {
+    const std::size_t end{Pattern.lower_bound({row + 1, 0})};
+
+    for (std::size_t i{Pattern.lower_bound({row, 0})}; i < end; ++i) {
+      const std::size_t column{Pattern.positions[i].column};
+
+      if (not visited[column]) {
+        visited[column] = true;
+        previous[column] = from;
+
+        if (matched.row[column] == sparse::absent) {
+          for (std::size_t current{column}; current != sparse::absent;
+               current = previous[current]) {
+            matched.row[current] = previous[current] == sparse::absent
+                                       ? start
+                                       : matched.row[previous[current]];
+          }
+
+          return true;
+        }
+
+        queue[tail] = column;
+        ++tail;
+      }
+    }
+
+    row = sparse::absent;
+
+    if (head < tail) {
+      from = queue[head];
+      row = matched.row[from];
+      ++head;
+    }
+  }
+
+  return false;
+}
+
+//! @brief A maximum matching of the rows and the columns of a pattern.
+//!
+//! @details The stored diagonal positions are matched first, so that a pattern
+//! storing its diagonal keeps it, then each row left is matched by an
+//! augmenting path.
+template <auto Pattern>
+[[nodiscard]] consteval auto maximum_matching() -> matching<Pattern.columns> {
+  matching<Pattern.columns> result{};
+  std::array<bool, Pattern.rows> placed{};
+
+  for (std::size_t column{0}; column < Pattern.columns; ++column) {
+    result.row[column] = sparse::absent;
+  }
+
+  for (std::size_t row{0}; row < Pattern.rows; ++row) {
+    if (row < Pattern.columns && Pattern.stores(row, row)) {
+      result.row[row] = row;
+      placed[row] = true;
+      ++result.size;
+    }
+  }
+
+  for (std::size_t row{0}; row < Pattern.rows; ++row) {
+    if (not placed[row] && augment<Pattern>(row, result)) {
+      ++result.size;
+    }
+  }
+
+  return result;
+}
+
+//! @brief The block triangular form of the system `x * rhs = lhs`, of a square
+//! denominator of full structural rank, read as the system `rhsᵀ * xᵀ = lhsᵀ`
+//! of an equation per column of the denominator and an unknown per row.
+//!
+//! @details Each unknown is matched to an equation storing it, the diagonal of
+//! the permuted system. An unknown depends on the other unknowns its matched
+//! equation stores. The blocks are the strongly connected components of these
+//! dependencies, listed in the order of their solution: a block only depends
+//! on the blocks before it.
+template <std::size_t Size> struct block_triangular {
+  //! @brief The equation, the column of the denominator, of each unknown.
+  std::array<std::size_t, Size> equation{};
+
+  //! @brief The unknowns, block by block, in the order of their solution.
+  std::array<std::size_t, Size> order{};
+
+  //! @brief The index of each unknown in the order.
+  std::array<std::size_t, Size> rank{};
+
+  //! @brief The block of each unknown.
+  std::array<std::size_t, Size> block{};
+
+  //! @brief The index in the order of the first unknown of each block, and the
+  //! end of the last block.
+  std::array<std::size_t, Size + 1> begin{};
+
+  //! @brief The count of blocks.
+  std::size_t blocks{0};
+};
+
+//! @brief The state of the search for the strongly connected components of the
+//! dependencies of the unknowns: Tarjan's algorithm.
+template <std::size_t Size> struct component_search {
+  std::array<std::size_t, Size> index{};
+  std::array<std::size_t, Size> lowest{};
+  std::array<bool, Size> stacked{};
+  std::array<std::size_t, Size> stack{};
+  std::size_t stack_size{0};
+  std::size_t visits{0};
+  std::size_t ordered{0};
+};
+
+//! @brief Number an unknown in the order of its visit, and stack it.
+template <std::size_t Size>
+consteval void enter_component(std::size_t unknown,
+                               component_search<Size> &search) {
+  ++search.visits;
+  search.index[unknown] = search.visits;
+  search.lowest[unknown] = search.visits;
+  search.stack[search.stack_size] = unknown;
+  ++search.stack_size;
+  search.stacked[unknown] = true;
+}
+
+//! @brief Close the block of an unknown, the first visited of its block: its
+//! unknowns are the stacked ones down to it, ordered ascending.
+template <std::size_t Size>
+consteval void close_component(std::size_t unknown,
+                               component_search<Size> &search,
+                               block_triangular<Size> &result) {
+  const std::size_t first{search.ordered};
+  std::size_t member{sparse::absent};
+
+  result.begin[result.blocks] = first;
+
+  while (member != unknown) {
+    --search.stack_size;
+    member = search.stack[search.stack_size];
+    search.stacked[member] = false;
+    result.order[search.ordered] = member;
+    result.block[member] = result.blocks;
+    ++search.ordered;
+  }
+
+  // The unknowns of a block in ascending order: the elimination of a block
+  // follows the order of the system.
+  for (std::size_t i{first + 1}; i < search.ordered; ++i) {
+    const std::size_t moved{result.order[i]};
+    std::size_t j{i};
+
+    while (j > first && result.order[j - 1] > moved) {
+      result.order[j] = result.order[j - 1];
+      --j;
+    }
+
+    result.order[j] = moved;
+  }
+
+  for (std::size_t i{first}; i < search.ordered; ++i) {
+    result.rank[result.order[i]] = i;
+  }
+
+  ++result.blocks;
+  result.begin[result.blocks] = search.ordered;
+}
+
+//! @brief Visit an unknown and its dependencies, the columns of the transposed
+//! denominator its matched equation stores, depth first, closing a block at
+//! its first visited unknown once its dependencies are closed.
+//!
+//! @details The depth-first search keeps its own stack of the unknowns being
+//! visited, and of the next dependency of each, rather than recursing.
+template <auto Transposed>
+consteval void visit_component(std::size_t root,
+                               component_search<Transposed.rows> &search,
+                               block_triangular<Transposed.rows> &result) {
+  std::array<std::size_t, Transposed.rows> visiting{};
+  std::array<std::size_t, Transposed.rows> next{};
+  std::size_t depth{1};
+
+  enter_component(root, search);
+  visiting[0] = root;
+  next[0] = Transposed.lower_bound({result.equation[root], 0});
+
+  while (depth > 0) {
+    const std::size_t unknown{visiting[depth - 1]};
+    const std::size_t end{
+        Transposed.lower_bound({result.equation[unknown] + 1, 0})};
+
+    if (next[depth - 1] < end) {
+      const std::size_t dependency{
+          Transposed.positions[next[depth - 1]].column};
+
+      ++next[depth - 1];
+
+      if (search.index[dependency] == 0) {
+        enter_component(dependency, search);
+        visiting[depth] = dependency;
+        next[depth] = Transposed.lower_bound({result.equation[dependency], 0});
+        ++depth;
+      } else if (search.stacked[dependency] &&
+                 search.index[dependency] < search.lowest[unknown]) {
+        search.lowest[unknown] = search.index[dependency];
+      }
+    } else {
+      if (search.lowest[unknown] == search.index[unknown]) {
+        close_component(unknown, search, result);
+      }
+
+      --depth;
+
+      if (depth > 0 &&
+          search.lowest[unknown] < search.lowest[visiting[depth - 1]]) {
+        search.lowest[visiting[depth - 1]] = search.lowest[unknown];
+      }
+    }
+  }
+}
+
+//! @brief The block triangular form of the division by a square matrix of the
+//! pattern, of full structural rank.
+template <auto Pattern>
+inline constexpr auto block_triangular_form{[] consteval {
+  constexpr auto transposed{to_pattern<Pattern.columns, Pattern.rows,
+                                       transpose_positions<Pattern>()>()};
+  constexpr auto matched{maximum_matching<Pattern>()};
+  block_triangular<Pattern.rows> result{};
+  component_search<Pattern.rows> search{};
+
+  for (std::size_t column{0}; column < Pattern.columns; ++column) {
+    result.equation[matched.row[column]] = column;
+  }
+
+  for (std::size_t unknown{0}; unknown < Pattern.rows; ++unknown) {
+    if (search.index[unknown] == 0) {
+      visit_component<transposed>(unknown, search, result);
+    }
+  }
+
+  return result;
+}()};
+
+//! @brief The rows of the quotient `x` of `x * rhs = lhs` storing each of its
+//! columns, the unknowns.
+//!
+//! @details An unknown is reached from the columns of the numerator its matched
+//! equation stores, and from the unknowns it depends on. The unknowns of a
+//! block depend on each other: they are reached alike.
+template <auto Lhs, auto Rhs>
+inline constexpr auto quotient_reach{[] {
+  constexpr auto form{block_triangular_form<Rhs>};
+  constexpr auto transposed{
+      to_pattern<Rhs.columns, Rhs.rows, transpose_positions<Rhs>()>()};
+  constexpr auto lhs_transposed{
+      to_pattern<Lhs.columns, Lhs.rows, transpose_positions<Lhs>()>()};
+  std::array<std::array<bool, Lhs.rows>, Rhs.rows> result{};
+
+  for (std::size_t block{0}; block < form.blocks; ++block) {
+    std::array<bool, Lhs.rows> reached{};
+
+    for (std::size_t k{form.begin[block]}; k < form.begin[block + 1]; ++k) {
+      const std::size_t equation{form.equation[form.order[k]]};
+      const std::size_t lhs_end{lhs_transposed.lower_bound({equation + 1, 0})};
+      const std::size_t end{transposed.lower_bound({equation + 1, 0})};
+
+      for (std::size_t i{lhs_transposed.lower_bound({equation, 0})};
+           i < lhs_end; ++i) {
+        reached[lhs_transposed.positions[i].column] = true;
+      }
+
+      for (std::size_t i{transposed.lower_bound({equation, 0})}; i < end; ++i) {
+        const std::size_t dependency{transposed.positions[i].column};
+
+        for (std::size_t row{0}; row < Lhs.rows; ++row) {
+          reached[row] = reached[row] || result[dependency][row];
+        }
+      }
+    }
+
+    for (std::size_t k{form.begin[block]}; k < form.begin[block + 1]; ++k) {
+      result[form.order[k]] = reached;
+    }
+  }
+
+  return result;
+}()};
+
+//! @brief The positions of the quotient `x` of `x * rhs = lhs`, in ascending
+//! order.
+template <auto Lhs, auto Rhs>
+[[nodiscard]] consteval auto quotient_positions() {
+  constexpr auto reached{quotient_reach<Lhs, Rhs>};
+  position_list<Lhs.rows * Rhs.columns> list;
+
+  for (std::size_t row{0}; row < Lhs.rows; ++row) {
+    for (std::size_t column{0}; column < Rhs.columns; ++column) {
+      if (reached[column][row]) {
+        list.push({row, column});
+      }
+    }
+  }
+
+  return list;
+}
+
 //! @brief The absolute value, without a hosted implementation.
 template <typename Type>
 [[nodiscard]] constexpr auto absolute(const Type &value) -> Type {
