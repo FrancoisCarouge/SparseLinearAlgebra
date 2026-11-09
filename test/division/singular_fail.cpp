@@ -35,16 +35,23 @@ For more information, please refer to <https://unlicense.org> */
 
 namespace fcarouge::test {
 namespace {
-//! @test Verifies a matrix division does not compile yet: it needs a solver, a
-//! factorization.
+using literals::operator""_o;
+
+//! @test Verifies a division by a denominator of a structural rank below its
+//! size does not compile: it is singular whatever its values.
 [[maybe_unused]] const auto test{[] -> int {
+  constexpr sparse::pattern first_column{sparse::shape<2, 2>, {{0, 0}, {1, 0}}};
+
   const sparse_matrix<double, sparse::diagonal<2>> lhs{1., 1.};
+  const sparse_matrix<double, sparse::diagonal<2>> regular{1., 1.};
+  const sparse_matrix<double, first_column> singular{{1., 0_o}, {1., 0_o}};
 
   // Intended:
-  // const auto divided{lhs / 2.};
-  const auto divided{lhs / lhs};
+  // const auto divided{lhs / regular};
+  const auto divided{lhs / singular};
 
   assert((divided.at<0, 0>() == 1.));
+  assert((regular.at<0, 0>() == 1.));
 
   return 0;
 }()};

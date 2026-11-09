@@ -121,5 +121,59 @@ static_assert(not sparse::is_subset_of<tridiagonal<3>, diagonal<3>>);
 static_assert(sparse::is_subset_of<sparse::zero<3, 3>, diagonal<3>>);
 static_assert(sparse::is_subset_of<diagonal<3>, diagonal<3>>);
 static_assert(not sparse::is_subset_of<diagonal<3>, diagonal<2>>);
+
+//! @test Verifies the structural rank, of square and rectangular patterns, and
+//! of a pattern whose matching reassigns a row to reach its maximum.
+inline constexpr pattern reassigned{shape<2, 2>, {{0, 0}, {0, 1}, {1, 0}}};
+inline constexpr pattern anti_diagonal{shape<3, 3>, {{0, 2}, {1, 1}, {2, 0}}};
+
+static_assert(sparse::structural_rank<diagonal<4>> == 4);
+static_assert(sparse::structural_rank<sparse::dense<3, 2>> == 2);
+static_assert(sparse::structural_rank<sparse::dense<2, 3>> == 2);
+static_assert(sparse::structural_rank<sparse::zero<3, 3>> == 0);
+static_assert(sparse::structural_rank<first_row> == 1);
+static_assert(sparse::structural_rank<last_column> == 1);
+static_assert(sparse::structural_rank<reassigned> == 2);
+static_assert(sparse::structural_rank<pattern{
+                  shape<3, 3>, {{0, 0}, {0, 1}, {1, 1}, {1, 2}, {2, 0}}}> == 3);
+static_assert(sparse::structural_rank<anti_diagonal> == 3);
+static_assert(sparse::structural_rank<rectangular> == 2);
+
+//! @test Verifies the structural quotient: a diagonal denominator keeps the
+//! numerator's pattern, a triangular one closes it in the direction of its
+//! substitution, a block-diagonal one by blocks, and an irreducible one fills
+//! the rows it reaches.
+inline constexpr pattern first_of_row{shape<1, 3>, {{0, 0}}};
+inline constexpr pattern last_of_row{shape<1, 3>, {{0, 2}}};
+inline constexpr pattern blocks{shape<3, 3>,
+                                {{0, 0}, {0, 1}, {1, 0}, {1, 1}, {2, 2}}};
+
+static_assert(sparse::pattern_quotient<diagonal<3>, diagonal<3>> ==
+              diagonal<3>);
+static_assert(sparse::pattern_quotient<tridiagonal<3>, diagonal<3>> ==
+              tridiagonal<3>);
+static_assert(sparse::pattern_quotient<first_of_row, diagonal<3>> ==
+              first_of_row);
+static_assert(sparse::pattern_quotient<first_of_row, upper_triangular<3>> ==
+              sparse::dense<1, 3>);
+static_assert(sparse::pattern_quotient<first_of_row, lower_triangular<3>> ==
+              first_of_row);
+static_assert(sparse::pattern_quotient<last_of_row, lower_triangular<3>> ==
+              sparse::dense<1, 3>);
+static_assert(sparse::pattern_quotient<diagonal<3>, lower_triangular<3>> ==
+              lower_triangular<3>);
+static_assert(sparse::pattern_quotient<diagonal<3>, upper_triangular<3>> ==
+              upper_triangular<3>);
+static_assert(sparse::pattern_quotient<diagonal<3>, blocks> == blocks);
+static_assert(sparse::pattern_quotient<first_of_row, blocks> ==
+              pattern{shape<1, 3>, {{0, 0}, {0, 1}}});
+static_assert(sparse::pattern_quotient<diagonal<3>, tridiagonal<3>> ==
+              sparse::dense<3, 3>);
+static_assert(sparse::pattern_quotient<diagonal<3>, anti_diagonal> ==
+              anti_diagonal);
+static_assert(sparse::pattern_quotient<sparse::zero<2, 3>, tridiagonal<3>> ==
+              sparse::zero<2, 3>);
+static_assert(sparse::pattern_quotient<rectangular, diagonal<3>> ==
+              rectangular);
 } // namespace
 } // namespace fcarouge::test

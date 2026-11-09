@@ -202,6 +202,8 @@ The compile-time computations the operations derive their results with, each a v
 | `pattern_transpose<Pattern>` | The transposed pattern. |
 | `pattern_product<Lhs, Rhs>` | The structural pattern of a matrix product: a position is stored whenever a term reaches it. |
 | `product_term_count<Lhs, Rhs>` | The count of elementary products of a matrix product. |
+| `structural_rank<Pattern>` | The largest count of positions no two of which share a row or a column: a square matrix of a lower structural rank is singular, whatever its values. |
+| `pattern_quotient<Lhs, Rhs>` | The structural pattern of a matrix division, by a square denominator of full structural rank: a position is stored whenever the elimination of the denominator reaches it. |
 | `is_subset_of<Inner, Outer>` | Whether a pattern stores every position of another, of the same shape. |
 
 ### Structural Zero Literal
@@ -247,6 +249,7 @@ The operations below are supported, each as a function or an operator of the `fc
 | Unary `-` | The same pattern. | `O(K)`. |
 | `*`, of matrices and vectors | The structural product of the patterns. | `O(K + T)` of the result. |
 | `*`, `/`, by a scalar | The same pattern. | `O(K)`. |
+| `/`, of matrices, the quotient `x` of `x * rhs = lhs` | The structural quotient of the patterns, by a square denominator of full structural rank. | `O(K + T)` of the operands, the result, and the terms coupling the blocks of the denominator's block triangular form, plus `O(B³)` for each irreducible diagonal block of `B` unknowns, which is eliminated dense, with partial pivoting. A diagonal or a triangular denominator is a substitution. |
 | `==` | Not applicable. Compares every position of the same shape: a structural zero equals a stored zero. | `O(K log K)` of the union. |
 | `transposed` | The transposed pattern. Returns a matrix, not a view. | `O(K)`. |
 | `dot` | Not applicable. Returns an element. Vectors of the same size, of any orientation. | `O(K)`, of the elements stored by both vectors. |
@@ -259,7 +262,6 @@ The operations below are supported, each as a function or an operator of the `fc
 
 The following are not supported yet:
 
-- Matrix division, which needs a solver, a factorization.
 - The `std::linalg` out-parameter algorithms: `add`, `matrix_product`, `matrix_rank_1_update`, `matrix_vector_product`, and `scale`.
 
 ### Concepts
@@ -294,11 +296,12 @@ The library serves fixed-size computations whose structure is known at compile t
 
 - A pattern is structural: elements cancelling out at run time stay stored.
 - A structural zero stays an exact zero, for which no term exists. Unlike a dense computation, a non-finite operand does not propagate through it: `0 * infinity` is never computed, and is not a not-a-number value.
+- A matrix division eliminates each irreducible diagonal block of its denominator dense, with partial pivoting: within such a block, a structural zero takes part in the elimination as a zero. A block of a single unknown, every block of a diagonal or a triangular denominator, computes no structural zero.
 - A matrix converts implicitly to a pattern storing all of its positions, and never to a narrower one, which could lose an element. Matrices of different element types do not mix: a conversion must be decided by the user.
 - `sizeof` of a matrix with stored elements is that of its `std::array` of stored elements. A matrix of an empty pattern still occupies the storage of an empty `std::array`, which is not guaranteed to be nothing.
 - The library is freestanding. On GCC and Clang, the `sparse_linear_algebra_freestanding` target verifies it with `-ffreestanding -fno-exceptions -fno-rtti`, and the continuous integration cross-compiles it for a bare-metal Arm Cortex-M4.
 - At compile time, and on a freestanding implementation, the Frobenius norm uses its own square root, whose result is not guaranteed to be identical to the last digit to that of `std::sqrt`.
-- The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit.
+- The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.
 
 ### Roadmap & Vision
 
@@ -307,7 +310,7 @@ The library's patterns, pattern algebra, and matrix are stable in practice but n
 Toward version 1.0:
 
 - Integrate as a typed linear algebra backend, with strong element types.
-- Solve: triangular substitutions and factorizations, for the matrix division.
+- Solve: the determinant, and factorizations reused across divisions by the same matrix.
 - Interoperate with `std::mdspan` and the `std::linalg` out-parameter algorithms.
 - Compose block patterns from smaller patterns.
 - Lower the compile-time cost of large products.

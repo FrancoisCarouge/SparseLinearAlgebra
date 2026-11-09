@@ -33,7 +33,9 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <array>
 #include <cassert>
+#include <cmath>
 #include <cstddef>
+#include <utility>
 
 namespace fcarouge::test {
 namespace {
@@ -131,6 +133,119 @@ struct differential {
     }
   }
 
+  //! @brief An invertible denominator of the pattern: its stored diagonal
+  //! elements dominate.
+  template <auto Pattern>
+  [[nodiscard]] static constexpr auto fill_invertible()
+      -> sparse_matrix<double, Pattern> {
+    sparse_matrix<double, Pattern> result{fill<Pattern>(11.)};
+
+    for (std::size_t i{0}; i < Pattern.count; ++i) {
+      if (Pattern.positions.at(i).row == Pattern.positions.at(i).column) {
+        result.values.at(i) += 1000.;
+      }
+    }
+
+    return result;
+  }
+
+  //! @brief The quotient `x` of `x * rhs = lhs` by a textbook Gauss-Jordan
+  //! elimination with partial pivoting of the dense system `rhsᵀ * xᵀ = lhsᵀ`.
+  template <std::size_t Rows, std::size_t Size>
+  [[nodiscard]] static auto solve(const reference<Rows, Size> &lhs,
+                                  const reference<Size, Size> &rhs)
+      -> reference<Rows, Size> {
+    reference<Size, Size> system{};
+    reference<Size, Rows> solution{};
+
+    for (std::size_t row{0}; row < Size; ++row) {
+      for (std::size_t column{0}; column < Size; ++column) {
+        system.at(row).at(column) = rhs.at(column).at(row);
+      }
+
+      for (std::size_t column{0}; column < Rows; ++column) {
+        solution.at(row).at(column) = lhs.at(column).at(row);
+      }
+    }
+
+    for (std::size_t pivot{0}; pivot < Size; ++pivot) {
+      std::size_t largest{pivot};
+
+      for (std::size_t row{pivot + 1}; row < Size; ++row) {
+        if (std::abs(system.at(row).at(pivot)) >
+            std::abs(system.at(largest).at(pivot))) {
+          largest = row;
+        }
+      }
+
+      std::swap(system.at(pivot), system.at(largest));
+      std::swap(solution.at(pivot), solution.at(largest));
+
+      for (std::size_t row{0}; row < Size; ++row) {
+        if (row != pivot) {
+          const double factor{system.at(row).at(pivot) /
+                              system.at(pivot).at(pivot)};
+
+          for (std::size_t column{0}; column < Size; ++column) {
+            system.at(row).at(column) -= factor * system.at(pivot).at(column);
+          }
+
+          for (std::size_t column{0}; column < Rows; ++column) {
+            solution.at(row).at(column) -=
+                factor * solution.at(pivot).at(column);
+          }
+        }
+      }
+    }
+
+    reference<Rows, Size> result{};
+
+    for (std::size_t row{0}; row < Size; ++row) {
+      for (std::size_t column{0}; column < Rows; ++column) {
+        result.at(column).at(row) =
+            solution.at(row).at(column) / system.at(row).at(row);
+      }
+    }
+
+    return result;
+  }
+
+  //! @brief The division by a matrix, against the dense solution, and its
+  //! pattern storing every position the dense solution does not cancel.
+  template <auto Lhs, auto Rhs>
+    requires(Lhs.columns == Rhs.rows)
+  static void verify_quotient() {
+    const auto lhs{fill<Lhs>(3.)};
+    const auto rhs{fill_invertible<Rhs>()};
+    const auto quotient{lhs / rhs};
+    const auto values{to_reference(quotient)};
+    const auto expected{solve(to_reference(lhs), to_reference(rhs))};
+
+    for (std::size_t row{0}; row < Lhs.rows; ++row) {
+      for (std::size_t column{0}; column < Rhs.columns; ++column) {
+        [[maybe_unused]] const double value{values.at(row).at(column)};
+        [[maybe_unused]] const double reference_value{
+            expected.at(row).at(column)};
+
+        assert(std::abs(value - reference_value) <=
+               1e-12 * (1. + std::abs(reference_value)));
+        assert(decltype(quotient)::structure.stores(row, column) ||
+               std::abs(reference_value) <= 1e-12);
+      }
+    }
+  }
+
+  template <auto Lhs, auto... Denominators> static void verify_quotients_of() {
+    (verify_quotient<Lhs, Denominators>(), ...);
+  }
+
+  //! @brief The quotients of each numerator by every denominator.
+  template <auto... Denominators> struct quotients_by {
+    template <auto... Numerators> static void verify() {
+      (verify_quotients_of<Numerators, Denominators...>(), ...);
+    }
+  };
+
   //! @brief A matrix computes the same as a matrix without structural zeros.
   template <auto Lhs, auto Rhs> static constexpr void verify_dense() {
     using dense_matrix =
@@ -164,6 +279,8 @@ inline constexpr sparse::pattern arrow{sparse::shape<3, 3>, is_arrow};
 inline constexpr sparse::pattern anti_diagonal{sparse::shape<3, 3>,
                                                {{0, 2}, {1, 1}, {2, 0}}};
 inline constexpr sparse::pattern corner{sparse::shape<3, 3>, {{2, 2}}};
+inline constexpr sparse::pattern chained{
+    sparse::shape<3, 3>, {{0, 0}, {0, 1}, {1, 1}, {1, 2}, {2, 0}}};
 
 //! @test Verifies every pair of a subset of the patterns at compile time,
 //! within the compilers' constant evaluation limits.
@@ -194,6 +311,14 @@ static_assert([] -> bool {
       arrow, anti_diagonal, corner>();
 
   differential::verify_product<wide, tall>();
+
+  differential::quotients_by<
+      sparse::diagonal<3>, sparse::tridiagonal<3>, sparse::lower_triangular<3>,
+      sparse::upper_triangular<3>, sparse::dense<3, 3>, arrow, anti_diagonal,
+      chained>::verify<sparse::diagonal<3>, sparse::tridiagonal<3>,
+                       sparse::lower_triangular<3>, sparse::upper_triangular<3>,
+                       sparse::dense<3, 3>, sparse::zero<3, 3>, arrow,
+                       anti_diagonal, corner, tall>();
   differential::verify_product<wide, sparse::dense<4, 3>>();
   differential::verify_product<sparse::dense<2, 4>, tall>();
   differential::verify_product<wide, sparse::zero<4, 3>>();

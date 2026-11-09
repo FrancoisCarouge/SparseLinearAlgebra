@@ -72,6 +72,8 @@ namespace {
   const auto negated{-band};
   const auto scaled{band * 2.};
   const auto divided{band / 2.};
+  const auto quotient{band / scale_matrix};
+  const auto solved{scale_matrix / band};
   const auto mirrored{transposed(band)};
   const sparse_matrix<double, sparse::dense<3, 3>> widened{band};
 
@@ -81,6 +83,8 @@ namespace {
   assert((negated.at<0, 1>() == -2.));
   assert((scaled.at<0, 1>() == 4.));
   assert((divided.at<0, 1>() == 1.));
+  assert((quotient.at<1, 2>() == 1.25));
+  assert((solved.at<0, 0>() != 0.));
   assert((mirrored.at<0, 1>() == 3.));
   assert((widened == copy));
   assert(dot(column, column) == 25.);

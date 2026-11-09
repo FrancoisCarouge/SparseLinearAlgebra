@@ -53,6 +53,11 @@ static_assert((-band).at<0, 1>() == -2.);
 static_assert((band * band).at<1, 1>() == 52.);
 static_assert((2. * band).at<2, 2>() == 14.);
 static_assert((band / 2.).at<0, 1>() == 1.);
+static_assert((band / sparse_matrix<double, sparse::diagonal<3>>{2., 4., 0.5})
+                  .at<1, 2>() == 10.);
+static_assert((sparse_matrix<double, sparse::diagonal<3>>{1., 1., 1.} /
+               band_matrix{1., 1., 1., 2., 1., 1., 2.})
+                  .at<0, 0>() == 3.);
 static_assert(transposed(band).at<1, 0>() == 2.);
 static_assert(band == band_matrix{1., 2., 3., 4., 5., 6., 7.});
 static_assert(matrix_one_norm(band) == 12.);

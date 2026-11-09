@@ -70,6 +70,17 @@ namespace {
   assert((divided.at<0, 0>() == infinity));
   assert((divided.at<0, 1>() == 0.));
 
+  // Dividing by a matrix of blocks of a single unknown.
+  using dense_matrix = sparse_matrix<double, sparse::dense<2, 2>>;
+
+  const auto quotient{unbounded / value};
+  const auto dense_quotient{dense_matrix{unbounded} / dense_matrix{value}};
+
+  assert((quotient.at<0, 0>() == infinity));
+  assert((quotient.at<0, 1>() == 0.));
+  assert((quotient.at<1, 1>() == 0.5));
+  assert((dense_quotient.at<0, 1>() != dense_quotient.at<0, 1>()));
+
   // A product.
   const auto product{unbounded * value};
 
