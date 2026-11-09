@@ -126,32 +126,34 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{[] -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;&gt; lhs{1., 1.};</div>
+<div class="line">  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;4, 1&gt;&gt; lhs{1., 2., 3., 4.};</div>
+<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;</a>&gt; rhs{1., 4.};</div>
 <div class="line"> </div>
 <div class="line">  </div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> divided{lhs / lhs};</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span> product{<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, rhs)};</div>
 <div class="line"> </div>
-<div class="line">  assert((divided.at&lt;0, 0&gt;() == 1.));</div>
+<div class="line">  assert(product == 17.);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000035">Test</a></b></dt><dd>Verifies a matrix division does not compile yet: it needs a solver, a factorization. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000039">Test</a></b></dt><dd>Verifies the dot product rejects a matrix, even of a vector's count of elements. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="division_2matrix__fail_8cpp_source.xhtml#l00040">40</a> of file <a class="el" href="division_2matrix__fail_8cpp_source.xhtml">matrix_fail.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><span class="lineno">   41</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;</a>&gt; lhs{1., 1.};</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>  <span class="comment">// Intended:</span></div>
-<div class="line"><span class="lineno">   44</span>  <span class="comment">// const auto divided{lhs / 2.};</span></div>
-<div class="line"><span class="lineno">   45</span>  <span class="keyword">const</span> <span class="keyword">auto</span> divided{lhs / lhs};</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>  assert((divided.at&lt;0, 0&gt;() == 1.));</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   50</span>}()};</div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00068">sparse_linear_algebra_forward.hpp:68</a></div></div>
+<div class="ttc" id="anamespacefcarouge_xhtml_ae2a6bc01c911af73ac553f0e33ce3c7a"><div class="ttname"><a href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">fcarouge::dot</a></div><div class="ttdeci">constexpr auto dot(const sparse_matrix&lt; Type, Lhs &gt; &amp;lhs, const sparse_matrix&lt; Type, Rhs &gt; &amp;rhs) -&gt; Type</div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000043">Test</a></b></dt><dd>Verifies the dot product rejects a matrix, even of a vector's count of elements. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dot_2matrix__fail_8cpp_source.xhtml#l00040">40</a> of file <a class="el" href="dot_2matrix__fail_8cpp_source.xhtml">matrix_fail.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><span class="lineno">   41</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::dense&lt;4, 1&gt;</a>&gt; lhs{1., 2., 3., 4.};</div>
+<div class="line"><span class="lineno">   42</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;</a>&gt; rhs{1., 4.};</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>  <span class="comment">// Intended:</span></div>
+<div class="line"><span class="lineno">   45</span>  <span class="comment">// const double product{dot(lhs, lhs)};</span></div>
+<div class="line"><span class="lineno">   46</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> product{<a class="code hl_function" href="namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a">dot</a>(lhs, rhs)};</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>  assert(product == 17.);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   51</span>}()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -166,7 +168,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000074">Test</a></b></dt><dd>Verifies a matrix of another template argument than a pattern does not compile. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000079">Test</a></b></dt><dd>Verifies a matrix of another template argument than a pattern does not compile. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern_2matrix__fail_8cpp_source.xhtml#l00042">42</a> of file <a class="el" href="pattern_2matrix__fail_8cpp_source.xhtml">matrix_fail.cpp</a>.</p>
 

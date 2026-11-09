@@ -15,10 +15,12 @@ var namespacefcarouge_1_1sparse =
     [ "lower_triangular", "namespacefcarouge_1_1sparse.xhtml#a52bd13199f4466aafb2ef29c752d0fcc", null ],
     [ "pattern_intersection", "namespacefcarouge_1_1sparse.xhtml#ae153220d9e02570204d76dad34a8b116", null ],
     [ "pattern_product", "namespacefcarouge_1_1sparse.xhtml#a22a974884952de8722771dca7f79a808", null ],
+    [ "pattern_quotient", "namespacefcarouge_1_1sparse.xhtml#a51dcae7ae15de5fe60e3532356e5328d", null ],
     [ "pattern_transpose", "namespacefcarouge_1_1sparse.xhtml#a1de7628cd60f9cbae47157d68cae07ee", null ],
     [ "pattern_union", "namespacefcarouge_1_1sparse.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5", null ],
     [ "product_term_count", "namespacefcarouge_1_1sparse.xhtml#ae265894a6b75da2c60b4e84d92a53b8e", null ],
     [ "shape", "namespacefcarouge_1_1sparse.xhtml#afc86d359c92e4aed11bb24af084e9a13", null ],
+    [ "structural_rank", "namespacefcarouge_1_1sparse.xhtml#a73723800bf357be1ac9d16d3193b7eb7", null ],
     [ "tridiagonal", "namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690", null ],
     [ "upper_triangular", "namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40", null ],
     [ "zero", "namespacefcarouge_1_1sparse.xhtml#a62b8c9f55156b44f717276e36b5337bb", null ]

@@ -20,7 +20,7 @@ var searchData=
   ['an_20algorithm_17',['Recipe: adding an algorithm',['..//github/workspace/AGENTS.md#recipe-adding-an-algorithm',1,'']]],
   ['and_20constant_20expressions_18',['Freestanding, real-time, and constant expressions',['..//github/workspace/AGENTS.md#freestanding-real-time-and-constant-expressions',1,'']]],
   ['and_20kalman_19',['Relation to TypedLinearAlgebra and Kalman',['..//github/workspace/AGENTS.md#relation-to-typedlinearalgebra-and-kalman',1,'']]],
-  ['anti_5fdiagonal_20',['anti_diagonal',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7ae7aa92300cb5c5cb148c0db9deabe4',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
+  ['anti_5fdiagonal_20',['anti_diagonal',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7ae7aa92300cb5c5cb148c0db9deabe4',1,'fcarouge::test::anonymous_namespace{differential.cpp}::anti_diagonal'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#addb234c29ba0c7e16947a8b391f0753f',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::anti_diagonal'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#ab7d5d2e4929564ac81eef04fea75ee21',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::anti_diagonal']]],
   ['anti_5fdiagonal_5fpattern_21',['anti_diagonal_pattern',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a01c960f119a80d27c6084e12f96b19af',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::anti_diagonal_pattern'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a988e41a4d6ca6f6927c9f918f8e9c4c3',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}::anti_diagonal_pattern']]],
   ['append_5frow_22',['append_row',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9e51e1ea038d8ce18439571d3dc6c40c',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['architecture_23',['Architecture',['..//github/workspace/AGENTS.md#architecture',1,'']]],
@@ -33,5 +33,6 @@ var searchData=
   ['assign_5ffail_2ecpp_30',['assign_fail.cpp',['../assign__fail_8cpp.xhtml',1,'']]],
   ['at_31',['at',['../classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e',1,'fcarouge::sparse_matrix::at() -&gt; Type &amp;'],['../classfcarouge_1_1sparse__matrix.xhtml#af1aaf26be336df4fa5365d9be9d7da46',1,'fcarouge::sparse_matrix::at() const -&gt; Type']]],
   ['at_2ecpp_32',['at.cpp',['../at_8cpp.xhtml',1,'']]],
-  ['attribution_33',['Attribution',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution',1,'']]]
+  ['attribution_33',['Attribution',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution',1,'']]],
+  ['augment_34',['augment',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5394438da5772db9bf12772eda56aaba',1,'fcarouge::sparse_linear_algebra::internal']]]
 ];

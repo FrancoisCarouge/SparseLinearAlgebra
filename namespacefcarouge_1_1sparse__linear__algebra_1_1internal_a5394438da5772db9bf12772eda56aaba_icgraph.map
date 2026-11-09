@@ -1,0 +1,5 @@
+<map id="fcarouge::sparse_linear_algebra::internal::augment" name="fcarouge::sparse_linear_algebra::internal::augment">
+<area shape="rect" id="Node000001" title="Match a row to a column, by an augmenting path: a breadth&#45;first search of the columns reachable from ..." alt="" coords="234,13,408,54"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aa841c042225e0a9c3abcf9c8f3f18038" title="A maximum matching of the rows and the columns of a pattern." alt="" coords="5,5,186,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,36,186,36,186,30,218,30"/>
+</map>

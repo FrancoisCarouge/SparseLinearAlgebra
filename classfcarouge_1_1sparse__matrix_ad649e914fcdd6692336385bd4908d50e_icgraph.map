@@ -1,5 +1,7 @@
 <map id="fcarouge::sparse_matrix::at" name="fcarouge::sparse_matrix::at">
-<area shape="rect" id="Node000001" title="The stored element at the given compile&#45;time position." alt="" coords="225,20,400,46"/>
+<area shape="rect" id="Node000001" title="The stored element at the given compile&#45;time position." alt="" coords="225,60,400,86"/>
 <area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="5,5,177,61"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,36,177,36,177,30,209,30"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,60,177,51,178,46,223,54"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2c8752f54da127f1fd470b6133ec4fc9" title="The quotient x of x * rhs = lhs by a textbook Gauss&#45;Jordan elimination with partial pivoting of the d..." alt="" coords="5,85,177,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,92,178,100,177,95,222,87"/>
 </map>

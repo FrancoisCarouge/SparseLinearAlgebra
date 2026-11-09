@@ -12,6 +12,7 @@ var sparse__linear__algebra_8hpp =
     [ "operator+", "sparse__linear__algebra_8hpp.xhtml#a68c163ea0d9dea578debf494d638652c", null ],
     [ "operator-", "sparse__linear__algebra_8hpp.xhtml#a749db6e109708aab0e778397d52ae464", null ],
     [ "operator-", "sparse__linear__algebra_8hpp.xhtml#a79ad2ba55a034c1167357816f3e3d450", null ],
+    [ "operator/", "sparse__linear__algebra_8hpp.xhtml#a28ee38fc8c7ee7fb11d75ca21823843f", null ],
     [ "operator/", "sparse__linear__algebra_8hpp.xhtml#a0336db6c033f494b4411a7ac5aa0fd44", null ],
     [ "operator==", "sparse__linear__algebra_8hpp.xhtml#a76006e7573359cfe71c13a2a82838429", null ],
     [ "transposed", "sparse__linear__algebra_8hpp.xhtml#ad91a08ee8a52749487475f762d82fe0d", null ]

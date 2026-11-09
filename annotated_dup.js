@@ -11,6 +11,7 @@ var annotated_dup =
           [ "differential", "structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml", "structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential" ]
         ] ],
         [ "anonymous_namespace{operation_count.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml", [
+          [ "operand", "structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1operand.xhtml", "structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1operand" ],
           [ "total", "structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml", "structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total" ]
         ] ],
         [ "counted", "structfcarouge_1_1test_1_1counted.xhtml", "structfcarouge_1_1test_1_1counted" ]

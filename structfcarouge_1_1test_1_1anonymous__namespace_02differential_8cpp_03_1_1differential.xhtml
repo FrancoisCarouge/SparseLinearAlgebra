@@ -101,6 +101,7 @@ $(function(){initNavTree('structfcarouge_1_1test_1_1anonymous__namespace_02diffe
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential-members.xhtml">List of all members</a>  </div>
@@ -115,9 +116,15 @@ $(function(){initNavTree('structfcarouge_1_1test_1_1anonymous__namespace_02diffe
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential__coll__graph.svg" width="187" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential__coll__graph.svg" width="187" height="311"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml">quotients_by</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The quotients of each numerator by every denominator.  <a href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a0faab02ca1139a373c2844ebad32676e" id="r_a0faab02ca1139a373c2844ebad32676e"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns&gt; </td></tr>
@@ -144,6 +151,22 @@ requires (Lhs.columns == Rhs.rows)</td></tr>
 <tr class="memitem:a0b3a30cef7d2ab378aa52b0e5f7bcdca"><td class="memTemplItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0b3a30cef7d2ab378aa52b0e5f7bcdca">verify_product</a> ()</td></tr>
 <tr class="memdesc:a0b3a30cef7d2ab378aa52b0e5f7bcdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The product, and its pattern exactly storing the reached positions.  <br /></td></tr>
 <tr class="separator:a0b3a30cef7d2ab378aa52b0e5f7bcdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b172554ebd161da58d4cb74fec801f7" id="r_a6b172554ebd161da58d4cb74fec801f7"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a6b172554ebd161da58d4cb74fec801f7"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6b172554ebd161da58d4cb74fec801f7">fill_invertible</a> () -&gt; <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt; double, Pattern &gt;</td></tr>
+<tr class="memdesc:a6b172554ebd161da58d4cb74fec801f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">An invertible denominator of the pattern: its stored diagonal elements dominate.  <br /></td></tr>
+<tr class="separator:a6b172554ebd161da58d4cb74fec801f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8752f54da127f1fd470b6133ec4fc9" id="r_a2c8752f54da127f1fd470b6133ec4fc9"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Size&gt; </td></tr>
+<tr class="memitem:a2c8752f54da127f1fd470b6133ec4fc9"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2c8752f54da127f1fd470b6133ec4fc9">solve</a> (const <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt; Rows, Size &gt; &amp;lhs, const <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt; Size, Size &gt; &amp;rhs) -&gt; <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt; Rows, Size &gt;</td></tr>
+<tr class="memdesc:a2c8752f54da127f1fd470b6133ec4fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The quotient <code>x</code> of <code>x * rhs = lhs</code> by a textbook Gauss-Jordan elimination with partial pivoting of the dense system <code>rhsᵀ * xᵀ = lhsᵀ</code>.  <br /></td></tr>
+<tr class="separator:a2c8752f54da127f1fd470b6133ec4fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2378b1e922e7d68d52acff1e5db78025" id="r_a2378b1e922e7d68d52acff1e5db78025"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; <br />
+requires (Lhs.columns == Rhs.rows)</td></tr>
+<tr class="memitem:a2378b1e922e7d68d52acff1e5db78025"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2378b1e922e7d68d52acff1e5db78025">verify_quotient</a> ()</td></tr>
+<tr class="memdesc:a2378b1e922e7d68d52acff1e5db78025"><td class="mdescLeft">&#160;</td><td class="mdescRight">The division by a matrix, against the dense solution, and its pattern storing every position the dense solution does not cancel.  <br /></td></tr>
+<tr class="separator:a2378b1e922e7d68d52acff1e5db78025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841d4fa220aece009797041a8c83eadd" id="r_a841d4fa220aece009797041a8c83eadd"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto... Denominators&gt; </td></tr>
+<tr class="memitem:a841d4fa220aece009797041a8c83eadd"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a841d4fa220aece009797041a8c83eadd">verify_quotients_of</a> ()</td></tr>
+<tr class="separator:a841d4fa220aece009797041a8c83eadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bccbff4083456f9a35d533e1d0054db" id="r_a5bccbff4083456f9a35d533e1d0054db"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
 <tr class="memitem:a5bccbff4083456f9a35d533e1d0054db"><td class="memTemplItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5bccbff4083456f9a35d533e1d0054db">verify_dense</a> ()</td></tr>
 <tr class="memdesc:a5bccbff4083456f9a35d533e1d0054db"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix computes the same as a matrix without structural zeros.  <br /></td></tr>
@@ -158,7 +181,7 @@ requires (Lhs.columns == Rhs.rows)</td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The verification of the operations against the textbook dense computations, of explicit loops over arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00042">42</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00044">44</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a0faab02ca1139a373c2844ebad32676e" name="a0faab02ca1139a373c2844ebad32676e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0faab02ca1139a373c2844ebad32676e">&#9670;&#160;</a></span>reference</h2>
@@ -174,7 +197,7 @@ template&lt;std::size_t Rows, std::size_t Columns&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00044">44</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00046">46</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,18 +229,18 @@ template&lt;auto Pattern&gt; </div>
 
 <p>A matrix of the pattern filled with distinct, signed, integral values of exact products and sums. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00049">49</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                        {</div>
-<div class="line"><span class="lineno">   51</span>    sparse_matrix&lt;double, Pattern&gt; result;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
-<div class="line"><span class="lineno">   54</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{seed + <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(i)};</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>      result.values.at(i) = i % 2 == 0 ? <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> : -<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>;</div>
-<div class="line"><span class="lineno">   57</span>    }</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   60</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00051">51</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                                        {</div>
+<div class="line"><span class="lineno">   53</span>    sparse_matrix&lt;double, Pattern&gt; result;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
+<div class="line"><span class="lineno">   56</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{seed + <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(i)};</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>      result.values.at(i) = i % 2 == 0 ? <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> : -<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   62</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e">fcarouge::sparse_matrix&lt; Type, Pattern &gt;::at()</a>.</p>
@@ -227,6 +250,154 @@ template&lt;auto Pattern&gt; </div>
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_a34ebea5c1d02a095bab5b88053d79a43_cgraph.svg" width="406" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a6b172554ebd161da58d4cb74fec801f7" name="a6b172554ebd161da58d4cb74fec801f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b172554ebd161da58d4cb74fec801f7">&#9670;&#160;</a></span>fill_invertible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr auto fcarouge::test::anonymous_namespace{differential.cpp}::differential::fill_invertible </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;double, Pattern&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An invertible denominator of the pattern: its stored diagonal elements dominate. </p>
+
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00139">139</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>                                        {</div>
+<div class="line"><span class="lineno">  141</span>    sparse_matrix&lt;double, Pattern&gt; result{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Pattern&gt;</a>(11.)};</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Pattern.count; ++i) {</div>
+<div class="line"><span class="lineno">  144</span>      <span class="keywordflow">if</span> (Pattern.positions.at(i).row == Pattern.positions.at(i).column) {</div>
+<div class="line"><span class="lineno">  145</span>        result.values.at(i) += 1000.;</div>
+<div class="line"><span class="lineno">  146</span>      }</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a34ebea5c1d02a095bab5b88053d79a43"><div class="ttname"><a href="#a34ebea5c1d02a095bab5b88053d79a43">fcarouge::test::anonymous_namespace{differential.cpp}::differential::fill</a></div><div class="ttdeci">static constexpr auto fill(double seed) -&gt; sparse_matrix&lt; double, Pattern &gt;</div><div class="ttdoc">A matrix of the pattern filled with distinct, signed, integral values of exact products and sums.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00051">differential.cpp:51</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c8752f54da127f1fd470b6133ec4fc9" name="a2c8752f54da127f1fd470b6133ec4fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8752f54da127f1fd470b6133ec4fc9">&#9670;&#160;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t Rows, std::size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto fcarouge::test::anonymous_namespace{differential.cpp}::differential::solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt; Rows, Size &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt; Size, Size &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) -&gt; <a class="el" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt;Rows, Size&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The quotient <code>x</code> of <code>x * rhs = lhs</code> by a textbook Gauss-Jordan elimination with partial pivoting of the dense system <code>rhsᵀ * xᵀ = lhsᵀ</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00155">155</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>                               {</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_typedef" href="#a0faab02ca1139a373c2844ebad32676e">reference&lt;Size, Size&gt;</a> system{};</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_typedef" href="#a0faab02ca1139a373c2844ebad32676e">reference&lt;Size, Rows&gt;</a> solution{};</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  163</span>        system.at(row).at(column) = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.<a class="code hl_function" href="classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e">at</a>(column).at(row);</div>
+<div class="line"><span class="lineno">  164</span>      }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  167</span>        solution.at(row).at(column) = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.<a class="code hl_function" href="classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e">at</a>(column).at(row);</div>
+<div class="line"><span class="lineno">  168</span>      }</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">for</span> (std::size_t pivot{0}; pivot &lt; Size; ++pivot) {</div>
+<div class="line"><span class="lineno">  172</span>      std::size_t largest{pivot};</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">for</span> (std::size_t row{pivot + 1}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">if</span> (std::abs(system.at(row).at(pivot)) &gt;</div>
+<div class="line"><span class="lineno">  176</span>            std::abs(system.at(largest).at(pivot))) {</div>
+<div class="line"><span class="lineno">  177</span>          largest = <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>;</div>
+<div class="line"><span class="lineno">  178</span>        }</div>
+<div class="line"><span class="lineno">  179</span>      }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>      std::swap(system.at(pivot), system.at(largest));</div>
+<div class="line"><span class="lineno">  182</span>      std::swap(solution.at(pivot), solution.at(largest));</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">if</span> (row != pivot) {</div>
+<div class="line"><span class="lineno">  186</span>          <span class="keyword">const</span> <span class="keywordtype">double</span> factor{system.at(row).at(pivot) /</div>
+<div class="line"><span class="lineno">  187</span>                              system.at(pivot).at(pivot)};</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>          <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  190</span>            system.at(row).at(column) -= factor * system.at(pivot).at(column);</div>
+<div class="line"><span class="lineno">  191</span>          }</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>          <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  194</span>            solution.at(row).at(column) -=</div>
+<div class="line"><span class="lineno">  195</span>                factor * solution.at(pivot).at(column);</div>
+<div class="line"><span class="lineno">  196</span>          }</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
+<div class="line"><span class="lineno">  198</span>      }</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_typedef" href="#a0faab02ca1139a373c2844ebad32676e">reference&lt;Rows, Size&gt;</a> result{};</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Size; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  205</span>        result.at(column).at(row) =</div>
+<div class="line"><span class="lineno">  206</span>            solution.at(row).at(column) / system.at(row).at(row);</div>
+<div class="line"><span class="lineno">  207</span>      }</div>
+<div class="line"><span class="lineno">  208</span>    }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml_ad649e914fcdd6692336385bd4908d50e"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e">fcarouge::sparse_matrix::at</a></div><div class="ttdeci">constexpr auto at() -&gt; Type &amp;</div><div class="ttdoc">The stored element at the given compile-time position.</div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a0faab02ca1139a373c2844ebad32676e"><div class="ttname"><a href="#a0faab02ca1139a373c2844ebad32676e">fcarouge::test::anonymous_namespace{differential.cpp}::differential::reference</a></div><div class="ttdeci">std::array&lt; std::array&lt; double, Columns &gt;, Rows &gt; reference</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00046">differential.cpp:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e">fcarouge::sparse_matrix&lt; Type, Pattern &gt;::at()</a>.</p>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_a2c8752f54da127f1fd470b6133ec4fc9_cgraph.svg" width="406" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -258,21 +429,18 @@ template&lt;auto Pattern&gt; </div>
 
 <p>The matrix as an explicit dense array, read at each position. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00065">65</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                  {</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_typedef" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt;Pattern.rows, Pattern.columns&gt; result{};</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Pattern.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
-<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Pattern.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
-<div class="line"><span class="lineno">   71</span>        result.at(row).at(column) = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>];</div>
-<div class="line"><span class="lineno">   72</span>      }</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   76</span>  }</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a0faab02ca1139a373c2844ebad32676e"><div class="ttname"><a href="#a0faab02ca1139a373c2844ebad32676e">fcarouge::test::anonymous_namespace{differential.cpp}::differential::reference</a></div><div class="ttdeci">std::array&lt; std::array&lt; double, Columns &gt;, Rows &gt; reference</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00044">differential.cpp:44</a></div></div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00067">67</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                  {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_typedef" href="#a0faab02ca1139a373c2844ebad32676e">reference</a>&lt;Pattern.rows, Pattern.columns&gt; result{};</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Pattern.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Pattern.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">   73</span>        result.at(row).at(column) = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>];</div>
+<div class="line"><span class="lineno">   74</span>      }</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,45 +472,42 @@ requires (Lhs.rows == Rhs.rows &amp;&amp; Lhs.columns == Rhs.columns)</div>
 
 <p>The sum, the difference, the transposition, and the negation. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00081">81</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>                                          {</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs)};</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(rhs)};</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">sum</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs + rhs)};</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs - rhs)};</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1">negated</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(-lhs)};</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keyword">const</span> <span class="keyword">auto</span> mirrored{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lhs))};</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Lhs.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
-<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Lhs.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
-<div class="line"><span class="lineno">   94</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> left{lhs_values.at(row).at(column)};</div>
-<div class="line"><span class="lineno">   95</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> right{rhs_values.at(row).at(column)};</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">sum</a>.at(row).at(column) == left + right);</div>
-<div class="line"><span class="lineno">   98</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at(row).at(column) == left - right);</div>
-<div class="line"><span class="lineno">   99</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1">negated</a>.at(row).at(column) == -left);</div>
-<div class="line"><span class="lineno">  100</span>        assert(mirrored.at(column).at(row) == left);</div>
-<div class="line"><span class="lineno">  101</span>      }</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-<div class="line"><span class="lineno">  103</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00083">83</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>                                          {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs)};</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(rhs)};</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">sum</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs + rhs)};</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs - rhs)};</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1">negated</a>{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(-lhs)};</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keyword">const</span> <span class="keyword">auto</span> mirrored{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lhs))};</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Lhs.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Lhs.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">   96</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> left{lhs_values.at(row).at(column)};</div>
+<div class="line"><span class="lineno">   97</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> right{rhs_values.at(row).at(column)};</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">sum</a>.at(row).at(column) == left + right);</div>
+<div class="line"><span class="lineno">  100</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">difference</a>.at(row).at(column) == left - right);</div>
+<div class="line"><span class="lineno">  101</span>        assert(<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1">negated</a>.at(row).at(column) == -left);</div>
+<div class="line"><span class="lineno">  102</span>        assert(mirrored.at(column).at(row) == left);</div>
+<div class="line"><span class="lineno">  103</span>      }</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a00aaee662629cd65f44a55c9478795ae"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae">fcarouge::test::anonymous_namespace{arithmetic.cpp}::sum</a></div><div class="ttdeci">constexpr auto sum</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00050">arithmetic.cpp:50</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a427caa882f559c65fb474ca85059f0f1"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1">fcarouge::test::anonymous_namespace{arithmetic.cpp}::negated</a></div><div class="ttdeci">constexpr auto negated</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00062">arithmetic.cpp:62</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a860410845224e2c8e711b34c0ba4e162"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162">fcarouge::test::anonymous_namespace{arithmetic.cpp}::difference</a></div><div class="ttdeci">constexpr auto difference</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00057">arithmetic.cpp:57</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
 <div class="ttc" id="anamespacefcarouge_xhtml_ad91a08ee8a52749487475f762d82fe0d"><div class="ttname"><a href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed</a></div><div class="ttdeci">constexpr auto transposed(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; sparse_matrix&lt; Type, sparse::pattern_transpose&lt; Pattern &gt; &gt;</div></div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a34ebea5c1d02a095bab5b88053d79a43"><div class="ttname"><a href="#a34ebea5c1d02a095bab5b88053d79a43">fcarouge::test::anonymous_namespace{differential.cpp}::differential::fill</a></div><div class="ttdeci">static constexpr auto fill(double seed) -&gt; sparse_matrix&lt; double, Pattern &gt;</div><div class="ttdoc">A matrix of the pattern filled with distinct, signed, integral values of exact products and sums.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00049">differential.cpp:49</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a3c97e4a7f5bf863911355408bae8289a"><div class="ttname"><a href="#a3c97e4a7f5bf863911355408bae8289a">fcarouge::test::anonymous_namespace{differential.cpp}::differential::to_reference</a></div><div class="ttdeci">static constexpr auto to_reference(const sparse_matrix&lt; double, Pattern &gt; &amp;value) -&gt; reference&lt; Pattern.rows, Pattern.columns &gt;</div><div class="ttdoc">The matrix as an explicit dense array, read at each position.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00065">differential.cpp:65</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a3c97e4a7f5bf863911355408bae8289a"><div class="ttname"><a href="#a3c97e4a7f5bf863911355408bae8289a">fcarouge::test::anonymous_namespace{differential.cpp}::differential::to_reference</a></div><div class="ttdeci">static constexpr auto to_reference(const sparse_matrix&lt; double, Pattern &gt; &amp;value) -&gt; reference&lt; Pattern.rows, Pattern.columns &gt;</div><div class="ttdoc">The matrix as an explicit dense array, read at each position.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00067">differential.cpp:67</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed()</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_a6a9ded8fbc6ad35aa67140390b0c7e8f_cgraph.svg" width="372" height="82"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -373,11 +538,11 @@ template&lt;auto... Patterns&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00155">155</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  155</span>                                                                       {</div>
-<div class="line"><span class="lineno">  156</span>    (<a class="code hl_function" href="#a2a326e1d7786baec6b90f24bbf67b6fa">verify_with</a>&lt;Patterns, Patterns...&gt;(), ...);</div>
-<div class="line"><span class="lineno">  157</span>  }</div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a2a326e1d7786baec6b90f24bbf67b6fa"><div class="ttname"><a href="#a2a326e1d7786baec6b90f24bbf67b6fa">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_with</a></div><div class="ttdeci">static constexpr void verify_with()</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00149">differential.cpp:149</a></div></div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00270">270</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  270</span>                                                                       {</div>
+<div class="line"><span class="lineno">  271</span>    (<a class="code hl_function" href="#a2a326e1d7786baec6b90f24bbf67b6fa">verify_with</a>&lt;Patterns, Patterns...&gt;(), ...);</div>
+<div class="line"><span class="lineno">  272</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a2a326e1d7786baec6b90f24bbf67b6fa"><div class="ttname"><a href="#a2a326e1d7786baec6b90f24bbf67b6fa">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_with</a></div><div class="ttdeci">static constexpr void verify_with()</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00264">differential.cpp:264</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -408,29 +573,29 @@ template&lt;auto Lhs, auto Rhs&gt; </div>
 
 <p>A matrix computes the same as a matrix without structural zeros. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00135">135</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                                     {</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keyword">using </span>dense_matrix =</div>
-<div class="line"><span class="lineno">  137</span>        sparse_matrix&lt;double, <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f">sparse::dense</a>&lt;Lhs.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f">rows</a>, Lhs.columns&gt;&gt;;</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>    assert((lhs + rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} + <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
-<div class="line"><span class="lineno">  143</span>    assert((lhs - rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
-<div class="line"><span class="lineno">  144</span>    assert((lhs * rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
-<div class="line"><span class="lineno">  145</span>    assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lhs) == <a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>}));</div>
-<div class="line"><span class="lineno">  146</span>    assert((lhs * 2.) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} * 2.));</div>
-<div class="line"><span class="lineno">  147</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00250">250</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>                                                                     {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keyword">using </span>dense_matrix =</div>
+<div class="line"><span class="lineno">  252</span>        sparse_matrix&lt;double, <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f">sparse::dense</a>&lt;Lhs.<a class="code hl_variable" href="structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f">rows</a>, Lhs.columns&gt;&gt;;</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
+<div class="line"><span class="lineno">  255</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>    assert((lhs + rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} + <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
+<div class="line"><span class="lineno">  258</span>    assert((lhs - rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} - <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
+<div class="line"><span class="lineno">  259</span>    assert((lhs * rhs) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>));</div>
+<div class="line"><span class="lineno">  260</span>    assert(<a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(lhs) == <a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>}));</div>
+<div class="line"><span class="lineno">  261</span>    assert((lhs * 2.) == (dense_matrix{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>} * 2.));</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a1b06cc8547501f1115d9479a339dad6f"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f">fcarouge::sparse::dense</a></div><div class="ttdeci">constexpr pattern dense</div><div class="ttdoc">Every position is stored: a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00317">pattern.hpp:317</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a821fb938001c910c812a0da69c11003f"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f">fcarouge::sparse::pattern::rows</a></div><div class="ttdeci">std::size_t rows</div><div class="ttdoc">The count of rows of the matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00158">pattern.hpp:158</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed()</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_a5bccbff4083456f9a35d533e1d0054db_cgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -464,33 +629,120 @@ requires (Lhs.columns == Rhs.rows)</div>
 
 <p>The product, and its pattern exactly storing the reached positions. </p>
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00108">108</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>                                         {</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs)};</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(rhs)};</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
-<div class="line"><span class="lineno">  114</span>    <span class="keyword">const</span> <span class="keyword">auto</span> values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(product)};</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Lhs.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
-<div class="line"><span class="lineno">  117</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rhs.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
-<div class="line"><span class="lineno">  118</span>        <span class="keywordtype">double</span> expected{0.};</div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordtype">bool</span> reached{<span class="keyword">false</span>};</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">for</span> (std::size_t inner{0}; inner &lt; Lhs.columns; ++inner) {</div>
-<div class="line"><span class="lineno">  122</span>          expected +=</div>
-<div class="line"><span class="lineno">  123</span>              lhs_values.at(row).at(inner) * rhs_values.at(inner).at(column);</div>
-<div class="line"><span class="lineno">  124</span>          reached =</div>
-<div class="line"><span class="lineno">  125</span>              reached || (Lhs.stores(row, inner) &amp;&amp; Rhs.stores(inner, column));</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>        assert(values.at(row).at(column) == expected);</div>
-<div class="line"><span class="lineno">  129</span>        assert(<span class="keyword">decltype</span>(product)::structure.stores(row, column) == reached);</div>
-<div class="line"><span class="lineno">  130</span>      }</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00110">110</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                         {</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Rhs&gt;</a>(11.)};</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs)};</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rhs_values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(rhs)};</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> * <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keyword">const</span> <span class="keyword">auto</span> values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(product)};</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Lhs.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  119</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rhs.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordtype">double</span> expected{0.};</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordtype">bool</span> reached{<span class="keyword">false</span>};</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">for</span> (std::size_t inner{0}; inner &lt; Lhs.columns; ++inner) {</div>
+<div class="line"><span class="lineno">  124</span>          expected +=</div>
+<div class="line"><span class="lineno">  125</span>              lhs_values.at(row).at(inner) * rhs_values.at(inner).at(column);</div>
+<div class="line"><span class="lineno">  126</span>          reached =</div>
+<div class="line"><span class="lineno">  127</span>              reached || (Lhs.stores(row, inner) &amp;&amp; Rhs.stores(inner, column));</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>        assert(values.at(row).at(column) == expected);</div>
+<div class="line"><span class="lineno">  131</span>        assert(<span class="keyword">decltype</span>(product)::structure.stores(row, column) == reached);</div>
+<div class="line"><span class="lineno">  132</span>      }</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_aaa65d3c3f89fe0c6e5bc7daa53e01ed1"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">fcarouge::test::anonymous_namespace{arithmetic.cpp}::product</a></div><div class="ttdeci">constexpr auto product</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00067">arithmetic.cpp:67</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2378b1e922e7d68d52acff1e5db78025" name="a2378b1e922e7d68d52acff1e5db78025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2378b1e922e7d68d52acff1e5db78025">&#9670;&#160;</a></span>verify_quotient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Lhs, auto Rhs&gt; <br />
+requires (Lhs.columns == Rhs.rows)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_quotient </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The division by a matrix, against the dense solution, and its pattern storing every position the dense solution does not cancel. </p>
+
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00217">217</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>                                {</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>{<a class="code hl_function" href="#a34ebea5c1d02a095bab5b88053d79a43">fill&lt;Lhs&gt;</a>(3.)};</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>{<a class="code hl_function" href="#a6b172554ebd161da58d4cb74fec801f7">fill_invertible&lt;Rhs&gt;</a>()};</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keyword">const</span> <span class="keyword">auto</span> quotient{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a> / <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>};</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keyword">const</span> <span class="keyword">auto</span> values{<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(quotient)};</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keyword">const</span> <span class="keyword">auto</span> expected{<a class="code hl_function" href="#a2c8752f54da127f1fd470b6133ec4fc9">solve</a>(<a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(lhs), <a class="code hl_function" href="#a3c97e4a7f5bf863911355408bae8289a">to_reference</a>(rhs))};</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Lhs.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  225</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Rhs.columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  226</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{values.at(row).at(column)};</div>
+<div class="line"><span class="lineno">  227</span>        [[maybe_unused]] <span class="keyword">const</span> <span class="keywordtype">double</span> reference_value{</div>
+<div class="line"><span class="lineno">  228</span>            expected.at(row).at(column)};</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>        assert(std::abs(value - reference_value) &lt;=</div>
+<div class="line"><span class="lineno">  231</span>               1e-12 * (1. + std::abs(reference_value)));</div>
+<div class="line"><span class="lineno">  232</span>        assert(<span class="keyword">decltype</span>(quotient)::structure.stores(row, column) ||</div>
+<div class="line"><span class="lineno">  233</span>               std::abs(reference_value) &lt;= 1e-12);</div>
+<div class="line"><span class="lineno">  234</span>      }</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a2c8752f54da127f1fd470b6133ec4fc9"><div class="ttname"><a href="#a2c8752f54da127f1fd470b6133ec4fc9">fcarouge::test::anonymous_namespace{differential.cpp}::differential::solve</a></div><div class="ttdeci">static auto solve(const reference&lt; Rows, Size &gt; &amp;lhs, const reference&lt; Size, Size &gt; &amp;rhs) -&gt; reference&lt; Rows, Size &gt;</div><div class="ttdoc">The quotient x of x * rhs = lhs by a textbook Gauss-Jordan elimination with partial pivoting of the d...</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00155">differential.cpp:155</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a6b172554ebd161da58d4cb74fec801f7"><div class="ttname"><a href="#a6b172554ebd161da58d4cb74fec801f7">fcarouge::test::anonymous_namespace{differential.cpp}::differential::fill_invertible</a></div><div class="ttdeci">static constexpr auto fill_invertible() -&gt; sparse_matrix&lt; double, Pattern &gt;</div><div class="ttdoc">An invertible denominator of the pattern: its stored diagonal elements dominate.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00139">differential.cpp:139</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a841d4fa220aece009797041a8c83eadd" name="a841d4fa220aece009797041a8c83eadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841d4fa220aece009797041a8c83eadd">&#9670;&#160;</a></span>verify_quotients_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Lhs, auto... Denominators&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_quotients_of </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00238">238</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>                                                                              {</div>
+<div class="line"><span class="lineno">  239</span>    (<a class="code hl_function" href="#a2378b1e922e7d68d52acff1e5db78025">verify_quotient&lt;Lhs, Denominators&gt;</a>(), ...);</div>
+<div class="line"><span class="lineno">  240</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a2378b1e922e7d68d52acff1e5db78025"><div class="ttname"><a href="#a2378b1e922e7d68d52acff1e5db78025">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_quotient</a></div><div class="ttdeci">static void verify_quotient()</div><div class="ttdoc">The division by a matrix, against the dense solution, and its pattern storing every position the dens...</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00217">differential.cpp:217</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -519,15 +771,15 @@ template&lt;auto Lhs, auto... Patterns&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00149">149</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>                                                                            {</div>
-<div class="line"><span class="lineno">  150</span>    (<a class="code hl_function" href="#a6a9ded8fbc6ad35aa67140390b0c7e8f">verify_additive&lt;Lhs, Patterns&gt;</a>(), ...);</div>
-<div class="line"><span class="lineno">  151</span>    (<a class="code hl_function" href="#a0b3a30cef7d2ab378aa52b0e5f7bcdca">verify_product&lt;Lhs, Patterns&gt;</a>(), ...);</div>
-<div class="line"><span class="lineno">  152</span>    (<a class="code hl_function" href="#a5bccbff4083456f9a35d533e1d0054db">verify_dense&lt;Lhs, Patterns&gt;</a>(), ...);</div>
-<div class="line"><span class="lineno">  153</span>  }</div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a0b3a30cef7d2ab378aa52b0e5f7bcdca"><div class="ttname"><a href="#a0b3a30cef7d2ab378aa52b0e5f7bcdca">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_product</a></div><div class="ttdeci">static constexpr void verify_product()</div><div class="ttdoc">The product, and its pattern exactly storing the reached positions.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00108">differential.cpp:108</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a5bccbff4083456f9a35d533e1d0054db"><div class="ttname"><a href="#a5bccbff4083456f9a35d533e1d0054db">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_dense</a></div><div class="ttdeci">static constexpr void verify_dense()</div><div class="ttdoc">A matrix computes the same as a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00135">differential.cpp:135</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a6a9ded8fbc6ad35aa67140390b0c7e8f"><div class="ttname"><a href="#a6a9ded8fbc6ad35aa67140390b0c7e8f">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_additive</a></div><div class="ttdeci">static constexpr void verify_additive()</div><div class="ttdoc">The sum, the difference, the transposition, and the negation.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00081">differential.cpp:81</a></div></div>
+<p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00264">264</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>                                                                            {</div>
+<div class="line"><span class="lineno">  265</span>    (<a class="code hl_function" href="#a6a9ded8fbc6ad35aa67140390b0c7e8f">verify_additive&lt;Lhs, Patterns&gt;</a>(), ...);</div>
+<div class="line"><span class="lineno">  266</span>    (<a class="code hl_function" href="#a0b3a30cef7d2ab378aa52b0e5f7bcdca">verify_product&lt;Lhs, Patterns&gt;</a>(), ...);</div>
+<div class="line"><span class="lineno">  267</span>    (<a class="code hl_function" href="#a5bccbff4083456f9a35d533e1d0054db">verify_dense&lt;Lhs, Patterns&gt;</a>(), ...);</div>
+<div class="line"><span class="lineno">  268</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a0b3a30cef7d2ab378aa52b0e5f7bcdca"><div class="ttname"><a href="#a0b3a30cef7d2ab378aa52b0e5f7bcdca">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_product</a></div><div class="ttdeci">static constexpr void verify_product()</div><div class="ttdoc">The product, and its pattern exactly storing the reached positions.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00110">differential.cpp:110</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a5bccbff4083456f9a35d533e1d0054db"><div class="ttname"><a href="#a5bccbff4083456f9a35d533e1d0054db">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_dense</a></div><div class="ttdeci">static constexpr void verify_dense()</div><div class="ttdoc">A matrix computes the same as a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00250">differential.cpp:250</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_xhtml_a6a9ded8fbc6ad35aa67140390b0c7e8f"><div class="ttname"><a href="#a6a9ded8fbc6ad35aa67140390b0c7e8f">fcarouge::test::anonymous_namespace{differential.cpp}::differential::verify_additive</a></div><div class="ttdeci">static constexpr void verify_additive()</div><div class="ttdoc">The sum, the difference, the transposition, and the negation.</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00083">differential.cpp:83</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

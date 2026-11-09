@@ -79,6 +79,9 @@ var namespacefcarouge_1_1test =
       [ "storage", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a1411e35eca34633988de33ca2dd17a9b", null ],
       [ "dense_values", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a048a09762edb42a649125dbd10051c81", null ]
     ] ],
+    [ "anonymous_namespace{matrix.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix_8cpp_03.xhtml", [
+      [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix_8cpp_03.xhtml#abdaed0c22f785d7b8e156c5fa6d6a7c9", null ]
+    ] ],
     [ "anonymous_namespace{matrix_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml#a50439aace962c18a908b4f3a82c0531c", null ],
       [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix__fail_8cpp_03.xhtml#a6d443ce925a4815e25c59a14b86c8a21", null ]
@@ -114,15 +117,21 @@ var namespacefcarouge_1_1test =
       [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02out__of__range__fail_8cpp_03.xhtml#a96e9f684ee33c3714bad2def9de33ed8", null ]
     ] ],
     [ "anonymous_namespace{pattern_algebra.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml", [
+      [ "anti_diagonal", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#ab7d5d2e4929564ac81eef04fea75ee21", null ],
+      [ "blocks", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c", null ],
       [ "first_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a23939332daf477f275f1aaa8c469508a", null ],
+      [ "first_of_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a3a6d2383cda39fc03bfb70e36b98228a", null ],
       [ "first_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a81ad5c112c72faf36da3c2606af281d8", null ],
       [ "last_column", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a93ad773f10862fcff3946ad90e9cd658", null ],
+      [ "last_of_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a3c274a964da15bc4db0e4e00846c1200", null ],
+      [ "reassigned", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a7b030e91595b210922e17e90427748b8", null ],
       [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#ae453f8c66f5172ccf6cf191c8c51b650", null ],
       [ "second_row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a5ec7eebfa3dfd55c6c50739c14d71845", null ]
     ] ],
     [ "anonymous_namespace{patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml", [
       [ "matrix_type", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a585da428e9f9ebbc2c8ecd84c62fac24", null ],
       [ "identity", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd", null ],
+      [ "irreducible", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a3947ba299ed5a4d6a780eb54fc1ef073", null ],
       [ "size", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5", null ],
       [ "square", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afb233039a02e1098d56b2cac0235f564", null ],
       [ "wide", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a93506173ac37eeb4eb6ececbdd34b9e2", null ]
@@ -170,11 +179,17 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{singleton_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02singleton__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02singleton__fail_8cpp_03.xhtml#ab79462e1ea1042aba1881f8c83e08452", null ]
     ] ],
+    [ "anonymous_namespace{singular_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02singular__fail_8cpp_03.xhtml", [
+      [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02singular__fail_8cpp_03.xhtml#a8cb40e9b6d29e38f1a546f41f0b6084a", null ]
+    ] ],
     [ "anonymous_namespace{size_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02size__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02size__fail_8cpp_03.xhtml#a003b8dd83734ed2ee94a3522ef415e24", null ]
     ] ],
     [ "anonymous_namespace{sparse_linear_algebra.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02sparse__linear__algebra_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02sparse__linear__algebra_8cpp_03.xhtml#a3ff73ed86cee52d9b7b5b77a80656583", null ]
+    ] ],
+    [ "anonymous_namespace{square_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__fail_8cpp_03.xhtml", [
+      [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__fail_8cpp_03.xhtml#ae2204ccf452015cc1d76ec7dc05e7ed8", null ]
     ] ],
     [ "anonymous_namespace{square_root.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml", [
       [ "exponent", "namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae", null ],

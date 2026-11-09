@@ -12,9 +12,11 @@ var searchData=
   ['differential_2ecpp_9',['differential.cpp',['../differential_8cpp.xhtml',1,'']]],
   ['directories_10',['Other directories',['..//github/workspace/AGENTS.md#other-directories',1,'']]],
   ['disable_11',['disable',['../classfcarouge_1_1not__realtime.xhtml#a297a7276ba8ffd478582a9a30af573db',1,'fcarouge::not_realtime']]],
-  ['documentation_2edox_12',['documentation.dox',['../documentation_8dox.xhtml',1,'']]],
-  ['dot_13',['dot',['../namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a',1,'fcarouge']]],
-  ['dot_2ecpp_14',['dot.cpp',['../dot_8cpp.xhtml',1,'']]],
-  ['dot_5fterms_15',['dot_terms',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88c2d25e777e6730b2b1b20c342c2584',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['duplicate_5ffail_2ecpp_16',['duplicate_fail.cpp',['../duplicate__fail_8cpp.xhtml',1,'']]]
+  ['distinct_12',['distinct',['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1operand.xhtml#aff3821205fb09c4e405b954bff7297f8',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::operand']]],
+  ['divisions_13',['divisions',['../structfcarouge_1_1test_1_1counted.xhtml#a424e77a51336deaf2ad04fb8de3e554b',1,'fcarouge::test::counted::divisions'],['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml#a0b60004bc0e51b12184db36d1c350772',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::total::divisions()']]],
+  ['documentation_2edox_14',['documentation.dox',['../documentation_8dox.xhtml',1,'']]],
+  ['dot_15',['dot',['../namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a',1,'fcarouge']]],
+  ['dot_2ecpp_16',['dot.cpp',['../dot_8cpp.xhtml',1,'']]],
+  ['dot_5fterms_17',['dot_terms',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88c2d25e777e6730b2b1b20c342c2584',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['duplicate_5ffail_2ecpp_18',['duplicate_fail.cpp',['../duplicate__fail_8cpp.xhtml',1,'']]]
 ];

@@ -1,7 +1,7 @@
 <map id="fcarouge::test::counted" name="fcarouge::test::counted">
-<area shape="rect" id="Node000001" title="A value counting the arithmetic operations it results from, without any global state,..." alt="" coords="5,150,146,216"/>
+<area shape="rect" id="Node000001" title="A value counting the arithmetic operations it results from, without any global state,..." alt="" coords="5,165,146,231"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="15,5,64,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,71,40,98,44,125,47,134,42,135,39,126,34,98,34,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,71,39,105,44,140,47,149,42,150,39,141,33,105,33,71"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="91,5,135,72"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,72,91,134,86,133,102,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,72,90,149,85,147,103,71"/>
 </map>

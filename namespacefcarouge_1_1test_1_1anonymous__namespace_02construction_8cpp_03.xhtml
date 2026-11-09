@@ -139,10 +139,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000070">Test</a></b></dt><dd>Verifies the generated and the listed patterns of the same positions are the same matrix type. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000071">Test</a></b></dt><dd>Verifies the class template arguments are deduced from the shape and the positions, or from the shape and the predicate. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000072">Test</a></b></dt><dd>Verifies a pattern of explicit arguments is constructed from a predicate selecting as many positions, and only then. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000073">Test</a></b></dt><dd>Verifies a pattern is only constructed from its shape: not from another shape, not by default, and not from its members, which would skip the order of its positions. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000073">Test</a></b></dt><dd>Verifies the generated and the listed patterns of the same positions are the same matrix type. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000075">Test</a></b></dt><dd>Verifies the class template arguments are deduced from the shape and the positions, or from the shape and the predicate. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000076">Test</a></b></dt><dd>Verifies a pattern of explicit arguments is constructed from a predicate selecting as many positions, and only then. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000077">Test</a></b></dt><dd>Verifies a pattern is only constructed from its shape: not from another shape, not by default, and not from its members, which would skip the order of its positions. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="construction_8cpp_source.xhtml#l00125">125</a> of file <a class="el" href="construction_8cpp_source.xhtml">construction.cpp</a>.</p>
 
@@ -169,10 +169,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000062">Test</a></b></dt><dd>Verifies the positions are sorted in row-major order, whatever the order they are given in. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000063">Test</a></b></dt><dd>Verifies the pattern's shape and count. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000064">Test</a></b></dt><dd>Verifies a position's index is its row-major rank, and a structural zero has none. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000066">Test</a></b></dt><dd>Verifies a lookup past the last position, or out of the matrix, finds no element. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000067">Test</a></b></dt><dd>Verifies the order of the given positions does not change the type or the value: two equal patterns are the same matrix type. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000064">Test</a></b></dt><dd>Verifies the pattern's shape and count. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000066">Test</a></b></dt><dd>Verifies a position's index is its row-major rank, and a structural zero has none. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000068">Test</a></b></dt><dd>Verifies a lookup past the last position, or out of the matrix, finds no element. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000069">Test</a></b></dt><dd>Verifies the order of the given positions does not change the type or the value: two equal patterns are the same matrix type. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="construction_8cpp_source.xhtml#l00077">77</a> of file <a class="el" href="construction_8cpp_source.xhtml">construction.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   77</span>{shape&lt;2, 2&gt;, {{0, 0}, {1, 1}}};</div>
@@ -249,7 +249,7 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000068">Test</a></b></dt><dd>Verifies an empty pattern stores nothing. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000071">Test</a></b></dt><dd>Verifies an empty pattern stores nothing. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="construction_8cpp_source.xhtml#l00085">85</a> of file <a class="el" href="construction_8cpp_source.xhtml">construction.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   85</span>{shape&lt;2, 3&gt;};</div>
@@ -278,7 +278,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">{[](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  <span class="keywordflow">return</span> (row + column) % 2 == 0;</div>
 <div class="line">}}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000069">Test</a></b></dt><dd>Verifies a pattern generated from a predicate. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000072">Test</a></b></dt><dd>Verifies a pattern generated from a predicate. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="construction_8cpp_source.xhtml#l00092">92</a> of file <a class="el" href="construction_8cpp_source.xhtml">construction.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   92</span>                             {[](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>

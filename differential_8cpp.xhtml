@@ -110,7 +110,9 @@ $(function(){initNavTree('differential_8cpp.xhtml',''); initResizable(true); });
 <div class="textblock"><code>#include &quot;<a class="el" href="sparse__linear__algebra_8hpp_source.xhtml">fcarouge/sparse_linear_algebra.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for differential.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -125,6 +127,9 @@ $(function(){initNavTree('differential_8cpp.xhtml',''); initResizable(true); });
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml">fcarouge::test::anonymous_namespace{differential.cpp}::differential</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verification of the operations against the textbook dense computations, of explicit loops over arrays.  <a href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml">fcarouge::test::anonymous_namespace{differential.cpp}::differential::quotients_by&lt; Denominators &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The quotients of each numerator by every denominator.  <a href="structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -148,6 +153,8 @@ Variables</h2></td></tr>
 <tr class="separator:a7ae7aa92300cb5c5cb148c0db9deabe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7196e529f6392ee3faa00cec8a9f1884" id="r_a7196e529f6392ee3faa00cec8a9f1884"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7196e529f6392ee3faa00cec8a9f1884">fcarouge::test::anonymous_namespace{differential.cpp}::corner</a> {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#afc86d359c92e4aed11bb24af084e9a13">sparse::shape</a>&lt;3, 3&gt;, {{2, 2}}}</td></tr>
 <tr class="separator:a7196e529f6392ee3faa00cec8a9f1884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ce033eaced472f686749bbe7921095" id="r_a74ce033eaced472f686749bbe7921095"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1sparse_1_1pattern.xhtml">sparse::pattern</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a74ce033eaced472f686749bbe7921095">fcarouge::test::anonymous_namespace{differential.cpp}::chained</a></td></tr>
+<tr class="separator:a74ce033eaced472f686749bbe7921095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506c652dff33eb3f06eda307f731f30d" id="r_a506c652dff33eb3f06eda307f731f30d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a506c652dff33eb3f06eda307f731f30d">fcarouge::test::anonymous_namespace{differential.cpp}::test</a></td></tr>
 <tr class="separator:a506c652dff33eb3f06eda307f731f30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

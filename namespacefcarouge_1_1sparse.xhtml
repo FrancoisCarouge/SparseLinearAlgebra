@@ -144,6 +144,14 @@ Variables</h2></td></tr>
 <tr class="memitem:a22a974884952de8722771dca7f79a808"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a22a974884952de8722771dca7f79a808">pattern_product</a></td></tr>
 <tr class="memdesc:a22a974884952de8722771dca7f79a808"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural pattern of a matrix product.  <br /></td></tr>
 <tr class="separator:a22a974884952de8722771dca7f79a808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73723800bf357be1ac9d16d3193b7eb7" id="r_a73723800bf357be1ac9d16d3193b7eb7"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Pattern&gt; </td></tr>
+<tr class="memitem:a73723800bf357be1ac9d16d3193b7eb7"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a73723800bf357be1ac9d16d3193b7eb7">structural_rank</a></td></tr>
+<tr class="memdesc:a73723800bf357be1ac9d16d3193b7eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural rank of a pattern: the largest count of its positions no two of which share a row or a column.  <br /></td></tr>
+<tr class="separator:a73723800bf357be1ac9d16d3193b7eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51dcae7ae15de5fe60e3532356e5328d" id="r_a51dcae7ae15de5fe60e3532356e5328d"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </td></tr>
+<tr class="memitem:a51dcae7ae15de5fe60e3532356e5328d"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a51dcae7ae15de5fe60e3532356e5328d">pattern_quotient</a></td></tr>
+<tr class="memdesc:a51dcae7ae15de5fe60e3532356e5328d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural pattern of a matrix division, the quotient <code>x</code> of <code>x * rhs = lhs</code>, by a square denominator of full structural rank.  <br /></td></tr>
+<tr class="separator:a51dcae7ae15de5fe60e3532356e5328d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812a97717e5886d75cc4171775a210ea" id="r_a812a97717e5886d75cc4171775a210ea"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Inner, sparsity_pattern auto Outer&gt; </td></tr>
 <tr class="memitem:a812a97717e5886d75cc4171775a210ea"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a812a97717e5886d75cc4171775a210ea">is_subset_of</a></td></tr>
 <tr class="memdesc:a812a97717e5886d75cc4171775a210ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern stores every position of another, of the same shape.  <br /></td></tr>
@@ -346,7 +354,7 @@ template&lt;std::size_t Rows, std::size_t Columns, sparse_linear_algebra::intern
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00114">114</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  114</span>{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="combine_8hpp_source.xhtml#l00055">fcarouge::sparse_linear_algebra::internal::combine()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00266">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00278">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00415">fcarouge::sparse_linear_algebra::internal::augment()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00552">fcarouge::sparse_linear_algebra::internal::close_component()</a>, <a class="el" href="combine_8hpp_source.xhtml#l00055">fcarouge::sparse_linear_algebra::internal::combine()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00266">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00470">fcarouge::sparse_linear_algebra::internal::maximum_matching()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00278">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
 
 </div>
 </div>
@@ -480,14 +488,14 @@ template&lt;sparsity_pattern auto Inner, sparsity_pattern auto Outer&gt; </div>
 </div><!-- fragment -->
 <p>Whether a pattern stores every position of another, of the same shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00095">95</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>                                  {[] -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Inner.rows != Outer.rows or Inner.columns != Outer.columns) {</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   98</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> pattern_intersection&lt;Inner, Outer&gt;.count == Inner.count;</div>
-<div class="line"><span class="lineno">  100</span>  }</div>
-<div class="line"><span class="lineno">  101</span>}()};</div>
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00123">123</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                  {[] -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Inner.rows != Outer.rows or Inner.columns != Outer.columns) {</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  126</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> pattern_intersection&lt;Inner, Outer&gt;.count == Inner.count;</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span>}()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -590,6 +598,43 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
 <div class="line"><span class="lineno">   88</span>    sparse_linear_algebra::internal::to_pattern&lt;</div>
 <div class="line"><span class="lineno">   89</span>        Lhs.rows, Rhs.columns,</div>
 <div class="line"><span class="lineno">   90</span>        sparse_linear_algebra::internal::product_positions&lt;Lhs, Rhs&gt;()&gt;()};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a51dcae7ae15de5fe60e3532356e5328d" name="a51dcae7ae15de5fe60e3532356e5328d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51dcae7ae15de5fe60e3532356e5328d">&#9670;&#160;</a></span>pattern_quotient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::sparse::pattern_quotient</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line">        Lhs.rows, Rhs.columns,</div>
+<div class="line">        sparse_linear_algebra::internal::quotient_positions&lt;Lhs, Rhs&gt;()&gt;()}</div>
+</div><!-- fragment -->
+<p>The structural pattern of a matrix division, the quotient <code>x</code> of <code>x * rhs = lhs</code>, by a square denominator of full structural rank. </p>
+<p>A position is stored whenever the solution reaches it from a stored element of the numerator: a diagonal denominator keeps the numerator's pattern, a triangular one closes it along its substitution, and an irreducible diagonal block of the denominator's block triangular form fills every row of the numerator it reaches. A position is stored even if its value cancels out at run time. </p>
+
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00115">115</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>                                      {</div>
+<div class="line"><span class="lineno">  116</span>    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line"><span class="lineno">  117</span>        Lhs.rows, Rhs.columns,</div>
+<div class="line"><span class="lineno">  118</span>        sparse_linear_algebra::internal::quotient_positions&lt;Lhs, Rhs&gt;()&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -729,6 +774,39 @@ template&lt;std::size_t Rows, std::size_t Columns&gt; </div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00230">fcarouge::sparse_linear_algebra::internal::to_pattern()</a>.</p>
 
+</div>
+</div>
+<a id="a73723800bf357be1ac9d16d3193b7eb7" name="a73723800bf357be1ac9d16d3193b7eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73723800bf357be1ac9d16d3193b7eb7">&#9670;&#160;</a></span>structural_rank</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;sparsity_pattern auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fcarouge::sparse::structural_rank</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    sparse_linear_algebra::internal::maximum_matching&lt;Pattern&gt;().size}</div>
+</div><!-- fragment -->
+<p>The structural rank of a pattern: the largest count of its positions no two of which share a row or a column. </p>
+<p>The rank of a matrix is at most the structural rank of its pattern, and equal to it for almost every value of its stored elements. A square matrix of a pattern of a structural rank below its size is singular, whatever the values of its stored elements. </p>
+
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00100">100</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                          {</div>
+<div class="line"><span class="lineno">  101</span>    sparse_linear_algebra::internal::maximum_matching&lt;Pattern&gt;().size};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4878f89526272a6edbf9099732f4a690" name="a4878f89526272a6edbf9099732f4a690"></a>

@@ -114,7 +114,7 @@ $(function(){initNavTree('structfcarouge_1_1test_1_1anonymous__namespace_02opera
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total__coll__graph.svg" width="251" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total__coll__graph.svg" width="251" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -125,11 +125,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a393769a3e06f844d5ac0ca31caa378b6" id="r_a393769a3e06f844d5ac0ca31caa378b6"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
 <tr class="memitem:a393769a3e06f844d5ac0ca31caa378b6"><td class="memTemplItemLeft" align="right" valign="top">static consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a393769a3e06f844d5ac0ca31caa378b6">additions</a> (const <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a1b5bc91162ca3a46757550c2676471eb">storage</a>&lt; Pattern &gt; &amp;value) -&gt; std::size_t</td></tr>
 <tr class="separator:a393769a3e06f844d5ac0ca31caa378b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b60004bc0e51b12184db36d1c350772" id="r_a0b60004bc0e51b12184db36d1c350772"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a0b60004bc0e51b12184db36d1c350772"><td class="memTemplItemLeft" align="right" valign="top">static consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0b60004bc0e51b12184db36d1c350772">divisions</a> (const <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a1b5bc91162ca3a46757550c2676471eb">storage</a>&lt; Pattern &gt; &amp;value) -&gt; std::size_t</td></tr>
+<tr class="separator:a0b60004bc0e51b12184db36d1c350772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The sums of the counts of a matrix's stored elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00069">69</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00104">104</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a393769a3e06f844d5ac0ca31caa378b6" name="a393769a3e06f844d5ac0ca31caa378b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a393769a3e06f844d5ac0ca31caa378b6">&#9670;&#160;</a></span>additions()</h2>
@@ -156,19 +159,59 @@ template&lt;auto Pattern&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00083">83</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                   {</div>
-<div class="line"><span class="lineno">   85</span>    std::size_t result{0};</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> counted &amp;element : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.values) {</div>
-<div class="line"><span class="lineno">   88</span>      result += element.additions;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   92</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00118">118</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                   {</div>
+<div class="line"><span class="lineno">  120</span>    std::size_t result{0};</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> counted &amp;element : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.values) {</div>
+<div class="line"><span class="lineno">  123</span>      result += element.additions;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="operation__count_8cpp_source.xhtml#l00042">fcarouge::test::counted::additions</a>.</p>
+
+</div>
+</div>
+<a id="a0b60004bc0e51b12184db36d1c350772" name="a0b60004bc0e51b12184db36d1c350772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b60004bc0e51b12184db36d1c350772">&#9670;&#160;</a></span>divisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static consteval auto fcarouge::test::anonymous_namespace{operation_count.cpp}::total::divisions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#a1b5bc91162ca3a46757550c2676471eb">storage</a>&lt; Pattern &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt; std::size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">nodiscard</span><span class="mlabel">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00130">130</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                   {</div>
+<div class="line"><span class="lineno">  132</span>    std::size_t result{0};</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> counted &amp;element : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.values) {</div>
+<div class="line"><span class="lineno">  135</span>      result += element.divisions;</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  139</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="operation__count_8cpp_source.xhtml#l00043">fcarouge::test::counted::divisions</a>.</p>
 
 </div>
 </div>
@@ -197,16 +240,16 @@ template&lt;auto Pattern&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00072">72</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                                                              {</div>
-<div class="line"><span class="lineno">   73</span>    std::size_t result{0};</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> counted &amp;element : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.values) {</div>
-<div class="line"><span class="lineno">   76</span>      result += element.multiplications;</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   80</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00107">107</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>                                                              {</div>
+<div class="line"><span class="lineno">  108</span>    std::size_t result{0};</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> counted &amp;element : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.values) {</div>
+<div class="line"><span class="lineno">  111</span>      result += element.multiplications;</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="operation__count_8cpp_source.xhtml#l00041">fcarouge::test::counted::multiplications</a>.</p>
 

@@ -1,0 +1,7 @@
+<map id="fcarouge::sparse_linear_algebra::internal::visit_component" name="fcarouge::sparse_linear_algebra::internal::visit_component">
+<area shape="rect" id="Node000001" title="Visit an unknown and its dependencies, the columns of the transposed denominator its matched equation..." alt="" coords="5,45,160,101"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af620844d784c393f80d53d8d098e25e4" title="Close the block of an unknown, the first visited of its block: its unknowns are the stacked ones down..." alt="" coords="208,5,363,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,55,192,49,193,54,161,61"/>
+<area shape="rect" id="Node000003" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a6568827e87d652e67f2c7e999927bb2d" title="Number an unknown in the order of its visit, and stack it." alt="" coords="208,85,362,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,86,194,92,193,98,160,91"/>
+</map>

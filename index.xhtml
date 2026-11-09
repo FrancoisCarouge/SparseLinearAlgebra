@@ -322,6 +322,10 @@ Pattern Algebra</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>product_term_count&lt;Lhs, Rhs&gt;</code>   </td><td class="markdownTableBodyNone">The count of elementary products of a matrix product.    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>structural_rank&lt;Pattern&gt;</code>   </td><td class="markdownTableBodyNone">The largest count of positions no two of which share a row or a column: a square matrix of a lower structural rank is singular, whatever its values.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>pattern_quotient&lt;Lhs, Rhs&gt;</code>   </td><td class="markdownTableBodyNone">The structural pattern of a matrix division, by a square denominator of full structural rank: a position is stored whenever the elimination of the denominator reaches it.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>is_subset_of&lt;Inner, Outer&gt;</code>   </td><td class="markdownTableBodyNone">Whether a pattern stores every position of another, of the same shape.   </td></tr>
 </table>
 <h2><a class="anchor" id="structural-zero-literal"></a>
@@ -371,27 +375,28 @@ Operations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>*</code>, <code>/</code>, by a scalar   </td><td class="markdownTableBodyNone">The same pattern.   </td><td class="markdownTableBodyNone"><code>O(K)</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>/</code>, of matrices, the quotient <code>x</code> of <code>x * rhs = lhs</code>   </td><td class="markdownTableBodyNone">The structural quotient of the patterns, by a square denominator of full structural rank.   </td><td class="markdownTableBodyNone"><code>O(K + T)</code> of the operands, the result, and the terms coupling the blocks of the denominator's block triangular form, plus <code>O(B³)</code> for each irreducible diagonal block of <code>B</code> unknowns, which is eliminated dense, with partial pivoting. A diagonal or a triangular denominator is a substitution.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>==</code>   </td><td class="markdownTableBodyNone">Not applicable. Compares every position of the same shape: a structural zero equals a stored zero.   </td><td class="markdownTableBodyNone"><code>O(K log K)</code> of the union.    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>transposed</code>   </td><td class="markdownTableBodyNone">The transposed pattern. Returns a matrix, not a view.   </td><td class="markdownTableBodyNone"><code>O(K)</code>.    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>dot</code>   </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Vectors of the same size, of any orientation.   </td><td class="markdownTableBodyNone"><code>O(K)</code>, of the elements stored by both vectors.    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>matrix_frob_norm</code>   </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Floating-point elements only.   </td><td class="markdownTableBodyNone"><code>O(K)</code>.    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>matrix_one_norm</code>   </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute column sum.   </td><td class="markdownTableBodyNone"><code>O(K + C)</code>.    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>matrix_inf_norm</code>   </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute row sum.   </td><td class="markdownTableBodyNone"><code>O(K + R)</code>.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Construction from every row   </td><td class="markdownTableBodyNone">The pattern of the matrix.   </td><td class="markdownTableBodyNone"><code>O(R * C)</code>.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Read of an element at a run-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(log K)</code>.    </td></tr>
+<td class="markdownTableBodyNone">Construction from every row   </td><td class="markdownTableBodyNone">The pattern of the matrix.   </td><td class="markdownTableBodyNone"><code>O(R * C)</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Read of an element at a run-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(log K)</code>.    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Access of an element at a compile-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(1)</code>.   </td></tr>
 </table>
 <p>The following are not supported yet:</p>
 <ul>
-<li>Matrix division, which needs a solver, a factorization.</li>
 <li>The <code>std::linalg</code> out-parameter algorithms: <code>add</code>, <code>matrix_product</code>, <code>matrix_rank_1_update</code>, <code>matrix_vector_product</code>, and <code>scale</code>.</li>
 </ul>
 <h2><a class="anchor" id="concepts"></a>
@@ -425,11 +430,12 @@ Notes</h2>
 <ul>
 <li>A pattern is structural: elements cancelling out at run time stay stored.</li>
 <li>A structural zero stays an exact zero, for which no term exists. Unlike a dense computation, a non-finite operand does not propagate through it: <code>0 * infinity</code> is never computed, and is not a not-a-number value.</li>
+<li>A matrix division eliminates each irreducible diagonal block of its denominator dense, with partial pivoting: within such a block, a structural zero takes part in the elimination as a zero. A block of a single unknown, every block of a diagonal or a triangular denominator, computes no structural zero.</li>
 <li>A matrix converts implicitly to a pattern storing all of its positions, and never to a narrower one, which could lose an element. Matrices of different element types do not mix: a conversion must be decided by the user.</li>
 <li><code>sizeof</code> of a matrix with stored elements is that of its <code>std::array</code> of stored elements. A matrix of an empty pattern still occupies the storage of an empty <code>std::array</code>, which is not guaranteed to be nothing.</li>
 <li>The library is freestanding. On GCC and Clang, the <code>sparse_linear_algebra_freestanding</code> target verifies it with <code>-ffreestanding -fno-exceptions -fno-rtti</code>, and the continuous integration cross-compiles it for a bare-metal Arm Cortex-M4.</li>
 <li>At compile time, and on a freestanding implementation, the Frobenius norm uses its own square root, whose result is not guaranteed to be identical to the last digit to that of <code>std::sqrt</code>.</li>
-<li>The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit.</li>
+<li>The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.</li>
 </ul>
 <h2><a class="anchor" id="roadmap--vision"></a>
 Roadmap &amp; Vision</h2>
@@ -437,7 +443,7 @@ Roadmap &amp; Vision</h2>
 <p>Toward version 1.0:</p>
 <ul>
 <li>Integrate as a typed linear algebra backend, with strong element types.</li>
-<li>Solve: triangular substitutions and factorizations, for the matrix division.</li>
+<li>Solve: the determinant, and factorizations reused across divisions by the same matrix.</li>
 <li>Interoperate with <code>std::mdspan</code> and the <code>std::linalg</code> out-parameter algorithms.</li>
 <li>Compose block patterns from smaller patterns.</li>
 <li>Lower the compile-time cost of large products.</li>

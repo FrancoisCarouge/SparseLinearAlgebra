@@ -122,6 +122,8 @@ Variables</h2></td></tr>
 <tr class="separator:afb233039a02e1098d56b2cac0235f564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f11361f903512116a43caf3b2d3e4cd" id="r_a8f11361f903512116a43caf3b2d3e4cd"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f11361f903512116a43caf3b2d3e4cd">identity</a></td></tr>
 <tr class="separator:a8f11361f903512116a43caf3b2d3e4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3947ba299ed5a4d6a780eb54fc1ef073" id="r_a3947ba299ed5a4d6a780eb54fc1ef073"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3947ba299ed5a4d6a780eb54fc1ef073">irreducible</a> {48}</td></tr>
+<tr class="separator:a3947ba299ed5a4d6a780eb54fc1ef073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a585da428e9f9ebbc2c8ecd84c62fac24" name="a585da428e9f9ebbc2c8ecd84c62fac24"></a>
@@ -135,7 +137,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000099">Test</a></b></dt><dd>Verifies a matrix of that scale only stores its elements. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000107">Test</a></b></dt><dd>Verifies a matrix of that scale only stores its elements. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="patterns_8cpp_source.xhtml#l00053">53</a> of file <a class="el" href="patterns_8cpp_source.xhtml">patterns.cpp</a>.</p>
 
@@ -185,6 +187,33 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a3947ba299ed5a4d6a780eb54fc1ef073" name="a3947ba299ed5a4d6a780eb54fc1ef073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3947ba299ed5a4d6a780eb54fc1ef073">&#9670;&#160;</a></span>irreducible</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fcarouge::test::anonymous_namespace{patterns.cpp}::irreducible {48}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000109">Test</a></b></dt><dd>Verifies the division at that scale: a diagonal denominator keeps the numerator's pattern, and the structural rank of a tridiagonal pattern is full. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000110">Test</a></b></dt><dd>Verifies the plan of a division by an irreducible denominator, of a dense quotient, at the scale of its verified limit. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="patterns_8cpp_source.xhtml#l00101">101</a> of file <a class="el" href="patterns_8cpp_source.xhtml">patterns.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{48};</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="afd0adec8a94b42f9ca1340023a69acd5" name="afd0adec8a94b42f9ca1340023a69acd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd0adec8a94b42f9ca1340023a69acd5">&#9670;&#160;</a></span>size</h2>
 
@@ -204,7 +233,7 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000098">Test</a></b></dt><dd>Verifies the compile-time cost is practical at the supported scale, a few hundred stored elements, for each pattern operation. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000106">Test</a></b></dt><dd>Verifies the compile-time cost is practical at the supported scale, a few hundred stored elements, for each pattern operation. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="patterns_8cpp_source.xhtml#l00041">41</a> of file <a class="el" href="patterns_8cpp_source.xhtml">patterns.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>{100};</div>
@@ -239,7 +268,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> value * value;</div>
 <div class="line">}()}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000100">Test</a></b></dt><dd>Verifies the operations on a matrix of that scale in constant evaluation: a tridiagonal squared is pentadiagonal, and the identity is neutral. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000108">Test</a></b></dt><dd>Verifies the operations on a matrix of that scale in constant evaluation: a tridiagonal squared is pentadiagonal, and the identity is neutral. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="patterns_8cpp_source.xhtml#l00060">60</a> of file <a class="el" href="patterns_8cpp_source.xhtml">patterns.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>                            {[] -&gt; <span class="keyword">auto</span> {</div>
