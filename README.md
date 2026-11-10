@@ -257,7 +257,7 @@ The operations below are supported, each as a function or an operator of the `fc
 | `matrix_one_norm` | Not applicable. Returns an element, the largest absolute column sum. | `O(K + C)`. |
 | `matrix_inf_norm` | Not applicable. Returns an element, the largest absolute row sum. | `O(K + R)`. |
 | Construction from every row | The pattern of the matrix. | `O(R * C)`. |
-| Read of an element at a run-time position | Not applicable. Returns an element. | `O(log K)`. |
+| Read of an element at a run-time position | Not applicable. Returns an element. | `O(log K)`. `O(1)` without a structural zero. |
 | Access of an element at a compile-time position | Not applicable. Returns an element. | `O(1)`. |
 
 The following are not supported yet:

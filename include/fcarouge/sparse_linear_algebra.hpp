@@ -136,7 +136,8 @@ public:
   //! @param row The row of the element.
   //! @param column The column of the element.
   //!
-  //! @complexity Logarithmic in the count of stored elements.
+  //! @complexity Logarithmic in the count of stored elements. Constant
+  //! without a structural zero.
   [[nodiscard]] constexpr auto operator[](std::size_t row,
                                           std::size_t column) const -> Type;
 

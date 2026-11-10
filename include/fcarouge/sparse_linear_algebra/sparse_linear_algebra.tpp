@@ -76,9 +76,13 @@ template <typename Type, auto Pattern>
 constexpr auto
 sparse_matrix<Type, Pattern>::operator[](std::size_t row,
                                          std::size_t column) const -> Type {
-  const std::size_t index{Pattern.index_of(row, column)};
+  if constexpr (sparse_linear_algebra::internal::is_dense<Pattern>) {
+    return values[(row * Pattern.columns) + column];
+  } else {
+    const std::size_t index{Pattern.index_of(row, column)};
 
-  return index == sparse::absent ? Type{} : values[index];
+    return index == sparse::absent ? Type{} : values[index];
+  }
 }
 
 template <typename Type, auto Pattern>
