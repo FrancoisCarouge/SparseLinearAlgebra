@@ -107,6 +107,16 @@ namespace {
   static_assert(std::same_as<decltype(dense_value[0, 0]), double &>);
   assert((dense_value.at<1, 0>() == 4.));
 
+  // A run-time position of a constant matrix without a structural zero is a
+  // value, read at its row-major position.
+  const sparse_matrix<double, sparse::dense<2, 3>> dense_constant{1., 2., 3.,
+                                                                  4., 5., 6.};
+
+  static_assert(std::same_as<decltype(dense_constant[0, 0]), double>);
+  assert((dense_constant[0, 2] == 3.));
+  assert((dense_constant[1, 0] == 4.));
+  assert((dense_constant[1, 2] == 6.));
+
   // A vector.
   constexpr sparse::pattern column_pattern{sparse::shape<4, 1>,
                                            {{1, 0}, {3, 0}}};
