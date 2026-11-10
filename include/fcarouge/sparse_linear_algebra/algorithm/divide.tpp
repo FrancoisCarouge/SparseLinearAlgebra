@@ -81,22 +81,33 @@ struct division_counts {
   std::size_t stores{0};
   std::size_t buffer_size{0};
 
-  constexpr void load_denominator(std::size_t /*buffer*/,
-                                  std::size_t /*element*/) {
+  constexpr void load_denominator(std::size_t buffer, std::size_t element) {
+    static_cast<void>(buffer);
+    static_cast<void>(element);
+
     ++denominator_loads;
   }
 
-  constexpr void load_numerator(std::size_t /*buffer*/,
-                                std::size_t /*element*/) {
+  constexpr void load_numerator(std::size_t buffer, std::size_t element) {
+    static_cast<void>(buffer);
+    static_cast<void>(element);
+
     ++numerator_loads;
   }
 
-  constexpr void subtract(std::size_t /*buffer*/, std::size_t /*denominator*/,
-                          std::size_t /*quotient*/) {
+  constexpr void subtract(std::size_t buffer, std::size_t denominator,
+                          std::size_t quotient) {
+    static_cast<void>(buffer);
+    static_cast<void>(denominator);
+    static_cast<void>(quotient);
+
     ++updates;
   }
 
-  constexpr void store(std::size_t /*buffer*/, std::size_t /*element*/) {
+  constexpr void store(std::size_t buffer, std::size_t element) {
+    static_cast<void>(buffer);
+    static_cast<void>(element);
+
     ++stores;
   }
 

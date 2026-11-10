@@ -100,8 +100,11 @@ template <typename Type, auto Pattern>
 template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::operator[](
-    std::integral_constant<std::size_t, Row> /*row*/,
-    std::integral_constant<std::size_t, Column> /*column*/) -> Type & {
+    std::integral_constant<std::size_t, Row> row,
+    std::integral_constant<std::size_t, Column> column) -> Type & {
+  static_cast<void>(row);
+  static_cast<void>(column);
+
   return at<Row, Column>();
 }
 
@@ -110,8 +113,11 @@ template <typename Type, auto Pattern>
 template <std::size_t Row, std::size_t Column>
   requires(Row < Pattern.rows and Column < Pattern.columns)
 constexpr auto sparse_matrix<Type, Pattern>::operator[](
-    std::integral_constant<std::size_t, Row> /*row*/,
-    std::integral_constant<std::size_t, Column> /*column*/) const -> Type {
+    std::integral_constant<std::size_t, Row> row,
+    std::integral_constant<std::size_t, Column> column) const -> Type {
+  static_cast<void>(row);
+  static_cast<void>(column);
+
   return at<Row, Column>();
 }
 

@@ -52,8 +52,12 @@ namespace sparse_linear_algebra::internal {
 void position_out_of_range_or_duplicate();
 
 //! @brief The predicate of every position.
-inline constexpr auto every{
-    [](std::size_t /*row*/, std::size_t /*column*/) -> bool { return true; }};
+inline constexpr auto every{[](std::size_t row, std::size_t column) -> bool {
+  static_cast<void>(row);
+  static_cast<void>(column);
+
+  return true;
+}};
 
 //! @brief The predicate of the positions of the `Lower` sub-diagonals, the main
 //! diagonal, and the `Upper` super-diagonals.
