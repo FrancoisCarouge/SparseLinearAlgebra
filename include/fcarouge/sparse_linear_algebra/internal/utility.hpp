@@ -353,6 +353,27 @@ struct term {
   std::size_t rhs{0};
 };
 
+//! @brief The most elementary products a fold expression expands.
+//!
+//! @details An operation expands its table of elementary products at compile
+//! time, each product a separate expression of compile-time indexes, in fold
+//! expressions of at most this many products: Clang 20 rejects a fold
+//! expression beyond its expression nesting limit, 256, and each fold
+//! expression is one instantiation, so the compile-time cost stays linear in
+//! the products.
+inline constexpr std::size_t fold_size{256};
+
+//! @brief The count of fold expressions expanding the given count of products.
+template <std::size_t Count>
+inline constexpr std::size_t fold_count{(Count + fold_size - 1) / fold_size};
+
+//! @brief The count of products of the given fold expression of the given
+//! count of products.
+template <std::size_t Count, std::size_t Fold>
+inline constexpr std::size_t fold_term_count{
+    Count - (Fold * fold_size) < fold_size ? Count - (Fold * fold_size)
+                                           : fold_size};
+
 //! @brief The position along a vector of the given stored element.
 template <auto Pattern>
 [[nodiscard]] constexpr auto vector_index(std::size_t i) -> std::size_t {
