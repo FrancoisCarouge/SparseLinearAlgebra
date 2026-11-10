@@ -47,22 +47,52 @@ namespace sparse_linear_algebra::internal {
 template <auto Lhs, auto Rhs>
 inline constexpr std::size_t dot_term_count{dot_terms<Lhs, Rhs>.size()};
 
-//! @brief The dot product: the sum of its elementary products.
+//! @brief The count of fold expressions expanding the elementary products of
+//! a dot product.
+template <auto Lhs, auto Rhs>
+inline constexpr std::size_t dot_fold_count{
+    fold_count<dot_term_count<Lhs, Rhs>>};
+
+//! @brief The count of elementary products of a fold expression of a dot
+//! product.
+template <auto Lhs, auto Rhs, std::size_t Fold>
+inline constexpr std::size_t dot_fold_term_count{
+    fold_term_count<dot_term_count<Lhs, Rhs>, Fold>};
+
+//! @brief Add a run of elementary products of a dot product to a partial sum.
 //!
 //! @details Each elementary product is a separate expression of compile-time
-//! indexes: the sum is one expression, kept in registers, rather than a loop
-//! over a table of indexes. The sum starts from a zero element and adds the
-//! products in the order of the stored elements, as the accumulation into a
-//! zero result does.
-template <auto Lhs, auto Rhs, typename Type, std::size_t... Terms>
+//! indexes, rather than a loop over a table of indexes loaded from memory. The
+//! products add to the partial sum in the order of the stored elements.
+template <auto Lhs, auto Rhs, std::size_t Fold, typename Type,
+          std::size_t... Terms>
+[[nodiscard]] constexpr auto dot_fold(const Type &sum,
+                                      const sparse_matrix<Type, Lhs> &lhs,
+                                      const sparse_matrix<Type, Rhs> &rhs,
+                                      std::index_sequence<Terms...> /*terms*/)
+    -> Type {
+  constexpr const auto &terms{dot_terms<Lhs, Rhs>};
+  constexpr std::size_t first{Fold * fold_size};
+
+  return (sum + ... +
+          (lhs.values[terms[first + Terms].lhs] *
+           rhs.values[terms[first + Terms].rhs]));
+}
+
+//! @brief A dot product, the sum of all its elementary products from zero.
+template <auto Lhs, auto Rhs, typename Type, std::size_t... Folds>
 [[nodiscard]] constexpr auto
 dot_product(const sparse_matrix<Type, Lhs> &lhs,
             const sparse_matrix<Type, Rhs> &rhs,
-            std::index_sequence<Terms...> /*terms*/) -> Type {
-  constexpr const auto &terms{dot_terms<Lhs, Rhs>};
+            std::index_sequence<Folds...> /*folds*/) -> Type {
+  Type result{};
 
-  return (Type{} + ... +
-          (lhs.values[terms[Terms].lhs] * rhs.values[terms[Terms].rhs]));
+  ((result = dot_fold<Lhs, Rhs, Folds>(
+        result, lhs, rhs,
+        std::make_index_sequence<dot_fold_term_count<Lhs, Rhs, Folds>>{})),
+   ...);
+
+  return result;
 }
 } // namespace sparse_linear_algebra::internal
 
@@ -82,7 +112,7 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   return sparse_linear_algebra::internal::dot_product(
       lhs, rhs,
       std::make_index_sequence<
-          sparse_linear_algebra::internal::dot_term_count<Lhs, Rhs>>{});
+          sparse_linear_algebra::internal::dot_fold_count<Lhs, Rhs>>{});
 }
 } // namespace fcarouge
 
