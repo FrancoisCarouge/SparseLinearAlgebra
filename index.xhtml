@@ -336,7 +336,7 @@ Structural Zero Literal</h2>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... Characters&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">consteval</span> <span class="keyword">auto</span> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_o() noexcept;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1literals_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1literals.xhtml">fcarouge::literals</a></div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00226">sparse_linear_algebra.hpp:226</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1literals_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1literals.xhtml">fcarouge::literals</a></div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00227">sparse_linear_algebra.hpp:227</a></div></div>
 </div><!-- fragment --><p>The value of a structural zero in a construction from every row, so that the declaration reads as the matrix. A value at a structural zero, even <code>0.</code>, does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
 <div class="line"> </div>
@@ -393,7 +393,7 @@ Operations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Construction from every row   </td><td class="markdownTableBodyNone">The pattern of the matrix.   </td><td class="markdownTableBodyNone"><code>O(R * C)</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Read of an element at a run-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(log K)</code>.    </td></tr>
+<td class="markdownTableBodyNone">Read of an element at a run-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(log K)</code>. <code>O(1)</code> without a structural zero.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Access of an element at a compile-time position   </td><td class="markdownTableBodyNone">Not applicable. Returns an element.   </td><td class="markdownTableBodyNone"><code>O(1)</code>.   </td></tr>
 </table>
