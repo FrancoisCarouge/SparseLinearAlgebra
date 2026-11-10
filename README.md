@@ -121,6 +121,7 @@ class sparse_matrix;
 | `operator[row, column] const` | Read the element at the run-time position, by value. A structural zero reads as `Type{}`. |
 | `operator[row, column]` | Access the element at the run-time position, by reference. Only without a structural zero. |
 | `operator[std::integral_constant<std::size_t, Row>, std::integral_constant<std::size_t, Column>]` | Access the stored element at the compile-time position, by reference. Only for a stored element. The generic access of a linear algebra library by compile-time position. |
+| `operator[std::integral_constant<std::size_t, Row>, std::integral_constant<std::size_t, Column>] const` | Read the element at the compile-time position, by value. A structural zero reads as `Type{}`. The generic read of a linear algebra library by compile-time position. |
 
 ### Class Pattern
 

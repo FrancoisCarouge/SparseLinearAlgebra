@@ -167,6 +167,26 @@ public:
   operator[](std::integral_constant<std::size_t, Row> /*row*/,
              std::integral_constant<std::size_t, Column> /*column*/) -> Type &;
 
+  //! @brief Read the element at the given compile-time position, by value.
+  //!
+  //! @details A structural zero reads as a zero of the element type. The
+  //! position's type is the standard type of the compile-time index of a
+  //! linear algebra library, for a generic read by position. Selected for a
+  //! structural zero of a modifiable matrix too: the read is a value, not a
+  //! reference, so that an assignment to the element of an arithmetic type, a
+  //! write that would be lost, does not compile.
+  //!
+  //! @tparam Row The row of the element.
+  //! @tparam Column The column of the element.
+  //!
+  //! @complexity Constant.
+  template <std::size_t Row, std::size_t Column>
+    requires(Row < Pattern.rows and Column < Pattern.columns)
+  [[nodiscard]] constexpr auto
+  operator[](std::integral_constant<std::size_t, Row> /*row*/,
+             std::integral_constant<std::size_t, Column> /*column*/) const
+      -> Type;
+
   //! @brief The stored element at the given compile-time position.
   //!
   //! @details A structural zero has nothing to refer to, and no such access:

@@ -94,6 +94,10 @@ namespace {
   static_assert(std::same_as<decltype(value[0, 0]), double>);
   static_assert(std::same_as<decltype(value[zero{}, zero{}]), double &>);
   static_assert(std::same_as<decltype(value[zero{}, one{}]), double>);
+  static_assert(std::same_as<decltype(constant[zero{}, zero{}]), double>);
+  static_assert(std::same_as<decltype(constant[zero{}, one{}]), double>);
+  assert((constant[one{}, one{}] == 2.));
+  assert((constant[zero{}, one{}] == 0.));
 
   // A run-time position of a matrix without a structural zero is a reference.
   sparse_matrix<double, sparse::dense<2, 2>> dense_value;

@@ -104,6 +104,16 @@ constexpr auto sparse_matrix<Type, Pattern>::operator[](
 template <typename Type, auto Pattern>
   requires sparsity_pattern<decltype(Pattern)>
 template <std::size_t Row, std::size_t Column>
+  requires(Row < Pattern.rows and Column < Pattern.columns)
+constexpr auto sparse_matrix<Type, Pattern>::operator[](
+    std::integral_constant<std::size_t, Row> /*row*/,
+    std::integral_constant<std::size_t, Column> /*column*/) const -> Type {
+  return at<Row, Column>();
+}
+
+template <typename Type, auto Pattern>
+  requires sparsity_pattern<decltype(Pattern)>
+template <std::size_t Row, std::size_t Column>
   requires(Pattern.stores(Row, Column))
 constexpr auto sparse_matrix<Type, Pattern>::at() -> Type & {
   static constexpr std::size_t index{Pattern.index_of(Row, Column)};

@@ -64,6 +64,13 @@ concept readable_at = requires(const Matrix value) {
 };
 
 template <typename Matrix, std::size_t Row, std::size_t Column>
+concept constant_readable_at = requires {
+  static_cast<double (Matrix::*)(std::integral_constant<std::size_t, Row>,
+                                 std::integral_constant<std::size_t, Column>)
+                  const>(&Matrix::template operator[]<Row, Column>);
+};
+
+template <typename Matrix, std::size_t Row, std::size_t Column>
 concept assignable_at =
     requires(Matrix value) { value.template at<Row, Column>() = 1.; };
 
@@ -76,9 +83,21 @@ static_assert(writable_at<diagonal_matrix, 1, 1>);
 static_assert(not writable_at<diagonal_matrix, 0, 1>);
 static_assert(not writable_at<diagonal_matrix, 1, 0>);
 
+//! @test Verifies every position has its own read by value at a compile-time
+//! position, a structural zero included, rather than a conversion of the
+//! position to a run-time one.
+static_assert(constant_readable_at<diagonal_matrix, 0, 0>);
+static_assert(constant_readable_at<diagonal_matrix, 0, 1>);
+static_assert(constant_readable_at<column, 0, 0>);
+static_assert(constant_readable_at<column, 1, 0>);
+static_assert(constant_readable_at<singleton, 0, 0>);
+static_assert(constant_readable_at<empty_singleton, 0, 0>);
+
 //! @test Verifies a position out of the matrix is not accessible.
 static_assert(not readable_at<diagonal_matrix, 2, 0>);
 static_assert(not readable_at<diagonal_matrix, 0, 2>);
+static_assert(not constant_readable_at<diagonal_matrix, 2, 0>);
+static_assert(not constant_readable_at<diagonal_matrix, 0, 2>);
 
 //! @test Verifies the rule for a vector.
 static_assert(readable_at<column, 0, 0>);
