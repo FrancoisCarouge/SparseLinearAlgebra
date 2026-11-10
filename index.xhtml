@@ -210,7 +210,9 @@ Member Functions</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>operator[row, column]</code>   </td><td class="markdownTableBodyNone">Access the element at the run-time position, by reference. Only without a structural zero.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>operator[std::integral_constant&lt;std::size_t, Row&gt;, std::integral_constant&lt;std::size_t, Column&gt;]</code>   </td><td class="markdownTableBodyNone">Access the stored element at the compile-time position, by reference. Only for a stored element. The generic access of a linear algebra library by compile-time position.   </td></tr>
+<td class="markdownTableBodyNone"><code>operator[std::integral_constant&lt;std::size_t, Row&gt;, std::integral_constant&lt;std::size_t, Column&gt;]</code>   </td><td class="markdownTableBodyNone">Access the stored element at the compile-time position, by reference. Only for a stored element. The generic access of a linear algebra library by compile-time position.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>operator[std::integral_constant&lt;std::size_t, Row&gt;, std::integral_constant&lt;std::size_t, Column&gt;] const</code>   </td><td class="markdownTableBodyNone">Read the element at the compile-time position, by value. A structural zero reads as <code>Type{}</code>. The generic read of a linear algebra library by compile-time position.   </td></tr>
 </table>
 <h2><a class="anchor" id="class-pattern"></a>
 Class Pattern</h2>
@@ -334,7 +336,7 @@ Structural Zero Literal</h2>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">char</span>... Characters&gt;</div>
 <div class="line">[[nodiscard]] <span class="keyword">consteval</span> <span class="keyword">auto</span> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_o() noexcept;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_1_1literals_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1literals.xhtml">fcarouge::literals</a></div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00206">sparse_linear_algebra.hpp:206</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1literals_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1literals.xhtml">fcarouge::literals</a></div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00226">sparse_linear_algebra.hpp:226</a></div></div>
 </div><!-- fragment --><p>The value of a structural zero in a construction from every row, so that the declaration reads as the matrix. A value at a structural zero, even <code>0.</code>, does not compile, nor does <code>0_o</code> at a stored element. The literal is a zero only, <code>0_o</code> or <code>0._o</code>: <code>1_o</code> does not compile.</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>literals::operator<span class="stringliteral">&quot;&quot;</span>_o;</div>
 <div class="line"> </div>
