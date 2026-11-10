@@ -161,12 +161,15 @@ public:
   //! @tparam Row The row of the element.
   //! @tparam Column The column of the element.
   //!
+  //! @param row The compile-time row of the element.
+  //! @param column The compile-time column of the element.
+  //!
   //! @complexity Constant.
   template <std::size_t Row, std::size_t Column>
     requires(Pattern.stores(Row, Column))
   [[nodiscard]] constexpr auto
-  operator[](std::integral_constant<std::size_t, Row> /*row*/,
-             std::integral_constant<std::size_t, Column> /*column*/) -> Type &;
+  operator[](std::integral_constant<std::size_t, Row> row,
+             std::integral_constant<std::size_t, Column> column) -> Type &;
 
   //! @brief Read the element at the given compile-time position, by value.
   //!
@@ -180,13 +183,15 @@ public:
   //! @tparam Row The row of the element.
   //! @tparam Column The column of the element.
   //!
+  //! @param row The compile-time row of the element.
+  //! @param column The compile-time column of the element.
+  //!
   //! @complexity Constant.
   template <std::size_t Row, std::size_t Column>
     requires(Row < Pattern.rows and Column < Pattern.columns)
   [[nodiscard]] constexpr auto
-  operator[](std::integral_constant<std::size_t, Row> /*row*/,
-             std::integral_constant<std::size_t, Column> /*column*/) const
-      -> Type;
+  operator[](std::integral_constant<std::size_t, Row> row,
+             std::integral_constant<std::size_t, Column> column) const -> Type;
 
   //! @brief The stored element at the given compile-time position.
   //!

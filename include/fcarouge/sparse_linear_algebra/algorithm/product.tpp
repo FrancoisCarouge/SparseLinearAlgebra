@@ -108,13 +108,15 @@ constexpr void
 product_fold(sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> &result,
              const sparse_matrix<Type, Lhs> &lhs,
              const sparse_matrix<Type, Rhs> &rhs,
-             std::index_sequence<Terms...> /*terms*/) {
-  constexpr const auto &terms{product_terms<Lhs, Rhs>};
+             std::index_sequence<Terms...> terms) {
+  static_cast<void>(terms);
+
+  constexpr const auto &table{product_terms<Lhs, Rhs>};
   constexpr std::size_t first{Fold * fold_size};
 
-  ((result.values[terms[first + Terms].result] +=
-    lhs.values[terms[first + Terms].lhs] *
-    rhs.values[terms[first + Terms].rhs]),
+  ((result.values[table[first + Terms].result] +=
+    lhs.values[table[first + Terms].lhs] *
+    rhs.values[table[first + Terms].rhs]),
    ...);
 }
 
@@ -122,8 +124,10 @@ product_fold(sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> &result,
 template <auto Lhs, auto Rhs, typename Type, std::size_t... Folds>
 [[nodiscard]] constexpr auto product(const sparse_matrix<Type, Lhs> &lhs,
                                      const sparse_matrix<Type, Rhs> &rhs,
-                                     std::index_sequence<Folds...> /*folds*/)
+                                     std::index_sequence<Folds...> folds)
     -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> {
+  static_cast<void>(folds);
+
   sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> result;
 
   (product_fold<Lhs, Rhs, Folds>(

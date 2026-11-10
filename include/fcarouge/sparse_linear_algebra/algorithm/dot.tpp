@@ -69,22 +69,26 @@ template <auto Lhs, auto Rhs, std::size_t Fold, typename Type,
 [[nodiscard]] constexpr auto dot_fold(const Type &sum,
                                       const sparse_matrix<Type, Lhs> &lhs,
                                       const sparse_matrix<Type, Rhs> &rhs,
-                                      std::index_sequence<Terms...> /*terms*/)
+                                      std::index_sequence<Terms...> terms)
     -> Type {
-  constexpr const auto &terms{dot_terms<Lhs, Rhs>};
+  static_cast<void>(terms);
+
+  constexpr const auto &table{dot_terms<Lhs, Rhs>};
   constexpr std::size_t first{Fold * fold_size};
 
   return (sum + ... +
-          (lhs.values[terms[first + Terms].lhs] *
-           rhs.values[terms[first + Terms].rhs]));
+          (lhs.values[table[first + Terms].lhs] *
+           rhs.values[table[first + Terms].rhs]));
 }
 
 //! @brief A dot product, the sum of all its elementary products from zero.
 template <auto Lhs, auto Rhs, typename Type, std::size_t... Folds>
-[[nodiscard]] constexpr auto
-dot_product(const sparse_matrix<Type, Lhs> &lhs,
-            const sparse_matrix<Type, Rhs> &rhs,
-            std::index_sequence<Folds...> /*folds*/) -> Type {
+[[nodiscard]] constexpr auto dot_product(const sparse_matrix<Type, Lhs> &lhs,
+                                         const sparse_matrix<Type, Rhs> &rhs,
+                                         std::index_sequence<Folds...> folds)
+    -> Type {
+  static_cast<void>(folds);
+
   Type result{};
 
   ((result = dot_fold<Lhs, Rhs, Folds>(
