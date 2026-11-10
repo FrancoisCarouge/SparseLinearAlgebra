@@ -208,8 +208,8 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00175">175</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  177</span>  {}</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00179">179</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>  {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,32 +262,32 @@ requires (Size == Count)</div>
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Quadratic in the count of stored elements, linear when they are given in row-major order. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00194">194</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>                                                    {</div>
-<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Count; ++i) {</div>
-<div class="line"><span class="lineno">  197</span>      <span class="keyword">const</span> position <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{stored[i]};</div>
-<div class="line"><span class="lineno">  198</span>      std::size_t j{i};</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.row &gt;= Rows || <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.column &gt;= Columns) {</div>
-<div class="line"><span class="lineno">  201</span>        <a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">sparse_linear_algebra::internal::position_out_of_range_or_duplicate</a>();</div>
-<div class="line"><span class="lineno">  202</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00198">198</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>                                                    {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Count; ++i) {</div>
+<div class="line"><span class="lineno">  201</span>      <span class="keyword">const</span> position <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{stored[i]};</div>
+<div class="line"><span class="lineno">  202</span>      std::size_t j{i};</div>
 <div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">for</span> (; j &gt; 0 &amp;&amp; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> &lt; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]; --j) {</div>
-<div class="line"><span class="lineno">  205</span>        <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j] = <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1];</div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.row &gt;= Rows || <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>.column &gt;= Columns) {</div>
+<div class="line"><span class="lineno">  205</span>        <a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">sparse_linear_algebra::internal::position_out_of_range_or_duplicate</a>();</div>
 <div class="line"><span class="lineno">  206</span>      }</div>
 <div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">if</span> (j &gt; 0 &amp;&amp; value == <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]) {</div>
-<div class="line"><span class="lineno">  209</span>        <a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">sparse_linear_algebra::internal::position_out_of_range_or_duplicate</a>();</div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">for</span> (; j &gt; 0 &amp;&amp; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> &lt; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]; --j) {</div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j] = <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1];</div>
 <div class="line"><span class="lineno">  210</span>      }</div>
 <div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>      <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j] = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>;</div>
-<div class="line"><span class="lineno">  213</span>    }</div>
-<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">if</span> (j &gt; 0 &amp;&amp; value == <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j - 1]) {</div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">sparse_linear_algebra::internal::position_out_of_range_or_duplicate</a>();</div>
+<div class="line"><span class="lineno">  214</span>      }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[j] = <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>;</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="line"><span class="lineno">  218</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_ad0931c574cdfeef4a8bab784750ed93a"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate</a></div><div class="ttdeci">void position_out_of_range_or_duplicate()</div><div class="ttdoc">Called by a pattern's invalid construction: never defined, its call ends the constant evaluation,...</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a9f09dfa4f6cdbf5fef0d1442be3cc61d"><div class="ttname"><a href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">fcarouge::sparse::pattern::positions</a></div><div class="ttdeci">std::array&lt; position,(Count &gt; 0 ? Count :1)&gt; positions</div><div class="ttdoc">The stored positions, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00170">pattern.hpp:170</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a9f09dfa4f6cdbf5fef0d1442be3cc61d"><div class="ttname"><a href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">fcarouge::sparse::pattern::positions</a></div><div class="ttdeci">std::array&lt; position,(Count &gt; 0 ? Count :1)&gt; positions</div><div class="ttdoc">The stored positions, in row-major order.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00174">pattern.hpp:174</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00170">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
+<p class="reference">References <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad0931c574cdfeef4a8bab784750ed93a">fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00174">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -340,23 +340,23 @@ requires ( <a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1i
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the count of positions of the matrix. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00226">226</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  227</span>                                                {</div>
-<div class="line"><span class="lineno">  228</span>    std::size_t index{0};</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
-<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
-<div class="line"><span class="lineno">  232</span>        <span class="keywordflow">if</span> (predicate(row, column)) {</div>
-<div class="line"><span class="lineno">  233</span>          <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>};</div>
-<div class="line"><span class="lineno">  234</span>          ++index;</div>
-<div class="line"><span class="lineno">  235</span>        }</div>
-<div class="line"><span class="lineno">  236</span>      }</div>
-<div class="line"><span class="lineno">  237</span>    }</div>
-<div class="line"><span class="lineno">  238</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00230">230</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                {</div>
+<div class="line"><span class="lineno">  232</span>    std::size_t index{0};</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  235</span>      <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">if</span> (predicate(row, column)) {</div>
+<div class="line"><span class="lineno">  237</span>          <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[index] = {<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>};</div>
+<div class="line"><span class="lineno">  238</span>          ++index;</div>
+<div class="line"><span class="lineno">  239</span>        }</div>
+<div class="line"><span class="lineno">  240</span>      }</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00170">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00174">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
 
 </div>
 </div>
@@ -393,19 +393,19 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p>The index of the stored element at the given row and column, or <code>absent</code> for a structural zero. </p>
 <dl class="section user"><dt>Complexity</dt><dd>Logarithmic in the count of stored elements. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00266">266</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>                   {</div>
-<div class="line"><span class="lineno">  269</span>    <span class="keyword">const</span> position <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>};</div>
-<div class="line"><span class="lineno">  270</span>    <span class="keyword">const</span> std::size_t index{<a class="code hl_function" href="#a44187daf05a333b2893cd4732b3c2757">lower_bound</a>(value)};</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">return</span> index &lt; Count &amp;&amp; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[index] == <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> ? index : <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">absent</a>;</div>
-<div class="line"><span class="lineno">  273</span>  }</div>
-<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a60901167b3058282c44c4fe6d9c27da0"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">fcarouge::sparse::absent</a></div><div class="ttdeci">constexpr std::size_t absent</div><div class="ttdoc">The index of a position a pattern does not store.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00114">pattern.hpp:114</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a44187daf05a333b2893cd4732b3c2757"><div class="ttname"><a href="#a44187daf05a333b2893cd4732b3c2757">fcarouge::sparse::pattern::lower_bound</a></div><div class="ttdeci">constexpr auto lower_bound(position value) const -&gt; std::size_t</div><div class="ttdoc">The index of the first stored position not before the given one.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00243">pattern.hpp:243</a></div></div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00270">270</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>                   {</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keyword">const</span> position <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>};</div>
+<div class="line"><span class="lineno">  274</span>    <span class="keyword">const</span> std::size_t index{<a class="code hl_function" href="#a44187daf05a333b2893cd4732b3c2757">lower_bound</a>(value)};</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">return</span> index &lt; Count &amp;&amp; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[index] == <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> ? index : <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">absent</a>;</div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+<div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a60901167b3058282c44c4fe6d9c27da0"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">fcarouge::sparse::absent</a></div><div class="ttdeci">constexpr std::size_t absent</div><div class="ttdoc">The index of a position a pattern does not store.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00118">pattern.hpp:118</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a44187daf05a333b2893cd4732b3c2757"><div class="ttname"><a href="#a44187daf05a333b2893cd4732b3c2757">fcarouge::sparse::pattern::lower_bound</a></div><div class="ttdeci">constexpr auto lower_bound(position value) const -&gt; std::size_t</div><div class="ttdoc">The index of the first stored position not before the given one.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00247">pattern.hpp:247</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00243">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::lower_bound()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00170">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00247">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::lower_bound()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00174">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00278">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00282">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -451,29 +451,29 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p>The index of the first stored position not before the given one. </p>
 <dl class="section user"><dt>Complexity</dt><dd>Logarithmic in the count of stored elements. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00243">243</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  244</span>                   {</div>
-<div class="line"><span class="lineno">  245</span>    std::size_t first{0};</div>
-<div class="line"><span class="lineno">  246</span>    std::size_t <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a>{Count};</div>
-<div class="line"><span class="lineno">  247</span> </div>
-<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">while</span> (size &gt; 0) {</div>
-<div class="line"><span class="lineno">  249</span>      <span class="keyword">const</span> std::size_t half{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> / 2};</div>
-<div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[first + half] &lt; value) {</div>
-<div class="line"><span class="lineno">  252</span>        first += half + 1;</div>
-<div class="line"><span class="lineno">  253</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> -= half + 1;</div>
-<div class="line"><span class="lineno">  254</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  255</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> = half;</div>
-<div class="line"><span class="lineno">  256</span>      }</div>
-<div class="line"><span class="lineno">  257</span>    }</div>
-<div class="line"><span class="lineno">  258</span> </div>
-<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> first;</div>
-<div class="line"><span class="lineno">  260</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00247">247</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>                   {</div>
+<div class="line"><span class="lineno">  249</span>    std::size_t first{0};</div>
+<div class="line"><span class="lineno">  250</span>    std::size_t <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a>{Count};</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">while</span> (size &gt; 0) {</div>
+<div class="line"><span class="lineno">  253</span>      <span class="keyword">const</span> std::size_t half{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> / 2};</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[first + half] &lt; value) {</div>
+<div class="line"><span class="lineno">  256</span>        first += half + 1;</div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> -= half + 1;</div>
+<div class="line"><span class="lineno">  258</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  259</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> = half;</div>
+<div class="line"><span class="lineno">  260</span>      }</div>
+<div class="line"><span class="lineno">  261</span>    }</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">return</span> first;</div>
+<div class="line"><span class="lineno">  264</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03_xhtml_afd0adec8a94b42f9ca1340023a69acd5"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">fcarouge::test::anonymous_namespace{patterns.cpp}::size</a></div><div class="ttdeci">constexpr std::size_t size</div><div class="ttdef"><b>Definition</b> <a href="patterns_8cpp_source.xhtml#l00041">patterns.cpp:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00170">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00174">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00266">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00270">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>.</p>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -516,13 +516,13 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p>Whether the given row and column is a stored element. </p>
 <dl class="section user"><dt>Complexity</dt><dd>Logarithmic in the count of stored elements. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00278">278</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  279</span>              {</div>
-<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a7ff181b7cbc3e9282eb49d04e5442089">index_of</a>(row, column) != <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">absent</a>;</div>
-<div class="line"><span class="lineno">  281</span>  }</div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a7ff181b7cbc3e9282eb49d04e5442089"><div class="ttname"><a href="#a7ff181b7cbc3e9282eb49d04e5442089">fcarouge::sparse::pattern::index_of</a></div><div class="ttdeci">constexpr auto index_of(std::size_t row, std::size_t column) const -&gt; std::size_t</div><div class="ttdoc">The index of the stored element at the given row and column, or absent for a structural zero.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00266">pattern.hpp:266</a></div></div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00282">282</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  283</span>              {</div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a7ff181b7cbc3e9282eb49d04e5442089">index_of</a>(row, column) != <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">absent</a>;</div>
+<div class="line"><span class="lineno">  285</span>  }</div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml_a7ff181b7cbc3e9282eb49d04e5442089"><div class="ttname"><a href="#a7ff181b7cbc3e9282eb49d04e5442089">fcarouge::sparse::pattern::index_of</a></div><div class="ttdeci">constexpr auto index_of(std::size_t row, std::size_t column) const -&gt; std::size_t</div><div class="ttdoc">The index of the stored element at the given row and column, or absent for a structural zero.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00270">pattern.hpp:270</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00266">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00270">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>.</p>
 <div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -550,8 +550,8 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 
 <p>The count of columns of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00161">161</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>{Columns};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00165">165</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{Columns};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -571,8 +571,8 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 
 <p>The count of stored elements of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00164">164</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>{Count};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00168">168</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>{Count};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00248">fcarouge::sparse_linear_algebra::internal::merge_positions()</a>.</p>
 
@@ -595,10 +595,10 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p>The stored positions, in row-major order. </p>
 <p>One unused position when none is stored: not every standard library's empty array is a structural type. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00170">170</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  170</span>: 1)&gt; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>{};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00174">174</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>: 1)&gt; <a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00266">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00243">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::lower_bound()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00194">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00226">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00270">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00247">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::lower_bound()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00198">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00230">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>.</p>
 
 </div>
 </div>
@@ -618,8 +618,8 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 
 <p>The count of rows of the matrix. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00158">158</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>{Rows};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00162">162</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>{Rows};</div>
 </div><!-- fragment -->
 </div>
 </div>

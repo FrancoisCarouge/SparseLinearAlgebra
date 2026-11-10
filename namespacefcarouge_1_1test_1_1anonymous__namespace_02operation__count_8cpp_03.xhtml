@@ -179,7 +179,7 @@ template&lt;auto Pattern&gt; </div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{sparse::shape&lt;3, 3&gt;,</div>
 <div class="line">                                               {{0, 2}, {1, 1}, {2, 0}}}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000077">Test</a></b></dt><dd>Verifies a division by a denominator of blocks of a single unknown, a diagonal or a permuted diagonal, only divides each stored element of the numerator once: no product, no sum, no pivot. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000075">Test</a></b></dt><dd>Verifies a division by a denominator of blocks of a single unknown, a diagonal or a permuted diagonal, only divides each stored element of the numerator once: no product, no sum, no pivot. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00221">221</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  221</span>                                            {sparse::shape&lt;3, 3&gt;,</div>
@@ -291,10 +291,10 @@ template&lt;auto Pattern&gt; </div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">    sparse::shape&lt;4, 1&gt;, {{0, 0}, {1, 0}, {3, 0}}}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000067">Test</a></b></dt><dd>Verifies a product computes exactly its elementary products, far fewer than the dense product's for the same shape. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000069">Test</a></b></dt><dd>Verifies the count scales with the stored elements, not the shape: a diagonal product is linear, where a dense product is cubic in the size. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000072">Test</a></b></dt><dd>Verifies a sum only adds the elements stored by both terms: an element stored by one term is copied. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000074">Test</a></b></dt><dd>Verifies the dot product only multiplies the elements stored by both vectors. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000065">Test</a></b></dt><dd>Verifies a product computes exactly its elementary products, far fewer than the dense product's for the same shape. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000067">Test</a></b></dt><dd>Verifies the count scales with the stored elements, not the shape: a diagonal product is linear, where a dense product is cubic in the size. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000070">Test</a></b></dt><dd>Verifies a sum only adds the elements stored by both terms: an element stored by one term is copied. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000072">Test</a></b></dt><dd>Verifies the dot product only multiplies the elements stored by both vectors. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operation__count_8cpp_source.xhtml#l00209">209</a> of file <a class="el" href="operation__count_8cpp_source.xhtml">operation_count.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  209</span>                                                    {</div>

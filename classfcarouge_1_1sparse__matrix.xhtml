@@ -147,16 +147,16 @@ requires (sparsity_pattern&lt;decltype(Other)&gt; &amp;&amp; <a class="el" href=
 <tr class="memitem:abb5f3ab6d854e70040b0d780c0e38e75" id="r_abb5f3ab6d854e70040b0d780c0e38e75"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb5f3ab6d854e70040b0d780c0e38e75">operator[]</a> (std::size_t row, std::size_t column) -&gt; Type &amp;</td></tr>
 <tr class="memdesc:abb5f3ab6d854e70040b0d780c0e38e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">The element at the given position, of a pattern without a structural zero: every position is addressable, as in any dense storage.  <br /></td></tr>
 <tr class="separator:abb5f3ab6d854e70040b0d780c0e38e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd80612714c20e3426677d0b29abbc15" id="r_acd80612714c20e3426677d0b29abbc15"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
+<tr class="memitem:a8faf3440467337c5eff62d3f05622484" id="r_a8faf3440467337c5eff62d3f05622484"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
 requires (Pattern.stores(Row, Column))</td></tr>
-<tr class="memitem:acd80612714c20e3426677d0b29abbc15"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acd80612714c20e3426677d0b29abbc15">operator[]</a> (std::integral_constant&lt; std::size_t, Row &gt;, std::integral_constant&lt; std::size_t, Column &gt;) -&gt; Type &amp;</td></tr>
-<tr class="memdesc:acd80612714c20e3426677d0b29abbc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stored element at the given compile-time position.  <br /></td></tr>
-<tr class="separator:acd80612714c20e3426677d0b29abbc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72beb8844aa54a8fd169be3b3bdabb3c" id="r_a72beb8844aa54a8fd169be3b3bdabb3c"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
+<tr class="memitem:a8faf3440467337c5eff62d3f05622484"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8faf3440467337c5eff62d3f05622484">operator[]</a> (std::integral_constant&lt; std::size_t, Row &gt; row, std::integral_constant&lt; std::size_t, Column &gt; column) -&gt; Type &amp;</td></tr>
+<tr class="memdesc:a8faf3440467337c5eff62d3f05622484"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stored element at the given compile-time position.  <br /></td></tr>
+<tr class="separator:a8faf3440467337c5eff62d3f05622484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f6cf86b6bbba4a8bc8e6ca6458c47b" id="r_a77f6cf86b6bbba4a8bc8e6ca6458c47b"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
 requires (Row &lt; Pattern.rows &amp;&amp; Column &lt; Pattern.columns)</td></tr>
-<tr class="memitem:a72beb8844aa54a8fd169be3b3bdabb3c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a72beb8844aa54a8fd169be3b3bdabb3c">operator[]</a> (std::integral_constant&lt; std::size_t, Row &gt;, std::integral_constant&lt; std::size_t, Column &gt;) const -&gt; Type</td></tr>
-<tr class="memdesc:a72beb8844aa54a8fd169be3b3bdabb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the element at the given compile-time position, by value.  <br /></td></tr>
-<tr class="separator:a72beb8844aa54a8fd169be3b3bdabb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f6cf86b6bbba4a8bc8e6ca6458c47b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a77f6cf86b6bbba4a8bc8e6ca6458c47b">operator[]</a> (std::integral_constant&lt; std::size_t, Row &gt; row, std::integral_constant&lt; std::size_t, Column &gt; column) const -&gt; Type</td></tr>
+<tr class="memdesc:a77f6cf86b6bbba4a8bc8e6ca6458c47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the element at the given compile-time position, by value.  <br /></td></tr>
+<tr class="separator:a77f6cf86b6bbba4a8bc8e6ca6458c47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad649e914fcdd6692336385bd4908d50e" id="r_ad649e914fcdd6692336385bd4908d50e"><td class="memTemplParams" colspan="2">template&lt;std::size_t Row, std::size_t Column&gt; <br />
 requires (Pattern.stores(Row, Column))</td></tr>
 <tr class="memitem:ad649e914fcdd6692336385bd4908d50e"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad649e914fcdd6692336385bd4908d50e">at</a> () -&gt; Type &amp;</td></tr>
@@ -389,8 +389,8 @@ requires (Row &lt; Pattern.rows &amp;&amp; Column &lt; Pattern.columns)</div>
 
 </div>
 </div>
-<a id="acd80612714c20e3426677d0b29abbc15" name="acd80612714c20e3426677d0b29abbc15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd80612714c20e3426677d0b29abbc15">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/4]</span></h2>
+<a id="a8faf3440467337c5eff62d3f05622484" name="a8faf3440467337c5eff62d3f05622484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8faf3440467337c5eff62d3f05622484">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,12 +406,12 @@ requires (Pattern.stores(Row, Column))</div>
         <tr>
           <td class="memname">auto <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a>&lt; Type, Pattern &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">std::integral_constant&lt; std::size_t, Row &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">std::integral_constant&lt; std::size_t, Row &gt;</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::integral_constant&lt; std::size_t, Column &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) -&gt;  Type &amp;</td>
+          <td class="paramtype">std::integral_constant&lt; std::size_t, Column &gt;</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;) -&gt;  Type &amp;</td>
         </tr>
       </table>
   </td>
@@ -430,12 +430,19 @@ requires (Pattern.stores(Row, Column))</div>
   </table>
   </dd>
 </dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The compile-time row of the element. </td></tr>
+    <tr><td class="paramname">column</td><td>The compile-time column of the element.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
 
 </div>
 </div>
-<a id="a72beb8844aa54a8fd169be3b3bdabb3c" name="a72beb8844aa54a8fd169be3b3bdabb3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72beb8844aa54a8fd169be3b3bdabb3c">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/4]</span></h2>
+<a id="a77f6cf86b6bbba4a8bc8e6ca6458c47b" name="a77f6cf86b6bbba4a8bc8e6ca6458c47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f6cf86b6bbba4a8bc8e6ca6458c47b">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,12 +458,12 @@ requires (Row &lt; Pattern.rows &amp;&amp; Column &lt; Pattern.columns)</div>
         <tr>
           <td class="memname">auto <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a>&lt; Type, Pattern &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">std::integral_constant&lt; std::size_t, Row &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">std::integral_constant&lt; std::size_t, Row &gt;</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::integral_constant&lt; std::size_t, Column &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const -&gt;  Type</td>
+          <td class="paramtype">std::integral_constant&lt; std::size_t, Column &gt;</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;) const -&gt;  Type</td>
         </tr>
       </table>
   </td>
@@ -472,6 +479,13 @@ requires (Row &lt; Pattern.rows &amp;&amp; Column &lt; Pattern.columns)</div>
   <table class="tparams">
     <tr><td class="paramname">Row</td><td>The row of the element. </td></tr>
     <tr><td class="paramname">Column</td><td>The column of the element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The compile-time row of the element. </td></tr>
+    <tr><td class="paramname">column</td><td>The compile-time column of the element.</td></tr>
   </table>
   </dd>
 </dl>

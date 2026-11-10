@@ -492,7 +492,7 @@ template&lt;auto Pattern&gt; </div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_af3fda05b066549282638ae117cb24c89"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">fcarouge::test::anonymous_namespace{access.cpp}::column</a></div><div class="ttdeci">sparse_matrix&lt; double, column_pattern &gt; column</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00046">access.cpp:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00491">maximum_matching()</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -579,7 +579,7 @@ template&lt;std::size_t Size&gt; </div>
 <div class="line"><span class="lineno">  609</span>  result.begin[result.blocks] = search.ordered;</div>
 <div class="line"><span class="lineno">  610</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00619">visit_component()</a>.</p>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -666,7 +666,7 @@ template&lt;typename Type , auto Lhs, auto Rhs&gt; </div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>, <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00053">fcarouge::sparse::pattern_union</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00337">projection</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>, <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00053">fcarouge::sparse::pattern_union</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00337">projection</a>.</p>
 
 </div>
 </div>
@@ -698,19 +698,19 @@ template&lt;std::size_t Rows, std::size_t Columns, position_predicate Predicate&
 <p>The count of the positions of a matrix of the given shape satisfying a stateless predicate. </p>
 <p>A constrained function rather than a variable template, so that a deduction guide naming it with an argument that is not a predicate is a substitution failure, not a hard error, on compilers that substitute the guide's result before checking its constraints. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00081">81</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                     {</div>
-<div class="line"><span class="lineno">   82</span>  <span class="keyword">const</span> Predicate predicate{};</div>
-<div class="line"><span class="lineno">   83</span>  std::size_t result{0};</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Rows; ++row) {</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
-<div class="line"><span class="lineno">   87</span>      result += predicate(row, column) ? std::size_t{1} : std::size_t{0};</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span>  }</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   92</span>}</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00085">85</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>                                                     {</div>
+<div class="line"><span class="lineno">   86</span>  <span class="keyword">const</span> Predicate predicate{};</div>
+<div class="line"><span class="lineno">   87</span>  std::size_t result{0};</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Rows; ++row) {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">for</span> (std::size_t column{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> &lt; Columns; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>) {</div>
+<div class="line"><span class="lineno">   91</span>      result += predicate(row, column) ? std::size_t{1} : std::size_t{0};</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   96</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -820,7 +820,7 @@ template&lt;auto Pattern&gt; </div>
 <div class="line"><span class="lineno">  513</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">  514</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00114">fcarouge::sparse::absent</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00436">augment()</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00436">augment()</a>.</p>
 <div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -886,7 +886,7 @@ template&lt;auto Lhs, auto Rhs, bool KeepAll&gt; </div>
 <div class="line"><span class="lineno">  272</span>  <span class="keywordflow">return</span> list;</div>
 <div class="line"><span class="lineno">  273</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00164">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::count</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00168">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::count</a>.</p>
 
 </div>
 </div>
@@ -907,7 +907,7 @@ template&lt;auto Lhs, auto Rhs, bool KeepAll&gt; </div>
 
 <p>Called by a pattern's invalid construction: never defined, its call ends the constant evaluation, and is the name the compiler's diagnostic reports. </p>
 
-<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00194">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00198">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>.</p>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -1166,9 +1166,9 @@ template&lt;std::size_t Rows, std::size_t Columns, auto List&gt; </div>
 <div class="line"><span class="lineno">  242</span>  }</div>
 <div class="line"><span class="lineno">  243</span>}</div>
 <div class="ttc" id="astructfcarouge_1_1sparse_1_1pattern_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1pattern.xhtml">fcarouge::sparse::pattern</a></div><div class="ttdoc">The positions of the stored elements of a matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00048">sparse_linear_algebra_forward.hpp:48</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1position.xhtml">fcarouge::sparse::position</a></div><div class="ttdoc">The row and column of a stored element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00117">pattern.hpp:117</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml"><div class="ttname"><a href="structfcarouge_1_1sparse_1_1position.xhtml">fcarouge::sparse::position</a></div><div class="ttdoc">The row and column of a stored element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00121">pattern.hpp:121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00111">fcarouge::sparse::shape</a>.</p>
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00115">fcarouge::sparse::shape</a>.</p>
 
 </div>
 </div>
@@ -1561,14 +1561,22 @@ template&lt;auto Lhs, auto Rhs&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    [](std::size_t , std::size_t ) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{[](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(row);</div>
+<div class="line">  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(column);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}}</div>
 </div><!-- fragment -->
 <p>The predicate of every position. </p>
 
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00055">55</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>                           {</div>
-<div class="line"><span class="lineno">   56</span>    [](std::size_t <span class="comment">/*row*/</span>, std::size_t <span class="comment">/*column*/</span>) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }};</div>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                           {[](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(row);</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(column);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   60</span>}};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2121,11 +2129,11 @@ template&lt;std::size_t Lower, std::size_t Upper&gt; </div>
 </div><!-- fragment -->
 <p>The predicate of the positions of the <code>Lower</code> sub-diagonals, the main diagonal, and the <code>Upper</code> super-diagonals. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00061">61</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>                                 {</div>
-<div class="line"><span class="lineno">   62</span>    [](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">return</span> row &lt;= column + Lower &amp;&amp; column &lt;= row + Upper;</div>
-<div class="line"><span class="lineno">   64</span>    }};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00065">65</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                                 {</div>
+<div class="line"><span class="lineno">   66</span>    [](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> row &lt;= column + Lower &amp;&amp; column &lt;= row + Upper;</div>
+<div class="line"><span class="lineno">   68</span>    }};</div>
 </div><!-- fragment -->
 </div>
 </div>

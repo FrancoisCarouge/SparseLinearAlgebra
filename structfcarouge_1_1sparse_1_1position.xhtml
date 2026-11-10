@@ -151,7 +151,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The row and column of a stored element. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00117">117</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00121">121</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa06202631b0db7da8932ba8657501a6d" name="aa06202631b0db7da8932ba8657501a6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa06202631b0db7da8932ba8657501a6d">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
@@ -209,10 +209,10 @@ Friends</h2></td></tr>
 
 <p>The position of the given row and column. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00128">128</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>      : <a class="code hl_variable" href="#a2f137f965485309957277d8c4b34eeb8">row</a>{row_index}, <a class="code hl_variable" href="#abdba1c2780bb4c359ec15f9837d27dd8">column</a>{column_index} {}</div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml_a2f137f965485309957277d8c4b34eeb8"><div class="ttname"><a href="#a2f137f965485309957277d8c4b34eeb8">fcarouge::sparse::position::row</a></div><div class="ttdeci">std::size_t row</div><div class="ttdoc">The row of the element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00119">pattern.hpp:119</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml_abdba1c2780bb4c359ec15f9837d27dd8"><div class="ttname"><a href="#abdba1c2780bb4c359ec15f9837d27dd8">fcarouge::sparse::position::column</a></div><div class="ttdeci">std::size_t column</div><div class="ttdoc">The column of the element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00122">pattern.hpp:122</a></div></div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00132">132</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>      : <a class="code hl_variable" href="#a2f137f965485309957277d8c4b34eeb8">row</a>{row_index}, <a class="code hl_variable" href="#abdba1c2780bb4c359ec15f9837d27dd8">column</a>{column_index} {}</div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml_a2f137f965485309957277d8c4b34eeb8"><div class="ttname"><a href="#a2f137f965485309957277d8c4b34eeb8">fcarouge::sparse::position::row</a></div><div class="ttdeci">std::size_t row</div><div class="ttdoc">The row of the element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00123">pattern.hpp:123</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1sparse_1_1position_xhtml_abdba1c2780bb4c359ec15f9837d27dd8"><div class="ttname"><a href="#abdba1c2780bb4c359ec15f9837d27dd8">fcarouge::sparse::position::column</a></div><div class="ttdeci">std::size_t column</div><div class="ttdoc">The column of the element.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00126">pattern.hpp:126</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,10 +246,10 @@ Friends</h2></td></tr>
 
 <p>The row-major order. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00137">137</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>                                                                             {</div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.row &lt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.row || (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.row == <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.row &amp;&amp; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.column &lt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.column);</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00141">141</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                                                             {</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.row &lt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.row || (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.row == <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.row &amp;&amp; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">lhs</a>.column &lt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">rhs</a>.column);</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a68042103167071e0e95c059e2229c9b2"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2">fcarouge::test::anonymous_namespace{arithmetic.cpp}::lhs</a></div><div class="ttdeci">constexpr diagonal_matrix lhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00045">arithmetic.cpp:45</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_acb2fdba6f65558a067e7c56052141638"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs</a></div><div class="ttdeci">constexpr tridiagonal_matrix rhs</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00046">arithmetic.cpp:46</a></div></div>
 </div><!-- fragment -->
@@ -301,8 +301,8 @@ Friends</h2></td></tr>
 
 <p>The column of the element. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00122">122</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>{0};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00126">126</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{0};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,8 +320,8 @@ Friends</h2></td></tr>
 
 <p>The row of the element. </p>
 
-<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00119">119</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>{0};</div>
+<p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00123">123</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>{0};</div>
 </div><!-- fragment -->
 </div>
 </div>
