@@ -32,6 +32,8 @@ For more information, please refer to <https://unlicense.org> */
 #ifndef FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_EQUAL_TO_TPP
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_EQUAL_TO_TPP
 
+#include "fcarouge/sparse_linear_algebra/internal/combine.hpp"
+#include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
@@ -45,19 +47,41 @@ namespace fcarouge {
 //! zero.
 //!
 //! @complexity Linear in the count of stored elements of the union of the
-//! patterns, each read logarithmic in the count of stored elements.
+//! patterns.
 template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
   requires(Lhs.rows == Rhs.rows and Lhs.columns == Rhs.columns)
 [[nodiscard]] constexpr auto operator==(const sparse_matrix<Type, Lhs> &lhs,
                                         const sparse_matrix<Type, Rhs> &rhs)
     -> bool {
-  constexpr auto combined{sparse::pattern_union<Lhs, Rhs>};
+  // The same patterns store the same positions at the same indexes.
+  if constexpr (Lhs == Rhs) {
+    for (std::size_t i{0}; i < Lhs.count; ++i) {
+      if (not(lhs.values[i] == rhs.values[i])) {
+        return false;
+      }
+    }
+  } else {
+    constexpr const auto &table{
+        sparse_linear_algebra::internal::union_terms<Lhs, Rhs>};
 
-  for (std::size_t i{0}; i < combined.count; ++i) {
-    const auto [row, column]{combined.positions[i]};
+    for (const sparse_linear_algebra::internal::term &element : table.both) {
+      if (not(lhs.values[element.lhs] == rhs.values[element.rhs])) {
+        return false;
+      }
+    }
 
-    if (not(lhs[row, column] == rhs[row, column])) {
-      return false;
+    for (const sparse_linear_algebra::internal::term &element :
+         table.lhs_only) {
+      if (not(lhs.values[element.lhs] == Type{})) {
+        return false;
+      }
+    }
+
+    for (const sparse_linear_algebra::internal::term &element :
+         table.rhs_only) {
+      if (not(Type{} == rhs.values[element.rhs])) {
+        return false;
+      }
     }
   }
 

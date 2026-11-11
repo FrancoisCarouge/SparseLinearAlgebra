@@ -29,5 +29,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org> ]]
 
+build("element_wise")
 build("patterns")
 pass("large")

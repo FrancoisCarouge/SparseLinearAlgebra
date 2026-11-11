@@ -251,7 +251,7 @@ The operations below are supported, each as a function or an operator of the `fc
 | `*`, of matrices and vectors | The structural product of the patterns. | `O(K + T)` of the result. |
 | `*`, `/`, by a scalar | The same pattern. | `O(K)`. |
 | `/`, of matrices, the quotient `x` of `x * rhs = lhs` | The structural quotient of the patterns, by a square denominator of full structural rank. | `O(K + T)` of the operands, the result, and the terms coupling the blocks of the denominator's block triangular form, plus `O(B³)` for each irreducible diagonal block of `B` unknowns, which is eliminated dense, with partial pivoting. A diagonal or a triangular denominator is a substitution. |
-| `==` | Not applicable. Compares every position of the same shape: a structural zero equals a stored zero. | `O(K log K)` of the union. |
+| `==` | Not applicable. Compares every position of the same shape: a structural zero equals a stored zero. | `O(K)` of the union. |
 | `transposed` | The transposed pattern. Returns a matrix, not a view. | `O(K)`. |
 | `dot` | Not applicable. Returns an element. Vectors of the same size, of any orientation. | `O(K)`, of the elements stored by both vectors. |
 | `matrix_frob_norm` | Not applicable. Returns an element. Floating-point elements only. | `O(K)`. |
