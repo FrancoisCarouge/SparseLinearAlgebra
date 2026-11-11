@@ -333,12 +333,25 @@ template <auto Lhs, auto Rhs> [[nodiscard]] consteval auto product_positions() {
 
 //! @brief For each position of `To`, its stored element index in `From`, or
 //! `absent`.
+//!
+//! @details Both patterns store their positions in ascending order: a single
+//! merge of their positions finds every index, linear in their counts of
+//! stored elements, rather than a search per position, which exceeds Clang's
+//! default constant evaluation step limit on large patterns.
 template <auto From, auto To>
 inline constexpr auto projection{[] {
   std::array<std::size_t, To.count> result{};
+  std::size_t index{0};
 
   for (std::size_t i{0}; i < To.count; ++i) {
-    result[i] = From.index_of(To.positions[i].row, To.positions[i].column);
+    while ((index < From.count) and (From.positions[index] < To.positions[i])) {
+      ++index;
+    }
+
+    result[i] =
+        (index < From.count) and (From.positions[index] == To.positions[i])
+            ? index
+            : sparse::absent;
   }
 
   return result;
@@ -346,7 +359,8 @@ inline constexpr auto projection{[] {
 
 //! @brief An elementary product of a matrix product, or of a dot product: the
 //! index of the result element it accumulates into, and the indexes of its two
-//! factors.
+//! factors. Or an element of an element-wise operation: the index of its result
+//! element, and the indexes of its two operands.
 struct term {
   std::size_t result{0};
   std::size_t lhs{0};
@@ -373,6 +387,80 @@ template <std::size_t Count, std::size_t Fold>
 inline constexpr std::size_t fold_term_count{
     Count - (Fold * fold_size) < fold_size ? Count - (Fold * fold_size)
                                            : fold_size};
+
+//! @brief The counts of positions of a pattern stored by both of two other
+//! patterns, by the left one only, and by the right one only.
+struct stored_counts {
+  std::size_t both{0};
+  std::size_t lhs_only{0};
+  std::size_t rhs_only{0};
+};
+
+//! @brief The counts of positions of `To` stored by both `Lhs` and `Rhs`, by
+//! `Lhs` only, and by `Rhs` only.
+template <auto Lhs, auto Rhs, auto To>
+inline constexpr stored_counts stored_count{[] -> stored_counts {
+  constexpr const auto &lhs_indexes{projection<Lhs, To>};
+  constexpr const auto &rhs_indexes{projection<Rhs, To>};
+  stored_counts result{};
+
+  for (std::size_t i{0}; i < To.count; ++i) {
+    const bool in_lhs{lhs_indexes[i] != sparse::absent};
+    const bool in_rhs{rhs_indexes[i] != sparse::absent};
+
+    if (in_lhs and in_rhs) {
+      ++result.both;
+    } else if (in_lhs) {
+      ++result.lhs_only;
+    } else if (in_rhs) {
+      ++result.rhs_only;
+    }
+  }
+
+  return result;
+}()};
+
+//! @brief The elements of an element-wise operation, grouped by the operands
+//! storing them.
+template <stored_counts Counts> struct stored_table {
+  std::array<term, Counts.both> both{};
+  std::array<term, Counts.lhs_only> lhs_only{};
+  std::array<term, Counts.rhs_only> rhs_only{};
+};
+
+//! @brief The positions of `To` stored by both `Lhs` and `Rhs`, by `Lhs` only,
+//! and by `Rhs` only: for each, its stored element index in `To`, in `Lhs`, and
+//! in `Rhs`, an index of an operand not storing it being `absent`.
+//!
+//! @details An element-wise operation walks each group, with no run-time branch
+//! on `absent`, and never reads an `absent` index.
+template <auto Lhs, auto Rhs, auto To>
+inline constexpr auto stored_terms{[] {
+  constexpr const auto &lhs_indexes{projection<Lhs, To>};
+  constexpr const auto &rhs_indexes{projection<Rhs, To>};
+  stored_table<stored_count<Lhs, Rhs, To>> result{};
+  stored_counts index{};
+
+  for (std::size_t i{0}; i < To.count; ++i) {
+    const term element{
+        .result = i, .lhs = lhs_indexes[i], .rhs = rhs_indexes[i]};
+    const bool in_lhs{element.lhs != sparse::absent};
+    const bool in_rhs{element.rhs != sparse::absent};
+
+    if (in_lhs and in_rhs) {
+      result.both[index.both] = element;
+      ++index.both;
+    } else if (in_lhs) {
+      result.lhs_only[index.lhs_only] = element;
+      ++index.lhs_only;
+    } else if (in_rhs) {
+      result.rhs_only[index.rhs_only] = element;
+      ++index.rhs_only;
+    }
+  }
+
+  return result;
+}()};
 
 //! @brief The position along a vector of the given stored element.
 template <auto Pattern>

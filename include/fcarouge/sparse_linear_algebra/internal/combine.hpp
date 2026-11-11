@@ -36,13 +36,18 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief The element-wise combination of two matrices of the same shape.
 
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
-#include "fcarouge/sparse_linear_algebra/pattern.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <cstddef>
 
 namespace fcarouge::sparse_linear_algebra::internal {
+//! @brief The positions of the union of two patterns, grouped by the patterns
+//! storing them.
+template <auto Lhs, auto Rhs>
+inline constexpr const auto &union_terms{
+    stored_terms<Lhs, Rhs, sparse::pattern_union<Lhs, Rhs>>};
+
 //! @brief Combine the elements stored by either matrix of the same shape, into
 //! the union of their patterns.
 //!
@@ -56,19 +61,29 @@ template <typename Type, auto Lhs, auto Rhs>
                                      const sparse_matrix<Type, Rhs> &rhs,
                                      const auto &both, const auto &rhs_only)
     -> sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> {
-  constexpr auto combined{sparse::pattern_union<Lhs, Rhs>};
-  sparse_matrix<Type, combined> result;
+  sparse_matrix<Type, sparse::pattern_union<Lhs, Rhs>> result;
 
-  for (std::size_t i{0}; i < combined.count; ++i) {
-    const std::size_t lhs_index{projection<Lhs, combined>[i]};
-    const std::size_t rhs_index{projection<Rhs, combined>[i]};
+  // The same patterns store the same positions at the same indexes: the
+  // combination is a loop over the stored elements, which the compilers
+  // vectorize, rather than a walk through a table of indexes.
+  if constexpr (Lhs == Rhs) {
+    for (std::size_t i{0}; i < Lhs.count; ++i) {
+      result.values[i] = both(lhs.values[i], rhs.values[i]);
+    }
+  } else {
+    constexpr const auto &table{union_terms<Lhs, Rhs>};
 
-    if (lhs_index == sparse::absent) {
-      result.values[i] = rhs_only(rhs.values[rhs_index]);
-    } else if (rhs_index == sparse::absent) {
-      result.values[i] = lhs.values[lhs_index];
-    } else {
-      result.values[i] = both(lhs.values[lhs_index], rhs.values[rhs_index]);
+    for (const term &element : table.both) {
+      result.values[element.result] =
+          both(lhs.values[element.lhs], rhs.values[element.rhs]);
+    }
+
+    for (const term &element : table.lhs_only) {
+      result.values[element.result] = lhs.values[element.lhs];
+    }
+
+    for (const term &element : table.rhs_only) {
+      result.values[element.result] = rhs_only(rhs.values[element.rhs]);
     }
   }
 

@@ -61,13 +61,11 @@ template <auto Other>
            sparse::is_subset_of<Other, Pattern>)
 constexpr sparse_matrix<Type, Pattern>::sparse_matrix(
     const sparse_matrix<Type, Other> &other) {
-  for (std::size_t i{0}; i < Pattern.count; ++i) {
-    const std::size_t index{
-        sparse_linear_algebra::internal::projection<Other, Pattern>[i]};
+  constexpr const auto &table{
+      sparse_linear_algebra::internal::stored_terms<Other, Pattern, Pattern>};
 
-    if (index != sparse::absent) {
-      values[i] = other.values[index];
-    }
+  for (const sparse_linear_algebra::internal::term &element : table.both) {
+    values[element.result] = other.values[element.lhs];
   }
 }
 
