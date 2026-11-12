@@ -184,6 +184,21 @@ template <typename Type, auto Pattern, std::size_t Row> struct row {
 //! argument list.
 template <auto Pattern> inline constexpr std::size_t row_count{Pattern.rows};
 
+//! @brief For each row of a pattern, the index of its first stored element,
+//! then the count of stored elements: the stored elements of a row are
+//! contiguous, from its bound to the next.
+template <auto Pattern>
+inline constexpr auto row_bounds{
+    [] -> std::array<std::size_t, row_count<Pattern> + 1> {
+      std::array<std::size_t, row_count<Pattern> + 1> result{};
+
+      for (std::size_t row{0}; row <= Pattern.rows; ++row) {
+        result[row] = Pattern.lower_bound({row, 0});
+      }
+
+      return result;
+    }()};
+
 //! @brief The storage of a matrix, and its construction from every row.
 //!
 //! @details A base of the matrix: the parameters of the construction from every

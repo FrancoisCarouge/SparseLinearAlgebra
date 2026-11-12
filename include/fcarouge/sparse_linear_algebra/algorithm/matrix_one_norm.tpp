@@ -54,9 +54,21 @@ matrix_one_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
   std::array<Type, Pattern.columns> sums{};
   Type result{};
 
-  for (std::size_t i{0}; i < Pattern.count; ++i) {
-    sums[Pattern.positions[i].column] +=
-        sparse_linear_algebra::internal::absolute(value.values[i]);
+  // Without a structural zero, the storage is row-major: the column of each
+  // stored element is the arithmetic of its index, which the compilers
+  // vectorize, rather than a read of its position.
+  if constexpr (Pattern.count == Pattern.rows * Pattern.columns) {
+    for (std::size_t row{0}; row < Pattern.rows; ++row) {
+      for (std::size_t column{0}; column < Pattern.columns; ++column) {
+        sums[column] += sparse_linear_algebra::internal::absolute(
+            value.values[(row * Pattern.columns) + column]);
+      }
+    }
+  } else {
+    for (std::size_t i{0}; i < Pattern.count; ++i) {
+      sums[Pattern.positions[i].column] +=
+          sparse_linear_algebra::internal::absolute(value.values[i]);
+    }
   }
 
   for (const Type &sum : sums) {

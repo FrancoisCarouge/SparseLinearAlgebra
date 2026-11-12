@@ -39,6 +39,23 @@ For more information, please refer to <https://unlicense.org> */
 #include <cstddef>
 
 namespace fcarouge {
+namespace sparse_linear_algebra::internal {
+//! @brief For each stored element of the transposed pattern, the index of its
+//! mirrored stored element.
+template <auto Pattern>
+inline constexpr auto transpose_indexes{[] {
+  constexpr auto mirrored{sparse::pattern_transpose<Pattern>};
+  std::array<std::size_t, Pattern.count> result{};
+
+  for (std::size_t i{0}; i < Pattern.count; ++i) {
+    result[i] = Pattern.index_of(mirrored.positions[i].column,
+                                 mirrored.positions[i].row);
+  }
+
+  return result;
+}()};
+} // namespace sparse_linear_algebra::internal
+
 //! @brief The transposed matrix, of the transposed pattern.
 //!
 //! @details Returns a matrix, by value, rather than a view.
@@ -50,26 +67,28 @@ template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 transposed(const sparse_matrix<Type, Pattern> &value)
     -> sparse_matrix<Type, sparse::pattern_transpose<Pattern>> {
-  constexpr auto mirrored{sparse::pattern_transpose<Pattern>};
-  constexpr auto indexes{[&mirrored]->std::array<std::size_t, Pattern.count>{
-      std::array<std::size_t, Pattern.count> result{};
+  sparse_matrix<Type, sparse::pattern_transpose<Pattern>> result;
 
-  for (std::size_t i{0}; i < Pattern.count; ++i) {
-    result[i] = Pattern.index_of(mirrored.positions[i].column,
-                                 mirrored.positions[i].row);
+  // Without a structural zero, the storage is row-major: the transposition is
+  // the arithmetic of the indexes, in the order of the stored elements of the
+  // result, rather than a walk through a table of indexes.
+  if constexpr (Pattern.count == Pattern.rows * Pattern.columns) {
+    for (std::size_t column{0}; column < Pattern.columns; ++column) {
+      for (std::size_t row{0}; row < Pattern.rows; ++row) {
+        result.values[(column * Pattern.rows) + row] =
+            value.values[(row * Pattern.columns) + column];
+      }
+    }
+  } else {
+    constexpr const auto &indexes{
+        sparse_linear_algebra::internal::transpose_indexes<Pattern>};
+
+    for (std::size_t i{0}; i < Pattern.count; ++i) {
+      result.values[i] = value.values[indexes[i]];
+    }
   }
 
   return result;
-}
-()
-}; // namespace fcarouge
-sparse_matrix<Type, mirrored> result;
-
-for (std::size_t i{0}; i < Pattern.count; ++i) {
-  result.values[i] = value.values[indexes[i]];
-}
-
-return result;
 }
 } // namespace fcarouge
 
