@@ -35,7 +35,6 @@ For more information, please refer to <https://unlicense.org> */
 #include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
-#include <array>
 #include <cstddef>
 
 namespace fcarouge {
@@ -51,15 +50,20 @@ namespace fcarouge {
 template <typename Type, sparsity_pattern auto Pattern>
 [[nodiscard]] constexpr auto
 matrix_inf_norm(const sparse_matrix<Type, Pattern> &value) -> Type {
-  std::array<Type, Pattern.rows> sums{};
+  constexpr const auto &bounds{
+      sparse_linear_algebra::internal::row_bounds<Pattern>};
   Type result{};
 
-  for (std::size_t i{0}; i < Pattern.count; ++i) {
-    sums[Pattern.positions[i].row] +=
-        sparse_linear_algebra::internal::absolute(value.values[i]);
-  }
+  // The stored elements of a row are contiguous: each row sum accumulates in
+  // turn, rather than into an array of sums indexed by the row of each
+  // position.
+  for (std::size_t row{0}; row < Pattern.rows; ++row) {
+    Type sum{};
 
-  for (const Type &sum : sums) {
+    for (std::size_t i{bounds[row]}; i < bounds[row + 1]; ++i) {
+      sum += sparse_linear_algebra::internal::absolute(value.values[i]);
+    }
+
     result = result < sum ? sum : result;
   }
 

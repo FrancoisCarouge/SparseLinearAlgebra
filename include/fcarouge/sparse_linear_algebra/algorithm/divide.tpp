@@ -266,6 +266,169 @@ inline constexpr auto division_plan{[] consteval {
 
   return result;
 }()};
+
+//! @brief The largest count of blocks of a division solved block by block of
+//! their constant sizes and table ranges.
+//!
+//! @details A block of a constant size, width, and table ranges is solved
+//! without the pivoting of a block of a single unknown, and with the
+//! elimination of a small block unrolled, but is an instantiation of its own:
+//! a division of more blocks loops over them, rather than multiply its compile
+//! time.
+inline constexpr std::size_t division_constant_blocks{16};
+
+//! @brief The count of blocks of a division.
+template <auto Lhs, auto Rhs>
+inline constexpr std::size_t division_block_count{
+    division_count<Lhs, Rhs>.blocks};
+
+//! @brief The count of blocks of a division of constant table ranges: all of
+//! them, or none beyond the bound.
+template <auto Lhs, auto Rhs>
+inline constexpr std::size_t division_constant_count{
+    division_block_count<Lhs, Rhs> <= division_constant_blocks
+        ? division_block_count<Lhs, Rhs>
+        : 0};
+
+//! @brief A block of a division of constant table ranges: the ends of the
+//! tables of the blocks solved before it, and its own.
+template <auto Lhs, auto Rhs, std::size_t Block> struct constant_block {
+  static constexpr division_block start{[] -> division_block {
+    if constexpr (Block == 0) {
+      return {};
+    } else {
+      return division_plan<Lhs, Rhs>.blocks[Block - 1];
+    }
+  }()};
+  static constexpr division_block end{division_plan<Lhs, Rhs>.blocks[Block]};
+};
+
+//! @brief A block of a division of run-time table ranges: the ends of the
+//! tables of the blocks solved before it, and its own.
+struct run_time_block {
+  division_block start{};
+  division_block end{};
+};
+
+//! @brief Solve a block of a division into the quotient.
+template <auto Lhs, auto Rhs, typename Type, std::size_t BufferSize,
+          typename Range>
+constexpr void
+divide_block(sparse_matrix<Type, sparse::pattern_quotient<Lhs, Rhs>> &result,
+             std::array<Type, BufferSize> &buffer,
+             const sparse_matrix<Type, Lhs> &lhs,
+             const sparse_matrix<Type, Rhs> &rhs, const Range &range) {
+  constexpr const auto &plan{division_plan<Lhs, Rhs>};
+  const std::size_t size{range.end.size};
+  const std::size_t width{range.end.width};
+
+  for (std::size_t i{0}; i < size * width; ++i) {
+    buffer[i] = Type{};
+  }
+
+  for (std::size_t i{range.start.denominator_end};
+       i < range.end.denominator_end; ++i) {
+    const auto [index, element]{plan.denominator_loads[i]};
+
+    buffer[index] = rhs.values[element];
+  }
+
+  for (std::size_t i{range.start.numerator_end}; i < range.end.numerator_end;
+       ++i) {
+    const auto [index, element]{plan.numerator_loads[i]};
+
+    buffer[index] = lhs.values[element];
+  }
+
+  for (std::size_t i{range.start.update_end}; i < range.end.update_end; ++i) {
+    const auto [index, denominator, quotient]{plan.updates[i]};
+
+    buffer[index] =
+        buffer[index] - (rhs.values[denominator] * result.values[quotient]);
+  }
+
+  for (std::size_t pivot{0}; pivot < size; ++pivot) {
+    std::size_t largest{pivot};
+
+    for (std::size_t row{pivot + 1}; row < size; ++row) {
+      if (sparse_linear_algebra::internal::absolute(
+              buffer[(largest * width) + pivot]) <
+          sparse_linear_algebra::internal::absolute(
+              buffer[(row * width) + pivot])) {
+        largest = row;
+      }
+    }
+
+    if (largest != pivot) {
+      for (std::size_t column{pivot}; column < width; ++column) {
+        std::swap(buffer[(pivot * width) + column],
+                  buffer[(largest * width) + column]);
+      }
+    }
+
+    for (std::size_t row{pivot + 1}; row < size; ++row) {
+      const Type factor{buffer[(row * width) + pivot] /
+                        buffer[(pivot * width) + pivot]};
+
+      for (std::size_t column{pivot + 1}; column < width; ++column) {
+        buffer[(row * width) + column] =
+            buffer[(row * width) + column] -
+            (factor * buffer[(pivot * width) + column]);
+      }
+    }
+  }
+
+  for (std::size_t i{0}; i < size; ++i) {
+    const std::size_t row{size - 1 - i};
+
+    for (std::size_t column{size}; column < width; ++column) {
+      Type value{buffer[(row * width) + column]};
+
+      for (std::size_t inner{row + 1}; inner < size; ++inner) {
+        value = value - (buffer[(row * width) + inner] *
+                         buffer[(inner * width) + column]);
+      }
+
+      buffer[(row * width) + column] = value / buffer[(row * width) + row];
+    }
+  }
+
+  for (std::size_t i{range.start.store_end}; i < range.end.store_end; ++i) {
+    const auto [index, element]{plan.stores[i]};
+
+    result.values[element] = buffer[index];
+  }
+}
+
+//! @brief Solve a division block by block.
+template <auto Lhs, auto Rhs, typename Type, std::size_t... Blocks>
+[[nodiscard]] constexpr auto divide(const sparse_matrix<Type, Lhs> &lhs,
+                                    const sparse_matrix<Type, Rhs> &rhs,
+                                    std::index_sequence<Blocks...> blocks)
+    -> sparse_matrix<Type, sparse::pattern_quotient<Lhs, Rhs>> {
+  static_cast<void>(blocks);
+
+  constexpr const auto &plan{division_plan<Lhs, Rhs>};
+  constexpr std::size_t buffer_size{division_count<Lhs, Rhs>.buffer_size};
+  sparse_matrix<Type, sparse::pattern_quotient<Lhs, Rhs>> result;
+  std::array<Type, buffer_size> buffer{};
+
+  if constexpr (division_block_count<Lhs, Rhs> <= division_constant_blocks) {
+    (divide_block<Lhs, Rhs>(result, buffer, lhs, rhs,
+                            constant_block<Lhs, Rhs, Blocks>{}),
+     ...);
+  } else {
+    run_time_block range{};
+
+    for (const division_block &block : plan.blocks) {
+      range.end = block;
+      divide_block<Lhs, Rhs>(result, buffer, lhs, rhs, range);
+      range.start = block;
+    }
+  }
+
+  return result;
+}
 } // namespace sparse_linear_algebra::internal
 
 //! @brief Matrix division, the quotient `x` of `x * rhs = lhs`, by a square
@@ -298,97 +461,10 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 [[nodiscard]] constexpr auto operator/(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_quotient<Lhs, Rhs>> {
-  constexpr auto &plan{
-      sparse_linear_algebra::internal::division_plan<Lhs, Rhs>};
-  sparse_matrix<Type, sparse::pattern_quotient<Lhs, Rhs>> result;
-  std::array<Type, plan.filled.buffer_size> buffer{};
-  std::size_t denominator_load{0};
-  std::size_t numerator_load{0};
-  std::size_t update{0};
-  std::size_t store{0};
-
-  for (const sparse_linear_algebra::internal::division_block &block :
-       plan.blocks) {
-    const std::size_t size{block.size};
-    const std::size_t width{block.width};
-
-    for (std::size_t i{0}; i < size * width; ++i) {
-      buffer[i] = Type{};
-    }
-
-    for (; denominator_load < block.denominator_end; ++denominator_load) {
-      const auto [index, element]{plan.denominator_loads[denominator_load]};
-
-      buffer[index] = rhs.values[element];
-    }
-
-    for (; numerator_load < block.numerator_end; ++numerator_load) {
-      const auto [index, element]{plan.numerator_loads[numerator_load]};
-
-      buffer[index] = lhs.values[element];
-    }
-
-    for (; update < block.update_end; ++update) {
-      const auto [index, denominator, quotient]{plan.updates[update]};
-
-      buffer[index] =
-          buffer[index] - (rhs.values[denominator] * result.values[quotient]);
-    }
-
-    for (std::size_t pivot{0}; pivot < size; ++pivot) {
-      std::size_t largest{pivot};
-
-      for (std::size_t row{pivot + 1}; row < size; ++row) {
-        if (sparse_linear_algebra::internal::absolute(
-                buffer[(largest * width) + pivot]) <
-            sparse_linear_algebra::internal::absolute(
-                buffer[(row * width) + pivot])) {
-          largest = row;
-        }
-      }
-
-      if (largest != pivot) {
-        for (std::size_t column{pivot}; column < width; ++column) {
-          std::swap(buffer[(pivot * width) + column],
-                    buffer[(largest * width) + column]);
-        }
-      }
-
-      for (std::size_t row{pivot + 1}; row < size; ++row) {
-        const Type factor{buffer[(row * width) + pivot] /
-                          buffer[(pivot * width) + pivot]};
-
-        for (std::size_t column{pivot + 1}; column < width; ++column) {
-          buffer[(row * width) + column] =
-              buffer[(row * width) + column] -
-              (factor * buffer[(pivot * width) + column]);
-        }
-      }
-    }
-
-    for (std::size_t i{0}; i < size; ++i) {
-      const std::size_t row{size - 1 - i};
-
-      for (std::size_t column{size}; column < width; ++column) {
-        Type value{buffer[(row * width) + column]};
-
-        for (std::size_t inner{row + 1}; inner < size; ++inner) {
-          value = value - (buffer[(row * width) + inner] *
-                           buffer[(inner * width) + column]);
-        }
-
-        buffer[(row * width) + column] = value / buffer[(row * width) + row];
-      }
-    }
-
-    for (; store < block.store_end; ++store) {
-      const auto [index, element]{plan.stores[store]};
-
-      result.values[element] = buffer[index];
-    }
-  }
-
-  return result;
+  return sparse_linear_algebra::internal::divide(
+      lhs, rhs,
+      std::make_index_sequence<sparse_linear_algebra::internal::
+                                   division_constant_count<Lhs, Rhs>>{});
 }
 
 //! @brief Scaling by the inverse of a scalar divisor, of the same pattern.

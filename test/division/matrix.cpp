@@ -33,6 +33,7 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <cassert>
 #include <concepts>
+#include <cstddef>
 #include <type_traits>
 
 namespace fcarouge::test {
@@ -140,6 +141,27 @@ using literals::operator""_o;
   assert((filled.at<1, 1>() == 2.));
   assert((filled.at<2, 1>() == -1.));
   assert((filled * stencil == ones));
+
+  // A lower bidiagonal denominator of more blocks than are solved of constant
+  // table ranges: a substitution from the last unknown, alternating.
+  constexpr std::size_t size{20};
+  sparse_matrix<double, sparse::banded<size, size, 1, 0>> chain;
+  sparse_matrix<double, sparse::dense<1, size>> sums;
+
+  for (double &element : chain.values) {
+    element = 1.;
+  }
+
+  for (double &element : sums.values) {
+    element = 1.;
+  }
+
+  const auto alternating{sums / chain};
+
+  assert((alternating.at<0, size - 1>() == 1.));
+  assert((alternating.at<0, size - 2>() == 0.));
+  assert((alternating.at<0, 0>() == 0.));
+  assert((alternating * chain == sums));
 
   return 0;
 }()};
