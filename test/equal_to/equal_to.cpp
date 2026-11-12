@@ -61,8 +61,11 @@ namespace {
   assert((not(different == narrow)));
   assert((narrow != different));
 
-  // A difference at a stored position.
+  // A difference at a stored position, of the same pattern, and of different
+  // patterns, in both directions.
   assert((narrow != sparse_matrix<double, diagonal<2>>{1., 3.}));
+  assert((not(narrow == sparse_matrix<double, dense<2, 2>>{1., 0., 0., 3.})));
+  assert((not(sparse_matrix<double, dense<2, 2>>{1., 0., 0., 3.} == narrow)));
 
   // The zero matrices of every pattern.
   static_assert(sparse_matrix<double, sparse::zero<2, 2>>{} ==
