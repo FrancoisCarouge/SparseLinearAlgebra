@@ -379,7 +379,7 @@ Operations</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>/</code>, of matrices, the quotient <code>x</code> of <code>x * rhs = lhs</code>   </td><td class="markdownTableBodyNone">The structural quotient of the patterns, by a square denominator of full structural rank.   </td><td class="markdownTableBodyNone"><code>O(K + T)</code> of the operands, the result, and the terms coupling the blocks of the denominator's block triangular form, plus <code>O(B³)</code> for each irreducible diagonal block of <code>B</code> unknowns, which is eliminated dense, with partial pivoting. A diagonal or a triangular denominator is a substitution.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>==</code>   </td><td class="markdownTableBodyNone">Not applicable. Compares every position of the same shape: a structural zero equals a stored zero.   </td><td class="markdownTableBodyNone"><code>O(K log K)</code> of the union.    </td></tr>
+<td class="markdownTableBodyNone"><code>==</code>   </td><td class="markdownTableBodyNone">Not applicable. Compares every position of the same shape: a structural zero equals a stored zero.   </td><td class="markdownTableBodyNone"><code>O(K)</code> of the union.    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>transposed</code>   </td><td class="markdownTableBodyNone">The transposed pattern. Returns a matrix, not a view.   </td><td class="markdownTableBodyNone"><code>O(K)</code>.    </td></tr>
 <tr class="markdownTableRowEven">

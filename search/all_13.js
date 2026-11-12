@@ -21,13 +21,14 @@ var searchData=
   ['responsibilities_18',['Our Responsibilities',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-responsibilities',1,'']]],
   ['result_5fpatterns_2ecpp_19',['result_patterns.cpp',['../result__patterns_8cpp.xhtml',1,'']]],
   ['results_20',['Results',['../md__2github_2workspace_2benchmark_2_r_e_a_d_m_e.xhtml#results',1,'']]],
-  ['rhs_21',['rhs',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
+  ['rhs_21',['rhs',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::rhs'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#ad9459a9ad04c06066ed260631f780a76',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}::rhs']]],
   ['roadmap_20vision_22',['Roadmap &amp; Vision',['../index.xhtml#roadmap--vision',1,'']]],
   ['row_23',['row',['../structfcarouge_1_1sparse_1_1position.xhtml#a2f137f965485309957277d8c4b34eeb8',1,'fcarouge::sparse::position::row'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de',1,'fcarouge::test::anonymous_namespace{access.cpp}::row']]],
-  ['row_5fcount_24',['row_count',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['row_5fpattern_25',['row_pattern',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9',1,'fcarouge::test::anonymous_namespace{access.cpp}']]],
-  ['rows_26',['rows',['../structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f',1,'fcarouge::sparse::pattern']]],
-  ['run_27',['Development Build &amp; Run',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run',1,'']]],
-  ['run_5ftime_2ecpp_28',['run_time.cpp',['../run__time_8cpp.xhtml',1,'']]],
-  ['run_5ftime_5findex_5ffail_2ecpp_29',['run_time_index_fail.cpp',['../run__time__index__fail_8cpp.xhtml',1,'']]]
+  ['row_5fbounds_24',['row_bounds',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9af356b554c67eca0ded2fcbc40c50e2',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['row_5fcount_25',['row_count',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['row_5fpattern_26',['row_pattern',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9',1,'fcarouge::test::anonymous_namespace{access.cpp}']]],
+  ['rows_27',['rows',['../structfcarouge_1_1sparse_1_1pattern.xhtml#a821fb938001c910c812a0da69c11003f',1,'fcarouge::sparse::pattern']]],
+  ['run_28',['Development Build &amp; Run',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run',1,'']]],
+  ['run_5ftime_2ecpp_29',['run_time.cpp',['../run__time_8cpp.xhtml',1,'']]],
+  ['run_5ftime_5findex_5ffail_2ecpp_30',['run_time_index_fail.cpp',['../run__time__index__fail_8cpp.xhtml',1,'']]]
 ];

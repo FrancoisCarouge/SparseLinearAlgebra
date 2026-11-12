@@ -125,108 +125,129 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000036">Test</a></b></dt><dd>Verifies the division by a matrix, the quotient <code>x</code> of <code>x * rhs = lhs</code>, by a singleton, a diagonal, triangular, block triangular, and irreducible denominators, of square and rectangular numerators. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.xhtml#l00045">45</a> of file <a class="el" href="matrix_8cpp_source.xhtml">matrix.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><span class="lineno">   46</span>  <span class="comment">// Not a constant expression: every operation below is `constexpr`, and this</span></div>
-<div class="line"><span class="lineno">   47</span>  <span class="comment">// test would otherwise be evaluated at compile time, and never at run time.</span></div>
-<div class="line"><span class="lineno">   48</span>  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">int</span> run_time{0};</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>  assert(run_time == 0);</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>  <span class="comment">// A singleton denominator divides each stored element.</span></div>
-<div class="line"><span class="lineno">   53</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::dense&lt;2, 1&gt;</a>&gt; column{{1.}, {-3.}};</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;1, 1&gt;&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337">singleton</a>{{4.}};</div>
-<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> / <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337">singleton</a>};</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>.at&lt;0, 0&gt;() == 0.25));</div>
-<div class="line"><span class="lineno">   58</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>.at&lt;1, 0&gt;() == -0.75));</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>  <span class="comment">// A diagonal denominator divides each column, and keeps the pattern.</span></div>
-<div class="line"><span class="lineno">   61</span>  <span class="keyword">using </span><a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> = sparse_matrix&lt;double, sparse::tridiagonal&lt;3&gt;&gt;;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db">band</a>{1., 2., 3., 4., 5., 6., 7.};</div>
-<div class="line"><span class="lineno">   64</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;3&gt;&gt; diagonal{2., 4., 0.5};</div>
-<div class="line"><span class="lineno">   65</span>  <span class="keyword">const</span> <span class="keyword">auto</span> columns{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db">band</a> / diagonal};</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>  <span class="keyword">static_assert</span>(</div>
-<div class="line"><span class="lineno">   68</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(columns)&gt;, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a>&gt;);</div>
-<div class="line"><span class="lineno">   69</span>  assert((columns.at&lt;0, 0&gt;() == 0.5));</div>
-<div class="line"><span class="lineno">   70</span>  assert((columns.at&lt;0, 1&gt;() == 0.5));</div>
-<div class="line"><span class="lineno">   71</span>  assert((columns.at&lt;1, 2&gt;() == 10.));</div>
-<div class="line"><span class="lineno">   72</span>  assert((columns * diagonal == band));</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>  <span class="comment">// An upper triangular denominator substitutes forward along the row.</span></div>
-<div class="line"><span class="lineno">   75</span>  <span class="keyword">constexpr</span> sparse::pattern <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#aff8120c84c71fe607a06b9cfa0649811">first_of_row</a>{sparse::shape&lt;1, 3&gt;, {{0, 0}}};</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>  <span class="keyword">const</span> sparse_matrix&lt;double, first_of_row&gt; first{{2., 0_o, 0_o}};</div>
-<div class="line"><span class="lineno">   78</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::upper_triangular&lt;3&gt;&gt; upper{</div>
-<div class="line"><span class="lineno">   79</span>      {2., 1., 0.5}, {0_o, 4., 1.}, {0_o, 0_o, 0.5}};</div>
-<div class="line"><span class="lineno">   80</span>  <span class="keyword">const</span> <span class="keyword">auto</span> substituted{first / upper};</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  assert((substituted.at&lt;0, 0&gt;() == 1.));</div>
-<div class="line"><span class="lineno">   83</span>  assert((substituted.at&lt;0, 1&gt;() == -0.25));</div>
-<div class="line"><span class="lineno">   84</span>  assert((substituted.at&lt;0, 2&gt;() == -0.5));</div>
-<div class="line"><span class="lineno">   85</span>  assert((substituted * upper == first));</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>  <span class="comment">// A lower triangular denominator divides the identity into its inverse.</span></div>
-<div class="line"><span class="lineno">   88</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd">identity</a>{1., 1.};</div>
-<div class="line"><span class="lineno">   89</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::lower_triangular&lt;2&gt;&gt; lower{{2., 0_o},</div>
-<div class="line"><span class="lineno">   90</span>                                                                 {1., 4.}};</div>
-<div class="line"><span class="lineno">   91</span>  <span class="keyword">const</span> <span class="keyword">auto</span> inverse{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd">identity</a> / lower};</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>  <span class="keyword">static_assert</span>(</div>
-<div class="line"><span class="lineno">   94</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(inverse)&gt;,</div>
-<div class="line"><span class="lineno">   95</span>                   sparse_matrix&lt;double, sparse::lower_triangular&lt;2&gt;&gt;&gt;);</div>
-<div class="line"><span class="lineno">   96</span>  assert((inverse.at&lt;0, 0&gt;() == 0.5));</div>
-<div class="line"><span class="lineno">   97</span>  assert((inverse.at&lt;1, 0&gt;() == -0.125));</div>
-<div class="line"><span class="lineno">   98</span>  assert((inverse.at&lt;1, 1&gt;() == 0.25));</div>
-<div class="line"><span class="lineno">   99</span>  assert((inverse * lower == identity));</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>  <span class="comment">// A dense denominator whose elimination exchanges its rows to pivot on the</span></div>
-<div class="line"><span class="lineno">  102</span>  <span class="comment">// largest element, of a rectangular numerator.</span></div>
-<div class="line"><span class="lineno">  103</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;2, 2&gt;&gt; dense{{1., 2.}, {1., 4.}};</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;3, 2&gt;&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715">rectangular</a>{</div>
-<div class="line"><span class="lineno">  105</span>      {1., 0.}, {0., 1.}, {1., 1.}};</div>
-<div class="line"><span class="lineno">  106</span>  <span class="keyword">const</span> <span class="keyword">auto</span> solved{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715">rectangular</a> / dense};</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>  assert((solved.at&lt;0, 0&gt;() == 2.));</div>
-<div class="line"><span class="lineno">  109</span>  assert((solved.at&lt;0, 1&gt;() == -1.));</div>
-<div class="line"><span class="lineno">  110</span>  assert((solved.at&lt;1, 0&gt;() == -0.5));</div>
-<div class="line"><span class="lineno">  111</span>  assert((solved.at&lt;1, 1&gt;() == 0.5));</div>
-<div class="line"><span class="lineno">  112</span>  assert((solved.at&lt;2, 0&gt;() == 1.5));</div>
-<div class="line"><span class="lineno">  113</span>  assert((solved.at&lt;2, 1&gt;() == -0.5));</div>
-<div class="line"><span class="lineno">  114</span>  assert((solved * dense == rectangular));</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>  <span class="comment">// A block triangular denominator solves its last unknown first, then the</span></div>
-<div class="line"><span class="lineno">  117</span>  <span class="comment">// irreducible block of the others, updated by it.</span></div>
-<div class="line"><span class="lineno">  118</span>  <span class="keyword">constexpr</span> sparse::pattern coupled{</div>
-<div class="line"><span class="lineno">  119</span>      sparse::shape&lt;3, 3&gt;, {{0, 0}, {0, 1}, {1, 0}, {1, 1}, {2, 1}, {2, 2}}};</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;1, 3&gt;&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>{{1., 1., 2.}};</div>
-<div class="line"><span class="lineno">  122</span>  <span class="keyword">const</span> sparse_matrix&lt;double, coupled&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c">blocks</a>{</div>
-<div class="line"><span class="lineno">  123</span>      {1., 2., 0_o}, {1., 4., 0_o}, {0_o, 1., 2.}};</div>
-<div class="line"><span class="lineno">  124</span>  <span class="keyword">const</span> <span class="keyword">auto</span> unknowns{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> / <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c">blocks</a>};</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>  assert((unknowns.at&lt;0, 0&gt;() == 2.));</div>
-<div class="line"><span class="lineno">  127</span>  assert((unknowns.at&lt;0, 1&gt;() == -1.));</div>
-<div class="line"><span class="lineno">  128</span>  assert((unknowns.at&lt;0, 2&gt;() == 1.));</div>
-<div class="line"><span class="lineno">  129</span>  assert((unknowns * blocks == row));</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>  <span class="comment">// An irreducible tridiagonal denominator has a dense inverse.</span></div>
-<div class="line"><span class="lineno">  132</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;3&gt;&gt; ones{1., 1., 1.};</div>
-<div class="line"><span class="lineno">  133</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> stencil{1., 1., 1., 2., 1., 1., 2.};</div>
-<div class="line"><span class="lineno">  134</span>  <span class="keyword">const</span> <span class="keyword">auto</span> filled{ones / stencil};</div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>  <span class="keyword">static_assert</span>(std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(filled)&gt;,</div>
-<div class="line"><span class="lineno">  137</span>                             sparse_matrix&lt;double, sparse::dense&lt;3, 3&gt;&gt;&gt;);</div>
-<div class="line"><span class="lineno">  138</span>  assert((filled.at&lt;0, 0&gt;() == 3.));</div>
-<div class="line"><span class="lineno">  139</span>  assert((filled.at&lt;0, 2&gt;() == 1.));</div>
-<div class="line"><span class="lineno">  140</span>  assert((filled.at&lt;1, 1&gt;() == 2.));</div>
-<div class="line"><span class="lineno">  141</span>  assert((filled.at&lt;2, 1&gt;() == -1.));</div>
-<div class="line"><span class="lineno">  142</span>  assert((filled * stencil == ones));</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  145</span>}()};</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8cpp_source.xhtml#l00046">46</a> of file <a class="el" href="matrix_8cpp_source.xhtml">matrix.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><span class="lineno">   47</span>  <span class="comment">// Not a constant expression: every operation below is `constexpr`, and this</span></div>
+<div class="line"><span class="lineno">   48</span>  <span class="comment">// test would otherwise be evaluated at compile time, and never at run time.</span></div>
+<div class="line"><span class="lineno">   49</span>  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">volatile</span> <span class="keywordtype">int</span> run_time{0};</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  assert(run_time == 0);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="comment">// A singleton denominator divides each stored element.</span></div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, sparse::dense&lt;2, 1&gt;</a>&gt; column{{1.}, {-3.}};</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;1, 1&gt;&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337">singleton</a>{{4.}};</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> / <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337">singleton</a>};</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>.at&lt;0, 0&gt;() == 0.25));</div>
+<div class="line"><span class="lineno">   59</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">scaled</a>.at&lt;1, 0&gt;() == -0.75));</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>  <span class="comment">// A diagonal denominator divides each column, and keeps the pattern.</span></div>
+<div class="line"><span class="lineno">   62</span>  <span class="keyword">using </span><a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> = sparse_matrix&lt;double, sparse::tridiagonal&lt;3&gt;&gt;;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb">band</a>{1., 2., 3., 4., 5., 6., 7.};</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;3&gt;&gt; diagonal{2., 4., 0.5};</div>
+<div class="line"><span class="lineno">   66</span>  <span class="keyword">const</span> <span class="keyword">auto</span> columns{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb">band</a> / diagonal};</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>  <span class="keyword">static_assert</span>(</div>
+<div class="line"><span class="lineno">   69</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(columns)&gt;, <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a>&gt;);</div>
+<div class="line"><span class="lineno">   70</span>  assert((columns.at&lt;0, 0&gt;() == 0.5));</div>
+<div class="line"><span class="lineno">   71</span>  assert((columns.at&lt;0, 1&gt;() == 0.5));</div>
+<div class="line"><span class="lineno">   72</span>  assert((columns.at&lt;1, 2&gt;() == 10.));</div>
+<div class="line"><span class="lineno">   73</span>  assert((columns * diagonal == band));</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>  <span class="comment">// An upper triangular denominator substitutes forward along the row.</span></div>
+<div class="line"><span class="lineno">   76</span>  <span class="keyword">constexpr</span> sparse::pattern <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#aff8120c84c71fe607a06b9cfa0649811">first_of_row</a>{sparse::shape&lt;1, 3&gt;, {{0, 0}}};</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>  <span class="keyword">const</span> sparse_matrix&lt;double, first_of_row&gt; first{{2., 0_o, 0_o}};</div>
+<div class="line"><span class="lineno">   79</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::upper_triangular&lt;3&gt;&gt; upper{</div>
+<div class="line"><span class="lineno">   80</span>      {2., 1., 0.5}, {0_o, 4., 1.}, {0_o, 0_o, 0.5}};</div>
+<div class="line"><span class="lineno">   81</span>  <span class="keyword">const</span> <span class="keyword">auto</span> substituted{first / upper};</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>  assert((substituted.at&lt;0, 0&gt;() == 1.));</div>
+<div class="line"><span class="lineno">   84</span>  assert((substituted.at&lt;0, 1&gt;() == -0.25));</div>
+<div class="line"><span class="lineno">   85</span>  assert((substituted.at&lt;0, 2&gt;() == -0.5));</div>
+<div class="line"><span class="lineno">   86</span>  assert((substituted * upper == first));</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>  <span class="comment">// A lower triangular denominator divides the identity into its inverse.</span></div>
+<div class="line"><span class="lineno">   89</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;2&gt;&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd">identity</a>{1., 1.};</div>
+<div class="line"><span class="lineno">   90</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::lower_triangular&lt;2&gt;&gt; lower{{2., 0_o},</div>
+<div class="line"><span class="lineno">   91</span>                                                                 {1., 4.}};</div>
+<div class="line"><span class="lineno">   92</span>  <span class="keyword">const</span> <span class="keyword">auto</span> inverse{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd">identity</a> / lower};</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>  <span class="keyword">static_assert</span>(</div>
+<div class="line"><span class="lineno">   95</span>      std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(inverse)&gt;,</div>
+<div class="line"><span class="lineno">   96</span>                   sparse_matrix&lt;double, sparse::lower_triangular&lt;2&gt;&gt;&gt;);</div>
+<div class="line"><span class="lineno">   97</span>  assert((inverse.at&lt;0, 0&gt;() == 0.5));</div>
+<div class="line"><span class="lineno">   98</span>  assert((inverse.at&lt;1, 0&gt;() == -0.125));</div>
+<div class="line"><span class="lineno">   99</span>  assert((inverse.at&lt;1, 1&gt;() == 0.25));</div>
+<div class="line"><span class="lineno">  100</span>  assert((inverse * lower == identity));</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>  <span class="comment">// A dense denominator whose elimination exchanges its rows to pivot on the</span></div>
+<div class="line"><span class="lineno">  103</span>  <span class="comment">// largest element, of a rectangular numerator.</span></div>
+<div class="line"><span class="lineno">  104</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;2, 2&gt;&gt; dense{{1., 2.}, {1., 4.}};</div>
+<div class="line"><span class="lineno">  105</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;3, 2&gt;&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715">rectangular</a>{</div>
+<div class="line"><span class="lineno">  106</span>      {1., 0.}, {0., 1.}, {1., 1.}};</div>
+<div class="line"><span class="lineno">  107</span>  <span class="keyword">const</span> <span class="keyword">auto</span> solved{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715">rectangular</a> / dense};</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>  assert((solved.at&lt;0, 0&gt;() == 2.));</div>
+<div class="line"><span class="lineno">  110</span>  assert((solved.at&lt;0, 1&gt;() == -1.));</div>
+<div class="line"><span class="lineno">  111</span>  assert((solved.at&lt;1, 0&gt;() == -0.5));</div>
+<div class="line"><span class="lineno">  112</span>  assert((solved.at&lt;1, 1&gt;() == 0.5));</div>
+<div class="line"><span class="lineno">  113</span>  assert((solved.at&lt;2, 0&gt;() == 1.5));</div>
+<div class="line"><span class="lineno">  114</span>  assert((solved.at&lt;2, 1&gt;() == -0.5));</div>
+<div class="line"><span class="lineno">  115</span>  assert((solved * dense == rectangular));</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>  <span class="comment">// A block triangular denominator solves its last unknown first, then the</span></div>
+<div class="line"><span class="lineno">  118</span>  <span class="comment">// irreducible block of the others, updated by it.</span></div>
+<div class="line"><span class="lineno">  119</span>  <span class="keyword">constexpr</span> sparse::pattern coupled{</div>
+<div class="line"><span class="lineno">  120</span>      sparse::shape&lt;3, 3&gt;, {{0, 0}, {0, 1}, {1, 0}, {1, 1}, {2, 1}, {2, 2}}};</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::dense&lt;1, 3&gt;&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>{{1., 1., 2.}};</div>
+<div class="line"><span class="lineno">  123</span>  <span class="keyword">const</span> sparse_matrix&lt;double, coupled&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c">blocks</a>{</div>
+<div class="line"><span class="lineno">  124</span>      {1., 2., 0_o}, {1., 4., 0_o}, {0_o, 1., 2.}};</div>
+<div class="line"><span class="lineno">  125</span>  <span class="keyword">const</span> <span class="keyword">auto</span> unknowns{<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> / <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c">blocks</a>};</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  assert((unknowns.at&lt;0, 0&gt;() == 2.));</div>
+<div class="line"><span class="lineno">  128</span>  assert((unknowns.at&lt;0, 1&gt;() == -1.));</div>
+<div class="line"><span class="lineno">  129</span>  assert((unknowns.at&lt;0, 2&gt;() == 1.));</div>
+<div class="line"><span class="lineno">  130</span>  assert((unknowns * blocks == row));</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>  <span class="comment">// An irreducible tridiagonal denominator has a dense inverse.</span></div>
+<div class="line"><span class="lineno">  133</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::diagonal&lt;3&gt;&gt; ones{1., 1., 1.};</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">tridiagonal_matrix</a> stencil{1., 1., 1., 2., 1., 1., 2.};</div>
+<div class="line"><span class="lineno">  135</span>  <span class="keyword">const</span> <span class="keyword">auto</span> filled{ones / stencil};</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="keyword">static_assert</span>(std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(filled)&gt;,</div>
+<div class="line"><span class="lineno">  138</span>                             sparse_matrix&lt;double, sparse::dense&lt;3, 3&gt;&gt;&gt;);</div>
+<div class="line"><span class="lineno">  139</span>  assert((filled.at&lt;0, 0&gt;() == 3.));</div>
+<div class="line"><span class="lineno">  140</span>  assert((filled.at&lt;0, 2&gt;() == 1.));</div>
+<div class="line"><span class="lineno">  141</span>  assert((filled.at&lt;1, 1&gt;() == 2.));</div>
+<div class="line"><span class="lineno">  142</span>  assert((filled.at&lt;2, 1&gt;() == -1.));</div>
+<div class="line"><span class="lineno">  143</span>  assert((filled * stencil == ones));</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>  <span class="comment">// A lower bidiagonal denominator of more blocks than are solved of constant</span></div>
+<div class="line"><span class="lineno">  146</span>  <span class="comment">// table ranges: a substitution from the last unknown, alternating.</span></div>
+<div class="line"><span class="lineno">  147</span>  <span class="keyword">constexpr</span> std::size_t <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">size</a>{20};</div>
+<div class="line"><span class="lineno">  148</span>  sparse_matrix&lt;double, sparse::banded&lt;size, size, 1, 0&gt;&gt; chain;</div>
+<div class="line"><span class="lineno">  149</span>  sparse_matrix&lt;double, sparse::dense&lt;1, size&gt;&gt; sums;</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordflow">for</span> (<span class="keywordtype">double</span> &amp;element : chain.values) {</div>
+<div class="line"><span class="lineno">  152</span>    element = 1.;</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">for</span> (<span class="keywordtype">double</span> &amp;element : sums.values) {</div>
+<div class="line"><span class="lineno">  156</span>    element = 1.;</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>  <span class="keyword">const</span> <span class="keyword">auto</span> alternating{sums / chain};</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  assert((alternating.at&lt;0, size - 1&gt;() == 1.));</div>
+<div class="line"><span class="lineno">  162</span>  assert((alternating.at&lt;0, size - 2&gt;() == 0.));</div>
+<div class="line"><span class="lineno">  163</span>  assert((alternating.at&lt;0, 0&gt;() == 0.));</div>
+<div class="line"><span class="lineno">  164</span>  assert((alternating * chain == sums));</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  167</span>}()};</div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00068">sparse_linear_algebra_forward.hpp:68</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_a632778c998c5c1de31f4e3840e439337"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337">fcarouge::test::anonymous_namespace{access.cpp}::singleton</a></div><div class="ttdeci">sparse_matrix&lt; double, sparse::dense&lt; 1, 1 &gt; &gt; singleton</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00049">access.cpp:49</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_xhtml_aabe067ba97effae267b50cf08b9144de"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">fcarouge::test::anonymous_namespace{access.cpp}::row</a></div><div class="ttdeci">sparse_matrix&lt; double, row_pattern &gt; row</div><div class="ttdef"><b>Definition</b> <a href="access_8cpp_source.xhtml#l00048">access.cpp:48</a></div></div>
@@ -234,7 +255,8 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a3a07d23686b89c132a30128611e3e715"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715">fcarouge::test::anonymous_namespace{arithmetic.cpp}::rectangular</a></div><div class="ttdeci">constexpr sparse_matrix&lt; double, rectangular_pattern &gt; rectangular</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00084">arithmetic.cpp:84</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a67ed2f01627622a09ffbceb2cb5dc854"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">fcarouge::test::anonymous_namespace{arithmetic.cpp}::scaled</a></div><div class="ttdeci">constexpr auto scaled</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00073">arithmetic.cpp:73</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a70eb900550acd7cfb3684c13a0683443"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443">fcarouge::test::anonymous_namespace{arithmetic.cpp}::tridiagonal_matrix</a></div><div class="ttdeci">sparse_matrix&lt; double, tridiagonal&lt; 3 &gt; &gt; tridiagonal_matrix</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00043">arithmetic.cpp:43</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03_xhtml_a213a59afd7b3113ddf661b361ec499db"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db">fcarouge::test::anonymous_namespace{freestanding.cpp}::band</a></div><div class="ttdeci">constexpr band_matrix band</div><div class="ttdef"><b>Definition</b> <a href="freestanding_8cpp_source.xhtml#l00046">freestanding.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03_xhtml_a054b894241ea5a0b81c33fff3a301320"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">fcarouge::test::anonymous_namespace{element_wise.cpp}::size</a></div><div class="ttdeci">constexpr std::size_t size</div><div class="ttdef"><b>Definition</b> <a href="element__wise_8cpp_source.xhtml#l00042">element_wise.cpp:42</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03_xhtml_a0bb2476a30c442e0b114fe24e63655cb"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb">fcarouge::test::anonymous_namespace{element_wise.cpp}::band</a></div><div class="ttdeci">sparse_matrix&lt; double, sparse::tridiagonal&lt; size &gt; &gt; band</div><div class="ttdef"><b>Definition</b> <a href="element__wise_8cpp_source.xhtml#l00044">element_wise.cpp:44</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_xhtml_aff8120c84c71fe607a06b9cfa0649811"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03.xhtml#aff8120c84c71fe607a06b9cfa0649811">fcarouge::test::anonymous_namespace{operation_count.cpp}::first_of_row</a></div><div class="ttdeci">constexpr sparse::pattern first_of_row</div><div class="ttdef"><b>Definition</b> <a href="operation__count_8cpp_source.xhtml#l00240">operation_count.cpp:240</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_xhtml_a8ef7b1a02afaebadb7487d6bec9cd76c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c">fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::blocks</a></div><div class="ttdeci">constexpr pattern blocks</div><div class="ttdef"><b>Definition</b> <a href="pattern__algebra_8cpp_source.xhtml#l00148">pattern_algebra.cpp:148</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03_xhtml_a8f11361f903512116a43caf3b2d3e4cd"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd">fcarouge::test::anonymous_namespace{patterns.cpp}::identity</a></div><div class="ttdeci">constexpr auto identity</div><div class="ttdef"><b>Definition</b> <a href="patterns_8cpp_source.xhtml#l00077">patterns.cpp:77</a></div></div>

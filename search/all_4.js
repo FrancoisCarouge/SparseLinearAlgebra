@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['band_0',['band',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}']]],
+  ['band_0',['band',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}::band'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}::band']]],
   ['band_5fmatrix_1',['band_matrix',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f',1,'fcarouge::test::anonymous_namespace{freestanding.cpp}']]],
   ['banded_2',['banded',['../namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212',1,'fcarouge::sparse']]],
   ['bench_3',['bench',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03.xhtml#a092c9adb0b821ea4d68fc417409b9a71',1,'fcarouge::benchmark::anonymous_namespace{product.cpp}']]],

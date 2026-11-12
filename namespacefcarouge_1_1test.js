@@ -58,6 +58,16 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{duplicate_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml", [
       [ "value", "namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388", null ]
     ] ],
+    [ "anonymous_namespace{element_wise.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml", [
+      [ "band", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb", null ],
+      [ "dense", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a3122188055972f96c77bc1961dc660a9", null ],
+      [ "converted", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#ae4b93eb5b79c31c18bb69defe760af7a", null ],
+      [ "difference", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#af006fa10d7243bee936a9ef8087b952a", null ],
+      [ "lhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a55205b7cf05cb86e266c3577cd7b0d2c", null ],
+      [ "rhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#ad9459a9ad04c06066ed260631f780a76", null ],
+      [ "size", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320", null ],
+      [ "sum", "namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#aed5e1fa1f5861c648921722204451fbd", null ]
+    ] ],
     [ "anonymous_namespace{equal_to.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02equal__to_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02equal__to_8cpp_03.xhtml#afa5acde068b7db37e18a61497f776229", null ]
     ] ],

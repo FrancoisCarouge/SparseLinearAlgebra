@@ -454,22 +454,22 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00247">247</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  248</span>                   {</div>
 <div class="line"><span class="lineno">  249</span>    std::size_t first{0};</div>
-<div class="line"><span class="lineno">  250</span>    std::size_t <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a>{Count};</div>
+<div class="line"><span class="lineno">  250</span>    std::size_t <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">size</a>{Count};</div>
 <div class="line"><span class="lineno">  251</span> </div>
 <div class="line"><span class="lineno">  252</span>    <span class="keywordflow">while</span> (size &gt; 0) {</div>
-<div class="line"><span class="lineno">  253</span>      <span class="keyword">const</span> std::size_t half{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> / 2};</div>
+<div class="line"><span class="lineno">  253</span>      <span class="keyword">const</span> std::size_t half{<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">size</a> / 2};</div>
 <div class="line"><span class="lineno">  254</span> </div>
 <div class="line"><span class="lineno">  255</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9f09dfa4f6cdbf5fef0d1442be3cc61d">positions</a>[first + half] &lt; value) {</div>
 <div class="line"><span class="lineno">  256</span>        first += half + 1;</div>
-<div class="line"><span class="lineno">  257</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> -= half + 1;</div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">size</a> -= half + 1;</div>
 <div class="line"><span class="lineno">  258</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  259</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">size</a> = half;</div>
+<div class="line"><span class="lineno">  259</span>        <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">size</a> = half;</div>
 <div class="line"><span class="lineno">  260</span>      }</div>
 <div class="line"><span class="lineno">  261</span>    }</div>
 <div class="line"><span class="lineno">  262</span> </div>
 <div class="line"><span class="lineno">  263</span>    <span class="keywordflow">return</span> first;</div>
 <div class="line"><span class="lineno">  264</span>  }</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03_xhtml_afd0adec8a94b42f9ca1340023a69acd5"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5">fcarouge::test::anonymous_namespace{patterns.cpp}::size</a></div><div class="ttdeci">constexpr std::size_t size</div><div class="ttdef"><b>Definition</b> <a href="patterns_8cpp_source.xhtml#l00041">patterns.cpp:41</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03_xhtml_a054b894241ea5a0b81c33fff3a301320"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a054b894241ea5a0b81c33fff3a301320">fcarouge::test::anonymous_namespace{element_wise.cpp}::size</a></div><div class="ttdeci">constexpr std::size_t size</div><div class="ttdef"><b>Definition</b> <a href="element__wise_8cpp_source.xhtml#l00042">element_wise.cpp:42</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00174">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::positions</a>.</p>
 
@@ -574,7 +574,7 @@ template&lt;std::size_t Rows, std::size_t Columns, std::size_t Count&gt; </div>
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00168">168</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  168</span>{Count};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00248">fcarouge::sparse_linear_algebra::internal::merge_positions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00263">fcarouge::sparse_linear_algebra::internal::merge_positions()</a>.</p>
 
 </div>
 </div>

@@ -47,13 +47,14 @@ var searchData=
   ['contributors_44',['Contributors',['../md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml',1,'Contributors'],['../index.xhtml#contributors-1',1,'Contributors']]],
   ['contributors_2emd_45',['CONTRIBUTORS.md',['../_c_o_n_t_r_i_b_u_t_o_r_s_8md.xhtml',1,'']]],
   ['conventions_46',['Conventions',['..//github/workspace/AGENTS.md#conventions',1,'']]],
-  ['convertible_2ecpp_47',['convertible.cpp',['../convertible_8cpp.xhtml',1,'']]],
-  ['corner_48',['corner',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7196e529f6392ee3faa00cec8a9f1884',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
-  ['corporations_20institutions_49',['Corporations &amp; Institutions',['../index.xhtml#corporations--institutions',1,'']]],
-  ['count_50',['count',['../structfcarouge_1_1sparse_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe',1,'fcarouge::sparse::pattern']]],
-  ['count_5ffail_2ecpp_51',['count_fail.cpp',['../count__fail_8cpp.xhtml',1,'']]],
-  ['count_5fof_52',['count_of',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a3e69c6a92af98ef6d7f40e6175a6238e',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['counted_53',['counted',['../structfcarouge_1_1test_1_1counted.xhtml',1,'fcarouge::test']]],
-  ['covenant_20code_20of_20conduct_54',['Contributor Covenant Code of Conduct',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml',1,'']]],
-  ['coverage_55',['Unit Test Code Coverage',['../unit_test_coverage.xhtml',1,'']]]
+  ['converted_47',['converted',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#ae4b93eb5b79c31c18bb69defe760af7a',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}']]],
+  ['convertible_2ecpp_48',['convertible.cpp',['../convertible_8cpp.xhtml',1,'']]],
+  ['corner_49',['corner',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a7196e529f6392ee3faa00cec8a9f1884',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
+  ['corporations_20institutions_50',['Corporations &amp; Institutions',['../index.xhtml#corporations--institutions',1,'']]],
+  ['count_51',['count',['../structfcarouge_1_1sparse_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe',1,'fcarouge::sparse::pattern']]],
+  ['count_5ffail_2ecpp_52',['count_fail.cpp',['../count__fail_8cpp.xhtml',1,'']]],
+  ['count_5fof_53',['count_of',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a3e69c6a92af98ef6d7f40e6175a6238e',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['counted_54',['counted',['../structfcarouge_1_1test_1_1counted.xhtml',1,'fcarouge::test']]],
+  ['covenant_20code_20of_20conduct_55',['Contributor Covenant Code of Conduct',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml',1,'']]],
+  ['coverage_56',['Unit Test Code Coverage',['../unit_test_coverage.xhtml',1,'']]]
 ];

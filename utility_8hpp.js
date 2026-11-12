@@ -31,7 +31,10 @@ var utility_8hpp =
     [ "is_zero_literal", "utility_8hpp.xhtml#a62ae2e88187b445423e25870823e64b6", null ],
     [ "projection", "utility_8hpp.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
     [ "quotient_reach", "utility_8hpp.xhtml#acf4b5c478bb1b1121931c610348de9c6", null ],
+    [ "row_bounds", "utility_8hpp.xhtml#a9af356b554c67eca0ded2fcbc40c50e2", null ],
     [ "row_count", "utility_8hpp.xhtml#a433b211012e809ad37ff6b444f78dab1", null ],
+    [ "stored_count", "utility_8hpp.xhtml#a42702f4f3e8882576fbcbbcf8a80072f", null ],
     [ "stored_in_row", "utility_8hpp.xhtml#a2a46880afae74b629f68a0b90d0ef919", null ],
+    [ "stored_terms", "utility_8hpp.xhtml#a65ff44de0b6a95bc2957ac79d98ba28f", null ],
     [ "term_count", "utility_8hpp.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ]
 ];

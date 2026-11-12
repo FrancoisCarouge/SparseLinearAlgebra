@@ -102,7 +102,8 @@ $(function(){initNavTree('combine_8hpp.xhtml',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">combine.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -110,7 +111,6 @@ $(function(){initNavTree('combine_8hpp.xhtml',''); initResizable(true); });
 <p>The element-wise combination of two matrices of the same shape.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="utility_8hpp_source.xhtml">fcarouge/sparse_linear_algebra/internal/utility.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pattern_8hpp_source.xhtml">fcarouge/sparse_linear_algebra/pattern.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pattern__algebra_8hpp_source.xhtml">fcarouge/sparse_linear_algebra/pattern_algebra.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">fcarouge/sparse_linear_algebra_forward.hpp</a>&quot;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
@@ -142,6 +142,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a621210bcd7e88cd78ca6fe883d85a5b5"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a621210bcd7e88cd78ca6fe883d85a5b5">fcarouge::sparse_linear_algebra::internal::combine</a> (const <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt; Type, Lhs &gt; &amp;lhs, const <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt; Type, Rhs &gt; &amp;rhs, const auto &amp;both, const auto &amp;rhs_only) -&gt; <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt; Type, <a class="el" href="namespacefcarouge_1_1sparse.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5">sparse::pattern_union</a>&lt; Lhs, Rhs &gt; &gt;</td></tr>
 <tr class="memdesc:a621210bcd7e88cd78ca6fe883d85a5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine the elements stored by either matrix of the same shape, into the union of their patterns.  <br /></td></tr>
 <tr class="separator:a621210bcd7e88cd78ca6fe883d85a5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aec6da8ad8086d592f3d49182ea4e68b4" id="r_aec6da8ad8086d592f3d49182ea4e68b4"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
+<tr class="memitem:aec6da8ad8086d592f3d49182ea4e68b4"><td class="memTemplItemLeft" align="right" valign="top">constexpr const auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aec6da8ad8086d592f3d49182ea4e68b4">fcarouge::sparse_linear_algebra::internal::union_terms</a></td></tr>
+<tr class="memdesc:aec6da8ad8086d592f3d49182ea4e68b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the union of two patterns, grouped by the patterns storing them.  <br /></td></tr>
+<tr class="separator:aec6da8ad8086d592f3d49182ea4e68b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The element-wise combination of two matrices of the same shape. </p>

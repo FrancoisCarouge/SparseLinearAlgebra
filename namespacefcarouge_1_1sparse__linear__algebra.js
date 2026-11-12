@@ -36,9 +36,13 @@ var namespacefcarouge_1_1sparse__linear__algebra =
       [ "is_zero_literal", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a62ae2e88187b445423e25870823e64b6", null ],
       [ "projection", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
       [ "quotient_reach", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#acf4b5c478bb1b1121931c610348de9c6", null ],
+      [ "row_bounds", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9af356b554c67eca0ded2fcbc40c50e2", null ],
       [ "row_count", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1", null ],
+      [ "stored_count", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a42702f4f3e8882576fbcbbcf8a80072f", null ],
       [ "stored_in_row", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a2a46880afae74b629f68a0b90d0ef919", null ],
+      [ "stored_terms", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a65ff44de0b6a95bc2957ac79d98ba28f", null ],
       [ "term_count", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ],
+      [ "union_terms", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aec6da8ad8086d592f3d49182ea4e68b4", null ],
       [ "within_band", "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a1e826cd6cd6ae9b52bddc3583607e2e9", null ]
     ] ]
 ];

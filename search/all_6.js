@@ -1,13 +1,13 @@
 var searchData=
 [
   ['declaration_0',['Declaration',['../index.xhtml#declaration',1,'Declaration'],['../index.xhtml#declaration-1',1,'Declaration']]],
-  ['dense_1',['dense',['../namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f',1,'fcarouge::sparse']]],
+  ['dense_1',['dense',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a3122188055972f96c77bc1961dc660a9',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}::dense'],['../namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f',1,'fcarouge::sparse::dense']]],
   ['dense_5fvalues_2',['dense_values',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a048a09762edb42a649125dbd10051c81',1,'fcarouge::test::anonymous_namespace{layout.cpp}']]],
   ['descending_3',['descending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a9f3ac314b262d4c377b0b9028889bc4b',1,'fcarouge::test::anonymous_namespace{construction.cpp}']]],
   ['development_20build_20run_4',['Development Build &amp; Run',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run',1,'']]],
   ['diagonal_5',['diagonal',['../namespacefcarouge_1_1sparse.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260',1,'fcarouge::sparse']]],
   ['diagonal_5fmatrix_6',['diagonal_matrix',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a59d359cc1007d5efb9e89d244a7db05b',1,'fcarouge::test::anonymous_namespace{access.cpp}::diagonal_matrix'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a4735ea677c4c31d1bfd063a48bb73a8a',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::diagonal_matrix']]],
-  ['difference_7',['difference',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}']]],
+  ['difference_7',['difference',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::difference'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#af006fa10d7243bee936a9ef8087b952a',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}::difference']]],
   ['differential_8',['differential',['../structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
   ['differential_2ecpp_9',['differential.cpp',['../differential_8cpp.xhtml',1,'']]],
   ['directories_10',['Other directories',['..//github/workspace/AGENTS.md#other-directories',1,'']]],

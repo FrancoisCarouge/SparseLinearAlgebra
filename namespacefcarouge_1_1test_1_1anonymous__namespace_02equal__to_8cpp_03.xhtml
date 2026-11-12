@@ -123,7 +123,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000046">Test</a></b></dt><dd>Verifies the equality compares values, not patterns. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000047">Test</a></b></dt><dd>Verifies the equality compares values, not patterns. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="equal__to_8cpp_source.xhtml#l00039">39</a> of file <a class="el" href="equal__to_8cpp_source.xhtml">equal_to.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   39</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -139,7 +139,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   49</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, diagonal&lt;2&gt;</a>&gt; narrow{1., 2.};</div>
 <div class="line"><span class="lineno">   50</span>  <span class="keyword">const</span> <a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;double, dense&lt;2, 2&gt;</a>&gt; wide{1., 0., 0., 2.};</div>
 <div class="line"><span class="lineno">   51</span>  <span class="keyword">const</span> sparse_matrix&lt;double, dense&lt;2, 2&gt;&gt; different{1., 3., 0., 2.};</div>
-<div class="line"><span class="lineno">   52</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::tridiagonal&lt;2&gt;&gt; <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db">band</a>{1., 0., 0., 2.};</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keyword">const</span> sparse_matrix&lt;double, sparse::tridiagonal&lt;2&gt;&gt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb">band</a>{1., 0., 0., 2.};</div>
 <div class="line"><span class="lineno">   53</span> </div>
 <div class="line"><span class="lineno">   54</span>  <span class="comment">// A structural zero equals a stored zero, in both directions.</span></div>
 <div class="line"><span class="lineno">   55</span>  assert((narrow == wide));</div>
@@ -151,17 +151,20 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   61</span>  assert((not(different == narrow)));</div>
 <div class="line"><span class="lineno">   62</span>  assert((narrow != different));</div>
 <div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  <span class="comment">// A difference at a stored position.</span></div>
-<div class="line"><span class="lineno">   65</span>  assert((narrow != sparse_matrix&lt;<span class="keywordtype">double</span>, diagonal&lt;2&gt;&gt;{1., 3.}));</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>  <span class="comment">// The zero matrices of every pattern.</span></div>
-<div class="line"><span class="lineno">   68</span>  <span class="keyword">static_assert</span>(sparse_matrix&lt;double, sparse::zero&lt;2, 2&gt;&gt;{} ==</div>
-<div class="line"><span class="lineno">   69</span>                sparse_matrix&lt;double, dense&lt;2, 2&gt;&gt;{});</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   72</span>}()};</div>
+<div class="line"><span class="lineno">   64</span>  <span class="comment">// A difference at a stored position, of the same pattern, and of different</span></div>
+<div class="line"><span class="lineno">   65</span>  <span class="comment">// patterns, in both directions.</span></div>
+<div class="line"><span class="lineno">   66</span>  assert((narrow != sparse_matrix&lt;<span class="keywordtype">double</span>, diagonal&lt;2&gt;&gt;{1., 3.}));</div>
+<div class="line"><span class="lineno">   67</span>  assert((not(narrow == sparse_matrix&lt;<span class="keywordtype">double</span>, dense&lt;2, 2&gt;&gt;{1., 0., 0., 3.})));</div>
+<div class="line"><span class="lineno">   68</span>  assert((not(sparse_matrix&lt;<span class="keywordtype">double</span>, dense&lt;2, 2&gt;&gt;{1., 0., 0., 3.} == narrow)));</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>  <span class="comment">// The zero matrices of every pattern.</span></div>
+<div class="line"><span class="lineno">   71</span>  <span class="keyword">static_assert</span>(sparse_matrix&lt;double, sparse::zero&lt;2, 2&gt;&gt;{} ==</div>
+<div class="line"><span class="lineno">   72</span>                sparse_matrix&lt;double, dense&lt;2, 2&gt;&gt;{});</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   75</span>}()};</div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra__forward_8hpp_source.xhtml#l00068">sparse_linear_algebra_forward.hpp:68</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03_xhtml_a213a59afd7b3113ddf661b361ec499db"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#a213a59afd7b3113ddf661b361ec499db">fcarouge::test::anonymous_namespace{freestanding.cpp}::band</a></div><div class="ttdeci">constexpr band_matrix band</div><div class="ttdef"><b>Definition</b> <a href="freestanding_8cpp_source.xhtml#l00046">freestanding.cpp:46</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03_xhtml_a0bb2476a30c442e0b114fe24e63655cb"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#a0bb2476a30c442e0b114fe24e63655cb">fcarouge::test::anonymous_namespace{element_wise.cpp}::band</a></div><div class="ttdeci">sparse_matrix&lt; double, sparse::tridiagonal&lt; size &gt; &gt; band</div><div class="ttdef"><b>Definition</b> <a href="element__wise_8cpp_source.xhtml#l00044">element_wise.cpp:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
