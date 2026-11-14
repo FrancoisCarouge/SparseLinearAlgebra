@@ -128,6 +128,17 @@ inline constexpr bool is_subset_of{[] -> bool {
   }
 }()};
 
+//! @brief Whether a pattern is square and stores the transposed position of
+//! each of its positions.
+//!
+//! @details A symmetric matrix has a structurally symmetric pattern, but a
+//! structurally symmetric pattern does not make its matrix symmetric: the
+//! values of the stored elements are not constrained. A rectangular pattern is
+//! not structurally symmetric.
+template <sparsity_pattern auto Pattern>
+inline constexpr bool is_structurally_symmetric{
+    is_subset_of<pattern_transpose<Pattern>, Pattern>};
+
 //! @}
 } // namespace fcarouge::sparse
 

@@ -206,6 +206,7 @@ The compile-time computations the operations derive their results with, each a v
 | `structural_rank<Pattern>` | The largest count of positions no two of which share a row or a column: a square matrix of a lower structural rank is singular, whatever its values. |
 | `pattern_quotient<Lhs, Rhs>` | The structural pattern of a matrix division, by a square denominator of full structural rank: a position is stored whenever the elimination of the denominator reaches it. |
 | `is_subset_of<Inner, Outer>` | Whether a pattern stores every position of another, of the same shape. |
+| `is_structurally_symmetric<Pattern>` | Whether a square pattern stores the transposed position of each of its positions. A symmetric matrix has a structurally symmetric pattern, whatever the values of its stored elements. |
 
 ### Structural Zero Literal
 
