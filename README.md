@@ -37,7 +37,7 @@ std::println("{}", value * value); // Computes 17 of the 27 products.
 
 ## Installation & Usage
 
-See [INSTALL.md](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/INSTALL.md) for installation instructions.
+See [INSTALL.md](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/INSTALL.md) for installation instructions. Only the `include/` folder is the library: `cmake --install` and the release packages deliver it, with its CMake package configuration, and nothing else. The `support/`, `sample/`, `test/`, and `benchmark/` folders are development examples and tooling, not part of the delivered library.
 
 ## Reference
 
