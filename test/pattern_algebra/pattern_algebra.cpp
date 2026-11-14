@@ -139,6 +139,25 @@ static_assert(sparse::structural_rank<pattern{
 static_assert(sparse::structural_rank<anti_diagonal> == 3);
 static_assert(sparse::structural_rank<rectangular> == 2);
 
+//! @test Verifies the structural symmetry, of symmetric families, of patterns
+//! asymmetric by a single position, and of rectangular patterns.
+static_assert(sparse::is_structurally_symmetric<diagonal<3>>);
+static_assert(sparse::is_structurally_symmetric<tridiagonal<4>>);
+static_assert(sparse::is_structurally_symmetric<sparse::banded<4, 4, 2, 2>>);
+static_assert(sparse::is_structurally_symmetric<sparse::dense<3, 3>>);
+static_assert(sparse::is_structurally_symmetric<sparse::zero<3, 3>>);
+static_assert(sparse::is_structurally_symmetric<sparse::dense<1, 1>>);
+static_assert(sparse::is_structurally_symmetric<anti_diagonal>);
+static_assert(sparse::is_structurally_symmetric<reassigned>);
+static_assert(not sparse::is_structurally_symmetric<first_row>);
+static_assert(not sparse::is_structurally_symmetric<lower_triangular<3>>);
+static_assert(
+    not sparse::is_structurally_symmetric<sparse::banded<4, 4, 1, 2>>);
+static_assert(not sparse::is_structurally_symmetric<pattern{
+                  shape<2, 2>, {{0, 0}, {0, 1}, {1, 1}}}>);
+static_assert(not sparse::is_structurally_symmetric<sparse::dense<2, 3>>);
+static_assert(not sparse::is_structurally_symmetric<sparse::zero<2, 3>>);
+
 //! @test Verifies the structural quotient: a diagonal denominator keeps the
 //! numerator's pattern, a triangular one closes it in the direction of its
 //! substitution, a block-diagonal one by blocks, and an irreducible one fills
