@@ -194,19 +194,21 @@ The examples draw the stored positions filled and the structural zeros empty: th
 
 ### Pattern Algebra
 
-The compile-time computations the operations derive their results with, each a variable template of the `fcarouge::sparse` namespace.
+The operations use these compile-time computations to find which positions of their result are stored. Each is a variable template of the `fcarouge::sparse` namespace, which you can also use directly, for example in a `static_assert`.
 
-| Variable | Definition |
-| --- | --- |
-| `pattern_union<Lhs, Rhs>` | The positions stored by either pattern of the same shape: the pattern of a sum or a difference. |
-| `pattern_intersection<Lhs, Rhs>` | The positions stored by both patterns of the same shape. |
-| `pattern_transpose<Pattern>` | The transposed pattern. |
-| `pattern_product<Lhs, Rhs>` | The structural pattern of a matrix product: a position is stored whenever a term reaches it. |
-| `product_term_count<Lhs, Rhs>` | The count of elementary products of a matrix product. |
-| `structural_rank<Pattern>` | The largest count of positions no two of which share a row or a column: a square matrix of a lower structural rank is singular, whatever its values. |
-| `pattern_quotient<Lhs, Rhs>` | The structural pattern of a matrix division, by a square denominator of full structural rank: a position is stored whenever the elimination of the denominator reaches it. |
-| `is_subset_of<Inner, Outer>` | Whether a pattern stores every position of another, of the same shape. |
-| `is_structurally_symmetric<Pattern>` | Whether a square pattern stores the transposed position of each of its positions. A symmetric matrix has a structurally symmetric pattern, whatever the values of its stored elements. |
+| Variable | Example | Definition |
+| --- | --- | --- |
+| `pattern_union<Lhs, Rhs>` | ![The union of a first row and a last column: the first row and the last column.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/pattern_union.svg) | The positions stored by either pattern. It is the pattern of a sum or a difference. Both patterns have the same shape. |
+| `pattern_intersection<Lhs, Rhs>` | ![The intersection of a lower and an upper triangular pattern: the diagonal.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/pattern_intersection.svg) | The positions stored by both patterns. Both patterns have the same shape. |
+| `pattern_transpose<Pattern>` | ![The transpose of a 2 by 3 pattern: a 3 by 2 pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/pattern_transpose.svg) | The pattern with its rows and columns swapped. |
+| `pattern_product<Lhs, Rhs>` | ![The product of two tridiagonal patterns: a band of two sub-diagonals and two super-diagonals.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/pattern_product.svg) | The pattern of the matrix product `Lhs * Rhs`. A position is stored when at least one elementary product adds to it, even if the values could cancel out at run time. |
+| `product_term_count<Lhs, Rhs>` | ![The product of two 3 by 3 tridiagonal patterns: 17 elementary products.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/product_term_count.svg) | The count of elementary products of the matrix product `Lhs * Rhs`. The example shows the count reaching each position. |
+| `structural_rank<Pattern>` | ![A pattern of structural rank 2.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/structural_rank.svg) | The most stored positions that can be picked with no two in the same row or column. When a square pattern's structural rank is below its size, every matrix of that pattern is singular, whatever its values. |
+| `pattern_quotient<Lhs, Rhs>` | ![The division of a row of one position by an upper triangular pattern: a full row.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/pattern_quotient.svg) | The pattern of the division `Lhs / Rhs`: the `x` solving `x * Rhs = Lhs`. `Rhs` is square, of full structural rank. A position is stored when solving the equation reaches it. |
+| `is_subset_of<Inner, Outer>` | ![The diagonal pattern is a subset of the tridiagonal pattern.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/is_subset_of.svg) | Whether `Outer` stores every position that `Inner` stores. Patterns of different shapes are not subsets. |
+| `is_structurally_symmetric<Pattern>` | ![A pattern that mirrors itself across its main diagonal, and one that does not.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/pattern_algebra/is_structurally_symmetric.svg) | Whether the pattern is square and is its own mirror image across the main diagonal. It is about positions only: a matrix of this pattern may still have different values at mirrored positions. |
+
+The examples draw the stored positions filled and the structural zeros empty. The dots mark the positions the structural rank picks, and the dashed line is the main diagonal.
 
 ### Structural Zero Literal
 
