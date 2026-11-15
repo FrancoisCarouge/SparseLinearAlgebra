@@ -11,6 +11,7 @@ var namespacefcarouge_1_1sparse =
     [ "banded", "namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212", null ],
     [ "dense", "namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f", null ],
     [ "diagonal", "namespacefcarouge_1_1sparse.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260", null ],
+    [ "is_structurally_symmetric", "namespacefcarouge_1_1sparse.xhtml#af10895288c494b76fbf8e7862b476564", null ],
     [ "is_subset_of", "namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d75cc4171775a210ea", null ],
     [ "lower_triangular", "namespacefcarouge_1_1sparse.xhtml#a52bd13199f4466aafb2ef29c752d0fcc", null ],
     [ "pattern_intersection", "namespacefcarouge_1_1sparse.xhtml#ae153220d9e02570204d76dad34a8b116", null ],

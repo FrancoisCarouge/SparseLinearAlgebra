@@ -156,6 +156,10 @@ Variables</h2></td></tr>
 <tr class="memitem:a812a97717e5886d75cc4171775a210ea"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a812a97717e5886d75cc4171775a210ea">is_subset_of</a></td></tr>
 <tr class="memdesc:a812a97717e5886d75cc4171775a210ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern stores every position of another, of the same shape.  <br /></td></tr>
 <tr class="separator:a812a97717e5886d75cc4171775a210ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10895288c494b76fbf8e7862b476564" id="r_af10895288c494b76fbf8e7862b476564"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Pattern&gt; </td></tr>
+<tr class="memitem:af10895288c494b76fbf8e7862b476564"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af10895288c494b76fbf8e7862b476564">is_structurally_symmetric</a></td></tr>
+<tr class="memdesc:af10895288c494b76fbf8e7862b476564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern is square and stores the transposed position of each of its positions.  <br /></td></tr>
+<tr class="separator:af10895288c494b76fbf8e7862b476564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Patterns</h2></td></tr>
 <tr class="memitem:afc86d359c92e4aed11bb24af084e9a13" id="r_afc86d359c92e4aed11bb24af084e9a13"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns&gt; </td></tr>
@@ -454,6 +458,39 @@ template&lt;std::size_t Size&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00338">338</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  338</span>{banded&lt;Size, Size, 0, 0&gt;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af10895288c494b76fbf8e7862b476564" name="af10895288c494b76fbf8e7862b476564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10895288c494b76fbf8e7862b476564">&#9670;&#160;</a></span>is_structurally_symmetric</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;sparsity_pattern auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fcarouge::sparse::is_structurally_symmetric</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    is_subset_of&lt;pattern_transpose&lt;Pattern&gt;, Pattern&gt;}</div>
+</div><!-- fragment -->
+<p>Whether a pattern is square and stores the transposed position of each of its positions. </p>
+<p>A symmetric matrix has a structurally symmetric pattern, but a structurally symmetric pattern does not make its matrix symmetric: the values of the stored elements are not constrained. A rectangular pattern is not structurally symmetric. </p>
+
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00139">139</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                               {</div>
+<div class="line"><span class="lineno">  140</span>    is_subset_of&lt;pattern_transpose&lt;Pattern&gt;, Pattern&gt;};</div>
 </div><!-- fragment -->
 </div>
 </div>

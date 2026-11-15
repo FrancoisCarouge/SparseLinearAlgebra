@@ -1,12 +1,14 @@
 var NAVTREEINDEX3 =
 {
-"pattern__algebra_8hpp.xhtml#a22a974884952de8722771dca7f79a808":[15,0,2,0,0,2,2],
-"pattern__algebra_8hpp.xhtml#a51dcae7ae15de5fe60e3532356e5328d":[15,0,2,0,0,2,3],
-"pattern__algebra_8hpp.xhtml#a73723800bf357be1ac9d16d3193b7eb7":[15,0,2,0,0,2,7],
-"pattern__algebra_8hpp.xhtml#a812a97717e5886d75cc4171775a210ea":[15,0,2,0,0,2,0],
-"pattern__algebra_8hpp.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5":[15,0,2,0,0,2,5],
-"pattern__algebra_8hpp.xhtml#ae153220d9e02570204d76dad34a8b116":[15,0,2,0,0,2,1],
-"pattern__algebra_8hpp.xhtml#ae265894a6b75da2c60b4e84d92a53b8e":[15,0,2,0,0,2,6],
+"pattern__algebra_8hpp.xhtml#a1de7628cd60f9cbae47157d68cae07ee":[15,0,2,0,0,2,5],
+"pattern__algebra_8hpp.xhtml#a22a974884952de8722771dca7f79a808":[15,0,2,0,0,2,3],
+"pattern__algebra_8hpp.xhtml#a51dcae7ae15de5fe60e3532356e5328d":[15,0,2,0,0,2,4],
+"pattern__algebra_8hpp.xhtml#a73723800bf357be1ac9d16d3193b7eb7":[15,0,2,0,0,2,8],
+"pattern__algebra_8hpp.xhtml#a812a97717e5886d75cc4171775a210ea":[15,0,2,0,0,2,1],
+"pattern__algebra_8hpp.xhtml#ab8975278c1d8ae0036b49bea78bbe8b5":[15,0,2,0,0,2,6],
+"pattern__algebra_8hpp.xhtml#ae153220d9e02570204d76dad34a8b116":[15,0,2,0,0,2,2],
+"pattern__algebra_8hpp.xhtml#ae265894a6b75da2c60b4e84d92a53b8e":[15,0,2,0,0,2,7],
+"pattern__algebra_8hpp.xhtml#af10895288c494b76fbf8e7862b476564":[15,0,2,0,0,2,0],
 "pattern__algebra_8hpp_source.xhtml":[15,0,2,0,0,2],
 "patterns_8cpp.xhtml":[15,0,6,23,2],
 "patterns_8cpp.xhtml#a3947ba299ed5a4d6a780eb54fc1ef073":[15,0,6,23,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "utility_8hpp.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2":[15,0,2,0,0,0,1,16],
 "utility_8hpp.xhtml#a840d62cf8ac8aa39d3bf80e3ac6e9f89":[15,0,2,0,0,0,1,25],
 "utility_8hpp.xhtml#a88c2d25e777e6730b2b1b20c342c2584":[15,0,2,0,0,0,1,19],
-"utility_8hpp.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f":[15,0,2,0,0,0,1,17],
-"utility_8hpp.xhtml#a916c5fe6220ce11555ba59cd64e3a1a2":[15,0,2,0,0,0,1,21],
-"utility_8hpp.xhtml#a9499df9582503d9e3410b496afc451f4":[15,0,2,0,0,0,1,18]
+"utility_8hpp.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f":[15,0,2,0,0,0,1,17]
 };

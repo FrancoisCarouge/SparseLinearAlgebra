@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a64c62fc29eac59704fc8ee86886698d0":[12,0,0,5,2,11],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854":[12,0,0,5,2,13],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2":[12,0,0,5,2,7],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a696e090a16303ff737d361c95fcc8f42":[12,0,0,5,2,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "pattern__algebra_8cpp.xhtml#ab7d5d2e4929564ac81eef04fea75ee21":[15,0,6,21,0,0],
 "pattern__algebra_8cpp.xhtml#ae453f8c66f5172ccf6cf191c8c51b650":[15,0,6,21,0,8],
 "pattern__algebra_8cpp_source.xhtml":[15,0,6,21,0],
-"pattern__algebra_8hpp.xhtml":[15,0,2,0,0,2],
-"pattern__algebra_8hpp.xhtml#a1de7628cd60f9cbae47157d68cae07ee":[15,0,2,0,0,2,4]
+"pattern__algebra_8hpp.xhtml":[15,0,2,0,0,2]
 };
