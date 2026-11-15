@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-15 06:58:23</td>
+            <td class="headerValue">2026-11-15 19:30:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -492,9 +492,9 @@
 <span id="L414"><span class="lineNum">     414</span>                 :<span class="tlaGNC">          92 :   std::array&lt;Type, buffer_size&gt; buffer{};</span></span>
 <span id="L415"><span class="lineNum">     415</span>                 :             : </span>
 <span id="L416"><span class="lineNum">     416</span>                 :             :   if constexpr (division_block_count&lt;Lhs, Rhs&gt; &lt;= division_constant_blocks) {</span>
-<span id="L417"><span class="lineNum">     417</span>   [<span class="tlaGBC" title="Branch 0 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span><span class="tlaGBC" title="Branch 2 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 3 was not taken"> - </span>]:<span class="tlaGNC">          91 :     (divide_block&lt;Lhs, Rhs&gt;(result, buffer, lhs, rhs,</span></span>
-<span class="lineNum">        </span> [<span class="tlaGBC" title="Branch 0 was taken 9 times"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span>][<span class="tlaGBC" title="Branch 0 was taken 80 times"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span> 
-<span class="lineNum">        </span>    <span class="tlaGBC" title="Branch 2 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 3 was not taken"> - </span><span class="tlaGBC" title="Branch 4 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 5 was not taken"> - </span>]
+<span id="L417"><span class="lineNum">     417</span>   [<span class="tlaGBC" title="Branch 0 was taken 80 times"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span><span class="tlaGBC" title="Branch 2 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 3 was not taken"> - </span> :<span class="tlaGNC">          91 :     (divide_block&lt;Lhs, Rhs&gt;(result, buffer, lhs, rhs,</span></span>
+<span class="lineNum">        </span>  <span class="tlaGBC" title="Branch 4 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 5 was not taken"> - </span>][<span class="tlaGBC" title="Branch 0 was taken 9 times"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span>]
+<span class="lineNum">        </span>   [<span class="tlaGBC" title="Branch 0 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 1 was not taken"> - </span><span class="tlaGBC" title="Branch 2 was taken 1 time"> + </span><span class="tlaUNC" title="Branch 3 was not taken"> - </span>]
 <span id="L418"><span class="lineNum">     418</span>                 :             :                             constant_block&lt;Lhs, Rhs, Blocks&gt;{}),</span>
 <span id="L419"><span class="lineNum">     419</span>                 :             :      ...);</span>
 <span id="L420"><span class="lineNum">     420</span>                 :             :   } else {</span>
