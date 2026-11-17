@@ -40,8 +40,10 @@ For more information, please refer to <https://unlicense.org> */
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
 #include <array>
+#include <bit>
 #include <concepts>
 #include <cstddef>
+#include <cstdint>
 #include <limits>
 #include <type_traits>
 #include <utility>
@@ -184,6 +186,13 @@ template <typename Type, auto Pattern, std::size_t Row> struct row {
 //! argument list.
 template <auto Pattern> inline constexpr std::size_t row_count{Pattern.rows};
 
+//! @brief The count of columns of a pattern.
+//!
+//! @details Named, for CppCheck, which misparses a member access in a template
+//! argument list.
+template <auto Pattern>
+inline constexpr std::size_t column_count{Pattern.columns};
+
 //! @brief For each row of a pattern, the index of its first stored element,
 //! then the count of stored elements: the stored elements of a row are
 //! contiguous, from its bound to the next.
@@ -287,20 +296,46 @@ template <auto Lhs, auto Rhs, bool KeepAll>
   return list;
 }
 
-//! @brief The positions of a transposed pattern, in ascending order.
+//! @brief For each stored element of a pattern, the index of its position in
+//! the transposed pattern.
 //!
-//! @details The positions are bucketed by column: ascending rows within each
-//! column are already what the transposed row-major order requires.
+//! @details A counting sort of the positions by column: ascending rows within
+//! each column are already what the transposed row-major order requires.
+//! Linear in the count of stored elements and of columns, rather than a pass
+//! over the stored elements for each column, which exceeds Clang's default
+//! constant evaluation step limit on large patterns.
+template <auto Pattern>
+inline constexpr auto transpose_places{[] {
+  std::array<std::size_t, column_count<Pattern> + 1> next{};
+
+  for (std::size_t i{0}; i < Pattern.count; ++i) {
+    ++next[Pattern.positions[i].column + 1];
+  }
+
+  for (std::size_t column{0}; column < Pattern.columns; ++column) {
+    next[column + 1] += next[column];
+  }
+
+  std::array<std::size_t, Pattern.count> result{};
+
+  for (std::size_t i{0}; i < Pattern.count; ++i) {
+    result[i] = next[Pattern.positions[i].column];
+    ++next[Pattern.positions[i].column];
+  }
+
+  return result;
+}()};
+
+//! @brief The positions of a transposed pattern, in ascending order.
 template <auto Pattern> [[nodiscard]] consteval auto transpose_positions() {
   position_list<Pattern.count> list;
 
-  for (std::size_t column{0}; column < Pattern.columns; ++column) {
-    for (std::size_t i{0}; i < Pattern.count; ++i) {
-      if (Pattern.positions[i].column == column) {
-        list.push({column, Pattern.positions[i].row});
-      }
-    }
+  for (std::size_t i{0}; i < Pattern.count; ++i) {
+    list.items[transpose_places<Pattern>[i]] = {Pattern.positions[i].column,
+                                                Pattern.positions[i].row};
   }
+
+  list.size = Pattern.count;
 
   return list;
 }
@@ -308,12 +343,64 @@ template <auto Pattern> [[nodiscard]] consteval auto transpose_positions() {
 //! @brief The count of elementary products of a matrix product.
 template <auto Lhs, auto Rhs>
 inline constexpr std::size_t term_count{[] -> std::size_t {
+  constexpr const auto &bounds{row_bounds<Rhs>};
   std::size_t result{0};
 
   for (std::size_t i{0}; i < Lhs.count; ++i) {
     const std::size_t row{Lhs.positions[i].column};
 
-    result += Rhs.lower_bound({row + 1, 0}) - Rhs.lower_bound({row, 0});
+    result += bounds[row + 1] - bounds[row];
+  }
+
+  return result;
+}()};
+
+//! @brief The count of 64-bit words of a row of reached columns.
+template <auto Pattern>
+inline constexpr std::size_t word_count{(Pattern.columns + 63) / 64};
+
+//! @brief For each row of a matrix product, the set of its columns reached by
+//! at least one term, a bit per column.
+//!
+//! @details A row of the product reaches the union of the rows of `Rhs` that
+//! the stored elements of the same row of `Lhs` select. Linear in the count of
+//! stored elements of both patterns, a word of columns at a time, rather than
+//! in the count of terms, which exceeds Clang's default constant evaluation
+//! step limit on large patterns.
+template <auto Lhs, auto Rhs> [[nodiscard]] consteval auto reached_columns() {
+  using row_set = std::array<std::uint64_t, word_count<Rhs>>;
+
+  std::array<row_set, row_count<Rhs>> selected{};
+
+  for (std::size_t i{0}; i < Rhs.count; ++i) {
+    const auto [row, column]{Rhs.positions[i]};
+
+    selected[row][column / 64] |= std::uint64_t{1} << (column % 64);
+  }
+
+  std::array<row_set, row_count<Lhs>> result{};
+
+  for (std::size_t i{0}; i < Lhs.count; ++i) {
+    const auto [row, inner]{Lhs.positions[i]};
+
+    for (std::size_t word{0}; word < word_count<Rhs>; ++word) {
+      result[row][word] |= selected[inner][word];
+    }
+  }
+
+  return result;
+}
+
+//! @brief The count of positions reached by at least one term of a matrix
+//! product.
+template <auto Lhs, auto Rhs>
+inline constexpr std::size_t product_position_count{[] -> std::size_t {
+  std::size_t result{0};
+
+  for (const auto &row : reached_columns<Lhs, Rhs>()) {
+    for (const std::uint64_t word : row) {
+      result += static_cast<std::size_t>(std::popcount(word));
+    }
   }
 
   return result;
@@ -321,23 +408,12 @@ inline constexpr std::size_t term_count{[] -> std::size_t {
 
 //! @brief The positions reached by at least one term of a matrix product.
 template <auto Lhs, auto Rhs> [[nodiscard]] consteval auto product_positions() {
-  position_list<term_count<Lhs, Rhs>> list;
+  position_list<product_position_count<Lhs, Rhs>> list;
+  const auto reached{reached_columns<Lhs, Rhs>()};
 
   for (std::size_t row{0}; row < Lhs.rows; ++row) {
-    std::array<bool, Rhs.columns> reached{};
-    const std::size_t end{Lhs.lower_bound({row + 1, 0})};
-
-    for (std::size_t i{Lhs.lower_bound({row, 0})}; i < end; ++i) {
-      const std::size_t inner{Lhs.positions[i].column};
-      const std::size_t inner_end{Rhs.lower_bound({inner + 1, 0})};
-
-      for (std::size_t j{Rhs.lower_bound({inner, 0})}; j < inner_end; ++j) {
-        reached[Rhs.positions[j].column] = true;
-      }
-    }
-
     for (std::size_t column{0}; column < Rhs.columns; ++column) {
-      if (reached[column]) {
+      if (((reached[row][column / 64] >> (column % 64)) & 1U) != 0) {
         list.push({row, column});
       }
     }

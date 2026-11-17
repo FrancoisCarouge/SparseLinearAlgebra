@@ -49,6 +49,16 @@ static_assert(sparse::pattern_intersection<wide, sparse::diagonal<size>> ==
 static_assert(sparse::product_term_count<wide, wide> == 890);
 static_assert(sparse::pattern_product<wide, wide>.count == 494);
 
+//! @test Verifies the transposition and the product of patterns are linear in
+//! their stored elements, not in the elementary products, at the scale of a
+//! dense pattern of ten thousand positions and a million elementary products.
+inline constexpr auto full{sparse::dense<size, size>};
+
+static_assert(sparse::pattern_transpose<full> == full);
+static_assert(sparse::product_term_count<full, full> == size * size * size);
+static_assert(sparse::pattern_product<full, full> == full);
+static_assert(sparse::pattern_product<wide, full> == full);
+
 //! @test Verifies a matrix of that scale only stores its elements.
 using matrix_type = sparse_matrix<double, wide>;
 
