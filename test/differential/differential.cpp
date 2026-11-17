@@ -325,6 +325,16 @@ static_assert([] -> bool {
   differential::verify_additive<wide, sparse::dense<2, 4>>();
   differential::verify_additive<wide, sparse::zero<2, 4>>();
 
+  // Products of more elementary products than a product expands, of sparse,
+  // dense, and vector results, and a sparse product, expanded, against its
+  // dense one, accumulated.
+  differential::verify_product<sparse::banded<48, 48, 8, 8>,
+                               sparse::banded<48, 48, 8, 8>>();
+  differential::verify_product<sparse::dense<17, 17>, sparse::dense<17, 17>>();
+  differential::verify_product<sparse::dense<8, 600>, sparse::dense<600, 1>>();
+  differential::verify_dense<sparse::tridiagonal<64>,
+                             sparse::tridiagonal<64>>();
+
   return 0;
 }()};
 } // namespace

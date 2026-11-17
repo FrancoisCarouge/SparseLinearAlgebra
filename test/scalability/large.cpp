@@ -91,6 +91,21 @@ namespace {
   assert((image.at<10, 0>() == 0.));
   assert((image.at<31, 0>() == 1.));
 
+  // A dense product of a million elementary products, accumulated rather than
+  // expanded, within the compilers' default limits.
+  using full_matrix = sparse_matrix<double, sparse::dense<100, 100>>;
+
+  full_matrix full;
+
+  for (double &element : full.values) {
+    element = 0.5;
+  }
+
+  const auto full_square{full * full};
+
+  assert((full_square.at<0, 0>() == 25.));
+  assert((full_square.at<99, 42>() == 25.));
+
   return 0;
 }()};
 } // namespace

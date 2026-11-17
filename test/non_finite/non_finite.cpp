@@ -88,6 +88,30 @@ namespace {
   assert((product.at<0, 1>() == 0.));
   assert((product.at<1, 0>() == 0.));
 
+  // A product of more elementary products than a product expands: the terms of
+  // the structural zeros are not computed either.
+  using band_matrix = sparse_matrix<double, sparse::banded<48, 48, 8, 8>>;
+
+  band_matrix ones;
+
+  for (double &element : ones.values) {
+    element = 1.;
+  }
+
+  band_matrix unbounded_band{ones};
+
+  unbounded_band.at<0, 0>() = infinity;
+
+  const auto large_product{unbounded_band * ones};
+  const auto dense_large_product{
+      sparse_matrix<double, sparse::dense<48, 48>>{unbounded_band} *
+      sparse_matrix<double, sparse::dense<48, 48>>{ones}};
+
+  assert((large_product.at<0, 0>() == infinity));
+  assert((large_product.at<0, 16>() == 1.));
+  assert((large_product.at<0, 17>() == 0.));
+  assert((dense_large_product.at<0, 16>() != dense_large_product.at<0, 16>()));
+
   // A stored not-a-number value stays visible.
   assert((invalid != invalid));
   assert((matrix_frob_norm(invalid) != matrix_frob_norm(invalid)));
