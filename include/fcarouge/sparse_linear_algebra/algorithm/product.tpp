@@ -120,6 +120,60 @@ product_fold(sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> &result,
    ...);
 }
 
+//! @brief The most elementary products a matrix product expands at compile
+//! time, beyond which it accumulates them in a loop.
+//!
+//! @details The expanded products keep the small products in registers, where
+//! a loop over the stored elements is several times slower. Each expanded
+//! product is an expression of its own, and the compilers' time and memory
+//! grow with them: beyond a few thousand, their cost bounds the size of the
+//! products a program can compile, while the loop's run time catches up with
+//! the expanded products'.
+inline constexpr std::size_t unrolled_term_limit{4096};
+
+//! @brief A matrix product, of all its elementary products, accumulated a row
+//! of the result at a time.
+//!
+//! @details For each row of the left factor, each stored element scales the row
+//! of the right factor it selects into an accumulator of a row of the result,
+//! whose stored elements are then gathered, and the accumulator cleared. The
+//! products accumulate into each result element in the order of the stored
+//! elements of the left factor, the order of the expanded products: both
+//! compute the same values. The compile-time tables are the row bounds of the
+//! patterns, linear in their stored elements, rather than the elementary
+//! products.
+template <auto Lhs, auto Rhs, typename Type>
+[[nodiscard]] constexpr auto row_product(const sparse_matrix<Type, Lhs> &lhs,
+                                         const sparse_matrix<Type, Rhs> &rhs)
+    -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> {
+  constexpr auto result_pattern{sparse::pattern_product<Lhs, Rhs>};
+  constexpr const auto &lhs_bounds{row_bounds<Lhs>};
+  constexpr const auto &rhs_bounds{row_bounds<Rhs>};
+  constexpr const auto &result_bounds{row_bounds<result_pattern>};
+
+  sparse_matrix<Type, result_pattern> result;
+  std::array<Type, column_count<Rhs>> accumulator{};
+
+  for (std::size_t row{0}; row < Lhs.rows; ++row) {
+    for (std::size_t i{lhs_bounds[row]}; i < lhs_bounds[row + 1]; ++i) {
+      const std::size_t inner{Lhs.positions[i].column};
+
+      for (std::size_t j{rhs_bounds[inner]}; j < rhs_bounds[inner + 1]; ++j) {
+        accumulator[Rhs.positions[j].column] += lhs.values[i] * rhs.values[j];
+      }
+    }
+
+    for (std::size_t k{result_bounds[row]}; k < result_bounds[row + 1]; ++k) {
+      Type &element{accumulator[result_pattern.positions[k].column]};
+
+      result.values[k] = element;
+      element = Type{};
+    }
+  }
+
+  return result;
+}
+
 //! @brief A matrix product, of all its elementary products.
 template <auto Lhs, auto Rhs, typename Type, std::size_t... Folds>
 [[nodiscard]] constexpr auto product(const sparse_matrix<Type, Lhs> &lhs,
@@ -153,10 +207,15 @@ template <typename Type, sparsity_pattern auto Lhs, sparsity_pattern auto Rhs>
 [[nodiscard]] constexpr auto operator*(const sparse_matrix<Type, Lhs> &lhs,
                                        const sparse_matrix<Type, Rhs> &rhs)
     -> sparse_matrix<Type, sparse::pattern_product<Lhs, Rhs>> {
-  return sparse_linear_algebra::internal::product(
-      lhs, rhs,
-      std::make_index_sequence<
-          sparse_linear_algebra::internal::product_fold_count<Lhs, Rhs>>{});
+  if constexpr (sparse::product_term_count<Lhs, Rhs> <=
+                sparse_linear_algebra::internal::unrolled_term_limit) {
+    return sparse_linear_algebra::internal::product(
+        lhs, rhs,
+        std::make_index_sequence<
+            sparse_linear_algebra::internal::product_fold_count<Lhs, Rhs>>{});
+  } else {
+    return sparse_linear_algebra::internal::row_product(lhs, rhs);
+  }
 }
 
 //! @brief Scaling by a scalar factor, on the right, of the same pattern.

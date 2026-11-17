@@ -31,6 +31,8 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "fcarouge/sparse_linear_algebra.hpp"
 
+#include <cstddef>
+
 namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
@@ -69,6 +71,24 @@ inline constexpr auto product{lhs * rhs};
 static_assert(product.at<0, 1>() == 4.);
 static_assert(product.at<2, 1>() == 24.);
 static_assert(product.at<2, 0>() == 0.);
+
+//! @test Verifies a product of more elementary products than a product expands
+//! in a constant expression.
+inline constexpr auto large_product{[] -> auto {
+  constexpr std::size_t count{std::size_t{17} * 17};
+
+  sparse_matrix<double, sparse::dense<17, 17>> value;
+
+  for (std::size_t i{0}; i < count; ++i) {
+    value.values.at(i) = static_cast<double>(i % 17);
+  }
+
+  return value * value;
+}()};
+
+static_assert(large_product.at<0, 0>() == 0.);
+static_assert(large_product.at<1, 2>() == 272.);
+static_assert(large_product.at<16, 16>() == 2176.);
 
 inline constexpr auto scaled{lhs * 2.};
 

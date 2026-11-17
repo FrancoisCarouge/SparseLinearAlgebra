@@ -93,6 +93,17 @@ namespace {
   assert(matrix_inf_norm(band) == 13.);
   assert((band[1, 2] == 5.));
 
+  // A product of more elementary products than a product expands.
+  sparse_matrix<double, sparse::dense<17, 17>> ones;
+
+  for (double &element : ones.values) {
+    element = 1.;
+  }
+
+  const auto large_product{ones * ones};
+
+  assert((large_product.at<16, 0>() == 17.));
+
   return 0;
 }()};
 } // namespace

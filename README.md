@@ -305,7 +305,7 @@ The library serves fixed-size computations whose structure is known at compile t
 - `sizeof` of a matrix with stored elements is that of its `std::array` of stored elements. A matrix of an empty pattern still occupies the storage of an empty `std::array`, which is not guaranteed to be nothing.
 - The library is freestanding. On GCC and Clang, the `sparse_linear_algebra_freestanding` target verifies it with `-ffreestanding -fno-exceptions -fno-rtti`, and the continuous integration cross-compiles it for a bare-metal Arm Cortex-M4.
 - At compile time, and on a freestanding implementation, the Frobenius norm uses its own square root, whose result is not guaranteed to be identical to the last digit to that of `std::sqrt`.
-- The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.
+- The compile-time cost suits up to about ten thousand stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100. A product of up to a few thousand elementary products expands each of them at compile time, which keeps a small product in registers; a larger one accumulates them a row of its result at a time, of the same values, at a compile-time cost linear in the stored elements: a 100 x 100 dense product is verified. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.
 
 ### Roadmap & Vision
 
@@ -317,7 +317,6 @@ Toward version 1.0:
 - Solve: the determinant, and factorizations reused across divisions by the same matrix.
 - Interoperate with `std::mdspan` and the `std::linalg` out-parameter algorithms.
 - Compose block patterns from smaller patterns.
-- Lower the compile-time cost of large products.
 - Stabilize the public API.
 
 ### Lessons Learned

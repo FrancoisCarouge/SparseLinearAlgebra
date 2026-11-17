@@ -187,6 +187,14 @@ static_assert(total::multiplications(storage<diagonal<32>>{} *
 static_assert(total::multiplications(storage<dense<8, 8>>{} *
                                      storage<dense<8, 8>>{}) == 512);
 
+//! @test Verifies a product of more elementary products than a product expands
+//! computes exactly the same operations: a multiplication and an addition per
+//! elementary product.
+static_assert(total::multiplications(storage<dense<17, 17>>{} *
+                                     storage<dense<17, 17>>{}) == 4913);
+static_assert(total::additions(storage<dense<17, 17>>{} *
+                               storage<dense<17, 17>>{}) == 4913);
+
 //! @test Verifies a sum only adds the elements stored by both terms: an element
 //! stored by one term is copied.
 static_assert(total::additions(storage<diagonal<3>>{} +
