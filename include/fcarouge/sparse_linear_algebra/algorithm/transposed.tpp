@@ -32,6 +32,7 @@ For more information, please refer to <https://unlicense.org> */
 #ifndef FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_TRANSPOSED_TPP
 #define FCAROUGE_SPARSE_LINEAR_ALGEBRA_ALGORITHM_TRANSPOSED_TPP
 
+#include "fcarouge/sparse_linear_algebra/internal/utility.hpp"
 #include "fcarouge/sparse_linear_algebra/pattern_algebra.hpp"
 #include "fcarouge/sparse_linear_algebra_forward.hpp"
 
@@ -44,12 +45,10 @@ namespace sparse_linear_algebra::internal {
 //! mirrored stored element.
 template <auto Pattern>
 inline constexpr auto transpose_indexes{[] {
-  constexpr auto mirrored{sparse::pattern_transpose<Pattern>};
   std::array<std::size_t, Pattern.count> result{};
 
   for (std::size_t i{0}; i < Pattern.count; ++i) {
-    result[i] = Pattern.index_of(mirrored.positions[i].column,
-                                 mirrored.positions[i].row);
+    result[transpose_places<Pattern>[i]] = i;
   }
 
   return result;

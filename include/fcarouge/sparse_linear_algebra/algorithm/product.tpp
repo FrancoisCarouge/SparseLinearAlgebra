@@ -56,9 +56,9 @@ inline constexpr auto product_terms{
 
       for (std::size_t i{0}; i < Lhs.count; ++i) {
         const auto [row, inner]{Lhs.positions[i]};
-        const std::size_t inner_end{Rhs.lower_bound({inner + 1, 0})};
+        const std::size_t inner_end{row_bounds<Rhs>[inner + 1]};
 
-        for (std::size_t j{Rhs.lower_bound({inner, 0})}; j < inner_end; ++j) {
+        for (std::size_t j{row_bounds<Rhs>[inner]}; j < inner_end; ++j) {
           listed[index] = {
               .result = result_pattern.index_of(row, Rhs.positions[j].column),
               .lhs = i,
