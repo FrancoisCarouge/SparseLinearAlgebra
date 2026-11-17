@@ -1,0 +1,5 @@
+<map id="fcarouge::sparse_linear_algebra::internal::reached_columns" name="fcarouge::sparse_linear_algebra::internal::reached_columns">
+<area shape="rect" id="Node000001" title="For each row of a matrix product, the set of its columns reached by at least one term,..." alt="" coords="221,5,391,61"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aa0cbb4510404c25455aeb381500f59cc" title="The positions reached by at least one term of a matrix product." alt="" coords="5,5,173,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,36,173,36,173,30,205,30"/>
+</map>

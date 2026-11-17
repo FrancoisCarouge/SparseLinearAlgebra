@@ -10,6 +10,7 @@ var utility_8hpp =
     [ "merge_positions", "utility_8hpp.xhtml#a226b2f8eabf880917ed494bc82f5fdb7", null ],
     [ "product_positions", "utility_8hpp.xhtml#aa0cbb4510404c25455aeb381500f59cc", null ],
     [ "quotient_positions", "utility_8hpp.xhtml#a04bdb935278c02c96b7a2eb5403418c6", null ],
+    [ "reached_columns", "utility_8hpp.xhtml#a76ec8ecdb7ea2f1fbf96030d4289ef4a", null ],
     [ "square_root", "utility_8hpp.xhtml#a1a233ab1fff31506d10bc21d0b9591cd", null ],
     [ "store_given", "utility_8hpp.xhtml#a1ef27b2f10a7918a5943a6b05047dbbe", null ],
     [ "to_pattern", "utility_8hpp.xhtml#a1097908a93a1910a5b93197def52dfe8", null ],
@@ -19,6 +20,7 @@ var utility_8hpp =
     [ "are_given_in_row", "utility_8hpp.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2", null ],
     [ "are_given_in_row_at", "utility_8hpp.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f", null ],
     [ "block_triangular_form", "utility_8hpp.xhtml#a9499df9582503d9e3410b496afc451f4", null ],
+    [ "column_count", "utility_8hpp.xhtml#a0685133f0eedbde0d1b3233acad490d5", null ],
     [ "dot_terms", "utility_8hpp.xhtml#a88c2d25e777e6730b2b1b20c342c2584", null ],
     [ "fold_count", "utility_8hpp.xhtml#a20f54e6ee98c6595f77700367a099a37", null ],
     [ "fold_size", "utility_8hpp.xhtml#a916c5fe6220ce11555ba59cd64e3a1a2", null ],
@@ -29,6 +31,7 @@ var utility_8hpp =
     [ "is_matrix", "utility_8hpp.xhtml#a167f5b2f2c7eb993f3a9ef59e5fda0e6", null ],
     [ "is_matrix< sparse_matrix< Type, Pattern > >", "utility_8hpp.xhtml#acbfe222a437ae79d90dd8cede09c8195", null ],
     [ "is_zero_literal", "utility_8hpp.xhtml#a62ae2e88187b445423e25870823e64b6", null ],
+    [ "product_position_count", "utility_8hpp.xhtml#af128f589c6ce61202cf6dede7f8a46d1", null ],
     [ "projection", "utility_8hpp.xhtml#ab78ed1654f8b785d7aeb30758dec99e5", null ],
     [ "quotient_reach", "utility_8hpp.xhtml#acf4b5c478bb1b1121931c610348de9c6", null ],
     [ "row_bounds", "utility_8hpp.xhtml#a9af356b554c67eca0ded2fcbc40c50e2", null ],
@@ -36,5 +39,7 @@ var utility_8hpp =
     [ "stored_count", "utility_8hpp.xhtml#a42702f4f3e8882576fbcbbcf8a80072f", null ],
     [ "stored_in_row", "utility_8hpp.xhtml#a2a46880afae74b629f68a0b90d0ef919", null ],
     [ "stored_terms", "utility_8hpp.xhtml#a65ff44de0b6a95bc2957ac79d98ba28f", null ],
-    [ "term_count", "utility_8hpp.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ]
+    [ "term_count", "utility_8hpp.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4", null ],
+    [ "transpose_places", "utility_8hpp.xhtml#a3c6f7026c090c9ab2451a1bbf9376526", null ],
+    [ "word_count", "utility_8hpp.xhtml#a3c6c2d8373c0677a6b4b5707cf675d3b", null ]
 ];

@@ -12,6 +12,7 @@ var namespacefcarouge_1_1test =
       [ "first_third", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a696e090a16303ff737d361c95fcc8f42", null ],
       [ "first_third_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a78d45de13d7f1b93a1cc4eb56c127d29", null ],
       [ "flipped", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a128b1ebfbdd60f6f34eeae35ae0e737e", null ],
+      [ "large_product", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723", null ],
       [ "lhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2", null ],
       [ "negated", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1", null ],
       [ "product", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1", null ],
@@ -140,6 +141,7 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "anonymous_namespace{patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml", [
       [ "matrix_type", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a585da428e9f9ebbc2c8ecd84c62fac24", null ],
+      [ "full", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a7b9d1f02b0e9de9042647a8b5b025901", null ],
       [ "identity", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a8f11361f903512116a43caf3b2d3e4cd", null ],
       [ "irreducible", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#a3947ba299ed5a4d6a780eb54fc1ef073", null ],
       [ "size", "namespacefcarouge_1_1test_1_1anonymous__namespace_02patterns_8cpp_03.xhtml#afd0adec8a94b42f9ca1340023a69acd5", null ],

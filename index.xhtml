@@ -440,7 +440,7 @@ Notes</h2>
 <li><code>sizeof</code> of a matrix with stored elements is that of its <code>std::array</code> of stored elements. A matrix of an empty pattern still occupies the storage of an empty <code>std::array</code>, which is not guaranteed to be nothing.</li>
 <li>The library is freestanding. On GCC and Clang, the <code>sparse_linear_algebra_freestanding</code> target verifies it with <code>-ffreestanding -fno-exceptions -fno-rtti</code>, and the continuous integration cross-compiles it for a bare-metal Arm Cortex-M4.</li>
 <li>At compile time, and on a freestanding implementation, the Frobenius norm uses its own square root, whose result is not guaranteed to be identical to the last digit to that of <code>std::sqrt</code>.</li>
-<li>The compile-time cost suits tens to low hundreds of stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100, but a product precomputes each of its elementary products: a 16 x 16 dense product is verified, while a 32 x 32 dense product exceeds Clang's default constant evaluation limit. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.</li>
+<li>The compile-time cost suits up to about ten thousand stored elements. The pattern operations are near-linear in the stored elements and verified at 100 x 100. A product of up to a few thousand elementary products expands each of them at compile time, which keeps a small product in registers; a larger one accumulates them a row of its result at a time, of the same values, at a compile-time cost linear in the stored elements: a 100 x 100 dense product is verified. A division by a 100 x 100 diagonal denominator is verified, while a division by an irreducible denominator fills a dense quotient: a 48 x 48 tridiagonal denominator is verified, while a 100 x 100 one exceeds the limit.</li>
 </ul>
 <h2><a class="anchor" id="roadmap--vision"></a>
 Roadmap &amp; Vision</h2>
@@ -451,7 +451,6 @@ Roadmap &amp; Vision</h2>
 <li>Solve: the determinant, and factorizations reused across divisions by the same matrix.</li>
 <li>Interoperate with <code>std::mdspan</code> and the <code>std::linalg</code> out-parameter algorithms.</li>
 <li>Compose block patterns from smaller patterns.</li>
-<li>Lower the compile-time cost of large products.</li>
 <li>Stabilize the public API.</li>
 </ul>
 <h2><a class="anchor" id="lessons-learned"></a>

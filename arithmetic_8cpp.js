@@ -7,6 +7,7 @@ var arithmetic_8cpp =
     [ "first_third", "arithmetic_8cpp.xhtml#a696e090a16303ff737d361c95fcc8f42", null ],
     [ "first_third_pattern", "arithmetic_8cpp.xhtml#a78d45de13d7f1b93a1cc4eb56c127d29", null ],
     [ "flipped", "arithmetic_8cpp.xhtml#a128b1ebfbdd60f6f34eeae35ae0e737e", null ],
+    [ "large_product", "arithmetic_8cpp.xhtml#ab83cb23827b23120ca226da441094723", null ],
     [ "lhs", "arithmetic_8cpp.xhtml#a68042103167071e0e95c059e2229c9b2", null ],
     [ "negated", "arithmetic_8cpp.xhtml#a427caa882f559c65fb474ca85059f0f1", null ],
     [ "product", "arithmetic_8cpp.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1", null ],

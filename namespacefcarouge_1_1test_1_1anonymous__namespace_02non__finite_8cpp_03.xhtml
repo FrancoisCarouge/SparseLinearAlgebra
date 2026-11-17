@@ -123,7 +123,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000060">Test</a></b></dt><dd>Verifies the documented semantics of non-finite values: a structural zero has no term, so it stays an exact zero, where a dense computation yields a not-a-number value. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000061">Test</a></b></dt><dd>Verifies the documented semantics of non-finite values: a structural zero has no term, so it stays an exact zero, where a dense computation yields a not-a-number value. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="non__finite_8cpp_source.xhtml#l00042">42</a> of file <a class="el" href="non__finite_8cpp_source.xhtml">non_finite.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -175,15 +175,41 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   88</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>.at&lt;0, 1&gt;() == 0.));</div>
 <div class="line"><span class="lineno">   89</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">product</a>.at&lt;1, 0&gt;() == 0.));</div>
 <div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>  <span class="comment">// A stored not-a-number value stays visible.</span></div>
-<div class="line"><span class="lineno">   92</span>  assert((invalid != invalid));</div>
-<div class="line"><span class="lineno">   93</span>  assert((<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(invalid) != <a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(invalid)));</div>
+<div class="line"><span class="lineno">   91</span>  <span class="comment">// A product of more elementary products than a product expands: the terms of</span></div>
+<div class="line"><span class="lineno">   92</span>  <span class="comment">// the structural zeros are not computed either.</span></div>
+<div class="line"><span class="lineno">   93</span>  <span class="keyword">using </span><a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f">band_matrix</a> = sparse_matrix&lt;double, sparse::banded&lt;48, 48, 8, 8&gt;&gt;;</div>
 <div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   96</span>}()};</div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a67ed2f01627622a09ffbceb2cb5dc854"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">fcarouge::test::anonymous_namespace{arithmetic.cpp}::scaled</a></div><div class="ttdeci">constexpr auto scaled</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00073">arithmetic.cpp:73</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_aaa65d3c3f89fe0c6e5bc7daa53e01ed1"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">fcarouge::test::anonymous_namespace{arithmetic.cpp}::product</a></div><div class="ttdeci">constexpr auto product</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00067">arithmetic.cpp:67</a></div></div>
+<div class="line"><span class="lineno">   95</span>  <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f">band_matrix</a> ones;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>  <span class="keywordflow">for</span> (<span class="keywordtype">double</span> &amp;element : ones.values) {</div>
+<div class="line"><span class="lineno">   98</span>    element = 1.;</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>  <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f">band_matrix</a> unbounded_band{ones};</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>  unbounded_band.at&lt;0, 0&gt;() = infinity;</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723">large_product</a>{unbounded_band * ones};</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keyword">const</span> <span class="keyword">auto</span> dense_large_product{</div>
+<div class="line"><span class="lineno">  107</span>      sparse_matrix&lt;double, sparse::dense&lt;48, 48&gt;&gt;{unbounded_band} *</div>
+<div class="line"><span class="lineno">  108</span>      sparse_matrix&lt;double, sparse::dense&lt;48, 48&gt;&gt;{ones}};</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723">large_product</a>.at&lt;0, 0&gt;() == infinity));</div>
+<div class="line"><span class="lineno">  111</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723">large_product</a>.at&lt;0, 16&gt;() == 1.));</div>
+<div class="line"><span class="lineno">  112</span>  assert((<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723">large_product</a>.at&lt;0, 17&gt;() == 0.));</div>
+<div class="line"><span class="lineno">  113</span>  assert((dense_large_product.at&lt;0, 16&gt;() != dense_large_product.at&lt;0, 16&gt;()));</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>  <span class="comment">// A stored not-a-number value stays visible.</span></div>
+<div class="line"><span class="lineno">  116</span>  assert((invalid != invalid));</div>
+<div class="line"><span class="lineno">  117</span>  assert((<a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(invalid) != <a class="code hl_function" href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">matrix_frob_norm</a>(invalid)));</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  120</span>}()};</div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_a67ed2f01627622a09ffbceb2cb5dc854"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854">fcarouge::test::anonymous_namespace{arithmetic.cpp}::scaled</a></div><div class="ttdeci">constexpr auto scaled</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00093">arithmetic.cpp:93</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_aaa65d3c3f89fe0c6e5bc7daa53e01ed1"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1">fcarouge::test::anonymous_namespace{arithmetic.cpp}::product</a></div><div class="ttdeci">constexpr auto product</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00069">arithmetic.cpp:69</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_xhtml_ab83cb23827b23120ca226da441094723"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723">fcarouge::test::anonymous_namespace{arithmetic.cpp}::large_product</a></div><div class="ttdeci">constexpr auto large_product</div><div class="ttdef"><b>Definition</b> <a href="arithmetic_8cpp_source.xhtml#l00077">arithmetic.cpp:77</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03_xhtml_aec201f5a90284f060422109106e8dd1f"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02freestanding_8cpp_03.xhtml#aec201f5a90284f060422109106e8dd1f">fcarouge::test::anonymous_namespace{freestanding.cpp}::band_matrix</a></div><div class="ttdeci">sparse_matrix&lt; double, sparse::tridiagonal&lt; 3 &gt; &gt; band_matrix</div><div class="ttdef"><b>Definition</b> <a href="freestanding_8cpp_source.xhtml#l00044">freestanding.cpp:44</a></div></div>
 <div class="ttc" id="anamespacefcarouge_xhtml_a85f4cd8428b5506d9efb9155770793c6"><div class="ttname"><a href="namespacefcarouge.xhtml#a85f4cd8428b5506d9efb9155770793c6">fcarouge::matrix_frob_norm</a></div><div class="ttdeci">constexpr auto matrix_frob_norm(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; Type</div></div>
 </div><!-- fragment -->
 </div>

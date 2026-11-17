@@ -114,8 +114,10 @@ $(function(){initNavTree('utility_8hpp.xhtml',''); initResizable(true); });
 <div class="textblock"><code>#include &quot;<a class="el" href="pattern_8hpp_source.xhtml">fcarouge/sparse_linear_algebra/pattern.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sparse__linear__algebra__forward_8hpp_source.xhtml">fcarouge/sparse_linear_algebra_forward.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
+<code>#include &lt;bit&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -124,7 +126,7 @@ $(function(){initNavTree('utility_8hpp.xhtml',''); initResizable(true); });
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="utility_8hpp__incl.svg" width="660" height="318"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="utility_8hpp__incl.svg" width="100%" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -177,6 +179,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a7851858e5ca3e63cf777631cdcf9f0c1"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a7851858e5ca3e63cf777631cdcf9f0c1">fcarouge::sparse_linear_algebra::internal::transpose_positions</a> ()</td></tr>
 <tr class="memdesc:a7851858e5ca3e63cf777631cdcf9f0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of a transposed pattern, in ascending order.  <br /></td></tr>
 <tr class="separator:a7851858e5ca3e63cf777631cdcf9f0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ec8ecdb7ea2f1fbf96030d4289ef4a" id="r_a76ec8ecdb7ea2f1fbf96030d4289ef4a"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
+<tr class="memitem:a76ec8ecdb7ea2f1fbf96030d4289ef4a"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a76ec8ecdb7ea2f1fbf96030d4289ef4a">fcarouge::sparse_linear_algebra::internal::reached_columns</a> ()</td></tr>
+<tr class="memdesc:a76ec8ecdb7ea2f1fbf96030d4289ef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each row of a matrix product, the set of its columns reached by at least one term, a bit per column.  <br /></td></tr>
+<tr class="separator:a76ec8ecdb7ea2f1fbf96030d4289ef4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0cbb4510404c25455aeb381500f59cc" id="r_aa0cbb4510404c25455aeb381500f59cc"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
 <tr class="memitem:aa0cbb4510404c25455aeb381500f59cc"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aa0cbb4510404c25455aeb381500f59cc">fcarouge::sparse_linear_algebra::internal::product_positions</a> ()</td></tr>
 <tr class="memdesc:aa0cbb4510404c25455aeb381500f59cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions reached by at least one term of a matrix product.  <br /></td></tr>
@@ -257,14 +263,30 @@ Variables</h2></td></tr>
 <tr class="memitem:a433b211012e809ad37ff6b444f78dab1"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a433b211012e809ad37ff6b444f78dab1">fcarouge::sparse_linear_algebra::internal::row_count</a> {Pattern.rows}</td></tr>
 <tr class="memdesc:a433b211012e809ad37ff6b444f78dab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of rows of a pattern.  <br /></td></tr>
 <tr class="separator:a433b211012e809ad37ff6b444f78dab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0685133f0eedbde0d1b3233acad490d5" id="r_a0685133f0eedbde0d1b3233acad490d5"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a0685133f0eedbde0d1b3233acad490d5"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a0685133f0eedbde0d1b3233acad490d5">fcarouge::sparse_linear_algebra::internal::column_count</a> {Pattern.columns}</td></tr>
+<tr class="memdesc:a0685133f0eedbde0d1b3233acad490d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of columns of a pattern.  <br /></td></tr>
+<tr class="separator:a0685133f0eedbde0d1b3233acad490d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9af356b554c67eca0ded2fcbc40c50e2" id="r_a9af356b554c67eca0ded2fcbc40c50e2"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
 <tr class="memitem:a9af356b554c67eca0ded2fcbc40c50e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9af356b554c67eca0ded2fcbc40c50e2">fcarouge::sparse_linear_algebra::internal::row_bounds</a></td></tr>
 <tr class="memdesc:a9af356b554c67eca0ded2fcbc40c50e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each row of a pattern, the index of its first stored element, then the count of stored elements: the stored elements of a row are contiguous, from its bound to the next.  <br /></td></tr>
 <tr class="separator:a9af356b554c67eca0ded2fcbc40c50e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6f7026c090c9ab2451a1bbf9376526" id="r_a3c6f7026c090c9ab2451a1bbf9376526"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a3c6f7026c090c9ab2451a1bbf9376526"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a3c6f7026c090c9ab2451a1bbf9376526">fcarouge::sparse_linear_algebra::internal::transpose_places</a></td></tr>
+<tr class="memdesc:a3c6f7026c090c9ab2451a1bbf9376526"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each stored element of a pattern, the index of its position in the transposed pattern.  <br /></td></tr>
+<tr class="separator:a3c6f7026c090c9ab2451a1bbf9376526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f4a5decbaefce9fa0a03326c7ea3a4" id="r_a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
 <tr class="memitem:a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a61f4a5decbaefce9fa0a03326c7ea3a4">fcarouge::sparse_linear_algebra::internal::term_count</a></td></tr>
 <tr class="memdesc:a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of elementary products of a matrix product.  <br /></td></tr>
 <tr class="separator:a61f4a5decbaefce9fa0a03326c7ea3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6c2d8373c0677a6b4b5707cf675d3b" id="r_a3c6c2d8373c0677a6b4b5707cf675d3b"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a3c6c2d8373c0677a6b4b5707cf675d3b"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a3c6c2d8373c0677a6b4b5707cf675d3b">fcarouge::sparse_linear_algebra::internal::word_count</a> {(Pattern.columns + 63) / 64}</td></tr>
+<tr class="memdesc:a3c6c2d8373c0677a6b4b5707cf675d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of 64-bit words of a row of reached columns.  <br /></td></tr>
+<tr class="separator:a3c6c2d8373c0677a6b4b5707cf675d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af128f589c6ce61202cf6dede7f8a46d1" id="r_af128f589c6ce61202cf6dede7f8a46d1"><td class="memTemplParams" colspan="2">template&lt;auto Lhs, auto Rhs&gt; </td></tr>
+<tr class="memitem:af128f589c6ce61202cf6dede7f8a46d1"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af128f589c6ce61202cf6dede7f8a46d1">fcarouge::sparse_linear_algebra::internal::product_position_count</a></td></tr>
+<tr class="memdesc:af128f589c6ce61202cf6dede7f8a46d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of positions reached by at least one term of a matrix product.  <br /></td></tr>
+<tr class="separator:af128f589c6ce61202cf6dede7f8a46d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab78ed1654f8b785d7aeb30758dec99e5" id="r_ab78ed1654f8b785d7aeb30758dec99e5"><td class="memTemplParams" colspan="2">template&lt;auto From, auto To&gt; </td></tr>
 <tr class="memitem:ab78ed1654f8b785d7aeb30758dec99e5"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ab78ed1654f8b785d7aeb30758dec99e5">fcarouge::sparse_linear_algebra::internal::projection</a></td></tr>
 <tr class="memdesc:ab78ed1654f8b785d7aeb30758dec99e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each position of <code>To</code>, its stored element index in <code>From</code>, or <code>absent</code>.  <br /></td></tr>

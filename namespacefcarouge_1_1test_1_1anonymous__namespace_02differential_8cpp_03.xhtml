@@ -277,8 +277,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000037">Test</a></b></dt><dd>Verifies every pair of a subset of the patterns at compile time, within the compilers' constant evaluation limits. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000038">Test</a></b></dt><dd>Verifies every pair of a family of patterns, and rectangular factors, at run time. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000038">Test</a></b></dt><dd>Verifies every pair of a subset of the patterns at compile time, within the compilers' constant evaluation limits. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000039">Test</a></b></dt><dd>Verifies every pair of a family of patterns, and rectangular factors, at run time. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="differential_8cpp_source.xhtml#l00296">296</a> of file <a class="el" href="differential_8cpp_source.xhtml">differential.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  296</span>                                {[] -&gt; <span class="keywordtype">int</span> {</div>
@@ -313,8 +313,18 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  325</span>  differential::verify_additive&lt;wide, sparse::dense&lt;2, 4&gt;&gt;();</div>
 <div class="line"><span class="lineno">  326</span>  differential::verify_additive&lt;wide, sparse::zero&lt;2, 4&gt;&gt;();</div>
 <div class="line"><span class="lineno">  327</span> </div>
-<div class="line"><span class="lineno">  328</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  329</span>}()};</div>
+<div class="line"><span class="lineno">  328</span>  <span class="comment">// Products of more elementary products than a product expands, of sparse,</span></div>
+<div class="line"><span class="lineno">  329</span>  <span class="comment">// dense, and vector results, and a sparse product, expanded, against its</span></div>
+<div class="line"><span class="lineno">  330</span>  <span class="comment">// dense one, accumulated.</span></div>
+<div class="line"><span class="lineno">  331</span>  differential::verify_product&lt;sparse::banded&lt;48, 48, 8, 8&gt;,</div>
+<div class="line"><span class="lineno">  332</span>                               sparse::banded&lt;48, 48, 8, 8&gt;&gt;();</div>
+<div class="line"><span class="lineno">  333</span>  differential::verify_product&lt;sparse::dense&lt;17, 17&gt;, sparse::dense&lt;17, 17&gt;&gt;();</div>
+<div class="line"><span class="lineno">  334</span>  differential::verify_product&lt;sparse::dense&lt;8, 600&gt;, sparse::dense&lt;600, 1&gt;&gt;();</div>
+<div class="line"><span class="lineno">  335</span>  differential::verify_dense&lt;sparse::tridiagonal&lt;64&gt;,</div>
+<div class="line"><span class="lineno">  336</span>                             sparse::tridiagonal&lt;64&gt;&gt;();</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  339</span>}()};</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_xhtml_a206e314846ffb52dc14278914ae8e19b"><div class="ttname"><a href="#a206e314846ffb52dc14278914ae8e19b">fcarouge::test::anonymous_namespace{differential.cpp}::arrow</a></div><div class="ttdeci">constexpr sparse::pattern arrow</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00278">differential.cpp:278</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_xhtml_a7196e529f6392ee3faa00cec8a9f1884"><div class="ttname"><a href="#a7196e529f6392ee3faa00cec8a9f1884">fcarouge::test::anonymous_namespace{differential.cpp}::corner</a></div><div class="ttdeci">constexpr sparse::pattern corner</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00281">differential.cpp:281</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_xhtml_a74ce033eaced472f686749bbe7921095"><div class="ttname"><a href="#a74ce033eaced472f686749bbe7921095">fcarouge::test::anonymous_namespace{differential.cpp}::chained</a></div><div class="ttdeci">constexpr sparse::pattern chained</div><div class="ttdef"><b>Definition</b> <a href="differential_8cpp_source.xhtml#l00282">differential.cpp:282</a></div></div>
