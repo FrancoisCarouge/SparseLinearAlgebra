@@ -14,6 +14,7 @@ var namespacefcarouge_1_1sparse =
     [ "is_structurally_symmetric", "namespacefcarouge_1_1sparse.xhtml#af10895288c494b76fbf8e7862b476564", null ],
     [ "is_subset_of", "namespacefcarouge_1_1sparse.xhtml#a812a97717e5886d75cc4171775a210ea", null ],
     [ "lower_triangular", "namespacefcarouge_1_1sparse.xhtml#a52bd13199f4466aafb2ef29c752d0fcc", null ],
+    [ "pattern_cholesky", "namespacefcarouge_1_1sparse.xhtml#af0dc3f3d377bbe290434409ffc9d93e9", null ],
     [ "pattern_intersection", "namespacefcarouge_1_1sparse.xhtml#ae153220d9e02570204d76dad34a8b116", null ],
     [ "pattern_product", "namespacefcarouge_1_1sparse.xhtml#a22a974884952de8722771dca7f79a808", null ],
     [ "pattern_quotient", "namespacefcarouge_1_1sparse.xhtml#a51dcae7ae15de5fe60e3532356e5328d", null ],

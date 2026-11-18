@@ -28,11 +28,13 @@ var searchData=
   ['are_5fgiven_5fin_5frow_5fat_25',['are_given_in_row_at',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['arithmetic_2ecpp_26',['arithmetic.cpp',['../arithmetic_8cpp.xhtml',1,'']]],
   ['arrow_27',['arrow',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a206e314846ffb52dc14278914ae8e19b',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
-  ['ascending_28',['ascending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011',1,'fcarouge::test::anonymous_namespace{construction.cpp}']]],
-  ['assign_2ecpp_29',['assign.cpp',['../assign_8cpp.xhtml',1,'']]],
-  ['assign_5ffail_2ecpp_30',['assign_fail.cpp',['../assign__fail_8cpp.xhtml',1,'']]],
-  ['at_31',['at',['../classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e',1,'fcarouge::sparse_matrix::at() -&gt; Type &amp;'],['../classfcarouge_1_1sparse__matrix.xhtml#af1aaf26be336df4fa5365d9be9d7da46',1,'fcarouge::sparse_matrix::at() const -&gt; Type']]],
-  ['at_2ecpp_32',['at.cpp',['../at_8cpp.xhtml',1,'']]],
-  ['attribution_33',['Attribution',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution',1,'']]],
-  ['augment_34',['augment',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5394438da5772db9bf12772eda56aaba',1,'fcarouge::sparse_linear_algebra::internal']]]
+  ['arrow_5ffirst_28',['arrow_first',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a5d541c7e3c2e568a58c37d81e8a24153',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}']]],
+  ['arrow_5flast_29',['arrow_last',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a1ed68f3dee1ee088e682bd63c4edfe4c',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}']]],
+  ['ascending_30',['ascending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011',1,'fcarouge::test::anonymous_namespace{construction.cpp}']]],
+  ['assign_2ecpp_31',['assign.cpp',['../assign_8cpp.xhtml',1,'']]],
+  ['assign_5ffail_2ecpp_32',['assign_fail.cpp',['../assign__fail_8cpp.xhtml',1,'']]],
+  ['at_33',['at',['../classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e',1,'fcarouge::sparse_matrix::at() -&gt; Type &amp;'],['../classfcarouge_1_1sparse__matrix.xhtml#af1aaf26be336df4fa5365d9be9d7da46',1,'fcarouge::sparse_matrix::at() const -&gt; Type']]],
+  ['at_2ecpp_34',['at.cpp',['../at_8cpp.xhtml',1,'']]],
+  ['attribution_35',['Attribution',['../md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution',1,'']]],
+  ['augment_36',['augment',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5394438da5772db9bf12772eda56aaba',1,'fcarouge::sparse_linear_algebra::internal']]]
 ];

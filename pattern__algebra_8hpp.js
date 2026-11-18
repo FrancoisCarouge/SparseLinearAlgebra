@@ -2,6 +2,7 @@ var pattern__algebra_8hpp =
 [
     [ "is_structurally_symmetric", "pattern__algebra_8hpp.xhtml#af10895288c494b76fbf8e7862b476564", null ],
     [ "is_subset_of", "pattern__algebra_8hpp.xhtml#a812a97717e5886d75cc4171775a210ea", null ],
+    [ "pattern_cholesky", "pattern__algebra_8hpp.xhtml#af0dc3f3d377bbe290434409ffc9d93e9", null ],
     [ "pattern_intersection", "pattern__algebra_8hpp.xhtml#ae153220d9e02570204d76dad34a8b116", null ],
     [ "pattern_product", "pattern__algebra_8hpp.xhtml#a22a974884952de8722771dca7f79a808", null ],
     [ "pattern_quotient", "pattern__algebra_8hpp.xhtml#a51dcae7ae15de5fe60e3532356e5328d", null ],

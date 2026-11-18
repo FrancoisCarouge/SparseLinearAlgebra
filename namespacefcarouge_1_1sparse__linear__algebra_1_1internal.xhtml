@@ -222,6 +222,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a04bdb935278c02c96b7a2eb5403418c6"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a04bdb935278c02c96b7a2eb5403418c6">quotient_positions</a> ()</td></tr>
 <tr class="memdesc:a04bdb935278c02c96b7a2eb5403418c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the quotient <code>x</code> of <code>x * rhs = lhs</code>, in ascending order.  <br /></td></tr>
 <tr class="separator:a04bdb935278c02c96b7a2eb5403418c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f248b3b96a09d9e03397ba90c86f75b" id="r_a2f248b3b96a09d9e03397ba90c86f75b"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a2f248b3b96a09d9e03397ba90c86f75b"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2f248b3b96a09d9e03397ba90c86f75b">cholesky_columns</a> ()</td></tr>
+<tr class="memdesc:a2f248b3b96a09d9e03397ba90c86f75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each row of the Cholesky factor of a pattern, the set of its columns, a bit per column.  <br /></td></tr>
+<tr class="separator:a2f248b3b96a09d9e03397ba90c86f75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c6e3a68553bf78e6447a6ee7ee6be0" id="r_a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a39c6e3a68553bf78e6447a6ee7ee6be0">cholesky_positions</a> ()</td></tr>
+<tr class="memdesc:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the Cholesky factor of a pattern, in ascending order.  <br /></td></tr>
+<tr class="separator:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e85e15da93dcf0a935faa06a0c25c1" id="r_ad5e85e15da93dcf0a935faa06a0c25c1"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:ad5e85e15da93dcf0a935faa06a0c25c1"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad5e85e15da93dcf0a935faa06a0c25c1">absolute</a> (const Type &amp;value) -&gt; Type</td></tr>
 <tr class="memdesc:ad5e85e15da93dcf0a935faa06a0c25c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The absolute value, without a hosted implementation.  <br /></td></tr>
@@ -340,6 +348,10 @@ Variables</h2></td></tr>
 <tr class="memitem:acf4b5c478bb1b1121931c610348de9c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acf4b5c478bb1b1121931c610348de9c6">quotient_reach</a></td></tr>
 <tr class="memdesc:acf4b5c478bb1b1121931c610348de9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rows of the quotient <code>x</code> of <code>x * rhs = lhs</code> storing each of its columns, the unknowns.  <br /></td></tr>
 <tr class="separator:acf4b5c478bb1b1121931c610348de9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844751e51b20534d70210a9d25e62e30" id="r_a844751e51b20534d70210a9d25e62e30"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a844751e51b20534d70210a9d25e62e30"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a844751e51b20534d70210a9d25e62e30">cholesky_position_count</a></td></tr>
+<tr class="memdesc:a844751e51b20534d70210a9d25e62e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of positions of the Cholesky factor of a pattern.  <br /></td></tr>
+<tr class="separator:a844751e51b20534d70210a9d25e62e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aa93548197b24d28510de50033fbf86" id="r_a5aa93548197b24d28510de50033fbf86"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aa93548197b24d28510de50033fbf86">every</a></td></tr>
 <tr class="memdesc:a5aa93548197b24d28510de50033fbf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The predicate of every position.  <br /></td></tr>
 <tr class="separator:a5aa93548197b24d28510de50033fbf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -400,10 +412,10 @@ template&lt;typename Type &gt; </div>
 
 <p>The absolute value, without a hosted implementation. </p>
 
-<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00932">932</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  932</span>                                                                 {</div>
-<div class="line"><span class="lineno">  933</span>  <span class="keywordflow">return</span> value &lt; Type{} ? -value : value;</div>
-<div class="line"><span class="lineno">  934</span>}</div>
+<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l01004">1004</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1004</span>                                                                 {</div>
+<div class="line"><span class="lineno"> 1005</span>  <span class="keywordflow">return</span> value &lt; Type{} ? -value : value;</div>
+<div class="line"><span class="lineno"> 1006</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -547,6 +559,134 @@ template&lt;auto Pattern&gt; </div>
 
 </div>
 </div>
+<a id="a2f248b3b96a09d9e03397ba90c86f75b" name="a2f248b3b96a09d9e03397ba90c86f75b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f248b3b96a09d9e03397ba90c86f75b">&#9670;&#160;</a></span>cholesky_columns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::sparse_linear_algebra::internal::cholesky_columns </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For each row of the Cholesky factor of a pattern, the set of its columns, a bit per column. </p>
+<p>The up-looking symbolic factorization: a row of the factor stores its diagonal, and the columns reached from each column of the lower triangle of the same row of the pattern, by climbing the elimination tree, built along the way, up to the row or to a column already reached for that row. The climbs of a row never visit a column twice: the computation is linear in the stored positions of the factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00939">939</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  939</span>                                                                        {</div>
+<div class="line"><span class="lineno">  940</span>  <span class="keyword">using </span>row_set = std::array&lt;std::uint64_t, word_count&lt;Pattern&gt;&gt;;</div>
+<div class="line"><span class="lineno">  941</span> </div>
+<div class="line"><span class="lineno">  942</span>  std::array&lt;row_set, row_count&lt;Pattern&gt;&gt; result{};</div>
+<div class="line"><span class="lineno">  943</span>  std::array&lt;std::size_t, row_count&lt;Pattern&gt;&gt; parent{};</div>
+<div class="line"><span class="lineno">  944</span>  std::array&lt;std::size_t, row_count&lt;Pattern&gt;&gt; reached_by{};</div>
+<div class="line"><span class="lineno">  945</span> </div>
+<div class="line"><span class="lineno">  946</span>  <span class="keywordflow">for</span> (std::size_t row{0}; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> &lt; Pattern.rows; ++<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>) {</div>
+<div class="line"><span class="lineno">  947</span>    <span class="keyword">const</span> std::size_t end{Pattern.lower_bound({<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> + 1, 0})};</div>
+<div class="line"><span class="lineno">  948</span> </div>
+<div class="line"><span class="lineno">  949</span>    parent[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>] = sparse::absent;</div>
+<div class="line"><span class="lineno">  950</span>    reached_by[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>] = <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>;</div>
+<div class="line"><span class="lineno">  951</span> </div>
+<div class="line"><span class="lineno">  952</span>    <span class="keywordflow">for</span> (std::size_t i{Pattern.lower_bound({<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>, 0})};</div>
+<div class="line"><span class="lineno">  953</span>         i &lt; end &amp;&amp; Pattern.positions[i].column &lt; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>; ++i) {</div>
+<div class="line"><span class="lineno">  954</span>      <span class="keywordflow">for</span> (std::size_t column{Pattern.positions[i].column};</div>
+<div class="line"><span class="lineno">  955</span>           reached_by[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>] != <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>; <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> = parent[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>]) {</div>
+<div class="line"><span class="lineno">  956</span>        <span class="keywordflow">if</span> (parent[column] == sparse::absent) {</div>
+<div class="line"><span class="lineno">  957</span>          parent[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>] = <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>;</div>
+<div class="line"><span class="lineno">  958</span>        }</div>
+<div class="line"><span class="lineno">  959</span> </div>
+<div class="line"><span class="lineno">  960</span>        reached_by[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a>] = <a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>;</div>
+<div class="line"><span class="lineno">  961</span>        result[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>][<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> / 64] |= std::uint64_t{1} &lt;&lt; (<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#af3fda05b066549282638ae117cb24c89">column</a> % 64);</div>
+<div class="line"><span class="lineno">  962</span>      }</div>
+<div class="line"><span class="lineno">  963</span>    }</div>
+<div class="line"><span class="lineno">  964</span> </div>
+<div class="line"><span class="lineno">  965</span>    result[<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a>][<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> / 64] |= std::uint64_t{1} &lt;&lt; (<a class="code hl_typedef" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de">row</a> % 64);</div>
+<div class="line"><span class="lineno">  966</span>  }</div>
+<div class="line"><span class="lineno">  967</span> </div>
+<div class="line"><span class="lineno">  968</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  969</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00987">cholesky_positions()</a>.</p>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_a2f248b3b96a09d9e03397ba90c86f75b_icgraph.svg" width="410" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a39c6e3a68553bf78e6447a6ee7ee6be0" name="a39c6e3a68553bf78e6447a6ee7ee6be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c6e3a68553bf78e6447a6ee7ee6be0">&#9670;&#160;</a></span>cholesky_positions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::sparse_linear_algebra::internal::cholesky_positions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The positions of the Cholesky factor of a pattern, in ascending order. </p>
+
+<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00987">987</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  987</span>                                                                          {</div>
+<div class="line"><span class="lineno">  988</span>  position_list&lt;cholesky_position_count&lt;Pattern&gt;&gt; list;</div>
+<div class="line"><span class="lineno">  989</span>  <span class="keyword">const</span> <span class="keyword">auto</span> reached{cholesky_columns&lt;Pattern&gt;()};</div>
+<div class="line"><span class="lineno">  990</span> </div>
+<div class="line"><span class="lineno">  991</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Pattern.rows; ++row) {</div>
+<div class="line"><span class="lineno">  992</span>    <span class="keywordflow">for</span> (std::size_t column{0}; column &lt;= row; ++column) {</div>
+<div class="line"><span class="lineno">  993</span>      <span class="keywordflow">if</span> (((reached[row][column / 64] &gt;&gt; (column % 64)) &amp; 1U) != 0) {</div>
+<div class="line"><span class="lineno">  994</span>        list.push({row, column});</div>
+<div class="line"><span class="lineno">  995</span>      }</div>
+<div class="line"><span class="lineno">  996</span>    }</div>
+<div class="line"><span class="lineno">  997</span>  }</div>
+<div class="line"><span class="lineno">  998</span> </div>
+<div class="line"><span class="lineno">  999</span>  <span class="keywordflow">return</span> list;</div>
+<div class="line"><span class="lineno"> 1000</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="utility_8hpp_source.xhtml#l00939">cholesky_columns()</a>.</p>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_a39c6e3a68553bf78e6447a6ee7ee6be0_cgraph.svg" width="410" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="af620844d784c393f80d53d8d098e25e4" name="af620844d784c393f80d53d8d098e25e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af620844d784c393f80d53d8d098e25e4">&#9670;&#160;</a></span>close_component()</h2>
 
@@ -624,11 +764,11 @@ template&lt;std::size_t Size&gt; </div>
 <p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00798">visit_component()</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_af620844d784c393f80d53d8d098e25e4_icgraph.svg" width="368" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -808,11 +948,11 @@ template&lt;std::size_t Size&gt; </div>
 <div class="line"><span class="lineno">  747</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00798">visit_component()</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_a6568827e87d652e67f2c7e999927bb2d_icgraph.svg" width="368" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -873,11 +1013,11 @@ template&lt;auto Pattern&gt; </div>
 <div class="line"><span class="lineno">  693</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="pattern_8hpp_source.xhtml#l00118">fcarouge::sparse::absent</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00615">augment()</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_aa841c042225e0a9c3abcf9c8f3f18038_cgraph.svg" width="414" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -960,11 +1100,11 @@ template&lt;auto Lhs, auto Rhs, bool KeepAll&gt; </div>
 <p>Called by a pattern's invalid construction: never defined, its call ends the constant evaluation, and is the name the compiler's diagnostic reports. </p>
 
 <p class="reference">Referenced by <a class="el" href="pattern_8hpp_source.xhtml#l00198">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::pattern()</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_ad0931c574cdfeef4a8bab784750ed93a_icgraph.svg" width="402" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1014,11 +1154,11 @@ template&lt;auto Lhs, auto Rhs&gt; </div>
 <div class="line"><span class="lineno">  423</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utility_8hpp_source.xhtml#l00370">reached_columns()</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_aa0cbb4510404c25455aeb381500f59cc_cgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1125,11 +1265,11 @@ template&lt;auto Lhs, auto Rhs&gt; </div>
 <div class="line"><span class="lineno">  392</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00410">product_positions()</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_a76ec8ecdb7ea2f1fbf96030d4289ef4a_icgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1163,30 +1303,30 @@ template&lt;std::floating_point Type&gt; </div>
 <p>The square root, without a hosted implementation or at compile time by Newton's method, descending from above the root. </p>
 <dl class="section note"><dt>Note</dt><dd>The result is not guaranteed to be identical to the last digit to that of <code>std::sqrt</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00942">942</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  942</span>                                                             {</div>
-<div class="line"><span class="lineno">  943</span><span class="preprocessor">#if __STDC_HOSTED__</span></div>
-<div class="line"><span class="lineno">  944</span>  <span class="keywordflow">if</span> (not std::is_constant_evaluated()) {</div>
-<div class="line"><span class="lineno">  945</span>    <span class="keywordflow">return</span> std::sqrt(value);</div>
-<div class="line"><span class="lineno">  946</span>  }</div>
-<div class="line"><span class="lineno">  947</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  948</span> </div>
-<div class="line"><span class="lineno">  949</span>  <span class="comment">// A zero, a negative, a not-a-number, or an infinite value has no iteration.</span></div>
-<div class="line"><span class="lineno">  950</span>  <span class="keywordflow">if</span> (not(value &gt; Type{0}) || value &gt; std::numeric_limits&lt;Type&gt;::max()) {</div>
-<div class="line"><span class="lineno">  951</span>    <span class="keywordflow">return</span> value;</div>
-<div class="line"><span class="lineno">  952</span>  }</div>
-<div class="line"><span class="lineno">  953</span> </div>
-<div class="line"><span class="lineno">  954</span>  Type estimate{value &lt; Type{1} ? Type{1} : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>};</div>
-<div class="line"><span class="lineno">  955</span>  Type next{(estimate + (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> / estimate)) / Type{2}};</div>
-<div class="line"><span class="lineno">  956</span> </div>
-<div class="line"><span class="lineno">  957</span>  <span class="comment">// The estimates decrease strictly until the root, where the iteration stops.</span></div>
-<div class="line"><span class="lineno">  958</span>  <span class="keywordflow">while</span> (next &lt; estimate) {</div>
-<div class="line"><span class="lineno">  959</span>    estimate = next;</div>
-<div class="line"><span class="lineno">  960</span>    next = (estimate + (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> / estimate)) / Type{2};</div>
-<div class="line"><span class="lineno">  961</span>  }</div>
-<div class="line"><span class="lineno">  962</span> </div>
-<div class="line"><span class="lineno">  963</span>  <span class="keywordflow">return</span> estimate;</div>
-<div class="line"><span class="lineno">  964</span>}</div>
+<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l01014">1014</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1014</span>                                                             {</div>
+<div class="line"><span class="lineno"> 1015</span><span class="preprocessor">#if __STDC_HOSTED__</span></div>
+<div class="line"><span class="lineno"> 1016</span>  <span class="keywordflow">if</span> (not std::is_constant_evaluated()) {</div>
+<div class="line"><span class="lineno"> 1017</span>    <span class="keywordflow">return</span> std::sqrt(value);</div>
+<div class="line"><span class="lineno"> 1018</span>  }</div>
+<div class="line"><span class="lineno"> 1019</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno"> 1020</span> </div>
+<div class="line"><span class="lineno"> 1021</span>  <span class="comment">// A zero, a negative, a not-a-number, or an infinite value has no iteration.</span></div>
+<div class="line"><span class="lineno"> 1022</span>  <span class="keywordflow">if</span> (not(value &gt; Type{0}) || value &gt; std::numeric_limits&lt;Type&gt;::max()) {</div>
+<div class="line"><span class="lineno"> 1023</span>    <span class="keywordflow">return</span> value;</div>
+<div class="line"><span class="lineno"> 1024</span>  }</div>
+<div class="line"><span class="lineno"> 1025</span> </div>
+<div class="line"><span class="lineno"> 1026</span>  Type estimate{value &lt; Type{1} ? Type{1} : <a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a>};</div>
+<div class="line"><span class="lineno"> 1027</span>  Type next{(estimate + (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> / estimate)) / Type{2}};</div>
+<div class="line"><span class="lineno"> 1028</span> </div>
+<div class="line"><span class="lineno"> 1029</span>  <span class="comment">// The estimates decrease strictly until the root, where the iteration stops.</span></div>
+<div class="line"><span class="lineno"> 1030</span>  <span class="keywordflow">while</span> (next &lt; estimate) {</div>
+<div class="line"><span class="lineno"> 1031</span>    estimate = next;</div>
+<div class="line"><span class="lineno"> 1032</span>    next = (estimate + (<a class="code hl_variable" href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">value</a> / estimate)) / Type{2};</div>
+<div class="line"><span class="lineno"> 1033</span>  }</div>
+<div class="line"><span class="lineno"> 1034</span> </div>
+<div class="line"><span class="lineno"> 1035</span>  <span class="keywordflow">return</span> estimate;</div>
+<div class="line"><span class="lineno"> 1036</span>}</div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03_xhtml_ae9ff9b80da2adc1c37c8cb190f72e388"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02duplicate__fail_8cpp_03.xhtml#ae9ff9b80da2adc1c37c8cb190f72e388">fcarouge::test::anonymous_namespace{duplicate_fail.cpp}::value</a></div><div class="ttdeci">constexpr sparse::pattern value</div><div class="ttdef"><b>Definition</b> <a href="duplicate__fail_8cpp_source.xhtml#l00040">duplicate_fail.cpp:40</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1451,11 +1591,11 @@ template&lt;auto Transposed&gt; </div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_af620844d784c393f80d53d8d098e25e4"><div class="ttname"><a href="#af620844d784c393f80d53d8d098e25e4">fcarouge::sparse_linear_algebra::internal::close_component</a></div><div class="ttdeci">consteval void close_component(std::size_t unknown, component_search&lt; Size &gt; &amp;search, block_triangular&lt; Size &gt; &amp;result)</div><div class="ttdoc">Close the block of an unknown, the first visited of its block: its unknowns are the stacked ones down...</div><div class="ttdef"><b>Definition</b> <a href="utility_8hpp_source.xhtml#l00752">utility.hpp:752</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utility_8hpp_source.xhtml#l00752">close_component()</a>, and <a class="el" href="utility_8hpp_source.xhtml#l00739">enter_component()</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="namespacefcarouge_1_1sparse__linear__algebra_1_1internal_aaae3deadb671fb5d27d448c3ed1e29f4_cgraph.svg" width="368" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1589,6 +1729,56 @@ template&lt;auto Pattern&gt; </div>
 <div class="line"><span class="lineno">  863</span> </div>
 <div class="line"><span class="lineno">  864</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><span class="lineno">  865</span>}()};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a844751e51b20534d70210a9d25e62e30" name="a844751e51b20534d70210a9d25e62e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844751e51b20534d70210a9d25e62e30">&#9670;&#160;</a></span>cholesky_position_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fcarouge::sparse_linear_algebra::internal::cholesky_position_count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{[] -&gt; std::size_t {</div>
+<div class="line">  std::size_t result{0};</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;row : cholesky_columns&lt;Pattern&gt;()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::uint64_t word : row) {</div>
+<div class="line">      result += <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(std::popcount(word));</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> result;</div>
+<div class="line">}()}</div>
+</div><!-- fragment -->
+<p>The count of positions of the Cholesky factor of a pattern. </p>
+
+<p class="definition">Definition at line <a class="el" href="utility_8hpp_source.xhtml#l00973">973</a> of file <a class="el" href="utility_8hpp_source.xhtml">utility.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  973</span>                                                  {[] -&gt; std::size_t {</div>
+<div class="line"><span class="lineno">  974</span>  std::size_t result{0};</div>
+<div class="line"><span class="lineno">  975</span> </div>
+<div class="line"><span class="lineno">  976</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;row : cholesky_columns&lt;Pattern&gt;()) {</div>
+<div class="line"><span class="lineno">  977</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::uint64_t word : row) {</div>
+<div class="line"><span class="lineno">  978</span>      result += <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(std::popcount(word));</div>
+<div class="line"><span class="lineno">  979</span>    }</div>
+<div class="line"><span class="lineno">  980</span>  }</div>
+<div class="line"><span class="lineno">  981</span> </div>
+<div class="line"><span class="lineno">  982</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  983</span>}()};</div>
 </div><!-- fragment -->
 </div>
 </div>

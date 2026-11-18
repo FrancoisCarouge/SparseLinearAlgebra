@@ -14,6 +14,9 @@ var concepts =
           [ "from_zero_value_rows", "conceptfcarouge_1_1test_1_1anonymous__namespace_02convertible_8cpp_03_1_1from__zero__value__rows.xhtml", null ],
           [ "from_flat_positions", "conceptfcarouge_1_1test_1_1anonymous__namespace_02convertible_8cpp_03_1_1from__flat__positions.xhtml", null ],
           [ "from_implicit_rows", "conceptfcarouge_1_1test_1_1anonymous__namespace_02convertible_8cpp_03_1_1from__implicit__rows.xhtml", null ]
+        ] ],
+        [ "anonymous_namespace{pattern_algebra.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml", [
+          [ "factorable", "conceptfcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_1_1factorable.xhtml", null ]
         ] ]
       ] ],
       [ "sparsity_pattern", "conceptfcarouge_1_1sparsity__pattern.xhtml", null ]

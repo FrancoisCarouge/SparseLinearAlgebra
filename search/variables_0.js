@@ -7,5 +7,7 @@ var searchData=
   ['are_5fgiven_5fin_5frow_4',['are_given_in_row',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['are_5fgiven_5fin_5frow_5fat_5',['are_given_in_row_at',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a8c0878a4c2d1f8703b90d307f693bb3f',1,'fcarouge::sparse_linear_algebra::internal']]],
   ['arrow_6',['arrow',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03.xhtml#a206e314846ffb52dc14278914ae8e19b',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
-  ['ascending_7',['ascending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011',1,'fcarouge::test::anonymous_namespace{construction.cpp}']]]
+  ['arrow_5ffirst_7',['arrow_first',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a5d541c7e3c2e568a58c37d81e8a24153',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}']]],
+  ['arrow_5flast_8',['arrow_last',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml#a1ed68f3dee1ee088e682bd63c4edfe4c',1,'fcarouge::test::anonymous_namespace{pattern_algebra.cpp}']]],
+  ['ascending_9',['ascending',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011',1,'fcarouge::test::anonymous_namespace{construction.cpp}']]]
 ];

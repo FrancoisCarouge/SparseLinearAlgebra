@@ -1,7 +1,11 @@
 var pattern__algebra_8cpp =
 [
+    [ "fcarouge::test::anonymous_namespace{pattern_algebra.cpp}::factorable", "conceptfcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_1_1factorable.xhtml", null ],
     [ "anti_diagonal", "pattern__algebra_8cpp.xhtml#ab7d5d2e4929564ac81eef04fea75ee21", null ],
+    [ "arrow_first", "pattern__algebra_8cpp.xhtml#a5d541c7e3c2e568a58c37d81e8a24153", null ],
+    [ "arrow_last", "pattern__algebra_8cpp.xhtml#a1ed68f3dee1ee088e682bd63c4edfe4c", null ],
     [ "blocks", "pattern__algebra_8cpp.xhtml#a8ef7b1a02afaebadb7487d6bec9cd76c", null ],
+    [ "cycle", "pattern__algebra_8cpp.xhtml#aca32624edde180b4ffb99db88e468e6d", null ],
     [ "first_column", "pattern__algebra_8cpp.xhtml#a23939332daf477f275f1aaa8c469508a", null ],
     [ "first_of_row", "pattern__algebra_8cpp.xhtml#a3a6d2383cda39fc03bfb70e36b98228a", null ],
     [ "first_row", "pattern__algebra_8cpp.xhtml#a81ad5c112c72faf36da3c2606af281d8", null ],

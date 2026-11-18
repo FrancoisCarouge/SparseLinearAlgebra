@@ -215,6 +215,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a04bdb935278c02c96b7a2eb5403418c6"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a04bdb935278c02c96b7a2eb5403418c6">fcarouge::sparse_linear_algebra::internal::quotient_positions</a> ()</td></tr>
 <tr class="memdesc:a04bdb935278c02c96b7a2eb5403418c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the quotient <code>x</code> of <code>x * rhs = lhs</code>, in ascending order.  <br /></td></tr>
 <tr class="separator:a04bdb935278c02c96b7a2eb5403418c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f248b3b96a09d9e03397ba90c86f75b" id="r_a2f248b3b96a09d9e03397ba90c86f75b"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a2f248b3b96a09d9e03397ba90c86f75b"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a2f248b3b96a09d9e03397ba90c86f75b">fcarouge::sparse_linear_algebra::internal::cholesky_columns</a> ()</td></tr>
+<tr class="memdesc:a2f248b3b96a09d9e03397ba90c86f75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each row of the Cholesky factor of a pattern, the set of its columns, a bit per column.  <br /></td></tr>
+<tr class="separator:a2f248b3b96a09d9e03397ba90c86f75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c6e3a68553bf78e6447a6ee7ee6be0" id="r_a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a39c6e3a68553bf78e6447a6ee7ee6be0">fcarouge::sparse_linear_algebra::internal::cholesky_positions</a> ()</td></tr>
+<tr class="memdesc:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positions of the Cholesky factor of a pattern, in ascending order.  <br /></td></tr>
+<tr class="separator:a39c6e3a68553bf78e6447a6ee7ee6be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e85e15da93dcf0a935faa06a0c25c1" id="r_ad5e85e15da93dcf0a935faa06a0c25c1"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:ad5e85e15da93dcf0a935faa06a0c25c1"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#ad5e85e15da93dcf0a935faa06a0c25c1">fcarouge::sparse_linear_algebra::internal::absolute</a> (const Type &amp;value) -&gt; Type</td></tr>
 <tr class="memdesc:ad5e85e15da93dcf0a935faa06a0c25c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The absolute value, without a hosted implementation.  <br /></td></tr>
@@ -322,6 +330,10 @@ Variables</h2></td></tr>
 <tr class="memitem:acf4b5c478bb1b1121931c610348de9c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#acf4b5c478bb1b1121931c610348de9c6">fcarouge::sparse_linear_algebra::internal::quotient_reach</a></td></tr>
 <tr class="memdesc:acf4b5c478bb1b1121931c610348de9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rows of the quotient <code>x</code> of <code>x * rhs = lhs</code> storing each of its columns, the unknowns.  <br /></td></tr>
 <tr class="separator:acf4b5c478bb1b1121931c610348de9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844751e51b20534d70210a9d25e62e30" id="r_a844751e51b20534d70210a9d25e62e30"><td class="memTemplParams" colspan="2">template&lt;auto Pattern&gt; </td></tr>
+<tr class="memitem:a844751e51b20534d70210a9d25e62e30"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a844751e51b20534d70210a9d25e62e30">fcarouge::sparse_linear_algebra::internal::cholesky_position_count</a></td></tr>
+<tr class="memdesc:a844751e51b20534d70210a9d25e62e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">The count of positions of the Cholesky factor of a pattern.  <br /></td></tr>
+<tr class="separator:a844751e51b20534d70210a9d25e62e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The internal implementation details: the pattern computations the operations derive their results and their arithmetic terms with. </p>

@@ -160,6 +160,10 @@ Variables</h2></td></tr>
 <tr class="memitem:af10895288c494b76fbf8e7862b476564"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af10895288c494b76fbf8e7862b476564">is_structurally_symmetric</a></td></tr>
 <tr class="memdesc:af10895288c494b76fbf8e7862b476564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a pattern is square and stores the transposed position of each of its positions.  <br /></td></tr>
 <tr class="separator:af10895288c494b76fbf8e7862b476564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dc3f3d377bbe290434409ffc9d93e9" id="r_af0dc3f3d377bbe290434409ffc9d93e9"><td class="memTemplParams" colspan="2">template&lt;sparsity_pattern auto Pattern&gt; </td></tr>
+<tr class="memitem:af0dc3f3d377bbe290434409ffc9d93e9"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af0dc3f3d377bbe290434409ffc9d93e9">pattern_cholesky</a></td></tr>
+<tr class="memdesc:af0dc3f3d377bbe290434409ffc9d93e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structural pattern of the Cholesky factor <code>L</code> of a symmetric positive definite matrix <code>A = L * transposed(L)</code>, from the pattern of <code>A</code>.  <br /></td></tr>
+<tr class="separator:af0dc3f3d377bbe290434409ffc9d93e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Patterns</h2></td></tr>
 <tr class="memitem:afc86d359c92e4aed11bb24af084e9a13" id="r_afc86d359c92e4aed11bb24af084e9a13"><td class="memTemplParams" colspan="2">template&lt;std::size_t Rows, std::size_t Columns&gt; </td></tr>
@@ -358,7 +362,7 @@ template&lt;std::size_t Rows, std::size_t Columns, sparse_linear_algebra::intern
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00118">118</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  118</span>{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00615">fcarouge::sparse_linear_algebra::internal::augment()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00752">fcarouge::sparse_linear_algebra::internal::close_component()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00270">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00670">fcarouge::sparse_linear_algebra::internal::maximum_matching()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00282">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8hpp_source.xhtml#l00615">fcarouge::sparse_linear_algebra::internal::augment()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00939">fcarouge::sparse_linear_algebra::internal::cholesky_columns()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00752">fcarouge::sparse_linear_algebra::internal::close_component()</a>, <a class="el" href="pattern_8hpp_source.xhtml#l00270">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::index_of()</a>, <a class="el" href="utility_8hpp_source.xhtml#l00670">fcarouge::sparse_linear_algebra::internal::maximum_matching()</a>, and <a class="el" href="pattern_8hpp_source.xhtml#l00282">fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;::stores()</a>.</p>
 
 </div>
 </div>
@@ -562,6 +566,45 @@ template&lt;std::size_t Size&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="pattern_8hpp_source.xhtml#l00346">346</a> of file <a class="el" href="pattern_8hpp_source.xhtml">pattern.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  346</span>{banded&lt;Size, Size, Size, 0&gt;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af0dc3f3d377bbe290434409ffc9d93e9" name="af0dc3f3d377bbe290434409ffc9d93e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0dc3f3d377bbe290434409ffc9d93e9">&#9670;&#160;</a></span>pattern_cholesky</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;sparsity_pattern auto Pattern&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::sparse::pattern_cholesky</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line">        Pattern.rows, Pattern.columns,</div>
+<div class="line">        sparse_linear_algebra::internal::cholesky_positions&lt;Pattern&gt;()&gt;()}</div>
+</div><!-- fragment -->
+<p>The structural pattern of the Cholesky factor <code>L</code> of a symmetric positive definite matrix <code>A = L * transposed(L)</code>, from the pattern of <code>A</code>. </p>
+<p>The factor is lower triangular. It stores the diagonal, the positions of the lower triangle of the pattern, and the positions the elimination fills in. The factor <code>L</code> of <code>A = L * D * transposed(L)</code>, of a diagonal <code>D</code>, has the same pattern. A position is stored even if its value cancels out at run time. The factorization of a positive definite matrix does not pivot: unlike that of a division, the pattern of the factor does not depend on the values of the matrix.</p>
+<p>The pattern is structurally symmetric and stores its diagonal: a positive definite matrix is symmetric and has a positive diagonal, which a structural zero can never hold.</p>
+<dl class="section note"><dt>Note</dt><dd>The rows and the columns keep the order of the pattern: no permutation reduces the fill-in, so the order of the rows and the columns decides it. The same pattern factors without fill-in when its densest rows and columns come last, and fills the whole lower triangle when they come first. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pattern__algebra_8hpp_source.xhtml#l00165">165</a> of file <a class="el" href="pattern__algebra_8hpp_source.xhtml">pattern_algebra.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>                                      {</div>
+<div class="line"><span class="lineno">  166</span>    sparse_linear_algebra::internal::to_pattern&lt;</div>
+<div class="line"><span class="lineno">  167</span>        Pattern.rows, Pattern.columns,</div>
+<div class="line"><span class="lineno">  168</span>        sparse_linear_algebra::internal::cholesky_positions&lt;Pattern&gt;()&gt;()};</div>
 </div><!-- fragment -->
 </div>
 </div>
