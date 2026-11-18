@@ -31,6 +31,8 @@ For more information, please refer to <https://unlicense.org> */
 
 #include "fcarouge/sparse_linear_algebra.hpp"
 
+#include <cstddef>
+
 namespace fcarouge::test {
 namespace {
 using sparse::diagonal;
@@ -194,5 +196,85 @@ static_assert(sparse::pattern_quotient<sparse::zero<2, 3>, tridiagonal<3>> ==
               sparse::zero<2, 3>);
 static_assert(sparse::pattern_quotient<rectangular, diagonal<3>> ==
               rectangular);
+
+//! @test Verifies the pattern of the Cholesky factor: the lower triangle of a
+//! diagonal, a band, or block-diagonal pattern without fill-in, of a dense
+//! pattern the lower triangle, and of a cycle the single position its
+//! elimination fills in.
+inline constexpr pattern cycle{shape<4, 4>,
+                               {{0, 0},
+                                {0, 1},
+                                {0, 3},
+                                {1, 0},
+                                {1, 1},
+                                {1, 2},
+                                {2, 1},
+                                {2, 2},
+                                {2, 3},
+                                {3, 0},
+                                {3, 2},
+                                {3, 3}}};
+
+static_assert(sparse::pattern_cholesky<diagonal<4>> == diagonal<4>);
+static_assert(sparse::pattern_cholesky<tridiagonal<4>> ==
+              sparse::banded<4, 4, 1, 0>);
+static_assert(sparse::pattern_cholesky<sparse::banded<5, 5, 2, 2>> ==
+              sparse::banded<5, 5, 2, 0>);
+static_assert(sparse::pattern_cholesky<blocks> ==
+              pattern{shape<3, 3>, {{0, 0}, {1, 0}, {1, 1}, {2, 2}}});
+static_assert(sparse::pattern_cholesky<sparse::dense<3, 3>> ==
+              lower_triangular<3>);
+static_assert(sparse::pattern_cholesky<sparse::dense<1, 1>> ==
+              sparse::dense<1, 1>);
+static_assert(sparse::pattern_cholesky<cycle> == pattern{shape<4, 4>,
+                                                         {{0, 0},
+                                                          {1, 0},
+                                                          {1, 1},
+                                                          {2, 1},
+                                                          {2, 2},
+                                                          {3, 0},
+                                                          {3, 1},
+                                                          {3, 2},
+                                                          {3, 3}}});
+
+//! @test Verifies the order of the rows and the columns decides the fill-in: an
+//! arrow pattern factors without fill-in when its dense row and column come
+//! last, and fills the whole lower triangle when they come first.
+inline constexpr pattern arrow_last{
+    shape<4, 4>, [](std::size_t row, std::size_t column) -> bool {
+      return row == column || row == 3 || column == 3;
+    }};
+inline constexpr pattern arrow_first{
+    shape<4, 4>, [](std::size_t row, std::size_t column) -> bool {
+      return row == column || row == 0 || column == 0;
+    }};
+
+static_assert(sparse::pattern_cholesky<arrow_last> ==
+              pattern_intersection<arrow_last, lower_triangular<4>>);
+static_assert(sparse::pattern_cholesky<arrow_first> == lower_triangular<4>);
+
+//! @test Verifies the product of the factor and its transpose stores every
+//! position of the factored pattern.
+static_assert(
+    sparse::is_subset_of<
+        cycle,
+        pattern_product<sparse::pattern_cholesky<cycle>,
+                        pattern_transpose<sparse::pattern_cholesky<cycle>>>>);
+static_assert(sparse::is_subset_of<
+              arrow_first,
+              pattern_product<
+                  sparse::pattern_cholesky<arrow_first>,
+                  pattern_transpose<sparse::pattern_cholesky<arrow_first>>>>);
+
+//! @test Verifies the factor rejects a pattern not structurally symmetric,
+//! rectangular, or without its diagonal.
+template <auto Pattern>
+concept factorable = requires { sparse::pattern_cholesky<Pattern>; };
+
+static_assert(factorable<tridiagonal<3>>);
+static_assert(not factorable<lower_triangular<3>>);
+static_assert(not factorable<sparse::dense<2, 3>>);
+static_assert(not factorable<anti_diagonal>);
+static_assert(not factorable<sparse::zero<3, 3>>);
 } // namespace
 } // namespace fcarouge::test

@@ -31,3 +31,5 @@ For more information, please refer to <https://unlicense.org> ]]
 
 build("pattern_algebra")
 build("result_patterns")
+fail("cholesky_asymmetric_fail")
+fail("cholesky_diagonal_fail")

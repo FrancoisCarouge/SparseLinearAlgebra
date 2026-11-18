@@ -139,6 +139,34 @@ template <sparsity_pattern auto Pattern>
 inline constexpr bool is_structurally_symmetric{
     is_subset_of<pattern_transpose<Pattern>, Pattern>};
 
+//! @brief The structural pattern of the Cholesky factor `L` of a symmetric
+//! positive definite matrix `A = L * transposed(L)`, from the pattern of `A`.
+//!
+//! @details The factor is lower triangular. It stores the diagonal, the
+//! positions of the lower triangle of the pattern, and the positions the
+//! elimination fills in. The factor `L` of `A = L * D * transposed(L)`, of a
+//! diagonal `D`, has the same pattern. A position is stored even if its value
+//! cancels out at run time. The factorization of a positive definite matrix
+//! does not pivot: unlike that of a division, the pattern of the factor does
+//! not depend on the values of the matrix.
+//!
+//! The pattern is structurally symmetric and stores its diagonal: a positive
+//! definite matrix is symmetric and has a positive diagonal, which a structural
+//! zero can never hold.
+//!
+//! @note The rows and the columns keep the order of the pattern: no
+//! permutation reduces the fill-in, so the order of the rows and the columns
+//! decides it. The same pattern factors without fill-in when its densest rows
+//! and columns come last, and fills the whole lower triangle when they come
+//! first.
+template <sparsity_pattern auto Pattern>
+  requires(is_structurally_symmetric<Pattern> and
+           is_subset_of<diagonal<Pattern.rows>, Pattern>)
+inline constexpr auto pattern_cholesky{
+    sparse_linear_algebra::internal::to_pattern<
+        Pattern.rows, Pattern.columns,
+        sparse_linear_algebra::internal::cholesky_positions<Pattern>()>()};
+
 //! @}
 } // namespace fcarouge::sparse
 

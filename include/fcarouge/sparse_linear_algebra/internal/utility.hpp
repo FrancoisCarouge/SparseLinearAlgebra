@@ -927,6 +927,78 @@ template <auto Lhs, auto Rhs>
   return list;
 }
 
+//! @brief For each row of the Cholesky factor of a pattern, the set of its
+//! columns, a bit per column.
+//!
+//! @details The up-looking symbolic factorization: a row of the factor stores
+//! its diagonal, and the columns reached from each column of the lower triangle
+//! of the same row of the pattern, by climbing the elimination tree, built
+//! along the way, up to the row or to a column already reached for that row.
+//! The climbs of a row never visit a column twice: the computation is linear in
+//! the stored positions of the factor.
+template <auto Pattern> [[nodiscard]] consteval auto cholesky_columns() {
+  using row_set = std::array<std::uint64_t, word_count<Pattern>>;
+
+  std::array<row_set, row_count<Pattern>> result{};
+  std::array<std::size_t, row_count<Pattern>> parent{};
+  std::array<std::size_t, row_count<Pattern>> reached_by{};
+
+  for (std::size_t row{0}; row < Pattern.rows; ++row) {
+    const std::size_t end{Pattern.lower_bound({row + 1, 0})};
+
+    parent[row] = sparse::absent;
+    reached_by[row] = row;
+
+    for (std::size_t i{Pattern.lower_bound({row, 0})};
+         i < end && Pattern.positions[i].column < row; ++i) {
+      for (std::size_t column{Pattern.positions[i].column};
+           reached_by[column] != row; column = parent[column]) {
+        if (parent[column] == sparse::absent) {
+          parent[column] = row;
+        }
+
+        reached_by[column] = row;
+        result[row][column / 64] |= std::uint64_t{1} << (column % 64);
+      }
+    }
+
+    result[row][row / 64] |= std::uint64_t{1} << (row % 64);
+  }
+
+  return result;
+}
+
+//! @brief The count of positions of the Cholesky factor of a pattern.
+template <auto Pattern>
+inline constexpr std::size_t cholesky_position_count{[] -> std::size_t {
+  std::size_t result{0};
+
+  for (const auto &row : cholesky_columns<Pattern>()) {
+    for (const std::uint64_t word : row) {
+      result += static_cast<std::size_t>(std::popcount(word));
+    }
+  }
+
+  return result;
+}()};
+
+//! @brief The positions of the Cholesky factor of a pattern, in ascending
+//! order.
+template <auto Pattern> [[nodiscard]] consteval auto cholesky_positions() {
+  position_list<cholesky_position_count<Pattern>> list;
+  const auto reached{cholesky_columns<Pattern>()};
+
+  for (std::size_t row{0}; row < Pattern.rows; ++row) {
+    for (std::size_t column{0}; column <= row; ++column) {
+      if (((reached[row][column / 64] >> (column % 64)) & 1U) != 0) {
+        list.push({row, column});
+      }
+    }
+  }
+
+  return list;
+}
+
 //! @brief The absolute value, without a hosted implementation.
 template <typename Type>
 [[nodiscard]] constexpr auto absolute(const Type &value) -> Type {
