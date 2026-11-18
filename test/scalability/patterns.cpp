@@ -106,6 +106,13 @@ static_assert(sparse::structural_rank<wide> == size);
 static_assert(sparse::pattern_quotient<wide, sparse::diagonal<size>> == wide);
 static_assert(square / identity == square);
 
+//! @test Verifies the pattern of the Cholesky factor at that scale, linear in
+//! its stored positions: a band factors without fill-in, and a dense pattern
+//! into its lower triangle of five thousand positions.
+static_assert(sparse::pattern_cholesky<wide> ==
+              sparse::banded<size, size, 1, 0>);
+static_assert(sparse::pattern_cholesky<full> == sparse::lower_triangular<size>);
+
 //! @test Verifies the plan of a division by an irreducible denominator, of a
 //! dense quotient, at the scale of its verified limit.
 inline constexpr std::size_t irreducible{48};
