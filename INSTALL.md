@@ -34,11 +34,21 @@ FetchContent_MakeAvailable(fcarouge-sparse-linear-algebra)
 target_link_libraries(your_target PRIVATE fcarouge-sparse-linear-algebra::slinalg)
 ```
 
+A single, amalgamated `sparse_linear_algebra.h` header is also [published](https://francoiscarouge.github.io/SparseLinearAlgebra/amalgamate/fcarouge/sparse_linear_algebra.h), or generated locally with `cmake --build "build" --target "amalgamate"` into `build/amalgamate/fcarouge/sparse_linear_algebra.h`.
+
+In your sources, include the library header and use the matrix. See [the samples](https://github.com/FrancoisCarouge/SparseLinearAlgebra/tree/master/sample) for more.
+
+```cpp
+#include "fcarouge/sparse_linear_algebra.hpp"
+
+fcarouge::sparse_matrix<double, fcarouge::sparse::tridiagonal<3>> matrix;
+```
+
 # Development Build & Run
 
-## Tests
+## Tests & Samples
 
-Build and run the tests:
+Build and run the tests and samples:
 
 ```shell
 git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
@@ -46,6 +56,10 @@ cmake -S "SparseLinearAlgebra" -B "build"
 cmake --build "build" --config "Debug" --parallel
 ctest --test-dir "build" --build-config "Debug" --output-on-failure --parallel
 ```
+
+## Benchmarks
+
+See the [Benchmark](https://github.com/FrancoisCarouge/SparseLinearAlgebra/tree/master/benchmark) section.
 
 ## Installation Packages
 
