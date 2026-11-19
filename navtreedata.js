@@ -60,7 +60,8 @@ var NAVTREE =
     [ "Compile-Time Traces", "time_trace.xhtml", null ],
     [ "Installation", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml", [
       [ "Development Build & Run", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run", [
-        [ "Tests", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests", null ],
+        [ "Tests & Samples", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests--samples", null ],
+        [ "Benchmarks", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#benchmarks-1", null ],
         [ "Installation Packages", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#installation-packages", [
           [ "Linux", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#linux", null ],
           [ "Windows", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#windows", null ]
@@ -110,9 +111,9 @@ var NAVTREEINDEX =
 [
 "access_8cpp.xhtml",
 "functions_type.xhtml",
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a59d359cc1007d5efb9e89d244a7db05b",
-"pattern_8hpp.xhtml#a48ebf459a670160993e62b05114ca003",
-"transposed_8cpp_source.xhtml"
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml",
+"pattern_8hpp.xhtml#a4878f89526272a6edbf9099732f4a690",
+"transposed_8cpp.xhtml#a208c6d823bd60cdbb79569079adcb79e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

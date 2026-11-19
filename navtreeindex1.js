@@ -123,11 +123,12 @@ var NAVTREEINDEX1 =
 "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#security-policy":[5,3],
 "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml":[6],
 "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml":[9],
+"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#benchmarks-1":[9,0,1],
 "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run":[9,0],
-"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#installation-packages":[9,0,1],
-"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#linux":[9,0,1,0],
-"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests":[9,0,0],
-"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#windows":[9,0,1,1],
+"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#installation-packages":[9,0,2],
+"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#linux":[9,0,2,0],
+"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests--samples":[9,0,0],
+"md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#windows":[9,0,2,1],
 "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml":[10],
 "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#reporting-a-vulnerability":[10,1],
 "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#supported-versions":[10,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#aec6da8ad8086d592f3d49182ea4e68b4":[12,0,0,4,0,48],
 "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af128f589c6ce61202cf6dede7f8a46d1":[12,0,0,4,0,38],
 "namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#af620844d784c393f80d53d8d098e25e4":[12,0,0,4,0,6],
-"namespacefcarouge_1_1test.xhtml":[12,0,0,5],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml":[12,0,0,5,0]
+"namespacefcarouge_1_1test.xhtml":[12,0,0,5]
 };

@@ -6,7 +6,7 @@ var searchData=
   ['test_20code_20coverage_3',['Unit Test Code Coverage',['../unit_test_coverage.xhtml',1,'']]],
   ['test_20list_4',['Test List',['../test.xhtml',1,'']]],
   ['test_20sample_20benchmark_20generation_20tt_20support_20support_20cmake_20tt_5',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['tests_6',['Tests',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests',1,'']]],
+  ['tests_20samples_6',['Tests &amp; Samples',['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests--samples',1,'']]],
   ['the_20compile_20time_20pattern_20model_7',['The compile-time pattern model',['..//github/workspace/AGENTS.md#the-compile-time-pattern-model',1,'']]],
   ['the_20structural_20zero_20model_8',['The structural zero model',['..//github/workspace/AGENTS.md#the-structural-zero-model',1,'']]],
   ['third_20party_20acknowledgement_9',['Third Party Acknowledgement',['../index.xhtml#third-party-acknowledgement',1,'']]],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['sample_0',['sample',['../namespacefcarouge_1_1sample_1_1anonymous__namespace_02constant__velocity_8cpp_03.xhtml#a2f9cf9e7a7a24b0d7d964300f68070e7',1,'fcarouge::sample::anonymous_namespace{constant_velocity.cpp}::sample'],['../namespacefcarouge_1_1sample_1_1anonymous__namespace_02heat__diffusion_8cpp_03.xhtml#a38fdf23b12be8127c19464b8e24a9b27',1,'fcarouge::sample::anonymous_namespace{heat_diffusion.cpp}::sample']]],
   ['sample_20benchmark_20generation_20tt_20support_20support_20cmake_20tt_1',['Test/sample/benchmark generation (&lt;tt&gt;support/support.cmake&lt;/tt&gt;)',['..//github/workspace/AGENTS.md#testsamplebenchmark-generation-supportsupportcmake',1,'']]],
-  ['samples_2',['Samples',['../index.xhtml#samples',1,'']]],
+  ['samples_2',['Samples',['../index.xhtml#samples',1,'Samples'],['../md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests--samples',1,'Tests &amp; Samples']]],
   ['scalar_2ecpp_3',['scalar.cpp',['../scalar_8cpp.xhtml',1,'']]],
   ['scalar_5ftype_5ffail_2ecpp_4',['scalar_type_fail.cpp',['../scalar__type__fail_8cpp.xhtml',1,'']]],
   ['scale_2ecpp_5',['scale.cpp',['../scale_8cpp.xhtml',1,'']]],
