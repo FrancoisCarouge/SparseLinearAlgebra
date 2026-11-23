@@ -1,5 +1,12 @@
 <map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_additive" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_additive">
-<area shape="rect" id="Node000001" title="The sum, the difference, the transposition, and the negation." alt="" coords="5,5,177,76"/>
-<area shape="rect" id="Node000002" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="225,28,366,54"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,38,209,38,209,43,177,43"/>
+<area shape="rect" id="Node000001" title="The sum, the difference, the transposition, and the negation." alt="" coords="5,92,201,170"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="249,5,444,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,90,253,72,249,75,202,95"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a" title="The matrix as an explicit dense array, read at each position." alt="" coords="249,92,444,170"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,128,236,130,231,132,202,133"/>
+<area shape="rect" id="Node000005" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="267,218,426,246"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,168,300,211,295,213,199,173"/>
+<area shape="rect" id="Node000003" href="$classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e" title="The stored element at the given compile&#45;time position." alt="" coords="492,22,692,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,34,479,36,474,37,445,39"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="305,217,298,209,303,200,320,194,346,192,375,194,392,203,387,203,374,199,346,197,321,199,307,204,303,209,310,219"/>
 </map>

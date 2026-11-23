@@ -1,0 +1,9 @@
+<map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_product" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_product">
+<area shape="rect" id="Node000001" title="The product, and its pattern exactly storing the reached positions." alt="" coords="5,45,201,124"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="249,5,444,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,62,236,57,231,59,202,67"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a" title="The matrix as an explicit dense array, read at each position." alt="" coords="249,92,444,170"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,100,236,109,231,109,201,106"/>
+<area shape="rect" id="Node000003" href="$classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e" title="The stored element at the given compile&#45;time position." alt="" coords="492,22,692,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,34,479,36,474,37,445,39"/>
+</map>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['security_20policy_0',['Security Policy',['../md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml',1,'']]],
-  ['sparse_20linear_20algebra_1',['François Carouge / Sparse Linear Algebra',['../index.xhtml',1,'']]],
-  ['sparselinearalgebra_2',['Contributing to SparseLinearAlgebra',['../md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml',1,'']]]
+  ['generation_20support_20support_20cmake_0',['Test/sample/benchmark generation (&lt;span class=&quot;tt&quot;&gt;support/support.cmake&lt;/span&gt;)',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#testsamplebenchmark-generation-supportsupportcmake',1,'']]]
 ];

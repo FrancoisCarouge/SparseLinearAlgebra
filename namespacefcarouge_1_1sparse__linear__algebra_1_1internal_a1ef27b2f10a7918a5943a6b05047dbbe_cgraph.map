@@ -1,0 +1,4 @@
+<map id="fcarouge::sparse_linear_algebra::internal::store_given" name="fcarouge::sparse_linear_algebra::internal::store_given">
+<area shape="rect" id="Node000001" title="Write a given value into the next stored element, unless it is a structural zero: the stored elements..." alt="" coords="5,29,225,74"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="73,28,72,19,79,10,93,5,115,3,139,5,154,14,149,14,137,10,115,8,95,10,82,15,77,21,78,30"/>
+</map>

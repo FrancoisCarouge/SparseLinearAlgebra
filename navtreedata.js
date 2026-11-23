@@ -26,51 +26,61 @@ var NAVTREE =
 [
   [ "Sparse Linear Algebra", "index.xhtml", [
     [ "François Carouge / Sparse Linear Algebra", "index.xhtml", "index" ],
-    [ "AGENTS.md", "md__2github_2workspace_2_a_g_e_n_t_s.xhtml", [
-      [ "AI agent conduct", "md__2github_2workspace_2_a_g_e_n_t_s.xhtml#ai-agent-conduct", null ],
-      [ "Build & test", "md__2github_2workspace_2_a_g_e_n_t_s.xhtml#build--test", null ]
+    [ "AGENTS.md", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml", [
+      [ "AI agent conduct", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#ai-agent-conduct", null ],
+      [ "Build &amp; test", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#build--test", null ],
+      [ "Architecture", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#architecture", [
+        [ "Public headers", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#public-headers", null ],
+        [ "The compile-time pattern model", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#the-compile-time-pattern-model", null ],
+        [ "The structural zero model", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#the-structural-zero-model", null ],
+        [ "Algorithms", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#algorithms", null ],
+        [ "Freestanding, real-time, and constant expressions", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#freestanding-real-time-and-constant-expressions", null ],
+        [ "Relation to TypedLinearAlgebra and Kalman", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#relation-to-typedlinearalgebra-and-kalman", null ],
+        [ "Test/sample/benchmark generation (<span class=\"tt\">support/support.cmake</span>)", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#testsamplebenchmark-generation-supportsupportcmake", null ],
+        [ "Other directories", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#other-directories", null ]
+      ] ],
+      [ "Recipe: adding an algorithm", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#recipe-adding-an-algorithm", null ],
+      [ "Completion checklist", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#completion-checklist", null ],
+      [ "Conventions", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#conventions", null ]
     ] ],
-    [ "Benchmarks", "md__2github_2workspace_2benchmark_2_r_e_a_d_m_e.xhtml", [
-      [ "Results", "md__2github_2workspace_2benchmark_2_r_e_a_d_m_e.xhtml#results", null ]
-    ] ],
-    [ "Changelog", "md__2github_2workspace_2_c_h_a_n_g_e_l_o_g.xhtml", [
-      [ "[0.1.0] - 2026-11-07", "md__2github_2workspace_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07", [
-        [ "Added", "md__2github_2workspace_2_c_h_a_n_g_e_l_o_g.xhtml#added", null ]
+    [ "Changelog", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml", [
+      [ "[0.1.0] - 2026-11-07", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07", [
+        [ "Added", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added", null ]
       ] ]
     ] ],
-    [ "Contributor Covenant Code of Conduct", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml", [
-      [ "Our Pledge", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-pledge", null ],
-      [ "Our Standards", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-standards", null ],
-      [ "Our Responsibilities", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-responsibilities", null ],
-      [ "Scope", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#scope", null ],
-      [ "Enforcement", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#enforcement", null ],
-      [ "Attribution", "md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution", null ]
+    [ "Contributor Covenant Code of Conduct", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml", [
+      [ "Our Pledge", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-pledge", null ],
+      [ "Our Standards", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-standards", null ],
+      [ "Our Responsibilities", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-responsibilities", null ],
+      [ "Scope", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#scope", null ],
+      [ "Enforcement", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#enforcement", null ],
+      [ "Attribution", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution", null ]
     ] ],
-    [ "Contributing to SparseLinearAlgebra", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml", [
-      [ "Code of Conduct", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#code-of-conduct", null ],
-      [ "Reporting Bugs", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#reporting-bugs", null ],
-      [ "Requesting Features", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#requesting-features", null ],
-      [ "Security Policy", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#security-policy", null ],
-      [ "Questions & Ideas", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#questions--ideas", null ],
-      [ "Pre-commit Hooks", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pre-commit-hooks", null ],
-      [ "Pull Request Merge Checklist", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist", null ]
+    [ "Contributing to SparseLinearAlgebra", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml", [
+      [ "Code of Conduct", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#code-of-conduct", null ],
+      [ "Reporting Bugs", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#reporting-bugs", null ],
+      [ "Requesting Features", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#requesting-features", null ],
+      [ "Security Policy", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#security-policy", null ],
+      [ "Questions &amp; Ideas", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#questions--ideas", null ],
+      [ "Pre-commit Hooks", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pre-commit-hooks", null ],
+      [ "Pull Request Merge Checklist", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist", null ]
     ] ],
-    [ "Contributors", "md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml", null ],
+    [ "Contributors", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml", null ],
     [ "Unit Test Code Coverage", "unit_test_coverage.xhtml", null ],
     [ "Compile-Time Traces", "time_trace.xhtml", null ],
-    [ "Installation", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml", [
-      [ "Development Build & Run", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#development-build--run", [
-        [ "Tests & Samples", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#tests--samples", null ],
-        [ "Benchmarks", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#benchmarks-1", null ],
-        [ "Installation Packages", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#installation-packages", [
-          [ "Linux", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#linux", null ],
-          [ "Windows", "md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml#windows", null ]
+    [ "Installation", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml", [
+      [ "Development Build &amp; Run", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#development-build--run", [
+        [ "Tests &amp; Samples", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#tests--samples", null ],
+        [ "Benchmarks", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#benchmarks-1", null ],
+        [ "Installation Packages", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#installation-packages", [
+          [ "Linux", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#linux", null ],
+          [ "Windows", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#windows", null ]
         ] ]
       ] ]
     ] ],
-    [ "Security Policy", "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml", [
-      [ "Supported Versions", "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#supported-versions", null ],
-      [ "Reporting a Vulnerability", "md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml#reporting-a-vulnerability", null ]
+    [ "Security Policy", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml", [
+      [ "Supported Versions", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml#supported-versions", null ],
+      [ "Reporting a Vulnerability", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml#reporting-a-vulnerability", null ]
     ] ],
     [ "Test List", "test.xhtml", null ],
     [ "Namespaces", "namespaces.xhtml", [
@@ -78,7 +88,7 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.xhtml", [
         [ "All", "namespacemembers.xhtml", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.xhtml", null ],
-        [ "Variables", "namespacemembers_vars.xhtml", null ],
+        [ "Variables", "namespacemembers_vars.xhtml", "namespacemembers_vars" ],
         [ "Typedefs", "namespacemembers_type.xhtml", null ]
       ] ]
     ] ],
@@ -110,11 +120,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "access_8cpp.xhtml",
-"functions_type.xhtml",
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml",
-"pattern_8hpp.xhtml#a4878f89526272a6edbf9099732f4a690",
-"transposed_8cpp.xhtml#a208c6d823bd60cdbb79569079adcb79e"
+"index.xhtml#sponsors",
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02dot_8cpp_03.xhtml#af99cb3cd0ab9d4707a7e0859b4f83d07",
+"singleton__fail_8cpp_source.xhtml",
+"time_trace.xhtml"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

@@ -1,7 +1,7 @@
 <map id="fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;" name="fcarouge::sparse::pattern&lt; Rows, Columns, Count &gt;">
-<area shape="rect" id="Node000001" title="The positions of the stored elements of a matrix." alt="" coords="5,165,170,348"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="20,5,65,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,71,42,105,46,140,48,148,43,149,41,141,37,105,37,71"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="111,5,155,72"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,72,113,149,108,147,124,71"/>
+<area shape="rect" id="Node000001" title="The positions of the stored elements of a matrix." alt="" coords="5,195,192,396"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="22,5,71,78"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,75,46,122,51,171,53,179,48,179,46,172,41,123,44,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="128,5,176,78"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,75,126,179,121,178,144,80"/>
 </map>

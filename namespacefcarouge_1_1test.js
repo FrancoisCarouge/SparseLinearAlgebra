@@ -4,25 +4,7 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{addition.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02addition_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02addition_8cpp_03.xhtml#a3e4a1c14034650b6d66fabfbd1e25ff9", null ]
     ] ],
-    [ "anonymous_namespace{arithmetic.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml", [
-      [ "diagonal_matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a4735ea677c4c31d1bfd063a48bb73a8a", null ],
-      [ "tridiagonal_matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a70eb900550acd7cfb3684c13a0683443", null ],
-      [ "anti_diagonal_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a01c960f119a80d27c6084e12f96b19af", null ],
-      [ "difference", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162", null ],
-      [ "first_third", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a696e090a16303ff737d361c95fcc8f42", null ],
-      [ "first_third_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a78d45de13d7f1b93a1cc4eb56c127d29", null ],
-      [ "flipped", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a128b1ebfbdd60f6f34eeae35ae0e737e", null ],
-      [ "large_product", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ab83cb23827b23120ca226da441094723", null ],
-      [ "lhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2", null ],
-      [ "negated", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a427caa882f559c65fb474ca85059f0f1", null ],
-      [ "product", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#aaa65d3c3f89fe0c6e5bc7daa53e01ed1", null ],
-      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a3a07d23686b89c132a30128611e3e715", null ],
-      [ "rectangular_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a64c62fc29eac59704fc8ee86886698d0", null ],
-      [ "rhs", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638", null ],
-      [ "scaled", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a67ed2f01627622a09ffbceb2cb5dc854", null ],
-      [ "sum", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a00aaee662629cd65f44a55c9478795ae", null ],
-      [ "written", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a39b7134c501e09ff6b5910c2021f2ae9", null ]
-    ] ],
+    [ "anonymous_namespace{arithmetic.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml", "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03" ],
     [ "anonymous_namespace{assign.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml#aefada804dc666ab962c33f89527ed6cb", null ]
     ] ],
@@ -40,15 +22,7 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{constant_index_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constant__index__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constant__index__fail_8cpp_03.xhtml#ac718b6faf5c48387220033a7d33d4bbf", null ]
     ] ],
-    [ "anonymous_namespace{construction.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml", [
-      [ "empty_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a90ba51a5f6c36cec3d655c9fabb9f8af", null ],
-      [ "ascending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#ae5f33360d5aa5c9b2a5265cfd8eb3011", null ],
-      [ "checkerboard", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#aacf3b88864f2bf187e6c7b098405a5b2", null ],
-      [ "descending", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a9f3ac314b262d4c377b0b9028889bc4b", null ],
-      [ "empty", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a5d03cf61866a8e74c53e56e13a7ee051", null ],
-      [ "is_even", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#a0a00e32e5d2be21e870201b34bbf69c7", null ],
-      [ "unordered", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml#acfba3aa9494ad1cd7bccb3e64ac6855c", null ]
-    ] ],
+    [ "anonymous_namespace{construction.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml", "namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03" ],
     [ "anonymous_namespace{constructor.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml#aa778e613d53f3f3c6755e709302888cd", null ]
     ] ],
@@ -92,7 +66,9 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "anonymous_namespace{layout.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml", [
       [ "storage", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a1411e35eca34633988de33ca2dd17a9b", null ],
-      [ "dense_values", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a048a09762edb42a649125dbd10051c81", null ]
+      [ "dense_values", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a048a09762edb42a649125dbd10051c81", null ],
+      [ "diagonal", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260", null ],
+      [ "tridiagonal", "namespacefcarouge_1_1test_1_1anonymous__namespace_02layout_8cpp_03.xhtml#a4878f89526272a6edbf9099732f4a690", null ]
     ] ],
     [ "anonymous_namespace{matrix.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02matrix_8cpp_03.xhtml#abdaed0c22f785d7b8e156c5fa6d6a7c9", null ]
@@ -153,13 +129,7 @@ var namespacefcarouge_1_1test =
     [ "anonymous_namespace{representation_fail.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02representation__fail_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02representation__fail_8cpp_03.xhtml#af4a32089a76bab3104f3d37cfd34f200", null ]
     ] ],
-    [ "anonymous_namespace{result_patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml", [
-      [ "matrix", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#acb832466f78210fd5f6eed6e1af14885", null ],
-      [ "first_element", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#aca5a06db847580251736d98c8771145d", null ],
-      [ "first_rows", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a08824a97292c7c8b5bd93e661eab0f91", null ],
-      [ "rectangular", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#a7e760ab6cc933ae3a852945dbf71fc34", null ],
-      [ "rectangular_transposed", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml#af6ee0168084341fd698493f08b5153a3", null ]
-    ] ],
+    [ "anonymous_namespace{result_patterns.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml", "namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03" ],
     [ "anonymous_namespace{run_time.cpp}", "namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml", [
       [ "test", "namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml#ad668e16ca38141fd7b3ca3231c86e8e0", null ]
     ] ],

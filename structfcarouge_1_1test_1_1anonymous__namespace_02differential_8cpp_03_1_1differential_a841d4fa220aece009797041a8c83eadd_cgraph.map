@@ -1,0 +1,18 @@
+<map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_quotients_of" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_quotients_of">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,101,201,180"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2378b1e922e7d68d52acff1e5db78025" title="The division by a matrix, against the dense solution, and its pattern storing every position the dens..." alt="" coords="249,101,444,180"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,138,236,139,231,141,202,143"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="735,5,931,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,98,440,69,491,47,549,33,608,26,723,26,717,27,609,31,550,39,493,52,443,74,398,103"/>
+<area shape="rect" id="Node000005" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6b172554ebd161da58d4cb74fec801f7" title="An invertible denominator of the pattern: its stored diagonal elements dominate." alt="" coords="492,62,687,141"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="444,122,479,119,474,120,445,127"/>
+<area shape="rect" id="Node000006" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2c8752f54da127f1fd470b6133ec4fc9" title="The quotient x of x * rhs = lhs by a textbook Gauss&#45;Jordan elimination with partial pivoting of the d..." alt="" coords="735,144,931,206"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="444,146,492,150,722,167,717,168,492,155,445,151"/>
+<area shape="rect" id="Node000007" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a" title="The matrix as an explicit dense array, read at each position." alt="" coords="492,217,687,296"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="431,177,494,210,489,209,430,183"/>
+<area shape="rect" id="Node000004" href="$classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e" title="The stored element at the given compile&#45;time position." alt="" coords="979,90,1179,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="931,61,1014,86,1009,86,931,66"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="687,73,723,66,718,67,689,78"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="688,99,965,103,960,104,688,105"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="931,144,1011,123,1016,122,932,149"/>
+</map>

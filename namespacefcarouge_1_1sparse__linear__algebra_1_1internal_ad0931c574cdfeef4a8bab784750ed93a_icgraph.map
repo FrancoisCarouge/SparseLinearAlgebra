@@ -1,5 +1,6 @@
 <map id="fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate" name="fcarouge::sparse_linear_algebra::internal::position_out_of_range_or_duplicate">
-<area shape="rect" id="Node000001" title="Called by a pattern&#39;s invalid construction: never defined, its call ends the constant evaluation,..." alt="" coords="216,5,396,61"/>
-<area shape="rect" id="Node000002" href="$structfcarouge_1_1sparse_1_1pattern.xhtml#a02df9af55250628b2891467d815d4de5" title="The pattern of the given positions, in any order." alt="" coords="5,13,168,54"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,36,168,36,168,30,200,30"/>
+<area shape="rect" id="Node000001" title="Called by a pattern&#39;s invalid construction: never defined, its call ends the constant evaluation,..." alt="" coords="238,29,438,91"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="375,15,362,11,338,8,317,10,303,15,297,21,295,31,291,27,292,19,301,10,316,5,338,3,363,5,380,15"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1sparse_1_1pattern.xhtml#a02df9af55250628b2891467d815d4de5" title="The pattern of the given positions, in any order." alt="" coords="5,38,190,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,60,190,63,190,58,225,60"/>
 </map>

@@ -1,0 +1,24 @@
+<map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::fill" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::fill">
+<area shape="rect" id="Node000001" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="1051,168,1246,230"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6b172554ebd161da58d4cb74fec801f7" title="An invertible denominator of the pattern: its stored diagonal elements dominate." alt="" coords="790,5,985,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1088,159,1001,106,969,87,969,82,1004,101,1093,160"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2378b1e922e7d68d52acff1e5db78025" title="The division by a matrix, against the dense solution, and its pattern storing every position the dens..." alt="" coords="517,44,712,123"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="1051,163,1002,150,850,118,713,97,713,92,851,113,1003,145,1057,163"/>
+<area shape="rect" id="Node000006" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6a9ded8fbc6ad35aa67140390b0c7e8f" title="The sum, the difference, the transposition, and the negation." alt="" coords="790,160,985,239"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1033,200,986,202,986,197,1038,199"/>
+<area shape="rect" id="Node000009" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a5bccbff4083456f9a35d533e1d0054db" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="772,263,1003,325"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1050,235,975,265,974,260,1045,237"/>
+<area shape="rect" id="Node000010" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a0b3a30cef7d2ab378aa52b0e5f7bcdca" title="The product, and its pattern exactly storing the reached positions." alt="" coords="790,349,985,428"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="1112,240,1063,292,1004,339,984,351,982,346,1001,334,1059,288,1107,243"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="772,61,713,72,712,67,777,60"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a841d4fa220aece009797041a8c83eadd" title=" " alt="" coords="262,44,457,123"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="499,84,458,86,457,81,504,82"/>
+<area shape="rect" id="Node000005" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml#ad7f7c5c6bacb71a7124762ad0f21fdf7" title=" " alt="" coords="5,44,214,123"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="243,85,215,86,213,81,248,82"/>
+<area shape="rect" id="Node000007" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2a326e1d7786baec6b90f24bbf67b6fa" title=" " alt="" coords="505,263,724,325"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="778,237,707,265,705,260,773,239"/>
+<area shape="rect" id="Node000008" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a816315332213ea201c80d783cf4f3a92" title=" " alt="" coords="262,255,457,333"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="487,294,458,297,457,291,492,294"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="754,294,725,297,724,291,759,294"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="773,350,705,328,706,323,778,350"/>
+</map>

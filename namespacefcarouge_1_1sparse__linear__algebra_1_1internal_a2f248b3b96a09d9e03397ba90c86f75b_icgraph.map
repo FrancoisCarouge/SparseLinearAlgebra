@@ -1,5 +1,7 @@
 <map id="fcarouge::sparse_linear_algebra::internal::cholesky_columns" name="fcarouge::sparse_linear_algebra::internal::cholesky_columns">
-<area shape="rect" id="Node000001" title="For each row of the Cholesky factor of a pattern, the set of its columns, a bit per column." alt="" coords="229,5,404,61"/>
-<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a39c6e3a68553bf78e6447a6ee7ee6be0" title="The positions of the Cholesky factor of a pattern, in ascending order." alt="" coords="5,5,181,61"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,36,181,36,181,30,213,30"/>
+<area shape="rect" id="Node000001" title="For each row of the Cholesky factor of a pattern, the set of its columns, a bit per column." alt="" coords="254,29,454,91"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="392,15,378,11,354,8,332,10,318,15,311,21,310,31,306,27,306,19,315,10,331,5,354,3,380,5,397,15"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a39c6e3a68553bf78e6447a6ee7ee6be0" title="The positions of the Cholesky factor of a pattern, in ascending order." alt="" coords="5,29,206,91"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="236,60,206,63,206,58,241,60"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="144,15,130,11,105,8,84,10,70,15,63,21,62,30,57,28,58,19,67,10,83,5,106,3,132,5,149,15"/>
 </map>

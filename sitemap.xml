@@ -41,16 +41,28 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8hpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_8cpp_source.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_2shape__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/representation__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_2shape__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_2shape__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_2shape__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8cpp_source.xhtml</loc>
@@ -68,10 +80,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/access_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/at_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/at_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constant__index__fail_8cpp_source.xhtml</loc>
@@ -101,10 +113,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/count__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/position__count__fail_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/position_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/position_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/position__count__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/position__type__fail_8cpp_source.xhtml</loc>
@@ -122,16 +134,22 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/zero__literal__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/differential_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/differential_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/scalar_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singular__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/division_2size__fail_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/dot_2size__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__fail_8cpp_source.xhtml</loc>
@@ -146,34 +164,16 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern_2matrix__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/division_2size__fail_8cpp_source.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/dot_2size__fail_8cpp_source.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_8cpp_source.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_2shape__fail_8cpp_source.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_2shape__fail_8cpp_source.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_2shape__fail_8cpp_source.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_2shape__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/format_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/find__package_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/freestanding_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/freestanding_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/find__package_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/integer__fail_8cpp_source.xhtml</loc>
@@ -191,16 +191,16 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/minus_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_8cpp_source.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/scalar__type__fail_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/operation__count_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/non__finite_8cpp_source.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/operation__count_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/concept_8cpp_source.xhtml</loc>
@@ -251,76 +251,28 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__root_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/layout_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_8cpp_source.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_8cpp_source.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/layout_8cpp_source.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/transposed_8cpp_source.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_make_lists_8txt.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_a_g_e_n_t_s_8md.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/product_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_r_e_a_d_m_e_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/benchmark_2_r_e_a_d_m_e_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_h_a_n_g_e_l_o_g_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_i_n_g_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/documentation_8dox.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_o_r_s_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/combine_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/utility_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern__algebra_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra__forward_8hpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_i_n_s_t_a_l_l_8md.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_l_i_c_e_n_s_e_8txt.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/benchmark_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/include_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/cmake_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_make_lists_8txt.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/include_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/benchmark_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pkgconfig_2_c_make_lists_8txt.xhtml</loc>
@@ -356,10 +308,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2constexpr_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2constructor_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2constructor_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2constexpr_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2differential_2_c_make_lists_8txt.xhtml</loc>
@@ -380,10 +332,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2freestanding_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2install_2consumer_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2install_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2install_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2install_2consumer_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2matrix__frob__norm_2_c_make_lists_8txt.xhtml</loc>
@@ -410,10 +362,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2pattern_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2pattern__algebra_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2realtime_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2realtime_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2pattern__algebra_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2scalability_2_c_make_lists_8txt.xhtml</loc>
@@ -434,10 +386,58 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2subtraction_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constant__velocity_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2transposed_2_c_make_lists_8txt.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test_2transposed_2_c_make_lists_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/product_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/benchmark_2_r_e_a_d_m_e_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_r_e_a_d_m_e_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_h_a_n_g_e_l_o_g_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_i_n_g_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/documentation_8dox.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_c_o_n_t_r_i_b_u_t_o_r_s_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/utility_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/combine_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern__algebra_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra__forward_8hpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_i_n_s_t_a_l_l_8md.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/_l_i_c_e_n_s_e_8txt.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constant__velocity_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/heat__diffusion_8cpp.xhtml</loc>
@@ -449,19 +449,31 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8hpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/realtime_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/type__ignorelist_8txt.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/main_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/representation__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/type__ignorelist_8txt.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_2shape__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_2shape__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_2shape__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_2shape__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/sparse__linear__algebra_8cpp.xhtml</loc>
@@ -476,10 +488,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/constructor_2narrowing__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/access_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/assign__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/access_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/at_8cpp.xhtml</loc>
@@ -545,6 +557,12 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singular__fail_8cpp.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/division_2size__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/dot_2size__fail_8cpp.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__fail_8cpp.xhtml</loc>
   </url>
   <url>
@@ -554,31 +572,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/dot_2matrix__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/division_2size__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern_2matrix__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/dot_2size__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/addition_2shape__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/equal__to_2shape__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_2shape__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/subtraction_2shape__fail_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/format_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern_2matrix__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/freestanding_8cpp.xhtml</loc>
@@ -599,13 +596,16 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/matrix__one__norm_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/minus_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/format_8cpp.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/scalar__type__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/multiplication_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/scalar__type__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/minus_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/non__finite_8cpp.xhtml</loc>
@@ -629,10 +629,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/cholesky__asymmetric__fail_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/cholesky__diagonal__fail_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern__algebra_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/pattern__algebra_8cpp.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/cholesky__diagonal__fail_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/result__patterns_8cpp.xhtml</loc>
@@ -653,13 +653,13 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/scale_8cpp.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singleton_8cpp.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/run__time_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/square__root_8cpp.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/singleton_8cpp.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/layout_8cpp.xhtml</loc>
@@ -671,22 +671,19 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/transposed_8cpp.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_a_g_e_n_t_s.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2benchmark_2_r_e_a_d_m_e.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_c_h_a_n_g_e_l_o_g.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml</loc>
-  </url>
-  <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/unit_test_coverage.xhtml</loc>
@@ -695,10 +692,10 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/time_trace.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_i_n_s_t_a_l_l.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2github_2workspace_2_s_e_c_u_r_i_t_y.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/test.xhtml</loc>
@@ -743,19 +740,19 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1sparse.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1position.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1pattern.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1pattern.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1position.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1shape__t.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1shape__t-members.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1position-members.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1position-members.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1shape__t-members.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1sparse_1_1pattern-members.xhtml</loc>
@@ -779,6 +776,12 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1pattern.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1pattern-members.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/conceptfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1writable__at.xhtml</loc>
   </url>
   <url>
@@ -795,6 +798,12 @@
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_1_1pattern.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03_1_1pattern-members.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml</loc>
@@ -819,6 +828,18 @@
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03_1_1pattern.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03_1_1position.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03_1_1position-members.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02construction_8cpp_03_1_1pattern-members.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02constructor_8cpp_03.xhtml</loc>
@@ -941,6 +962,12 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03.xhtml</loc>
   </url>
   <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_1_1pattern.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_1_1pattern-members.xhtml</loc>
+  </url>
+  <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/conceptfcarouge_1_1test_1_1anonymous__namespace_02pattern__algebra_8cpp_03_1_1factorable.xhtml</loc>
   </url>
   <url>
@@ -960,6 +987,12 @@
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml</loc>
+  </url>
+  <url>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern-members.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacefcarouge_1_1test_1_1anonymous__namespace_02run__time_8cpp_03.xhtml</loc>
@@ -1391,58 +1424,58 @@
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_b.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_c.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_d.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_e.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_f.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_i.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_l.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_n.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_o.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_p.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_q.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_r.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_s.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_t.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_u.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_v.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_w.xhtml</loc>
   </url>
   <url>
-    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars.xhtml</loc>
+    <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_vars_z.xhtml</loc>
   </url>
   <url>
     <loc>https://francoiscarouge.github.io/SparseLinearAlgebra/namespacemembers_type.xhtml</loc>

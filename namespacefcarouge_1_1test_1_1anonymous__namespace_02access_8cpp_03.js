@@ -1,5 +1,6 @@
 var namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03 =
 [
+    [ "pattern", "structfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1pattern.xhtml", "structfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1pattern" ],
     [ "writable_at", "conceptfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1writable__at.xhtml", null ],
     [ "readable_at", "conceptfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1readable__at.xhtml", null ],
     [ "constant_readable_at", "conceptfcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03_1_1constant__readable__at.xhtml", null ],
@@ -10,5 +11,6 @@ var namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03 =
     [ "row", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#aabe067ba97effae267b50cf08b9144de", null ],
     [ "singleton", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a632778c998c5c1de31f4e3840e439337", null ],
     [ "column_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#ab1c90de56c5a56d92dffc8d3f7978ad4", null ],
-    [ "row_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9", null ]
+    [ "row_pattern", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#a673337de1e05cc27599bcaf38df180a9", null ],
+    [ "shape", "namespacefcarouge_1_1test_1_1anonymous__namespace_02access_8cpp_03.xhtml#afc86d359c92e4aed11bb24af084e9a13", null ]
 ];

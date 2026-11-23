@@ -1,0 +1,9 @@
+<map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::solve" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::solve">
+<area shape="rect" id="Node000001" title="The quotient x of x * rhs = lhs by a textbook Gauss&#45;Jordan elimination with partial pivoting of the d..." alt="" coords="748,14,944,76"/>
+<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2378b1e922e7d68d52acff1e5db78025" title="The division by a matrix, against the dense solution, and its pattern storing every position the dens..." alt="" coords="505,5,700,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="730,45,701,47,701,42,735,45"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a841d4fa220aece009797041a8c83eadd" title=" " alt="" coords="262,5,457,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,45,457,47,457,42,492,45"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml#ad7f7c5c6bacb71a7124762ad0f21fdf7" title=" " alt="" coords="5,5,214,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,45,214,47,214,42,248,44"/>
+</map>

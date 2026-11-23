@@ -1,7 +1,7 @@
 <map id="fcarouge::sparse_matrix&lt; Type, Pattern &gt;" name="fcarouge::sparse_matrix&lt; Type, Pattern &gt;">
-<area shape="rect" id="Node000001" title="Compile&#45;time sparsity pattern matrix." alt="" coords="92,165,240,592"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,162,102"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,116,115,164,109,166,97,117"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="186,20,315,87"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,87,229,149,223,148,240,86"/>
+<area shape="rect" id="Node000001" title="Compile&#45;time sparsity pattern matrix." alt="" coords="106,185,275,654"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,187,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,124,132,185,127,185,114,129"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="212,22,359,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,92,259,169,254,167,275,97"/>
 </map>
