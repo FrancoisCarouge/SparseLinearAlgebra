@@ -66,6 +66,7 @@ var NAVTREE =
       [ "Pull Request Merge Checklist", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist", null ]
     ] ],
     [ "Contributors", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_o_r_s.xhtml", null ],
+    [ "Embedded Footprint", "footprint.xhtml", null ],
     [ "Unit Test Code Coverage", "unit_test_coverage.xhtml", null ],
     [ "Compile-Time Traces", "time_trace.xhtml", null ],
     [ "Installation", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml", [
@@ -110,7 +111,8 @@ var NAVTREE =
       [ "File Members", "globals.xhtml", [
         [ "All", "globals.xhtml", "globals_dup" ],
         [ "Functions", "globals_func.xhtml", null ],
-        [ "Variables", "globals_vars.xhtml", "globals_vars" ]
+        [ "Variables", "globals_vars.xhtml", "globals_vars" ],
+        [ "Typedefs", "globals_type.xhtml", null ]
       ] ]
     ] ],
     [ "Examples", "examples.xhtml", "examples" ]
@@ -120,10 +122,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "access_8cpp.xhtml",
-"index.xhtml#sponsors",
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02dot_8cpp_03.xhtml#af99cb3cd0ab9d4707a7e0859b4f83d07",
-"singleton__fail_8cpp_source.xhtml",
-"time_trace.xhtml"
+"index.xhtml#cmake",
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2",
+"operation__count_8cpp_source.xhtml",
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#a44187daf05a333b2893cd4732b3c2757"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

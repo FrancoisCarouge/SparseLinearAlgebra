@@ -183,7 +183,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000067">Test</a></b></dt><dd>Verifies the positions are sorted in row-major order, whatever the order they are given in. </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000069">Test</a></b></dt><dd>Verifies the pattern's shape and count. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000071">Test</a></b></dt><dd>Verifies a position's index is its row-major rank, and a structural zero has none. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000072">Test</a></b></dt><dd>Verifies a position's index is its row-major rank, and a structural zero has none. </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000073">Test</a></b></dt><dd>Verifies a lookup past the last position, or out of the matrix, finds no element. </dd></dl>
 <dl class="test"><dt><b><a class="el" href="test.xhtml#_test000074">Test</a></b></dt><dd>Verifies the order of the given positions does not change the type or the value: two equal patterns are the same matrix type. </dd></dl>
 
@@ -283,9 +283,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{[](std::size_t row, std::size_t column) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> (row + column) % 2 == 0;</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{[](std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>, std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">  <span class="keywordflow">return</span> (<a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> + <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) % 2 == 0;</div>
 <div class="line">}}</div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_a6aa766d36c8df1fdbca1d6219bc002f5"><div class="ttname"><a href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a></div><div class="ttdeci">sparse_matrix&lt; float, column_structure &gt; column</div><div class="ttdoc">The entry points of the operations, each linked alone, named after their operation.</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00054">configuration.cpp:54</a></div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_afe04b44f680fbbb76a4f8bedfe0ce3c1"><div class="ttname"><a href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a></div><div class="ttdeci">sparse_matrix&lt; float, row_structure &gt; row</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00053">configuration.cpp:53</a></div></div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000076">Test</a></b></dt><dd>Verifies a pattern generated from a predicate. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="construction_8cpp_source.xhtml#l00092">92</a> of file <a class="el" href="construction_8cpp_source.xhtml">construction.cpp</a>.</p>

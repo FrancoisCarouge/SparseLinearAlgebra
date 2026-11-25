@@ -266,13 +266,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
 </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, auto Pattern, std::<span class="keywordtype">size_t</span> Row&gt; <span class="keyword">struct </span>row {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type, auto Pattern, std::<span class="keywordtype">size_t</span> Row&gt; <span class="keyword">struct </span><a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  std::array&lt;Type, stored_in_row&lt;Pattern, Row&gt;&gt; elements{};</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Values&gt;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keyword">requires</span>(<span class="keyword">sizeof</span>...(Values) == Pattern.columns and</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>             <a class="code hl_variable" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a7c2ef5fd4323622e5ef3575f073df4e2">are_given_in_row</a>&lt;Type, Pattern, Row, Values...&gt;)</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span>(<span class="keyword">false</span>) row(const Values &amp;...values) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span>(<span class="keyword">false</span>) <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>(const Values &amp;...values) {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    std::size_t index{0};</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    (<a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a1ef27b2f10a7918a5943a6b05047dbbe">store_given</a>(elements, index, values), ...);</div>
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keyword">constexpr</span> storage() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> storage(<span class="keyword">const</span> row&lt;Type, Pattern, Rows&gt; &amp;...rows) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keyword">constexpr</span> <span class="keyword">explicit</span> storage(<span class="keyword">const</span> <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row&lt;Type, Pattern, Rows&gt;</a> &amp;...rows) {</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    std::size_t index{0};</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    (<a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a9e51e1ea038d8ce18439571d3dc6c40c">append_row</a>(values, index, rows.elements), ...);</div>
@@ -382,8 +382,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    ++next[Pattern.positions[i].column + 1];</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  }</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    next[column + 1] += next[column];</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt; Pattern.columns; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    next[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> + 1] += next[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>];</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  }</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  std::array&lt;std::size_t, Pattern.count&gt; result{};</div>
@@ -438,9 +438,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  std::array&lt;row_set, row_count&lt;Rhs&gt;&gt; selected{};</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; Rhs.count; ++i) {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keyword">const</span> <span class="keyword">auto</span> [row, column]{Rhs.positions[i]};</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keyword">const</span> <span class="keyword">auto</span> [row, <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>]{Rhs.positions[i]};</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    selected[row][column / 64] |= std::uint64_t{1} &lt;&lt; (column % 64);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    selected[row][<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> / 64] |= std::uint64_t{1} &lt;&lt; (<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> % 64);</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  }</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  std::array&lt;row_set, row_count&lt;Lhs&gt;&gt; result{};</div>
@@ -478,9 +478,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keyword">const</span> <span class="keyword">auto</span> reached{<a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a76ec8ecdb7ea2f1fbf96030d4289ef4a">reached_columns&lt;Lhs, Rhs&gt;</a>()};</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Lhs.rows; ++row) {</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Rhs.columns; ++column) {</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>      <span class="keywordflow">if</span> (((reached[row][column / 64] &gt;&gt; (column % 64)) &amp; 1U) != 0) {</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        list.push({row, column});</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt; Rhs.columns; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>      <span class="keywordflow">if</span> (((reached[row][<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> / 64] &gt;&gt; (<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> % 64)) &amp; 1U) != 0) {</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        list.push({row, <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>});</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>      }</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    }</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  }</div>
@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 </div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span></div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> Columns&gt; <span class="keyword">struct </span>matching {</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  std::array&lt;std::size_t, Columns&gt; row{};</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  std::array&lt;std::size_t, Columns&gt; <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>{};</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  std::size_t size{0};</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>};</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span></div>
@@ -664,14 +664,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keyword">const</span> std::size_t end{Pattern.lower_bound({row + 1, 0})};</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keywordflow">for</span> (std::size_t i{Pattern.lower_bound({row, 0})}; i &lt; end; ++i) {</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="keyword">const</span> std::size_t column{Pattern.positions[i].column};</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="keyword">const</span> std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{Pattern.positions[i].column};</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      <span class="keywordflow">if</span> (not visited[column]) {</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        visited[column] = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        previous[column] = from;</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      <span class="keywordflow">if</span> (not visited[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>]) {</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        visited[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        previous[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] = from;</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        <span class="keywordflow">if</span> (matched.row[column] == <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>) {</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>          <span class="keywordflow">for</span> (std::size_t current{column}; current != <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>;</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        <span class="keywordflow">if</span> (matched.row[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] == <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>) {</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>          <span class="keywordflow">for</span> (std::size_t current{<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>}; current != <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>;</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>               current = previous[current]) {</div>
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>            matched.row[current] = previous[current] == <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a></div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>                                       ? start</div>
@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>        }</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>        queue[tail] = column;</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>        queue[tail] = <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>;</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>        ++tail;</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>      }</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    }</div>
@@ -705,8 +705,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>  matching&lt;Pattern.columns&gt; result{};</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>  std::array&lt;bool, Pattern.rows&gt; placed{};</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    result.row[column] = <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>;</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>  <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt; Pattern.columns; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    result.row[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] = <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>;</div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>  }</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Pattern.rows; ++row) {</div>
@@ -864,8 +864,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>  block_triangular&lt;Pattern.rows&gt; result{};</div>
 <div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>  component_search&lt;Pattern.rows&gt; search{};</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> </div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>  <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Pattern.columns; ++column) {</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    result.equation[matched.row[column]] = column;</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>  <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt; Pattern.columns; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    result.equation[matched.row[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>]] = <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>;</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  }</div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
 <div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>  <span class="keywordflow">for</span> (std::size_t unknown{0}; unknown &lt; Pattern.rows; ++unknown) {</div>
@@ -926,9 +926,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  position_list&lt;Lhs.rows * Rhs.columns&gt; list;</div>
 <div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span> </div>
 <div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Lhs.rows; ++row) {</div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>    <span class="keywordflow">for</span> (std::size_t column{0}; column &lt; Rhs.columns; ++column) {</div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>      <span class="keywordflow">if</span> (reached[column][row]) {</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>        list.push({row, column});</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>    <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt; Rhs.columns; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>      <span class="keywordflow">if</span> (reached[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>][row]) {</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>        list.push({row, <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>});</div>
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>      }</div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>    }</div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  }</div>
@@ -953,14 +953,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
 <div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>    <span class="keywordflow">for</span> (std::size_t i{Pattern.lower_bound({row, 0})};</div>
 <div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>         i &lt; end &amp;&amp; Pattern.positions[i].column &lt; row; ++i) {</div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>      <span class="keywordflow">for</span> (std::size_t column{Pattern.positions[i].column};</div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>           reached_by[column] != row; column = parent[column]) {</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>        <span class="keywordflow">if</span> (parent[column] == <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>) {</div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>          parent[column] = row;</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>      <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{Pattern.positions[i].column};</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>           reached_by[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] != row; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> = parent[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>]) {</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>        <span class="keywordflow">if</span> (parent[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] == <a class="code hl_variable" href="namespacefcarouge_1_1sparse.xhtml#a60901167b3058282c44c4fe6d9c27da0">sparse::absent</a>) {</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>          parent[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] = row;</div>
 <div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>        }</div>
 <div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span> </div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>        reached_by[column] = row;</div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>        result[row][column / 64] |= std::uint64_t{1} &lt;&lt; (column % 64);</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>        reached_by[<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>] = row;</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>        result[row][<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> / 64] |= std::uint64_t{1} &lt;&lt; (<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> % 64);</div>
 <div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>      }</div>
 <div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>    }</div>
 <div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span> </div>
@@ -992,9 +992,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>  <span class="keyword">const</span> <span class="keyword">auto</span> reached{<a class="code hl_function" href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a2f248b3b96a09d9e03397ba90c86f75b">cholesky_columns&lt;Pattern&gt;</a>()};</div>
 <div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span> </div>
 <div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>  <span class="keywordflow">for</span> (std::size_t row{0}; row &lt; Pattern.rows; ++row) {</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>    <span class="keywordflow">for</span> (std::size_t column{0}; column &lt;= row; ++column) {</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>      <span class="keywordflow">if</span> (((reached[row][column / 64] &gt;&gt; (column % 64)) &amp; 1U) != 0) {</div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>        list.push({row, column});</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>    <span class="keywordflow">for</span> (std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{0}; <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> &lt;= row; ++<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) {</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>      <span class="keywordflow">if</span> (((reached[row][<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> / 64] &gt;&gt; (<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> % 64)) &amp; 1U) != 0) {</div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>        list.push({row, <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>});</div>
 <div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>      }</div>
 <div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>    }</div>
 <div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>  }</div>
@@ -1040,6 +1040,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('utility_8hpp_s
 <div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span> </div>
 <div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span><span class="preprocessor">#endif </span><span class="comment">// FCAROUGE_SPARSE_LINEAR_ALGEBRA_INTERNAL_UTILITY_HPP</span></div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00079">sparse_linear_algebra.hpp:80</a></div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_a6aa766d36c8df1fdbca1d6219bc002f5"><div class="ttname"><a href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a></div><div class="ttdeci">sparse_matrix&lt; float, column_structure &gt; column</div><div class="ttdoc">The entry points of the operations, each linked alone, named after their operation.</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00054">configuration.cpp:54</a></div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_afe04b44f680fbbb76a4f8bedfe0ce3c1"><div class="ttname"><a href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a></div><div class="ttdeci">sparse_matrix&lt; float, row_structure &gt; row</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00053">configuration.cpp:53</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml">fcarouge::sparse_linear_algebra::internal</a></div><div class="ttdoc">Internal implementation details.</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_a04bdb935278c02c96b7a2eb5403418c6"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a04bdb935278c02c96b7a2eb5403418c6">fcarouge::sparse_linear_algebra::internal::quotient_positions</a></div><div class="ttdeci">consteval auto quotient_positions()</div><div class="ttdoc">The positions of the quotient x of x * rhs = lhs, in ascending order.</div><div class="ttdef"><b>Definition</b> <a href="#l00915">utility.hpp:915</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse__linear__algebra_1_1internal_xhtml_a0685133f0eedbde0d1b3233acad490d5"><div class="ttname"><a href="namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a0685133f0eedbde0d1b3233acad490d5">fcarouge::sparse_linear_algebra::internal::column_count</a></div><div class="ttdeci">constexpr std::size_t column_count</div><div class="ttdoc">The count of columns of a pattern.</div><div class="ttdef"><b>Definition</b> <a href="#l00194">utility.hpp:194</a></div></div>

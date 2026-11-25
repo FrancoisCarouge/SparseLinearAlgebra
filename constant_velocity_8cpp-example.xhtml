@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('constant_veloc
 <div class="line"> </div>
 <div class="line">  <span class="comment">// The prediction of the uncertainty: upper triangular by diagonal by lower</span></div>
 <div class="line">  <span class="comment">// triangular, plus diagonal, is dense.</span></div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> propagated{model * uncertainty * <a id="a3" name="a3"></a><a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(model) + process};</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> propagated{model * uncertainty * <a id="_a3" name="_a3"></a><a class="code hl_function" href="configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c">transposed</a>(model) + process};</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static_assert</span>(std::same_as&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(predicted)&gt;, state&gt;);</div>
 <div class="line">  <span class="keyword">static_assert</span>(</div>
@@ -206,11 +206,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('constant_veloc
 <div class="line">}()};</div>
 <div class="line">} <span class="comment">// namespace</span></div>
 <div class="line">} <span class="comment">// namespace fcarouge::sample</span></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_af8a2ef90ebf4ef3324856a214ab9006c"><div class="ttname"><a href="configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c">transposed</a></div><div class="ttdeci">auto transposed(const matrix &amp;value) -&gt; const transposed_matrix *</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00124">configuration.cpp:124</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sample_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sample.xhtml">fcarouge::sample</a></div><div class="ttdoc">Usage samples.</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a1b06cc8547501f1115d9479a339dad6f"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f">fcarouge::sparse::dense</a></div><div class="ttdeci">constexpr pattern dense</div><div class="ttdoc">Every position is stored: a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00321">pattern.hpp:321</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a3715e2ca0db50b08c5067c3feefd2a40"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a3715e2ca0db50b08c5067c3feefd2a40">fcarouge::sparse::upper_triangular</a></div><div class="ttdeci">constexpr auto upper_triangular</div><div class="ttdoc">The main diagonal and above of a square matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00350">pattern.hpp:350</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_ae4a0cbe5582ab666b4aee74fbae8c260"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260">fcarouge::sparse::diagonal</a></div><div class="ttdeci">constexpr auto diagonal</div><div class="ttdoc">The main diagonal of a square matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00338">pattern.hpp:338</a></div></div>
-<div class="ttc" id="anamespacefcarouge_xhtml_ad91a08ee8a52749487475f762d82fe0d"><div class="ttname"><a href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed</a></div><div class="ttdeci">constexpr auto transposed(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; sparse_matrix&lt; Type, sparse::pattern_transpose&lt; Pattern &gt; &gt;</div></div>
 <div class="ttc" id="arealtime_8hpp_xhtml"><div class="ttname"><a href="realtime_8hpp.xhtml">realtime.hpp</a></div><div class="ttdoc">Opt-out of the real-time verification.</div></div>
 <div class="ttc" id="asparse__linear__algebra_8hpp_xhtml"><div class="ttname"><a href="sparse__linear__algebra_8hpp.xhtml">sparse_linear_algebra.hpp</a></div><div class="ttdoc">Compile-time sparsity pattern linear algebra.</div></div>
 </div><!-- fragment --> </div><!-- contents -->

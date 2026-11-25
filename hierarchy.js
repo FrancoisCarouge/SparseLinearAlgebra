@@ -15,6 +15,12 @@ var hierarchy =
     [ "fcarouge::test::anonymous_namespace{differential.cpp}::differential::quotients_by&lt; Denominators &gt;", "structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential_1_1quotients__by.xhtml", null ],
     [ "fcarouge::sparse::shape_t&lt; Rows, Columns &gt;", "structfcarouge_1_1sparse_1_1shape__t.xhtml", null ],
     [ "fcarouge::sparse_linear_algebra::internal::storage&lt; Type, Pattern, Rows &gt;", null, [
+      [ "fcarouge::sparse_matrix< float, structure >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
+      [ "fcarouge::sparse_matrix< float, row_structure >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
+      [ "fcarouge::sparse_matrix< float, column_structure >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
+      [ "fcarouge::sparse_matrix< float, sparse::pattern_product< structure, structure > >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
+      [ "fcarouge::sparse_matrix< float, sparse::pattern_quotient< structure, structure > >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
+      [ "fcarouge::sparse_matrix< float, sparse::pattern_transpose< structure > >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
       [ "fcarouge::sparse_matrix< double, sparse::diagonal< 2 > >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
       [ "fcarouge::sparse_matrix< double, column_pattern >", "classfcarouge_1_1sparse__matrix.xhtml", null ],
       [ "fcarouge::sparse_matrix< double, row_pattern >", "classfcarouge_1_1sparse__matrix.xhtml", null ],

@@ -1,0 +1,13 @@
+<map id="product" name="product">
+<area shape="rect" id="Node000001" title=" " alt="" coords="759,94,830,122"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="824,79,814,75,794,73,776,75,766,80,763,85,768,95,763,93,758,85,762,76,774,70,795,68,816,70,829,79"/>
+<area shape="rect" id="Node000002" href="$namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03.xhtml#a092c9adb0b821ea4d68fc417409b9a71" title="Square matrix&#45;matrix product of the given pattern, of random stored elements, appended as a Markdown ..." alt="" coords="520,29,707,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="741,95,708,88,708,83,747,95"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a0b3a30cef7d2ab378aa52b0e5f7bcdca" title="The product, and its pattern exactly storing the reached positions." alt="" coords="516,116,711,194"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="747,121,712,132,711,127,742,121"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="640,14,631,10,614,8,598,10,588,14,583,21,582,31,578,27,578,19,585,10,597,5,614,3,633,5,646,15"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2a326e1d7786baec6b90f24bbf67b6fa" title=" " alt="" coords="249,124,468,186"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="497,155,469,157,468,152,503,155"/>
+<area shape="rect" id="Node000005" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a816315332213ea201c80d783cf4f3a92" title=" " alt="" coords="5,116,201,194"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="230,155,201,157,201,152,236,155"/>
+</map>

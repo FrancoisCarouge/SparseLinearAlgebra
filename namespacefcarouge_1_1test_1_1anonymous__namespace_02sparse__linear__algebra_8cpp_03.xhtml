@@ -145,7 +145,7 @@ Variables</h2></td></tr>
 <div class="line">                         {0_o, 6, 7}}; </div>
 <div class="line"> </div>
 <div class="line">  assert(std::format(<span class="stringliteral">&quot;{}&quot;</span>, band) == <span class="stringliteral">&quot;[[1, 2, 0], [3, 4, 5], [0, 6, 7]]&quot;</span>);</div>
-<div class="line">  assert(std::format(<span class="stringliteral">&quot;{}&quot;</span>, band + <a class="code hl_function" href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">transposed</a>(band)) ==</div>
+<div class="line">  assert(std::format(<span class="stringliteral">&quot;{}&quot;</span>, band + <a class="code hl_function" href="configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c">transposed</a>(band)) ==</div>
 <div class="line">         <span class="stringliteral">&quot;[[2, 5, 0], [5, 8, 11], [0, 11, 14]]&quot;</span>);</div>
 <div class="line">  assert(std::format(<span class="stringliteral">&quot;{}&quot;</span>, band * band) ==</div>
 <div class="line">         <span class="stringliteral">&quot;[[7, 10, 10], [15, 52, 55], [18, 66, 79]]&quot;</span>);</div>
@@ -154,7 +154,7 @@ Variables</h2></td></tr>
 <div class="line">}()}</div>
 <div class="ttc" id="aclassfcarouge_1_1not__realtime_xhtml"><div class="ttname"><a href="classfcarouge_1_1not__realtime.xhtml">fcarouge::not_realtime</a></div><div class="ttdoc">Opt-out token of the real-time verification.</div><div class="ttdef"><b>Definition</b> <a href="realtime_8hpp_source.xhtml#l00056">realtime.hpp:56</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00079">sparse_linear_algebra.hpp:80</a></div></div>
-<div class="ttc" id="anamespacefcarouge_xhtml_ad91a08ee8a52749487475f762d82fe0d"><div class="ttname"><a href="namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d">fcarouge::transposed</a></div><div class="ttdeci">constexpr auto transposed(const sparse_matrix&lt; Type, Pattern &gt; &amp;value) -&gt; sparse_matrix&lt; Type, sparse::pattern_transpose&lt; Pattern &gt; &gt;</div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_af8a2ef90ebf4ef3324856a214ab9006c"><div class="ttname"><a href="configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c">transposed</a></div><div class="ttdeci">auto transposed(const matrix &amp;value) -&gt; const transposed_matrix *</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00124">configuration.cpp:124</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="sparse__linear__algebra_8cpp_source.xhtml#l00044">44</a> of file <a class="el" href="sparse__linear__algebra_8cpp_source.xhtml">sparse_linear_algebra.cpp</a>.</p>
 

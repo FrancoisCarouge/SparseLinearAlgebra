@@ -1,4 +1,7 @@
 <map id="fcarouge::matrix_inf_norm" name="fcarouge::matrix_inf_norm">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,200,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="134,14,124,10,102,8,82,10,71,15,69,20,74,29,69,28,63,20,68,11,81,5,103,3,126,5,139,14"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="183,29,377,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="314,14,303,10,280,8,258,10,246,15,243,20,248,30,244,28,238,20,243,11,257,5,280,3,305,5,319,14"/>
+<area shape="rect" id="Node000002" href="$configuration_8cpp.xhtml#a20cd7e84c263fac83b4a053e81a37387" title=" " alt="" coords="5,29,135,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="164,43,135,46,135,41,170,43"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="104,14,93,10,70,8,48,10,36,15,33,20,39,29,34,29,28,20,33,11,47,5,70,3,95,5,110,14"/>
 </map>

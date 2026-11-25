@@ -1,24 +1,27 @@
 <map id="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_all_pairs" name="fcarouge::test::anonymous_namespace{differential::cpp}::differential::verify_all_pairs">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,92,201,170"/>
 <area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2a326e1d7786baec6b90f24bbf67b6fa" title=" " alt="" coords="249,100,468,162"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,128,236,130,231,132,202,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,129,235,130,231,132,202,134"/>
 <area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6a9ded8fbc6ad35aa67140390b0c7e8f" title="The sum, the difference, the transposition, and the negation." alt="" coords="534,92,729,170"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="468,128,521,130,516,131,469,133"/>
-<area shape="rect" id="Node000008" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a5bccbff4083456f9a35d533e1d0054db" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="516,5,746,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="468,129,521,131,516,132,469,134"/>
+<area shape="rect" id="Node000008" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a5bccbff4083456f9a35d533e1d0054db" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="516,6,746,67"/>
 <area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="448,97,528,72,523,74,450,102"/>
 <area shape="rect" id="Node000009" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a0b3a30cef7d2ab378aa52b0e5f7bcdca" title="The product, and its pattern exactly storing the reached positions." alt="" coords="534,194,729,273"/>
-<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="443,160,522,191,516,191,442,165"/>
-<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="794,100,990,162"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="729,128,781,131,776,131,730,133"/>
-<area shape="rect" id="Node000006" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a" title="The matrix as an explicit dense array, read at each position." alt="" coords="794,190,990,269"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="730,165,782,187,777,187,729,170"/>
-<area shape="rect" id="Node000007" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="813,36,971,63"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="729,98,828,69,833,68,730,103"/>
-<area shape="rect" id="Node000005" href="$classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e" title="The stored element at the given compile&#45;time position." alt="" coords="1038,117,1238,145"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="990,128,1025,131,1020,131,990,133"/>
-<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="850,34,843,27,849,17,865,11,892,9,921,11,938,20,933,20,920,17,892,14,866,16,852,21,849,26,855,36"/>
-<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="718,65,793,94,788,94,718,70"/>
-<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="747,39,800,44,794,45,747,45"/>
-<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="729,192,796,168,801,167,730,198"/>
-<area shape="poly" id="edge13_Node000009_Node000006" title=" " alt="" coords="729,229,781,231,776,231,729,235"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="442,160,522,192,516,192,442,165"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a34ebea5c1d02a095bab5b88053d79a43" title="A matrix of the pattern filled with distinct, signed, integral values of exact products and sums." alt="" coords="794,94,990,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="729,126,781,127,776,128,730,131"/>
+<area shape="rect" id="Node000006" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a3c97e4a7f5bf863911355408bae8289a" title="The matrix as an explicit dense array, read at each position." alt="" coords="794,180,990,258"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="730,162,782,181,777,181,729,167"/>
+<area shape="rect" id="Node000007" href="$namespacefcarouge.xhtml#ad91a08ee8a52749487475f762d82fe0d" title=" " alt="" coords="813,29,971,57"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="729,96,832,63,837,62,730,101"/>
+<area shape="rect" id="Node000005" href="$classfcarouge_1_1sparse__matrix.xhtml#ad649e914fcdd6692336385bd4908d50e" title="The stored element at the given compile&#45;time position." alt="" coords="1038,111,1238,138"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="990,122,1025,124,1020,125,990,127"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="850,28,843,20,849,11,865,5,892,3,921,5,938,14,933,14,920,10,892,8,866,10,852,15,849,20,855,30"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="725,65,787,88,782,88,725,71"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="746,37,800,40,794,41,747,42"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="726,191,800,163,805,161,728,196"/>
+<area shape="poly" id="edge15_Node000009_Node000006" title=" " alt="" coords="729,226,781,225,776,226,730,231"/>
+<area shape="rect" id="Node000010" href="$configuration_8cpp.xhtml#a267307f77ec1864f86d3c50e0688c482" title=" " alt="" coords="857,307,927,334"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="730,264,845,304,840,304,729,269"/>
+<area shape="poly" id="edge14_Node000010_Node000010" title=" " alt="" coords="854,308,844,300,847,289,864,282,892,280,928,285,938,290,940,299,936,296,934,294,927,290,892,285,865,288,851,293,849,299,859,310"/>
 </map>

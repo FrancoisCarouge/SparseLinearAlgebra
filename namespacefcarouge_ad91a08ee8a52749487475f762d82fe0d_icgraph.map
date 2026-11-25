@@ -1,13 +1,16 @@
 <map id="fcarouge::transposed" name="fcarouge::transposed">
-<area shape="rect" id="Node000001" title=" " alt="" coords="794,79,953,106"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="913,63,901,60,873,57,848,59,834,64,831,70,837,79,832,77,825,70,831,60,847,54,874,52,902,55,919,64"/>
-<area shape="rect" id="Node000002" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6a9ded8fbc6ad35aa67140390b0c7e8f" title="The sum, the difference, the transposition, and the negation." alt="" coords="534,5,729,84"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="783,75,729,67,729,61,788,75"/>
-<area shape="rect" id="Node000005" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a5bccbff4083456f9a35d533e1d0054db" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="516,108,746,170"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="786,110,747,120,746,114,781,110"/>
-<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2a326e1d7786baec6b90f24bbf67b6fa" title=" " alt="" coords="249,62,468,124"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="516,65,469,76,468,71,521,64"/>
-<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a816315332213ea201c80d783cf4f3a92" title=" " alt="" coords="5,53,201,132"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="230,93,201,95,201,90,236,92"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="498,117,468,114,468,109,504,117"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="794,107,953,134"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="913,91,901,88,873,85,848,87,834,92,831,97,837,107,832,105,825,98,831,88,847,82,874,80,902,83,919,92"/>
+<area shape="rect" id="Node000002" href="$configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c" title=" " alt="" coords="584,29,678,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="825,100,746,71,678,54,678,49,747,66,830,100"/>
+<area shape="rect" id="Node000003" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a6a9ded8fbc6ad35aa67140390b0c7e8f" title="The sum, the difference, the transposition, and the negation." alt="" coords="534,81,729,160"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="776,121,729,123,729,118,781,120"/>
+<area shape="rect" id="Node000006" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a5bccbff4083456f9a35d533e1d0054db" title="A matrix computes the same as a matrix without structural zeros." alt="" coords="516,184,746,246"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="826,140,747,174,715,186,713,181,745,169,821,141"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="671,14,658,10,631,8,606,10,592,15,588,20,595,30,590,28,583,20,588,11,605,5,631,3,660,5,676,14"/>
+<area shape="rect" id="Node000004" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a2a326e1d7786baec6b90f24bbf67b6fa" title=" " alt="" coords="249,138,468,199"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="516,141,469,152,468,147,521,140"/>
+<area shape="rect" id="Node000005" href="$structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml#a816315332213ea201c80d783cf4f3a92" title=" " alt="" coords="5,129,201,208"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="230,169,201,171,201,166,236,168"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="498,193,468,190,468,185,504,193"/>
 </map>

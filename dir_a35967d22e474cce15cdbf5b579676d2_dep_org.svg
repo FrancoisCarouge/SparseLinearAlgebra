@@ -6,7 +6,7 @@
 <!-- Title: /home/runner/work/SparseLinearAlgebra/SparseLinearAlgebra/test/pattern Pages: 1 -->
 <svg width="92pt" height="122pt"
  viewBox="0.00 0.00 92.00 122.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 118.25)">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 118.25)">
 <title>/home/runner/work/SparseLinearAlgebra/SparseLinearAlgebra/test/pattern</title>
 <g id="clust1" class="cluster">
 <title>clusterdir_13e138d54eb8818da29c3992edef070a</title>
@@ -37,12 +37,12 @@
 <!-- dir_a35967d22e474cce15cdbf5b579676d2&#45;&gt;dir_d44c64559bbebec7f509842c48db8b23 -->
 <g id="edge1" class="edge">
 <title>dir_a35967d22e474cce15cdbf5b579676d2&#45;&gt;dir_d44c64559bbebec7f509842c48db8b23</title>
-<g id="a_edge1"><a xlink:href="dir_000030_000019.xhtml" target="_top">
+<g id="a_edge1"><a xlink:href="dir_000031_000020.xhtml" target="_top">
 <path fill="none" stroke="#63b8ff" d="M42,-56.34C42,-49.72 42,-40.72 42,-32.52"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="45.5,-32.59 42,-22.59 38.5,-32.59 45.5,-32.59"/>
 </a>
 </g>
-<g id="a_edge1&#45;headlabel"><a xlink:href="dir_000030_000019.xhtml" target="_top" xlink:title="6">
+<g id="a_edge1&#45;headlabel"><a xlink:href="dir_000031_000020.xhtml" target="_top" xlink:title="6">
 <text xml:space="preserve" text-anchor="middle" x="48.34" y="-31.55" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#63b8ff">6</text>
 </a>
 </g>

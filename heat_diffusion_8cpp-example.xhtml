@@ -179,9 +179,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('heat_diffusion
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Each stored element by its position: a cell or one of its neighbors.</span></div>
 <div class="line">  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; stored; ++i) {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> [row, column]{stencil::structure.positions.at(i)};</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> [<a id="_a3" name="_a3"></a><a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>, <a id="_a4" name="_a4"></a><a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>]{stencil::structure.positions.at(i)};</div>
 <div class="line"> </div>
-<div class="line">    diffusion.values.at(i) = row == column ? 0.5 : 0.25;</div>
+<div class="line">    diffusion.values.at(i) = <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> == <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> ? 0.5 : 0.25;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  std::println(<span class="stringliteral">&quot;Step 0: {}&quot;</span>, rod);</div>
@@ -198,6 +198,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('heat_diffusion
 <div class="line">}()};</div>
 <div class="line">} <span class="comment">// namespace</span></div>
 <div class="line">} <span class="comment">// namespace fcarouge::sample</span></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_a6aa766d36c8df1fdbca1d6219bc002f5"><div class="ttname"><a href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a></div><div class="ttdeci">sparse_matrix&lt; float, column_structure &gt; column</div><div class="ttdoc">The entry points of the operations, each linked alone, named after their operation.</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00054">configuration.cpp:54</a></div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_afe04b44f680fbbb76a4f8bedfe0ce3c1"><div class="ttname"><a href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a></div><div class="ttdeci">sparse_matrix&lt; float, row_structure &gt; row</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00053">configuration.cpp:53</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sample_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1sample.xhtml">fcarouge::sample</a></div><div class="ttdoc">Usage samples.</div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a1b06cc8547501f1115d9479a339dad6f"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a1b06cc8547501f1115d9479a339dad6f">fcarouge::sparse::dense</a></div><div class="ttdeci">constexpr pattern dense</div><div class="ttdoc">Every position is stored: a matrix without structural zeros.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00321">pattern.hpp:321</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_a4878f89526272a6edbf9099732f4a690"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#a4878f89526272a6edbf9099732f4a690">fcarouge::sparse::tridiagonal</a></div><div class="ttdeci">constexpr auto tridiagonal</div><div class="ttdoc">The three central diagonals of a square matrix.</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00342">pattern.hpp:342</a></div></div>

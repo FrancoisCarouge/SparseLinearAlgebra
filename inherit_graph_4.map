@@ -1,31 +1,43 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,512,198,574"/>
-<area shape="rect" id="Node000001" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="253,5,448,67"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="102,496,111,409,133,298,152,239,175,181,206,126,244,77,260,65,257,70,248,81,210,129,180,183,157,241,138,299,116,410,107,496"/>
-<area shape="rect" id="Node000002" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="248,91,453,136"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="104,496,116,421,140,327,158,278,181,231,210,186,244,146,262,134,260,139,247,150,214,189,186,233,163,280,145,329,121,422,109,497"/>
-<area shape="rect" id="Node000003" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="260,160,441,205"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="108,496,124,434,150,358,189,282,215,247,244,215,263,204,260,208,247,220,219,250,194,285,155,360,129,435,113,497"/>
-<area shape="rect" id="Node000004" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,229,440,291"/>
-<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="117,497,137,451,165,399,201,347,244,301,263,289,260,294,247,305,205,350,170,402,142,453,122,498"/>
-<area shape="rect" id="Node000005" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,315,440,376"/>
-<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="132,499,181,441,211,412,244,386,266,375,263,379,247,390,215,416,185,445,136,501"/>
-<area shape="rect" id="Node000006" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="252,400,449,445"/>
-<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="161,501,245,455,276,444,272,448,247,460,165,505"/>
-<area shape="rect" id="Node000007" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,469,440,531"/>
-<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="211,522,262,514,258,517,215,526"/>
-<area shape="rect" id="Node000008" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="246,555,455,616"/>
-<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="212,560,247,566,243,569,214,564"/>
-<area shape="rect" id="Node000009" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,640,440,685"/>
-<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="162,580,247,626,277,639,272,641,245,631,163,585"/>
-<area shape="rect" id="Node000010" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,710,440,754"/>
-<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="133,583,184,642,214,670,247,695,270,709,265,710,244,700,211,675,180,645,133,589"/>
-<area shape="rect" id="Node000011" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="246,779,455,840"/>
-<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="121,585,145,629,172,676,207,723,247,765,264,778,259,779,244,769,203,727,168,679,140,631,122,591"/>
-<area shape="rect" id="Node000012" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,864,440,926"/>
-<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="113,586,132,647,159,717,197,788,221,821,247,850,263,864,258,864,244,854,217,824,193,791,154,719,127,649,113,592"/>
-<area shape="rect" id="Node000013" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="261,950,440,994"/>
-<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="107,586,121,664,145,757,163,805,186,852,214,897,247,936,264,949,258,949,244,939,210,900,181,855,158,807,140,758,116,665,106,592"/>
-<area shape="rect" id="Node000014" href="$classfcarouge_1_1sparse__matrix.xhtml" title="Compile&#45;time sparsity pattern matrix." alt="" coords="261,1019,440,1064"/>
-<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="104,586,114,676,136,788,154,846,178,904,209,957,248,1005,263,1019,258,1018,244,1009,205,960,173,906,149,848,131,789,109,677,103,592"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,736,198,797"/>
+<area shape="rect" id="Node000001" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,5,461,50"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="103,720,117,571,143,374,162,275,185,185,212,112,227,83,244,60,261,47,283,37,280,41,264,51,248,64,232,86,217,114,190,187,167,276,149,375,122,571,109,720"/>
+<area shape="rect" id="Node000002" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,75,461,119"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="104,720,120,584,148,408,167,320,189,241,214,175,229,150,244,130,261,116,283,107,280,111,264,121,248,134,233,152,219,177,194,242,172,322,153,409,125,585,110,720"/>
+<area shape="rect" id="Node000003" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="271,144,472,189"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="106,720,124,598,153,442,172,365,193,296,217,239,244,199,272,181,269,186,248,203,222,241,198,297,177,367,158,444,129,599,111,720"/>
+<area shape="rect" id="Node000004" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="248,213,494,274"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="101,720,108,629,116,573,129,513,147,452,172,392,204,335,244,284,260,273,257,277,248,288,208,338,176,394,152,454,134,515,121,574,113,630,106,720"/>
+<area shape="rect" id="Node000005" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="246,298,497,360"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="104,719,116,644,140,551,159,502,181,454,210,409,244,370,261,358,258,363,248,374,214,413,186,457,163,504,145,552,121,645,109,720"/>
+<area shape="rect" id="Node000006" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="274,384,469,445"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="109,720,126,660,153,589,191,518,216,484,244,455,275,436,272,441,247,459,220,488,196,520,157,592,131,662,115,721"/>
+<area shape="rect" id="Node000007" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="274,469,469,530"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="118,720,139,677,167,629,202,582,244,540,275,523,272,527,247,544,206,585,171,632,143,680,123,722"/>
+<area shape="rect" id="Node000008" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="269,555,474,599"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="130,722,179,663,210,634,244,609,271,598,267,602,247,614,214,638,183,667,135,724"/>
+<area shape="rect" id="Node000009" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="281,624,462,669"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="159,725,201,700,245,679,282,666,278,670,247,683,203,705,163,729"/>
+<area shape="rect" id="Node000010" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,693,461,754"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="211,747,283,736,280,740,215,751"/>
+<area shape="rect" id="Node000011" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,778,461,840"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="212,782,284,793,279,796,214,786"/>
+<area shape="rect" id="Node000012" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="273,864,470,909"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="160,803,203,828,247,849,280,862,275,865,245,854,201,832,162,808"/>
+<area shape="rect" id="Node000013" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,933,461,994"/>
+<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="133,807,184,865,214,894,247,919,284,938,279,940,244,923,211,898,180,869,134,812"/>
+<area shape="rect" id="Node000014" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="267,1018,476,1080"/>
+<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="118,809,141,856,168,908,204,960,247,1004,269,1019,264,1021,244,1008,200,963,164,911,136,859,119,814"/>
+<area shape="rect" id="Node000015" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,1104,461,1149"/>
+<area shape="poly" id="edge15_Node000000_Node000015" title=" " alt="" coords="110,810,128,875,154,950,171,988,193,1025,218,1060,247,1090,284,1111,279,1113,244,1094,214,1063,188,1028,167,991,149,952,123,876,110,815"/>
+<area shape="rect" id="Node000016" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,1173,461,1218"/>
+<area shape="poly" id="edge16_Node000000_Node000016" title=" " alt="" coords="106,810,120,888,144,982,162,1030,185,1077,213,1121,247,1159,264,1171,284,1182,279,1183,261,1176,244,1163,209,1124,180,1080,157,1032,139,983,115,889,106,816"/>
+<area shape="rect" id="Node000017" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="267,1242,476,1304"/>
+<area shape="poly" id="edge17_Node000000_Node000017" title=" " alt="" coords="104,810,114,900,136,1011,154,1070,178,1127,209,1181,248,1228,269,1246,264,1247,244,1232,205,1184,174,1130,149,1072,131,1013,109,901,104,816"/>
+<area shape="rect" id="Node000018" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,1328,461,1389"/>
+<area shape="poly" id="edge18_Node000000_Node000018" title=" " alt="" coords="109,810,131,931,161,1080,179,1154,200,1221,223,1276,248,1314,264,1327,284,1340,279,1340,261,1332,244,1317,218,1279,195,1223,174,1156,155,1081,125,931,109,816"/>
+<area shape="rect" id="Node000019" href="$classfcarouge_1_1sparse__matrix.xhtml" title=" " alt="" coords="282,1413,461,1458"/>
+<area shape="poly" id="edge19_Node000000_Node000019" title=" " alt="" coords="107,810,125,947,153,1123,172,1211,194,1290,219,1355,233,1380,248,1399,264,1412,284,1424,278,1424,261,1416,244,1403,229,1383,214,1358,189,1292,167,1212,148,1124,120,948,107,815"/>
+<area shape="rect" id="Node000020" href="$classfcarouge_1_1sparse__matrix.xhtml" title="Compile&#45;time sparsity pattern matrix." alt="" coords="282,1483,461,1527"/>
+<area shape="poly" id="edge20_Node000000_Node000020" title=" " alt="" coords="106,810,122,961,149,1158,167,1256,190,1346,217,1419,232,1447,248,1468,264,1482,284,1494,279,1493,261,1486,244,1472,227,1450,212,1421,185,1347,162,1258,143,1159,117,962,106,815"/>
 </map>

@@ -137,17 +137,24 @@ var menudata={children:[
 {text:"File List",url:"files.xhtml"},
 {text:"File Members",url:"globals.xhtml",children:[
 {text:"All",url:"globals.xhtml",children:[
-{text:"b",url:"globals.xhtml#index_b"},
+{text:"a",url:"globals.xhtml#index_a"},
+{text:"b",url:"globals_b.xhtml#index_b"},
 {text:"c",url:"globals_c.xhtml#index_c"},
+{text:"d",url:"globals_d.xhtml#index_d"},
+{text:"e",url:"globals_e.xhtml#index_e"},
 {text:"f",url:"globals_f.xhtml#index_f"},
 {text:"h",url:"globals_h.xhtml#index_h"},
 {text:"i",url:"globals_i.xhtml#index_i"},
 {text:"k",url:"globals_k.xhtml#index_k"},
 {text:"l",url:"globals_l.xhtml#index_l"},
 {text:"m",url:"globals_m.xhtml#index_m"},
+{text:"n",url:"globals_n.xhtml#index_n"},
 {text:"o",url:"globals_o.xhtml#index_o"},
 {text:"p",url:"globals_p.xhtml#index_p"},
+{text:"q",url:"globals_q.xhtml#index_q"},
+{text:"r",url:"globals_r.xhtml#index_r"},
 {text:"s",url:"globals_s.xhtml#index_s"},
+{text:"t",url:"globals_t.xhtml#index_t"},
 {text:"u",url:"globals_u.xhtml#index_u"}]},
 {text:"Functions",url:"globals_func.xhtml"},
 {text:"Variables",url:"globals_vars.xhtml",children:[
@@ -162,5 +169,6 @@ var menudata={children:[
 {text:"o",url:"globals_vars_o.xhtml#index_o"},
 {text:"p",url:"globals_vars_p.xhtml#index_p"},
 {text:"s",url:"globals_vars_s.xhtml#index_s"},
-{text:"u",url:"globals_vars_u.xhtml#index_u"}]}]}]},
+{text:"u",url:"globals_vars_u.xhtml#index_u"}]},
+{text:"Typedefs",url:"globals_type.xhtml"}]}]},
 {text:"Examples",url:"examples.xhtml"}]}

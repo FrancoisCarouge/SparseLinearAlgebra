@@ -6,6 +6,7 @@ var searchData=
   ['matrix_5ffrob_5fnorm_2ecpp_3',['matrix_frob_norm.cpp',['../matrix__frob__norm_8cpp.xhtml',1,'']]],
   ['matrix_5finf_5fnorm_2ecpp_4',['matrix_inf_norm.cpp',['../matrix__inf__norm_8cpp.xhtml',1,'']]],
   ['matrix_5fone_5fnorm_2ecpp_5',['matrix_one_norm.cpp',['../matrix__one__norm_8cpp.xhtml',1,'']]],
-  ['minus_2ecpp_6',['minus.cpp',['../minus_8cpp.xhtml',1,'']]],
-  ['multiplication_2ecpp_7',['multiplication.cpp',['../multiplication_8cpp.xhtml',1,'']]]
+  ['memory_2ecpp_6',['memory.cpp',['../memory_8cpp.xhtml',1,'']]],
+  ['minus_2ecpp_7',['minus.cpp',['../minus_8cpp.xhtml',1,'']]],
+  ['multiplication_2ecpp_8',['multiplication.cpp',['../multiplication_8cpp.xhtml',1,'']]]
 ];

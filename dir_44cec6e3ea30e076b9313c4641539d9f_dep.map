@@ -1,9 +1,12 @@
 <map id="/home/runner/work/SparseLinearAlgebra/SparseLinearAlgebra/benchmark" name="/home/runner/work/SparseLinearAlgebra/SparseLinearAlgebra/benchmark">
-<area shape="rect" id="node1" href="dir_44cec6e3ea30e076b9313c4641539d9f.xhtml" title="benchmark" alt="" coords="40,5,134,33"/>
-<area shape="rect" id="node2" href="dir_5815af820a9cc9481f1d0990a0d60286.xhtml" title="support" alt="" coords="5,81,76,109"/>
-<area shape="poly" id="edge1" href="dir_000005_000043.xhtml" alt="" coords="81,32,59,70,55,66,77,35"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000005_000043.xhtml" title="1" alt="" coords="62,61,70,78"/>
-<area shape="rect" id="node3" href="dir_d44c64559bbebec7f509842c48db8b23.xhtml" title="include" alt="" coords="100,81,168,109"/>
-<area shape="poly" id="edge2" href="dir_000005_000019.xhtml" alt="" coords="97,31,120,68,115,68,94,36"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000005_000019.xhtml" title="1" alt="" coords="119,52,127,69"/>
+<area shape="rect" id="node3" href="dir_5815af820a9cc9481f1d0990a0d60286.xhtml" title="support" alt="" coords="38,102,108,130"/>
+<area shape="poly" id="edge1" href="dir_000005_000044.xhtml" alt="" coords="75,52,76,87,71,86,72,56"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000044.xhtml" title="1" alt="" coords="78,75,86,92"/>
+<area shape="rect" id="node4" href="dir_d44c64559bbebec7f509842c48db8b23.xhtml" title="include" alt="" coords="140,102,209,130"/>
+<area shape="poly" id="edge2" href="dir_000005_000020.xhtml" alt="" coords="91,52,147,92,142,94,90,57"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000005_000020.xhtml" title="2" alt="" coords="143,76,151,93"/>
+<area shape="rect" id="node2" href="dir_2542fae376fc6d82c1013ad0f602a03b.xhtml" title="footprint" alt="" coords="144,27,221,54"/>
+<area shape="poly" id="edge3" href="dir_000016_000020.xhtml" alt="" coords="183,53,180,88,176,85,179,57"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000016_000020.xhtml" title="1" alt="" coords="182,76,190,93"/>
+<area shape="rect" id="clust1" href="dir_44cec6e3ea30e076b9313c4641539d9f.xhtml" alt="" coords="16,16,232,65"/>
 </map>

@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('scale_8cpp_sou
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> tridiagonal_matrix value{1., 2., 3., 4., 5., 6., 7.};</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> tridiagonal_matrix zero_value;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> column_vector column{4.};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> column_vector <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>{4.};</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keyword">auto</span> right{value * 2.};</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> left{2. * value};</div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('scale_8cpp_sou
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  assert((none == zero_value));</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// A vector.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> <span class="keyword">auto</span> scaled_column{column * 3.};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> <span class="keyword">auto</span> scaled_column{<a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> * 3.};</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  assert((scaled_column.at&lt;0, 0&gt;() == 0.));</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  assert((scaled_column.at&lt;1, 0&gt;() == 12.));</div>
@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('scale_8cpp_sou
 </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>} <span class="comment">// namespace fcarouge::test</span></div>
 <div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00079">sparse_linear_algebra.hpp:80</a></div></div>
+<div class="ttc" id="aconfiguration_8cpp_xhtml_a6aa766d36c8df1fdbca1d6219bc002f5"><div class="ttname"><a href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a></div><div class="ttdeci">sparse_matrix&lt; float, column_structure &gt; column</div><div class="ttdoc">The entry points of the operations, each linked alone, named after their operation.</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00054">configuration.cpp:54</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1sparse_xhtml_afc86d359c92e4aed11bb24af084e9a13"><div class="ttname"><a href="namespacefcarouge_1_1sparse.xhtml#afc86d359c92e4aed11bb24af084e9a13">fcarouge::sparse::shape</a></div><div class="ttdeci">constexpr shape_t&lt; Rows, Columns &gt; shape</div><div class="ttdoc">The shape of a matrix, the first argument of the construction of a pattern, from which its counts of ...</div><div class="ttdef"><b>Definition</b> <a href="pattern_8hpp_source.xhtml#l00115">pattern.hpp:115</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1anonymous__namespace_02scale_8cpp_03_xhtml_a3ef76e6b72737bf492218ed0ce44c7f6"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1anonymous__namespace_02scale_8cpp_03.xhtml#a3ef76e6b72737bf492218ed0ce44c7f6">fcarouge::test::anonymous_namespace{scale.cpp}::test</a></div><div class="ttdeci">const auto test</div><div class="ttdef"><b>Definition</b> <a href="#l00042">scale.cpp:42</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1test.xhtml">fcarouge::test</a></div><div class="ttdoc">Unit, integration, regression, and usage tests.</div></div>

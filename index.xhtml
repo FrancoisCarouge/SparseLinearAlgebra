@@ -180,7 +180,7 @@ Declaration</h3>
 <div class="line">  <span class="keyword">requires</span> sparsity_pattern&lt;<span class="keyword">decltype</span>(Pattern)&gt;</div>
 <div class="line"><span class="keyword">class</span> sparse_matrix;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacefcarouge_xhtml"><div class="ttname"><a href="namespacefcarouge.xhtml">fcarouge</a></div><div class="ttdoc">Francois Carouge&#39;s projects namespace.</div><div class="ttdef"><b>Definition</b> <a href="product_8cpp_source.xhtml#l00044">product.cpp:44</a></div></div>
+<div class="ttc" id="anamespacefcarouge_xhtml"><div class="ttname"><a href="namespacefcarouge.xhtml">fcarouge</a></div><div class="ttdoc">Francois Carouge&#39;s projects namespace.</div><div class="ttdef"><b>Definition</b> <a href="configuration_8cpp_source.xhtml#l00036">configuration.cpp:36</a></div></div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="template-parameters"></a>
 Template Parameters</h3>
 <table class="markdownTable">
@@ -219,9 +219,9 @@ Member Functions</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">at&lt;Row, Column&gt;() const</span>  </td><td class="markdownTableBodyNone">Read the element at the compile-time position, by value. A structural zero reads as <span class="tt">Type{}</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">operator[row, column] const</span>  </td><td class="markdownTableBodyNone">Read the element at the run-time position, by value. A structural zero reads as <span class="tt">Type{}</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">operator[<a class="el" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>, <a class="el" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5" title="The entry points of the operations, each linked alone, named after their operation.">column</a>] const</span>  </td><td class="markdownTableBodyNone">Read the element at the run-time position, by value. A structural zero reads as <span class="tt">Type{}</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">operator[row, column]</span>  </td><td class="markdownTableBodyNone">Access the element at the run-time position, by reference. Only without a structural zero.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">operator[<a class="el" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>, <a class="el" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5" title="The entry points of the operations, each linked alone, named after their operation.">column</a>]</span>  </td><td class="markdownTableBodyNone">Access the element at the run-time position, by reference. Only without a structural zero.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">operator[std::integral_constant&lt;std::size_t, Row&gt;, std::integral_constant&lt;std::size_t, Column&gt;]</span>  </td><td class="markdownTableBodyNone">Access the stored element at the compile-time position, by reference. Only for a stored element. The generic access of a linear algebra library by compile-time position.  </td></tr>
 <tr class="markdownTableRowEven">
@@ -274,7 +274,7 @@ Member Variables</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">count</span>  </td><td class="markdownTableBodyNone">The count of stored elements.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">positions</span>  </td><td class="markdownTableBodyNone">The <span class="tt">std::array</span> of the stored positions, in row-major order. A <span class="tt">position</span> has a <span class="tt">row</span> and a <span class="tt">column</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">positions</span>  </td><td class="markdownTableBodyNone">The <span class="tt">std::array</span> of the stored positions, in row-major order. A <span class="tt">position</span> has a <span class="tt"><a class="el" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a></span> and a <span class="tt"><a class="el" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5" title="The entry points of the operations, each linked alone, named after their operation.">column</a></span>.  </td></tr>
 </table>
 <h3 class="doxsection"><a class="anchor" id="member-functions-1"></a>
 Member Functions</h3>
@@ -399,15 +399,15 @@ Operations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">==</span>  </td><td class="markdownTableBodyNone">Not applicable. Compares every position of the same shape: a structural zero equals a stored zero.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span> of the union.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">transposed</span>  </td><td class="markdownTableBodyNone">The transposed pattern. Returns a matrix, not a view.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="configuration_8cpp.xhtml#af8a2ef90ebf4ef3324856a214ab9006c">transposed</a></span>  </td><td class="markdownTableBodyNone">The transposed pattern. Returns a matrix, not a view.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">dot</span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Vectors of the same size, of any orientation.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>, of the elements stored by both vectors.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="configuration_8cpp.xhtml#abad02c0248c91032b315b2dc2ea92481">dot</a></span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Vectors of the same size, of any orientation.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>, of the elements stored by both vectors.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">matrix_frob_norm</span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Floating-point elements only.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="configuration_8cpp.xhtml#a3f8b3575d0605a187dfaf21a35ce4462">matrix_frob_norm</a></span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element. Floating-point elements only.  </td><td class="markdownTableBodyNone"><span class="tt">O(K)</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">matrix_one_norm</span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute column sum.  </td><td class="markdownTableBodyNone"><span class="tt">O(K + C)</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="configuration_8cpp.xhtml#af4270a9e561a8416bf66b626d0464669">matrix_one_norm</a></span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute column sum.  </td><td class="markdownTableBodyNone"><span class="tt">O(K + C)</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">matrix_inf_norm</span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute row sum.  </td><td class="markdownTableBodyNone"><span class="tt">O(K + R)</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt"><a class="el" href="configuration_8cpp.xhtml#a20cd7e84c263fac83b4a053e81a37387">matrix_inf_norm</a></span>  </td><td class="markdownTableBodyNone">Not applicable. Returns an element, the largest absolute row sum.  </td><td class="markdownTableBodyNone"><span class="tt">O(K + R)</span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Construction from every row  </td><td class="markdownTableBodyNone">The pattern of the matrix.  </td><td class="markdownTableBodyNone"><span class="tt">O(R * C)</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -417,7 +417,7 @@ Operations</h2>
 </table>
 <p>The following are not supported yet:</p>
 <ul>
-<li>The <span class="tt">std::linalg</span> out-parameter algorithms: <span class="tt">add</span>, <span class="tt">matrix_product</span>, <span class="tt">matrix_rank_1_update</span>, <span class="tt">matrix_vector_product</span>, and <span class="tt">scale</span>.</li>
+<li>The <span class="tt">std::linalg</span> out-parameter algorithms: <span class="tt">add</span>, <span class="tt">matrix_product</span>, <span class="tt">matrix_rank_1_update</span>, <span class="tt">matrix_vector_product</span>, and <span class="tt"><a class="el" href="configuration_8cpp.xhtml#a2513d1cbee320444567bfacf7266eab1">scale</a></span>.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="concepts"></a>
 Concepts</h2>
@@ -477,6 +477,7 @@ Lessons Learned</h2>
 <h2 class="doxsection"><a class="anchor" id="performance"></a>
 Performance</h2>
 <p>The cost of an operation follows its count of stored elements and of elementary products, not its shape. See the <a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/benchmark/README.md">benchmarks</a>.</p>
+<p>The <a href="https://francoiscarouge.github.io/SparseLinearAlgebra/footprint.xhtml">embedded footprint</a> reports the flash, RAM, and worst-case stack sizes of the operations of dense, tridiagonal, and diagonal patterns on a bare-metal Arm Cortex-M4 target.</p>
 <h2 class="doxsection"><a class="anchor" id="projects"></a>
 Projects</h2>
 <p>The library is used in projects:</p>

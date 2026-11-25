@@ -123,11 +123,268 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacefcaro
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:anonymous_5Fnamespace_7Bproduct_2Ecpp_7D" id="r_anonymous_5Fnamespace_7Bproduct_2Ecpp_7D"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02product_8cpp_03.xhtml">anonymous_namespace{product.cpp}</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a5b1caa2d525bb850fa469bf182d296e4" id="r_a5b1caa2d525bb850fa469bf182d296e4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5b1caa2d525bb850fa469bf182d296e4">matrix</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#ac86df8b775ffab8f205befd3cf38e03e">structure</a>&gt;</td></tr>
+<tr class="memitem:afe04b44f680fbbb76a4f8bedfe0ce3c1" id="r_afe04b44f680fbbb76a4f8bedfe0ce3c1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#a16f183395d285e0f9d1adbdf32727337">row_structure</a>&gt;</td></tr>
+<tr class="memitem:a6aa766d36c8df1fdbca1d6219bc002f5" id="r_a6aa766d36c8df1fdbca1d6219bc002f5"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#a63f145e82b674c402581bdf1e88ee33c">column_structure</a>&gt;</td></tr>
+<tr class="memitem:a6ffccbfc91ccfdf8795a99f10e700f23" id="r_a6ffccbfc91ccfdf8795a99f10e700f23"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6ffccbfc91ccfdf8795a99f10e700f23">product_matrix</a></td></tr>
+<tr class="memitem:a5bb47dc7ce2514cc96fde7cbaee130b6" id="r_a5bb47dc7ce2514cc96fde7cbaee130b6"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5bb47dc7ce2514cc96fde7cbaee130b6">quotient_matrix</a></td></tr>
+<tr class="memitem:ad679d483b7a262fccb11691aa033f21e" id="r_ad679d483b7a262fccb11691aa033f21e"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad679d483b7a262fccb11691aa033f21e">transposed_matrix</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a48621d648e237026057c7fcb583db9b5" id="r_a48621d648e237026057c7fcb583db9b5"><td class="memItemLeft">constexpr std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a> {${SIZE}}</td></tr>
+<tr class="memdesc:a48621d648e237026057c7fcb583db9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The order of the square matrices.  <br /></td></tr>
+<tr class="memitem:ae27b70382d941a209681fd0f7c242c40" id="r_ae27b70382d941a209681fd0f7c242c40"><td class="memItemLeft">constexpr std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a> {${BAND}}</td></tr>
+<tr class="memdesc:ae27b70382d941a209681fd0f7c242c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of sub-diagonals and super-diagonals stored.  <br /></td></tr>
+<tr class="memitem:ac86df8b775ffab8f205befd3cf38e03e" id="r_ac86df8b775ffab8f205befd3cf38e03e"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ac86df8b775ffab8f205befd3cf38e03e">structure</a> {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;<a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td></tr>
+<tr class="memdesc:ac86df8b775ffab8f205befd3cf38e03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pattern of the square matrices.  <br /></td></tr>
+<tr class="memitem:a16f183395d285e0f9d1adbdf32727337" id="r_a16f183395d285e0f9d1adbdf32727337"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a16f183395d285e0f9d1adbdf32727337">row_structure</a> {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;1, <a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td></tr>
+<tr class="memdesc:a16f183395d285e0f9d1adbdf32727337"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pattern of the row vectors, the first row of the matrices.  <br /></td></tr>
+<tr class="memitem:a63f145e82b674c402581bdf1e88ee33c" id="r_a63f145e82b674c402581bdf1e88ee33c"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a63f145e82b674c402581bdf1e88ee33c">column_structure</a> {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;<a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, 1, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td></tr>
+<tr class="memdesc:a63f145e82b674c402581bdf1e88ee33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pattern of the column vectors, the first column of the matrices.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Performance benchmarks. </p>
 <p>Collection of benchmarks measuring the library. </p>
-</div></div><!-- contents -->
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a6aa766d36c8df1fdbca1d6219bc002f5" name="a6aa766d36c8df1fdbca1d6219bc002f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa766d36c8df1fdbca1d6219bc002f5">&#9670;&#160;</a></span>column</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a6aa766d36c8df1fdbca1d6219bc002f5">fcarouge::benchmark::column</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#a63f145e82b674c402581bdf1e88ee33c">column_structure</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00054">54</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5b1caa2d525bb850fa469bf182d296e4" name="a5b1caa2d525bb850fa469bf182d296e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1caa2d525bb850fa469bf182d296e4">&#9670;&#160;</a></span>matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a5b1caa2d525bb850fa469bf182d296e4">fcarouge::benchmark::matrix</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#ac86df8b775ffab8f205befd3cf38e03e">structure</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00052">52</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6ffccbfc91ccfdf8795a99f10e700f23" name="a6ffccbfc91ccfdf8795a99f10e700f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ffccbfc91ccfdf8795a99f10e700f23">&#9670;&#160;</a></span>product_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a6ffccbfc91ccfdf8795a99f10e700f23">fcarouge::benchmark::product_matrix</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;float, sparse::pattern_product&lt;structure, structure&gt;</a>&gt;</div>
+<div class="ttc" id="aclassfcarouge_1_1sparse__matrix_xhtml"><div class="ttname"><a href="classfcarouge_1_1sparse__matrix.xhtml">fcarouge::sparse_matrix</a></div><div class="ttdoc">Compile-time sparsity pattern matrix.</div><div class="ttdef"><b>Definition</b> <a href="sparse__linear__algebra_8hpp_source.xhtml#l00079">sparse_linear_algebra.hpp:80</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00055">55</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5bb47dc7ce2514cc96fde7cbaee130b6" name="a5bb47dc7ce2514cc96fde7cbaee130b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb47dc7ce2514cc96fde7cbaee130b6">&#9670;&#160;</a></span>quotient_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a5bb47dc7ce2514cc96fde7cbaee130b6">fcarouge::benchmark::quotient_matrix</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;float, sparse::pattern_quotient&lt;structure, structure&gt;</a>&gt;</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00057">57</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afe04b44f680fbbb76a4f8bedfe0ce3c1" name="afe04b44f680fbbb76a4f8bedfe0ce3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe04b44f680fbbb76a4f8bedfe0ce3c1">&#9670;&#160;</a></span>row</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#afe04b44f680fbbb76a4f8bedfe0ce3c1">fcarouge::benchmark::row</a> = <a class="el" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix</a>&lt;float, <a class="el" href="#a16f183395d285e0f9d1adbdf32727337">row_structure</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00053">53</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad679d483b7a262fccb11691aa033f21e" name="ad679d483b7a262fccb11691aa033f21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad679d483b7a262fccb11691aa033f21e">&#9670;&#160;</a></span>transposed_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad679d483b7a262fccb11691aa033f21e">fcarouge::benchmark::transposed_matrix</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classfcarouge_1_1sparse__matrix.xhtml">sparse_matrix&lt;float, sparse::pattern_transpose&lt;structure&gt;</a>&gt;</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00059">59</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="ae27b70382d941a209681fd0f7c242c40" name="ae27b70382d941a209681fd0f7c242c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae27b70382d941a209681fd0f7c242c40">&#9670;&#160;</a></span>band</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fcarouge::benchmark::band {${BAND}}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of sub-diagonals and super-diagonals stored. </p>
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00041">41</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a63f145e82b674c402581bdf1e88ee33c" name="a63f145e82b674c402581bdf1e88ee33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f145e82b674c402581bdf1e88ee33c">&#9670;&#160;</a></span>column_structure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::benchmark::column_structure {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;<a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, 1, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pattern of the column vectors, the first column of the matrices. </p>
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00050">50</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a16f183395d285e0f9d1adbdf32727337" name="a16f183395d285e0f9d1adbdf32727337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f183395d285e0f9d1adbdf32727337">&#9670;&#160;</a></span>row_structure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::benchmark::row_structure {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;1, <a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pattern of the row vectors, the first row of the matrices. </p>
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00047">47</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a48621d648e237026057c7fcb583db9b5" name="a48621d648e237026057c7fcb583db9b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48621d648e237026057c7fcb583db9b5">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fcarouge::benchmark::size {${SIZE}}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The order of the square matrices. </p>
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00038">38</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac86df8b775ffab8f205befd3cf38e03e" name="ac86df8b775ffab8f205befd3cf38e03e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86df8b775ffab8f205befd3cf38e03e">&#9670;&#160;</a></span>structure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::benchmark::structure {<a class="el" href="namespacefcarouge_1_1sparse.xhtml#abdf6e4faba85cf198a3eaeaf5d9b9212">sparse::banded</a>&lt;<a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#a48621d648e237026057c7fcb583db9b5">size</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>, <a class="el" href="#ae27b70382d941a209681fd0f7c242c40">band</a>&gt;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The pattern of the square matrices. </p>
+
+<p class="definition">Definition at line <a class="el" href="configuration_8cpp_source.xhtml#l00044">44</a> of file <a class="el" href="configuration_8cpp_source.xhtml">configuration.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
