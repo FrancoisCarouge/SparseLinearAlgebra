@@ -35,7 +35,7 @@ endif()
 
 # Add a given embedded footprint measurement.
 #
-# Cross-compiled, the test passes when the operation's step entry point, linked
+# Cross-compiled, the test passes when the operation's entry point, linked
 # alone, measures the expected sizes in bytes. Otherwise, the configuration is
 # only compiled. The configuration `<pattern>_<size>` is configured from the
 # `configuration.cpp` template: a square matrix of the given size of the
@@ -109,7 +109,7 @@ function(footprint NAME OPERATION OPTIMIZATION)
   target_link_options(
     ${IMAGE}
     PRIVATE
-      "-nostdlib" "LINKER:--gc-sections" "LINKER:--entry=${OPERATION}_step"
+      "-nostdlib" "LINKER:--gc-sections" "LINKER:--entry=${OPERATION}"
       "LINKER:--defsym=memcpy=footprint_copy"
       "LINKER:--defsym=memset=footprint_fill")
   add_test(
@@ -122,7 +122,8 @@ function(footprint NAME OPERATION OPTIMIZATION)
       "-DENTRY_USAGE=$<TARGET_OBJECTS:${CONFIGURATION}>"
       "-DLEAF_USAGE=$<TARGET_OBJECTS:${MEMORY}>"
       "-DNAME=${NAME}"
-      "-DPOLICY=${OPERATION}"
+      "-DENTRY=${OPERATION}"
+      "-DLABEL=${OPERATION}"
       "-DOPTIMIZATION=${OPTIMIZATION}"
       "-DFLASH=${EXPECTED_FLASH}"
       "-DRAM=${EXPECTED_RAM}"
