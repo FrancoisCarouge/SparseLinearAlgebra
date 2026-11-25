@@ -334,6 +334,8 @@ Toward version 1.0:
 
 The cost of an operation follows its count of stored elements and of elementary products, not its shape. See the [benchmarks](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/benchmark/README.md).
 
+The [embedded footprint](https://francoiscarouge.github.io/SparseLinearAlgebra/footprint.xhtml) reports the flash, RAM, and worst-case stack sizes of the operations of dense, tridiagonal, and diagonal patterns on a bare-metal Arm Cortex-M4 target.
+
 ### Projects
 
 The library is used in projects:

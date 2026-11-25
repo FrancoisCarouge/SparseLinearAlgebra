@@ -1,5 +1,22 @@
 # Benchmarks
 
+## Embedded Footprint
+
+The [embedded footprint](https://francoiscarouge.github.io/SparseLinearAlgebra/footprint.xhtml) measures the flash, RAM, and worst-case stack sizes of each operation, for the [configurations](https://github.com/FrancoisCarouge/SparseLinearAlgebra/tree/master/benchmark/footprint) of a dense, a tridiagonal, and a diagonal pattern of single precision floating point elements, per optimization level, on a bare-metal Arm Cortex-M4 target.
+
+Measure on Linux with the Arm GNU Toolchain:
+
+```shell
+git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra" "sparse"
+cmake -S "sparse" -B "build" --toolchain "cmake/toolchain_arm_cortex_m4.cmake"
+cmake --build "build" --parallel
+ctest --test-dir "build" --output-on-failure --parallel
+```
+
+The tests write the measurements to `build/footprint/index.html`, and fail on any size change, larger or smaller, from its `footprint()` line in [footprint/CMakeLists.txt](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/benchmark/footprint/CMakeLists.txt). The criteria hold for the toolchain of the continuous integration runner, `gcc-arm-none-eabi` 14.2 on Ubuntu 26.04. To accept a change, update the line, with its reason in the commit message.
+
+## Speed
+
 Build and run the benchmarks on Linux platform, building the benchmark drivers only: a release build defines `NDEBUG`, under which the tests' assertions vanish.
 
 ```shell
