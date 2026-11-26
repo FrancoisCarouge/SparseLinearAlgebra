@@ -145,7 +145,7 @@ Embedded Footprint</h1>
 </div><!-- fragment --><p>The tests write the measurements to <span class="tt">build/footprint/index.html</span>, and fail on any size change, larger or smaller, from its <span class="tt">footprint()</span> line in <a href="https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/benchmark/footprint/CMakeLists.txt">footprint/CMakeLists.txt</a>. The criteria hold for the toolchain of the continuous integration runner, <span class="tt">gcc-arm-none-eabi</span> 14.2 on Ubuntu 26.04. To accept a change, update the line, with its reason in the commit message.</p>
 <h1 class="doxsection"><a class="anchor" id="speed"></a>
 Speed</h1>
-<p>Build and run the benchmarks on Linux platform, building the benchmark drivers only: a release build defines <span class="tt">NDEBUG</span>, under which the tests' assertions vanish.</p>
+<p>Build and run the benchmarks on Linux platform, building the benchmark drivers only:</p>
 <div class="fragment"><div class="line">git clone --depth 1 &quot;https://github.com/FrancoisCarouge/SparseLinearAlgebra&quot; &quot;sparse&quot;</div>
 <div class="line">rm -rf &quot;build&quot;</div>
 <div class="line">CXX=clang++-21 cmake -S &quot;sparse&quot; -B &quot;build&quot; -G &quot;Ninja&quot; -DCMAKE_BUILD_TYPE=Release -DBUILD_BENCHMARKING=ON</div>
