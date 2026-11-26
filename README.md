@@ -67,6 +67,12 @@ For forward declarations only, include instead:
 
 The library is header-only and has no dependency. A single-header amalgamation, `sparse_linear_algebra.h`, is also [published](https://francoiscarouge.github.io/SparseLinearAlgebra/amalgamate/fcarouge/sparse_linear_algebra.h).
 
+### Public API
+
+![The public API of Sparse Linear Algebra: the sparse_matrix class template, its member variables, construction, and element access, the sparse::pattern it is built on with its vocabulary and predefined patterns, the concept, the operations and the pattern algebra computing their result patterns, the structural zero literal, and the standard formatter.](https://francoiscarouge.github.io/SparseLinearAlgebra/sparse_linear_algebra/api.svg)
+
+Every public class, function, type, and constant of the library at a glance, detailed in the reference below.
+
 ### Namespace
 
 The `sparse_matrix` class, its operations, and the `sparsity_pattern` concept live in the `fcarouge` namespace, and the `0_o` structural zero literal in the `fcarouge::literals` namespace. The patterns and their algebra live in the `fcarouge::sparse` namespace. Import them with a using-declaration or namespace alias as your project's style prefers.
