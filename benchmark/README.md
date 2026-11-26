@@ -17,7 +17,7 @@ The tests write the measurements to `build/footprint/index.html`, and fail on an
 
 ## Speed
 
-Build and run the benchmarks on Linux platform, building the benchmark drivers only: a release build defines `NDEBUG`, under which the tests' assertions vanish.
+Build and run the benchmarks on Linux platform, building the benchmark drivers only:
 
 ```shell
 git clone --depth 1 "https://github.com/FrancoisCarouge/SparseLinearAlgebra" "sparse"
