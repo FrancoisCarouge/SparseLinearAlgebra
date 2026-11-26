@@ -248,7 +248,7 @@ Variables</h2></td></tr>
 <div class="line">    <a class="code hl_variable" href="#afc86d359c92e4aed11bb24af084e9a13">shape&lt;4, 4&gt;</a>, [](std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a>, std::size_t <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a>) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">      <span class="keywordflow">return</span> <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> == <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> || <a class="code hl_typedef" href="configuration_8cpp.xhtml#afe04b44f680fbbb76a4f8bedfe0ce3c1">row</a> == 3 || <a class="code hl_typedef" href="configuration_8cpp.xhtml#a6aa766d36c8df1fdbca1d6219bc002f5">column</a> == 3;</div>
 <div class="line">    }}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000114">Test</a></b></dt><dd>Verifies the order of the rows and the columns decides the fill-in: an arrow pattern factors without fill-in when its dense row and column come last, and fills the whole lower triangle when they come first. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000106">Test</a></b></dt><dd>Verifies the order of the rows and the columns decides the fill-in: an arrow pattern factors without fill-in when its dense row and column come last, and fills the whole lower triangle when they come first. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8cpp_source.xhtml#l00243">243</a> of file <a class="el" href="pattern__algebra_8cpp_source.xhtml">pattern_algebra.cpp</a>.</p>
 
@@ -312,7 +312,7 @@ Variables</h2></td></tr>
 <div class="line">                                {3, 0},</div>
 <div class="line">                                {3, 2},</div>
 <div class="line">                                {3, 3}}}</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000113">Test</a></b></dt><dd>Verifies the pattern of the Cholesky factor: the lower triangle of a diagonal, a band, or block-diagonal pattern without fill-in, of a dense pattern the lower triangle, and of a cycle the single position its elimination fills in. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.xhtml#_test000105">Test</a></b></dt><dd>Verifies the pattern of the Cholesky factor: the lower triangle of a diagonal, a band, or block-diagonal pattern without fill-in, of a dense pattern the lower triangle, and of a cycle the single position its elimination fills in. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8cpp_source.xhtml#l00204">204</a> of file <a class="el" href="pattern__algebra_8cpp_source.xhtml">pattern_algebra.cpp</a>.</p>
 
@@ -365,12 +365,12 @@ template&lt;std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000098">Test</a></b></dt><dd>Verifies the union, and that it is commutative and idempotent. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000099">Test</a></b></dt><dd>Verifies the intersection. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000100">Test</a></b></dt><dd>Verifies the transposition, its shape, and that it is an involution that keeps the row-major order. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000101">Test</a></b></dt><dd>Verifies the structural product of well-known families. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000102">Test</a></b></dt><dd>Verifies a structural zero annihilates the product. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000103">Test</a></b></dt><dd>Verifies the product of two non-empty patterns that never meet. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000091">Test</a></b></dt><dd>Verifies the union, and that it is commutative and idempotent. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000092">Test</a></b></dt><dd>Verifies the intersection. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000093">Test</a></b></dt><dd>Verifies the transposition, its shape, and that it is an involution that keeps the row-major order. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000094">Test</a></b></dt><dd>Verifies the structural product of well-known families. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000095">Test</a></b></dt><dd>Verifies a structural zero annihilates the product. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000096">Test</a></b></dt><dd>Verifies the product of two non-empty patterns that never meet. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8cpp_source.xhtml#l00100">100</a> of file <a class="el" href="pattern__algebra_8cpp_source.xhtml">pattern_algebra.cpp</a>.</p>
 
@@ -395,8 +395,8 @@ template&lt;std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000110">Test</a></b></dt><dd>Verifies the structural symmetry, of symmetric families, of patterns asymmetric by a single position, and of rectangular patterns. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000111">Test</a></b></dt><dd>Verifies the structural quotient: a diagonal denominator keeps the numerator's pattern, a triangular one closes it in the direction of its substitution, a block-diagonal one by blocks, and an irreducible one fills the rows it reaches. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000102">Test</a></b></dt><dd>Verifies the structural symmetry, of symmetric families, of patterns asymmetric by a single position, and of rectangular patterns. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000104">Test</a></b></dt><dd>Verifies the structural quotient: a diagonal denominator keeps the numerator's pattern, a triangular one closes it in the direction of its substitution, a block-diagonal one by blocks, and an irreducible one fills the rows it reaches. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8cpp_source.xhtml#l00167">167</a> of file <a class="el" href="pattern__algebra_8cpp_source.xhtml">pattern_algebra.cpp</a>.</p>
 
@@ -634,11 +634,11 @@ template&lt;sparsity_pattern auto Lhs, sparsity_pattern auto Rhs&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000104">Test</a></b></dt><dd>Verifies the product's shape. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000105">Test</a></b></dt><dd>Verifies transposition reverses the product. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000107">Test</a></b></dt><dd>Verifies the count of elementary products, not of result positions. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000108">Test</a></b></dt><dd>Verifies the subset relation. </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000109">Test</a></b></dt><dd>Verifies the structural rank, of square and rectangular patterns, and of a pattern whose matching reassigns a row to reach its maximum. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000097">Test</a></b></dt><dd>Verifies the product's shape. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000098">Test</a></b></dt><dd>Verifies transposition reverses the product. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000099">Test</a></b></dt><dd>Verifies the count of elementary products, not of result positions. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000100">Test</a></b></dt><dd>Verifies the subset relation. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.xhtml#_test000101">Test</a></b></dt><dd>Verifies the structural rank, of square and rectangular patterns, and of a pattern whose matching reassigns a row to reach its maximum. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pattern__algebra_8cpp_source.xhtml#l00129">129</a> of file <a class="el" href="pattern__algebra_8cpp_source.xhtml">pattern_algebra.cpp</a>.</p>
 
