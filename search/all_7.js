@@ -13,6 +13,5 @@ var searchData=
   ['equal_5fto_10',['equal_to',['../configuration_8cpp.xhtml#a0bb23bb6a37b38d397c0f1710a350a28',1,'configuration.cpp']]],
   ['equal_5fto_2ecpp_11',['equal_to.cpp',['../equal__to_8cpp.xhtml',1,'']]],
   ['every_12',['every',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a5aa93548197b24d28510de50033fbf86',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['exponent_13',['exponent',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae',1,'fcarouge::test::anonymous_namespace{square_root.cpp}']]],
-  ['expressions_14',['Freestanding, real-time, and constant expressions',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#freestanding-real-time-and-constant-expressions',1,'']]]
+  ['exponent_13',['exponent',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02square__root_8cpp_03.xhtml#a473c45984fc30195a87dfbff700c63ae',1,'fcarouge::test::anonymous_namespace{square_root.cpp}']]]
 ];

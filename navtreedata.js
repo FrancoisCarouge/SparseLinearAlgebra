@@ -26,23 +26,6 @@ var NAVTREE =
 [
   [ "Sparse Linear Algebra", "index.xhtml", [
     [ "François Carouge / Sparse Linear Algebra", "index.xhtml", "index" ],
-    [ "AGENTS.md", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml", [
-      [ "AI agent conduct", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#ai-agent-conduct", null ],
-      [ "Build &amp; test", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#build--test", null ],
-      [ "Architecture", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#architecture", [
-        [ "Public headers", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#public-headers", null ],
-        [ "The compile-time pattern model", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#the-compile-time-pattern-model", null ],
-        [ "The structural zero model", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#the-structural-zero-model", null ],
-        [ "Algorithms", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#algorithms", null ],
-        [ "Freestanding, real-time, and constant expressions", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#freestanding-real-time-and-constant-expressions", null ],
-        [ "Relation to TypedLinearAlgebra and Kalman", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#relation-to-typedlinearalgebra-and-kalman", null ],
-        [ "Test/sample/benchmark generation (<span class=\"tt\">support/support.cmake</span>)", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#testsamplebenchmark-generation-supportsupportcmake", null ],
-        [ "Other directories", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#other-directories", null ]
-      ] ],
-      [ "Recipe: adding an algorithm", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#recipe-adding-an-algorithm", null ],
-      [ "Completion checklist", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#completion-checklist", null ],
-      [ "Conventions", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#conventions", null ]
-    ] ],
     [ "Changelog", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml", [
       [ "[0.1.0] - 2026-11-07", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07", [
         [ "Added", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added", null ]
@@ -123,9 +106,9 @@ var NAVTREEINDEX =
 [
 "access_8cpp.xhtml",
 "index.xhtml#cmake",
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a68042103167071e0e95c059e2229c9b2",
-"operation__count_8cpp_source.xhtml",
-"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#a44187daf05a333b2893cd4732b3c2757"
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml#aac771a908ddd0b35d2e60dfef2a65499",
+"patterns_8cpp_source.xhtml",
+"structfcarouge_1_1test_1_1counted.xhtml"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

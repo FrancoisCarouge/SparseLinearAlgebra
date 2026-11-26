@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['ideas_0',['Questions &amp;amp; Ideas',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#questions--ideas',1,'']]],
-  ['include_1',['Include',['../index.xhtml#include',1,'']]],
-  ['individuals_2',['Individuals',['../index.xhtml#individuals',1,'']]],
-  ['installation_3',['Installation',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml',1,'']]],
-  ['installation_20packages_4',['Installation Packages',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#installation-packages',1,'']]],
-  ['installation_20usage_5',['Installation &amp;amp; Usage',['../index.xhtml#installation--usage',1,'']]],
-  ['institutions_6',['Corporations &amp;amp; Institutions',['../index.xhtml#corporations--institutions',1,'']]]
+  ['layers_0',['Layers',['../index.xhtml#layers',1,'']]],
+  ['learned_1',['Lessons Learned',['../index.xhtml#lessons-learned',1,'']]],
+  ['lessons_20learned_2',['Lessons Learned',['../index.xhtml#lessons-learned',1,'']]],
+  ['license_3',['License',['../index.xhtml#license',1,'']]],
+  ['linear_20algebra_4',['François Carouge / Sparse Linear Algebra',['../index.xhtml',1,'']]],
+  ['linux_5',['Linux',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#linux',1,'']]],
+  ['list_6',['Test List',['../test.xhtml',1,'']]],
+  ['literal_7',['Structural Zero Literal',['../index.xhtml#structural-zero-literal',1,'']]]
 ];

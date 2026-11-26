@@ -1,5 +1,15 @@
 var searchData=
 [
-  ['namespace_0',['Namespace',['../index.xhtml#namespace',1,'']]],
-  ['notes_1',['Notes',['../index.xhtml#notes',1,'']]]
+  ['packages_0',['Installation Packages',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_i_n_s_t_a_l_l.xhtml#installation-packages',1,'']]],
+  ['parameters_1',['Parameters',['../index.xhtml#template-parameters',1,'Template Parameters'],['../index.xhtml#template-parameters-1',1,'Template Parameters']]],
+  ['party_20acknowledgement_2',['Third Party Acknowledgement',['../index.xhtml#third-party-acknowledgement',1,'']]],
+  ['pattern_3',['Class Pattern',['../index.xhtml#class-pattern',1,'']]],
+  ['pattern_20algebra_4',['Pattern Algebra',['../index.xhtml#pattern-algebra',1,'']]],
+  ['patterns_5',['Patterns',['../index.xhtml#patterns',1,'']]],
+  ['performance_6',['Performance',['../index.xhtml#performance',1,'']]],
+  ['pledge_7',['Our Pledge',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#our-pledge',1,'']]],
+  ['policy_8',['Policy',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml',1,'Security Policy'],['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#security-policy',1,'Security Policy']]],
+  ['pre_20commit_20hooks_9',['Pre-commit Hooks',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pre-commit-hooks',1,'']]],
+  ['projects_10',['Projects',['../index.xhtml#projects',1,'']]],
+  ['pull_20request_20merge_20checklist_11',['Pull Request Merge Checklist',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist',1,'']]]
 ];

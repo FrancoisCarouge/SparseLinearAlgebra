@@ -10,14 +10,13 @@ var searchData=
   ['difference_7',['difference',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#a860410845224e2c8e711b34c0ba4e162',1,'fcarouge::test::anonymous_namespace{arithmetic.cpp}::difference'],['../namespacefcarouge_1_1test_1_1anonymous__namespace_02element__wise_8cpp_03.xhtml#af006fa10d7243bee936a9ef8087b952a',1,'fcarouge::test::anonymous_namespace{element_wise.cpp}::difference']]],
   ['differential_8',['differential',['../structfcarouge_1_1test_1_1anonymous__namespace_02differential_8cpp_03_1_1differential.xhtml',1,'fcarouge::test::anonymous_namespace{differential.cpp}']]],
   ['differential_2ecpp_9',['differential.cpp',['../differential_8cpp.xhtml',1,'']]],
-  ['directories_10',['Other directories',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_a_g_e_n_t_s.xhtml#other-directories',1,'']]],
-  ['disable_11',['disable',['../classfcarouge_1_1not__realtime.xhtml#a297a7276ba8ffd478582a9a30af573db',1,'fcarouge::not_realtime']]],
-  ['distinct_12',['distinct',['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1operand.xhtml#aff3821205fb09c4e405b954bff7297f8',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::operand']]],
-  ['division_13',['division',['../configuration_8cpp.xhtml#a47b14cdf6aedcc7c3fdeac6ec4148ec3',1,'configuration.cpp']]],
-  ['divisions_14',['divisions',['../structfcarouge_1_1test_1_1counted.xhtml#a424e77a51336deaf2ad04fb8de3e554b',1,'fcarouge::test::counted::divisions'],['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml#a0b60004bc0e51b12184db36d1c350772',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::total::divisions()']]],
-  ['documentation_2edox_15',['documentation.dox',['../documentation_8dox.xhtml',1,'']]],
-  ['dot_16',['dot',['../configuration_8cpp.xhtml#abad02c0248c91032b315b2dc2ea92481',1,'dot():&#160;configuration.cpp'],['../namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a',1,'fcarouge::dot()']]],
-  ['dot_2ecpp_17',['dot.cpp',['../dot_8cpp.xhtml',1,'']]],
-  ['dot_5fterms_18',['dot_terms',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88c2d25e777e6730b2b1b20c342c2584',1,'fcarouge::sparse_linear_algebra::internal']]],
-  ['duplicate_5ffail_2ecpp_19',['duplicate_fail.cpp',['../duplicate__fail_8cpp.xhtml',1,'']]]
+  ['disable_10',['disable',['../classfcarouge_1_1not__realtime.xhtml#a297a7276ba8ffd478582a9a30af573db',1,'fcarouge::not_realtime']]],
+  ['distinct_11',['distinct',['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1operand.xhtml#aff3821205fb09c4e405b954bff7297f8',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::operand']]],
+  ['division_12',['division',['../configuration_8cpp.xhtml#a47b14cdf6aedcc7c3fdeac6ec4148ec3',1,'configuration.cpp']]],
+  ['divisions_13',['divisions',['../structfcarouge_1_1test_1_1counted.xhtml#a424e77a51336deaf2ad04fb8de3e554b',1,'fcarouge::test::counted::divisions'],['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml#a0b60004bc0e51b12184db36d1c350772',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::total::divisions()']]],
+  ['documentation_2edox_14',['documentation.dox',['../documentation_8dox.xhtml',1,'']]],
+  ['dot_15',['dot',['../configuration_8cpp.xhtml#abad02c0248c91032b315b2dc2ea92481',1,'dot():&#160;configuration.cpp'],['../namespacefcarouge.xhtml#ae2a6bc01c911af73ac553f0e33ce3c7a',1,'fcarouge::dot()']]],
+  ['dot_2ecpp_16',['dot.cpp',['../dot_8cpp.xhtml',1,'']]],
+  ['dot_5fterms_17',['dot_terms',['../namespacefcarouge_1_1sparse__linear__algebra_1_1internal.xhtml#a88c2d25e777e6730b2b1b20c342c2584',1,'fcarouge::sparse_linear_algebra::internal']]],
+  ['duplicate_5ffail_2ecpp_18',['duplicate_fail.cpp',['../duplicate__fail_8cpp.xhtml',1,'']]]
 ];
