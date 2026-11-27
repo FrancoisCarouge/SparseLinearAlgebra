@@ -248,6 +248,6 @@ var NAVTREEINDEX0 =
 "hierarchy.xhtml":[13,2],
 "index.xhtml":[],
 "index.xhtml":[0],
-"index.xhtml#class-pattern":[0,1,7],
-"index.xhtml#class-sparse-matrix":[0,1,6]
+"index.xhtml#class-pattern":[0,2,6],
+"index.xhtml#class-sparse-matrix":[0,2,5]
 };

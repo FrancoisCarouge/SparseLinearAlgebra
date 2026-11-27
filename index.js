@@ -1,13 +1,13 @@
 var index =
 [
     [ "Installation &amp; Usage", "index.xhtml#installation--usage", null ],
+    [ "Samples", "index.xhtml#samples", null ],
     [ "Reference", "index.xhtml#reference", [
       [ "Layers", "index.xhtml#layers", null ],
       [ "CMake", "index.xhtml#cmake", null ],
       [ "Include", "index.xhtml#include", null ],
       [ "Public API", "index.xhtml#public-api", null ],
       [ "Namespace", "index.xhtml#namespace", null ],
-      [ "Samples", "index.xhtml#samples", null ],
       [ "Class Sparse Matrix", "index.xhtml#class-sparse-matrix", [
         [ "Declaration", "index.xhtml#declaration", null ],
         [ "Template Parameters", "index.xhtml#template-parameters", null ],
