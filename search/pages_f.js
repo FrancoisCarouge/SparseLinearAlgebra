@@ -11,5 +11,6 @@ var searchData=
   ['policy_8',['Policy',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_s_e_c_u_r_i_t_y.xhtml',1,'Security Policy'],['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#security-policy',1,'Security Policy']]],
   ['pre_20commit_20hooks_9',['Pre-commit Hooks',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pre-commit-hooks',1,'']]],
   ['projects_10',['Projects',['../index.xhtml#projects',1,'']]],
-  ['pull_20request_20merge_20checklist_11',['Pull Request Merge Checklist',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist',1,'']]]
+  ['public_20api_11',['Public API',['../index.xhtml#public-api',1,'']]],
+  ['pull_20request_20merge_20checklist_12',['Pull Request Merge Checklist',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_n_t_r_i_b_u_t_i_n_g.xhtml#pull-request-merge-checklist',1,'']]]
 ];

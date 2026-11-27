@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml":[11,0,0,5,5],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml#aac771a908ddd0b35d2e60dfef2a65499":[11,0,0,5,5,0],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02cholesky__asymmetric__fail_8cpp_03.xhtml":[11,0,0,5,6],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02cholesky__diagonal__fail_8cpp_03.xhtml":[11,0,0,5,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "pattern__algebra_8cpp.xhtml":[14,0,6,21,2],
 "pattern__algebra_8cpp_source.xhtml":[14,0,6,21,2],
 "pattern__algebra_8hpp.xhtml":[14,0,2,0,0,2],
-"pattern__algebra_8hpp_source.xhtml":[14,0,2,0,0,2],
-"patterns_8cpp.xhtml":[14,0,6,23,2]
+"pattern__algebra_8hpp_source.xhtml":[14,0,2,0,0,2]
 };

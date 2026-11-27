@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"patterns_8cpp.xhtml":[14,0,6,23,2],
 "patterns_8cpp_source.xhtml":[14,0,6,23,2],
 "position_8cpp.xhtml":[14,0,6,5,4],
 "position_8cpp_source.xhtml":[14,0,6,5,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aee1cce2be1db63325902705a276eb68e":[13,0,0,1,6,0,6],
 "structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#af2bd2641cfb0b5aec5a66eb51d678bba":[11,0,0,5,43,0,0],
 "structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#af2bd2641cfb0b5aec5a66eb51d678bba":[13,0,0,1,6,0,0],
-"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe":[11,0,0,5,43,0,7],
-"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe":[13,0,0,1,6,0,7]
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe":[11,0,0,5,43,0,7]
 };
