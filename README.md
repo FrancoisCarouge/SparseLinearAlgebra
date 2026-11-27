@@ -39,6 +39,13 @@ std::println("{}", value * value); // Computes 17 of the 27 products.
 
 See [INSTALL.md](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/INSTALL.md) for installation instructions. Only the `include/` folder is the library: `cmake --install` and the release packages deliver it, with its CMake package configuration, and nothing else. The `support/`, `sample/`, `test/`, and `benchmark/` folders are development examples and tooling, not part of the delivered library.
 
+## Samples
+
+| Use Case | Sample |
+| --- | --- |
+| Constant velocity prediction | [Usage example: `sample/constant_velocity.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/constant_velocity.cpp). |
+| Heat diffusion stencil | [Usage example: `sample/heat_diffusion.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/heat_diffusion.cpp). |
+
 ## Reference
 
 ### Layers
@@ -76,13 +83,6 @@ Every public class, function, type, and constant of the library at a glance, det
 ### Namespace
 
 The `sparse_matrix` class, its operations, and the `sparsity_pattern` concept live in the `fcarouge` namespace, and the `0_o` structural zero literal in the `fcarouge::literals` namespace. The patterns and their algebra live in the `fcarouge::sparse` namespace. Import them with a using-declaration or namespace alias as your project's style prefers.
-
-### Samples
-
-| Use Case | Sample |
-| --- | --- |
-| Constant velocity prediction | [Usage example: `sample/constant_velocity.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/constant_velocity.cpp). |
-| Heat diffusion stencil | [Usage example: `sample/heat_diffusion.cpp`](https://github.com/FrancoisCarouge/SparseLinearAlgebra/blob/master/sample/heat_diffusion.cpp). |
 
 ### Class Sparse Matrix
 
