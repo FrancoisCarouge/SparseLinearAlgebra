@@ -1,5 +1,5 @@
 #[[ Sparse Linear Algebra
-Version 0.1.0
+Version 0.2.0
 https://github.com/FrancoisCarouge/SparseLinearAlgebra
 
 SPDX-License-Identifier: Unlicense

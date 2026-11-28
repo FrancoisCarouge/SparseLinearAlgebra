@@ -1,5 +1,5 @@
 #[[ Sparse Linear Algebra
-Version 0.1.0
+Version 0.2.0
 https://github.com/FrancoisCarouge/SparseLinearAlgebra
 
 SPDX-License-Identifier: Unlicense
@@ -36,7 +36,7 @@ project(
   DESCRIPTION "Sparse Linear Algebra"
   HOMEPAGE_URL "https://github.com/FrancoisCarouge/SparseLinearAlgebra"
   LANGUAGES "CXX"
-  VERSION "0.1.0")
+  VERSION "0.2.0")
 
 if(PROJECT_IS_TOP_LEVEL)
   set(CMAKE_CXX_EXTENSIONS OFF)
