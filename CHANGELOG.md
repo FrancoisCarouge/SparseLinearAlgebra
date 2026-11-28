@@ -2,6 +2,22 @@
 
 All notable changes to SparseLinearAlgebra are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-11-27
+
+### Added
+
+- Division by a matrix, through its block triangular form.
+- Pattern algebra: the `is_structurally_symmetric` predicate and the `pattern_cholesky` structural pattern of the Cholesky factor.
+- An embedded Arm Cortex-M4 footprint page and gate.
+
+### Changed
+
+- The `sparsity_pattern` concept moved to the `fcarouge` namespace.
+- The matrix and dot products expand into one bounded sum per result element, and accumulate by rows beyond a term limit.
+- Constant-time reads of a compile-time position of a constant matrix, and of a run-time position of a constant dense matrix.
+- The element-wise operations walk the positions grouped by the operands storing them; the transposition, the norms, and the division compute their indexes.
+- The product and transposed patterns compute in linear time in the stored elements.
+
 ## [0.1.0] - 2026-11-07
 
 ### Added
