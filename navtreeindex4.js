@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#af2bd2641cfb0b5aec5a66eb51d678bba":[11,0,0,5,43,0,0],
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#af2bd2641cfb0b5aec5a66eb51d678bba":[13,0,0,1,6,0,0],
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe":[11,0,0,5,43,0,7],
 "structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe":[13,0,0,1,6,0,7],
 "structfcarouge_1_1test_1_1counted.xhtml":[11,0,0,5,63],
 "structfcarouge_1_1test_1_1counted.xhtml":[13,0,0,1,7],

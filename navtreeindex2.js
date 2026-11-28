@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml#aefada804dc666ab962c33f89527ed6cb":[11,0,0,5,3,0],
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign__fail_8cpp_03.xhtml":[11,0,0,5,4],
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign__fail_8cpp_03.xhtml#a191dfe58b8d23a48996203d1f2d60b75":[11,0,0,5,4,0],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml":[11,0,0,5,5],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml#aac771a908ddd0b35d2e60dfef2a65499":[11,0,0,5,5,0],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02cholesky__asymmetric__fail_8cpp_03.xhtml":[11,0,0,5,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "pattern_2out__of__range__fail_8cpp_source.xhtml":[14,0,6,20,5],
 "pattern_8hpp.xhtml":[14,0,2,0,0,1],
 "pattern_8hpp_source.xhtml":[14,0,2,0,0,1],
-"pattern__algebra_8cpp.xhtml":[14,0,6,21,2],
-"pattern__algebra_8cpp_source.xhtml":[14,0,6,21,2],
-"pattern__algebra_8hpp.xhtml":[14,0,2,0,0,2],
-"pattern__algebra_8hpp_source.xhtml":[14,0,2,0,0,2]
+"pattern__algebra_8cpp.xhtml":[14,0,6,21,2]
 };

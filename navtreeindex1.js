@@ -57,7 +57,10 @@ var NAVTREEINDEX1 =
 "matrix__one__norm_8cpp_source.xhtml":[14,0,6,15,0],
 "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml":[1],
 "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added":[1,0,0],
-"md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07":[1,0],
+"md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added-1":[1,1,0],
+"md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07":[1,1],
+"md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md020---2026-11-27":[1,0],
+"md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#changed":[1,0,1],
 "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml":[2],
 "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#attribution":[2,5],
 "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml#enforcement":[2,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#acb2fdba6f65558a067e7c56052141638":[11,0,0,5,2,15],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#ae4a0cbe5582ab666b4aee74fbae8c260":[11,0,0,5,2,4],
 "namespacefcarouge_1_1test_1_1anonymous__namespace_02arithmetic_8cpp_03.xhtml#afc86d359c92e4aed11bb24af084e9a13":[11,0,0,5,2,17],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml":[11,0,0,5,3],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml#aefada804dc666ab962c33f89527ed6cb":[11,0,0,5,3,0],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign__fail_8cpp_03.xhtml":[11,0,0,5,4],
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign__fail_8cpp_03.xhtml#a191dfe58b8d23a48996203d1f2d60b75":[11,0,0,5,4,0]
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml":[11,0,0,5,3]
 };

@@ -29,7 +29,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Sparse Linear Algebra<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">Sparse Linear Algebra<span id="projectnumber">&#160;0.2.0</span>
    </div>
    <div id="projectbrief">Sparse Linear Algebra</div>
   </td>
@@ -118,9 +118,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="changelog"></a></p>
 <p>All notable changes to SparseLinearAlgebra are documented here. The format follows <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>, and versions follow <a href="https://semver.org/">Semantic Versioning</a>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md020---2026-11-27"></a>
+[0.2.0] - 2026-11-27</h1>
+<h2 class="doxsection"><a class="anchor" id="added"></a>
+Added</h2>
+<ul>
+<li>Division by a matrix, through its block triangular form.</li>
+<li>Pattern algebra: the <span class="tt">is_structurally_symmetric</span> predicate and the <span class="tt">pattern_cholesky</span> structural pattern of the Cholesky factor.</li>
+<li>An embedded Arm Cortex-M4 footprint page and gate.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="changed"></a>
+Changed</h2>
+<ul>
+<li>The <span class="tt">sparsity_pattern</span> concept moved to the <span class="tt"><a class="el" href="namespacefcarouge.xhtml" title="Francois Carouge&#39;s projects namespace.">fcarouge</a></span> namespace.</li>
+<li>The matrix and dot products expand into one bounded sum per result element, and accumulate by rows beyond a term limit.</li>
+<li>Constant-time reads of a compile-time position of a constant matrix, and of a run-time position of a constant dense matrix.</li>
+<li>The element-wise operations walk the positions grouped by the operands storing them; the transposition, the norms, and the division compute their indexes.</li>
+<li>The product and transposed patterns compute in linear time in the stored elements.</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md010---2026-11-07"></a>
 [0.1.0] - 2026-11-07</h1>
-<h2 class="doxsection"><a class="anchor" id="added"></a>
+<h2 class="doxsection"><a class="anchor" id="added-1"></a>
 Added</h2>
 <ul>
 <li>Compile-time sparsity patterns: <span class="tt">position</span>, <span class="tt">pattern</span>, the <span class="tt">sparsity_pattern</span> concept, the construction of a pattern from its <span class="tt">shape</span> and its listed positions or a predicate, and the <span class="tt">dense</span>, <span class="tt">zero</span>, <span class="tt">banded</span>, <span class="tt">diagonal</span>, <span class="tt">tridiagonal</span>, <span class="tt">lower_triangular</span>, and <span class="tt">upper_triangular</span> named patterns.</li>

@@ -27,8 +27,12 @@ var NAVTREE =
   [ "Sparse Linear Algebra", "index.xhtml", [
     [ "François Carouge / Sparse Linear Algebra", "index.xhtml", "index" ],
     [ "Changelog", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml", [
+      [ "[0.2.0] - 2026-11-27", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md020---2026-11-27", [
+        [ "Added", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added", null ],
+        [ "Changed", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#changed", null ]
+      ] ],
       [ "[0.1.0] - 2026-11-07", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#autotoc_md010---2026-11-07", [
-        [ "Added", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added", null ]
+        [ "Added", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added-1", null ]
       ] ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_o_d_e___o_f___c_o_n_d_u_c_t.xhtml", [
@@ -106,9 +110,9 @@ var NAVTREEINDEX =
 [
 "access_8cpp.xhtml",
 "index.xhtml#cmake",
-"namespacefcarouge_1_1test_1_1anonymous__namespace_02at_8cpp_03.xhtml",
-"patterns_8cpp.xhtml",
-"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#aff93d449337c39f7ec1944e38e0d28fe"
+"namespacefcarouge_1_1test_1_1anonymous__namespace_02assign_8cpp_03.xhtml#aefada804dc666ab962c33f89527ed6cb",
+"pattern__algebra_8cpp_source.xhtml",
+"structfcarouge_1_1test_1_1anonymous__namespace_02result__patterns_8cpp_03_1_1pattern.xhtml#af2bd2641cfb0b5aec5a66eb51d678bba"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

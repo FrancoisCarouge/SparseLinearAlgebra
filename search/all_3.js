@@ -6,7 +6,7 @@ var searchData=
   ['access_3',['Element Access',['../index.xhtml#element-access',1,'']]],
   ['access_2ecpp_4',['access.cpp',['../access_8cpp.xhtml',1,'']]],
   ['acknowledgement_5',['Third Party Acknowledgement',['../index.xhtml#third-party-acknowledgement',1,'']]],
-  ['added_6',['Added',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added',1,'']]],
+  ['added_6',['Added',['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added',1,'Added'],['../md__2home_2runner_2work_2_sparse_linear_algebra_2_sparse_linear_algebra_2_c_h_a_n_g_e_l_o_g.xhtml#added-1',1,'Added']]],
   ['addition_7',['addition',['../configuration_8cpp.xhtml#a9297b01a3128c5e7e446918855b35934',1,'configuration.cpp']]],
   ['addition_2ecpp_8',['addition.cpp',['../addition_8cpp.xhtml',1,'']]],
   ['additions_9',['additions',['../structfcarouge_1_1test_1_1counted.xhtml#a3f9593b63cd18e22b5e213f43eb81942',1,'fcarouge::test::counted::additions'],['../structfcarouge_1_1test_1_1anonymous__namespace_02operation__count_8cpp_03_1_1total.xhtml#a393769a3e06f844d5ac0ca31caa378b6',1,'fcarouge::test::anonymous_namespace{operation_count.cpp}::total::additions()']]],
